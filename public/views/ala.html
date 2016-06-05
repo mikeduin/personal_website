@@ -6,16 +6,16 @@
       <div class="col-md-offset-6" style="margin-top: 10px">
         <a ui-sref=""> About </a>
         <a ui-sref="home.ala.blog"> Blog </a>
-        <a ui-sref=""> History </a>
+        <a ui-sref=""> Players </a>
         <a ui-sref=""> Photos </a>
         <a ui-sref=""> Contact </a>
       </div>
     </alaLinks>
-</alaHeader> 
+</alaHeader>
 
 <alaSidebar class="col-md-2"</a>
   <ul>
-    <li ng-click="showFantasyNBA = !showFantasyNBA"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': showHoops === true}"> Fantasy NBA </a></li>
+    <li ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': showHoops === true}"> Fantasy NBA </a></li>
       <ul ng-show="showFantasyNBA === true" class="multigame">
         <li class="col-md-offset-2 submenu" ng-click="showAlaHoops = !showAlaHoops" style="margin-top: -10px"> <a class="subleague" > ALA Fantasy Hoops </a> </li>
           <ul ng-show="showAlaHoops === true">
@@ -31,7 +31,7 @@
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.nbacdl.constitution"> Constitution </a> </li>
           </ul>
       </ul>
-    <li ng-click="showBaseball = !showBaseball" style="border-top: none"> <img src="images/baseball.png"/> <a> Fantasy MLB </a> </li>
+    <li ng-click="showBaseball = !showBaseball"> <img src="images/baseball.png"/> <a> Fantasy MLB </a> </li>
       <ul ng-show="showBaseball === true">
         <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.baseball.details"> Game Details </a> </li>
         <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.baseball.rankings"> All-Time Rankings </a> </li>
@@ -86,6 +86,7 @@
 </alaSidebar>
 
 <div ui-view="blog"> </div>
+<div ui-view="buyins"> </div>
 <div ui-view="madness"> </div>
 <div ui-view="ncaapickem"> </div>
 <div ui-view="nbacdl"> </div>

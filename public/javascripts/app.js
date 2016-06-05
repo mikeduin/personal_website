@@ -61,6 +61,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.buyins', {
+      url: '/buyins',
+      views: {
+        'buyins@home.ala': {
+          templateUrl: 'views/ala/buyins.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.hoops', {
       url: '/hoops',
       views: {

@@ -297,7 +297,7 @@ alaSidebar a:hover {
 
 alaSidebar a:hover:before{transform: scaleX(1);}*/
 
-/*ALA Blog Styles*/
+/*ALA Blog + Buyins Styles*/
 
 blog div {
   margin-top: 40px;
@@ -316,6 +316,13 @@ blog div span {
   font-weight: bold;
 }
 
+buyins div p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #D17472;
+}
+
 /*ALA Game Page Styles*/
 
 gameTitle {
@@ -324,12 +331,6 @@ gameTitle {
   font-size: 52px;
   font-weight: 800;
   color: #DC5623;
-}
-
-gameTitle p {
-  /*border: solid 4px black;*/
-  /*background: #E8E8E8;*/
-  /*border-radius: 20px;*/
 }
 
 gameTitle hr {
@@ -381,11 +382,6 @@ rankings iframe {
   margin-top: 30px;
 }
 
-/*td {
-  padding-top: 10px;
-}*/
-
-
 /*Music Styles*/
 
 musicHeader {
@@ -435,4 +431,11 @@ playlists type {
   font-weight: 600;
   font-family: 'Raleway', sans-serif;
   color: #1ED760;
+}
+
+playlist description {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
 }
