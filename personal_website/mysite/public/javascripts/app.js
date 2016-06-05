@@ -142,6 +142,78 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.baseball', {
+      url: '/baseball',
+      views: {
+        'baseball@home.ala': {
+          templateUrl: 'views/ala/baseball/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.baseball.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.baseball': {
+          templateUrl: 'views/ala/baseball/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.baseball.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.baseball': {
+          templateUrl: 'views/ala/baseball/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.baseball.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.baseball': {
+          templateUrl: 'views/ala/baseball/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.football', {
+      url: '/football',
+      views: {
+        'football@home.ala': {
+          templateUrl: 'views/ala/football/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.football.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.football': {
+          templateUrl: 'views/ala/football/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.football.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.football': {
+          templateUrl: 'views/ala/football/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.football.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.football': {
+          templateUrl: 'views/ala/football/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.ncaapickem', {
       url: '/ncaapickem',
       views: {
@@ -187,6 +259,51 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.survivor', {
+      url: '/nflsurvivor',
+      views: {
+        'survivor@home.ala': {
+          templateUrl: 'views/ala/survivor/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.survivor.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.survivor': {
+          templateUrl: 'views/ala/survivor/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.survivor.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.survivor': {
+          templateUrl: 'views/ala/survivor/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.survivor.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.survivor': {
+          templateUrl: 'views/ala/survivor/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.survivor.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.survivor': {
+          templateUrl: 'views/ala/survivor/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.btb', {
       url: '/battlethebookies',
       views: {
@@ -228,6 +345,51 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'records@home.ala.btb': {
           templateUrl: 'views/ala/btb/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.confidence', {
+      url: '/nflconfidence',
+      views: {
+        'confidence@home.ala': {
+          templateUrl: 'views/ala/confidence/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.confidence.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.confidence.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.confidence.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.confidence.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/records.html',
           controller: 'AlaController'
         }
       }

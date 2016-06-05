@@ -31,8 +31,18 @@
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.nbacdl.constitution"> Constitution </a> </li>
           </ul>
       </ul>
-    <li style="border-top: none"> <img src="images/baseball.png"/> <a> Fantasy MLB </a> </li>
-    <li> <img src="images/football.png"/> <a ui-sref=""> Fantasy NFL </a> </li>
+    <li ng-click="showBaseball = !showBaseball" style="border-top: none"> <img src="images/baseball.png"/> <a> Fantasy MLB </a> </li>
+      <ul ng-show="showBaseball === true">
+        <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.baseball.details"> Game Details </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.baseball.rankings"> All-Time Rankings </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.baseball.records"> Record Holders </a> </li>
+      </ul>
+    <li ng-click="showFootball = !showFootball"> <img src="images/football.png"/> <a ui-sref=""> Fantasy NFL </a> </li>
+      <ul ng-show="showFootball === true">
+        <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.football.details"> Game Details </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.football.rankings"> All-Time Rankings </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.football.records"> Record Holders </a> </li>
+      </ul>
     <li ng-click="showMadness = !showMadness"> <img src="images/basketball.png"/> <a> NCAA March Madness </a> </li>
       <ul ng-show="showMadness === true">
         <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.madness.details"> Game Details </a> </li>
@@ -47,8 +57,20 @@
         <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.btb.yoy"> YoY Progression </a> </li>
         <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.btb.records"> Record Holders </a> </li>
       </ul>
-    <li> <img src="images/football.png"/> <a> NFL Survivor </a> </li>
-    <li> <img src="images/football.png"/> <a> NFL Confidence </a> </li>
+    <li ng-click="showSurvivor = !showSurvivor"> <img src="images/football.png"/> <a> NFL Survivor </a> </li>
+      <ul ng-show="showSurvivor === true">
+        <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.survivor.details"> Game Details </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.survivor.rankings"> All-Time Rankings </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.survivor.yoy"> YoY Progression </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.survivor.records"> Record Holders </a> </li>
+      </ul>
+    <li ng-click="showConfidence = !showConfidence"> <img src="images/football.png"/> <a> NFL Confidence </a> </li>
+      <ul ng-show="showConfidence === true">
+        <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.confidence.details"> Game Details </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.confidence.rankings"> All-Time Rankings </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.confidence.yoy"> YoY Progression </a> </li>
+        <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.confidence.records"> Record Holders </a> </li>
+      </ul>
     <li ng-click="showNcaaPickem = !showNcaaPickem"> <img src="images/football.png"/> <a> NCAA Pick'em </a> </li>
     <ul ng-show="showNcaaPickem === true">
       <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.ncaapickem.details"> Game Details </a> </li>
@@ -61,7 +83,6 @@
     <li> <img src="images/basketball.png"/> <a> NBA Playoff Pool </a> </li>
     <li> <img src="images/golf.png"/> <a> PGA Majors </a> </li>
   </ul>
-
 </alaSidebar>
 
 <div ui-view="blog"> </div>
@@ -70,3 +91,7 @@
 <div ui-view="nbacdl"> </div>
 <div ui-view="hoops"> </div>
 <div ui-view="btb"> </div>
+<div ui-view="baseball"> </div>
+<div ui-view="football"> </div>
+<div ui-view="survivor"> </div>
+<div ui-view="confidence"> </div>

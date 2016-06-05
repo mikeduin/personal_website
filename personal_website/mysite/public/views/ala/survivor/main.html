@@ -1,0 +1,18 @@
+<gameTitle class="col-md-10 text-center">
+  <hr style="margin-top: 5px; margin-bottom: 5px">
+  <p> NFL Survivor </p>
+  <hr>
+</gameTitle>
+
+<gameNav class="col-md-10 text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.survivor.details" ng-class="{'activetab': $state.includes('home.ala.survivor.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.survivor.rankings" ng-class="{'activetab': $state.includes('home.ala.survivor.rankings')}"> All-Time Rankings</a> </li>
+    <li> <a ui-sref="home.ala.survivor.yoy" ng-class="{'activetab': $state.includes('home.ala.survivor.yoy')}"> YoY Progression</a> </li>
+    <li> <a ui-sref="home.ala.survivor.records" ng-class="{'activetab': $state.includes('home.ala.survivor.records')}"> Record Holders</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="rankings"> </div>
+<div ui-view="yoy"> </div>

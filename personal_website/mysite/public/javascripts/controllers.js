@@ -28,4 +28,9 @@ function AlaController ($scope, $state) {
   $scope.showMadness = false;
   $scope.showNcaaPickem = false;
   $scope.showBtb = false;
+  $scope.showBaseball = false;
+  $scope.showEffRoto = false;
+  $scope.showFootball = false;
+  $scope.showSurvivor = false;
+  $scope.showConfidence = false;
 }
