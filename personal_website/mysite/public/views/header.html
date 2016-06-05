@@ -9,19 +9,38 @@
         <span class="icon-bar"></span>
       <a class="navbar-brand" href="/">
         <span> mike<span class="bold">duin</span></span>
-        <!-- <span>| web<span class="bold">developer</span></span> -->
       </a>
+      <a class="navbar-brand" ui-sref="home.about" ng-show="$state.includes('home.about')">
+        <span>|</span> <span> ... </span> <span class="bold"> who? </span>
+      </a>
+      <a class="navbar-brand" ui-sref="home.music" ng-show="$state.includes('home.music')">
+        <span>|<span class="bold"> music</span>lover</span>
+      </a>
+      <a class="navbar-brand" ui-sref="home.professional" ng-show="$state.includes('home.professional')">
+        <span>| web<span class="bold">developer</span></span>
+      </a>
+      <a class="navbar-brand" ui-sref="home.fridge" ng-show="$state.includes('home.fridge')">
+        <span>|<span class="bold"> bottle</span>list </span>
+      </a>
+      <a class="navbar-brand" ng-show="$state.includes('home.ala')">
+        <span>|<span class="bold"> ala</span>commissioner</span>
+      </a>
+      <a class="navbar-brand" ng-show="$state.includes('home.contact')">
+        <span>| contact</span>
+      </a>
+
+
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li> <a href=""> About </a></li>
-        <li> <a href=""> Professional </a></li>
+        <li> <a ui-sref="home.about"> About </a></li>
+        <li> <a ui-sref="home.professional"> Professional </a></li>
         <li> <a href=""> Photography </a></li>
-        <li> <a href=""> Music </a></li>
-        <li> <a href=""> A Level Above </a></li>
-        <li> <a href=""> Mike's Fridge </a></li>
+        <li> <a ui-sref="home.music"> Music </a></li>
+        <li> <a ui-sref="home.ala.blog"> A Level Above </a></li>
+        <li> <a ui-sref="home.fridge"> Mike's Fridge </a></li>
       </ul>
     </div>
   </div>
 </div>
-<div class="spacer"></div>
+<div class="spacer"> </div>

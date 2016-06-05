@@ -1,0 +1,19 @@
+<gameTitle class="col-md-10 text-center">
+  <hr style="margin-top: 5px; margin-bottom: 5px">
+  <p> NBA Complicated Dynasty League </p>
+  <hr>
+</gameTitle>
+
+<gameNav class="col-md-10 text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.nbacdl.details" ng-class="{'activetab': $state.includes('home.ala.nbacdl.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.nbacdl.rankings" ng-class="{'activetab': $state.includes('home.ala.nbacdl.rankings')}"> All-Time Rankings</a> </li>
+    <li> <a ui-sref="home.ala.nbacdl.records" ng-class="{'activetab': $state.includes('home.ala.nbacdl.records')}"> Record Holders</a> </li>
+    <li> <a ui-sref="home.ala.nbacdl.records" ng-class="{'activetab': $state.includes('home.ala.nbacdl.records')}"> Constitution</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="rankings"> </div>
+<div ui-view="records"> </div>
+<div ui-view="constitution"> </div>
