@@ -316,11 +316,31 @@ blog div span {
   font-weight: bold;
 }
 
-buyins div p {
+buyins {
+  margin-top: 10px;
+}
+
+.buyinHeader {
+  margin-bottom: -20px;
   font-family: 'Raleway', sans-serif;
   font-size: 48px;
   font-weight: 800;
   color: #D17472;
+}
+
+buyins div explained p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+buyins prizeDiv {
+  margin-top: 10px;
+}
+
+.exptwo {
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
 
 /*ALA Game Page Styles*/
