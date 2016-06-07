@@ -1,0 +1,115 @@
+/*font-family: 'Dancing Script', cursive;*/
+
+/*Splashpage Styles*/
+
+mainImg img {
+  margin-top: -160px;
+  border: solid 5px black;
+  border-radius: 50%;
+  height: 250px;
+  width: 400px;
+}
+
+.greeting {
+  margin-top: -20px;
+  margin-bottom: -10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: -30px;
+}
+
+.lead {
+  margin-left: -30px;
+  font-size: 24px;
+}
+
+webDevBubble {
+  margin-left: -40px;
+  margin-top: 40px;
+  height: 150px;
+  border: solid 6px #990000;
+  border-radius: 50%;
+}
+
+webDevP, photoP, commishP, musicP, beerP {
+  font-family: 'Dancing Script';
+  font-weight: 700;
+  font-size: 32px;
+}
+
+photoBubble {
+  margin-top: 40px;
+}
+
+photoBubble img {
+  height: 150px;
+  width: 294px;
+  border-radius: 50%;
+  border: solid 6px #004F00;
+}
+
+commishBubble {
+  height: 150px;
+}
+
+commishBubble img {
+  height: 150px;
+  width: 294px;
+  border-radius: 50%;
+  border: solid 6px #042B72;
+}
+
+musicBubble {
+  height: 150px;
+  border: solid 6px #BE4D01;
+  border-radius: 50%;
+}
+
+beerBubble {
+  margin-top: -60px;
+  margin-left: -60px;
+}
+
+beerBubble img {
+  height: 150px;
+  width: 294px;
+  border-radius: 50%;
+  border: solid 6px #990000;
+}
+
+beerP p{
+  margin-left: -10px;
+}
+
+/*Social Box Styles*/
+
+socialBox {
+  height: 280px;
+  border-radius: 15px;
+  background: #d3d3d3;
+  border: solid 2px #9E9E9D;
+}
+
+socialBox ul li {
+  display: inline;
+}
+
+socialBox ul li a {
+  font-size: 32px;
+}
+
+.ig {
+  color: black
+}
+
+.spot {
+  color: #39B02F
+}
+
+.linked {
+  color: #1A85BC
+}
+
+.last {
+  color: #B90000;
+}

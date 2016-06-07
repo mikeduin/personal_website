@@ -1,6 +1,4 @@
 
-/*font-family: 'Dancing Script', cursive;*/
-
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -59,6 +57,10 @@
   padding-right: 2%;
 }
 
+.spacer {
+  margin-top: 70px;
+}
+
 /*New Splashpage Styles*/
 
 grid {
@@ -69,130 +71,14 @@ img {
   width: 100%;
 }
 
-
-/*Splashpage Styles*/
-
-mainImg img {
-  margin-top: -160px;
-  border: solid 5px black;
-  border-radius: 50%;
-  height: 250px;
-  width: 400px;
-}
-
-.greeting {
-  margin-top: -20px;
-  margin-bottom: -10px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: -30px;
-}
-
-.lead {
-  margin-left: -30px;
-  font-size: 24px;
-}
-
-webDevBubble {
-  margin-left: -40px;
-  margin-top: 40px;
-  height: 150px;
-  border: solid 6px #990000;
-  border-radius: 50%;
-}
-
-webDevP, photoP, commishP, musicP, beerP {
-  font-family: 'Dancing Script';
-  font-weight: 700;
-  font-size: 32px;
-}
-
-photoBubble {
-  margin-top: 40px;
-}
-
-photoBubble img {
-  height: 150px;
-  width: 294px;
-  border-radius: 50%;
-  border: solid 6px #004F00;
-}
-
-commishBubble {
-  height: 150px;
-}
-
-commishBubble img {
-  height: 150px;
-  width: 294px;
-  border-radius: 50%;
-  border: solid 6px #042B72;
-}
-
-musicBubble {
-  height: 150px;
-  border: solid 6px #BE4D01;
-  border-radius: 50%;
-}
-
-beerBubble {
-  margin-top: -60px;
-  margin-left: -60px;
-}
-
-beerBubble img {
-  height: 150px;
-  width: 294px;
-  border-radius: 50%;
-  border: solid 6px #990000;
-}
-
-beerP p{
-  margin-left: -10px;
-}
-
-/*Social Box Styles*/
-
-socialBox {
-  height: 280px;
-  border-radius: 15px;
-  background: #d3d3d3;
-  border: solid 2px #9E9E9D;
-}
-
-socialBox ul li {
-  display: inline;
-}
-
-socialBox ul li a {
-  font-size: 32px;
-}
-
-.ig {
-  color: black
-}
-
-.spot {
-  color: #39B02F
-}
-
-.linked {
-  color: #1A85BC
-}
-
-.spacer {
-  margin-top: 70px;
-}
-
-.last {
-  color: #B90000;
-}
-
 /*ALA Styles*/
 
 alaHeader {
   height: 120px;
   background-color: black;
+  border-radius: 4px;
+  border-top: solid 5px #3984C5;
+  border-bottom: solid 5px #3984C5;
 }
 
 alaLead {
@@ -407,6 +293,9 @@ rankings iframe {
 musicHeader {
   height: 120px;
   background-color: #452562;
+  border-radius: 4px;
+  border-top: solid 5px #1ED760;
+  border-bottom: solid 5px #1ED760;
 }
 
 musicLead {
@@ -441,6 +330,7 @@ playlists playlist {
 }
 
 playlists name {
+  margin-top: -15px;
   font-size: 52px;
   font-weight: 800;
   font-family: 'Raleway', sans-serif;
@@ -458,4 +348,135 @@ playlist description {
   font-size: 20px;
   font-weight: 400;
   font-family: 'Raleway', sans-serif;
+}
+
+/*Fridge Styles*/
+
+fridgeHeader {
+  height: 120px;
+  background-color: #7C0F09;
+  border-radius: 4px;
+  border-top: solid 5px black;
+  border-bottom: solid 5px black;
+}
+
+fridgeSubheader {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #E5E7E7;
+}
+
+fridgeIntro {
+  margin-top: -20px;
+  height: 120px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #B61B10;
+  padding-top: 24px;
+}
+
+fridgeLead {
+  margin-top: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  background-color: #F5F8FF;
+  border-radius: 10px;
+}
+
+fridgeIndex {
+  margin-top: 40px;
+  height: 800px;
+  border-right: solid 1px #EEEEEE;
+}
+
+searchContainer {
+  display: inline-block;
+  border: 5px solid #7C0F09;
+  border-radius: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+searchContainer span {
+  color: #B61B10;
+  cursor: pointer;
+}
+
+searchContainer search {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+searchOptions {
+  background-color: #DCDEDC;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+search div {
+  padding-top: 5px;
+}
+
+fridgeIndex input {
+  width: 300px;
+  margin-left: 20px;
+}
+
+closeSearch {
+  margin-left: 50px;
+  cursor: pointer;
+  color: #B61B10;
+  text-decoration: underline;
+}
+
+instructions {
+  margin-top: -10px;
+  color: #7C0F09;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+}
+
+bottleList {
+  margin-top: 20px;
+  overflow: auto;
+  height: 500px;
+}
+
+beerContainer {
+  background-color: #E5E7E7;
+  display: inline-block;
+  border-radius: 20px;
+  font-family: 'Raleway', serif;
+  padding-bottom: 5px;
+}
+
+beerContainer name {
+  padding: 5px;
+  color: #7C0F09;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/*About Styles*/
+
+aboutHeader {
+  height: 120px;
+  background-color: #24307A;
+  border-radius: 4px;
+  border-top: solid 5px black;
+  border-bottom: solid 5px black;
+}
+
+/*Professional Styles*/
+
+proHeader {
+  height: 120px;
+  background-color: #2F5032;
+  border-radius: 4px;
 }

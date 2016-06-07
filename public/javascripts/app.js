@@ -35,11 +35,28 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.about', {
+      url: 'about',
+      views: {
+        'content@': {
+          templateUrl: 'views/about.html'
+        }
+      }
+    })
     .state('home.fridge', {
       url: 'mikesfridge',
       views: {
         'content@': {
           templateUrl: 'views/fridge.html'
+        }
+      }
+    })
+    .state('home.fridge.beer', {
+      url: '/:beer',
+      views: {
+        'beer@home.fridge': {
+          templateUrl: 'views/beerdisplay.html',
+          controller: 'BeerController'
         }
       }
     })
@@ -445,14 +462,6 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         'records@home.ala.madness': {
           templateUrl: 'views/ala/madness/records.html',
           controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.about', {
-      url: 'about',
-      views: {
-        'content@': {
-          templateUrl: 'views/about.html'
         }
       }
     })
