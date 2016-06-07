@@ -3,6 +3,7 @@ angular
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
   .controller('AlaController', ['$scope', '$state', AlaController])
+  .controller('BeerController', ['$scope', '$state', 'beerService', BeerController])
 
 function MainController ($scope, $state){
   $scope.$state = $state;
@@ -18,6 +19,10 @@ function MusicController ($scope, $state, spotifyService) {
   //   })
   // }
   // $scope.getPlaylists();
+}
+
+function BeerController ($scope, $state, beerService) {
+  $scope.showSearch = false;
 }
 
 function AlaController ($scope, $state) {

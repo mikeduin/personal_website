@@ -1,6 +1,7 @@
 angular
   .module('mySite')
   .factory('spotifyService', spotifyService)
+  .factory('beerService', beerService)
 
 function spotifyService ($http) {
   return {
@@ -12,4 +13,11 @@ function spotifyService ($http) {
       })
     }
   }
+}
+
+function beerService (Beer) {
+  Beer.find({}, function(err, beers) {
+    if (err) throw err;
+    console.log(beers);
+  })
 }

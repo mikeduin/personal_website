@@ -1,0 +1,13 @@
+db.mikesFridge.insert({
+  name: '',
+  brewery: '',
+  style: '',
+  abv: ,
+  cold: ,
+  quantity: ,
+  image: '',
+  price: ,
+  ordered: new Date("201x-xx-xx"),
+  ml: ,
+  description: ''
+});
