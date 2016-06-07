@@ -77,8 +77,8 @@ alaHeader {
   height: 120px;
   background-color: black;
   border-radius: 4px;
-  border-top: solid 5px #3984C5;
-  border-bottom: solid 5px #3984C5;
+  border-top: solid 3px #3984C5;
+  border-bottom: solid 3px #3984C5;
 }
 
 alaLead {
@@ -294,8 +294,8 @@ musicHeader {
   height: 120px;
   background-color: #452562;
   border-radius: 4px;
-  border-top: solid 5px #1ED760;
-  border-bottom: solid 5px #1ED760;
+  border-top: solid 5px black;
+  border-bottom: solid 5px black;
 }
 
 musicLead {
@@ -387,6 +387,11 @@ fridgeLead {
   border-radius: 10px;
 }
 
+fridgeNote {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+}
+
 fridgeIndex {
   margin-top: 40px;
   height: 800px;
@@ -400,11 +405,11 @@ searchContainer {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 24px;
+  cursor: pointer;
 }
 
 searchContainer span {
   color: #B61B10;
-  cursor: pointer;
 }
 
 searchContainer search {
@@ -455,13 +460,18 @@ beerContainer {
   font-family: 'Raleway', serif;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  border: solid 1px black;
 }
 
 beerContainer name {
-  padding: 5px;
   color: #7C0F09;
   font-size: 18px;
   font-weight: 800;
+}
+
+beerImage img {
+  margin-top: 5px;
+  height: 80px;
 }
 
 /*About Styles*/
@@ -480,4 +490,6 @@ proHeader {
   height: 120px;
   background-color: #2F5032;
   border-radius: 4px;
+  border-top: solid 5px black;
+  border-bottom: solid 5px black;
 }

@@ -3,20 +3,23 @@
       Mike's Fridge
     </alaLead>
     <fridgeSubheader class="row">
-      <div class="col-md-offset-7" style="margin-top: 10px">
+      <div class="col-md-offset-7">
         Coming over? Queue up a cold one...
       </div>
     </fridgeSubheader>
 </fridgeHeader>
 
 <fridgeLead class="col-md-10 col-md-offset-1">
-  Thanks to the fine people (and A+ copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed a patently absurd stockpile of beer in my cellar*. If you're reading this: I need your help. I'll never be able to drink all this beer alone. If you're coming over, take a gander at the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time.
+  Thanks to the fine people (...and the elite copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed a patently absurd stockpile of beer in my cellar*. If you're reading this: I need your help. I'll never be able to drink all of this beer alone. If you're coming over, take a gander at the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time. They'll be cold by the time you make it over.
 </fridgeLead>
+<fridgeNote class="col-md-3 col-md-offset-9">
+  *actually a closet in my hallway
+</fridgeNote>
 
 <fridgeIndex class="col-md-6">
   <searchContainer class="col-md-12" ng-click="showSearch = !showSearch">
     <div class="text-center">
-      CLICK TO <span> SEARCH </span> or <span> FILTER </span> BEER
+      CLICK TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
     </div>
     <searchOptions class="col-md-12" ng-show="showSearch === true">
       <search class="text-left">
@@ -38,7 +41,7 @@
         </div>
         <div class="">
           Sort by:
-            <sort> latest arrivals </sort> |
+            <sort> newest arrivals </sort> |
             <sort> ABV (high) </sort> |
             <sort> ABV (low) </sort>
             <!-- Why doesn't this work below? -->
@@ -54,18 +57,17 @@
 
   <bottleList>
     <beerContainer class="col-md-12" ng-repeat="beer in beers">
-      <beerInfo class="col-md-8">
-        <name class="col-md-12"> {{beer.name}} </name>
-        <brewery class="col-md-12"> {{beer.brewery}} </brewery>
-        <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
-        <abv class="col-md-12"> ABV: {{beer.abv}}% </abv>
-      <beerInfo>
-      <beerImage class="col-md-4">
+      <beerImage class="col-md-offset-1 col-md-2">
+        <img src="{{beer.image}}" alt="{{beer.name}}" />
       </beerImage>
-
+        <beerInfo class="col-md-9">
+          <name class="col-md-12"> {{beer.name}} </name>
+          <brewery class="col-md-12"> <b> {{beer.brewery}} </b> </brewery>
+          <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
+          <abv class="col-md-6"> ABV: {{beer.abv}}% </abv>
+          <ordered class="col-md-6"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
+        </beerInfo>
     </beerContainer>
-
-
   <bottleList>
 
 </fridgeIndex>
