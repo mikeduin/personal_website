@@ -8,6 +8,16 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/mikesFridge');
+require('./models/Beers');
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("we connected to Mike's Fridge!")
+})
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,38 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-// var client_id = 'dca6bc1ed23f4c17ab7a916e30644a1a'; // Your client id
-// var client_secret = '60c15d4f78b74a5dbc564b12fbbcf833'; // Your secret
 
-// Requesting Spotify Authorization
-// var authOptions = {
-//   url: 'https://accounts.spotify.com/api/token',
-//   headers: {
-//     'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-//   },
-//   form: {
-//     grant_type: 'client_credentials'
-//   },
-//   json: true
-// };
-//
-// request.post(authOptions, function(error, response, body) {
-//   if (!error && response.statusCode === 200) {
-//
-//     // use the access token to access the Spotify Web API
-//     var token = body.access_token;
-//     var options = {
-//       url: 'https://api.spotify.com/v1/users/mike_duin',
-//       headers: {
-//         'Authorization': 'Bearer ' + token
-//       },
-//       json: true
-//     };
-//     request.get(options, function(error, response, body) {
-//       console.log(body);
-//     });
-//   }
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

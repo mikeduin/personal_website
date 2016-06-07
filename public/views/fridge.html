@@ -53,12 +53,12 @@
   </instructions>
 
   <bottleList>
-    <beerContainer class="col-md-12">
+    <beerContainer class="col-md-12" ng-repeat="beer in beers">
       <beerInfo class="col-md-8">
-        <name class="col-md-12"> Beer Name Goes Here </name>
-        <brewery class="col-md-12"> Brewery Goes Here </brewery>
-        <beerStyle class="col-md-12"> Style Goes Here </beerStyle>
-        <abv class="col-md-12"> ABV Goes Here </abv>
+        <name class="col-md-12"> {{beer.name}} </name>
+        <brewery class="col-md-12"> {{beer.brewery}} </brewery>
+        <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
+        <abv class="col-md-12"> ABV: {{beer.abv}}% </abv>
       <beerInfo>
       <beerImage class="col-md-4">
       </beerImage>

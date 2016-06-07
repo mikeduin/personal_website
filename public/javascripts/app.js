@@ -47,7 +47,8 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       url: 'mikesfridge',
       views: {
         'content@': {
-          templateUrl: 'views/fridge.html'
+          templateUrl: 'views/fridge.html',
+          controller: 'BeerController'
         }
       }
     })

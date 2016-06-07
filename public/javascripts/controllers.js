@@ -23,6 +23,16 @@ function MusicController ($scope, $state, spotifyService) {
 
 function BeerController ($scope, $state, beerService) {
   $scope.showSearch = false;
+  $scope.beers = [];
+  $scope.getBeers = function() {
+    beerService.getBeers().then(function(beers){
+      $scope.beers = beers;
+      console.log(beers)
+    })
+  }
+  $scope.getBeers();
+
+
 }
 
 function AlaController ($scope, $state) {

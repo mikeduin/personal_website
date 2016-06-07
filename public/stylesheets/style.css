@@ -454,6 +454,7 @@ beerContainer {
   border-radius: 20px;
   font-family: 'Raleway', serif;
   padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 beerContainer name {
