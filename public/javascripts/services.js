@@ -15,9 +15,14 @@ function spotifyService ($http) {
   }
 }
 
-function beerService (Beer) {
-  Beer.find({}, function(err, beers) {
-    if (err) throw err;
-    console.log(beers);
-  })
+function beerService ($http) {
+  return {
+    getBeers: function() {
+      return $http.get('/beers')
+      .then(function(results) {
+        var beers = results.data;
+        return beers
+      })
+    }
+  }
 }
