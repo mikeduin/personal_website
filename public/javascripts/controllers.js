@@ -3,7 +3,8 @@ angular
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
   .controller('AlaController', ['$scope', '$state', AlaController])
-  .controller('BeerController', ['$scope', '$state', 'beerService', BeerController])
+  .controller('BeerController', ['$scope', '$state', '$stateParams', 'beerService', BeerController])
+  .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
 
 function MainController ($scope, $state){
   $scope.$state = $state;
@@ -21,18 +22,30 @@ function MusicController ($scope, $state, spotifyService) {
   // $scope.getPlaylists();
 }
 
-function BeerController ($scope, $state, beerService) {
+function BeerController ($scope, $state, $stateParams, beerService) {
   $scope.showSearch = false;
   $scope.beers = [];
   $scope.getBeers = function() {
     beerService.getBeers().then(function(beers){
       $scope.beers = beers;
-      console.log(beers)
     })
   }
   $scope.getBeers();
 
 
+}
+
+function BeerDetailController ($scope, $stateParams, beerService) {
+  $scope.beer = [];
+  $scope.getBeer = function() {
+    beerService.getBeer($stateParams.beername).then(function(beer){
+      console.log(beer);
+      console.log(beer[0].name);
+      $scope.beer = beer[0];
+    })
+  }
+  $scope.getBeer();
+  console.log($scope.beer)
 }
 
 function AlaController ($scope, $state) {

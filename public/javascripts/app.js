@@ -1,6 +1,11 @@
 angular
   .module('mySite', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', siteConfig])
+  // .config(['$locationProvider', function($locationProvider) {
+  //   $locationProvider.html5Mode(true);
+  // }])
+
+
 
 function siteConfig ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -53,11 +58,11 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('home.fridge.beer', {
-      url: '/:beer',
+      url: '/:beername',
       views: {
-        'beer@home.fridge': {
-          templateUrl: 'views/beerdisplay.html',
-          controller: 'BeerController'
+        'beerdisplay@home.fridge': {
+          templateUrl: 'views/fridge/beer.html',
+          controller: 'BeerDetailController'
         }
       }
     })

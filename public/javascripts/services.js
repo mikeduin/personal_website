@@ -23,6 +23,14 @@ function beerService ($http) {
         var beers = results.data;
         return beers
       })
+    },
+    getBeer: function(beername) {
+      return $http.get('/beers/' + beername)
+      .then(function(results) {
+        console.log(results.data);
+        var beer = results.data;
+        return beer
+      })
     }
   }
 }

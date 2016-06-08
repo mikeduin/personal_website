@@ -10,10 +10,10 @@
 </fridgeHeader>
 
 <fridgeLead class="col-md-10 col-md-offset-1">
-  Thanks to the fine people (...and the elite copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed a patently absurd stockpile of beer in my cellar*. If you're reading this: I need your help. I'll never be able to drink all of this beer alone. If you're coming over, take a gander at the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time. They'll be cold by the time you make it over.
+  Thanks to the fine people (...and the elite copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed a patently absurd stockpile of craft beer in my cellar*. If you're reading this: I need your help. Drinking all of this beer is well beyond the scope of a one-man operation. If you're coming over, take a gander at the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time. They'll be cold by the time you get here.
 </fridgeLead>
 <fridgeNote class="col-md-3 col-md-offset-9">
-  *actually a closet in my hallway
+  *actually a hallway closet
 </fridgeNote>
 
 <fridgeIndex class="col-md-6">
@@ -57,16 +57,18 @@
 
   <bottleList>
     <beerContainer class="col-md-12" ng-repeat="beer in beers">
-      <beerImage class="col-md-offset-1 col-md-2">
-        <img src="{{beer.image}}" alt="{{beer.name}}" />
-      </beerImage>
-        <beerInfo class="col-md-9">
-          <name class="col-md-12"> {{beer.name}} </name>
-          <brewery class="col-md-12"> <b> {{beer.brewery}} </b> </brewery>
-          <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
-          <abv class="col-md-6"> ABV: {{beer.abv}}% </abv>
-          <ordered class="col-md-6"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
-        </beerInfo>
+      <a ui-sref="home.fridge.beer({beername: beer.beername})">
+        <beerImage class="col-md-offset-1 col-md-2">
+          <img src="{{beer.image}}" alt="{{beer.name}}" />
+        </beerImage>
+          <beerInfo class="col-md-9">
+            <name class="col-md-12"> {{beer.name}} </name>
+            <brewery class="col-md-12"> <b> {{beer.brewery}} </b> </brewery>
+            <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
+            <abv class="col-md-6"> ABV: {{beer.abv}}% </abv>
+            <ordered class="col-md-6"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
+          </beerInfo>
+      </a>
     </beerContainer>
   <bottleList>
 

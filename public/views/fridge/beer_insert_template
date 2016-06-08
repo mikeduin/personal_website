@@ -1,5 +1,6 @@
 db.mikesFridge.insert({
   name: '',
+  beername: '',
   brewery: '',
   style: '',
   abv: ,
@@ -8,6 +9,6 @@ db.mikesFridge.insert({
   image: '',
   price: ,
   ordered: new Date("201x-xx-xx"),
-  ml: ,
+  size: '',
   description: ''
 });
