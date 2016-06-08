@@ -1,3 +1,32 @@
-<div class="col-md-6">
+<beerDetail class="col-md-6 text-center">
+  <div class="row">
+    <name> {{beer.name}} </name>
+  </div>
+  <div class="row">
+    <brewery> <i class="fa fa-beer" aria-hidden="true"></i> {{beer.brewery}} </brewery>
+  </div>
+  <div class="row">
+    {{beer.style}}  <b> | </b> {{beer.abv}}% ABV <b> | </b> {{beer.size}} <b> | </b> ${{beer.price}}
+  </div>
+  <div class="row">
+    In stock: {{beer.quantity}} <ng-pluralize count="beer.quantity" when="{'1': 'bottle', 'other':'bottles'}"></ng-pluralize>
+  </div>
+  <div class="row">
+    Ordered: {{beer.ordered | date: 'longDate'}} <b> | </b>
+      <span ng-if="beer.cold === true"> This beer is currently <span class="cold"> COLD<i class="fa fa-exclamation" aria-hidden="true"></i> </span> </span>
+      <span ng-if="beer.cold !== true"> This beer is currently <span class="cellared"> cellared</i> </span> </span>
+  </div>
+  <div class="row">
+    <beerImage class="col-md-3">
+      <img src="{{beer.image}}" alt="" />
+    </beerImage>
+    <description class="col-md-9 text-left">
+      <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{beer.description}}"
+    </description>
+  </div>
 
-</div>
+
+
+
+
+</beerDetail>

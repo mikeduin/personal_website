@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.redirect('index.html');
 });
 
+
 var mongoose = require('mongoose');
 var Beer = mongoose.model('Beer');
 
@@ -27,10 +28,10 @@ router.post('/beers', function(req, res, next) {
   })
 })
 
-router.param('post', function(req, res, next, id) {
-  var query = Beer.findById(id);
+router.param('beername', function(req, res, next, beername) {
+  var query = Beer.find({ beername: beername });
 
-  query.exec(function (err, post) {
+  query.exec(function (err, beer) {
     if (err) {return next(err); }
     if (!beer) {return next(new Error("can't find beer")); }
 
@@ -39,8 +40,10 @@ router.param('post', function(req, res, next, id) {
   })
 })
 
-router.get('/beers/:beer', function(req, res) {
-  res.json(req.beer);
+router.get('/beers/:beername', function(req, res) {
+  // Beer.find({ beername: '575666d3c4c18f0aba2496e0' }, function(err, beer) {
+  //   if (err) { next(err); }
+    res.json(req.beer);
 })
 
 

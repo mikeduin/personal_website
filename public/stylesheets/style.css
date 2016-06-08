@@ -326,7 +326,6 @@ playlists {
 
 playlists playlist {
   display: inline-block;
-  margin-bottom: 30px;
 }
 
 playlists name {
@@ -393,7 +392,7 @@ fridgeNote {
 }
 
 fridgeIndex {
-  margin-top: 40px;
+  margin-top: 20px;
   height: 800px;
   border-right: solid 1px #EEEEEE;
 }
@@ -463,15 +462,69 @@ beerContainer {
   border: solid 1px black;
 }
 
+beerContainer:hover {
+  border: solid 3px #7C0F09;
+  cursor: pointer;
+}
+
 beerContainer name {
   color: #7C0F09;
   font-size: 18px;
   font-weight: 800;
 }
 
+beerContainer a {
+  color: black;
+}
+
+beerContainer a:hover {
+  color: black;
+}
+
 beerImage img {
   margin-top: 5px;
   height: 80px;
+}
+
+beerDetail {
+  margin-top: 40px;
+  font-family: 'Raleway', serif;
+  background-color: #EBECED;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+beerDetail name {
+  color: #7C0F09;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+beerDetail brewery {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.cold {
+  color: #3984C5;
+  font-weight: 800;
+}
+
+.cellared {
+  color: #7C0F09;
+}
+
+beerDetail beerImage {
+  margin-top: 30px;
+}
+
+beerDetail beerImage img {
+  height: 260px;
+}
+
+beerDetail description {
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 /*About Styles*/
@@ -482,6 +535,16 @@ aboutHeader {
   border-radius: 4px;
   border-top: solid 5px black;
   border-bottom: solid 5px black;
+}
+
+aboutIntro {
+  margin-top: -20px;
+  height: 120px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #3A4DBB;
+  padding-top: 24px;
 }
 
 /*Professional Styles*/
