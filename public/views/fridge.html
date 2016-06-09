@@ -17,9 +17,9 @@
 </fridgeNote>
 
 <fridgeIndex class="col-md-6" id="searchBar">
-  <searchContainer class="col-md-12" ng-click="showSearch = true">
-    <div class="text-center">
-      CLICK TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
+  <searchContainer class="col-md-12">
+    <div class="text-center" ng-click="showSearch = !showSearch">
+      CLICK HERE TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
     </div>
     <searchOptions class="col-md-12" ng-show="showSearch === true">
       <search class="text-left">
@@ -61,8 +61,8 @@
     <i> Click Beer to See Details </i>
   </instructions>
 
-  <bottleList>
-    <beerContainer class="col-md-12" ng-click="vm.gotoBeer('searchBar')" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
+  <bottleList class="col-md-12">
+    <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar')" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
       <a ui-sref="home.fridge.beer({beername: beer.beername})">
         <beerImage class="col-md-offset-1 col-md-2">
           <img src="{{beer.image}}" alt="{{beer.name}}" />

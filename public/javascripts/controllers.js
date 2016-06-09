@@ -1,13 +1,13 @@
 angular
   .module('mySite')
   .run(['$anchorScroll', function($anchorScroll) {
-  $anchorScroll.yOffset = 80;   // always scroll by 50 extra pixels
-  }])
+  $anchorScroll.yOffset = 80;
+    }])
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
-  .controller('AlaController', ['$scope', '$state', AlaController])
+  .controller('AlaController', ['$scope', '$anchorScroll', '$location', AlaController])
   .controller('BeerController', ['$scope', '$anchorScroll', '$location', 'beerService', BeerController])
-  .controller('BeerDetailController', ['$scope', '$anchorScroll', '$location', '$stateParams', 'beerService', BeerDetailController])
+  .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
 
 
 function MainController ($scope, $state){
@@ -32,7 +32,7 @@ function BeerController ($scope, $anchorScroll, $location, beerService) {
   $scope.vm.sortOrder = '-ordered';
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
-  $scope.vm.gotoBeer = function(id) {
+  $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
     $anchorScroll();
@@ -52,7 +52,7 @@ function BeerController ($scope, $anchorScroll, $location, beerService) {
   $scope.getBreweries();
 }
 
-function BeerDetailController ($scope, $anchorScroll, $location, $stateParams, beerService) {
+function BeerDetailController ($scope, $stateParams, beerService) {
   $scope.beer = [];
   $scope.getBeer = function() {
     beerService.getBeer($stateParams.beername).then(function(beer){
@@ -62,8 +62,14 @@ function BeerDetailController ($scope, $anchorScroll, $location, $stateParams, b
   $scope.getBeer();
 }
 
-function AlaController ($scope, $state) {
-  $scope.$state = $state;
+function AlaController ($scope, $anchorScroll, $location) {
+  $scope.vm = {};
+  $scope.vm.gotoId = function(id) {
+    var old = $location.hash();
+    $location.hash(id);
+    $anchorScroll();
+    $location.hash(old);
+  };
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;

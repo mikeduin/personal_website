@@ -129,6 +129,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.hoops.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.hoops': {
+          templateUrl: 'views/ala/hoops/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.nbacdl', {
       url: '/nbacdl',
       views: {
@@ -174,6 +183,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.nbacdl.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.nbacdl': {
+          templateUrl: 'views/ala/nbacdl/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.baseball', {
       url: '/baseball',
       views: {
@@ -210,6 +228,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.baseball.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.baseball': {
+          templateUrl: 'views/ala/baseball/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.football', {
       url: '/football',
       views: {
@@ -242,6 +269,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'records@home.ala.football': {
           templateUrl: 'views/ala/football/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.football.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.football': {
+          templateUrl: 'views/ala/football/podium.html',
           controller: 'AlaController'
         }
       }
@@ -287,6 +323,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'records@home.ala.ncaapickem': {
           templateUrl: 'views/ala/ncaapickem/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.ncaapickem.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.ncaapickem': {
+          templateUrl: 'views/ala/ncaapickem/podium.html',
           controller: 'AlaController'
         }
       }
@@ -381,6 +426,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.btb.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.btb': {
+          templateUrl: 'views/ala/btb/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.confidence', {
       url: '/nflconfidence',
       views: {
@@ -426,6 +480,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.confidence.podium', {
+      url: '/records',
+      views: {
+        'records@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.madness', {
       url: '/madness',
       views: {
@@ -463,6 +526,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('home.ala.madness.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.madness': {
+          templateUrl: 'views/ala/madness/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.madness.podium', {
       url: '/records',
       views: {
         'records@home.ala.madness': {

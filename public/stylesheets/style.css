@@ -104,8 +104,9 @@ alaLinks a:hover {
 alaSidebar {
   margin-top: 30px;
   padding-left: 0;
-  display: inline-block;
+  height: 500px;
   border-right: solid 5px black;
+  overflow: scroll;
 }
 
 alaSidebar ul {
@@ -394,7 +395,6 @@ fridgeNote {
 fridgeIndex {
   margin-top: 20px;
   height: 800px;
-  border-right: solid 1px #EEEEEE;
 }
 
 searchContainer {
@@ -447,7 +447,11 @@ instructions {
 }
 
 bottleList {
-  margin-top: 20px;
+  padding-top: 5px;
+  height: 800px;
+  overflow: scroll;
+  border: solid 5px #7C0F09;
+  border-radius: 15px;
 }
 
 beerContainer {
@@ -490,6 +494,7 @@ beerDetail {
   background-color: #EBECED;
   border-radius: 20px;
   display: inline-block;
+  border: solid 1px #7C0F09;
 }
 
 
