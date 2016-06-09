@@ -36,7 +36,6 @@ function beerService ($http) {
       .then(function(results) {
         var breweries = [];
         var beers = results.data;
-        console.log(beers);
         for (var i in beers) {
           for (var j in beers[i].brewery) {
             if (breweries.indexOf(beers[i].brewery) === -1) {
@@ -44,7 +43,6 @@ function beerService ($http) {
             }
           }
         }
-        console.log(breweries);
         return breweries;
       })
     }

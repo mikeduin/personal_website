@@ -9,7 +9,7 @@
     {{beer.style}}  <b> | </b> {{beer.abv}}% ABV <b> | </b> {{beer.size}} <b> | </b> ${{beer.price}}
   </div>
   <div class="row">
-    In stock: {{beer.quantity}} <ng-pluralize count="beer.quantity" when="{'1': 'bottle', 'other':'bottles'}"></ng-pluralize>
+    Mike has {{beer.quantity}} <ng-pluralize count="beer.quantity" when="{'1': 'bottle', 'other':'bottles'}"></ng-pluralize>
   </div>
   <div class="row">
     Ordered: {{beer.ordered | date: 'longDate'}} <b> | </b>
