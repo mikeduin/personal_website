@@ -27,9 +27,25 @@ function beerService ($http) {
     getBeer: function(beername) {
       return $http.get('/beers/' + beername)
       .then(function(results) {
-        console.log(results.data);
         var beer = results.data;
         return beer
+      })
+    },
+    getBreweries: function() {
+      return $http.get('/beers')
+      .then(function(results) {
+        var breweries = [];
+        var beers = results.data;
+        console.log(beers);
+        for (var i in beers) {
+          for (var j in beers[i].brewery) {
+            if (breweries.indexOf(beers[i].brewery) === -1) {
+              breweries.push(beers[i].brewery)
+            }
+          }
+        }
+        console.log(breweries);
+        return breweries;
       })
     }
   }

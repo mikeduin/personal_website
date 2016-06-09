@@ -428,7 +428,7 @@ search div {
 }
 
 fridgeIndex input {
-  width: 300px;
+  width: 240px;
   margin-left: 20px;
 }
 
@@ -448,8 +448,6 @@ instructions {
 
 bottleList {
   margin-top: 20px;
-  overflow: auto;
-  height: 500px;
 }
 
 beerContainer {
@@ -494,6 +492,7 @@ beerDetail {
   display: inline-block;
 }
 
+
 beerDetail name {
   color: #7C0F09;
   font-size: 32px;
@@ -519,12 +518,22 @@ beerDetail beerImage {
 }
 
 beerDetail beerImage img {
-  height: 260px;
+  height: 200px;
 }
 
 beerDetail description {
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.fridgeme {
+  background-color: #7C0F09;
+  color: white;
+  font-weight: bold;
+}
+
+searchContainer sort {
+  text-decoration: underline;
 }
 
 /*About Styles*/

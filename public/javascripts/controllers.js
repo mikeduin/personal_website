@@ -1,10 +1,14 @@
 angular
   .module('mySite')
+  .run(['$anchorScroll', function($anchorScroll) {
+  $anchorScroll.yOffset = 80;   // always scroll by 50 extra pixels
+  }])
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
   .controller('AlaController', ['$scope', '$state', AlaController])
-  .controller('BeerController', ['$scope', '$state', '$stateParams', 'beerService', BeerController])
-  .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
+  .controller('BeerController', ['$scope', '$anchorScroll', '$location', 'beerService', BeerController])
+  .controller('BeerDetailController', ['$scope', '$anchorScroll', '$location', '$stateParams', 'beerService', BeerDetailController])
+
 
 function MainController ($scope, $state){
   $scope.$state = $state;
@@ -22,30 +26,40 @@ function MusicController ($scope, $state, spotifyService) {
   // $scope.getPlaylists();
 }
 
-function BeerController ($scope, $state, $stateParams, beerService) {
+function BeerController ($scope, $anchorScroll, $location, beerService) {
   $scope.showSearch = false;
-  $scope.beers = [];
+  $scope.vm = {};
+  $scope.vm.sortOrder = '-ordered';
+  $scope.vm.beers = [];
+  $scope.vm.breweries = [];
+  $scope.vm.gotoBeer = function(id) {
+    var old = $location.hash();
+    $location.hash(id);
+    $anchorScroll();
+    $location.hash(old);
+  };
   $scope.getBeers = function() {
     beerService.getBeers().then(function(beers){
-      $scope.beers = beers;
+      $scope.vm.beers = beers;
     })
-  }
+  };
   $scope.getBeers();
-
-
+  $scope.getBreweries = function() {
+    beerService.getBreweries().then(function(breweries){
+      $scope.vm.breweries = breweries;
+    })
+  };
+  $scope.getBreweries();
 }
 
-function BeerDetailController ($scope, $stateParams, beerService) {
+function BeerDetailController ($scope, $anchorScroll, $location, $stateParams, beerService) {
   $scope.beer = [];
   $scope.getBeer = function() {
     beerService.getBeer($stateParams.beername).then(function(beer){
-      console.log(beer);
-      console.log(beer[0].name);
       $scope.beer = beer[0];
     })
   }
   $scope.getBeer();
-  console.log($scope.beer)
 }
 
 function AlaController ($scope, $state) {

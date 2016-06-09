@@ -1,4 +1,4 @@
-<beerDetail class="col-md-6 text-center">
+<beerDetail class="col-md-6 text-center fixed">
   <div class="row">
     <name> {{beer.name}} </name>
   </div>
@@ -17,6 +17,9 @@
       <span ng-if="beer.cold !== true"> This beer is currently <span class="cellared"> cellared</i> </span> </span>
   </div>
   <div class="row">
+    <button ng-if="beer.cold !== true" type="button" name="button" class="btn fridgeme"> FRIDGE ME!</button>
+  </div>
+  <div class="row">
     <beerImage class="col-md-3">
       <img src="{{beer.image}}" alt="" />
     </beerImage>
@@ -24,9 +27,4 @@
       <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{beer.description}}"
     </description>
   </div>
-
-
-
-
-
 </beerDetail>

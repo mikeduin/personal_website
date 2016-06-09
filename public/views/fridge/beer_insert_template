@@ -1,5 +1,5 @@
 db.mikesFridge.insert({
-  name: '',
+  name: "",
   beername: '',
   brewery: '',
   style: '',
@@ -10,5 +10,20 @@ db.mikesFridge.insert({
   price: ,
   ordered: new Date("201x-xx-xx"),
   size: '',
-  description: ''
+  description: ""
+});
+
+db.mikesFridge.insert({
+  name: "Cider Master Reserve Batch No. 1",
+  beername: 'cidermasterreserve',
+  brewery: '2 Towns',
+  style: 'Cider',
+  abv: 6.9,
+  cold: false,
+  quantity: 1,
+  image: 'http://3.bp.blogspot.com/-Xk4P82sL5KU/VXeoUqf9RwI/AAAAAAAAI2g/lXCey0JP7L8/s1600/IMG_6222.JPG',
+  price: 14.99,
+  ordered: new Date("2015-06-12"),
+  size: '750m bottle',
+  description: "Pursuing excellence sometimes requires breaking all the rules, and pulling all the stops. Nothing exemplifies this more than 2 Towns Cider Master Reserve Batch No. 1. In a bold move, 2 Towns marries four different barrel vintages with four different heirloom apple varieties to create the champagne of the cider world. But an intense focus on barreling and a limited supply of select artisan apples means only 300 cases of these beauties were made – and the entire craft community has to share them. The vibrant elegance and dry fruit notes of Batch No. 1 herald their diverse barrel ancestry of Rum, Bourbon, Bordeaux and Brandy – each sip is an exquisite dive into uncommon fruity depths and complex vinous flavor. This masterful barrel select blend builds off the trademark dryness of a traditional English-style cider and transcends into apple divinity. Plump Bramley Seedlings deliver their favored tartness, revered Ashmead Kernels and classic Newtown Pippins bring a deviled sweetness; Chisel Jersey apples insert a genius spark of bitter accents. Bordeaux and Brandy leave the strongest imprint on the effervescent body, each lending a buttery oak richness that stretches long across the palate. However, after a glass or two the crisp, apple soaked skin of Bourbon arrives like a sweet, boozy Hallelujah. A sophisticated cider of this high caliber is usually reserved for big bang celebrations split amongst a crowd but you want more than a measly pour of this masterpiece – the profound intricacies of Batch No. 1 deserve to be savored solo. "
 });
