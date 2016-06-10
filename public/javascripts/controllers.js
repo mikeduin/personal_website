@@ -125,6 +125,23 @@ function AlaController ($scope, $anchorScroll, $location, alaService) {
     })
   };
   $scope.getPickemPodium();
+
+  $scope.vm.btbPodium = {};
+  $scope.getBtBPodium = function() {
+    alaService.getBtBPodium().then(function(results){
+      $scope.vm.btbPodium = results;
+    })
+  };
+  $scope.getBtBPodium();
+
+  $scope.vm.confidencePodium = {};
+  $scope.getConfidencePodium = function() {
+    alaService.getConfidencePodium().then(function(results){
+      $scope.vm.confidencePodium = results;
+    })
+  };
+  $scope.getConfidencePodium();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;

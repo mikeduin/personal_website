@@ -481,10 +481,10 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('home.ala.confidence.podium', {
-      url: '/records',
+      url: '/podium',
       views: {
-        'records@home.ala.confidence': {
-          templateUrl: 'views/ala/confidence/records.html',
+        'podium@home.ala.confidence': {
+          templateUrl: 'views/ala/confidence/podium.html',
           controller: 'AlaController'
         }
       }
