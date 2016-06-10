@@ -5,7 +5,7 @@ angular
     }])
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
-  .controller('AlaController', ['$scope', '$anchorScroll', '$location', AlaController])
+  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', AlaController])
   .controller('BeerController', ['$scope', '$anchorScroll', '$location', 'beerService', BeerController])
   .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
 
@@ -62,7 +62,7 @@ function BeerDetailController ($scope, $stateParams, beerService) {
   $scope.getBeer();
 }
 
-function AlaController ($scope, $anchorScroll, $location) {
+function AlaController ($scope, $anchorScroll, $location, alaService) {
   $scope.vm = {};
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
@@ -70,6 +70,61 @@ function AlaController ($scope, $anchorScroll, $location) {
     $anchorScroll();
     $location.hash(old);
   };
+  $scope.vm.hoopsPodium = {};
+  $scope.getHoopsPodium = function() {
+    alaService.getHoopsPodium().then(function(results){
+      $scope.vm.hoopsPodium = results;
+    })
+  };
+  $scope.getHoopsPodium();
+
+  $scope.vm.cdlPodium = {};
+  $scope.getCdlPodium = function() {
+    alaService.getCdlPodium().then(function(results){
+      $scope.vm.cdlPodium = results;
+    })
+  };
+  $scope.getCdlPodium();
+
+  $scope.vm.baseballPodium = {};
+  $scope.getBaseballPodium = function() {
+    alaService.getBaseballPodium().then(function(results){
+      $scope.vm.baseballPodium = results;
+    })
+  };
+  $scope.getBaseballPodium();
+
+  $scope.vm.SCFootballPodium = {};
+  $scope.getSCFootballPodium = function() {
+    alaService.getSCFootballPodium().then(function(results){
+      $scope.vm.SCFootballPodium = results;
+    })
+  };
+  $scope.getSCFootballPodium();
+
+  $scope.vm.LOFootballPodium = {};
+  $scope.getLOFootballPodium = function() {
+    alaService.getLOFootballPodium().then(function(results){
+      $scope.vm.LOFootballPodium = results;
+    })
+  };
+  $scope.getLOFootballPodium();
+
+  $scope.vm.GUFootballPodium = {};
+  $scope.getGUFootballPodium = function() {
+    alaService.getGUFootballPodium().then(function(results){
+      $scope.vm.GUFootballPodium = results;
+    })
+  };
+  $scope.getGUFootballPodium();
+
+  $scope.vm.pickemPodium = {};
+  $scope.getPickemPodium = function() {
+    alaService.getPickemPodium().then(function(results){
+      $scope.vm.pickemPodium = results;
+    })
+  };
+  $scope.getPickemPodium();
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;

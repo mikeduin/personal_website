@@ -1,0 +1,74 @@
+[
+  {
+    "season": "2015",
+    "first_team": "Wilfork on the First Date",
+    "first_owner": "Billy Schreyer",
+    "second_team": "The X-Factor",
+    "second_owner": "Mike Duin",
+    "third_team": "Lazar Beam",
+    "third_owner": "Mike Lazar"
+  },
+  {
+    "season": "2014",
+    "first_team": "50 Shades of Gay",
+    "first_owner": "Andrew Gay",
+    "second_team": "Blazin' Hits",
+    "second_owner": "Alex Rosenbloom",
+    "third_team": "Father Figures",
+    "third_owner": "Steve Duin"
+  },
+  {
+    "season": "2013",
+    "first_team": "Ballbusters",
+    "first_owner": "Jason Steinberg",
+    "second_team": "Springfield Atoms",
+    "second_owner": "Kyle Davis",
+    "third_team": "Ghost of Kyron Horman",
+    "third_owner": "Andy Popp"
+  },
+  {
+    "season": "2012",
+    "first_team": "Drunk Kaners",
+    "first_owner": "Mike Lazar",
+    "second_team": "Ben There Raped That",
+    "second_owner": "Joe Simich",
+    "third_team": "Ballbusters",
+    "third_owner": "Jason Steinberg"
+  },
+  {
+    "season": "2011",
+    "first_team": "Team Schreyer",
+    "first_owner": "Billy Schreyer",
+    "second_team": "Father Figures",
+    "second_owner": "Steve Duin",
+    "third_team": "Dirty South FootBallin",
+    "third_owner": "Adam Brady"
+  },
+  {
+    "season": "2010",
+    "first_team": "The X-Factor",
+    "first_owner": "Mike Duin",
+    "second_team": "Blazin' Hits",
+    "second_owner": "Alex Rosenbloom",
+    "third_team": "Lil' Ripsta's Harmony Souljaz",
+    "third_owner": "Mike Shoff"
+  },
+  {
+    "season": "2009",
+    "first_team": "Dirty South Footballin",
+    "first_owner": "Adam Brady",
+    "second_team": "Rowdy Roddy White",
+    "second_owner": "Kyle Davis",
+    "third_team": "Somewhere Over Dwayne Bowe",
+    "third_owner": "Joe Simich"
+  },
+  {
+    "season": "2008",
+    "first_team": "Rudi's Luggage",
+    "first_owner": "Kyle Davis",
+    "second_team": "Bandwagon Butcher",
+    "second_owner": "Andy Popp",
+    "third_team": "Lil' Ripsta's Harmony Souljaz",
+    "third_owner": "Mike Shoff"
+  }
+]

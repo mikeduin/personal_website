@@ -2,6 +2,7 @@ angular
   .module('mySite')
   .factory('spotifyService', spotifyService)
   .factory('beerService', beerService)
+  .factory('alaService', alaService)
 
 function spotifyService ($http) {
   return {
@@ -10,6 +11,64 @@ function spotifyService ($http) {
       .then(function(results) {
         var playlists = results.data.data;
         return playlists
+      })
+    }
+  }
+}
+
+function alaService ($http) {
+  return {
+    getHoopsPodium: function() {
+      return $http.get('javascripts/alapodiums/hoops.json')
+      .then(function(results){
+        var podium = results.data;
+        return podium
+      })
+    },
+    getCdlPodium: function() {
+      return $http.get('javascripts/alapodiums/cdl.json')
+      .then(function(results){
+        var podium = results.data;
+        return podium
+      })
+    },
+    getBaseballPodium: function() {
+      return $http.get('javascripts/alapodiums/baseball.json')
+      .then(function(results){
+        var podium = results.data;
+        return podium
+      })
+    },
+    getPickemPodium: function() {
+      return $http.get('javascripts/alapodiums/ncaapickem.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
+      })
+    },
+    getGUFootballPodium: function() {
+      return $http.get('javascripts/alapodiums/football_gu.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
+      })
+    },
+    getLOFootballPodium: function() {
+      return $http.get('javascripts/alapodiums/football_lo.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
+      })
+    },
+    getSCFootballPodium: function() {
+      return $http.get('javascripts/alapodiums/football_usc.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
       })
     }
   }

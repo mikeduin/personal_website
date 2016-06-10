@@ -105,7 +105,9 @@ alaSidebar {
   margin-top: 30px;
   padding-left: 0;
   height: 500px;
-  border-right: solid 5px black;
+  border-right: solid 3px #DEDFE1;
+  border-top: solid 3px #DEDFE1;
+  border-bottom: solid 3px #DEDFE1;
   overflow: scroll;
 }
 
@@ -288,6 +290,41 @@ rankings p {
 rankings iframe {
   margin-top: 30px;
 }
+
+podium > table {
+  border: solid 5px black;
+  margin-bottom: 40px;
+  margin-top: -10px;
+}
+
+podium th {
+  font-size: 24px;
+  background-color: #DCDCDD;
+}
+
+.podium {
+  border: solid 2px black;
+  padding-left: 5px;
+}
+
+podium team {
+  color: #337AB7;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+gameDetails table {
+  border: none;
+}
+
+league {
+  padding-bottom: 10px;
+  font-size: 28px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  color: #DC5623;
+}
+
 
 /*Music Styles*/
 

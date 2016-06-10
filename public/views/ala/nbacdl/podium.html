@@ -1,0 +1,28 @@
+<podium class="col-md-10">
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> 1st Place </th>
+        <th class="podium"> 2nd Place </th>
+        <th class="podium"> 3rd Place </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.cdlPodium" class="podium">
+        <td style="font-size: 18px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> ({{results.first_owner}})
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> ({{results.second_owner}})
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> ({{results.third_owner}})
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</podium>
