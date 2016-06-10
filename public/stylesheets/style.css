@@ -1,4 +1,4 @@
-
+/*
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -7,43 +7,62 @@
 .row.no-gutters > [class*=" col-"] {
   padding-right: 0;
   padding-left: 0;
+}*/
+
+
+.ng-enter {
+    opacity: 0;
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+  }
+
+.ng-enter-active {
+    opacity: 1;
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+  }
+
+
+/*
+.ng-leave {
+  opacity: 1;
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
 }
+
+.ng-leave.ng-leave-active {
+  opacity: 0;
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}*/
 
 /*Navbar Styles*/
 
 .nav {
   padding: 0 30px 0 50px;
   background-color: white;
-}
-
-.navAlt {
-  background-color: black;
-  color: white;
-}
-
-.nav a {
-  color: black;
-  margin-bottom: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .nav a:hover {
-  color: #91B1D0;
+  background-color: inherit;
+  color: inherit;
 }
 
 .nav ul li {
-  margin-top: 3px
+  margin-top: 2px
 }
 
+/*
 .nav ul li a:hover {
   color: #55ACEE;
-}
+}*/
 
 .navbar-brand span {
   font-size: 30px;
-}
-
-.bold {
-  font-weight: bold;
+  color: black;
 }
 
 .navbar ul a {
@@ -57,9 +76,111 @@
   padding-right: 2%;
 }
 
+.navlink {
+  color: black;
+}
+
 .spacer {
   margin-top: 70px;
 }
+
+.nav>li>a {
+  display:inline-block;
+  text-align:center;
+}
+
+.nav>li>a:focus {
+  background-color: transparent;
+}
+
+.nav>li>a:hover {
+  background-color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav>li>a:after {
+  display:block;
+  content:attr(title);
+  font-size:16px;
+  font-weight: bold;
+  height:1px;
+  color:transparent;
+  overflow:hidden;
+  visibility:hidden;
+  margin-bottom:-1px;
+}
+
+#aboutAnchor:focus {
+  background-color: #24307A;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.aboutBack {
+  background-color: #24307A;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+#workAnchor:focus {
+  background-color: #2F5032;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.workBack {
+  background-color: #2F5032;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+#alaAnchor:focus {
+  background-color: #000000;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.alaBack {
+  background-color: #000000;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+#musicAnchor:focus {
+  background-color: #452562;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.musicBack {
+  background-color: #452562;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+#fridgeAnchor:focus {
+  background-color: #7C0F09;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.fridgeBack {
+  background-color: #7C0F09;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
 
 /*New Splashpage Styles*/
 
@@ -104,11 +225,10 @@ alaLinks a:hover {
 alaSidebar {
   margin-top: 30px;
   padding-left: 0;
-  height: 500px;
+  display: inline-block;
   border-right: solid 3px #DEDFE1;
   border-top: solid 3px #DEDFE1;
   border-bottom: solid 3px #DEDFE1;
-  overflow: scroll;
 }
 
 alaSidebar ul {
@@ -226,6 +346,10 @@ buyins prizeDiv {
 .exptwo {
   margin-top: 15px;
   margin-bottom: 40px;
+}
+
+.fa-microphone {
+  color: #C5C6C7;
 }
 
 /*ALA Game Page Styles*/

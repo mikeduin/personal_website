@@ -43,13 +43,13 @@
         <div class="">
           Sort by:
             <i class="fa fa-beer" aria-hidden="true"></i>
-            <sort ng-click="vm.sortOrder = '-ordered'"> newest arrivals</sort>
+            <sort ng-click="vm.sortOrder = '-ordered'; vm.topOfBeerList()"> newest arrivals</sort>
             <span> &nbsp &nbsp </span>
             <i class="fa fa-beer" aria-hidden="true"></i>
-            <sort ng-click="vm.sortOrder = '-abv'"> ABV (high)</sort>
+            <sort ng-click="vm.sortOrder = '-abv'; vm.topOfBeerList()"> ABV (high)</sort>
             <span> &nbsp &nbsp </span>
             <i class="fa fa-beer" aria-hidden="true"></i>
-            <sort ng-click="vm.sortOrder = 'abv'"> ABV (low)</sort>
+            <sort ng-click="vm.sortOrder = 'abv'; vm.topOfBeerList()"> ABV (low)</sort>
             <!-- Why doesn't this work below? -->
             <!-- <closeSearch ng-click="showSearch = false"> Close Search Box </closeSearch> -->
         </div>
@@ -61,7 +61,7 @@
     <i> Click Beer to See Details </i>
   </instructions>
 
-  <bottleList class="col-md-12">
+  <bottleList class="col-md-12" id="bottleList">
     <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar')" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
       <a ui-sref="home.fridge.beer({beername: beer.beername})">
         <beerImage class="col-md-offset-1 col-md-2">
@@ -76,6 +76,6 @@
           </beerInfo>
       </a>
     </beerContainer>
-  <bottleList>
+  </bottleList>
 </fridgeIndex>
 <div ui-view="beerdisplay"> </div>
