@@ -50,6 +50,10 @@ function BeerController ($scope, $anchorScroll, $location, beerService) {
     })
   };
   $scope.getBreweries();
+  $scope.vm.topOfBeerList = function(){
+    var bottleList = document.getElementById('bottleList');
+    bottleList.scrollTop=0;
+  }
 }
 
 function BeerDetailController ($scope, $stateParams, beerService) {
