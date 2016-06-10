@@ -1,0 +1,89 @@
+<podium class="col-md-10">
+  <league class="col-md-12 text-center">
+    LO Division
+  </league>
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> 1st Place </th>
+        <th class="podium"> 2nd Place </th>
+        <th class="podium"> 3rd Place </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.LOFootballPodium" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.first_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.first_owner"> ({{results.third_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-md-12 text-center">
+    USC Division
+  </league>
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> 1st Place </th>
+        <th class="podium"> 2nd Place </th>
+        <th class="podium"> 3rd Place </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.SCFootballPodium" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.first_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.first_owner"> ({{results.third_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-md-12 text-center">
+    GU Division
+  </league>
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> 1st Place </th>
+        <th class="podium"> 2nd Place </th>
+        <th class="podium"> 3rd Place </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.GUFootballPodium" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.first_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.first_owner"> ({{results.third_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</podium>

@@ -1,0 +1,74 @@
+[
+  {
+    "season": "2015",
+    "first_team": "It Burns When I Puig",
+    "first_owner": "Ryan Rappeport",
+    "second_team": "Blazin' Hits",
+    "second_owner": "Alex Rosenbloom",
+    "third_team": "Frumkin's Package",
+    "third_owner": "Jon Goldberg"
+  },
+  {
+    "season": "2014",
+    "first_team": "The X-Factor",
+    "first_owner": "Mike Duin",
+    "second_team": "Team Handman",
+    "second_owner": "Jason Handman",
+    "third_team": "Blazin' Hits",
+    "third_owner": "Alex Rosenbloom"
+  },
+  {
+    "season": "2013",
+    "first_team": "Blazin' Hits",
+    "first_owner": "Alex Rosenbloom",
+    "second_team": "The X-Factor",
+    "second_owner": "Mike Duin",
+    "third_team": "Brent Huckelberry",
+    "third_owner": "Justin Zelik"
+  },
+  {
+    "season": "2012",
+    "first_team": "Shelbyville Sharks",
+    "first_owner": "Kyle Davis",
+    "second_team": "The X-Factor",
+    "second_owner": "Mike Duin",
+    "third_team": "Fat Betty Draper",
+    "third_owner": "Ryan Rappeport"
+  },
+  {
+    "season": "2011",
+    "first_team": "FUPA Fan Club",
+    "first_owner": "Wilfred Man",
+    "second_team": "The X-Factor",
+    "second_owner": "Mike Duin",
+    "third_team": "Stacks on Stacks on Stacks",
+    "third_owner": "Bobby Weinberger"
+  },
+  {
+    "season": "2010",
+    "first_team": "Reggie's Heisman",
+    "first_owner": "Mike Marty",
+    "second_team": "Johnson and Johnson",
+    "second_owner": "Dan Goldman",
+    "third_team": "The X-Factor",
+    "third_owner": "Mike Duin"
+  },
+  {
+    "season": "2009",
+    "first_team": "White CheeseCakes",
+    "first_owner": "Bobby Weinberger",
+    "second_team": "Bolo Yeung",
+    "second_owner": "Jon Goldberg",
+    "third_team": "Brent Huckelberry",
+    "third_owner": "Justin Zelik"
+  },
+  {
+    "season": "2008",
+    "first_team": "Santonio Holmes' Weed",
+    "first_owner": "Jordan Spektor",
+    "second_team": "Brent Huckelberry",
+    "second_owner": "Justin Zelik",
+    "third_team": "Roxy Returns",
+    "third_owner": "Brendan Meyer"
+  }
+]
