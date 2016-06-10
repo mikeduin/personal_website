@@ -47,6 +47,14 @@ function alaService ($http) {
         return podium
       })
     },
+    getConfidencePodium: function() {
+      return $http.get('javascripts/alapodiums/confidence.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
+      })
+    },
     getGUFootballPodium: function() {
       return $http.get('javascripts/alapodiums/football_gu.json')
       .then(function(results){
@@ -65,6 +73,14 @@ function alaService ($http) {
     },
     getSCFootballPodium: function() {
       return $http.get('javascripts/alapodiums/football_usc.json')
+      .then(function(results){
+        var podium = results.data;
+        console.log(podium);
+        return podium
+      })
+    },
+    getBtBPodium: function() {
+      return $http.get('javascripts/alapodiums/btb.json')
       .then(function(results){
         var podium = results.data;
         console.log(podium);

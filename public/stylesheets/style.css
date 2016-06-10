@@ -188,10 +188,6 @@ alaSidebar a:hover:before{transform: scaleX(1);}*/
 
 /*ALA Blog + Buyins Styles*/
 
-blog div {
-  margin-top: 40px;
-}
-
 blog div p {
   font-family: 'Raleway', sans-serif;
   font-size: 92px;
@@ -385,6 +381,10 @@ playlist description {
   font-size: 20px;
   font-weight: 400;
   font-family: 'Raleway', sans-serif;
+}
+
+.fa-headphones {
+  color: #C5C6C7;
 }
 
 /*Fridge Styles*/
