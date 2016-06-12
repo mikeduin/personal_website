@@ -43,7 +43,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/ncaapickem.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     },
@@ -51,7 +50,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/confidence.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     },
@@ -59,7 +57,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/football_gu.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     },
@@ -67,7 +64,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/football_lo.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     },
@@ -75,7 +71,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/football_usc.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     },
@@ -83,7 +78,6 @@ function alaService ($http) {
       return $http.get('javascripts/alapodiums/btb.json')
       .then(function(results){
         var podium = results.data;
-        console.log(podium);
         return podium
       })
     }
