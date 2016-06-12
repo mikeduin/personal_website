@@ -140,14 +140,14 @@
 }
 
 #alaAnchor:focus {
-  background-color: #000000;
+  background-color: #3984C5;
   color: white;
   border-radius: 10px;
   font-weight: 800;
 }
 
 .alaBack {
-  background-color: #000000;
+  background-color: #3984C5;
   color: white;
   border-radius: 10px;
   font-weight: 800;
@@ -226,14 +226,25 @@ alaSidebar {
   margin-top: 30px;
   padding-left: 0;
   display: inline-block;
-  border-right: solid 3px #DEDFE1;
-  border-top: solid 3px #DEDFE1;
-  border-bottom: solid 3px #DEDFE1;
+  border-right: solid 8px #DEDFE1;
+  border-top: solid 8px #DEDFE1;
+  border-bottom: solid 8px #DEDFE1;
 }
 
 alaSidebar ul {
   list-style-type: none;
   margin-left: -40px;
+}
+
+alaSidebar ul li:hover {
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+alaSidebar ul li a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 alaSidebar ul li {
@@ -275,7 +286,7 @@ alaSidebar a {
 }
 
 .activeGame {
-  color: #337AB7;
+  background-color: #337AB7;
 }
 
 .gamepage {
@@ -362,9 +373,27 @@ gameTitle {
   color: #DC5623;
 }
 
+.gameTitle {
+  margin-bottom: -10px;
+}
+
 gameTitle hr {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+gameTitle defending {
+  font-size: 16px;
+  color: black;
+  font-weight: 400;
+}
+
+gameTitle defending div {
+  margin-bottom: 10px;
+}
+
+gameTitle defending span {
+  font-size: 20px;
 }
 
 gameNav ul {
@@ -605,14 +634,16 @@ instructions {
   color: #7C0F09;
   font-family: 'Raleway', sans-serif;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
 bottleList {
   padding-top: 5px;
   height: 800px;
   overflow: scroll;
-  border: solid 5px #7C0F09;
+  border: solid 5px #540705;
   border-radius: 15px;
+  background-color: #7C0F09;
 }
 
 beerContainer {

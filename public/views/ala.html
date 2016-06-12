@@ -4,18 +4,18 @@
     </alaLead>
     <alaLinks class="row">
       <div class="col-md-offset-6">
-        <a ui-sref=""> About </a>
-        <a ui-sref="home.ala.blog"> Blog </a>
-        <a ui-sref=""> Players </a>
-        <a ui-sref=""> Photos </a>
-        <a ui-sref=""> Contact </a>
+        <a ui-sref="">About</a>
+        <a ui-sref="home.ala.blog"> Blog</a>
+        <a ui-sref="">Players</a>
+        <a ui-sref="">Photos</a>
+        <a ui-sref="">Contact</a>
       </div>
     </alaLinks>
 </alaHeader>
 
 <alaSidebar class="col-md-2"</a>
   <ul>
-    <li ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': showHoops === true}"> Fantasy NBA </a></li>
+    <li ng-class="{'activeGame': $state.includes('home.ala.hoops')}" ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.png"/> <a > Fantasy NBA </a></li>
       <ul ng-show="showFantasyNBA === true" class="multigame">
         <li class="col-md-offset-2 submenu" ng-click="showAlaHoops = !showAlaHoops" style="margin-top: -10px"> <a class="subleague" > ALA Fantasy Hoops </a> </li>
           <ul ng-show="showAlaHoops === true">

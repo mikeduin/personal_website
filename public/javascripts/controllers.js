@@ -16,14 +16,9 @@ function MainController ($scope, $state){
 
 function MusicController ($scope, $state, spotifyService) {
   $scope.$state = $state;
-  //
-  // $scope.getPlaylists = function() {
-  //   spotifyService.getPlaylists().then(function(playlists){
-  //     $scope.playlists = playlists;
-  //     console.log(playlists)
-  //   })
-  // }
-  // $scope.getPlaylists();
+
+
+
 }
 
 function BeerController ($scope, $anchorScroll, $location, beerService) {
@@ -66,7 +61,8 @@ function BeerDetailController ($scope, $stateParams, beerService) {
   $scope.getBeer();
 }
 
-function AlaController ($scope, $anchorScroll, $location, alaService) {
+function AlaController ($scope, $anchorScroll, $location, alaService, $state) {
+  $scope.$state = $state;
   $scope.vm = {};
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
