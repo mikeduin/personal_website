@@ -8,6 +8,11 @@ angular
   .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', AlaController])
   .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', 'beerService', BeerController])
   .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
+  .filter('rawHtml', ['$sce', function($sce){
+    return function(val) {
+      return $sce.trustAsHtml(val);
+    };
+  }])
 
 
 function MainController ($scope, $state){
@@ -71,6 +76,17 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state) {
     $anchorScroll();
     $location.hash(old);
   };
+  $scope.vm.blogposts = [];
+  $scope.getBlogposts = function() {
+    alaService.getBlogposts().then(function(blogposts){
+      $scope.vm.blogposts = blogposts;
+      console.log($scope.vm.blogposts);
+    })
+  };
+  $scope.getBlogposts();
+  // $scope.myPost= $sce.trustAsHtml(post.post);
+
+
   $scope.vm.hoopsPodium = {};
   $scope.getHoopsPodium = function() {
     alaService.getHoopsPodium().then(function(results){

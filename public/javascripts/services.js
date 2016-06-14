@@ -80,6 +80,13 @@ function alaService ($http) {
         var podium = results.data;
         return podium
       })
+    },
+    getBlogposts: function() {
+      return $http.get('/blogposts')
+      .then(function(results) {
+        var blogposts = results.data;
+        return blogposts
+      })
     }
   }
 }
