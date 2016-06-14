@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/mikesFridge');
 require('./models/Beers');
+require('./models/Blogposts');
 
 var db = mongoose.connection;
 

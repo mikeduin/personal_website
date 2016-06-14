@@ -9,12 +9,21 @@ router.get('/', function(req, res, next) {
 
 var mongoose = require('mongoose');
 var Beer = mongoose.model('Beer');
+var Blogpost = mongoose.model('Blogpost');
 
 router.get('/beers', function(req, res, next) {
   Beer.find(function(err, beers) {
     if (err) { next(err); }
 
     res.json(beers);
+  })
+})
+
+router.get('/blogposts', function(req, res, next) {
+  Blogpost.find(function(err, blogposts) {
+    if (err) { next(err); }
+
+    res.json(blogposts);
   })
 })
 
@@ -25,6 +34,16 @@ router.post('/beers', function(req, res, next) {
     if (err) { return next(err); }
 
     res.json(beer)
+  })
+})
+
+router.post('/blogposts', function(req, res, next) {
+  var blogpost = new Blogpost(req.body)
+
+  blogpost.save(function(err, blogpost) {
+    if (err) { return next(err); }
+
+    res.json(blogpost)
   })
 })
 
@@ -41,8 +60,6 @@ router.param('beername', function(req, res, next, beername) {
 })
 
 router.get('/beers/:beername', function(req, res) {
-  // Beer.find({ beername: '575666d3c4c18f0aba2496e0' }, function(err, beer) {
-  //   if (err) { next(err); }
     res.json(req.beer);
 })
 
