@@ -543,4 +543,31 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.fifa', {
+      url: '/fifa',
+      views: {
+        'fifa@home.ala': {
+          templateUrl: 'views/ala/fifa/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.pga', {
+      url: '/pgamajors',
+      views: {
+        'pga@home.ala': {
+          templateUrl: 'views/ala/pga/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbaplayoffs', {
+      url: '/nbaplayoffs',
+      views: {
+        'nbaplayoffs@home.ala': {
+          templateUrl: 'views/ala/nbaplayoffs/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
   }
