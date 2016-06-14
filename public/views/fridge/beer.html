@@ -1,4 +1,4 @@
-<beerDetail class="col-md-6 text-center fixed">
+<beerDetail class="col m6 center-align fixed">
   <div class="row">
     <name> {{beer.name}} </name>
   </div>
@@ -20,10 +20,10 @@
     <button ng-if="beer.cold !== true" type="button" name="button" class="btn fridgeme"> FRIDGE ME!</button>
   </div>
   <div class="row">
-    <beerImage class="col-md-3">
+    <beerImage class="col m3">
       <img src="{{beer.image}}" alt="" />
     </beerImage>
-    <description class="col-md-9 text-left">
+    <description class="col m9 left-align">
       <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{beer.description}}"
     </description>
   </div>

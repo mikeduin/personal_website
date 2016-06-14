@@ -1,9 +1,42 @@
-
+<div class="navbar-fixed">
+  <nav>
+   <div class="nav-wrapper">
+     <a ui-sref="home">
+       <span> mike<b>duin</b></span><span ng-show="$state.includes('home.fridge')"><b>'s</b></span>
+     </a>
+     <a ui-sref="home.about" ng-show="$state.includes('home.about')">
+       <span>|</span>  <span>  &nbsp; ...who? </span>
+     </a>
+     <a ui-sref="home.music" ng-show="$state.includes('home.music')">
+       <span>|<b> music</b>lover</span>
+     </a>
+     <a ui-sref="home.professional" ng-show="$state.includes('home.professional')">
+       <span>| web<b>developer</b></span>
+     </a>
+     <a ui-sref="home.fridge" ng-show="$state.includes('home.fridge')">
+       <span>|<b> bottle</b>list </span>
+     </a>
+     <a ui-sref="home.ala" ng-show="$state.includes('home.ala')">
+       <span style="font-size: 27px">|<b> ala</b>commissioner</span>
+     </a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down valign-wrapper">
+       <li> <a class="navlink valign" ui-sref="home.about" id="aboutAnchor" ng-class="{'aboutBack': $state.includes('home.about')}" title="About"> About </a></li>
+       <li> <a class="navlink valign" ui-sref="home.professional" id="workAnchor" ng-class="{'workBack': $state.includes('home.professional')}" title="Professional"> Professional </a></li>
+       <li> <a class="navlink valign" title="Photography"> Photography </a></li>
+       <li> <a class="navlink valign" ui-sref="home.ala.blog" id="alaAnchor" ng-class="{'alaBack': $state.includes('home.ala')}" title="A Level Above"> A Level Above </a></li>
+       <li> <a class="navlink valign" ui-sref="home.music" id="musicAnchor" ng-class="{'musicBack': $state.includes('home.music')}" title="Music"> Music </a></li>
+       <li> <a class="navlink valign" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
+     </ul>
+   </div>
+ </nav>
+</div>
+<div class="spacer"> </div>
+<!--
 <div class="nav navbar navbar-fixed-top navbar-border">
   <div class="navContainer container-fluid">
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false'></button>
-        <span class="sr-only"> Toggle Naviation </span>
+        <span class="sr-only"> Toggle Navigation </span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -25,9 +58,6 @@
       <a class="navbar-brand" ng-show="$state.includes('home.ala')">
         <span style="font-size: 27px">|<b> ala</b>commissioner</span>
       </a>
-      <!-- <a class="navbar-brand" ng-show="$state.includes('home.contact')">
-        <span>| contact</span>
-      </a> -->
 
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -42,4 +72,4 @@
     </div>
   </div>
 </div>
-<div class="spacer"> </div>
+<div class="spacer"> </div> -->

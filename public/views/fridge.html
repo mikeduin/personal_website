@@ -1,29 +1,29 @@
-<fridgeHeader class="col-md-12">
+<fridgeHeader class="col m12">
     <alaLead style="margin-top: 10px">
       Mike's Fridge
     </alaLead>
     <fridgeSubheader class="row">
-      <div class="col-md-offset-7">
+      <div class="col offset-m7">
         Coming over? Queue up a cold one...
       </div>
     </fridgeSubheader>
 </fridgeHeader>
 
-<fridgeLead class="col-md-10 col-md-offset-1">
+<fridgeLead class="col m10 offset-m1">
   Thanks to the fine people (and the elite copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed a patently absurd stockpile of craft beer in my cellar*. If you're reading this: I need your help. Drinking all of this beer is well beyond the scope of a one-man operation. If you're coming over, check out the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time. They'll be cold when you get here.
 </fridgeLead>
-<fridgeNote class="col-md-3 col-md-offset-9">
+<fridgeNote class="col m3 offset-m9">
   *actually a closet in a hallway
 </fridgeNote>
 
-<fridgeIndex class="col-md-6" id="searchBar">
-  <searchContainer class="col-md-12">
-    <div class="text-center" ng-click="showSearch = !showSearch">
+<fridgeIndex class="col m6" id="searchBar">
+  <searchContainer class="col m12">
+    <div class="center-align" ng-click="showSearch = !showSearch">
       CLICK HERE TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
     </div>
-    <searchOptions class="col-md-12" ng-show="showSearch === true">
-      <search class="text-left">
-        <div class="">
+    <searchOptions class="col m12" ng-show="showSearch === true">
+      <search class="left-align">
+        <div>
           Search name, description, etc. <i class="fa fa-arrow-right" aria-hidden="true"></i>
           <input type="text" name="searchBeer" ng-model="searchText">
         </div>
@@ -56,26 +56,26 @@
       </search>
     </searchOptions>
   </searchContainer>
-  <hr class="row col-md-10 col-md-offset-1">
+  <hr class="row col m10 offset-m1">
 
-  <bottleList class="col-md-12" id="bottleList">
-    <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
+  <bottleList class="col m12" id="bottleList">
+    <beerContainer class="col m12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
       <a ui-sref="home.fridge.beer({beername: beer.beername})">
-        <beerImage class="col-md-offset-1 col-md-2">
+        <beerImage class="col m2 offset-m1 ">
           <img src="{{beer.image}}" alt="{{beer.name}}" />
         </beerImage>
-          <beerInfo class="col-md-9">
-            <name class="col-md-12"> {{beer.name}} </name>
-            <brewery class="col-md-12"> <b> {{beer.brewery}} </b> </brewery>
-            <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
-            <abv class="col-md-4"> ABV: {{beer.abv}}% </abv>
-            <ordered class="col-md-8"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
+          <beerInfo class="col m9">
+            <name class="col m12"> {{beer.name}} </name>
+            <brewery class="col m12"> <b> {{beer.brewery}} </b> </brewery>
+            <beerStyle class="col m12"> {{beer.style}} </beerStyle>
+            <abv class="col m4"> ABV: {{beer.abv}}% </abv>
+            <ordered class="col m8"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
           </beerInfo>
       </a>
     </beerContainer>
   </bottleList>
 </fridgeIndex>
-<instructions class="col-md-4 col-md-offset-1 text-center" ng-show="vm.showInstructions === true">
+<instructions class="col m4 offset-m1 center-align" ng-show="vm.showInstructions === true">
   <i> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select a Beer to See Details Here </i>
 </instructions>
 <div ui-view="beerdisplay"> </div>
