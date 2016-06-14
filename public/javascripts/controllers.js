@@ -5,8 +5,8 @@ angular
     }])
   .controller('MainController', ['$scope', '$state', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
-  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', AlaController])
-  .controller('BeerController', ['$scope', '$anchorScroll', '$location', 'beerService', BeerController])
+  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', AlaController])
+  .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', 'beerService', BeerController])
   .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
 
 
@@ -21,9 +21,10 @@ function MusicController ($scope, $state, spotifyService) {
 
 }
 
-function BeerController ($scope, $anchorScroll, $location, beerService) {
+function BeerController ($scope, $anchorScroll, $location, $state, beerService) {
   $scope.showSearch = false;
   $scope.vm = {};
+  $scope.vm.showInstructions = true;
   $scope.vm.sortOrder = '-ordered';
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
@@ -153,4 +154,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state) {
   $scope.showFootball = false;
   $scope.showSurvivor = false;
   $scope.showConfidence = false;
+  $scope.showPga = false;
+  $scope.showNbaPlayoffs = false;
+  $scope.showFifa = false;
 }

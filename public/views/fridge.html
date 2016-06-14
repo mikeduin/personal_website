@@ -57,12 +57,9 @@
     </searchOptions>
   </searchContainer>
   <hr class="row col-md-10 col-md-offset-1">
-  <instructions class="col-md-12 text-center">
-    <i> Click Beer to See Details </i>
-  </instructions>
 
   <bottleList class="col-md-12" id="bottleList">
-    <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar')" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
+    <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter }">
       <a ui-sref="home.fridge.beer({beername: beer.beername})">
         <beerImage class="col-md-offset-1 col-md-2">
           <img src="{{beer.image}}" alt="{{beer.name}}" />
@@ -78,4 +75,7 @@
     </beerContainer>
   </bottleList>
 </fridgeIndex>
+<instructions class="col-md-4 col-md-offset-1 text-center" ng-show="vm.showInstructions === true">
+  <i> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select a Beer to See Details Here </i>
+</instructions>
 <div ui-view="beerdisplay"> </div>
