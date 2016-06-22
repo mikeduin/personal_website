@@ -187,6 +187,23 @@ body {
   font-weight: 800;
 }
 
+addBeer {
+  margin-top: 10px;
+}
+
+#addBeer label {
+  padding-top: 5px;
+}
+
+#coldSelect {
+  margin-top: 5px;
+}
+
+addBeer heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #7C0F09;
+}
 
 /*New Splashpage Styles*/
 
@@ -631,7 +648,6 @@ searchContainer {
   border-radius: 10px;
   font-weight: 600;
   font-size: 24px;
-  cursor: pointer;
 }
 
 searchContainer span {
@@ -657,6 +673,10 @@ search div {
 fridgeIndex input {
   width: 240px;
   margin-left: 20px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 closeSearch {
@@ -765,6 +785,10 @@ beerDetail description {
 
 searchContainer sort {
   text-decoration: underline;
+}
+
+#coldInput {
+  margin-right: -20px;
 }
 
 /*About Styles*/
