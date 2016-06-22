@@ -19,21 +19,35 @@ router.get('/beers', function(req, res, next) {
   })
 })
 
+router.post('/beers', function(req, res, next) {
+  var beer = Beer({
+    name: req.body.name,
+    beername: req.body.beername,
+    brewery: req.body.brewery,
+    style: req.body.style,
+    abv: req.body.abv,
+    quantity: req.body.quantity,
+    cold: req.body.cold,
+    image: req.body.image,
+    price: req.body.price,
+    size: req.body.size,
+    ordered: req.body.ordered,
+    description: req.body.description
+  });
+
+  beer.save(function(err, beer) {
+    if (err) { return next(err); }
+
+    res.json(beer);
+    console.log('new beer has been added!')
+  })
+})
+
 router.get('/blogposts', function(req, res, next) {
   Blogpost.find(function(err, blogposts) {
     if (err) { next(err); }
 
     res.json(blogposts);
-  })
-})
-
-router.post('/beers', function(req, res, next) {
-  var beer = new Beer(req.body)
-
-  beer.save(function(err, beer) {
-    if (err) { return next(err); }
-
-    res.json(beer)
   })
 })
 

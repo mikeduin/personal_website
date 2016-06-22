@@ -31,6 +31,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
   $scope.vm = {};
   $scope.vm.showInstructions = true;
   $scope.vm.sortOrder = '-ordered';
+  $scope.vm.coldFilter = false;
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
   $scope.vm.gotoId = function(id) {
