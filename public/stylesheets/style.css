@@ -804,10 +804,51 @@ aboutHeader {
 aboutIntro {
   margin-top: -20px;
   height: 120px;
+  padding-top: 24px;
+}
+
+aboutIntro div img {
+  padding-top: 20px
+}
+
+leadBar div {
   font-weight: 600;
   font-size: 36px;
   color: #3A4DBB;
-  padding-top: 24px;
+}
+
+leadBar {
+  margin-top: 30px;
+}
+
+.hrow {
+  width: 50%;
+  color: black;
+}
+
+.divider {
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+introText p {
+  font-size: 20px;
+}
+
+firstStory {
+  margin-top: 50px
+}
+
+storyEntry p {
+  font-size: 16px
+}
+
+storyPhotos img {
+  border: solid 2px black
+}
+
+trophyBox {
+  padding-top: 20px
 }
 
 /*Professional Styles*/

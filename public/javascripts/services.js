@@ -121,6 +121,9 @@ function beerService ($http) {
         }
         return breweries;
       })
+    },
+    addBeer: function(formData) {
+      return $http.post('/beers', formData)
     }
   }
 }

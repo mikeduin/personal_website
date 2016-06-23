@@ -34,6 +34,8 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
   $scope.vm.coldFilter = false;
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
+  $scope.formData = {};
+
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
@@ -55,7 +57,15 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
   $scope.vm.topOfBeerList = function(){
     var bottleList = document.getElementById('bottleList');
     bottleList.scrollTop=0;
+  };
+  $scope.vm.addBeer = function() {
+    beerService.addBeer($scope.formData).then(function(){
+      $state.go('home.fridge.beer({beername: $scope.formData.beername})');
+      $scope.formData = {};
+      console.log('Beer has been added!')
+    })
   }
+
 }
 
 function BeerDetailController ($scope, $stateParams, beerService) {

@@ -2,38 +2,42 @@
   <heading class="row">
     <div class="text-center">
       Add a Beer
-    </div>    
+    </div>
   </heading>
   <addForm>
-    <form id="addBeer" method="post" action="/beers" class="form-horizontal">
+    <form id="addBeer" class="form-horizontal">
       <div class="form-group">
         <label class="col-md-3 text-right"> Beer Name </label>
         <div class="col-md-8">
-          <input type="text" name="name" class="form-control"/>
-          <!-- Code this one below to take name of beer and remove spaces -->
-          <input type="hidden" name="beername" value="">
+          <input type="text" ng-model="formData.name" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Fridge URL </label>
+        <div class="col-md-8">
+          <input type="text" ng-model="formData.beername" class="form-control">
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Brewery </label>
         <div class="col-md-8">
-          <input type="text" name="brewery" class="form-control"/>
+          <input type="text" ng-model="formData.brewery" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Style </label>
         <div class="col-md-8">
-          <input type="text" name="style" class="form-control"/>
+          <input type="text" ng-model="formData.style" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> ABV </label>
         <div class="col-md-2">
-          <input type="number" step="0.1" name="abv" class="form-control"/>
+          <input type="number" step="0.1" ng-model="formData.abv" class="form-control"/>
         </div>
         <label class="col-md-3 text-right"> Cold? </label>
         <div class="col-md-3">
-          <select id="coldSelect" name="cold">
+          <select id="coldSelect" ng-model="formData.cold">
             <option value="false"> No </option>
             <option value="true"> Yes </option>
           </select>
@@ -42,39 +46,39 @@
       <div class="form-group">
         <label class="col-md-3 text-right"> Quantity </label>
         <div class="col-md-2">
-          <input type="number" name="quantity" class="form-control"/>
+          <input type="number" ng-model="formData.quantity" class="form-control"/>
         </div>
         <label class="col-md-3 text-right"> Price </label>
         <div class="col-md-2">
-          <input type="number" name="price" class="form-control"/>
+          <input type="number" ng-model="formData.price" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Image URL </label>
         <div class="col-md-8">
-          <input type="url" name="image" class="form-control"/>
+          <input type="url" ng-model="formData.image" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Ordered </label>
         <div class="col-md-8">
-          <input type="date" name="date" class="form-control"/>
+          <input type="date" ng-model="formData.date" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Size </label>
         <div class="col-md-8">
-          <input type="text" name="size" class="form-control"/>
+          <input type="text" ng-model="formData.size" class="form-control"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Description </label>
         <div class="col-md-8">
-          <textarea name="description" rows="5" class="form-control"> </textarea>
+          <textarea ng-model="formData.description" rows="5" class="form-control"> </textarea>
         </div>
       </div>
       <div class="form-group text-center">
-        <button class="btn btn-large btn-danger"> Add Beer!</button>
+        <button class="btn btn-large btn-danger" ng-click="vm.addBeer()"> Add Beer!</button>
       </div>
     </form>
   </addForm>

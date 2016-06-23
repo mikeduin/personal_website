@@ -62,7 +62,7 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'addbeer@home.fridge': {
           templateUrl: 'views/fridge/addbeer.html',
-          controller: 'BeerDetailController'
+          controller: 'BeerController'
         }
       }
     })
@@ -71,6 +71,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'beerdisplay@home.fridge': {
           templateUrl: 'views/fridge/beer.html',
+          controller: 'BeerDetailController'
+        }
+      }
+    })
+    .state('home.fridge.edit', {
+      url: '/:beername/edit',
+      views: {
+        'edit@home.fridge': {
+          templateUrl: 'views/fridge/edit.html',
           controller: 'BeerDetailController'
         }
       }

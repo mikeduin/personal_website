@@ -1,0 +1,81 @@
+<addBeer class="col-md-6" >
+  <heading class="row">
+    <div class="text-center">
+      Edit a Beer
+    </div>
+  </heading>
+  <addForm>
+    <form id="addBeer" method="post" action="/beers" class="form-horizontal">
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Beer Name </label>
+        <div class="col-md-8">
+          <input type="text" name="name" class="form-control" value="{{beer.name}}"/>
+          <!-- Code this one below to take name of beer and remove spaces -->
+          <input type="hidden" name="beername" value="{{beer.beername}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Brewery </label>
+        <div class="col-md-8">
+          <input type="text" name="brewery" class="form-control" value="{{beer.brewery}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Style </label>
+        <div class="col-md-8">
+          <input type="text" name="style" class="form-control" value="{{beer.style}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> ABV </label>
+        <div class="col-md-2">
+          <input type="number" step="0.1" name="abv" class="form-control" value="{{beer.abv}}"/>
+        </div>
+        <label class="col-md-3 text-right"> Cold? </label>
+        <div class="col-md-3">
+          <select id="coldSelect" name="cold" value="{{beer.cold}}">
+            <option value="false"> No </option>
+            <option value="true"> Yes </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Quantity </label>
+        <div class="col-md-2">
+          <input type="number" name="quantity" class="form-control" value="{{beer.quantity}}"/>
+        </div>
+        <label class="col-md-3 text-right"> Price </label>
+        <div class="col-md-2">
+          <input type="number" name="price" class="form-control" value="{{beer.price}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Image URL </label>
+        <div class="col-md-8">
+          <input type="url" name="image" class="form-control" value="{{beer.image}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Ordered </label>
+        <div class="col-md-8">
+          <input type="text" name="date" class="form-control" value="{{beer.ordered | date: 'shortDate'}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Size </label>
+        <div class="col-md-8">
+          <input type="text" name="size" class="form-control" value="{{beer.size}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Description </label>
+        <div class="col-md-8">
+          <textarea name="description" rows="5" class="form-control"> {{beer.description}} </textarea>
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <button class="btn btn-large btn-warning"> Edit Beer</button>
+      </div>
+    </form>
+  </addForm>
+</addBeer>
