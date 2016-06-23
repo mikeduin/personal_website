@@ -1,5 +1,5 @@
 angular
-  .module('mySite', ['ui.router', 'ngAnimate'])
+  .module('mySite', ['ui.router', 'ui.bootstrap', 'ngAnimate'])
   .config(['$stateProvider', '$urlRouterProvider', siteConfig])
   // .config(['$locationProvider', function($locationProvider) {
   //   $locationProvider.html5Mode(true);
@@ -44,7 +44,8 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       url: 'about',
       views: {
         'content@': {
-          templateUrl: 'views/about.html'
+          templateUrl: 'views/about.html',
+          controller: 'MainController'
         }
       }
     })
