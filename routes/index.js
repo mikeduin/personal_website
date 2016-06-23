@@ -6,10 +6,11 @@ router.get('/', function(req, res, next) {
   res.redirect('index.html');
 });
 
-
 var mongoose = require('mongoose');
 var Beer = mongoose.model('Beer');
 var Blogpost = mongoose.model('Blogpost');
+
+// BEGIN BEER ROUTES
 
 router.get('/beers', function(req, res, next) {
   Beer.find(function(err, beers) {
@@ -31,7 +32,7 @@ router.post('/beers', function(req, res, next) {
     image: req.body.image,
     price: req.body.price,
     size: req.body.size,
-    ordered: req.body.ordered,
+    ordered: ISODate(req.body.ordered),
     description: req.body.description
   });
 
@@ -40,24 +41,6 @@ router.post('/beers', function(req, res, next) {
 
     res.json(beer);
     console.log('new beer has been added!')
-  })
-})
-
-router.get('/blogposts', function(req, res, next) {
-  Blogpost.find(function(err, blogposts) {
-    if (err) { next(err); }
-
-    res.json(blogposts);
-  })
-})
-
-router.post('/blogposts', function(req, res, next) {
-  var blogpost = new Blogpost(req.body)
-
-  blogpost.save(function(err, blogpost) {
-    if (err) { return next(err); }
-
-    res.json(blogpost)
   })
 })
 
@@ -75,6 +58,29 @@ router.param('beername', function(req, res, next, beername) {
 
 router.get('/beers/:beername', function(req, res) {
     res.json(req.beer);
+})
+
+// END BEER ROUTES
+// BEGIN BLOG ROUTES
+
+router.get('/blogposts', function(req, res, next) {
+  Blogpost.find(function(err, blogposts) {
+    if (err) { next(err); }
+
+    res.json(blogposts);
+  })
+})
+
+router.post('/blogposts', function(req, res, next) {
+  var blogpost = new Blogpost(req.body)
+
+  blogpost.save(function(err, blogpost) {
+    if (err) { return next(err); }
+
+    res.json(blogpost)
+  })
+
+
 })
 
 
