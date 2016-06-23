@@ -851,6 +851,10 @@ trophyBox {
   padding-top: 20px
 }
 
+hoopsPopover {
+  text-decoration: underline;
+}
+
 /*Professional Styles*/
 
 proHeader {

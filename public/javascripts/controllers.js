@@ -3,7 +3,7 @@ angular
   .run(['$anchorScroll', function($anchorScroll) {
   $anchorScroll.yOffset = 80;
     }])
-  .controller('MainController', ['$scope', '$state', MainController])
+  .controller('MainController', ['$scope', '$state', '$sce', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
   .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', AlaController])
   .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', 'beerService', BeerController])
@@ -15,8 +15,9 @@ angular
   }])
 
 
-function MainController ($scope, $state){
+function MainController ($scope, $state, $sce){
   $scope.$state = $state;
+  $scope.htmlPopover = $sce.trustAsHtml('[This being 1994, the internet-based fantasy leagues of the present day were still a ways off. Instead, ‘drafting’ a team meant that you would pick one player from each of 15 different tiers, each of which had five players to pick from.  You were allowed to make three “trades” during the season … by <i>calling into an automated system on a landline telephone and pressing a series of buttons </i> to indicate that you’d like to switch to a different player in one of the 15 tiers. There are zero people in the world who give you the “back in my day…” treatment and hark nostalgically for this era of fantasy basketball. Glory days, they were not.]');
 }
 
 function MusicController ($scope, $state, spotifyService) {
