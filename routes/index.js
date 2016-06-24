@@ -21,8 +21,6 @@ router.get('/beers', function(req, res, next) {
 })
 
 router.post('/beers', function(req, res, next) {
-  console.log(req.body.date);
-
   var beer = Beer({
     name: req.body.name,
     beername: req.body.beername,
@@ -34,7 +32,7 @@ router.post('/beers', function(req, res, next) {
     image: req.body.image,
     price: req.body.price,
     size: req.body.size,
-    ordered: req.body.date,
+    ordered: req.body.ordered,
     description: req.body.description
   });
 
@@ -43,6 +41,38 @@ router.post('/beers', function(req, res, next) {
 
     res.json(beer);
     console.log('new beer has been added!')
+  })
+})
+
+router.put('/beers', function(req, res, next){
+  Beer.findOneAndUpdate({ name: req.body.name},
+    {
+      beername: req.body.beername,
+      brewery: req.body.brewery,
+      style: req.body.style,
+      abv: req.body.abv,
+      quantity: req.body.quantity,
+      cold: req.body.cold,
+      image: req.body.image,
+      price: req.body.price,
+      size: req.body.size,
+      ordered: req.body.ordered,
+      description: req.body.description
+    },
+    function(err, beer) {
+      if (err) { next(err) };
+
+      console.log(beer + 'was updated in db')
+    }
+  )
+})
+
+router.delete('/beers', function (req, rest, next) {
+  Beer.findOneAndRemove({beer: req.body.name}, function(err, beer){
+    if (err) {next(err)}
+
+    console.log(beer + 'was deleted from db')
+
   })
 })
 

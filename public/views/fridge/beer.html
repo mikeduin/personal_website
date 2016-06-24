@@ -1,6 +1,6 @@
 <beerDetail class="col-md-6 text-center fixed">
   <div class="row">
-    <a ui-sref="home.fridge.edit({beername: beer.beername})"> <name> {{beer.name}} </name> </a>
+    <a ui-sref="home.fridge.edit({beername: beer.beername})" ng-click="getBeer()"> <name> {{beer.name}} </name> </a>
   </div>
   <div class="row">
     <brewery> <i class="fa fa-beer" aria-hidden="true"></i> {{beer.brewery}} </brewery>

@@ -61,12 +61,11 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
   };
   $scope.vm.addBeer = function() {
     beerService.addBeer($scope.formData).then(function(){
-      $state.go('home.fridge.beer({beername: $scope.formData.beername})');
+      $state.go('home.fridge.beer');
       $scope.formData = {};
       console.log('Beer has been added!')
     })
-  }
-
+  };
 }
 
 function BeerDetailController ($scope, $stateParams, beerService) {
@@ -75,8 +74,20 @@ function BeerDetailController ($scope, $stateParams, beerService) {
     beerService.getBeer($stateParams.beername).then(function(beer){
       $scope.beer = beer[0];
     })
-  }
+  };
   $scope.getBeer();
+  $scope.vm.editBeer = function() {
+    beerService.editBeer($scope.beer).then(function(){
+      $state.go('home.fridge.beer');
+      console.log('Beer has been updated!')
+    })
+  };
+  $scope.vm.deleteBeer = function() {
+    beerService.deleteBeer($scope.beer).then(function(){
+      $state.go('home.fridge.beer');
+      console.log('Beer has been deleted')
+    })
+  };
 }
 
 function AlaController ($scope, $anchorScroll, $location, alaService, $state) {

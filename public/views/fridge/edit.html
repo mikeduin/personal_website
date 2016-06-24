@@ -5,35 +5,39 @@
     </div>
   </heading>
   <addForm>
-    <form id="addBeer" method="post" action="/beers" class="form-horizontal">
+    <form id="editBeer"  class="form-horizontal">
       <div class="form-group">
         <label class="col-md-3 text-right"> Beer Name </label>
         <div class="col-md-8">
-          <input type="text" name="name" class="form-control" value="{{beer.name}}"/>
-          <!-- Code this one below to take name of beer and remove spaces -->
-          <input type="hidden" name="beername" value="{{beer.beername}}">
+          <input type="text" class="form-control" ng-model="beer.name"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 text-right"> Fridge URL </label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" ng-model="beer.beername"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Brewery </label>
         <div class="col-md-8">
-          <input type="text" name="brewery" class="form-control" value="{{beer.brewery}}"/>
+          <input type="text" class="form-control" ng-model="beer.brewery"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Style </label>
         <div class="col-md-8">
-          <input type="text" name="style" class="form-control" value="{{beer.style}}"/>
+          <input type="text" class="form-control" ng-model="beer.style"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> ABV </label>
         <div class="col-md-2">
-          <input type="number" step="0.1" name="abv" class="form-control" value="{{beer.abv}}"/>
+          <input type="number" step="0.1" class="form-control" ng-model="beer.abv"/>
         </div>
         <label class="col-md-3 text-right"> Cold? </label>
         <div class="col-md-3">
-          <select id="coldSelect" name="cold" value="{{beer.cold}}">
+          <select id="coldSelect" ng-model="beer.cold">
             <option value="false"> No </option>
             <option value="true"> Yes </option>
           </select>
@@ -42,39 +46,40 @@
       <div class="form-group">
         <label class="col-md-3 text-right"> Quantity </label>
         <div class="col-md-2">
-          <input type="number" name="quantity" class="form-control" value="{{beer.quantity}}"/>
+          <input type="number" class="form-control" ng-model="beer.quantity"/>
         </div>
         <label class="col-md-3 text-right"> Price </label>
         <div class="col-md-2">
-          <input type="number" name="price" class="form-control" value="{{beer.price}}"/>
+          <input type="number" class="form-control" ng-model="beer.price"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Image URL </label>
         <div class="col-md-8">
-          <input type="url" name="image" class="form-control" value="{{beer.image}}"/>
+          <input type="url" class="form-control" ng-model="beer.image"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Ordered </label>
         <div class="col-md-8">
-          <input type="text" name="date" class="form-control" value="{{beer.ordered | date: 'shortDate'}}"/>
+          <input type="date" class="form-control" ng-model="beer.ordered"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Size </label>
         <div class="col-md-8">
-          <input type="text" name="size" class="form-control" value="{{beer.size}}"/>
+          <input type="text" class="form-control" ng-model="beer.size"/>
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-3 text-right"> Description </label>
         <div class="col-md-8">
-          <textarea name="description" rows="5" class="form-control"> {{beer.description}} </textarea>
+          <textarea rows="5" class="form-control" ng-model="beer.description"> {{beer.description}} </textarea>
         </div>
       </div>
       <div class="form-group text-center">
-        <button class="btn btn-large btn-warning"> Edit Beer</button>
+        <button class="btn btn-large btn-warning" ng-click="vm.editBeer()"> Edit Beer</button>
+        <button class="btn btn-large btn-danger" ng-click="vm.deleteBeer(beer)"> Delete Beer</button>
       </div>
     </form>
   </addForm>
