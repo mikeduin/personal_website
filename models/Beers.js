@@ -13,7 +13,7 @@ var beerSchema = new Schema ({
   image: String,
   price: Number,
   size: String,
-  ordered: {type: Date, default: Date.now},
+  ordered: Date,
   description: String
 }, {collection: 'mikesFridge'});
 

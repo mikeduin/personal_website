@@ -836,9 +836,30 @@ socBubble {
   height: 50px;
   border: solid 1px black;
   border-radius: 50%;
-  background-color: #C5C6C7;
+  background-color: white;
   font-size: 34px;
   cursor: pointer;
+}
+
+spotBubble {
+  margin-top: -15px;
+  height: 50px;
+  border: solid 1px black;
+  border-radius: 50%;
+  background-color: black;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+linkedBubble {
+  margin-top: -15px;
+  height: 50px;
+  border: solid 1px black;
+  border-radius: 50%;
+  background-color: #1784BC;
+  font-size: 34px;
+  cursor: pointer;
+  color: white;
 }
 
 aboutIntro {
