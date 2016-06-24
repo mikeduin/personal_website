@@ -21,6 +21,8 @@ router.get('/beers', function(req, res, next) {
 })
 
 router.post('/beers', function(req, res, next) {
+  console.log(req.body.date);
+
   var beer = Beer({
     name: req.body.name,
     beername: req.body.beername,
@@ -32,7 +34,7 @@ router.post('/beers', function(req, res, next) {
     image: req.body.image,
     price: req.body.price,
     size: req.body.size,
-    ordered: ISODate(req.body.ordered),
+    ordered: req.body.date,
     description: req.body.description
   });
 
