@@ -187,23 +187,6 @@ body {
   font-weight: 800;
 }
 
-addBeer {
-  margin-top: 10px;
-}
-
-#addBeer label {
-  padding-top: 5px;
-}
-
-#coldSelect {
-  margin-top: 5px;
-}
-
-addBeer heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #7C0F09;
-}
 
 /*New Splashpage Styles*/
 
@@ -583,6 +566,23 @@ playlists name {
   font-weight: 800;
 }
 
+playlists name a {
+  color: #333333;
+  text-decoration: none;
+}
+
+playlists name a:hover {
+  color: #333333;
+  font-size: 52px;
+  text-decoration: none;
+}
+
+playlists name a:focus {
+  color: #333333;
+  font-size: 52px;
+  text-decoration: none;
+}
+
 playlists type {
   font-size: 24px;
   font-weight: 600;
@@ -760,8 +760,18 @@ beerDetail brewery {
   font-weight: 800;
 }
 
+.coldskinny {
+  color: #3984C5;
+  font-weight: 600;
+}
+
 .cellared {
   color: #7C0F09;
+}
+
+.black {
+  color: black;
+  font-weight: 600;
 }
 
 beerDetail beerImage {
@@ -791,6 +801,25 @@ searchContainer sort {
   margin-right: -20px;
 }
 
+addBeer {
+  margin-top: 10px;
+}
+
+#addBeer label {
+  padding-top: 5px;
+}
+
+#coldSelect {
+  margin-top: 5px;
+}
+
+addBeer heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #7C0F09;
+}
+
+
 /*About Styles*/
 
 aboutHeader {
@@ -799,6 +828,17 @@ aboutHeader {
   border-radius: 4px;
   border-top: solid 5px black;
   border-bottom: solid 5px black;
+}
+
+
+socBubble {
+  margin-top: -15px;
+  height: 50px;
+  border: solid 1px black;
+  border-radius: 50%;
+  background-color: #C5C6C7;
+  font-size: 34px;
+  cursor: pointer;
 }
 
 aboutIntro {
@@ -843,6 +883,10 @@ storyEntry p {
   font-size: 16px
 }
 
+italyEntry p {
+  font-size: 16px
+}
+
 storyPhotos img {
   border: solid 2px black
 }
@@ -853,6 +897,18 @@ trophyBox {
 
 hoopsPopover {
   text-decoration: underline;
+}
+
+italyEntry {
+  padding-top: 35px
+}
+
+familyBox {
+  padding-top: 35px
+}
+
+ponteBox {
+  padding-top: -20px
 }
 
 /*Professional Styles*/
