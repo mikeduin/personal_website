@@ -44,16 +44,6 @@ router.post('/beers', function(req, res, next) {
   })
 })
 
-router.delete('/beers', function (req, rest, next) {
-  console.log(req.body);
-  Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
-    if (err) {next(err)}
-
-    console.log(beer + 'was deleted from db')
-
-  })
-})
-
 router.param('beername', function(req, res, next, beername) {
   var query = Beer.find({ beername: beername });
 
@@ -71,7 +61,6 @@ router.get('/beers/:beername', function(req, res) {
 })
 
 router.put('/beers/:beername', function(req, res, next){
-  console.log(req.body);
   Beer.findOneAndUpdate({ name: req.body.name},
     {
       beername: req.body.beername,
@@ -90,9 +79,20 @@ router.put('/beers/:beername', function(req, res, next){
       if (err) { next(err) };
 
       res.json(beer);
-      console.log(beer + 'was updated in db')
+      console.log(beer.name + 'was updated in db')
     }
   )
+})
+
+router.delete('/beers', function (req, res, next) {
+  console.log(req.body);
+  Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
+    if (err) {next(err)}
+
+    res.json(beer);
+    console.log('The beer was deleted from db')
+
+  })
 })
 
 // END BEER ROUTES

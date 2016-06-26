@@ -126,11 +126,20 @@ function beerService ($http) {
       return $http.post('/beers', formData)
     },
     editBeer: function(beer) {
-      console.log(beer);
       return $http.put('/beers/' + beer.beername, beer)
     },
     deleteBeer: function(beer) {
-      return $http.delete('/beers', beer)
+      console.log(beer);
+      return $http({
+        url: '/beers',
+        method: 'DELETE',
+        data: beer,
+        headers: {"Content-Type": "application/json;charset=utf-8"}
+      }).then(function(res) {
+        console.log(res.data);
+      }, function(error) {
+        console.log(res.error);
+      })
     }
   }
 }
