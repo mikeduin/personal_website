@@ -44,31 +44,9 @@ router.post('/beers', function(req, res, next) {
   })
 })
 
-router.put('/beers', function(req, res, next){
-  Beer.findOneAndUpdate({ name: req.body.name},
-    {
-      beername: req.body.beername,
-      brewery: req.body.brewery,
-      style: req.body.style,
-      abv: req.body.abv,
-      quantity: req.body.quantity,
-      cold: req.body.cold,
-      image: req.body.image,
-      price: req.body.price,
-      size: req.body.size,
-      ordered: req.body.ordered,
-      description: req.body.description
-    },
-    function(err, beer) {
-      if (err) { next(err) };
-
-      console.log(beer + 'was updated in db')
-    }
-  )
-})
-
 router.delete('/beers', function (req, rest, next) {
-  Beer.findOneAndRemove({beer: req.body.name}, function(err, beer){
+  console.log(req.body);
+  Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
     if (err) {next(err)}
 
     console.log(beer + 'was deleted from db')
@@ -90,6 +68,31 @@ router.param('beername', function(req, res, next, beername) {
 
 router.get('/beers/:beername', function(req, res) {
     res.json(req.beer);
+})
+
+router.put('/beers/:beername', function(req, res, next){
+  console.log(req.body);
+  Beer.findOneAndUpdate({ name: req.body.name},
+    {
+      beername: req.body.beername,
+      brewery: req.body.brewery,
+      style: req.body.style,
+      abv: req.body.abv,
+      quantity: req.body.quantity,
+      cold: req.body.cold,
+      image: req.body.image,
+      price: req.body.price,
+      size: req.body.size,
+      ordered: req.body.ordered,
+      description: req.body.description
+    },
+    function(err, beer) {
+      if (err) { next(err) };
+
+      res.json(beer);
+      console.log(beer + 'was updated in db')
+    }
+  )
 })
 
 // END BEER ROUTES

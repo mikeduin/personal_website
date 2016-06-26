@@ -1,30 +1,30 @@
 <beerDetail class="col-md-6 text-center fixed">
   <div class="row">
-    <a ui-sref="home.fridge.edit({beername: beer.beername})" ng-click="getBeer()"> <name> {{beer.name}} </name> </a>
+    <a ui-sref="home.fridge.edit({beername: vm.beer.beername})"> <name> {{vm.beer.name}} </name> </a>
   </div>
   <div class="row">
-    <brewery> <i class="fa fa-beer" aria-hidden="true"></i> {{beer.brewery}} </brewery>
+    <brewery> <i class="fa fa-beer" aria-hidden="true"></i> {{vm.beer.brewery}} </brewery>
   </div>
   <div class="row">
-    {{beer.style}}  <b> | </b> {{beer.abv}}% ABV <b> | </b> {{beer.size}} <b> | </b> ${{beer.price}}
+    {{vm.beer.style}}  <b> | </b> {{vm.beer.abv}}% ABV <b> | </b> {{vm.beer.size}} <b> | </b> ${{vm.beer.price}}
   </div>
   <div class="row">
-    Mike has {{beer.quantity}} <ng-pluralize count="beer.quantity" when="{'1': 'bottle', 'other':'bottles'}"></ng-pluralize>
+    Mike has {{vm.beer.quantity}} <ng-pluralize count="vm.beer.quantity" when="{'1': 'bottle', 'other':'bottles'}"></ng-pluralize>
   </div>
   <div class="row">
-    Ordered: {{beer.ordered | date: 'longDate'}} <b> | </b>
-      <span ng-if="beer.cold === true"> This beer is currently <span class="cold"> COLD<i class="fa fa-exclamation" aria-hidden="true"></i> </span> </span>
-      <span ng-if="beer.cold !== true"> This beer is currently <span class="cellared"> cellared</i> </span> </span>
+    Ordered: {{vm.beer.ordered | date: 'longDate'}} <b> | </b>
+      <span ng-if="vm.beer.cold === true"> This beer is currently <span class="cold"> COLD<i class="fa fa-exclamation" aria-hidden="true"></i> </span> </span>
+      <span ng-if="vm.beer.cold !== true"> This beer is currently <span class="cellared"> cellared</i> </span> </span>
   </div>
   <div class="row">
-    <button ng-if="beer.cold !== true" type="button" name="button" class="btn fridgeme"> FRIDGE ME!</button>
+    <button ng-if="vm.beer.cold !== true" type="button" name="button" class="btn fridgeme"> FRIDGE ME!</button>
   </div>
   <div class="row">
     <beerImage class="col-md-3">
-      <img src="{{beer.image}}" alt="" />
+      <img src="{{vm.beer.image}}" alt="" />
     </beerImage>
     <description class="col-md-9 text-left">
-      <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{beer.description}}"
+      <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{vm.beer.description}}"
     </description>
   </div>
 </beerDetail>
