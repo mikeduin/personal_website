@@ -126,7 +126,8 @@ function beerService ($http) {
       return $http.post('/beers', formData)
     },
     editBeer: function(beer) {
-      return $http.put('/beers', beer)
+      console.log(beer);
+      return $http.put('/beers/' + beer.beername, beer)
     },
     deleteBeer: function(beer) {
       return $http.delete('/beers', beer)

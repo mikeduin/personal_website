@@ -7,7 +7,7 @@ angular
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
   .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', AlaController])
   .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', 'beerService', BeerController])
-  .controller('BeerDetailController', ['$scope', '$stateParams', 'beerService', BeerDetailController])
+  .controller('BeerDetailController', ['$scope', '$stateParams', '$state', 'beerService', BeerDetailController])
   .filter('rawHtml', ['$sce', function($sce){
     return function(val) {
       return $sce.trustAsHtml(val);
@@ -61,30 +61,33 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
   };
   $scope.vm.addBeer = function() {
     beerService.addBeer($scope.formData).then(function(){
-      $state.go('home.fridge.beer');
+      $state.go('home.fridge');
       $scope.formData = {};
       console.log('Beer has been added!')
     })
   };
 }
 
-function BeerDetailController ($scope, $stateParams, beerService) {
-  $scope.beer = [];
+function BeerDetailController ($scope, $stateParams, $state, beerService) {
+  $scope.vm.beer = {};
   $scope.getBeer = function() {
     beerService.getBeer($stateParams.beername).then(function(beer){
-      $scope.beer = beer[0];
+      $scope.vm.beer = beer[0];
+      $scope.vm.beer.ordered = new Date(beer[0].ordered);
+      console.log($scope.vm.beer)
     })
   };
   $scope.getBeer();
   $scope.vm.editBeer = function() {
-    beerService.editBeer($scope.beer).then(function(){
-      $state.go('home.fridge.beer');
+    beerService.editBeer($scope.vm.beer).then(function(){
+      $state.go('home.fridge');
       console.log('Beer has been updated!')
     })
   };
   $scope.vm.deleteBeer = function() {
-    beerService.deleteBeer($scope.beer).then(function(){
-      $state.go('home.fridge.beer');
+    console.log($scope.vm.beer);
+    beerService.deleteBeer($scope.vm.beer).then(function(){
+      $state.go('home.fridge');
       console.log('Beer has been deleted')
     })
   };
