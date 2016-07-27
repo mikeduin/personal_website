@@ -1,0 +1,120 @@
+[
+  {
+    "type": "Career",
+    "record": "Average Power Score",
+    "score": "26.81",
+    "team": "The Taters",
+    "owner": "Sean Stokke",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Average Finish",
+    "score": "4.13",
+    "team": "The Taters",
+    "owner": "Sean Stokke",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Fantasy Points per Season",
+    "score": "1,834",
+    "team": "Beast Mode's Skeetles",
+    "owner": "Jesse Stokke",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Head-to-Head Win Percentage",
+    "score": "63-39 (.618)",
+    "team": "It's On Like Ndamukong",
+    "owner": "BJ Ebert",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Breakdown Win Percentage",
+    "score": "758.5-550.5 (.579)",
+    "team": "Beast Mode's Skeetles",
+    "owner": "Jesse Stokke",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Earnings per Season",
+    "score": "$86",
+    "team": "Beast Mode's Skeetles",
+    "owner": "Jesse Stokke",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Best Power Score",
+    "score": "36",
+    "owner": "five teams",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Most Fantasy Points",
+    "score": "2,228",
+    "team": "Blazin' Hits",
+    "owner": "Alex Rosenbloom",
+    "season": "2013"
+  },
+  {
+    "type": "Season",
+    "record": "Least Fantasy Points",
+    "score": "1,164",
+    "team": "Team Schreyer",
+    "owner": "Billy Schreyer",
+    "season": "2008"
+  },
+  {
+    "type": "Season",
+    "record": "Best Head-to-Head Record",
+    "score": "16-1",
+    "team": "Birdshit in ALACS' Eye",
+    "owner": "Drew 'Dirty Bird' Schoentrup",
+    "season": "2015"
+  },
+  {
+    "type": "Season",
+    "record": "Worst Head-to-Head Record",
+    "score": "2-15",
+    "owner": "three teams",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Best Breakdown Record",
+    "score": "156-31",
+    "team": "Blazin' Hits",
+    "owner": "Alex Rosenbloom",
+    "season": "2013"
+  },
+  {
+    "type": "Season",
+    "record": "Worst Breakdown Record",
+    "score": "18-169",
+    "team": "Hail Hokit",
+    "owner": "Tim Hokit",
+    "season": "2011"
+  },
+  {
+    "type": "Game",
+    "record": "Most Fantasy Points",
+    "score": "194.6",
+    "team": "Lil Ripsta's Harmony Souljaz",
+    "owner": "Mike Shoff",
+    "season": "2014"
+  },
+  {
+    "type": "Game",
+    "record": "Least Fantasy Points",
+    "score": "13",
+    "team": "Jordan Matthew Spektor",
+    "owner": "Jordan Spektor",
+    "season": "2011"
+  }
+]

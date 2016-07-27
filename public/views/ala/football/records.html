@@ -1,0 +1,32 @@
+<podium class="col-md-10">
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="podium"> Type </th>
+        <th class="podium"> Category </th>
+        <th class="podium"> Team </th>
+        <th class="podium"> Record </th>
+        <th class="podium"> Season </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="record in vm.footballRecords" class="podium">
+        <td class="podium">
+          <i> {{record.type}}</i>
+        </td>
+        <td style="font-size: 16px" class="podium">
+          <b> {{record.record}} </b>
+        </td>
+        <td class="podium">
+          <team> {{record.team}}</team> <span ng-if="record.owner"> ({{record.owner}}) </span>
+        </td>
+        <td class="podium">
+          <score> {{record.score}}</score>
+        </td>
+        <td class="text-center">
+          {{record.season}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</podium>
