@@ -1,0 +1,64 @@
+[
+  {
+    "season": "2015",
+    "first_team": "Jaime Trevino",
+    "first_owner": "$4,800"
+  },
+  {
+    "season": "2014",
+    "first_team": "Kyle Davis",
+    "first_owner": "$1,980",
+    "second_team": "Mike Marty",
+    "second_owner": "$1,750",
+    "third_team": "Louis Zezza",
+    "third_owner": "$750"
+  },
+  {
+    "season": "2013",
+    "first_team": "Hadyn Renfort",
+    "first_owner": "$1,100",
+    "second_team": "Travis Wimberly",
+    "second_owner": "$950",
+    "third_team": "Taylor White",
+    "third_owner": "$950"
+  },
+  {
+    "season": "2012",
+    "first_team": "Jarir Mallah (tie)",
+    "first_owner": "$1,250",
+    "second_team": "Matt McPhail (tie)",
+    "second_owner": "$1,250",
+    "third_team": "Marcus Konyn (tie)",
+    "third_owner": "$1,250"
+  },
+  {
+    "season": "2011",
+    "first_team": "Michael Liranzo",
+    "first_owner": "$1,940",
+    "second_team": "Peter Carlson",
+    "second_owner": "$700"
+  },
+  {
+    "season": "2010",
+    "first_team": "Alex Church",
+    "first_owner": "$1,170",
+    "second_team": "Drew Schoentrup",
+    "second_owner": "$700"
+  },
+  {
+    "season": "2009",
+    "first_team": "Joran Spektor",
+    "first_owner": "$611",
+    "second_team": "Travis Wimberly",
+    "second_owner": "$536",
+    "third_team": "Jim Rennard",
+    "third_owner": "$536"
+  },
+  {
+    "season": "2008",
+    "first_team": "Mike Rennard",
+    "first_owner": "$800",
+    "second_team": "Andrew Gay",
+    "second_owner": "$240"
+  }
+]

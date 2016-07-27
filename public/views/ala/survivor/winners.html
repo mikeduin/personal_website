@@ -1,0 +1,28 @@
+<podium class="col-md-10">
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> Winner </th>
+        <th class="podium"> Other Prize </th>
+        <th class="podium"> Other Prize </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.survivorResults" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.second_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.third_owner"> ({{results.third_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</podium>
