@@ -412,11 +412,11 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('home.ala.survivor.rankings', {
-      url: '/rankings',
+    .state('home.ala.survivor.winners', {
+      url: '/winners',
       views: {
         'rankings@home.ala.survivor': {
-          templateUrl: 'views/ala/survivor/rankings.html',
+          templateUrl: 'views/ala/survivor/winners.html',
           controller: 'AlaController'
         }
       }
@@ -426,15 +426,6 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'yoy@home.ala.survivor': {
           templateUrl: 'views/ala/survivor/yoy.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.survivor.records', {
-      url: '/records',
-      views: {
-        'records@home.ala.survivor': {
-          templateUrl: 'views/ala/survivor/records.html',
           controller: 'AlaController'
         }
       }
