@@ -1,0 +1,129 @@
+[
+  {
+    "type": "Career",
+    "record": "Average Finish",
+    "score": "3.12",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "League Championships",
+    "score": "5",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Top-3 Finishes",
+    "score": "11",
+    "team": "The X-Factor",
+    "owner": "Mike Duin",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Earnings per Season",
+    "score": "$131.84",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Average Roto Score",
+    "score": "69",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Head-to-Head Win Percentage",
+    "score": "61.57%",
+    "team": "The X-Factor",
+    "owner": "Mike Duin",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Total Roto Score",
+    "score": "87",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "2015-16"
+  },
+  {
+    "type": "Season",
+    "record": "Head-to-Head Win Percentage",
+    "score": "136-45-3 (.747)",
+    "team": "The X-Factor",
+    "owner": "Mike Duin",
+    "season": "2013-14"
+  },
+  {
+    "type": "Season",
+    "record": "Best Field Goal Percentage",
+    "score": "50.30%",
+    "team": "DUBco Allstars",
+    "owner": "David Christeson",
+    "season": "2006-07"
+  },
+  {
+    "type": "Season",
+    "record": "Best Free Throw Percentage",
+    "score": "82.72%",
+    "team": "Victor Khryapa",
+    "owner": "Andrew Gay",
+    "season": "2008-09"
+  },
+  {
+    "type": "Season",
+    "record": "Most 3-Pointers Made",
+    "score": "1,308",
+    "team": "Crowned Piglets",
+    "owner": "Andrew Gay",
+    "season": "2015-16"
+  },
+  {
+    "type": "Season",
+    "record": "Most Rebounds",
+    "score": "6,771",
+    "team": "DUBcity Allstars",
+    "owner": "David Christeson",
+    "season": "2012-13"
+  },
+  {
+    "type": "Season",
+    "record": "Most Assists",
+    "score": "4,014",
+    "team": "Nine Lives",
+    "owner": "Alex Rosenbloom",
+    "season": "2009-10"
+  },
+  {
+    "type": "Season",
+    "record": "Most Steals",
+    "score": "1,176",
+    "owner": "two teams",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Most Blocks",
+    "score": "811",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "2009-10"
+  },
+  {
+    "type": "Season",
+    "record": "Most Points",
+    "score": "16,554",
+    "team": "Nine Lives",
+    "owner": "Alex Rosenbloom",
+    "season": "2009-10"
+  }
+]

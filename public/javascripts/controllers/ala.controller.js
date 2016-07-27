@@ -121,6 +121,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getFootballRecords();
 
+  $scope.vm.hoopsRecords = {};
+  $scope.getHoopsRecords = function(){
+    alaService.getHoopsRecords().then(function(results){
+      $scope.vm.hoopsRecords = results;
+    })
+  };
+  $scope.getHoopsRecords();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;
