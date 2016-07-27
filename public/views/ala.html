@@ -4,9 +4,8 @@
     </alaLead>
     <alaLinks class="row">
       <div class="col-md-offset-4">
-        <a>About</a>
-        <a>How to Play</a>
-        <a ui-sref="home.ala.blog"> Blog</a>
+        <a ui-sref="home.ala.about">About + How to Play</a>
+        <a ui-sref="home.ala.blog.main"> Blog</a>
         <a>Players</a>
         <a>Photos</a>
         <a>Contact</a>
@@ -16,18 +15,18 @@
 
 <alaSidebar class="col-md-2"/>
   <ul>
-    <li ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.hoops')}"> Fantasy NBA </a></li>
+    <li ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.hoops'), 'activeGame': $state.includes('home.ala.nbacdl')}"> Fantasy NBA </a></li>
       <ul ng-show="showFantasyNBA === true" class="multigame">
         <li class="col-md-offset-2 submenu" ng-click="showAlaHoops = !showAlaHoops" style="margin-top: -10px"> <a class="subleague" > ALA Fantasy Hoops </a> </li>
           <ul ng-show="showAlaHoops === true">
-            <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.hoops.details"> Game Details </a> </li>
+            <li class="col-md-offset-2 submenu" style="margin-top: -5px"> <a class="gamepage" ui-sref="home.ala.hoops.details"> Game Details </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.hoops.rankings"> All-Time Rankings </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.hoops.podium"> The Podium </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.hoops.records"> Record Holders </a> </li>
           </ul>
         <li class="col-md-offset-2 submenu" ng-click="showAlaCdl = !showAlaCdl"> <a class="subleague"> ALA NBA CDL </a> </li>
           <ul ng-show="showAlaCdl === true">
-            <li class="col-md-offset-2 submenu" style="margin-top: -10px"> <a class="gamepage" ui-sref="home.ala.nbacdl.details"> Game Details </a> </li>
+            <li class="col-md-offset-2 submenu" style="margin-top: -5px"> <a class="gamepage" ui-sref="home.ala.nbacdl.details"> Game Details </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.nbacdl.rankings"> All-Time Rankings </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.nbacdl.podium"> The Podium </a> </li>
             <li class="col-md-offset-2 submenu"> <a class="gamepage" ui-sref="home.ala.nbacdl.records"> Record Holders </a> </li>
@@ -94,7 +93,9 @@
   </ul>
 </alaSidebar>
 
+<divView ui-view="about"> </divView>
 <divView ui-view="blog"> </divView>
+<divView ui-view="blog-add"> </divView>
 <divView ui-view="buyins"> </divView>
 <divView ui-view="madness"> </divView>
 <divView ui-view="ncaapickem"> </divView>

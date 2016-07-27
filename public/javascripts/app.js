@@ -72,7 +72,7 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'beerdisplay@home.fridge': {
           templateUrl: 'views/fridge/beer.html',
-          controller: 'BeerDetailController'
+          controller: 'BeerController'
         }
       }
     })
@@ -81,7 +81,7 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'edit@home.fridge': {
           templateUrl: 'views/fridge/edit.html',
-          controller: 'BeerDetailController'
+          controller: 'BeerController'
         }
       }
     })
@@ -94,11 +94,47 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.about', {
+      url: '/about',
+      views: {
+        'about@home.ala': {
+          templateUrl: 'views/ala/about.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.blog', {
       url: '/blog',
       views: {
         'blog@home.ala': {
           templateUrl: 'views/ala/blog.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.blog.main', {
+      url: '/main',
+      views: {
+        'main@home.ala.blog': {
+          templateUrl: 'views/ala/blog/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.blog.add', {
+      url: '/add',
+      views: {
+        'add@home.ala.blog': {
+          templateUrl: 'views/ala/blog/add.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.blog.post', {
+      url: '/:titlestring',
+      views: {
+        'post@home.ala.blog': {
+          templateUrl: 'views/ala/blog/post.html',
           controller: 'AlaController'
         }
       }

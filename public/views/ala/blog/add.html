@@ -1,0 +1,67 @@
+<addPost class="col-md-10">
+  <lead>
+    <div class="text-center">
+      Write a Blog Post
+    </div>
+  </lead>
+
+  <blogForm class="form-horizontal">
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Post Title </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.title" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Title String </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.titlestring" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Author </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.author" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Tag One </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.tagone" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Tag Two </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.tagtwo" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Tag Three </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.tagthree" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Image URL </label>
+      <div class="col-md-8">
+        <input type="url" ng-model="vm.newpost.image" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Image Caption </label>
+      <div class="col-md-8">
+        <input type="text" ng-model="vm.newpost.imageCaption" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 text-right"> Post </label>
+      <div class="col-md-8">
+        <textarea ng-model="vm.newpost.post" rows="5" class="form-control"> </textarea>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <button class="btn btn-large btn-primary" ng-click="vm.addBlogpost()">Add Blogpost</button>
+    </div>
+  </blogForm>
+</addPost>

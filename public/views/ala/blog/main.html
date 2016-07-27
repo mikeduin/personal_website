@@ -1,0 +1,32 @@
+<blogEntries class="col-md-10">
+  <entry ng-repeat="post in vm.blogposts | orderBy: vm.sortOrder">
+    <blogHeader>
+      <a ui-sref="home.ala.blog.post({titlestring: post.titlestring})">
+        <div class="col-md-12">
+          {{post.title}}
+        </div>
+      </a>
+    </blogHeader>
+    <blogDate>
+      <div class="col-md-12">
+        Posted by {{post.author}} <i class="fa fa-bullhorn" aria-hidden="true"></i> {{post.date | date: 'medium'}}
+      </div>
+    </blogDate>
+    <blogTags class="col-md-12">
+      TAGS: <tag ng-repeat="tag in post.tags"> {{tag}} </tag>
+    </blogTags>
+    <blogText class="col-md-12">
+      <div class="col-md-2">
+        <blogImage>
+          <img ng-src="{{post.image}}" alt=""/>
+          <p class="caption"> {{post.imageCaption}} </p>
+        </blogImage>
+      </div>
+      <div>
+        <p ng-bind-html="post.post | rawHtml">
+        </p>
+      </div>
+    </blogText>
+    <hr class="col-md-10 col-md-offset-1" style="margin-top: 0px">
+  </entry>
+</blogEntries>

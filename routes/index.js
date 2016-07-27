@@ -107,16 +107,42 @@ router.get('/blogposts', function(req, res, next) {
 })
 
 router.post('/blogposts', function(req, res, next) {
-  var blogpost = new Blogpost(req.body)
+  var tags = [];
+  tags.push(req.body.tagone);
+  tags.push(req.body.tagtwo);
+  tags.push(req.body.tagthree);
+
+  var blogpost = Blogpost({
+    title: req.body.title,
+    titlestring: req.body.titlestring,
+    author: req.body.author,
+    tags: tags,
+    image: req.body.image,
+    imageCaption: req.body.imageCaption,
+    post: req.body.post
+  });
 
   blogpost.save(function(err, blogpost) {
     if (err) { return next(err); }
 
     res.json(blogpost)
   })
-
-
 })
 
+router.param('titlestring', function(req, res, next, titlestring) {
+  var query = Blogpost.find({ titlestring: titlestring });
+
+  query.exec(function (err, post) {
+    if (err) {return next(err); }
+    if (!post) {return next(new Error("can't find post")); }
+
+    req.post = post;
+    return next();
+  })
+})
+
+router.get('/blogposts/:titlestring', function(req, res) {
+    res.json(req.post);
+})
 
 module.exports = router;

@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <fridgeHeader class="col-md-12">
       <alaLead style="margin-top: 10px">
         Mike's Fridge
@@ -32,7 +32,7 @@
             Filter by brewery
             <select name="breweryFilter" ng-model="breweryFilter">
               <option value=""> (all breweries) </option>
-              <option ng-repeat="brewery in vm.breweries | orderBy: brewery" value="brewery"> {{brewery}} </option>
+              <option ng-repeat="brewery in vm.breweries | orderBy: brewery" value="{{brewery}}"> {{brewery}} </option>
             </select>
           </div>
           <div>
@@ -68,7 +68,7 @@
     <hr class="row col-md-10 col-md-offset-1">
 
     <bottleList class="col-md-12" id="bottleList">
-      <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter } | filter: (vm.coldFilter ? { cold: vm.coldFilter } : '') | filter: (vm.emptyFilter ? { quantity: 0 } : { quantity: '!'+0})">
+      <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter} | filter: (vm.coldFilter ? { cold: vm.coldFilter } : '') | filter: (vm.emptyFilter ? { quantity: 0 } : { quantity: '!'+0})">
         <a ui-sref="home.fridge.beer({beername: beer.beername})">
           <beerImage class="col-md-offset-1 col-md-2">
             <img src="{{beer.image}}" alt="{{beer.name}}" />
@@ -87,7 +87,7 @@
       <a ui-sref="home.fridge.addbeer" ng-click="vm.showInstructions = false">Add a Beer</a>
     </addBeer>
   </fridgeIndex>
-  <instructions class="col-md-4 col-md-offset-1 text-center" ng-show="vm.showInstructions === true">
+  <instructions class="col-md-4 col-md-offset-1 text-center beer-back" ng-show="vm.showInstructions === true">
     <i> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select a Beer to See Details Here </i>
   </instructions>
 </div>

@@ -87,6 +87,16 @@ function alaService ($http) {
         var blogposts = results.data;
         return blogposts
       })
+    },
+    getPost: function(titlestring) {
+      return $http.get('/blogposts/' + titlestring)
+      .then(function(results) {
+        var post = results.data;
+        return post
+      })
+    },
+    addBlogpost: function(blogpost) {
+      return $http.post('/blogposts', blogpost)
     }
   }
 }
@@ -129,7 +139,6 @@ function beerService ($http) {
       return $http.put('/beers/' + beer.beername, beer)
     },
     deleteBeer: function(beer) {
-      console.log(beer);
       return $http({
         url: '/beers',
         method: 'DELETE',
