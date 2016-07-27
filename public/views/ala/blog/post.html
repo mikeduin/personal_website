@@ -1,0 +1,30 @@
+<blogEntries class="col-md-10">
+  <entry>
+    <blogHeader>
+      <div class="col-md-12">
+        {{vm.post.title}}
+      </div>
+    </blogHeader>
+    <blogDate>
+      <div class="col-md-12">
+        Posted by {{vm.post.author}} <i class="fa fa-bullhorn" aria-hidden="true"></i> {{vm.post.date | date: 'medium'}}
+      </div>
+    </blogDate>
+    <blogTags class="col-md-12">
+      TAGS: <tag ng-repeat="tag in vm.post.tags"> {{tag}} </tag>
+    </blogTags>
+    <blogText class="col-md-12">
+      <div class="col-md-2">
+        <blogImage>
+          <img ng-src="{{vm.post.image}}" alt=""/>
+          <p class="caption"> {{vm.post.imageCaption}} </p>
+        </blogImage>
+      </div>
+      <div>
+        <p ng-bind-html="vm.post.post | rawHtml">
+        </p>
+      </div>
+    </blogText>
+    <hr class="col-md-10 col-md-offset-1" style="margin-top: 0px">
+  </entry>
+</blogEntries>

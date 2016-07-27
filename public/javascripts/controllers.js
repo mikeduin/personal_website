@@ -5,9 +5,8 @@ angular
     }])
   .controller('MainController', ['$scope', '$state', '$sce', MainController])
   .controller('MusicController', ['$scope', '$state', 'spotifyService', MusicController])
-  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', AlaController])
-  .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', 'beerService', BeerController])
-  .controller('BeerDetailController', ['$scope', '$stateParams', '$state', 'beerService', BeerDetailController])
+  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', '$stateParams', AlaController])
+  .controller('BeerController', ['$scope', '$anchorScroll', '$location', '$state', '$stateParams', 'beerService', BeerController])
   .filter('rawHtml', ['$sce', function($sce){
     return function(val) {
       return $sce.trustAsHtml(val);
@@ -25,7 +24,7 @@ function MusicController ($scope, $state, spotifyService) {
 
 }
 
-function BeerController ($scope, $anchorScroll, $location, $state, beerService) {
+function BeerController ($scope, $anchorScroll, $location, $state, $stateParams, beerService) {
   $scope.showSearch = false;
   $scope.vm = {};
   $scope.vm.showInstructions = true;
@@ -66,9 +65,6 @@ function BeerController ($scope, $anchorScroll, $location, $state, beerService) 
       console.log('Beer has been added!')
     })
   };
-}
-
-function BeerDetailController ($scope, $stateParams, $state, beerService) {
   $scope.vm.beer = {};
   $scope.getBeer = function() {
     beerService.getBeer($stateParams.beername).then(function(beer){
@@ -85,17 +81,18 @@ function BeerDetailController ($scope, $stateParams, $state, beerService) {
     })
   };
   $scope.vm.deleteBeer = function() {
-    console.log($scope.vm.beer);
     beerService.deleteBeer($scope.vm.beer).then(function(){
       $state.go('home.fridge');
+      $scope.getBeers();
       console.log('Beer has been deleted')
     })
   };
 }
 
-function AlaController ($scope, $anchorScroll, $location, alaService, $state) {
+function AlaController ($scope, $anchorScroll, $location, alaService, $state, $stateParams) {
   $scope.$state = $state;
   $scope.vm = {};
+  $scope.vm.sortOrder = '-date';
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
@@ -110,8 +107,26 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state) {
     })
   };
   $scope.getBlogposts();
-  // $scope.myPost= $sce.trustAsHtml(post.post);
 
+  $scope.vm.post = {}
+
+  $scope.getPost = function(){
+    alaService.getPost($stateParams.titlestring).then(function(post){
+      console.log($scope.vm.post)
+      $scope.vm.post = post[0];
+    })
+  }
+  $scope.getPost();
+
+  $scope.vm.newpost = {};
+
+  $scope.vm.addBlogpost = function() {
+    alaService.addBlogpost($scope.vm.newpost).then(function(){
+      $state.go('home.ala.blog.main');
+      $scope.vm.newpost = {};
+      console.log('new blogpost has been added!')
+    })
+  };
 
   $scope.vm.hoopsPodium = {};
   $scope.getHoopsPodium = function() {
