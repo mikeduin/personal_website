@@ -14,19 +14,6 @@ body {
     -webkit-transition: 1s linear all;
   }
 
-/*
-.ng-leave {
-  opacity: 1;
-  transition: 1s linear all;
-  -webkit-transition: 1s linear all;
-}
-
-.ng-leave.ng-leave-active {
-  opacity: 0;
-  transition: 1s linear all;
-  -webkit-transition: 1s linear all;
-}*/
-
 /*Navbar Styles*/
 
 .nav {
@@ -44,15 +31,6 @@ body {
   background-color: inherit;
   color: inherit;
 }
-
-/*.nav ul li {
-  margin-top: 2px
-}*/
-
-/*
-.nav ul li a:hover {
-  color: #55ACEE;
-}*/
 
 .navbar-brand span {
   font-size: 30px;
@@ -416,7 +394,7 @@ buyins {
   margin-bottom: -20px;
   font-size: 48px;
   font-weight: 800;
-  color: #D17472;
+  color: #DC5623;
 }
 
 buyins div explained p {
@@ -534,6 +512,16 @@ podium team {
   font-size: 16px;
 }
 
+podium score {
+  color: #DC5623;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+gameDetails {
+  margin-bottom: 30px;
+}
+
 gameDetails table {
   border: none;
 }
@@ -547,6 +535,11 @@ league {
 
 .cdl-const {
   margin-top: -20px;
+}
+
+lg {
+  color: #DC5623;
+  font-weight: 600;
 }
 
 /*Music Styles*/
