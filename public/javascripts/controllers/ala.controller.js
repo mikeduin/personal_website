@@ -137,6 +137,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getSurvivorResults();
 
+  $scope.vm.confRecords = {};
+  $scope.getConfRecords = function(){
+    alaService.getConfRecords().then(function(results){
+      $scope.vm.confRecords = results;
+    })
+  };
+  $scope.getConfRecords();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;
