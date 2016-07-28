@@ -161,6 +161,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getNcaaRecords();
 
+  $scope.vm.madnessRecords = {};
+  $scope.getMadnessRecords = function(){
+    alaService.getMadnessRecords().then(function(results){
+      $scope.vm.madnessRecords = results;
+    })
+  };
+  $scope.getMadnessRecords();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;

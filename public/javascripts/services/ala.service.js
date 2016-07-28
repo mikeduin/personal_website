@@ -34,6 +34,12 @@ function alaService ($http) {
         return results.data
       })
     },
+    getMadnessRecords: function(){
+      return $http.get('javascripts/alarecords/madness-records.json')
+      .then(function(results){
+        return results.data
+      })
+    },
     getHoopsPodium: function() {
       return $http.get('javascripts/alapodiums/hoops.json')
       .then(function(results){
