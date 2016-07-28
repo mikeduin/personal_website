@@ -1,7 +1,7 @@
 [
   {
     "type": "Career",
-    "category": "Percentage of Opponents Defeated",
+    "category": "Percentage of Pool Defeated",
     "record": "82%",
     "entrant": "Ryan Stanbery",
     "season": "n/a"
@@ -22,7 +22,7 @@
   },
   {
     "type": "Career",
-    "category": "Total Profits",
+    "category": "Net Profits",
     "record": "$656.49",
     "entrant": "Kyle Davis",
     "season": "n/a"
@@ -43,7 +43,7 @@
   },
   {
     "type": "Season",
-    "category": "Net Profit",
+    "category": "Net Profits",
     "record": "$510",
     "entrant": "Brad Baker",
     "season": "2014"

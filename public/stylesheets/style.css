@@ -492,7 +492,6 @@ rankings iframe {
 
 podium > table {
   border: solid 5px black;
-  margin-bottom: 40px;
   margin-top: -10px;
 }
 
@@ -540,6 +539,11 @@ league {
 lg {
   color: #DC5623;
   font-weight: 600;
+}
+
+disclaimer {
+  text-align: right;
+  font-size: 12px;
 }
 
 /*Music Styles*/

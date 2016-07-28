@@ -1,7 +1,7 @@
 [
   {
     "type": "Career",
-    "category": "Percentage of Opponents Defeated",
+    "category": "Percentage of Pool Defeated",
     "record": "92%",
     "entrant": "Michael Grundmeyer",
     "season": "n/a"
@@ -22,7 +22,7 @@
   },
   {
     "type": "Career",
-    "category": "Total Profits",
+    "category": "Net Profits",
     "record": "$818.91",
     "entrant": "Dan Goldman",
     "season": "n/a"
@@ -40,5 +40,12 @@
     "record": "1,677",
     "entrant": "Mike Rennard",
     "season": "2009"
+  },
+  {
+    "type": "Season",
+    "category": "Net Profits",
+    "record": "$583",
+    "entrant": "Nick Gardner",
+    "season": "2015"
   }
 ]
