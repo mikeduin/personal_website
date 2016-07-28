@@ -547,7 +547,12 @@ disclaimer {
 }
 
 .bracket-info {
-  padding-top: 20px
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.det-expand:hover {
+  cursor: pointer;
 }
 
 /*Music Styles*/

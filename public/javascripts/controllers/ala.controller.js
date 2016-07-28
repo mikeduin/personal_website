@@ -137,6 +137,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getFifaBtb();
 
+  $scope.vm.fifaSurvivor = {};
+  $scope.getFifaSurvivor = function() {
+    alaService.getFifaSurvivor().then(function(results){
+      $scope.vm.fifaSurvivor = results;
+    })
+  };
+  $scope.getFifaSurvivor();
+
   $scope.vm.footballRecords = {};
   $scope.getFootballRecords = function(){
     alaService.getFootballRecords().then(function(results){

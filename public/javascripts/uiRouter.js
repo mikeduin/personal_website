@@ -89,7 +89,7 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('home.ala', {
-      url: 'ala',
+      url: 'alevelabove',
       views: {
         'content@': {
           templateUrl: 'views/ala.html',
@@ -633,15 +633,6 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       views: {
         'btb@home.ala.fifa': {
           templateUrl: 'views/ala/fifa/btb.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.fifa.auction', {
-      url: '/auction',
-      views: {
-        'auction@home.ala.fifa': {
-          templateUrl: 'views/ala/fifa/auction.html',
           controller: 'AlaController'
         }
       }

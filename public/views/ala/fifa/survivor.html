@@ -1,5 +1,44 @@
 <podium class="col-md-10">
-  <league class="col-md-12 text-center">
-    Survivor Pool
-  </league>
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Season </th>
+        <th class="podium"> Winner </th>
+        <th class="podium"> Other Prize </th>
+        <th class="podium"> Other Prize </th>
+        <th class="podium"> Other Prize </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.fifaSurvivor" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.second_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.third_owner"> ({{results.third_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.fourth_team}}</team> <span ng-if="results.fourth_owner"> ({{results.fourth_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <info class="col-md-10 col-md-offset-1 bracket-info">
+    <p>
+      The concept of the World Cup Survivor Pool mirrors that of its cousin: each entrant must select a single team for each day of the tournament. If that team loses, you are knocked out of the pool; if your team wins or draws, you move on to the next day. Once an entrant selects a team, that same team cannot be selected again until after World Cup pool play concludes and the top two teams from each pool advance into bracket play, at which point entrants' selections are reset.
+    </p>
+    <p>
+      The 2014 ALA World Cup Survivor Pool was a $30 buy-in game of 39 entrants; after 33 of those entrants were knocked out on the second day of the tournament when Costa Rica scored an enormous upset of Uruguay, 28 of those entrants ponied up another $30 and started over in a second pool. Results from both pools are shown above.
+    </p>
+    <p>
+      Below you will find an embedded worksheet detailing how the pool works and each day's results. As always, due to the constraints of embedded Google Sheets (e.g., an inability to freeze rows/columns or zoom out within the workbook), it is <b>highly</b> recommended that you <a href="https://docs.google.com/spreadsheets/d/1YflabM_2bYN84QR5SGzAs1Va0aQBHtKe3l1sav_bG0s/edit#gid=0" target="_blank">click here</a> to open the full version of the spreadsheet in its own separate window, as its much easier to read that way. To see the results from 2014 Pool #2, <a href="https://docs.google.com/spreadsheets/d/13GXHWd-8pJHAP2Y-2LxduRv9q54ToB5u_8d9fNr2FQM/edit#gid=0" target="_blank">click here</a>.
+    </p>
+  </info>
+  <iframe height="800" width="96%" style="margin-left: 2%" src="https://docs.google.com/spreadsheets/d/1YflabM_2bYN84QR5SGzAs1Va0aQBHtKe3l1sav_bG0s/pubhtml?widget=true&amp;headers=false"></iframe>
 </podium>
