@@ -100,6 +100,18 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getFifaBracket: function() {
+      return $http.get('javascripts/alapodiums/fifa-bracket.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getFifaBtb: function() {
+      return $http.get('javascripts/alapodiums/fifa-btb.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getBlogposts: function() {
       return $http.get('/blogposts')
       .then(function(results) {

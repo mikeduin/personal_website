@@ -121,6 +121,22 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getMadnessPodium();
 
+  $scope.vm.fifaBracket = {};
+  $scope.getFifaBracket = function() {
+    alaService.getFifaBracket().then(function(results){
+      $scope.vm.fifaBracket = results;
+    })
+  };
+  $scope.getFifaBracket();
+
+  $scope.vm.fifaBtb = {};
+  $scope.getFifaBtb = function() {
+    alaService.getFifaBtb().then(function(results){
+      $scope.vm.fifaBtb = results;
+    })
+  };
+  $scope.getFifaBtb();
+
   $scope.vm.footballRecords = {};
   $scope.getFootballRecords = function(){
     alaService.getFootballRecords().then(function(results){

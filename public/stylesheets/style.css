@@ -546,6 +546,10 @@ disclaimer {
   font-size: 12px;
 }
 
+.bracket-info {
+  padding-top: 20px
+}
+
 /*Music Styles*/
 
 musicHeader {

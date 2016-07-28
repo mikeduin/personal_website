@@ -601,6 +601,51 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.fifa.details', {
+      url: '/details',
+      views: {
+        'details@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.fifa.survivor', {
+      url: '/survivor',
+      views: {
+        'survivor@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/survivor.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.fifa.bracket', {
+      url: '/bracket',
+      views: {
+        'bracket@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/bracket.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.fifa.btb', {
+      url: '/btb',
+      views: {
+        'btb@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/btb.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.fifa.auction', {
+      url: '/auction',
+      views: {
+        'auction@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/auction.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.pga', {
       url: '/pgamajors',
       views: {
