@@ -655,4 +655,22 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.nbaplayoffs.details', {
+      url: '/details',
+      views: {
+        'details@home.ala.nbaplayoffs': {
+          templateUrl: 'views/ala/nbaplayoffs/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbaplayoffs.results', {
+      url: '/results',
+      views: {
+        'results@home.ala.nbaplayoffs': {
+          templateUrl: 'views/ala/nbaplayoffs/results.html',
+          controller: 'AlaController'
+        }
+      }
+    })
   }

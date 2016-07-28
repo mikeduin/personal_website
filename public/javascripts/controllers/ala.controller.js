@@ -121,6 +121,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getMadnessPodium();
 
+  $scope.vm.nbaPlayoffs = {};
+  $scope.getNbaPlayoffs = function() {
+    alaService.getNbaPlayoffs().then(function(results){
+      $scope.vm.nbaPlayoffs = results;
+    })
+  };
+  $scope.getNbaPlayoffs();
+
   $scope.vm.fifaBracket = {};
   $scope.getFifaBracket = function() {
     alaService.getFifaBracket().then(function(results){

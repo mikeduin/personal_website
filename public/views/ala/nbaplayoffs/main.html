@@ -1,0 +1,17 @@
+<gameTitle class="col-md-10 text-center">
+  <hr class="col-md-4 col-md-offset-4">
+  <div class="col-md-12 gameTitle">
+    <p> NBA Playoffs Pool </p>
+  </div>
+  <hr class="col-md-4 col-md-offset-4">
+</gameTitle>
+
+<gameNav class="text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.nbaplayoffs.details" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.nbaplayoffs.results" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.results')}"> Results</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="results"> </div>
