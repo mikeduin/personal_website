@@ -1,0 +1,83 @@
+[
+  {
+    "season": "2016",
+    "first_team": "Scott Hitchcock",
+    "first_owner": "$2,784",
+    "second_team": "Adam Atkins",
+    "second_owner": "$1,392",
+    "third_team": "Kenneth Meyers",
+    "third_owner": "$777"
+  },
+  {
+    "season": "2015",
+    "first_team": "Tyson Obleada",
+    "first_owner": "$2,750",
+    "second_team": "Adam Young",
+    "second_owner": "$1,375",
+    "third_team": "Zach Groher",
+    "third_owner": "$767"
+  },
+  {
+    "season": "2014",
+    "first_team": "Matt Fisher",
+    "first_owner": "$2,332",
+    "second_team": "Tyler Dedlow",
+    "second_owner": "$1,166",
+    "third_team": "Kerry Burke",
+    "third_owner": "$651"
+  },
+  {
+    "season": "2013",
+    "first_team": "Kyle Luhr",
+    "first_owner": "$1,593",
+    "second_team": "Russell Petran",
+    "second_owner": "$797",
+    "third_team": "Nick Absalonson",
+    "third_owner": "$432"
+  },
+  {
+    "season": "2012",
+    "first_team": "Conor McAvoy",
+    "first_owner": "$1,118",
+    "second_team": "Jarir Mallah",
+    "second_owner": "$528",
+    "third_team": "Brian Freed",
+    "third_owner": "$211"
+  },
+  {
+    "season": "2011",
+    "first_team": "Theo Erde-Wollheim",
+    "first_owner": "$940",
+    "second_team": "Matt Crevier",
+    "second_owner": "$453",
+    "third_team": "Mike Boden",
+    "third_owner": "$165"
+  },
+  {
+    "season": "2010",
+    "first_team": "Corey Rhodes",
+    "first_owner": "$850",
+    "second_team": "Neil Stokke",
+    "second_owner": "$410",
+    "third_team": "Christina Duin",
+    "third_owner": "$150"
+  },
+  {
+    "season": "2009",
+    "first_team": "Dan Goldman",
+    "first_owner": "$647",
+    "second_team": "Mike Boden",
+    "second_owner": "$286",
+    "third_team": "Mike Boden",
+    "third_owner": "$155"
+  },
+  {
+    "season": "2008",
+    "first_team": "Mike Marty",
+    "first_owner": "$339",
+    "second_team": "Damon Pryor",
+    "second_owner": "$150",
+    "third_team": "Leslie Dillavou",
+    "third_owner": "$60"
+  }
+]

@@ -28,6 +28,12 @@ function alaService ($http) {
         return results.data
       })
     },
+    getNcaaRecords: function(){
+      return $http.get('javascripts/alarecords/ncaa-records.json')
+      .then(function(results){
+        return results.data
+      })
+    },
     getHoopsPodium: function() {
       return $http.get('javascripts/alapodiums/hoops.json')
       .then(function(results){
@@ -54,6 +60,12 @@ function alaService ($http) {
     },
     getConfidencePodium: function() {
       return $http.get('javascripts/alapodiums/confidence.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getMadnessPodium: function() {
+      return $http.get('javascripts/alapodiums/madness.json')
       .then(function(results){
         return results.data;
       })

@@ -584,10 +584,10 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('home.ala.madness.podium', {
-      url: '/records',
+      url: '/podium',
       views: {
-        'records@home.ala.madness': {
-          templateUrl: 'views/ala/madness/records.html',
+        'podium@home.ala.madness': {
+          templateUrl: 'views/ala/madness/podium.html',
           controller: 'AlaController'
         }
       }
