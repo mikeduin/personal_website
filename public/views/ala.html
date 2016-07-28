@@ -87,6 +87,13 @@
       <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.bowlpickem"> Bowl Pick 'em </a> </li>
     </ul>
     <li ng-click="showFifa = !showFifa"> <img src="images/soccer.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.fifa')}"> FIFA World Cup </a> </li>
+    <ul ng-show="showFifa === true">
+      <li class="col-md-offset-2 submenu" style="margin-top: -10px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.details"> Game Details </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.survivor"> Survivor </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.bracket"> Bracket Pool </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.btb"> Battle the Bookies </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.auction"> Auction Pool </a> </li>
+    </ul>
     <li ng-click="showNbaPlayoffs = !showNbaPlayoffs"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.nbaplayoffs')}"> NBA Playoff Pool </a> </li>
     <li ng-click="showPga = !showPga"> <img src="images/golf.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.pga')}"> PGA Majors </a> </li>
   </ul>

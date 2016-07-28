@@ -1,0 +1,23 @@
+<gameTitle class="col-md-10 text-center">
+  <hr class="col-md-4 col-md-offset-4">
+  <div class="col-md-12 gameTitle">
+    <p> FIFA World Cup </p>
+  </div>
+  <hr class="col-md-4 col-md-offset-4">
+</gameTitle>
+
+<gameNav class="text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.fifa.details" ng-class="{'activetab': $state.includes('home.ala.fifa.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.fifa.survivor" ng-class="{'activetab': $state.includes('home.ala.fifa.survivor')}"> Survivor</a> </li>
+    <li> <a ui-sref="home.ala.fifa.bracket" ng-class="{'activetab': $state.includes('home.ala.fifa.bracket')}"> Bracket Pool</a> </li>
+    <li> <a ui-sref="home.ala.fifa.btb" ng-class="{'activetab': $state.includes('home.ala.fifa.btb')}"> Battle the Bookies</a> </li>
+    <li> <a ui-sref="home.ala.fifa.auction" ng-class="{'activetab': $state.includes('home.ala.fifa.auction')}"> Auction</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="survivor"> </div>
+<div ui-view="bracket"> </div>
+<div ui-view="btb"> </div>
+<div ui-view="auction"> </div>
