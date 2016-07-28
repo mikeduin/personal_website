@@ -1,0 +1,44 @@
+<podium class="col-md-10">
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Year </th>
+        <th class="podium"> 1st Place </th>
+        <th class="podium"> 2nd Place </th>
+        <th class="podium"> 3rd Place </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="results in vm.nbaPlayoffs" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{results.season}} </i>
+        </td>
+        <td class="podium">
+          <team> {{results.first_team}}</team> <span ng-if="results.first_owner"> ({{results.first_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.second_team}}</team> <span ng-if="results.second_owner"> ({{results.second_owner}}) </span>
+        </td>
+        <td class="podium">
+          <team> {{results.third_team}}</team> <span ng-if="results.third_owner"> ({{results.third_owner}}) </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <info class="col-md-10 col-md-offset-1 bracket-info">
+    <p>
+      The game structure for the original edition of the NBA Playoffs Pool was simple and traditional: a standard bracket game with correct playoff series picks doubling in value in each successive round. This was also fairly boring, and if this pool ever returns as an ALA game it will be in an enhanced format that includes a regular season component and additional tweaks to make the pool a little more interesting.
+    </p>
+    <p>
+      Below you will find links to the results of the 2008 and 2009 pools.
+      <p>
+        <a href="https://docs.google.com/spreadsheets/d/1_ukFmhuZnl4SQ80RERzvtcE4qHNKAT7Z8skksiNPa0E/edit?usp=sharing" target="_blank">2009 NBA Playoff Pool</a>
+      </p>
+      <p>
+        <a href="https://docs.google.com/spreadsheets/d/1_BIX6mnaXKYLAANrZbHEF8UE0-hcQaXnpm6eOfSXV-g/edit" target="_blank">2008 NBA Playoff Pool</a>
+      </p>
+    </p>
+
+
+  </info>
+</podium>
