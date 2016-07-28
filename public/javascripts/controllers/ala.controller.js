@@ -113,6 +113,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getConfidencePodium();
 
+  $scope.vm.madnessPodium = {};
+  $scope.getMadnessPodium = function() {
+    alaService.getMadnessPodium().then(function(results){
+      $scope.vm.madnessPodium = results;
+    })
+  };
+  $scope.getMadnessPodium();
+
   $scope.vm.footballRecords = {};
   $scope.getFootballRecords = function(){
     alaService.getFootballRecords().then(function(results){
@@ -144,6 +152,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
     })
   };
   $scope.getConfRecords();
+
+  $scope.vm.ncaaRecords = {};
+  $scope.getNcaaRecords = function(){
+    alaService.getNcaaRecords().then(function(results){
+      $scope.vm.ncaaRecords = results;
+    })
+  };
+  $scope.getNcaaRecords();
 
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
