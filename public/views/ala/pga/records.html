@@ -1,0 +1,35 @@
+<podium class="col-md-10">
+  <table class="col-md-12">
+    <thead>
+      <tr>
+        <th class="podium"> Type </th>
+        <th class="podium"> Category </th>
+        <th class="podium"> Entrant </th>
+        <th class="podium"> Record </th>
+        <th class="podium"> Season </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="record in vm.pgaRecords" class="podium">
+        <td class="podium">
+          <i> {{record.type}}</i>
+        </td>
+        <td style="font-size: 16px" class="podium">
+          <b> {{record.category}} </b>
+        </td>
+        <td class="podium">
+          <team> {{record.entrant}}</team>
+        </td>
+        <td class="podium">
+          <score> {{record.record}}</score>
+        </td>
+        <td class="text-center">
+          {{record.season}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <disclaimer>
+    <i>Entrants must have played for at least two seasons to qualify for career records.</i>
+  </disclaimer>
+</podium>
