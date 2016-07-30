@@ -1,0 +1,23 @@
+<gameTitle class="col-md-10 text-center">
+  <hr class="col-md-4 col-md-offset-4">
+  <div class="col-md-12 gameTitle">
+    <p> PGA Majors Game </p>
+  </div>
+  <hr class="col-md-4 col-md-offset-4">
+</gameTitle>
+
+<gameNav class="text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.pga.details" ng-class="{'activetab': $state.includes('home.ala.pga.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.pga.rankings" ng-class="{'activetab': $state.includes('home.ala.pga.rankings')}"> All-Time Rankings</a> </li>
+    <li> <a ui-sref="home.ala.pga.podium" ng-class="{'activetab': $state.includes('home.ala.pga.podium')}"> The Podium</a> </li>
+    <li> <a ui-sref="home.ala.pga.yoy" ng-class="{'activetab': $state.includes('home.ala.pga.yoy')}"> YoY Progression</a> </li>
+    <li> <a ui-sref="home.ala.pga.records" ng-class="{'activetab': $state.includes('home.ala.pga.records')}"> Game Records</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="podium"> </div>
+<div ui-view="rankings"> </div>
+<div ui-view="yoy"> </div>
+<div ui-view="records"> </div>

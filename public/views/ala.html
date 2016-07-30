@@ -100,9 +100,12 @@
       <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbaplayoffs.results"> Results </a> </li>
     </ul>
     <li ng-click="showPga = !showPga"> <img src="images/golf.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.pga')}"> PGA Majors </a> </li>
-    <ul ng-show="showNbaPlayoffs === true">
+    <ul ng-show="showPga === true">
       <li class="col-md-offset-2 submenu" style="margin-top: -10px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.details"> Game Details </a> </li>
-      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.results"> Results </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.rankings"> All-Time Rankings </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.podium"> The Podium </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.yoy"> YoY Progression </a> </li>
+      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.records"> Game Records </a> </li>
     </ul>
   </ul>
 </alaSidebar>

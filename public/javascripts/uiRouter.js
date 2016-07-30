@@ -646,6 +646,51 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.pga.details', {
+      url: '/details',
+      views: {
+        'details@home.ala.pga': {
+          templateUrl: 'views/ala/pga/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.pga.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.pga': {
+          templateUrl: 'views/ala/pga/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.pga.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.pga': {
+          templateUrl: 'views/ala/pga/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.pga.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.pga': {
+          templateUrl: 'views/ala/pga/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.pga.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.pga': {
+          templateUrl: 'views/ala/pga/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.nbaplayoffs', {
       url: '/nbaplayoffs',
       views: {

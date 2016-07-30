@@ -124,6 +124,18 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getPgaPodium: function() {
+      return $http.get('javascripts/alapodiums/pga.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getPgaRecords: function() {
+      return $http.get('javascripts/alarecords/pga-records.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getBlogposts: function() {
       return $http.get('/blogposts')
       .then(function(results) {

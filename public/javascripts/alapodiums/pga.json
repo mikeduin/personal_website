@@ -1,0 +1,29 @@
+[
+  {
+    "season": "2010",
+    "first_team": "Kyle Davis",
+    "first_owner": "$132",
+    "second_team": "Michael Grundmeyer",
+    "second_owner": "$66",
+    "third_team": "Max Kabrich",
+    "third_owner": "$30"
+  },
+  {
+    "season": "2009",
+    "first_team": "Mike Marty",
+    "first_owner": "$170",
+    "second_team": "Mat Burdick",
+    "second_owner": "$69",
+    "third_team": "Steve Popp",
+    "third_owner": "$39"
+  },
+  {
+    "season": "2008",
+    "first_team": "Dan Goldman",
+    "first_owner": "$105",
+    "second_team": "Kyle Davis",
+    "second_owner": "$50",
+    "third_team": "Brandon Seroyer",
+    "third_owner": "$24"
+  }
+]
