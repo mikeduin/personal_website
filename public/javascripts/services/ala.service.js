@@ -40,6 +40,12 @@ function alaService ($http) {
         return results.data
       })
     },
+    getBtbRecords: function(){
+      return $http.get('javascripts/alarecords/btb-records.json')
+      .then(function(results){
+        return results.data
+      })
+    },
     getHoopsPodium: function() {
       return $http.get('javascripts/alapodiums/hoops.json')
       .then(function(results){
