@@ -1,0 +1,56 @@
+[
+  {
+    "season": "2015-16",
+    "first_team": "Marc Courtmanch",
+    "first_owner": "$500",
+    "second_team": "Don Bennett",
+    "second_owner": "$250",
+    "third_team": "Brad Baker",
+    "third_owner": "$120"
+  },
+  {
+    "season": "2014-15",
+    "first_team": "Sean Shoemaker (tie)",
+    "first_owner": "$250",
+    "second_team": "Hadyn Renford (tie)",
+    "second_owner": "$250",
+    "third_team": "Kyle Davis / Joe Buccholz (tie)",
+    "third_owner": "$45 each"
+  },
+  {
+    "season": "2013-14",
+    "first_team": "Mike Duin",
+    "first_owner": "$170",
+    "second_team": "Corey Uhalde",
+    "second_owner": "$85",
+    "third_team": "Travis Ross",
+    "third_owner": "$45"
+  },
+  {
+    "season": "2012-13",
+    "first_team": "Daniel Shuval",
+    "first_owner": "$110",
+    "second_team": "Mike Duin",
+    "second_owner": "$40",
+    "third_team": "Kevin Simshauser",
+    "third_owner": "$15"
+  },
+  {
+    "season": "2010-11",
+    "first_team": "Joe Simich",
+    "first_owner": "$75",
+    "second_team": "Matt Stringer",
+    "second_owner": "$25",
+    "third_team": "Hugh McGregor",
+    "third_owner": "$10"
+  },
+  {
+    "season": "2009-10",
+    "first_team": "Michael Grundmeyer (tie)",
+    "first_owner": "$45",
+    "second_team": "Rob Griesinger (tie)",
+    "second_owner": "$45",
+    "third_team": "Steve Duin",
+    "third_owner": "$10"
+  }
+]

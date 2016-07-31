@@ -142,6 +142,18 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getBowlPodium: function() {
+      return $http.get('javascripts/alapodiums/bowl.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getBowlRecords: function() {
+      return $http.get('javascripts/alarecords/bowl-records.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getPgaRecords: function() {
       return $http.get('javascripts/alarecords/pga-records.json')
       .then(function(results){
