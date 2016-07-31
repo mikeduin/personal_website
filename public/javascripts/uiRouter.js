@@ -394,6 +394,60 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.bowlpickem', {
+      url: '/bowlpickem',
+      views: {
+        'bowlpickem@home.ala': {
+          templateUrl: 'views/ala/bowlpickem/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.bowlpickem.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.bowlpickem': {
+          templateUrl: 'views/ala/bowlpickem/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.bowlpickem.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.bowlpickem': {
+          templateUrl: 'views/ala/bowlpickem/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.bowlpickem.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.bowlpickem': {
+          templateUrl: 'views/ala/bowlpickem/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.bowlpickem.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.bowlpickem': {
+          templateUrl: 'views/ala/bowlpickem/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.bowlpickem.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.bowlpickem': {
+          templateUrl: 'views/ala/bowlpickem/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.survivor', {
       url: '/nflsurvivor',
       views: {
