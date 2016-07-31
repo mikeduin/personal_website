@@ -217,6 +217,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getPgaRecords();
 
+  $scope.vm.btbRecords = {};
+  $scope.getBtbRecords = function() {
+    alaService.getBtbRecords().then(function(results){
+      $scope.vm.btbRecords = results;
+    })
+  };
+  $scope.getBtbRecords();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;
