@@ -121,6 +121,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getMadnessPodium();
 
+  $scope.vm.bowlPodium = {};
+  $scope.getBowlPodium = function() {
+    alaService.getBowlPodium().then(function(results){
+      $scope.vm.bowlPodium = results;
+    })
+  };
+  $scope.getBowlPodium();
+
   $scope.vm.nbaPlayoffs = {};
   $scope.getNbaPlayoffs = function() {
     alaService.getNbaPlayoffs().then(function(results){
@@ -232,6 +240,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
     })
   };
   $scope.getCdlRecords();
+
+  $scope.vm.bowlRecords = {};
+  $scope.getBowlRecords = function() {
+    alaService.getBowlRecords().then(function(results){
+      $scope.vm.bowlRecords = results;
+    })
+  };
+  $scope.getBowlRecords();
 
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
