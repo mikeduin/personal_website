@@ -1,3 +1,9 @@
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+   $('.droptown-toggle').dropdown()
+ });
+</script> -->
+
 <alaHeader class="col-md-12" id="alaTop">
     <alaLead style="margin-top: 10px">
       A Level Above
@@ -6,7 +12,13 @@
       <div class="col-md-offset-4">
         <a ui-sref="home.ala.about">About + How to Play</a>
         <a ui-sref="home.ala.blog.main"> Blog</a>
-        <a>Players</a>
+        <div uib-dropdown style="display: inline">
+          <a uib-dropdown-toggle>Players <b class="caret"></b></a>
+            <ul uib-dropdown-menu>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+            </ul>
+        </div>
         <a>Photos</a>
         <a>Contact</a>
       </div>
