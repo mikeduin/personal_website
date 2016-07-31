@@ -16,6 +16,12 @@ function alaService ($http) {
         return results.data
       })
     },
+    getCdlRecords: function(){
+      return $http.get('javascripts/alarecords/cdl-records.json')
+      .then(function(results){
+        return results.data
+      })
+    },
     getSurvivorResults: function(){
       return $http.get('javascripts/alapodiums/survivor-results.json')
       .then(function(results){

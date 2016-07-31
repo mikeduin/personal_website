@@ -1,0 +1,34 @@
+[
+  {
+    "type": "Career",
+    "record": "Average Finish",
+    "score": "1.5",
+    "team": "Chuck",
+    "owner": "Kyle Davis",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Net Earnings",
+    "score": "$1,670",
+    "team": "Chuck",
+    "owner": "Kyle Davis",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "record": "Head-to-Head Win Percentage (Reg. Season)",
+    "score": "203-144-4 (.584)",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "n/a"
+  },
+  {
+    "type": "Season",
+    "record": "Head-to-Head Win Percentage (Reg. Season)",
+    "score": "118-60-2 (.661)",
+    "team": "Seattle Supersonics",
+    "owner": "Dan Goldman",
+    "season": "2015-16"
+  }
+]

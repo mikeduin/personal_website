@@ -225,11 +225,20 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getBtbRecords();
 
+  $scope.vm.cdlRecords = {};
+  $scope.getCdlRecords = function() {
+    alaService.getCdlRecords().then(function(results){
+      $scope.vm.cdlRecords = results;
+    })
+  };
+  $scope.getCdlRecords();
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;
   $scope.showMadness = false;
   $scope.showNcaaPickem = false;
+  $scope.showBowlPickem = false;
   $scope.showBtb = false;
   $scope.showBaseball = false;
   $scope.showEffRoto = false;
