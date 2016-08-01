@@ -1,9 +1,3 @@
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-   $('.droptown-toggle').dropdown()
- });
-</script> -->
-
 <alaHeader class="col-md-12" id="alaTop">
     <alaLead style="margin-top: 10px">
       A Level Above
@@ -13,10 +7,10 @@ $(document).ready(function(){
         <a ui-sref="home.ala.about">About + How to Play</a>
         <a ui-sref="home.ala.blog.main"> Blog</a>
         <div uib-dropdown style="display: inline">
-          <a uib-dropdown-toggle>Players <b class="caret"></b></a>
-            <ul uib-dropdown-menu>
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
+          <a uib-dropdown-toggle ng-click="playersActive = !playersActive" ng-class="{'active-players': playersActive === true}">Players <b class="caret"></b></a>
+            <ul uib-dropdown-menu class="dropdown-styles">
+              <li><a href="#" style="margin-left: 0px">Universal Career Data</a></li>
+              <li><a href="#" style="margin-left: 0px">Current Balances</a></li>
             </ul>
         </div>
         <a>Photos</a>
@@ -111,7 +105,6 @@ $(document).ready(function(){
       <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.survivor"> Survivor </a> </li>
       <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.btb"> Battle the Bookies </a> </li>
       <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.bracket"> Bracket Pool </a> </li>
-      <li class="col-md-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.auction"> Auction Pool </a> </li>
     </ul>
     <li ng-click="showNbaPlayoffs = !showNbaPlayoffs"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.nbaplayoffs')}"> NBA Playoff Pool </a> </li>
     <ul ng-show="showNbaPlayoffs === true">
