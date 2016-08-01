@@ -264,4 +264,5 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.showPga = false;
   $scope.showNbaPlayoffs = false;
   $scope.showFifa = false;
+  $scope.playersActive = false;
 }
