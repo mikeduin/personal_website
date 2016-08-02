@@ -137,3 +137,31 @@ p.slide{
   width: 30em;
   animation: type 4s steps(60, end);
 }*/
+
+
+<div class="col-md-12 text-center navbar-brand title-head">
+  <span> mike<b>duin</b> <span>
+</div>
+
+<hr class="col-md-4 col-md-offset-4 title-hr">
+
+<div>
+  <div class="row">
+    <a ui-sref="home.about"><leftSquare>
+    </leftSquare></a>
+    <a ui-sref="home.professional"><square>
+    </square></a>
+    <a href="/"><square class="kophiphi">
+      <p class="ko-content slide" id="kophiphi-text"> photography </p>
+    </square></a>
+  </div>
+  <div class="row">
+    <a ui-sref="home.ala"><leftSquare>
+    </leftSquare></a>
+    <a ui-sref="home.music"><square>
+    </square></a>
+    <a ui-sref="home.fridge"><square class="fridge">
+      <p class="fridge-content slide" id="fridge-text"> bottle list </p>
+    </square></a>
+  </div>
+</div>
