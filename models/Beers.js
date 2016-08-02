@@ -15,6 +15,6 @@ var beerSchema = new Schema ({
   size: String,
   ordered: Date,
   description: String
-});
+}, {collection: 'mikesFridge'});
 
 mongoose.model('Beer', beerSchema);

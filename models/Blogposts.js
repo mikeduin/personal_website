@@ -11,6 +11,6 @@ var blogpostSchema = new Schema ({
   image: String,
   imageCaption: String,
   post: String
-});
+}, {collection: 'alaBlog'});
 
 mongoose.model('Blogpost', blogpostSchema);
