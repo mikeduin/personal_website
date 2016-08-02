@@ -2,5 +2,3 @@ node_modules
 .env
 .DS_Store
 public/.DS_Store
-public/images/gorge-pano.png
-images/gorge-pano.png
