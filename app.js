@@ -9,7 +9,9 @@ var querystring = require('querystring');
 var mongoose = require('mongoose');
 require('dotenv').load();
 
-mongoose.connect('mongodb://localhost/mikesFridge');
+mongoose.connect(process.env.MONGOLAB_URI
+  // || 'mongodb://localhost/mikesFridge'
+);
 require('./models/Beers');
 require('./models/Blogposts');
 
