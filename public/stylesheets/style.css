@@ -3,16 +3,20 @@ body {
 }
 
 .ng-enter {
-    opacity: 0;
-    transition: 1s linear all;
-    -webkit-transition: 1s linear all;
-  }
+  opacity: 0;
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
 
 .ng-enter-active {
-    opacity: 1;
-    transition: 1s linear all;
-    -webkit-transition: 1s linear all;
-  }
+  opacity: 1;
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
+
+img {
+  width: 100%;
+}
 
 /*Navbar Styles*/
 
@@ -165,7 +169,31 @@ body {
 }
 
 .title-hr {
-  margin-top: 0px;
+  margin-top: -10px;
+  height: 2px;
+  background-color: black;
+}
+
+.webdev-rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  position: fixed;
+  right: 2%;
+  top: 64%;
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+}
+
+.vert-line {
+  height: 200px;
+  border-right: solid 2px black;
+  position: fixed;
+  right: 13%;
+  top: 60%;
 }
 
 square {
@@ -199,8 +227,8 @@ leftSquare {
     height:90%;
     width:90%;
     padding: 5%;
-    margin-top: 70%;
-    margin-left: 40%;
+    margin-top: 10%;
+    margin-left: 20%;
 }
 
 .kophiphi {
@@ -220,17 +248,16 @@ leftSquare {
   -moz-transition: .5s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-#kophiphi-text, #fridge-text {
+#kophiphi-text, #fridge-text, #work-text, #music-text, #ala-text {
   display: none;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
-}
-
-.kophiphi:hover > #kophiphi-text {
-  display: block;
 }
 
 .kophiphi:hover > #kophiphi-text {
@@ -254,19 +281,13 @@ leftSquare {
   -moz-transition: .5s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .fridge:hover > #fridge-text {
   display: block;
-}
-
-.fridge-content {
-    position:absolute;
-    height:90%;
-    width:90%;
-    padding: 5%;
-    margin-top: 20%;
-    margin-left: 40%;
 }
 
 @keyframes type{
@@ -275,25 +296,125 @@ leftSquare {
 
 p.slide{
   /*-webkit-transform: rotate(90deg);*/
-  font-size: 20px;
-  margin: 10px 0 0 10px;
   white-space: nowrap;
   overflow: hidden;
   width: 30em;
   animation: type 3s steps(60, end);
 }
 
-/*photo-text{
-  color: Pink;
-  font-family: "Courier";
-  font-size: 20px;
-  margin: 10px 0 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end);
-}*/
+.fridge-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 50%;
+  margin-left: 35%;
+}
 
+.work-content {
+    position:absolute;
+    height:90%;
+    width:90%;
+    padding: 5%;
+    margin-top: 40%;
+    margin-left: 30%;
+}
+
+.work {
+  background-image: url('../images/work.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.work:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.work:hover > #work-text {
+  display: block;
+}
+
+.music-content {
+    position:absolute;
+    height:90%;
+    width:90%;
+    padding: 5%;
+    margin-top: 70%;
+    margin-left: 30%;
+}
+
+.music-logo {
+  background-image: url('../images/playlists.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.music-logo:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.music-logo:hover > #music-text {
+  display: block;
+}
+
+.ala-content {
+    position:absolute;
+    height:90%;
+    width:90%;
+    padding: 5%;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+.ala-logo {
+  background-image: url('../images/ala0304.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.ala-logo:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.ala-logo:hover > #ala-text {
+  display: block;
+}
 
 /*ALA Styles*/
 
