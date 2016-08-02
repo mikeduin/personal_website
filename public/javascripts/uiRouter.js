@@ -14,7 +14,7 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', {  
+    .state('home', {
       url: '/',
       views: {
         'header': {
@@ -22,7 +22,8 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
           controller: 'MainController'
         },
         'content': {
-          templateUrl: 'views/content.html'
+          templateUrl: 'views/content.html',
+          controller: 'MainController'
         }
       }
     })
