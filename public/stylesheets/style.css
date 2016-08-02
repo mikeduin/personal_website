@@ -21,7 +21,7 @@ img {
 /*Navbar Styles*/
 
 .nav {
-  padding: 0 30px 0 50px;
+  /*padding: 0 30px 0 0px;*/
   background-color: white;
   font-weight: 600;
   font-size: 14px;
