@@ -165,7 +165,11 @@ body {
 }
 
 .title-hr {
-  margin-top: 0px;
+  margin-top: -10px;
+}
+
+img {
+  width: 100%;
 }
 
 square {
@@ -199,8 +203,8 @@ leftSquare {
     height:90%;
     width:90%;
     padding: 5%;
-    margin-top: 70%;
-    margin-left: 40%;
+    margin-top: 10%;
+    margin-left: 20%;
 }
 
 .kophiphi {
@@ -220,17 +224,16 @@ leftSquare {
   -moz-transition: .5s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-#kophiphi-text, #fridge-text {
+#kophiphi-text, #fridge-text, #work-text, #music-text {
   display: none;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
-}
-
-.kophiphi:hover > #kophiphi-text {
-  display: block;
 }
 
 .kophiphi:hover > #kophiphi-text {
@@ -254,19 +257,13 @@ leftSquare {
   -moz-transition: .5s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .fridge:hover > #fridge-text {
   display: block;
-}
-
-.fridge-content {
-    position:absolute;
-    height:90%;
-    width:90%;
-    padding: 5%;
-    margin-top: 20%;
-    margin-left: 40%;
 }
 
 @keyframes type{
@@ -275,25 +272,90 @@ leftSquare {
 
 p.slide{
   /*-webkit-transform: rotate(90deg);*/
-  font-size: 20px;
-  margin: 10px 0 0 10px;
   white-space: nowrap;
   overflow: hidden;
   width: 30em;
   animation: type 3s steps(60, end);
 }
 
-/*photo-text{
-  color: Pink;
-  font-family: "Courier";
-  font-size: 20px;
-  margin: 10px 0 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end);
-}*/
+.fridge-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 60%;
+  margin-left: 35%;
+}
 
+.work-content {
+    position:absolute;
+    height:90%;
+    width:90%;
+    padding: 5%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.work {
+  background-image: url('../images/work.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.work:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.work:hover > #work-text {
+  display: block;
+}
+
+.music-content {
+    position:absolute;
+    height:90%;
+    width:90%;
+    padding: 5%;
+    margin-top: 70%;
+    margin-left: 10%;
+}
+
+.music-logo {
+  background-image: url('../images/playlists.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.music-logo:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.music-logo:hover > #music-text {
+  display: block;
+}
 
 /*ALA Styles*/
 
