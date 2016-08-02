@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var mongoose = require('mongoose');
+require('dotenv').load();
 
 mongoose.connect('mongodb://localhost/mikesFridge');
 require('./models/Beers');
