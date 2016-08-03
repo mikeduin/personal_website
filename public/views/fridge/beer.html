@@ -1,4 +1,4 @@
-<beerDetail class="col-md-6 text-center fixed">
+<beerDetail class="col-xs-6 text-center fixed">
   <div class="row">
     <a ui-sref="home.fridge.edit({beername: vm.beer.beername})"> <name> {{vm.beer.name}} </name> </a>
   </div>
@@ -20,10 +20,10 @@
     <button ng-if="vm.beer.cold !== true" type="button" name="button" class="btn fridgeme"> FRIDGE ME!</button>
   </div>
   <div class="row">
-    <beerImage class="col-md-3">
+    <beerImage class="col-xs-3">
       <img src="{{vm.beer.image}}" alt="" />
     </beerImage>
-    <description class="col-md-9 text-left">
+    <description class="col-xs-9 text-left">
       <b> Courtesy of <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a></b>: "{{vm.beer.description}}"
     </description>
   </div>

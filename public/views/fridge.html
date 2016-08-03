@@ -1,28 +1,28 @@
 <div>
-  <fridgeHeader class="col-md-12">
+  <fridgeHeader class="col-xs-12">
       <alaLead style="margin-top: 10px">
         Mike's Fridge
       </alaLead>
       <fridgeSubheader class="row">
-        <div class="col-md-offset-7">
+        <div class="col-xs-offset-7">
           Coming over? Queue up a cold one...
         </div>
       </fridgeSubheader>
   </fridgeHeader>
 
-  <fridgeLead class="col-md-10 col-md-offset-1">
+  <fridgeLead class="col-xs-10 col-xs-offset-1">
     Thanks to the fine people (and the elite copywriters) at <a href="https://www.tavour.com/?invitedby=7020" target="_blank">Tavour</a>, I've amassed an absurd stockpile of craft beer in my cellar*. If you're reading this: I need your help. Drinking all of this beer is well beyond the scope of a one-man operation. If you're coming over, check out the bottle list below and click the 'Fridge Me!' button to send me an email requesting that I put the beer(s) of your choice in the fridge for you ahead of time. They'll be cold when you get here.
   </fridgeLead>
-  <fridgeNote class="col-md-3 col-md-offset-9">
+  <fridgeNote class="col-xs-3 col-xs-offset-9">
     *actually a closet in a hallway
   </fridgeNote>
 
-  <fridgeIndex class="col-md-6" id="searchBar">
-    <searchContainer class="col-md-12">
+  <fridgeIndex class="col-xs-6" id="searchBar">
+    <searchContainer class="col-xs-12">
       <div class="text-center pointer" ng-click="showSearch = !showSearch">
         CLICK HERE TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
       </div>
-      <searchOptions class="col-md-12" ng-show="showSearch === true">
+      <searchOptions class="col-xs-12" ng-show="showSearch === true">
         <search class="text-left">
           <div class="">
             Search name, description, etc. <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -65,29 +65,29 @@
         </search>
       </searchOptions>
     </searchContainer>
-    <hr class="row col-md-10 col-md-offset-1">
+    <hr class="row col-xs-10 col-xs-offset-1">
 
-    <bottleList class="col-md-12" id="bottleList">
-      <beerContainer class="col-md-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter} | filter: (vm.coldFilter ? { cold: vm.coldFilter } : '') | filter: (vm.emptyFilter ? { quantity: 0 } : { quantity: '!'+0})">
+    <bottleList class="col-xs-12" id="bottleList">
+      <beerContainer class="col-xs-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter} | filter: (vm.coldFilter ? { cold: vm.coldFilter } : '') | filter: (vm.emptyFilter ? { quantity: 0 } : { quantity: '!'+0})">
         <a ui-sref="home.fridge.beer({beername: beer.beername})">
-          <beerImage class="col-md-offset-1 col-md-2">
+          <beerImage class="col-xs-offset-1 col-xs-2">
             <img src="{{beer.image}}" alt="{{beer.name}}" />
           </beerImage>
-            <beerInfo class="col-md-9">
-              <name class="col-md-12"> {{beer.name}} </name>
-              <brewery class="col-md-12"> <b> {{beer.brewery}} </b> </brewery>
-              <beerStyle class="col-md-12"> {{beer.style}} </beerStyle>
-              <abv class="col-md-4"> ABV: {{beer.abv}}% </abv>
-              <ordered class="col-md-8"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
+            <beerInfo class="col-xs-9">
+              <name class="col-xs-12"> {{beer.name}} </name>
+              <brewery class="col-xs-12"> <b> {{beer.brewery}} </b> </brewery>
+              <beerStyle class="col-xs-12"> {{beer.style}} </beerStyle>
+              <abv class="col-xs-4"> ABV: {{beer.abv}}% </abv>
+              <ordered class="col-xs-8"> Ordered: {{beer.ordered | date: 'longDate'}} </ordered>
             </beerInfo>
         </a>
       </beerContainer>
     </bottleList>
-    <addBeer class="col-md-12 text-center">
+    <addBeer class="col-xs-12 text-center">
       <a ui-sref="home.fridge.addbeer" ng-click="vm.showInstructions = false">Add a Beer</a>
     </addBeer>
   </fridgeIndex>
-  <instructions class="col-md-4 col-md-offset-1 text-center beer-back" ng-show="vm.showInstructions === true">
+  <instructions class="col-xs-4 col-xs-offset-1 text-center beer-back" ng-show="vm.showInstructions === true">
     <i> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select a Beer to See Details Here </i>
   </instructions>
 </div>
