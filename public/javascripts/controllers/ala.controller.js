@@ -249,6 +249,266 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getBowlRecords();
 
+  $scope.vm.madnessData = {
+    'type':'line',
+    'title': {
+      'text':'March Madness Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+    },
+    'series':[
+      {
+        "values": [660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  };
+
+  $scope.vm.confidenceData = {
+    'type':'line',
+    'title': {
+      'text':'NFL Confidence Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2009, 2010, 2011, 2012, 2013, 2014, 2015],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+    },
+    'series':[
+      {
+        "values": [675, 810, 780, 930, 1120, 890, 1840],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.ncaaPickEmData = {
+    'type':'line',
+    'title': {
+      'text':"NCAA Pick'em Prize Pools",
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+    },
+    'series':[
+      {
+        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.btbData = {
+    'type':'line',
+    'title': {
+      'text':'NFL Battle the Bookies Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2014, 2015],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+    },
+    'series':[
+      {
+        "values": [1620, 3600],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.survivorData = {
+    'type':'line',
+    'title': {
+      'text':'NFL Survivor Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+    },
+    'series':[
+      {
+        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;

@@ -1,5 +1,9 @@
 angular
-  .module('mySite', ['ui.router', 'ui.bootstrap', 'ngAnimate'])
+  .module('mySite', [
+    'ui.router',
+    'zingchart-angularjs', 
+    'ui.bootstrap',
+    'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
   $anchorScroll.yOffset = 80;
     }])
