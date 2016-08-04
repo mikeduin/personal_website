@@ -276,6 +276,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
       'text': '%kl: $%v'
     },
     'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
     },
     'series':[
       {
@@ -328,6 +331,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
       'text': '%kl: $%v'
     },
     'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
     },
     'series':[
       {
@@ -380,6 +386,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
       'text': '%kl: $%v'
     },
     'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
     },
     'series':[
       {
@@ -432,6 +441,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
       'text': '%kl: $%v'
     },
     'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
     },
     'series':[
       {
@@ -484,10 +496,68 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
       'text': '%kl: $%v'
     },
     'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
     },
     'series':[
       {
         "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.bowlPickEmData = {
+    'type':'line',
+    'title': {
+      'text': "NCAA Bowl Pick'em Prize Pools",
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2009, 2010, 2012, 2013, 2014, 2015],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
+    },
+    'series':[
+      {
+        "values": [100, 110, 165, 320, 600, 780],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
