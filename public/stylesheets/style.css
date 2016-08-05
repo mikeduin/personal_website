@@ -1036,8 +1036,8 @@ search div {
   padding-top: 5px;
 }
 
-fridgeIndex input {
-  width: 240px;
+searchContainer input {
+  width: 280px;
   margin-left: 20px;
 }
 
@@ -1053,7 +1053,7 @@ closeSearch {
 }
 
 instructions {
-  margin-top: 120px;
+  margin-top: 40px;
   color: #7C0F09;
   margin-bottom: 10px;
   font-size: 40px;
@@ -1062,7 +1062,7 @@ instructions {
 
 bottleList {
   padding-top: 5px;
-  height: 800px;
+  height: 900px;
   overflow: scroll;
   border: solid 5px #540705;
   border-radius: 15px;
@@ -1103,7 +1103,7 @@ beerImage img {
 }
 
 beerDetail {
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: #EBECED;
   border-radius: 20px;
   display: inline-block;
@@ -1125,11 +1125,16 @@ beerDetail brewery {
 .cold {
   color: #3984C5;
   font-weight: 800;
+  font-size: 18px;
 }
 
 .coldskinny {
   color: #3984C5;
   font-weight: 600;
+}
+
+.coldskinny:hover {
+  font-weight: 800;
 }
 
 .cellared {
@@ -1139,6 +1144,22 @@ beerDetail brewery {
 .black {
   color: black;
   font-weight: 600;
+}
+
+.all-beers, .empty-b {
+  font-size: 18px;
+}
+
+.show-all-beers:hover {
+  font-weight: 800;
+}
+
+.show-empty-b {
+  color: black;
+}
+
+.show-empty-b:hover {
+  font-weight: 800;
 }
 
 beerDetail beerImage {
