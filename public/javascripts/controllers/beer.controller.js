@@ -12,6 +12,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.vm.currentFilter = true;
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
+  $scope.vm.styles = [];
   $scope.formData = {};
 
   $scope.vm.gotoId = function(id) {
@@ -26,12 +27,21 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
     })
   };
   $scope.getBeers();
+
   $scope.getBreweries = function() {
     beerService.getBreweries().then(function(breweries){
       $scope.vm.breweries = breweries;
     })
   };
   $scope.getBreweries();
+
+  $scope.getStyles = function() {
+    beerService.getStyles().then(function(styles){
+      $scope.vm.styles = styles;
+    })
+  };
+  $scope.getStyles();
+
   $scope.vm.topOfBeerList = function(){
     var bottleList = document.getElementById('bottleList');
     bottleList.scrollTop=0;

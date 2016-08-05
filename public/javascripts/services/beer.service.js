@@ -33,6 +33,21 @@ function beerService ($http) {
         return breweries;
       })
     },
+    getStyles: function() {
+      return $http.get('/beers')
+      .then(function(results) {
+        var styles = [];
+        var beers = results.data;
+        for (var i in beers) {
+          for (var j in beers[i].style) {
+            if (styles.indexOf(beers[i].style) === -1) {
+              styles.push(beers[i].style)
+            }
+          }
+        }
+        return styles;
+      })
+    },
     addBeer: function(formData) {
       return $http.post('/beers', formData)
     },
