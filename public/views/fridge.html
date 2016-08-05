@@ -17,56 +17,56 @@
     *actually a closet in a hallway
   </fridgeNote>
 
-  <fridgeIndex class="col-xs-6" id="searchBar">
-    <searchContainer class="col-xs-12">
-      <div class="text-center pointer" ng-click="showSearch = !showSearch">
-        CLICK HERE TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
-      </div>
-      <searchOptions class="col-xs-12" ng-show="showSearch === true">
-        <search class="text-left">
-          <div class="">
-            Search name, description, etc. <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <input type="text" name="searchBeer" ng-model="searchText">
-          </div>
-          <div>
-            Filter by brewery
-            <select name="breweryFilter" ng-model="breweryFilter">
-              <option value=""> (all breweries) </option>
-              <option ng-repeat="brewery in vm.breweries | orderBy: brewery" value="{{brewery}}"> {{brewery}} </option>
-            </select>
-          </div>
-          <div>
-            Filter by style
-            <select class="" name="">
-              <option>
-            </select>
-          </div>
-          <div>
-            Sort by:
-              <i class="fa fa-beer" aria-hidden="true"></i>
-              <sort class="pointer" ng-click="vm.sortOrder = '-ordered'; vm.topOfBeerList()"> newest arrivals</sort>
-              <span> &nbsp &nbsp </span>
-              <i class="fa fa-beer" aria-hidden="true"></i>
-              <sort class="pointer" ng-click="vm.sortOrder = '-abv'; vm.topOfBeerList()"> ABV (high)</sort>
-              <span> &nbsp &nbsp </span>
-              <i class="fa fa-beer" aria-hidden="true"></i>
-              <sort class="pointer" ng-click="vm.sortOrder = 'abv'; vm.topOfBeerList()"> ABV (low)</sort>
-          </div>
-          <div>
-            <b>Showing</b>:
-            <span class="cold" ng-show="vm.coldFilter === true && vm.emptyFilter === false"> Cold Beers Only </span>
-            <span ng-show="vm.coldFilter === false && vm.emptyFilter === false"> <b>All Beers</b> </span>
-            <span class="black" ng-show="vm.emptyFilter === true"> <b>Empty Bottles</b> </span>
-            <span class="pointer black">|<span class="coldskinny" ng-show="vm.coldFilter === false && vm.emptyFilter === false" ng-click="vm.coldFilter = true"> <i><u>Show Cold Beers Only</u></i></span></span>
-            <span class="pointer" ng-show="vm.coldFilter === true && vm.emptyFilter === false" ng-click="vm.coldFilter = false"> <i><u>Show All Beers</u></i></span></span>
-            <span class="black pointer" ng-click="vm.emptyFilter = true" ng-show="vm.emptyFilter === false">| <i><u>Show Empty Bottles</u></i></span></span>
-            <span class="black pointer" ng-click="vm.emptyFilter = false" ng-show="vm.emptyFilter === true"><i><u>Show Current Selections</u></i></span></span>
-          </div>
-        </search>
-      </searchOptions>
-    </searchContainer>
-    <hr class="row col-xs-10 col-xs-offset-1">
+  <searchContainer class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="text-center pointer" ng-click="showSearch = !showSearch">
+      CLICK HERE TO <span> SEARCH</span>, <span> FILTER</span>, or <span> SORT </span> BEER
+    </div>
+    <searchOptions class="col-xs-12" ng-show="showSearch === true">
+      <search class="text-left">
+        <div>
+          Search name, description, etc. <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <input type="text" name="searchBeer" ng-model="searchText">
+        </div>
+        <div>
+          Filter by brewery
+          <select name="breweryFilter" ng-model="breweryFilter">
+            <option value=""> (all breweries) </option>
+            <option ng-repeat="brewery in vm.breweries | orderBy: brewery" value="{{brewery}}"> {{brewery}} </option>
+          </select>
+        </div>
+        <div>
+          Filter by style
+          <select class="" name="">
+            <option>
+          </select>
+        </div>
+        <div>
+          Sort by:
+            <i class="fa fa-beer" aria-hidden="true"></i>
+            <sort class="pointer" ng-click="vm.sortOrder = '-ordered'; vm.topOfBeerList()"> newest arrivals</sort>
+            <span> &nbsp &nbsp </span>
+            <i class="fa fa-beer" aria-hidden="true"></i>
+            <sort class="pointer" ng-click="vm.sortOrder = '-abv'; vm.topOfBeerList()"> ABV (high)</sort>
+            <span> &nbsp &nbsp </span>
+            <i class="fa fa-beer" aria-hidden="true"></i>
+            <sort class="pointer" ng-click="vm.sortOrder = 'abv'; vm.topOfBeerList()"> ABV (low)</sort>
+        </div>
+        <div>
+          <b class="empty-b">Showing</b>:
+          <span class="cold" ng-show="vm.coldFilter === true && vm.emptyFilter === false"> Cold Beers Only </span>
+          <span ng-show="vm.coldFilter === false && vm.emptyFilter === false" class="all-beers"> <b>All Beers</b> </span>
+          <span class="black empty-b" ng-show="vm.emptyFilter === true"> <b>Empty Bottles</b> </span>
+          <span class="pointer black">|<span class="coldskinny" ng-show="vm.coldFilter === false && vm.emptyFilter === false" ng-click="vm.coldFilter = true"> <i>Show Cold Beers Only</i></span></span>
+          <span class="pointer" ng-show="vm.coldFilter === true && vm.emptyFilter === false" ng-click="vm.coldFilter = false"> <span class="show-all-beers"><i>Show All Beers</i></span></span></span>
+          <span class="black pointer" ng-click="vm.emptyFilter = true" ng-show="vm.emptyFilter === false">| <span class="show-empty-b"><i>Show Empty Bottles</i></span></span></span>
+          <span class="black pointer show-empty-b" ng-click="vm.emptyFilter = false" ng-show="vm.emptyFilter === true"><i>Show Current Selections</i></span></span>
+        </div>
+      </search>
+    </searchOptions>
+  </searchContainer>
+  <hr class="row col-xs-8 col-xs-offset-2">
 
+  <fridgeIndex class="col-xs-6" id="searchBar">
     <bottleList class="col-xs-12" id="bottleList">
       <beerContainer class="col-xs-12" ng-click="vm.gotoId('searchBar'); vm.showInstructions = false" ng-repeat="beer in vm.beers | orderBy: vm.sortOrder | filter:searchText | filter: { brewery: breweryFilter} | filter: (vm.coldFilter ? { cold: vm.coldFilter } : '') | filter: (vm.emptyFilter ? { quantity: 0 } : { quantity: '!'+0})">
         <a ui-sref="home.fridge.beer({beername: beer.beername})">
