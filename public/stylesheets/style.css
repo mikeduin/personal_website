@@ -194,14 +194,6 @@ img {
   font-weight: 600;
 }
 
-.vert-line {
-  height: 200px;
-  border-right: solid 2px black;
-  position: absolute;
-  right: 13%;
-  top: 60%;
-}
-
 square {
   float: left;
   position: relative;
