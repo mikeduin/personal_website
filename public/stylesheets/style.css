@@ -174,6 +174,12 @@ img {
   background-color: black;
 }
 
+.side-hr {
+  margin-top: 8%;
+  height: 2px;
+  background-color: black;
+}
+
 .webdev-rotate {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -182,7 +188,7 @@ img {
   transform: rotate(90deg);
   position: absolute;
   right: 2%;
-  top: 64%;
+  top: 60%;
   font-size: 30px;
   color: black;
   font-weight: 600;
