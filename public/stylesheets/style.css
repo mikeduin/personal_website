@@ -180,7 +180,7 @@ img {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
-  position: fixed;
+  position: absolute;
   right: 2%;
   top: 64%;
   font-size: 30px;
@@ -191,7 +191,7 @@ img {
 .vert-line {
   height: 200px;
   border-right: solid 2px black;
-  position: fixed;
+  position: absolute;
   right: 13%;
   top: 60%;
 }
@@ -1004,7 +1004,6 @@ fridgeNote {
 }
 
 fridgeIndex {
-  margin-top: 20px;
   height: 800px;
 }
 
@@ -1103,7 +1102,6 @@ beerImage img {
 }
 
 beerDetail {
-  margin-top: 20px;
   background-color: #EBECED;
   border-radius: 20px;
   display: inline-block;
