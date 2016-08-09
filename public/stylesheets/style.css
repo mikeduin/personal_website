@@ -1286,7 +1286,7 @@ fantasyEntry {
 
 @media all and (max-width: 800px) {
   storyPhotos {
-    padding-top: 15vh;
+    margin-top: 15vh;
   }
 }
 
