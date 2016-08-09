@@ -1284,6 +1284,12 @@ fantasyEntry {
   padding-top: 20px;
 }
 
+@media all and (max-width: 800px) {
+  storyPhotos {
+    padding-top: 5vh;
+  }
+}
+
 storyPhotos img {
   border: solid 2px black
 }
@@ -1292,8 +1298,8 @@ storyPhotos img {
   padding-top: 25px;
 }
 
-trophyBox {
-  padding-top: 20px
+trophyBox, paperBox {
+  padding-top: 5%;
 }
 
 hoopsPopover {
