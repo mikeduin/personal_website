@@ -1284,7 +1284,7 @@ fantasyEntry {
   padding-top: 20px;
 }
 
-@media all and (min-width: 500px) and (max-width: 800px) {
+@media all and (min-width: 100px) and (max-width: 800px) {
   storyPhotos {
     margin-top: 25px;
   }
