@@ -1284,16 +1284,6 @@ fantasyEntry {
   padding-top: 20px;
 }
 
-@media all and (min-width: 100px) and (max-width: 800px) {
-  storyPhotos {
-    margin-top: 25px;
-  }
-
-  ponteBox {
-    margin-top: 40px
-  }
-}
-
 @media all and (min-width: 801px) and (max-width: 1600px) {
   italyEntry {
     padding-top: 35px
@@ -1307,12 +1297,30 @@ fantasyEntry {
     padding-top: -20px
   }
 
-  trophyBox, paperBox {
+  trophyBox {
     padding-top: 5%;
   }
 
   .gorge-photo {
     padding-top: 25px;
+  }
+}
+
+@media all and (min-width: 100px) and (max-width: 800px) {
+  storyPhotos {
+    margin-top: 25px;
+  }
+
+  ponteBox {
+    margin-top: 40px
+  }
+
+  trophyBox {
+    padding-top: 20%;
+  }
+
+  paperBox {
+    padding-top: 10%;
   }
 }
 
