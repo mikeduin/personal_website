@@ -1286,7 +1286,7 @@ fantasyEntry {
 
 @media all and (max-width: 800px) {
   storyPhotos {
-    padding-top: 15%;
+    padding-top: 25%;
   }
 }
 
@@ -1306,7 +1306,7 @@ fantasyEntry {
   trophyBox, paperBox {
     padding-top: 5%;
   }
-  
+
   .gorge-photo {
     padding-top: 25px;
   }
