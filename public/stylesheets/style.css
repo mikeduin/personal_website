@@ -1286,11 +1286,11 @@ fantasyEntry {
 
 @media all and (min-width: 500px) and (max-width: 800px) {
   storyPhotos {
-    padding-top: 25%;
+    margin-top: 25px;
   }
 
   ponteBox {
-    padding-top: 20px
+    margin-top: 40px
   }
 }
 
