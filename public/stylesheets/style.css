@@ -1290,33 +1290,37 @@ fantasyEntry {
   }
 }
 
+@media all and (min-width: 801px) {
+  italyEntry {
+    padding-top: 35px
+  }
+
+  familyBox {
+    padding-top: 35px
+  }
+
+  ponteBox {
+    padding-top: -20px
+  }
+
+  trophyBox, paperBox {
+    padding-top: 5%;
+  }
+  
+  .gorge-photo {
+    padding-top: 25px;
+  }
+}
+
 storyPhotos img {
   border: solid 2px black
-}
-
-.gorge-photo {
-  padding-top: 25px;
-}
-
-trophyBox, paperBox {
-  padding-top: 5%;
 }
 
 hoopsPopover {
   text-decoration: underline;
 }
 
-italyEntry {
-  padding-top: 35px
-}
 
-familyBox {
-  padding-top: 35px
-}
-
-ponteBox {
-  padding-top: -20px
-}
 
 /*Professional Styles*/
 
