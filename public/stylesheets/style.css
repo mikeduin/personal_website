@@ -1284,13 +1284,17 @@ fantasyEntry {
   padding-top: 20px;
 }
 
-@media all and (max-width: 800px) {
+@media all and (min-width: 500px) and (max-width: 800px) {
   storyPhotos {
     padding-top: 25%;
   }
+
+  ponteBox {
+    padding-top: 20px
+  }
 }
 
-@media all and (min-width: 801px) {
+@media all and (min-width: 801px) and (max-width: 1600px) {
   italyEntry {
     padding-top: 35px
   }
