@@ -20,13 +20,6 @@ img {
 
 /*Navbar Styles*/
 
-.nav {
-  /*padding: 0 30px 0 0px;*/
-  background-color: white;
-  font-weight: 600;
-  font-size: 14px;
-}
-
 .navbar-border {
   border-bottom: solid 1px #DEDFE1;
 }
@@ -1229,16 +1222,6 @@ socBubble {
   color: #24307A;
 }
 
-aboutIntro {
-  margin-top: -20px;
-  height: 120px;
-  padding-top: 24px;
-}
-
-aboutIntro div img {
-  padding-top: 20px
-}
-
 leadBar div {
   font-weight: 600;
   font-size: 36px;
@@ -1247,11 +1230,6 @@ leadBar div {
 
 leadBar {
   margin-top: 30px;
-}
-
-.divider {
-  margin-top: 40px;
-  margin-bottom: 0px;
 }
 
 introText p {
@@ -1264,14 +1242,6 @@ introText p {
   color: #384AB5;
 }
 
-firstStory {
-  margin-top: 50px;
-}
-
-.career {
-  padding-top: 30px;
-}
-
 storyPhotos img {
   border: solid 2px black
 }
@@ -1281,341 +1251,79 @@ hoopsPopover {
 }
 
 @media screen and (min-width: 300px) {
+/*BEGIN NAVBAR STYLES*/
+  .hidden-xs {
+    visibility: hidden;
+  }
+
+  .nav {
+    background-color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+/*END NAVBAR STYLES*/
+/*BEGIN ABOUT STYLES*/
+  firstStory {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+  }
+
   storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 16px
+    font-size: 1.3vw;
   }
 
-  .fantasy-story {
-    margin-top: 100px;
+  musicIntro {
+    font-size: 3vw;
   }
 
-  fantasyEntry {
-    padding-top: 20px;
+  introText p {
+    font-size: 2vw;
   }
 
-  storyPhotos {
-    margin-top: 7%;
+  .about-intro {
+    margin-bottom: 10%;
   }
 
-  storyEntry {
-    padding-top: -5%;
+  .divider {
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
 
-  .burn-photo {
-    margin-top: -15%;
-    height: 200px;
-  }
-
-  .italy-story {
-    margin-top: 0%;
-  }
-
-  .today-story {
-    margin-top: 2%;
-  }
-}
-
-@media screen and (min-width: 801px) {
-  italyEntry {
-    padding-top: 35px
+  trophyBox{
+    padding-top: 3%;
   }
 
   familyBox {
-    padding-top: 35px
-  }
-
-  ponteBox {
-    padding-top: -20px
-  }
-
-  trophyBox {
     padding-top: 5%;
   }
 
-  .gorge-photo {
-    padding-top: 25px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  trophyBox, paperBox {
-    margin-top: -5%;
-  }
-
-  .gorge-photo {
-    padding-top: 20px;
-  }
-
   .burn-photo {
-    margin-top: -25%;
+    height: 50%;
   }
 
-  .italy-story {
-    margin-top: 10px;
-  }
-
-  .today-story {
-    margin-top: 25px;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  trophyBox, paperBox {
-    margin-top: -12%;
-  }
-
-  .x-photo {
-    margin-top: -50px;
-  }
-
-  .gorge-photo {
-    margin-top: 25px;
-  }
-
-  familyBox {
-    padding-top: 0px;
-    margin-top: -10px;
-  }
-
-  ponteBox {
-    margin-top: -45px;
-  }
-}
-
-@media screen and (min-width: 1275px) {
-  trophyBox, paperBox {
-    margin-top: -17%;
-  }
-
-  .x-photo {
-    margin-top: -85px;
-  }
-
-  .gorge-photo {
-    margin-top: 10px;
-  }
-
-  familyBox {
-    margin-top: -35px;
-  }
-
-  ponteBox {
-    margin-top: -70px;
-  }
-}
-
-@media screen and (min-width: 1355px) {
-  trophyBox {
-    margin-top: -20%
-  }
-
-  .x-photo {
-    margin-top: -95px
-  }
-
-  italyEntry {
-    margin-top: 25px
-  }
-
-  bandEntry {
-    margin-top: 10px
-  }
-
-  .burn-photo {
-    margin-top: -30%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  fantasyEntry {
-    padding-top: 35px;
-  }
-
-  bandEntry {
-    margin-top: 25px
-  }
-
-  italyEntry {
-    margin-top: 40px
-  }
 }
 
 @media screen and (min-width: 1600px) {
-  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 20px
-  }
-
-  .fantasy-story {
-    margin-top: 140px;
-  }
-
-  fantasyEntry {
-    padding-top: 20px
-  }
-
-  bandEntry {
-    margin-top: 10px
-  }
-
-  .x-photo {
-    margin-top: -105px
-  }
-
-  italyEntry {
-    margin-top: 35px
-  }
-
-  storyEntry {
-    margin-top: 0px
-  }
-
-  .burn-photo {
-    margin-top: -25%;
-    width: 80%;
-  }
-
-  musicIntro {
-    font-size: 48px
-  }
-
-  introText p {
-    font-size: 28px;
-  }
-
-  .x-photo {
-    margin-top: -90px;
-  }
-
-}
-
-@media screen and (min-width: 1680px) {
-  bandEntry {
-    margin-top: 20px
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 28px
-  }
-
-  musicIntro {
-    font-size: 60px
-  }
-
-  introText p {
-    font-size: 36px;
-  }
-
-  .fantasy-story {
-    margin-top: 185px;
-  }
-
-  trophyBox, paperBox {
-    margin-top: -15%
-  }
-
-  .gorge-photo {
-    margin-top: 75px;
-  }
-
-  .x-photo {
-    margin-top: -80px;
-  }
-
-  .burn-photo {
-    margin-top: -15%;
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 36px
-  }
-
-  musicIntro {
-    font-size: 80px
-  }
-
-  introText p {
-    font-size: 50px;
-  }
-
-  .fantasy-story {
-    margin-top: 220px;
-  }
-
-  trophyBox, paperBox {
-    margin-top: -15%
-  }
-
-  .gorge-photo {
-    margin-top: 75px;
-  }
-
-  .x-photo {
-    margin-top: -140px;
-  }
-
-  ponteBox {
-    margin-top: -125px;
-  }
-
   .burn-photo {
     width: 80%;
-    height: 240px;
   }
 }
 
-@media screen and (min-width: 3840px) {
-  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 54px
-  }
-
-  musicIntro {
-    font-size: 120px
-  }
-
-  introText p {
-    font-size: 75px;
-  }
-
-  .fantasy-story {
-    margin-top: 360px;
-  }
-
-  fantasyEntry {
-    padding-top: 60px
-  }
-
-  bandEntry {
-    margin-top: 120px
-  }
-
-  .gorge-photo {
-    margin-top: 220px;
-  }
-
-  .italy-story {
-    margin-bottom: 80px;
-  }
-
-  italyEntry {
-    margin-top: 150px
+@media screen and (min-width: 2150px) {
+  trophyBox{
+    padding-top: 4%;
   }
 
   familyBox {
-    margin-top: 0px
-  }
-
-  ponteBox {
-    margin-top: -125px;
-  }
-
-  .burn-photo {
-    width: 80%;
-    height: 400px;
-    margin-top: -20%;
+    padding-top: 7%;
   }
 }
 
