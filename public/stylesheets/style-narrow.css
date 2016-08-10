@@ -1276,7 +1276,7 @@ firstStory {
   padding-top: 30px;
 }
 
-storyEntry, fantasyEntry, bandEntry, italyEntry p {
+storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
   font-size: 16px
 }
 
@@ -1284,7 +1284,37 @@ fantasyEntry {
   padding-top: 20px;
 }
 
-@media all and (min-width: 801px) and (max-width: 1600px) {
+storyPhotos img {
+  border: solid 2px black
+}
+
+hoopsPopover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 300px) {
+  storyPhotos {
+    margin-top: 7%;
+  }
+
+  storyEntry {
+    padding-top: -5%;
+  }
+
+  .burn-photo {
+    margin-top: -15%;
+  }
+
+  .italy-story {
+    margin-top: 0%;
+  }
+
+  .today-story {
+    margin-top: 2%;
+  }
+}
+
+@media screen and (min-width: 801px) {
   italyEntry {
     padding-top: 35px
   }
@@ -1306,33 +1336,94 @@ fantasyEntry {
   }
 }
 
-@media all and (min-width: 100px) and (max-width: 800px) {
-  storyPhotos {
+@media screen and (min-width: 1000px) {
+  trophyBox, paperBox {
+    margin-top: -5%;
+  }
+
+  .gorge-photo {
+    padding-top: 20px;
+  }
+
+  .burn-photo {
+    margin-top: -25%;
+  }
+
+  .italy-story {
+    margin-top: 10px;
+  }
+
+  .today-story {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  trophyBox, paperBox {
+    margin-top: -12%;
+  }
+
+  .x-photo {
+    margin-top: -50px;
+  }
+
+  .gorge-photo {
     margin-top: 25px;
   }
 
+  familyBox {
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+
   ponteBox {
-    margin-top: 40px
+    margin-top: -45px;
+  }
+}
+
+@media screen and (min-width: 1275px) {
+  trophyBox, paperBox {
+    margin-top: -17%;
   }
 
+  .x-photo {
+    margin-top: -85px;
+  }
+
+  .gorge-photo {
+    margin-top: 10px;
+  }
+
+  familyBox {
+    margin-top: -35px;
+  }
+
+  ponteBox {
+    margin-top: -70px;
+  }
+}
+
+@media screen and (min-width: 1355px) {
   trophyBox {
-    padding-top: 40%;
+    margin-top: -20%
   }
 
-  paperBox {
-    padding-top: 35%;
+  .x-photo {
+    margin-top: -95px
+  }
+
+  italyEntry {
+    margin-top: 25px
+  }
+
+  bandEntry {
+    margin-top: 10px
+  }
+
+  .burn-photo {
+    margin-top: -30%;
   }
 }
-
-storyPhotos img {
-  border: solid 2px black
-}
-
-hoopsPopover {
-  text-decoration: underline;
-}
-
-
 
 /*Professional Styles*/
 
