@@ -1277,7 +1277,7 @@ hoopsPopover {
   }
 
   storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-    font-size: 1.3vw;
+    font-size: 1.5vw;
   }
 
   musicIntro {
@@ -1311,7 +1311,11 @@ hoopsPopover {
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1000px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 1.3vw;
+  }
+
   .burn-photo {
     width: 80%;
   }
