@@ -1268,20 +1268,8 @@ firstStory {
   margin-top: 50px;
 }
 
-.push-down {
-  margin-top: 100px;
-}
-
 .career {
   padding-top: 30px;
-}
-
-storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
-  font-size: 16px
-}
-
-fantasyEntry {
-  padding-top: 20px;
 }
 
 storyPhotos img {
@@ -1293,6 +1281,18 @@ hoopsPopover {
 }
 
 @media screen and (min-width: 300px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 16px
+  }
+
+  .fantasy-story {
+    margin-top: 100px;
+  }
+
+  fantasyEntry {
+    padding-top: 20px;
+  }
+
   storyPhotos {
     margin-top: 7%;
   }
@@ -1303,6 +1303,7 @@ hoopsPopover {
 
   .burn-photo {
     margin-top: -15%;
+    height: 200px;
   }
 
   .italy-story {
@@ -1422,6 +1423,199 @@ hoopsPopover {
 
   .burn-photo {
     margin-top: -30%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  fantasyEntry {
+    padding-top: 35px;
+  }
+
+  bandEntry {
+    margin-top: 25px
+  }
+
+  italyEntry {
+    margin-top: 40px
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 20px
+  }
+
+  .fantasy-story {
+    margin-top: 140px;
+  }
+
+  fantasyEntry {
+    padding-top: 20px
+  }
+
+  bandEntry {
+    margin-top: 10px
+  }
+
+  .x-photo {
+    margin-top: -105px
+  }
+
+  italyEntry {
+    margin-top: 35px
+  }
+
+  storyEntry {
+    margin-top: 0px
+  }
+
+  .burn-photo {
+    margin-top: -25%;
+    width: 80%;
+  }
+
+  musicIntro {
+    font-size: 48px
+  }
+
+  introText p {
+    font-size: 28px;
+  }
+
+  .x-photo {
+    margin-top: -90px;
+  }
+
+}
+
+@media screen and (min-width: 1680px) {
+  bandEntry {
+    margin-top: 20px
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 28px
+  }
+
+  musicIntro {
+    font-size: 60px
+  }
+
+  introText p {
+    font-size: 36px;
+  }
+
+  .fantasy-story {
+    margin-top: 185px;
+  }
+
+  trophyBox, paperBox {
+    margin-top: -15%
+  }
+
+  .gorge-photo {
+    margin-top: 75px;
+  }
+
+  .x-photo {
+    margin-top: -80px;
+  }
+
+  .burn-photo {
+    margin-top: -15%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 36px
+  }
+
+  musicIntro {
+    font-size: 80px
+  }
+
+  introText p {
+    font-size: 50px;
+  }
+
+  .fantasy-story {
+    margin-top: 220px;
+  }
+
+  trophyBox, paperBox {
+    margin-top: -15%
+  }
+
+  .gorge-photo {
+    margin-top: 75px;
+  }
+
+  .x-photo {
+    margin-top: -140px;
+  }
+
+  ponteBox {
+    margin-top: -125px;
+  }
+
+  .burn-photo {
+    width: 80%;
+    height: 240px;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 54px
+  }
+
+  musicIntro {
+    font-size: 120px
+  }
+
+  introText p {
+    font-size: 75px;
+  }
+
+  .fantasy-story {
+    margin-top: 360px;
+  }
+
+  fantasyEntry {
+    padding-top: 60px
+  }
+
+  bandEntry {
+    margin-top: 120px
+  }
+
+  .gorge-photo {
+    margin-top: 220px;
+  }
+
+  .italy-story {
+    margin-bottom: 80px;
+  }
+
+  italyEntry {
+    margin-top: 150px
+  }
+
+  familyBox {
+    margin-top: 0px
+  }
+
+  ponteBox {
+    margin-top: -125px;
+  }
+
+  .burn-photo {
+    width: 80%;
+    height: 400px;
+    margin-top: -20%;
   }
 }
 
