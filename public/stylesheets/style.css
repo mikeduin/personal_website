@@ -1340,3 +1340,58 @@ proHeader {
   border-top: solid 5px black;
   border-bottom: solid 5px black;
 }
+
+.work-intro {
+  color: #127C23;
+  margin-bottom: 2%;
+}
+
+workLinks {
+  padding-top: 1%;
+}
+
+workLinks a {
+  color: black
+}
+
+workLinks a:hover {
+  color: #127C23;
+}
+
+workLinks a:focus {
+  color: #127C23;
+  text-decoration: none;
+}
+
+workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin {
+  font-size: 7vw;
+}
+
+workLinks a:hover {
+  text-decoration: none;
+}
+
+resume, linkedIn, gitHub {
+  height: 8vw;
+  font-weight: 600;
+  font-size: 1.3vw;
+  font-style: italic;
+}
+
+.resume-img {
+  height: 70%;
+  width: 4.2vw;
+  border: solid 1px black;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+workLinks a:hover > .resume-img {
+  height: 80%;
+  width: 4.5vw;
+  border: solid 3px #127C23;
+}
+
+.fa-github, .fa-linkedin {
+  font-size: 6vw;
+}
