@@ -1350,28 +1350,40 @@ workLinks {
   padding-top: 1%;
 }*/
 
-workLinks a {
+workLinks a, socLinks a {
   color: #DFDFDF;
 }
 
-workLinks a:hover {
+workLinks a:hover, socLinks a:hover {
   color: white;
 }
 
-workLinks a:focus {
+socLinks a:hover {
+  color: white
+}
+
+socLinks {
+  height: 95%;
+}
+
+socLinks a i, workLinks a i {
+  margin-top: 15%
+}
+
+workLinks a:focus, socLinks a:focus {
   color: white;
   text-decoration: none;
 }
 
-workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin {
-  font-size: 6.5vw;
+workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook {
+  font-size: 4.5vw;
 }
 
-workLinks a:hover {
+workLinks a:hover, socLinks a:hover {
   text-decoration: none;
 }
 
-resume, linkedIn, gitHub {
+resume, linkedIn, gitHub, twitter, insta, spotify, facebook {
   height: 8vw;
   font-weight: 600;
   font-size: 1.3vw;
@@ -1392,8 +1404,8 @@ workLinks a:hover > .resume-img {
   border: solid 3px white;
 }
 
-.fa-github, .fa-linkedin {
-  font-size: 6vw;
+.fa-github, .fa-linkedin, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook {
+  font-size: 4vw;
 }
 
 btbHead {
