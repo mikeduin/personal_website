@@ -1345,26 +1345,26 @@ proHeader {
   color: #127C23;
   margin-bottom: 2%;
 }
-
+/*
 workLinks {
   padding-top: 1%;
-}
+}*/
 
 workLinks a {
-  color: black
+  color: #DFDFDF;
 }
 
 workLinks a:hover {
-  color: #127C23;
+  color: white;
 }
 
 workLinks a:focus {
-  color: #127C23;
+  color: white;
   text-decoration: none;
 }
 
 workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin {
-  font-size: 7vw;
+  font-size: 6.5vw;
 }
 
 workLinks a:hover {
@@ -1382,16 +1382,27 @@ resume, linkedIn, gitHub {
   height: 70%;
   width: 4.2vw;
   border: solid 1px black;
-  margin-top: 2%;
+  margin-top: 10%;
   margin-bottom: 2%;
 }
 
 workLinks a:hover > .resume-img {
   height: 80%;
-  width: 4.5vw;
-  border: solid 3px #127C23;
+  width: 4.7vw;
+  border: solid 3px white;
 }
 
 .fa-github, .fa-linkedin {
   font-size: 6vw;
+}
+
+btbHead {
+  height: 8vw;
+  background: url('../images/code-green.jpg') no-repeat center center;
+  background-size: cover;
+  color: #848484;
+  font-size: 5vw;
+  font-weight: 800;
+  border-top: solid 3px #BACCBD;
+  border-bottom: solid 3px #BACCBD;
 }
