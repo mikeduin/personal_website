@@ -678,6 +678,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.fifa.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.fifa': {
+          templateUrl: 'views/ala/fifa/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.fifa.survivor', {
       url: '/survivor',
       views: {
