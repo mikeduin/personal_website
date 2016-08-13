@@ -777,11 +777,20 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('home.ala.nbaplayoffs.results', {
-      url: '/results',
+    .state('home.ala.nbaplayoffs.podium', {
+      url: '/podium',
       views: {
-        'results@home.ala.nbaplayoffs': {
-          templateUrl: 'views/ala/nbaplayoffs/results.html',
+        'podium@home.ala.nbaplayoffs': {
+          templateUrl: 'views/ala/nbaplayoffs/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbaplayoffs.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.nbaplayoffs': {
+          templateUrl: 'views/ala/nbaplayoffs/rankings.html',
           controller: 'AlaController'
         }
       }
