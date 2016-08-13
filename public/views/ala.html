@@ -111,7 +111,7 @@
     <li ng-click="showNbaPlayoffs = !showNbaPlayoffs"> <img src="images/basketball.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.nbaplayoffs')}"> NBA Playoff Pool </a> </li>
     <ul ng-show="showNbaPlayoffs === true">
       <li class="col-xs-offset-2 submenu" style="margin-top: -10px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbaplayoffs.details"> Game Details </a> </li>
-      <li class="col-xs-offset-2 submenu" style="margin-top: -10px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbaplayoffs.rankings"> All-Time Rankings </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbaplayoffs.rankings"> All-Time Rankings </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbaplayoffs.podium"> The Podium </a> </li>
     </ul>
     <li ng-click="showPga = !showPga"> <img src="images/golf.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.pga')}"> PGA Majors </a> </li>
