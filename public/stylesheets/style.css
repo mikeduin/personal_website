@@ -420,8 +420,8 @@ alaHeader {
 alaLead {
   font-weight: 800;
   color: white;
-  font-size: 48px;
-  margin-left: 30px;
+  font-size: 4vw;
+  margin-left: 0.5vw;
 }
 
 alaLinks div a {
@@ -541,24 +541,9 @@ alaSidebar a {
   color: white;
 }
 
-/*alaSidebar a:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: black;
-  color: white;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition: transform .3s ease-out;
+.football-table {
+  margin-bottom: 1vw;
 }
-
-alaSidebar a:hover {
-  color: white;
-  text-decoration: none;
-}
-
-alaSidebar a:hover:before{transform: scaleX(1);}*/
 
 /*ALA About Styles*/
 
@@ -1334,11 +1319,11 @@ hoopsPopover {
 /*Professional Styles*/
 
 proHeader {
-  height: 120px;
+  height: 9vw;
   background-color: #2F5032;
-  border-radius: 4px;
-  border-top: solid 5px black;
-  border-bottom: solid 5px black;
+  border-radius: 0.3vw;
+  border-top: solid 0.35vw black;
+  border-bottom: solid 0.35vw black;
 }
 
 .work-intro {
@@ -1383,7 +1368,7 @@ workLinks a:hover, socLinks a:hover {
   text-decoration: none;
 }
 
-resume, linkedIn, gitHub, twitter, insta, spotify, facebook {
+resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook {
   height: 8vw;
   font-weight: 600;
   font-size: 1.3vw;
@@ -1408,13 +1393,26 @@ workLinks a:hover > .resume-img {
   font-size: 4vw;
 }
 
-btbHead {
-  height: 8vw;
-  background: url('../images/code-green.jpg') no-repeat center center;
-  background-size: cover;
-  color: #848484;
-  font-size: 5vw;
+projTitle {
+  height: 5vw;
+  color: #2F5032;
+  font-size: 4vw;
   font-weight: 800;
-  border-top: solid 3px #BACCBD;
-  border-bottom: solid 3px #BACCBD;
+  border-top: solid 0.2vw #E4E4E4;
+  /*
+  border-bottom: solid 0.2vw #E4E4E4;
+  background-color: #EEEEEE;*/
+  /*background: url('../images/proj-back.jpg') no-repeat center center;
+  background-size: cover;*/
+}
+
+projTitle i {
+  color: #E4E4E4;
+}
+
+projLead {
+  background-color: #848484;
+  color: white;
+  font-size: 2vw;
+  font-weight: 600;
 }

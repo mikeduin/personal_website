@@ -1,7 +1,7 @@
 angular
   .module('mySite', [
     'ui.router',
-    'zingchart-angularjs', 
+    'zingchart-angularjs',
     'ui.bootstrap',
     'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
@@ -474,8 +474,17 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
     .state('home.ala.survivor.winners', {
       url: '/winners',
       views: {
-        'rankings@home.ala.survivor': {
+        'winners@home.ala.survivor': {
           templateUrl: 'views/ala/survivor/winners.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.survivor.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.survivor': {
+          templateUrl: 'views/ala/survivor/rankings.html',
           controller: 'AlaController'
         }
       }

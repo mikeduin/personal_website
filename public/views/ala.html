@@ -72,6 +72,7 @@
     <li ng-click="showSurvivor = !showSurvivor"> <img src="images/football.png"/> <a ng-class="{'activeGame': $state.includes('home.ala.survivor')}"> NFL Survivor </a> </li>
       <ul ng-show="showSurvivor === true">
         <li class="col-xs-offset-2 submenu" style="margin-top: -10px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.details"> Game Details </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.winners"> Prize Winners </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.yoy"> YoY Progression </a> </li>
       </ul>

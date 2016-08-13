@@ -16,11 +16,13 @@
 <gameNav class="text-center">
   <ul>
     <li> <a ui-sref="home.ala.survivor.details" ng-class="{'activetab': $state.includes('home.ala.survivor.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.survivor.rankings" ng-class="{'activetab': $state.includes('home.ala.survivor.rankings')}"> All-Time Rankings</a> </li>
     <li> <a ui-sref="home.ala.survivor.winners" ng-class="{'activetab': $state.includes('home.ala.survivor.winners')}"> Prize Winners</a> </li>
     <li> <a ui-sref="home.ala.survivor.yoy" ng-class="{'activetab': $state.includes('home.ala.survivor.yoy')}"> YoY Progression</a> </li>
   </ul>
 </gameNav>
 
 <div ui-view="details"> </div>
+<div ui-view="winners"> </div>
 <div ui-view="rankings"> </div>
 <div ui-view="yoy"> </div>
