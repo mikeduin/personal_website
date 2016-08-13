@@ -9,9 +9,11 @@
 <gameNav class="text-center">
   <ul>
     <li> <a ui-sref="home.ala.nbaplayoffs.details" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.details')}"> Details</a> </li>
-    <li> <a ui-sref="home.ala.nbaplayoffs.results" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.results')}"> Results</a> </li>
+    <li> <a ui-sref="home.ala.nbaplayoffs.details" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.details')}"> All-Time Rankings</a> </li>
+    <li> <a ui-sref="home.ala.nbaplayoffs.podium" ng-class="{'activetab': $state.includes('home.ala.nbaplayoffs.podium')}"> The Podium</a> </li>
   </ul>
 </gameNav>
 
 <div ui-view="details"> </div>
-<div ui-view="results"> </div>
+<div ui-view="podium"> </div>
+<div ui-view="rankings"> </div>
