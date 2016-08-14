@@ -1,5 +1,5 @@
 <blogEntries class="col-xs-12">
-  <entry ng-repeat="post in vm.blogposts | orderBy: vm.sortOrder">
+  <entry ng-repeat="post in vm.blogposts | orderBy: vm.sortOrder | filter: {tags: blogFilter} | filter: blogSearch ">
     <blogHeader>
       <div class="col-xs-12">
         <a ui-sref="home.ala.blog.post({titlestring: post.titlestring})"> {{post.title}} </a>
