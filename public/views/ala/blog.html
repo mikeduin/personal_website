@@ -1,5 +1,5 @@
 <blogMainDiv class="col-xs-9 col-md-10">
-  <blog>
+  <blog class="col-xs-12">
     <div class="text-center">
       <hr style="margin-bottom: -5px;" class="col-xs-4 col-xs-offset-4">
       <div class="col-xs-12">
@@ -17,6 +17,25 @@
       <hr class="col-xs-4 col-xs-offset-4">
     </div>
   </blog>
+
+  <blogFilter class="col-xs-12">
+    <div class="col-xs-6 filter-div">
+      <div class="form-inline">
+        <label for="blogTiler" class="filter-text col-xs-6 text-right"> FILTER BY BLOG TAG: </label>
+        <select name="blogFilter" ng-model="blogFilter" class="form-control col-xs-6" id="blogFilter">
+          <option value=""> (all tags) </option>
+          <option ng-repeat="tag in vm.blogtags" value="{{tag}}"> {{tag}} </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-6 form-inline">
+      <label for="blogSearch" class="filter-text col-xs-6 text-right"> SEARCH THE BLOG: </label>
+      <input type="text" class="form-control col-xs-6" id="blogSearch">
+    </div>
+
+  </blogFilter>
+
+  <div class="divider"> </div>
 
   <div ui-view="main"> </div>
   <div ui-view="post"> </div>
