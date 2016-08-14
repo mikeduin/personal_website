@@ -1,11 +1,9 @@
 <blogEntries class="col-xs-12">
   <entry ng-repeat="post in vm.blogposts | orderBy: vm.sortOrder">
     <blogHeader>
-      <a ui-sref="home.ala.blog.post({titlestring: post.titlestring})">
-        <div class="col-xs-12">
-          {{post.title}}
-        </div>
-      </a>
+      <div class="col-xs-12">
+        <a ui-sref="home.ala.blog.post({titlestring: post.titlestring})"> {{post.title}} </a>
+      </div>
     </blogHeader>
     <blogDate>
       <div class="col-xs-12">

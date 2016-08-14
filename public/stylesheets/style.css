@@ -584,6 +584,26 @@ blogMainDiv {
   display: inline-block;
 }
 
+blogEntries {
+  margin-top: 1%
+}
+
+blogFilter {
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  color: #848484;
+}
+
+.filter-text {
+  margin-top: 0.2vw;
+}
+
+/*.filter-div {
+  border-right: solid 3px #848484;
+}*/
+
 blog div p {
   font-size: 8vw;
   font-weight: 800;
@@ -824,7 +844,7 @@ disclaimer {
 /*Music Styles*/
 
 musicHeader {
-  height: 11.57vw;
+  height: 9.5vw;
   background-color: #452562;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -840,7 +860,7 @@ musicLead {
 
 musicIntro {
   margin-top: -1.5vw;
-  height: 9vw;
+  height: 9.5vw;
   font-size: 3vw;
   font-weight: 600;
   color: #7745A6;
@@ -952,7 +972,7 @@ playlist description {
 /*Fridge Styles*/
 
 fridgeHeader {
-  height: 11.57vw;
+  height: 9.5vw;
   background-color: #7C0F09;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -1195,7 +1215,7 @@ addBeer heading {
 /*About Styles*/
 
 aboutHeader {
-  height: 11.57vw;
+  height: 9.5vw;
   background-color: #24307A;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -1309,7 +1329,7 @@ hoopsPopover {
 /*Professional Styles*/
 
 proHeader {
-  height: 11.57vw;
+  height: 9.5vw;
   background-color: #2F5032;
   border-radius: 0.3vw;
   border-top: solid 0.35vw black;
@@ -1342,7 +1362,7 @@ socLinks {
 }
 
 socLinks a i, workLinks a i {
-  margin-top: 60%
+  margin-top: 15%
 }
 
 workLinks a:focus, socLinks a:focus {

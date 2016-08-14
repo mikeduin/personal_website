@@ -166,6 +166,24 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getBlogtags: function() {
+      return $http.get('/blogposts')
+      .then(function(results) {
+        var blogtags = [];
+        var posts = results.data;
+        for (var i in posts) {
+          for (var j in posts[i].tags) {
+            for (var k in posts[i].tags[j]) {
+              var blogtag = posts[i].tags[j];
+              if (blogtags.indexOf(blogtag) === -1) {
+                blogtags.push(blogtag)
+              }
+            }
+          }
+        }
+        return blogtags;
+      })
+    },
     getPost: function(titlestring) {
       return $http.get('/blogposts/' + titlestring)
       .then(function(results) {

@@ -6,32 +6,39 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.$state = $state;
   $scope.vm = {};
   $scope.vm.sortOrder = '-date';
+  $scope.vm.blogposts = [];
+  $scope.vm.post = {};
+  $scope.vm.newpost = {};
+  $scope.vm.blogtags = [];
+
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
     $anchorScroll();
     $location.hash(old);
   };
-  $scope.vm.blogposts = [];
+
   $scope.getBlogposts = function() {
     alaService.getBlogposts().then(function(blogposts){
       $scope.vm.blogposts = blogposts;
-      console.log($scope.vm.blogposts);
     })
   };
   $scope.getBlogposts();
 
-  $scope.vm.post = {}
+  $scope.getBlogtags = function() {
+    alaService.getBlogtags().then(function(tags){
+      $scope.vm.blogtags = tags;
+      console.log("blogtags are", tags);
+    })
+  }
+  $scope.getBlogtags();
 
   $scope.getPost = function(){
     alaService.getPost($stateParams.titlestring).then(function(post){
-      console.log($scope.vm.post)
       $scope.vm.post = post[0];
     })
   }
   $scope.getPost();
-
-  $scope.vm.newpost = {};
 
   $scope.vm.addBlogpost = function() {
     alaService.addBlogpost($scope.vm.newpost).then(function(){
@@ -594,5 +601,4 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.showPga = false;
   $scope.showNbaPlayoffs = false;
   $scope.showFifa = false;
-  $scope.playersActive = false;
 }
