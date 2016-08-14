@@ -155,11 +155,11 @@ img {
 /*New Splashpage Styles*/
 
 .title-head {
-  margin-top: -60px;
+  margin-top: -4.7vw;
 }
 
 .title-subhead {
-  margin-top: -20px;
+  margin-top: -1.57vw;
 }
 
 .title-hr {
@@ -427,7 +427,7 @@ alaLead {
 
 alaLinks a {
   font-size: 2vw;
-  margin-left: 40px;
+  margin-left: 3.125vw;
   font-weight: 600;
 }
 
@@ -458,7 +458,7 @@ alaSidebar {
 
 alaSidebar ul {
   list-style-type: none;
-  margin-left: -40px;
+  margin-left: -3.125vw;
 }
 
 alaSidebar ul li:hover {
@@ -529,11 +529,11 @@ alaSidebar a {
 }
 
 .multigame {
-  margin-left: -60px;
+  margin-left: -4.7vw;
 }
 
 .dropdown-styles {
-  margin-top: 20px;
+  margin-top: 1.57vw;
   background-color: #3984C5;
   font-size: 1.25vw;
   border: solid 2px black;
@@ -646,7 +646,7 @@ blogTags tag {
 }
 
 addPost lead div {
-  margin-top: 20px;
+  margin-top: 1.57vw;
   font-size: 1.75vw;
   color: #3984C5;
   font-weight: 600;
@@ -657,7 +657,7 @@ buyins {
 }
 
 .buyinHeader {
-  margin-bottom: -20px;
+  margin-bottom: -1.57vw;
   font-size: 3.75vw;
   font-weight: 800;
   color: #DC5623;
@@ -673,8 +673,8 @@ buyins prizeDiv {
 }
 
 .exptwo {
-  margin-top: 15px;
-  margin-bottom: 40px;
+  margin-top: 1.24vw;
+  margin-bottom: 3.125vw;
 }
 
 .fa-microphone {
@@ -710,7 +710,7 @@ gameTitle defending div {
 }
 
 gameTitle defending span {
-  font-size: 20px;
+  font-size: 1.57vw;
 }
 
 gameNav ul {
@@ -721,7 +721,7 @@ gameNav ul {
 
 gameNav ul li{
   display: inline;
-  margin-left: 20px;
+  margin-left: 1.57vw;
 }
 
 gameNav ul li a:focus{
@@ -731,7 +731,7 @@ gameNav ul li a:focus{
 .summary {
   font-size: 2vw;
   font-weight: 800;
-  padding-right: 20px;
+  padding-right: 1.57vw;
   padding-top: 1vw;
 }
 
@@ -744,7 +744,7 @@ gameNav ul li a:focus{
 
 .activetab {
   font-weight: 800;
-  font-size: 20px;
+  font-size: 1.57vw;
   text-decoration: none;
 }
 
@@ -799,7 +799,7 @@ league {
 }
 
 .cdl-const {
-  margin-top: -20px;
+  margin-top: -1.57vw;
 }
 
 lg {
@@ -813,7 +813,7 @@ disclaimer {
 }
 
 .bracket-info {
-  padding-top: 20px;
+  padding-top: 1.57vw;
   font-size: 1.25vw;
 }
 
@@ -824,7 +824,7 @@ disclaimer {
 /*Music Styles*/
 
 musicHeader {
-  height: 120px;
+  height: 11.57vw;
   background-color: #452562;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -848,12 +848,12 @@ musicIntro {
 }
 
 explanation {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 3.125vw;
+  margin-bottom: 1.57vw;
 }
 
 playlists {
-  margin-top: 60px;
+  margin-top: 4.7vw;
   margin-left: 0px;
   margin-right: 0px;
   padding-left: 0px;
@@ -867,7 +867,7 @@ playlist {
 }
 
 playlists name {
-  margin-top: -15px;
+  margin-top: -1.24vw;
   font-size: 52px;
   font-weight: 800;
 }
@@ -897,7 +897,7 @@ playlists type {
 
 playlist description {
   margin-top: 1vw;
-  font-size: 20px;
+  font-size: 1.57vw;
   font-weight: 400;
 }
 
@@ -908,7 +908,7 @@ playlist description {
 .soundscapes {
   background: url('../images/purple-space-lite.jpg') no-repeat center center;
   background-size: cover;
-  padding-top: 20px;
+  padding-top: 1.57vw;
   padding-bottom: 1vw;
   margin: 0px;
   border-top: solid 2px #CBC1D4;
@@ -919,7 +919,7 @@ playlist description {
 .fifty-three {
   background: url('../images/club.jpg') no-repeat center center;
   background-size: cover;
-  padding-top: 20px;
+  padding-top: 1.57vw;
   padding-bottom: 1vw;
   margin: 0px;
   border-top: solid 2px #CBC1D4;
@@ -929,7 +929,7 @@ playlist description {
 .rock-show {
   background: url('../images/rock-show.jpg') no-repeat center center;
   background-size: cover;
-  padding-top: 20px;
+  padding-top: 1.57vw;
   padding-bottom: 1vw;
   margin: 0px;
   border-top: solid 2px #CBC1D4;
@@ -941,7 +941,7 @@ playlist description {
 .foundation {
   background: url('../images/foundation.jpg') no-repeat center center;
   background-size: cover;
-  padding-top: 20px;
+  padding-top: 1.57vw;
   padding-bottom: 1vw;
   margin: 0px;
   border-top: solid 2px #CBC1D4;
@@ -952,7 +952,7 @@ playlist description {
 /*Fridge Styles*/
 
 fridgeHeader {
-  height: 120px;
+  height: 11.57vw;
   background-color: #7C0F09;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -970,7 +970,7 @@ fridgeSubheader {
 }
 
 fridgeLead {
-  margin-top: 20px;
+  margin-top: 1.57vw;
   font-weight: 600;
   font-size: 1.4vw;
   display: inline-block;
@@ -1020,7 +1020,7 @@ search div {
 
 searchContainer input {
   width: 280px;
-  margin-left: 20px;
+  margin-left: 1.57vw;
 }
 
 .pointer {
@@ -1035,10 +1035,10 @@ closeSearch {
 }
 
 instructions {
-  margin-top: 40px;
+  margin-top: 3.125vw;
   color: #7C0F09;
   margin-bottom: 1vw;
-  font-size: 40px;
+  font-size: 3.125vw;
   height: 600px;
 }
 
@@ -1047,14 +1047,14 @@ bottleList {
   height: 900px;
   overflow: scroll;
   border: solid 5px #540705;
-  border-radius: 15px;
+  border-radius: 1.24vw;
   background-color: #7C0F09;
 }
 
 beerContainer {
   background-color: #E5E7E7;
   display: inline-block;
-  border-radius: 20px;
+  border-radius: 1.57vw;
   padding-bottom: 5px;
   margin-bottom: 1vw;
   border: solid 1px black;
@@ -1086,11 +1086,10 @@ beerImage img {
 
 beerDetail {
   background-color: #EBECED;
-  border-radius: 20px;
+  border-radius: 1.57vw;
   display: inline-block;
   border: solid 1px #7C0F09;
 }
-
 
 beerDetail name {
   color: #7C0F09;
@@ -1167,7 +1166,7 @@ searchContainer sort {
 }
 
 #coldInput {
-  margin-right: -20px;
+  margin-right: -1.57vw;
 }
 
 addBeer {
@@ -1196,7 +1195,7 @@ addBeer heading {
 /*About Styles*/
 
 aboutHeader {
-  height: 120px;
+  height: 11.57vw;
   background-color: #24307A;
   border-radius: 4px;
   border-top: solid 5px black;
@@ -1214,7 +1213,7 @@ leadBar {
 }
 
 introText p {
-  font-size: 20px;
+  font-size: 1.57vw;
   color: black;
   font-weight: 500;
 }
@@ -1240,7 +1239,6 @@ hoopsPopover {
   .nav {
     background-color: white;
     font-weight: 600;
-    font-size: 14px;
   }
 
 /*END NAVBAR STYLES*/
@@ -1311,7 +1309,7 @@ hoopsPopover {
 /*Professional Styles*/
 
 proHeader {
-  height: 9vw;
+  height: 11.57vw;
   background-color: #2F5032;
   border-radius: 0.3vw;
   border-top: solid 0.35vw black;
@@ -1344,7 +1342,7 @@ socLinks {
 }
 
 socLinks a i, workLinks a i {
-  margin-top: 15%
+  margin-top: 60%
 }
 
 workLinks a:focus, socLinks a:focus {
@@ -1352,7 +1350,7 @@ workLinks a:focus, socLinks a:focus {
   text-decoration: none;
 }
 
-workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook {
+workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, workLinks a:hover > .fa-file-text, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook {
   font-size: 4.5vw;
 }
 
@@ -1367,21 +1365,21 @@ resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook {
   font-style: italic;
 }
 
-.resume-img {
+/*.resume-img {
   height: 70%;
   width: 4.2vw;
   border: solid 1px black;
   margin-top: 10%;
   margin-bottom: 2%;
-}
+}*/
 
-workLinks a:hover > .resume-img {
+/*workLinks a:hover > .resume-img {
   height: 80%;
   width: 4.7vw;
   border: solid 3px white;
-}
+}*/
 
-.fa-github, .fa-linkedin, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook {
+.fa-github, .fa-linkedin, .fa-file-text, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook {
   font-size: 4vw;
 }
 
@@ -1397,7 +1395,7 @@ projTitle a {
   color: #127C23;
 }
 
-projTitle a:hover, a:focus {
+projTitle a:hover, projTitle a:focus {
   color: #2F5032;
 }
 
