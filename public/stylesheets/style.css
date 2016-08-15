@@ -921,6 +921,10 @@ playlist description {
   font-weight: 400;
 }
 
+spotify iframe {
+  box-shadow: 0 1px 8px black;
+}
+
 .fa-headphones {
   color: #C5C6C7;
 }
@@ -1243,7 +1247,11 @@ introText p {
 }
 
 storyPhotos img {
-  border: solid 2px black
+  box-shadow: 0 1px 8px black;
+}
+
+storyPhotos img:hover {
+  opacity: 0.8;
 }
 
 hoopsPopover {
@@ -1302,6 +1310,10 @@ hoopsPopover {
 
   .burn-photo {
     height: 50%;
+  }
+
+  .burn-photo:hover {
+    opacity: 1;
   }
 
 }
@@ -1411,7 +1423,7 @@ projTitle {
   margin-top: -0.5vw;
 }
 
-projTitle a {
+projTitle {
   color: #127C23;
 }
 
@@ -1419,14 +1431,31 @@ projTitle a:hover, projTitle a:focus {
   color: #2F5032;
 }
 
-projLead i {
+projLead i, projLink i {
+  font-size: 2vw;
   color: #D0D0D0;
+  font-weight: 600;
+}
+
+.fa-globe {
+  font-size: 2vw;
+  padding-right: 0.2vw;
 }
 
 projLead {
   color: black;
   font-size: 2vw;
   font-weight: 600;
+}
+
+projLink a {
+  color: #2F5032;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+projLink a:hover {
+  color: #2F5032;
 }
 
 projMockup {
@@ -1436,6 +1465,11 @@ projMockup {
 projMockup img {
   max-height: 100%;
   margin-top: 2vw;
+  box-shadow: 0 1px 8px black;
+}
+
+projMockup img:hover {
+  opacity: 0.8;
 }
 
 projDesc {
