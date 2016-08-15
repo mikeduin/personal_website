@@ -1349,7 +1349,7 @@ storyPhotos img:hover {
   opacity: 0.8;
 }
 
-hoopsPopover {
+hoopsPopover, italyPopover {
   text-decoration: underline;
 }
 
