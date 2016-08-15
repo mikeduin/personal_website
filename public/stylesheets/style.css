@@ -757,6 +757,14 @@ photoRow img:hover {
   opacity: 0.8;
 }
 
+.photo-section {
+  margin-top: 2%;
+}
+
+.photo-cat {
+  color: black;
+}
+
 /*ALA Game Page Styles*/
 
 gameTitle {
