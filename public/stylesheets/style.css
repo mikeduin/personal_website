@@ -894,6 +894,21 @@ disclaimer {
   color: #3984C5;
 }
 
+.summary {
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: black;
+}
+
+.table-pad {
+  padding: 1%
+}
+
+.game-name {
+  color: #DC5623;
+  font-weight: 800;
+}
+
 /*Music Styles*/
 
 musicHeader {
