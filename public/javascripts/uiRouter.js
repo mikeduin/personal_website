@@ -111,6 +111,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.photos', {
+      url: '/photos',
+      views: {
+        'photos@home.ala': {
+          templateUrl: 'views/ala/photos.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.careerdata', {
       url: '/players/careerdata',
       views: {

@@ -15,7 +15,7 @@
               <li><a ui-sref="home.ala.balances" style="margin-left: 0px">Current Balances</a></li>
             </ul>
         </div>
-        <a ng-class="{activeLink: $state.includes('home.ala.photos')}">Photos</a>
+        <a ui-sref="home.ala.photos" ng-class="{activeLink: $state.includes('home.ala.photos')}">Photos</a>
         <a ng-class="{activeLink: $state.includes('home.ala.contact')}">Contact</a>
       </div>
     </alaLinks>
@@ -132,6 +132,7 @@
 <divView ui-view="balances"> </divView>
 <divView ui-view="champions"> </divView>
 <divView ui-view="leaders"> </divView>
+<divView ui-view="photos"> </divView>
 <divView ui-view="blog"> </divView>
 <divView ui-view="blog-add"> </divView>
 <divView ui-view="buyins"> </divView>
