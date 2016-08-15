@@ -1,0 +1,208 @@
+<careerData class="col-xs-9 col-md-10">
+  <blog class="col-xs-12">
+    <div class="text-center">
+      <hr style="margin-bottom: -5px;" class="col-xs-4 col-xs-offset-4">
+      <div class="col-xs-12">
+        <p style="margin-bottom: -20px">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          All-Time Leaders
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </p>
+        <div class="career-subhead">
+          Records are meant to be broken.
+        </div>
+      </div>
+      <hr class="col-xs-4 col-xs-offset-4">
+    </div>
+  </blog>
+</careerData>
+
+<playersIntro class="col-xs-9 col-md-10">
+  <p>
+    Below you will find the all-time leaders in five career-spanning categories. These records will be updated at the conclusion of each ALA game.
+  </p>
+</playersIntro>
+
+<podium class="col-xs-9 col-md-10">
+  <league class="col-xs-12 text-center">
+    Total Net Profits
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Entries </th>
+        <th class="text-center podium"> Buy-ins </th>
+        <th class="text-center podium"> Prizes </th>
+        <th class="text-center podium"> Net Profits </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.netProfits" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.entries}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.buyins}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.prizes}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.profits}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-xs-12 text-center">
+    Single-Event Prizes
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Game </th>
+        <th class="text-center podium"> Year </th>
+        <th class="text-center podium"> Prize </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.prizes" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="prizes"> {{records.game}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.year}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.prizes}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-xs-12 text-center">
+    Total Entries
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Entries </th>
+        <th class="text-center podium"> Titles </th>
+        <th class="text-center podium"> Podiums </th>
+        <th class="text-center podium"> Prizes </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.entries" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.entries}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.titles}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.topthree}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="prizes"> {{records.prizes}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-xs-12 text-center">
+    Total Championships
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Entries </th>
+        <th class="text-center podium"> Championships </th>
+        <th class="text-center podium"> Podiums </th>
+        <th class="text-center podium"> Prizes </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.titles" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.entries}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.titles}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.topthree}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="prizes"> {{records.prizes}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <league class="col-xs-12 text-center">
+    Total Podiums (Top-3 Finishes)
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Entries </th>
+        <th class="text-center podium"> Championships </th>
+        <th class="text-center podium"> Podiums </th>
+        <th class="text-center podium"> Prizes </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.podiums" class="podium">
+        <td style="font-size: 16px" class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.entries}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.titles}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.topthree}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="prizes"> {{records.prizes}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</podium>

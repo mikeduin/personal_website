@@ -553,6 +553,10 @@ alaSidebar a {
   margin-bottom: 1vw;
 }
 
+.hof-table {
+  margin-bottom: 2.5vw;
+}
+
 /*ALA About Styles*/
 
 about div {
@@ -635,14 +639,15 @@ blog div span {
 blogImage {
   display: inline-block;
   padding-right: 3px;
-  margin-right: 1vw;
-  padding-top: 10%;
-  max-height: 90%;
-  max-width: 90%;
+  margin-right: 0.5vw;
+  /*padding-top: 5%;*/
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .caption {
   font-size: 1vw;
+  font-weight: bold;
 }
 
 blogHeader a {
@@ -713,7 +718,7 @@ buyins prizeDiv {
   margin-bottom: 3.125vw;
 }
 
-.fa-microphone, .fa-database, .fa-credit-card {
+.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star {
   color: #C5C6C7;
 }
 
@@ -728,6 +733,10 @@ balances {
 
 balances a {
   font-size: 2vw;
+}
+
+.entries {
+  font-size:
 }
 
 /*ALA Game Page Styles*/
@@ -868,6 +877,21 @@ disclaimer {
 
 .det-expand:hover {
   cursor: pointer;
+}
+
+.profits {
+  color: #DC5623;
+}
+
+.prizes {
+  color: black;
+  font-weight: 700;
+}
+
+.entrant {
+  font-size: 1.5vw;
+  font-weight: 800;
+  color: #3984C5;
 }
 
 /*Music Styles*/
