@@ -56,6 +56,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getPodiums();
 
+  $scope.vm.champions = {};
+  $scope.getChampions = function() {
+    alaService.getChampions().then(function(results){
+      $scope.vm.champions = results;
+    })
+  };
+  $scope.getChampions();
+
   $scope.vm.titles = {};
   $scope.getTitles = function() {
     alaService.getTitles().then(function(results){

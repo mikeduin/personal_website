@@ -4,6 +4,12 @@ angular
 
 function alaService ($http) {
   return {
+    getChampions: function() {
+      return $http.get('javascripts/alapodiums/champions.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getPodiums: function() {
       return $http.get('javascripts/alapodiums/hof-podiums.json')
       .then(function(results){
