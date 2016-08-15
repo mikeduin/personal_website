@@ -578,7 +578,7 @@ about div i {
   font-size: 1.4vw;
 }
 
-/*ALA Blog + Buyins + Players Styles*/
+/*ALA Blog + Buyins + Players + Photos Styles*/
 
 entry {
   display: inline-block;
@@ -602,10 +602,6 @@ blogFilter {
 .filter-text {
   margin-top: 0.2vw;
 }
-
-/*.filter-div {
-  border-right: solid 3px #848484;
-}*/
 
 blog div p {
   font-size: 8vw;
@@ -718,7 +714,7 @@ buyins prizeDiv {
   margin-bottom: 3.125vw;
 }
 
-.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star {
+.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star, .fa-camera {
   color: #C5C6C7;
 }
 
@@ -735,8 +731,30 @@ balances a {
   font-size: 2vw;
 }
 
-.entries {
-  font-size:
+photoHeader {
+  font-size: 2vw;
+  color: #DC5623;
+  font-weight: 800;
+}
+
+.photoCaption {
+  font-size: 1.5vw;
+  color: #DC5623;
+  font-weight: 800;
+}
+
+photoRow {
+  margin-top: 2%;
+}
+
+photoRow img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 1px 8px black;
+}
+
+photoRow img:hover {
+  opacity: 0.8;
 }
 
 /*ALA Game Page Styles*/
