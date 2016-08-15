@@ -8,9 +8,9 @@ angular
   $anchorScroll.yOffset = 80;
     }])
   .config(['$stateProvider', '$urlRouterProvider', siteConfig])
-  // .config(['$locationProvider', function($locationProvider) {
-  //   $locationProvider.html5Mode(true);
-  // }])
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }])
 
 
 
