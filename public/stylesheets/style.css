@@ -1073,6 +1073,7 @@ bottleList {
   border: solid 5px #540705;
   border-radius: 1.24vw;
   background-color: #7C0F09;
+  box-shadow: 0 1px 8px black;
 }
 
 beerContainer {
