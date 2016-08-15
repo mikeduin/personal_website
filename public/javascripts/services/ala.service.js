@@ -4,6 +4,36 @@ angular
 
 function alaService ($http) {
   return {
+    getPodiums: function() {
+      return $http.get('javascripts/alapodiums/hof-podiums.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getTitles: function() {
+      return $http.get('javascripts/alapodiums/hof-titles.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getPrizes: function() {
+      return $http.get('javascripts/alapodiums/hof-prizes.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getEntries: function() {
+      return $http.get('javascripts/alapodiums/hof-entries.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getNetProfits: function() {
+      return $http.get('javascripts/alapodiums/hof-netprofits.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getFootballRecords: function(){
       return $http.get('javascripts/alarecords/football-records.json')
       .then(function(results){

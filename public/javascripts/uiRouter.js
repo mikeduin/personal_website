@@ -138,11 +138,11 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('home.ala.halloffame', {
-      url: '/players/halloffame',
+    .state('home.ala.leaders', {
+      url: '/players/leaders',
       views: {
-        'halloffame@home.ala': {
-          templateUrl: 'views/ala/players/halloffame.html',
+        'leaders@home.ala': {
+          templateUrl: 'views/ala/players/leaders.html',
           controller: 'AlaController'
         }
       }

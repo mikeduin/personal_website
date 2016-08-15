@@ -48,6 +48,46 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
     })
   };
 
+  $scope.vm.podiums = {};
+  $scope.getPodiums = function() {
+    alaService.getPodiums().then(function(results){
+      $scope.vm.podiums = results;
+    })
+  };
+  $scope.getPodiums();
+
+  $scope.vm.titles = {};
+  $scope.getTitles = function() {
+    alaService.getTitles().then(function(results){
+      $scope.vm.titles = results;
+    })
+  };
+  $scope.getTitles();
+
+  $scope.vm.prizes = {};
+  $scope.getPrizes = function() {
+    alaService.getPrizes().then(function(results){
+      $scope.vm.prizes = results;
+    })
+  };
+  $scope.getPrizes();
+
+  $scope.vm.netProfits = {};
+  $scope.getNetProfits = function() {
+    alaService.getNetProfits().then(function(results){
+      $scope.vm.netProfits = results;
+    })
+  };
+  $scope.getNetProfits();
+
+  $scope.vm.entries = {};
+  $scope.getEntries = function() {
+    alaService.getEntries().then(function(results){
+      $scope.vm.entries = results;
+    })
+  };
+  $scope.getEntries();
+
   $scope.vm.hoopsPodium = {};
   $scope.getHoopsPodium = function() {
     alaService.getHoopsPodium().then(function(results){
