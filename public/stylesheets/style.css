@@ -574,7 +574,7 @@ about div i {
   font-size: 1.4vw;
 }
 
-/*ALA Blog + Buyins Styles*/
+/*ALA Blog + Buyins + Players Styles*/
 
 entry {
   display: inline-block;
@@ -607,6 +607,23 @@ blog div p {
   font-size: 8vw;
   font-weight: 800;
   color: #3984C5;
+}
+
+careerData div p {
+  font-size: 5.5vw;
+  font-weight: 800;
+  color: #3984C5;
+}
+
+careerData span {
+  margin-top: 15%;
+}
+
+.career-subhead {
+  font-size: 1.4vw;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 0.7vw;
 }
 
 blog div span {
@@ -696,8 +713,21 @@ buyins prizeDiv {
   margin-bottom: 3.125vw;
 }
 
-.fa-microphone {
+.fa-microphone, .fa-database, .fa-credit-card {
   color: #C5C6C7;
+}
+
+playersIntro {
+  font-size: 1.5vw;
+}
+
+balances {
+  margin-bottom: 0.5vw;
+  margin-top: -0.5vw;
+}
+
+balances a {
+  font-size: 2vw;
 }
 
 /*ALA Game Page Styles*/

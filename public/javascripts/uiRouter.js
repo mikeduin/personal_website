@@ -111,6 +111,42 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.careerdata', {
+      url: '/players/careerdata',
+      views: {
+        'careerdata@home.ala': {
+          templateUrl: 'views/ala/players/careerdata.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.balances', {
+      url: '/players/balances',
+      views: {
+        'balances@home.ala': {
+          templateUrl: 'views/ala/players/balances.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.champions', {
+      url: '/players/champions',
+      views: {
+        'champions@home.ala': {
+          templateUrl: 'views/ala/players/champions.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.halloffame', {
+      url: '/players/halloffame',
+      views: {
+        'halloffame@home.ala': {
+          templateUrl: 'views/ala/players/halloffame.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.blog', {
       url: '/blog',
       views: {
