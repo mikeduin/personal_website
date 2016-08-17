@@ -10,6 +10,16 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.vm.post = {};
   $scope.vm.newpost = {};
   $scope.vm.blogtags = [];
+  $scope.contactForm = {};
+  $scope.vm.contactSuccess = false;
+
+  $scope.vm.contactCommish = function(){
+    alaService.contactCommish($scope.contactForm).then(function(result){
+      console.log("The Commish has been emailed!")
+      $scope.contactForm = {};
+      $scope.vm.contactSuccess = true;
+    })
+  }
 
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();

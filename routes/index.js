@@ -127,7 +127,38 @@ router.delete('/beers', function (req, res, next) {
 })
 
 // END BEER ROUTES
-// BEGIN BLOG ROUTES
+// BEGIN ALA ROUTES
+
+router.post('/contactCommish', function(req, res, next){
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PW
+    }
+  })
+
+  var html = '<b>Name:</b> ' + req.body.name + '<br><b>Email:</b> ' + req.body.email + '<br><b>Text:</b> ' + req.body.text + ''
+
+  // req.body.name + ' is requesting that you put ' + req.body.brewery + "'s "+ req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
+
+  var mailOptions = {
+    from: 'michael.s.duin@gmail.com',
+    to: 'michael.s.duin@gmail.com',
+    subject: 'Email from ALA Contact Form',
+    html: html
+  }
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+      res.json({yo: 'error'})
+    } else {
+      console.log('Message sent: ' + info.response);
+      res.json({yo: info.response});
+    };
+  })
+})
 
 router.get('/blogposts', function(req, res, next) {
   Blogpost.find(function(err, blogposts) {

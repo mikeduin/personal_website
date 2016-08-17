@@ -109,6 +109,15 @@ function siteConfig ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('home.ala.contact', {
+      url: '/contact',
+      views: {
+        'contact@home.ala': {
+          templateUrl: 'views/ala/contact.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.photos', {
       url: '/photos',
       views: {
