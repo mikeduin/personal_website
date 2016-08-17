@@ -16,7 +16,7 @@
             </ul>
         </div>
         <a ui-sref="home.ala.photos" ng-class="{activeLink: $state.includes('home.ala.photos')}">Photos</a>
-        <a ng-class="{activeLink: $state.includes('home.ala.contact')}">Contact</a>
+        <a ui-sref="home.ala.contact" ng-class="{activeLink: $state.includes('home.ala.contact')}">Contact</a>
       </div>
     </alaLinks>
 </alaHeader>
@@ -128,6 +128,7 @@
 </alaSidebar>
 
 <divView ui-view="about"> </divView>
+<divView ui-view="contact"> </divView>
 <divView ui-view="careerdata"> </divView>
 <divView ui-view="balances"> </divView>
 <divView ui-view="champions"> </divView>

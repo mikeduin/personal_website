@@ -557,7 +557,7 @@ alaSidebar a {
   margin-bottom: 2.5vw;
 }
 
-/*ALA About Styles*/
+/*ALA About + Contact Styles*/
 
 about div {
   font-size: 3.75vw;
@@ -576,6 +576,20 @@ about div i {
 
 .aboutDesc {
   font-size: 1.4vw;
+}
+
+#contact-form div {
+  margin-top: 2%;
+}
+
+#contact-form textarea {
+  height: 13vw;
+}
+
+#contact-form button {
+  background-color: #3984C5;
+  color: white;
+  margin-bottom: 3%;
 }
 
 /*ALA Blog + Buyins + Players + Photos Styles*/
@@ -723,7 +737,7 @@ buyins prizeDiv {
   margin-bottom: 3.125vw;
 }
 
-.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star, .fa-camera {
+.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star, .fa-camera, .fa-envelope {
   color: #C5C6C7;
 }
 
