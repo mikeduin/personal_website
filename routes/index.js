@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var nodemailer = require('nodemailer');
+// var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +13,35 @@ var Beer = mongoose.model('Beer');
 var Blogpost = mongoose.model('Blogpost');
 
 // BEGIN BEER ROUTES
+
+router.post('/fridgeRequest', function(req, res, next){
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PW
+    }
+  })
+
+  var text = req.body.name + ' is requesting that you put ' + req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
+
+  var mailOptions = {
+    from: 'michael.s.duin@gmail.com',
+    to: 'michael.s.duin@gmail.com',
+    subject: 'Fridge Request!',
+    text: text
+  }
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+      res.json({yo: 'error'})
+    } else {
+      console.log('Message sent: ' + info.response);
+      res.json({yo: info.response});
+    };
+  })
+})
 
 router.get('/beers', function(req, res, next) {
   Beer.find(function(err, beers) {

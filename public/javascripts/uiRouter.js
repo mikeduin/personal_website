@@ -12,8 +12,6 @@ angular
     $locationProvider.html5Mode(true);
   }])
 
-
-
 function siteConfig ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 

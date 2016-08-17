@@ -13,7 +13,32 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
   $scope.vm.styles = [];
+  $scope.vm.fridgeRequest = false;
   $scope.formData = {};
+
+  $scope.vm.requestBeer = function(beer, name, eta){
+    var beerRequest = {};
+    beerRequest.beer = beer.name;
+    beerRequest.name = name;
+    beerRequest.eta = eta;
+    beerService.requestBeer(beerRequest).then(function(result){
+      console.log('beer has been fridged!')
+    })
+    // console.log('beer is ', beer);
+    // console.log('name is ', name);
+    // console.log('name is ', eta);
+  }
+
+  // $scope.checkParams = function(){
+  //   if ($stateParams.beername !== undefined) {
+  //     console.log($stateParams.beername);
+  //     console.log("there is a beer here");
+  //     $scope.vm.showInstructions = false;
+  //   } else {
+  //     console.log($stateParams.beername);
+  //     console.log("there is no beer")
+  //   }
+  // }
 
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
@@ -48,6 +73,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   };
   $scope.vm.addBeer = function() {
     beerService.addBeer($scope.formData).then(function(){
+      // $scope.vm.showInstructions = true;
       $state.go('home.fridge');
       $scope.formData = {};
       console.log('Beer has been added!')
@@ -65,6 +91,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.vm.editBeer = function() {
     beerService.editBeer($scope.vm.beer).then(function(){
       $state.go('home.fridge');
+      // $scope.vm.showInstructions = true;
       console.log('Beer has been updated!')
     })
   };

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var mongoose = require('mongoose');
+var nodemailer = require('nodemailer');
 require('dotenv').load();
 
 mongoose.connect(process.env.MONGOLAB_URI
