@@ -1324,8 +1324,17 @@ beerDetail description {
   padding-top: 1%;
 }
 
+#fridgeForm div {
+  padding-top: 1%;
+}
+
+#fridgeForm input {
+  border: solid 1px black;
+  border-radius: 5%;
+}
+
 #fridgeForm button {
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 #fridgeForm button:hover {
