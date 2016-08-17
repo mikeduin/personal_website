@@ -4,6 +4,13 @@ angular
 
 function beerService ($http) {
   return {
+    requestBeer:function(beerRequest){
+      console.log('beerRequest is ', beerRequest);
+      return $http.post('/fridgeRequest', beerRequest)
+      .then(function(result){
+        return result.data
+      })
+    },
     getBeers: function() {
       return $http.get('/beers')
       .then(function(results) {
