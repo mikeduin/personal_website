@@ -23,7 +23,7 @@ router.post('/fridgeRequest', function(req, res, next){
     }
   })
 
-  var text = req.body.name + ' is requesting that you put ' + req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
+  var text = req.body.name + ' is requesting that you put ' + req.body.brewery + "'s "+ req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
 
   var mailOptions = {
     from: 'michael.s.duin@gmail.com',

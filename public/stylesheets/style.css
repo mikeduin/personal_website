@@ -152,7 +152,6 @@ img {
   font-weight: 800;
 }
 
-
 /*New Splashpage Styles*/
 
 .title-head {
@@ -1305,19 +1304,23 @@ beerDetail description {
   font-weight: bold;
 }
 
-#fridge-request {
+#fridgeForm {
   margin-top: 1%;
   margin-bottom: 1%;
   padding-top: 1%;
 }
 
-#fridge-request button {
+#fridgeForm button {
   margin-top: 1%;
 }
 
-#fridge-request button:hover {
+#fridgeForm button:hover {
   color: #337AB7;
   background-color: white;
+}
+
+.fridge-success {
+  color: #2F5032;
 }
 
 searchContainer sort {
