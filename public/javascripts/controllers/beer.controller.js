@@ -21,12 +21,12 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
     beerRequest.beer = beer.name;
     beerRequest.name = name;
     beerRequest.eta = eta;
+    beerRequest.brewery = beer.brewery;
     beerService.requestBeer(beerRequest).then(function(result){
-      console.log('beer has been fridged!')
+      $scope.vm.fridgeRequest = false;
+      $scope.vm.fridgeSuccess = true;
+      console.log('beer has been fridged!');
     })
-    // console.log('beer is ', beer);
-    // console.log('name is ', name);
-    // console.log('name is ', eta);
   }
 
   // $scope.checkParams = function(){
