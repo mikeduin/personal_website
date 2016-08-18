@@ -1453,7 +1453,8 @@ hoopsPopover, italyPopover {
   }
 
   projDesc {
-    font-size: 1.3vw
+    font-size: 1.3vw;
+    padding-top: 1%;
   }
 
   .about-intro {
@@ -1481,18 +1482,6 @@ hoopsPopover, italyPopover {
     opacity: 1;
   }
 
-  .btb-pic {
-    margin-top: 4vw;
-  }
-
-  .donut-pic {
-    margin-top: 2vw;
-  }
-
-  .tennis-pic {
-    margin-top: 1.8vw;
-  }
-
 }
 
 @media screen and (min-width: 1000px) {
@@ -1509,21 +1498,6 @@ hoopsPopover, italyPopover {
     width: 80%;
   }
 
-  projDesc {
-    font-size: 1.1vw
-  }
-
-  .btb-pic {
-    margin-top: 2.5vw;
-  }
-
-  .donut-pic {
-    margin-top: 1.2vw;
-  }
-
-  .tennis-pic {
-    margin-top: 1.5vw;
-  }
 }
 
 @media screen and (min-width: 2150px) {
@@ -1658,6 +1632,7 @@ projLink a:hover {
 
 projMockup {
   height: 20vw;
+  margin-top: 2%;
 }
 
 projMockup img {
