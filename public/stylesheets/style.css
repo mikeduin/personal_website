@@ -687,11 +687,6 @@ blogDate {
   font-weight: bold;
 }
 
-blogText {
-  font-size: 1.25vw;
-  margin-top: 25px;
-}
-
 blogTags {
   margin-top: 5px;
 }
@@ -792,7 +787,7 @@ photoRow img:hover {
 
 gameTitle {
   margin-top: 1vw;
-  font-size: 52px;
+  font-size: 5vw;
   font-weight: 800;
   color: #DC5623;
 }
@@ -944,8 +939,8 @@ disclaimer {
 }
 
 .summary {
-  font-size: 1.2vw;
-  font-weight: 400;
+  font-size: 1.6vw;
+  font-weight: 800;
   color: black;
 }
 
@@ -1238,7 +1233,7 @@ beerDetail name {
   font-size: 32px;
   font-weight: 800;
 }
-
+<i class="fa fa-bars" aria-hidden="true"></i>
 beerDetail brewery {
   font-size: 1.25vw;
   font-weight: 800;
@@ -1444,12 +1439,21 @@ hoopsPopover, italyPopover {
     align-items: center;
   }
 
+  blogText {
+    font-size: 1.5vw;
+    margin-top: 25px;
+  }
+
   storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
     font-size: 1.5vw;
   }
 
   introText p {
     font-size: 2vw;
+  }
+
+  projDesc {
+    font-size: 1.3vw
   }
 
   .about-intro {
@@ -1477,15 +1481,48 @@ hoopsPopover, italyPopover {
     opacity: 1;
   }
 
+  .btb-pic {
+    margin-top: 4vw;
+  }
+
+  .donut-pic {
+    margin-top: 2vw;
+  }
+
+  .tennis-pic {
+    margin-top: 1.8vw;
+  }
+
 }
 
 @media screen and (min-width: 1000px) {
+
+  blogText {
+    font-size: 1.3vw;
+  }
+
   storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
     font-size: 1.3vw;
   }
 
   .burn-photo {
     width: 80%;
+  }
+
+  projDesc {
+    font-size: 1.1vw
+  }
+
+  .btb-pic {
+    margin-top: 2.5vw;
+  }
+
+  .donut-pic {
+    margin-top: 1.2vw;
+  }
+
+  .tennis-pic {
+    margin-top: 1.5vw;
   }
 }
 
@@ -1625,14 +1662,9 @@ projMockup {
 
 projMockup img {
   max-height: 100%;
-  margin-top: 2vw;
   box-shadow: 0 1px 8px black;
 }
 
 projMockup img:hover {
   opacity: 0.8;
-}
-
-projDesc {
-  font-size: 1.1vw
 }
