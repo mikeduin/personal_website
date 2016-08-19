@@ -59,7 +59,7 @@ mobSquare {
 }
 
 .mob-p {
-  font-size: 5.5vw;
+  font-size: 5vw;
   font-weight: 700;
   color: white;
 }
@@ -1227,6 +1227,7 @@ musicIntro {
 explanation {
   margin-top: 3.125vw;
   margin-bottom: 1.57vw;
+  font-size: 1.4vw;
 }
 
 playlists {
@@ -1824,6 +1825,7 @@ hoopsPopover, italyPopover {
   .hoops-sub {
     margin-left: 1.7vw;
   }
+
 }
 
 @media screen and (min-width: 1485px) {
@@ -1833,6 +1835,10 @@ hoopsPopover, italyPopover {
 
   .hoops-sub {
     margin-left: 2vw;
+  }
+
+  .about-intro {
+    margin-bottom: 8%;
   }
 }
 
