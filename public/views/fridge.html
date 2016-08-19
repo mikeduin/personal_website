@@ -62,7 +62,7 @@
           <span class="black empty-b" ng-show="vm.emptyFilter === true"> <b>Empty Bottles</b> </span>
           <span class="pointer black">|<span class="coldskinny" ng-show="vm.coldFilter === false && vm.emptyFilter === false" ng-click="vm.coldFilter = true"> <i>Show Cold Beers Only</i></span></span>
           <span class="pointer" ng-show="vm.coldFilter === true && vm.emptyFilter === false" ng-click="vm.coldFilter = false"> <span class="show-all-beers"><i>Show All Beers</i></span></span></span>
-          <span class="black pointer" ng-click="vm.emptyFilter = true" ng-show="vm.emptyFilter === false">| <span class="show-empty-b"><i>Show Empty Bottles</i></span></span></span>
+          <span class="black pointer" ng-click="vm.emptyFilter = true; vm.coldFilter = false" ng-show="vm.emptyFilter === false">| <span class="show-empty-b"><i>Show Empty Bottles</i></span></span></span>
           <span class="black pointer show-empty-b" ng-click="vm.emptyFilter = false" ng-show="vm.emptyFilter === true"><i>Show Current Selections</i></span></span>
         </div>
       </search>
