@@ -46,7 +46,7 @@
 <div class="nav navbar navbar-fixed-top mobile-nav" role="navigation" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
   <div class="navContainer container-fixed">
     <div class="mobile-bars">
-      <button slide-toggle="#mobile-nav-slide" type="button" ng-show="showBars === true" ><i class="fa fa-bars" id="mob-bars"></i></button>
+      <button slide-toggle="#mobile-nav-slide" type="button" ng-show="showBars === true" ><i class="fa fa-bars" aria-hidden="true" id="mob-bars"></i></button>
     </div>
     <div class="navbar-mob-header">
       <a class="navbar-mob-brand" href="/">
