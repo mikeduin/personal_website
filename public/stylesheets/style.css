@@ -1108,6 +1108,10 @@ podium score {
   font-size: 1.25vw;
 }
 
+podium tbody {
+  font-size: 1vw;
+}
+
 gameDetails {
   margin-bottom: 2.5vw;
 }
@@ -1806,6 +1810,9 @@ hoopsPopover, italyPopover {
 }
 
 @media screen and (min-width: 1485px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.3vw
+  }
 
   .hoops-sub {
     margin-left: 2vw;
@@ -1828,6 +1835,10 @@ hoopsPopover, italyPopover {
 }
 
 @media screen and (min-width: 2150px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.5vw
+  }
+
   trophyBox{
     padding-top: 4%;
   }
@@ -1852,6 +1863,12 @@ hoopsPopover, italyPopover {
 @media screen and (min-width: 2500px) {
   alaSidebar ul {
     margin-left: -1.5vw;
+  }
+}
+
+@media screen and (min-width: 2600px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.8vw
   }
 }
 
