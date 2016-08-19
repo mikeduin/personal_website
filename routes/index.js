@@ -16,17 +16,17 @@ var Blogpost = mongoose.model('Blogpost');
 
 router.post('/fridgeRequest', function(req, res, next){
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Mailgun',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PW
+      user: process.env.MAILGUN_USER,
+      pass: process.env.MAILGUN_PW
     }
   })
 
   var text = req.body.name + ' is requesting that you put ' + req.body.brewery + "'s "+ req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
 
   var mailOptions = {
-    from: 'michael.s.duin@gmail.com',
+    from: 'postmaster@mg.mikeduin.com',
     to: 'michael.s.duin@gmail.com',
     subject: 'Fridge Request!',
     text: text
@@ -131,19 +131,17 @@ router.delete('/beers', function (req, res, next) {
 
 router.post('/contactCommish', function(req, res, next){
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Mailgun',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PW
+      user: process.env.MAILGUN_USER,
+      pass: process.env.MAILGUN_PW
     }
   })
 
   var html = '<b>Name:</b> ' + req.body.name + '<br><b>Email:</b> ' + req.body.email + '<br><b>Text:</b> ' + req.body.text + ''
 
-  // req.body.name + ' is requesting that you put ' + req.body.brewery + "'s "+ req.body.beer + ' in the fridge. Their ETA is ' + req.body.eta
-
   var mailOptions = {
-    from: 'michael.s.duin@gmail.com',
+    from: 'postmaster@mg.mikeduin.com',
     to: 'michael.s.duin@gmail.com',
     subject: 'Email from ALA Contact Form',
     html: html
