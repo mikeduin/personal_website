@@ -1,4 +1,4 @@
-<div class="nav navbar navbar-fixed-top hide-nav" role="navigation" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
+<div class="nav navbar navbar-fixed-top main-nav" role="navigation" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
   <div class="navContainer container-fixed">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" aria-expanded='false'><i class="fa fa-bars" aria-hidden="true"></i></button>
@@ -40,4 +40,57 @@
     </div>
   </div>
 </div>
+
+<div class="mob-spacer"></div>
+
+<div class="nav navbar navbar-fixed-top mobile-nav" role="navigation" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
+  <div class="navContainer container-fixed">
+    <div class="mobile-bars">
+      <button slide-toggle="#mobile-nav-slide" type="button" ng-show="showBars === true" ><i class="fa fa-bars" id="mob-bars"></i></button>
+    </div>
+    <div class="navbar-mob-header">
+      <a class="navbar-mob-brand" href="/">
+        <span> mike<b>duin</b> :</span>
+        <span ng-if="$state.includes('home.professional')" style="color: #2F5032; font-weight: 800"> portfolio </span>
+        <span ng-if="$state.includes('home.about')" style="color: #24307A; font-weight: 800"> about </span>
+        <span ng-if="$state.includes('home.ala')" style="color: #3984C5; font-weight: 800"> a level above </span>
+        <span ng-if="$state.includes('home.fridge')" style="color: #7C0F09; font-weight: 800"> fridge </span>
+        <span ng-if="$state.includes('home.music')" style="color: #452562; font-weight: 800"> music </span>
+      </a>
+      <div id="mobile-nav-slide" class="slideable">
+        <a ui-sref="home.about" >
+          <div class="mobile-nav-link nav-about">
+            about
+          </div>
+        </a>
+        <a ui-sref="home.professional">
+          <div class="mobile-nav-link nav-work">
+            portfolio
+          </div>
+        </a>
+        <a href="http://photography.mikeduin.com/">
+          <div class="mobile-nav-link nav-photo">
+            photography
+          </div>
+        </a>
+        <a ui-sref="home.ala.blog.main">
+          <div class="mobile-nav-link nav-ala">
+            a level above
+          </div>
+        </a>
+        <a ui-sref="home.music">
+          <div class="mobile-nav-link nav-music">
+            music
+          </div>
+        </a>
+        <a ui-sref="home.fridge">
+          <div class="mobile-nav-link nav-fridge">
+            mike's fridge
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="spacer"></div>

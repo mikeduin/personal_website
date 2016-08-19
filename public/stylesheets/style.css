@@ -18,7 +18,7 @@ img {
   width: 100%;
 }
 
-/*Mobile Splash Page Styles*/
+/*Mobile Splash + Navbar Page Styles*/
 
 .mob-splash-logo {
   font-size: 6vw;
@@ -39,7 +39,7 @@ img {
 mobSquare {
   width: 47.5%;
   padding-bottom: 47.5%;
-  margin-left: 2%;
+  margin-left: 1.75%;
   margin-bottom: 2%;
   float: left;
   position: relative;
@@ -54,17 +54,9 @@ mobSquare {
 }
 
 .mob-p {
-  font-size: 4vw;
+  font-size: 5.5vw;
   font-weight: 700;
   color: white;
-}
-
-.ala-mob-content {
-  position:absolute;
-  height:90%;
-  width:90%;
-  padding: 5%;
-  margin-top: 20%;
 }
 
 .kophiphi-mob {
@@ -87,12 +79,21 @@ mobSquare {
   background-image: url('../images/ala0304.jpg');
 }
 
+.ala-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 50%;
+}
+
 .ko-mob-content {
   position:absolute;
   height:90%;
   width:90%;
   padding: 5%;
-  margin-top: 10%;
+  margin-left: 15%;
+  margin-top: 65%;
 }
 
 .work-mob-content {
@@ -100,8 +101,8 @@ mobSquare {
   height:90%;
   width:90%;
   padding: 5%;
-  margin-top: 5%;
-  margin-left: 5%;
+  margin-top: 25%;
+  margin-left: 20%;
 }
 
 .fridge-mob-content {
@@ -109,8 +110,8 @@ mobSquare {
   height:90%;
   width:90%;
   padding: 5%;
-  margin-top: 20%;
-  margin-left: 10%;
+  margin-top: 60%;
+  margin-left: 30%;
 }
 
 .music-mob-content {
@@ -118,8 +119,66 @@ mobSquare {
   height:90%;
   width:90%;
   padding: 5%;
-  margin-top: 5%;
-  margin-left: 5%;
+  margin-top: 15%;
+  margin-left: 30%;
+}
+
+.navbar-mob-header {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  margin-top: -6%;
+}
+
+.navbar-mob-brand {
+  padding-top: 13%;
+  float: none;
+}
+
+.navbar-mob-brand span {
+  font-size: 3vw;
+  color: black;
+}
+
+.mobile-bars {
+  display: inline;
+}
+
+#mob-bars {
+  font-size: 3vw;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.mobile-nav-link {
+  font-size: 3vw;
+  margin-top: 2%;
+  font-weight: 600;
+}
+
+.nav-about {
+  color: #24307A;
+}
+
+.nav-work {
+  color: #2F5032;
+}
+
+.nav-ala {
+  color: #337AB7;
+}
+
+.nav-music {
+  color: #452562;
+}
+
+.nav-fridge {
+  color: #7C0F09;
+}
+
+.nav-photo {
+  color: #C4B65C;
 }
 
 /*Navbar Styles*/
@@ -349,10 +408,10 @@ leftSquare {
   transform: scale(1.1);
 }
 
-#kophiphi-text, #fridge-text, #work-text, #music-text, #ala-text {
+#kophiphi-text, #fridge-text, #work-text, #music-text, #ala-text, #about-text {
   display: none;
   color: white;
-  font-size: 22px;
+  font-size: 2vw;
   font-weight: 600;
 }
 
@@ -396,6 +455,15 @@ p.slide{
   overflow: hidden;
   width: 30em;
   animation: type 3s steps(60, end);
+}
+
+.about-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 50%;
+  margin-left: 35%;
 }
 
 .fridge-content {
@@ -453,6 +521,32 @@ p.slide{
     padding: 5%;
     margin-top: 70%;
     margin-left: 30%;
+}
+
+.about {
+  background-image: url('../images/elephant.jpg');
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.about:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.about:hover > #about-text {
+  display: block;
 }
 
 .music-logo {
@@ -1561,9 +1655,13 @@ hoopsPopover, italyPopover {
 
 @media screen and (min-width: 300px) {
 /*BEGIN NAVBAR STYLES*/
-  .main-splash, .hide-nav {
+  .main-splash, .main-nav {
     display: none;
     visibility: hidden;
+  }
+
+  .mob-spacer {
+    margin-top: 10vw;
   }
 
   .hidden-xs {
@@ -1637,9 +1735,19 @@ hoopsPopover, italyPopover {
 }
 
 @media screen and (min-width: 1000px) {
-  .main-splash, .hide-nav {
+  .main-splash, .main-nav {
     display: unset;
     visibility: visible;
+  }
+
+  .mobile-nav {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mob-spacer {
+    display: none;
+    visibility: hidden;
   }
 
   .mob-splash {
