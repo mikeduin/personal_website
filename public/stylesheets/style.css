@@ -1199,6 +1199,7 @@ bottleList {
   border-radius: 1.24vw;
   background-color: #7C0F09;
   box-shadow: 0 1px 0.625vw black;
+  font-size: 1vw;
 }
 
 beerContainer {
@@ -1243,12 +1244,12 @@ beerDetail {
 
 beerDetail name {
   color: #7C0F09;
-  font-size: 32px;
+  font-size: 2.5vw;
   font-weight: 800;
 }
 
 beerDetail brewery {
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   font-weight: 800;
 }
 
@@ -1297,13 +1298,17 @@ beerDetail beerImage {
 }
 
 beerDetail beerImage img {
-  height: 200px;
+  height: 15.67vw;
+}
+
+.beer-info {
+  font-size: 1.35vw
 }
 
 beerDetail description {
   margin-top: 1vw;
   margin-bottom: 1vw;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
 }
 
 .fridgeme {
@@ -1311,6 +1316,8 @@ beerDetail description {
   color: white;
   font-weight: bold;
   margin-top: 0.5vw;
+  width: 12vw;
+  font-size: 1.3vw;
 }
 
 .fridgeme:focus {
@@ -1344,6 +1351,7 @@ beerDetail description {
 
 #fridgeForm button {
   margin-top: 2%;
+  font-size: 1.3vw;
 }
 
 #fridgeForm button:hover {
