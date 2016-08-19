@@ -2,72 +2,73 @@
   {
     "season": "2015",
     "first_team": "Alex Kurian",
+    "first_owner": "$523",
     "second_team": "Dave Echenoz",
-    "second_owner": "",
+    "second_owner": "$202",
     "third_team": "Kyle Davis",
-    "third_owner": ""
+    "third_owner": "$427"
   },
   {
     "season": "2014",
     "first_team": "Brad Baker",
-    "first_owner": "",
+    "first_owner": "$560",
     "second_team": "David Christeson",
-    "second_owner": "",
+    "second_owner": "$195",
     "third_team": "(five-way-tie)",
-    "third_owner": ""
+    "third_owner": "$70"
   },
   {
     "season": "2013",
     "first_team": "Ryan Stanbery",
-    "first_owner": "",
+    "first_owner": "$505",
     "second_team": "Mike Duin",
-    "second_owner": "",
+    "second_owner": "$278",
     "third_team": "Dave Bergmann / Devon Santoro (tie)",
-    "third_owner": ""
+    "third_owner": "$76"
   },
   {
     "season": "2012",
     "first_team": "Kyle Davis",
-    "first_owner": "",
+    "first_owner": "$455",
     "second_team": "Lester Harman",
-    "second_owner": "",
+    "second_owner": "$229",
     "third_team": "Corey Uhalde",
-    "third_owner": ""
+    "third_owner": "$100"
   },
   {
     "season": "2011",
     "first_team": "Jeff Schneider",
-    "first_owner": "",
+    "first_owner": "$471",
     "second_team": "Mike Duin",
-    "second_owner": "",
+    "second_owner": "$237",
     "third_team": "Adam Atkins / Matt Stringer (tie)",
-    "third_owner": ""
+    "third_owner": "$97"
   },
   {
     "season": "2010",
     "first_team": "Eric Grimit (t-1st)",
-    "first_owner": "",
+    "first_owner": "$327",
     "second_team": "Joe Simich (t-1st)",
-    "second_owner": "",
+    "second_owner": "$327",
     "third_team": "Matt Sullivan",
-    "third_owner": ""
+    "third_owner": "$94"
   },
   {
     "season": "2009",
     "first_team": "Dan Goldman",
-    "first_owner": "",
+    "first_owner": "$497",
     "second_team": "Brendan Connell",
-    "second_owner": "",
+    "second_owner": "$220",
     "third_team": "Matt Crevier",
-    "third_owner": ""
+    "third_owner": "$90"
   },
   {
     "season": "2008",
     "first_team": "Adam Brady",
-    "first_owner": "",
+    "first_owner": "$287",
     "second_team": "Mike Duin",
-    "second_owner": "",
+    "second_owner": "$124",
     "third_team": "Jeff Schneider",
-    "third_owner": ""
+    "third_owner": "$59"
   }
 ]

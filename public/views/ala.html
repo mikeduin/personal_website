@@ -4,10 +4,16 @@
     </alaLead>
     <alaLinks class="row">
       <div class="col-xs-offset-4">
-        <a ui-sref="home.ala.about" ng-class="{activeLink: $state.includes('home.ala.about')}">About + How to Play</a>
+        <div uib-dropdown style="display: inline">
+          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.about') || $state.includes('home.ala.buyins')}">About + How to Play <b class="caret"></b></a>
+            <ul uib-dropdown-menu class="dropdown-styles">
+              <li><a ui-sref="home.ala.about" style="margin-left: 0px">What is A Level Above?</a></li>
+              <li><a ui-sref="home.ala.buyins" style="margin-left: 0px">Buy-ins + Prizes Explained</a></li>
+            </ul>
+        </div>
         <a ui-sref="home.ala.blog.main" ng-class="{activeLink: $state.includes('home.ala.blog')}"> Blog</a>
         <div uib-dropdown style="display: inline">
-          <a uib-dropdown-toggle>Players <b class="caret"></b></a>
+          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.careerdata') || $state.includes('home.ala.leaders') || $state.includes('home.ala.champions') || $state.includes('home.ala.balances')}">Players <b class="caret"></b></a>
             <ul uib-dropdown-menu class="dropdown-styles">
               <li><a ui-sref="home.ala.careerdata" style="margin-left: 0px">Universal Career Data</a></li>
               <li><a ui-sref="home.ala.leaders" style="margin-left: 0px">All Time Leaders</a></li>
