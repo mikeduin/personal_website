@@ -11,19 +11,19 @@
     </thead>
     <tbody>
       <tr ng-repeat="record in vm.hoopsRecords" class="podium">
-        <td class="podium">
+        <td class="podium ">
           <i> {{record.type}}</i>
         </td>
-        <td style="font-size: 16px" class="podium">
+        <td class="podium ">
           <b> {{record.record}} </b>
         </td>
         <td class="podium">
-          <team> {{record.team}}</team> <span ng-if="record.owner"> ({{record.owner}}) </span>
+          <team> {{record.team}}</team> <span ng-if="record.owner" class=""> ({{record.owner}}) </span>
         </td>
         <td class="podium">
           <score> {{record.score}}</score>
         </td>
-        <td class="text-center">
+        <td class="text-center ">
           {{record.season}}
         </td>
       </tr>
