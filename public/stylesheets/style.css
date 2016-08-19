@@ -458,7 +458,7 @@ alaSidebar {
 
 alaSidebar ul {
   list-style-type: none;
-  margin-left: -3.125vw;
+  margin-left: -3.75vw;
 }
 
 alaSidebar ul li:hover {
@@ -511,11 +511,17 @@ alaSidebar a {
   font-style: italic;
   font-weight: 600;
   color: #337AB7;
+  margin-left: 0.7vw;
+}
+
+.hoops-sub {
+  margin-left: 0.7vw;
 }
 
 .submenu {
   border-top: none;
   padding-top: 1vw;
+  margin-left: 2vw;
 }
 
 .activeGame {
@@ -1361,6 +1367,7 @@ beerDetail description {
 
 .fridge-success {
   color: #2F5032;
+  font-size: 1.25vw;
 }
 
 searchContainer sort {
@@ -1524,13 +1531,64 @@ hoopsPopover, italyPopover {
     width: 80%;
   }
 
+  alaSidebar ul {
+    margin-left: -4.4vw;
+  }
+
+  .subleague {
+    margin-left: 0vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1vw;
+  }
+
+}
+
+@media screen and (min-width: 1150px) {
+  alaSidebar ul {
+    margin-left: -4vw;
+  }
+
+  .subleague {
+    margin-left: 0.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 1.4vw;
+  }
+}
+
+@media screen and (min-width: 1380px) {
+  alaSidebar ul {
+    margin-left: -3vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1.7vw;
+  }
+}
+
+@media screen and (min-width: 1485px) {
+
+  .hoops-sub {
+    margin-left: 2vw;
+  }
 }
 
 @media screen and (min-width: 1700px) {
   alaSidebar ul {
-    list-style-type: none;
     margin-left: -2.5vw;
   }
+
+  .subleague {
+    margin-left: 1vw
+  }
+
+  .hoops-sub {
+    margin-left: 2.2vw;
+  }
+
 }
 
 @media screen and (min-width: 2150px) {
@@ -1545,11 +1603,53 @@ hoopsPopover, italyPopover {
   alaSidebar ul {
     margin-left: -2vw;
   }
+
+  .subleague {
+    margin-left: 1.4vw
+  }
+
+  .hoops-sub {
+    margin-left: 3vw;
+  }
 }
 
 @media screen and (min-width: 2500px) {
   alaSidebar ul {
     margin-left: -1.5vw;
+  }
+}
+
+@media screen and (min-width: 2900px) {
+  alaSidebar ul {
+    margin-left: -1vw;
+  }
+
+  .subleague {
+    margin-left: 2vw
+  }
+
+  .hoops-sub {
+    margin-left: 3.2vw;
+  }
+}
+
+@media screen and (min-width: 3350) {
+  .subleague {
+    margin-left: 2.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 4.5vw;
+  }
+}
+
+@media screen and (min-width: 3600) {
+  .subleague {
+    margin-left: 3.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 5.5vw;
   }
 }
 
