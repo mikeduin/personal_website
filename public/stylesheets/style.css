@@ -410,6 +410,10 @@ p.slide{
 
 /*ALA Styles*/
 
+.fa-caret-down {
+  font-size: 2vw;
+}
+
 alaHeader {
   display: inline-block;
   background-color: black;
@@ -582,6 +586,8 @@ about div i {
 
 .aboutDesc {
   font-size: 1.4vw;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 #contact-form div {
@@ -830,6 +836,7 @@ gameNav ul {
   list-style-type: none;
   margin-bottom: 2.5vw;
   margin-top: 1vw;
+  font-size: 1.3vw;
 }
 
 gameNav ul li{
@@ -1134,7 +1141,7 @@ fridgeLead {
 }
 
 fridgeNote {
-  font-size: 11px;
+  font-size: 0.8vw;
 }
 
 fridgeIndex {
@@ -1238,7 +1245,7 @@ beerContainer a:hover {
 
 beerImage img {
   margin-top: 0.4vw;
-  height: 80px;
+  height: 6.25vw;
 }
 
 beerDetail {
@@ -1303,9 +1310,10 @@ beerDetail beerImage {
   margin-top: 2.5vw;
 }
 
-beerDetail beerImage img {
-  height: 15.67vw;
-}
+/*beerDetail beerImage img {
+  margin-top: 0.5vw;
+  height: 95%;
+}*/
 
 .beer-info {
   font-size: 1.35vw
