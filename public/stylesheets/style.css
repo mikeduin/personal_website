@@ -598,6 +598,10 @@ entry {
   display: inline-block;
 }
 
+explained div {
+  margin-left: 5%;
+}
+
 blogMainDiv {
   display: inline-block;
 }
@@ -837,6 +841,12 @@ gameNav ul li a:focus{
   padding-top: 1vw;
 }
 
+.champ-summary {
+  font-size: 1.3vw;
+  color: black;
+  font-weight: 400;
+}
+
 .details {
   border-left: solid 1px #337AB7;
   font-size: 1.4vw;
@@ -951,6 +961,7 @@ disclaimer {
 .game-name {
   color: #DC5623;
   font-weight: 800;
+  font-size: 1.8vw;
 }
 
 /*Music Styles*/

@@ -32,17 +32,17 @@
     </thead>
     <tbody>
       <tr ng-repeat="records in vm.champions" class="podium">
-        <td style="font-size: 16px" class="text-center podium">
+        <td class="text-center podium table-pad">
           <team class="game-name"> {{records.game}} </team>
         </td>
-        <td style="font-size: 1.25vw" class="text-center">
+        <td class="text-center table-pad">
           <team class="entrant"> {{records.entrant}} </team>
         </td>
         <td class="podium text-center">
           <team class="black"> {{records.prize}}</team>
         </td>
         <td class="podium table-pad">
-          <team class="summary"> {{records.summary}}</team>
+          <team class="champ-summary"> {{records.summary}}</team>
         </td>
       </tr>
     </tbody>

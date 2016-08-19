@@ -2,43 +2,64 @@
   {
     "season": "2015",
     "first_team": "Nick Gardner",
+    "first_owner": "$633",
     "second_team": "Jim Rennard",
-    "third_team": "Chris Bennett"
+    "second_owner": "$219",
+    "third_team": "Chris Bennett",
+    "third_owner": "$129"
   },
   {
     "season": "2014",
     "first_team": "Tim Hokit",
+    "first_owner": "$453",
     "second_team": "Scott Venn",
-    "third_team": "Justin Fawbush"
+    "second_owner": "$217",
+    "third_team": "Justin Fawbush",
+    "third_owner": "$102"
   },
   {
     "season": "2013",
     "first_team": "Dan Goldman",
+    "first_owner": "$524",
     "second_team": "Matt Ward",
-    "third_team": "Scott Morton"
+    "second_owner": "$203",
+    "third_team": "Scott Morton",
+    "third_owner": "$159"
   },
   {
     "season": "2012",
     "first_team": "Michael Grundmeyer",
+    "first_owner": "$399",
     "second_team": "Dan Goldman",
-    "third_team": "Jarir Mallah"
+    "second_owner": "$195",
+    "third_team": "Jarir Mallah",
+    "third_owner": "$108"
   },
   {
     "season": "2011",
     "first_team": "Jim Rennard",
+    "first_owner": "$374",
     "second_team": "Alex Church",
-    "third_team": "Michael Grundmeyer"
+    "second_owner": "$189",
+    "third_team": "Michael Grundmeyer",
+    "third_owner": "$86"
   },
   {
     "season": "2010",
     "first_team": "Kevin Simshauser",
+    "first_owner": "$293",
     "second_team": "Mike Rennard",
-    "third_team": "Mike Duin"
+    "second_owner": "$140",
+    "third_team": "Mike Duin",
+    "third_owner": "$66"
   },
   {
     "season": "2009",
     "first_team": "Mike Rennard",
+    "first_owner": "$360",
     "second_team": "Billy Schreyer",
-    "third_team": "Mike Lazar"
+    "second_owner": "$155",
+    "third_team": "Mike Lazar",
+    "third_owner": "$68"
   }
 ]
