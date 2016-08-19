@@ -26,7 +26,7 @@ img {
 }
 
 .mob-header {
-  margin-top: 5%;
+  margin-top: -5%;
 }
 
 .mob-hr {
@@ -39,7 +39,7 @@ img {
 mobSquare {
   width: 47.5%;
   padding-bottom: 47.5%;
-  margin-left: 1.33%;
+  margin-left: 2%;
   margin-bottom: 2%;
   float: left;
   position: relative;
