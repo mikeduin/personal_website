@@ -22,7 +22,7 @@ img {
 
 .navbar-border {
   border-bottom: solid 1px #DEDFE1;
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 .nav a:hover {
@@ -49,15 +49,10 @@ img {
 
 .navContainer {
   padding-right: 2%;
-  height: 5vw;
 }
 
 .navlink {
   color: black;
-}
-
-.spacer {
-  margin-top: 70px;
 }
 
 .nav>li>a {
@@ -418,7 +413,7 @@ p.slide{
 alaHeader {
   display: inline-block;
   background-color: black;
-  border-radius: 4px;
+  border-radius: 0.3vw;
   border-top: solid 3px #3984C5;
   border-bottom: solid 3px #3984C5;
 }
@@ -456,9 +451,9 @@ alaSidebar {
   margin-top: 2.5vw;
   padding-left: 0;
   display: inline-block;
-  border-right: solid 8px #DEDFE1;
-  border-top: solid 8px #DEDFE1;
-  border-bottom: solid 8px #DEDFE1;
+  border-right: solid 0.625vw #DEDFE1;
+  border-top: solid 0.625vw #DEDFE1;
+  border-bottom: solid 0.625vw #DEDFE1;
 }
 
 alaSidebar ul {
@@ -488,7 +483,7 @@ a.gamepage:focus {
 
 alaSidebar ul li {
   border-top: solid #EEEEEE 1px;
-  padding-top: 5px;
+  padding-top: 0.4vw;
 }
 
 alaSidebar ul li span {
@@ -692,21 +687,22 @@ blogHeader div {
 
 blogDate {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 1vw;
   font-weight: bold;
 }
 
 blogTags {
-  margin-top: 5px;
+  margin-top: 0.4vw;
 }
 
 blogTags tag {
   border: solid 1px #DEDFE1;
-  border-radius: 25px;
+  border-radius: 1.85vw;
   background-color: #3E8ED6;
   color: white;
-  margin-right: 5px;
-  padding: 5px;
+  margin-right: 0.4vw;
+  padding: 0.4vw;
+  font-size: 1vw;
 }
 
 addPost lead div {
@@ -777,7 +773,7 @@ photoRow {
 photoRow img {
   max-width: 100%;
   max-height: 18vw;
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 photoRow img:hover {
@@ -874,7 +870,7 @@ rankings iframe {
 }
 
 podium > table {
-  border: solid 5px black;
+  border: solid 0.4vw black;
   margin-top: -1vw;
 }
 
@@ -885,7 +881,7 @@ podium th {
 
 .podium {
   border: solid 2px black;
-  padding-left: 5px;
+  padding-left: 0.4vw;
 }
 
 podium team {
@@ -910,7 +906,7 @@ gameDetails table {
 
 league {
   padding-bottom: 1vw;
-  font-size: 28px;
+  font-size: 2.3vw;
   font-weight: 800;
   color: #DC5623;
 }
@@ -926,7 +922,7 @@ lg {
 
 disclaimer {
   text-align: right;
-  font-size: 12px;
+  font-size: 1vw;
 }
 
 .bracket-info {
@@ -974,9 +970,9 @@ disclaimer {
 musicHeader {
   height: 9.5vw;
   background-color: #452562;
-  border-radius: 4px;
-  border-top: solid 5px black;
-  border-bottom: solid 5px black;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
 }
 
 musicLead {
@@ -1016,7 +1012,7 @@ playlist {
 
 playlists name {
   margin-top: -1.24vw;
-  font-size: 52px;
+  font-size: 3.85vw;
   font-weight: 800;
 }
 
@@ -1027,13 +1023,13 @@ playlists name a {
 
 playlists name a:hover {
   color: #333333;
-  font-size: 52px;
+  font-size: 3.85vw;
   text-decoration: none;
 }
 
 playlists name a:focus {
   color: #333333;
-  font-size: 52px;
+  font-size: 3.85vw;
   text-decoration: none;
 }
 
@@ -1050,7 +1046,7 @@ playlist description {
 }
 
 spotify iframe {
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 .fa-headphones {
@@ -1065,7 +1061,7 @@ spotify iframe {
   margin: 0px;
   border-top: solid 2px #CBC1D4;
   border-bottom: solid 2px #CBC1D4;
-  /*box-shadow: 0px 5px 0px 0px #E4E4E4;*/
+  /*box-shadow: 0px 0.4vw 0px 0px #E4E4E4;*/
 }
 
 .fifty-three {
@@ -1086,7 +1082,7 @@ spotify iframe {
   margin: 0px;
   border-top: solid 2px #CBC1D4;
   border-bottom: solid 2px #CBC1D4;
-  /*box-shadow: 0px 5px 0px 0px #E4E4E4;*/
+  /*box-shadow: 0px 0.4vw 0px 0px #E4E4E4;*/
 }
 
 
@@ -1098,7 +1094,7 @@ spotify iframe {
   margin: 0px;
   border-top: solid 2px #CBC1D4;
   border-bottom: solid 2px #CBC1D4;
-  /*box-shadow: 0px 5px 0px 0px #E4E4E4;*/
+  /*box-shadow: 0px 0.4vw 0px 0px #E4E4E4;*/
 }
 
 /*Fridge Styles*/
@@ -1106,9 +1102,9 @@ spotify iframe {
 fridgeHeader {
   height: 9.5vw;
   background-color: #7C0F09;
-  border-radius: 4px;
-  border-top: solid 5px black;
-  border-bottom: solid 5px black;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
 }
 
 fridgeSubheader {
@@ -1144,7 +1140,7 @@ fridgeIndex {
 
 searchContainer {
   display: inline-block;
-  border: 5px solid #7C0F09;
+  border: 0.4vw solid #7C0F09;
   border-radius: 1vw;
   font-weight: 600;
   font-size: 2vw;
@@ -1156,18 +1152,18 @@ searchContainer span {
 
 searchContainer search {
   font-size: 1.25vw;
-  margin-bottom: 5px;
+  margin-bottom: 0.4vw;
 }
 
 searchOptions {
   background-color: #DCDEDC;
   border-radius: 1vw;
-  padding-bottom: 5px;
+  padding-bottom: 0.4vw;
   margin-bottom: 1vw;
 }
 
 search div {
-  padding-top: 5px;
+  padding-top: 0.4vw;
 }
 
 searchContainer input {
@@ -1180,7 +1176,7 @@ searchContainer input {
 }
 
 closeSearch {
-  margin-left: 50px;
+  margin-left: 3.8vw;
   cursor: pointer;
   color: #B61B10;
   text-decoration: underline;
@@ -1195,20 +1191,20 @@ instructions {
 }
 
 bottleList {
-  padding-top: 5px;
+  padding-top: 0.4vw;
   height: 900px;
   overflow: scroll;
-  border: solid 5px #540705;
+  border: solid 0.4vw #540705;
   border-radius: 1.24vw;
   background-color: #7C0F09;
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 beerContainer {
   background-color: #E5E7E7;
   display: inline-block;
   border-radius: 1.57vw;
-  padding-bottom: 5px;
+  padding-bottom: 0.4vw;
   margin-bottom: 1vw;
   border: solid 1px black;
 }
@@ -1233,7 +1229,7 @@ beerContainer a:hover {
 }
 
 beerImage img {
-  margin-top: 5px;
+  margin-top: 0.4vw;
   height: 80px;
 }
 
@@ -1371,15 +1367,15 @@ addBeer {
 }
 
 #addBeer label {
-  padding-top: 5px;
+  padding-top: 0.4vw;
 }
 
 #coldSelect {
-  margin-top: 5px;
+  margin-top: 0.4vw;
 }
 
 addBeer heading {
-  font-size: 28px;
+  font-size: 2.3vw;
   font-weight: 800;
   color: #7C0F09;
 }
@@ -1394,9 +1390,9 @@ addBeer heading {
 aboutHeader {
   height: 9.5vw;
   background-color: #24307A;
-  border-radius: 4px;
-  border-top: solid 5px black;
-  border-bottom: solid 5px black;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
 }
 
 leadBar div {
@@ -1420,7 +1416,7 @@ introText p {
 }
 
 storyPhotos img {
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 storyPhotos img:hover {
@@ -1442,6 +1438,10 @@ hoopsPopover, italyPopover {
     font-weight: 600;
   }
 
+  .spacer {
+    margin-top: 7vw;
+  }
+
 /*END NAVBAR STYLES*/
 /*BEGIN ABOUT STYLES*/
   firstStory {
@@ -1458,7 +1458,7 @@ hoopsPopover, italyPopover {
 
   blogText {
     font-size: 1.5vw;
-    margin-top: 25px;
+    margin-top: 1.85vw;
   }
 
   storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
@@ -1532,6 +1532,16 @@ hoopsPopover, italyPopover {
   familyBox {
     padding-top: 7%;
   }
+
+  alaSidebar ul {
+    margin-left: -2vw;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  alaSidebar ul {
+    margin-left: -1.5vw;
+  }
 }
 
 /*Professional Styles*/
@@ -1593,20 +1603,6 @@ resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook {
   font-style: italic;
 }
 
-/*.resume-img {
-  height: 70%;
-  width: 4.2vw;
-  border: solid 1px black;
-  margin-top: 10%;
-  margin-bottom: 2%;
-}*/
-
-/*workLinks a:hover > .resume-img {
-  height: 80%;
-  width: 4.7vw;
-  border: solid 3px white;
-}*/
-
 .fa-github, .fa-linkedin, .fa-file-text, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook {
   font-size: 4vw;
 }
@@ -1661,7 +1657,7 @@ projMockup {
 
 projMockup img {
   max-height: 100%;
-  box-shadow: 0 1px 8px black;
+  box-shadow: 0 1px 0.625vw black;
 }
 
 projMockup img:hover {
