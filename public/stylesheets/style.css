@@ -39,7 +39,7 @@ img {
 mobSquare {
   width: 47.5%;
   padding-bottom: 47.5%;
-  margin-left: 1.75%;
+  margin-left: 2%;
   margin-bottom: 2%;
   float: left;
   position: relative;
@@ -51,6 +51,7 @@ mobSquare {
 
 .squares {
   margin-top: 3%;
+  padding-right: 0%;
 }
 
 .mob-p {
@@ -139,10 +140,6 @@ mobSquare {
 .navbar-mob-brand span {
   font-size: 3vw;
   color: black;
-}
-
-.mobile-bars {
-  display: inline;
 }
 
 #mob-bars {
@@ -1661,7 +1658,7 @@ hoopsPopover, italyPopover {
   }
 
   .mob-spacer {
-    margin-top: 10vw;
+    margin-top: 9vw;
   }
 
   .hidden-xs {
