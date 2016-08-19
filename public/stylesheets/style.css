@@ -30,14 +30,18 @@ img {
   color: inherit;
 }
 
+.navbar-brand {
+  padding-top: 13%;
+}
+
 .navbar-brand span {
   font-size: 2.5vw;
   color: black;
 }
 
 .navbar ul a {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0.75vw;
+  padding-bottom: 0.75vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
   font-size: 1.15vw;
@@ -45,6 +49,7 @@ img {
 
 .navContainer {
   padding-right: 2%;
+  height: 5vw;
 }
 
 .navlink {
@@ -1244,7 +1249,7 @@ beerDetail name {
   font-size: 32px;
   font-weight: 800;
 }
-<i class="fa fa-bars" aria-hidden="true"></i>
+
 beerDetail brewery {
   font-size: 1.25vw;
   font-weight: 800;
@@ -1301,6 +1306,7 @@ beerDetail beerImage img {
 beerDetail description {
   margin-top: 1vw;
   margin-bottom: 1vw;
+  font-size: 1.3vw;
 }
 
 .fridgeme {
@@ -1509,6 +1515,13 @@ hoopsPopover, italyPopover {
     width: 80%;
   }
 
+}
+
+@media screen and (min-width: 1700px) {
+  alaSidebar ul {
+    list-style-type: none;
+    margin-left: -2.5vw;
+  }
 }
 
 @media screen and (min-width: 2150px) {
