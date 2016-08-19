@@ -37,11 +37,12 @@ img {
 }
 
 mobSquare {
-  width: 35%;
-  padding-bottom: 35%;
-  margin-left: 10%;
+  width: 47.5%;
+  padding-bottom: 47.5%;
+  margin-left: 1.33%;
   margin-bottom: 2%;
   float: left;
+  position: relative;
   background-color: black;
   background-position: center center;
   background-repeat: no-repeat;
