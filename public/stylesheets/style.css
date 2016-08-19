@@ -129,7 +129,7 @@ mobSquare {
   padding: 15px;
   text-align: center;
   width: 100%;
-  margin-top: -5.5%;
+  margin-top: -6%;
 }
 
 .navbar-mob-brand {
@@ -142,7 +142,7 @@ mobSquare {
   color: black;
 }
 
-#mob-bars {
+.mobile-bars {
   font-size: 3vw;
   padding-top: 15px;
   padding-left: 15px;
