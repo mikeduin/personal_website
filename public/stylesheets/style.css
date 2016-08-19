@@ -20,6 +20,10 @@ img {
 
 /*Mobile Splash + Navbar Page Styles*/
 
+.mob-splash {
+  padding-left: 6%;
+}
+
 .mob-splash-logo {
   font-size: 6vw;
   color: black;
@@ -60,6 +64,10 @@ mobSquare {
   color: white;
 }
 
+.about-mob {
+  background-image: url('../images/elephant.jpg');
+}
+
 .kophiphi-mob {
   background-image: url('../images/kophiphi.jpg');
 }
@@ -78,6 +86,15 @@ mobSquare {
 
 .ala-logo-mob {
   background-image: url('../images/ala0304.jpg');
+}
+
+.about-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-left: 20%;
+  margin-top: 10%;
 }
 
 .ala-mob-content {
