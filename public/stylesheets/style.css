@@ -18,6 +18,109 @@ img {
   width: 100%;
 }
 
+/*Mobile Splash Page Styles*/
+
+.mob-splash-logo {
+  font-size: 6vw;
+  color: black;
+}
+
+.mob-header {
+  margin-top: 5%;
+}
+
+.mob-hr {
+  height: 2px;
+  background-color: black;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+mobSquare {
+  width: 35%;
+  padding-bottom: 35%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  float: left;
+  background-color: black;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.squares {
+  margin-top: 3%;
+}
+
+.mob-p {
+  font-size: 4vw;
+  font-weight: 700;
+  color: white;
+}
+
+.ala-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 20%;
+}
+
+.kophiphi-mob {
+  background-image: url('../images/kophiphi.jpg');
+}
+
+.work-mob {
+  background-image: url('../images/work.jpg');
+}
+
+.fridge-mob {
+  background-image: url('../images/fridge.jpg');
+}
+
+.music-logo-mob {
+  background-image: url('../images/playlists.jpg');
+}
+
+.ala-logo-mob {
+  background-image: url('../images/ala0304.jpg');
+}
+
+.ko-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 10%;
+}
+
+.work-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.fridge-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.music-mob-content {
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
 /*Navbar Styles*/
 
 .navbar-border {
@@ -304,12 +407,12 @@ p.slide{
 }
 
 .work-content {
-    position:absolute;
-    height:90%;
-    width:90%;
-    padding: 5%;
-    margin-top: 40%;
-    margin-left: 30%;
+  position:absolute;
+  height:90%;
+  width:90%;
+  padding: 5%;
+  margin-top: 40%;
+  margin-left: 30%;
 }
 
 .work {
@@ -333,6 +436,10 @@ p.slide{
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+/*.work-mob {
+  background-size: 100%;
+}*/
 
 .work:hover > #work-text {
   display: block;
@@ -1310,10 +1417,10 @@ beerDetail beerImage {
   margin-top: 2.5vw;
 }
 
-/*beerDetail beerImage img {
-  margin-top: 0.5vw;
-  height: 95%;
-}*/
+beerDetail img {
+  margin-top: 1vw;
+  height: 15vw;
+}
 
 .beer-info {
   font-size: 1.35vw
@@ -1453,6 +1560,11 @@ hoopsPopover, italyPopover {
 
 @media screen and (min-width: 300px) {
 /*BEGIN NAVBAR STYLES*/
+  .main-splash, .hide-nav {
+    display: none;
+    visibility: hidden;
+  }
+
   .hidden-xs {
     visibility: hidden;
   }
@@ -1466,8 +1578,6 @@ hoopsPopover, italyPopover {
     margin-top: 7vw;
   }
 
-/*END NAVBAR STYLES*/
-/*BEGIN ABOUT STYLES*/
   firstStory {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1526,6 +1636,18 @@ hoopsPopover, italyPopover {
 }
 
 @media screen and (min-width: 1000px) {
+  .main-splash, .hide-nav {
+    display: unset;
+    visibility: visible;
+  }
+
+  .mob-splash {
+    display: none;
+  }
+
+  .spacer {
+    margin-top: 7vw;
+  }
 
   blogText {
     font-size: 1.3vw;
