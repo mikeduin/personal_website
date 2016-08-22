@@ -49,6 +49,10 @@ img {
   color: black;
 }
 
+.mob-splash {
+  padding-left: 6%;
+}
+
 .mob-header {
   margin-top: -5%;
 }
@@ -169,9 +173,17 @@ mobSquare {
   margin-top: -6%;
 }
 
-.navbar-mob-brand {
-  padding-top: 13%;
-  float: none;
+@media screen and (min-width: 10px) {
+  .navbar-mob-brand {
+    padding-top: 5%;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .navbar-mob-brand {
+    padding-top: 13%;
+  }
 }
 
 .navbar-mob-brand span {
