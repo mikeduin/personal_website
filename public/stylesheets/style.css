@@ -659,6 +659,10 @@ p.slide{
 
 /*ALA Styles*/
 
+.join-pool {
+  color: #7C0F09;
+}
+
 .fa-caret-down {
   font-size: 2vw;
 }
