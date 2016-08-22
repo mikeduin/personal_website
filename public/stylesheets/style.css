@@ -175,12 +175,12 @@ mobSquare {
 
 @media screen and (min-width: 10px) {
   .navbar-mob-brand {
-    padding-top: 5%;
+    margin-top: -10%;
     float: none;
   }
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 315px) {
   .navbar-mob-brand {
     padding-top: 13%;
   }
