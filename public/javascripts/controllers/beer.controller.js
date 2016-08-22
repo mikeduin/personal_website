@@ -16,8 +16,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.formData = {};
 
   $scope.vm.checkState = function() {
-    if ($state.includes('home.fridge.beer')) {
-      console.log ('state includes beer');
+    if ($state.includes('home.fridge.beer') || $state.includes('home.fridge.addbeer') || $state.includes('home.fridge.edit')) {
       $scope.vm.showInstructions = false;
     } else {
       $scope.vm.showInstructions = true;
