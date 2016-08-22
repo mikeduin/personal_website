@@ -1268,6 +1268,14 @@ musicIntro {
 
 @media screen and (min-width: 300px) {
   explanation {
+    margin-top: 3.4vw;
+    margin-bottom: 1.57vw;
+    font-size: 1.4vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  explanation {
     margin-top: 3.125vw;
     margin-bottom: 1.57vw;
     font-size: 1.4vw;
@@ -1811,8 +1819,8 @@ hoopsPopover, italyPopover {
     font-size: 1.5vw;
   }
 
-  .music-text {
-    font-size: 1.75vw;
+  .music-text p {
+    font-size: 1.5vw;
   }
 
   introText p {
