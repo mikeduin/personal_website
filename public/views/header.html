@@ -2,31 +2,9 @@
   <div class="navContainer container-fixed">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" aria-expanded='false'><i class="fa fa-bars" aria-hidden="true"></i></button>
-        <!-- <span class="sr-only"> Toggle Navigation </span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> -->
-      <a class="navbar-brand" href="/" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')">
+      <a class="navbar-brand" href="/">
         <span> mike<b>duin</b></span>
-        <!-- <span ng-show="$state.includes('home.fridge')" class="hidden-xs"><b>'s</b></span> -->
       </a>
-      <!-- <div class="hidden-xs">
-        <a class="hidden-xs navbar-brand" ui-sref="home.about" ng-show="$state.includes('home.about')">
-          <span>|</span>  <span>  &nbsp; ...who? </span>
-        </a>
-        <a class="hidden-xs navbar-brand" ui-sref="home.music" ng-show="$state.includes('home.music')">
-          <span>|<b> music</b>lover</span>
-        </a>
-        <a class="hidden-xs navbar-brand" ui-sref="home.professional" ng-show="$state.includes('home.professional')">
-          <span>| web<b>developer</b></span>
-        </a>
-        <a class="hidden-xs navbar-brand" ui-sref="home.fridge" ng-show="$state.includes('home.fridge')">
-          <span>|<b> bottle</b>list </span>
-        </a>
-        <a class="hidden-xs navbar-brand" ng-show="$state.includes('home.ala')">
-          <span style="font-size: 27px">|<b> ala</b>commissioner</span>
-        </a>
-      </div> -->
     </div>
     <div class="collapse navbar-collapse" uib-collapse="isCollapsed" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')">
