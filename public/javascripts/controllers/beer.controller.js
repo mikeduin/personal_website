@@ -5,7 +5,6 @@ angular
 function BeerController ($scope, $anchorScroll, $location, $state, $stateParams, beerService) {
   $scope.showSearch = false;
   $scope.vm = {};
-  $scope.vm.showInstructions = true;
   $scope.vm.sortOrder = '-ordered';
   $scope.vm.coldFilter = false;
   $scope.vm.emptyFilter = false;
@@ -15,6 +14,16 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.vm.styles = [];
   $scope.vm.fridgeRequest = false;
   $scope.formData = {};
+
+  $scope.vm.checkState = function() {
+    if ($state.includes('home.fridge.beer')) {
+      console.log ('state includes beer');
+      $scope.vm.showInstructions = false;
+    } else {
+      $scope.vm.showInstructions = true;
+    }
+  }
+  $scope.vm.checkState()
 
   $scope.vm.requestBeer = function(beer, name, eta){
     var beerRequest = {};
@@ -83,7 +92,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.getBeer = function() {
     beerService.getBeer($stateParams.beername).then(function(beer){
       $scope.vm.beer = beer[0];
-      $scope.vm.beer.ordered = new Date(beer[0].ordered);
+      // $scope.vm.beer.ordered = new Date(beer[0].ordered);
       console.log($scope.vm.beer)
     })
   };

@@ -1266,11 +1266,26 @@ musicIntro {
   padding-top: 2vw;
 }
 
-explanation {
-  margin-top: 3.125vw;
-  margin-bottom: 1.57vw;
-  font-size: 1.4vw;
+@media screen and (min-width: 300px) {
+  explanation {
+    margin-top: 3.125vw;
+    margin-bottom: 1.57vw;
+    font-size: 1.4vw;
+  }
 }
+
+@media screen and (min-width: 1400px) {
+  explanation {
+    margin-top: 2.75vw;
+  }
+}
+
+@media screen and (min-width: 1850px) {
+  explanation {
+    margin-top: 2.25vw;
+  }
+}
+
 
 playlists {
   margin-top: 4.7vw;
@@ -1796,6 +1811,10 @@ hoopsPopover, italyPopover {
     font-size: 1.5vw;
   }
 
+  .music-text {
+    font-size: 1.75vw;
+  }
+
   introText p {
     font-size: 2vw;
   }
@@ -1860,7 +1879,7 @@ hoopsPopover, italyPopover {
     font-size: 1.3vw;
   }
 
-  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+  .music-text, storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
     font-size: 1.3vw;
   }
 
