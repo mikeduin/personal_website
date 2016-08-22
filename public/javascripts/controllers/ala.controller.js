@@ -13,6 +13,10 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
+  $scope.$on('$stateChangeSuccess', function(){
+    document.body.scrollTop = document.documentElement.scrollTop=0
+  })
+
   $scope.vm.contactCommish = function(){
     alaService.contactCommish($scope.contactForm).then(function(result){
       $scope.contactForm = {};

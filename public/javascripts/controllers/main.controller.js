@@ -1,11 +1,24 @@
 angular
   .module('mySite')
-  .controller('MainController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', MainController])
+  .controller('MainController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', MainController])
 
-function MainController ($scope, $state, $sce, $anchorScroll, $location){
+function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeout){
   $scope.$state = $state;
   $scope.vm = {};
   $scope.expand = false;
+  $scope.$on('$stateChangeSuccess', function(){
+    if ($state.includes('home.about') || $state.includes('home.music') || $state.includes('home.ala') || $state.includes('home.professional')) {
+      document.body.scrollTop = document.documentElement.scrollTop=0
+    }
+  })
+
+  $scope.vm.gotoBeer = function(){
+    $timeout(function(){
+      $anchorScroll('fridge-header');
+      console.log('hello');
+    }, 500)
+  }
+
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);

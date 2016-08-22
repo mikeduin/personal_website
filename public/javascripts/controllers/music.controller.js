@@ -5,6 +5,10 @@ angular
 function MusicController ($scope, $state, $anchorScroll, $location, spotifyService) {
   $scope.$state = $state;
 
+  $scope.$on('$stateChangeSuccess', function(){
+    document.body.scrollTop = document.documentElement.scrollTop=0
+  })
+
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
