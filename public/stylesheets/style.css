@@ -197,6 +197,14 @@ mobSquare {
   padding-left: 15px;
 }
 
+.mobile-nav {
+  position: fixed;
+}
+
+@media only screen and (max-width: 720px) {
+  .mobile-nav { position: absolute}
+}
+
 .mobile-nav-link {
   font-size: 3vw;
   margin-top: 2%;
