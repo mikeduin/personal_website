@@ -20,8 +20,28 @@ img {
 
 /*Mobile Splash + Navbar Page Styles*/
 
-.mob-splash {
-  padding-left: 6%;
+.main-splash-logo {
+  font-size: 2.5vw;
+  color: black;
+}
+
+.splash-title {
+  margin-bottom: -15px;
+}
+
+.splash-lead {
+  margin-top: -15px;
+}
+
+.main-header {
+  margin-top: -5%;
+}
+
+.main-hr {
+  height: 2px;
+  background-color: #337AB7;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .mob-splash-logo {
