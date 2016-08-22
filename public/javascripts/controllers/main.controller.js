@@ -6,7 +6,6 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location){
   $scope.$state = $state;
   $scope.vm = {};
   $scope.vm.gotoId = function(id) {
-    console.log('go to top');
     var old = $location.hash();
     $location.hash(id);
     $anchorScroll();

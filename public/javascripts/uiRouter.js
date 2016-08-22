@@ -7,12 +7,12 @@ angular
   .run(['$anchorScroll', function($anchorScroll) {
   $anchorScroll.yOffset = 80;
     }])
-  .config(['$stateProvider', '$urlRouterProvider', siteConfig])
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', siteConfig])
   .config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode(true);
   }])
 
-function siteConfig ($stateProvider, $urlRouterProvider) {
+function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
