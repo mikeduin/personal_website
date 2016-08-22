@@ -223,6 +223,7 @@ function alaService ($http) {
             }
           }
         }
+        blogtags.sort();
         return blogtags;
       })
     },
