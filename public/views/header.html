@@ -8,12 +8,12 @@
     </div>
     <div class="collapse navbar-collapse" uib-collapse="isCollapsed" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')">
-        <li ng-click="vm.gotoId('navbar-top')"> <a class="navlink" ui-sref="home.about" id="aboutAnchor" ng-class="{'aboutBack': $state.includes('home.about')}" title="About"> About </a></li>
-        <li ng-click="vm.gotoId('navbar-top')"> <a class="navlink" ui-sref="home.professional" id="workAnchor" ng-class="{'workBack': $state.includes('home.professional')}" title="Professional"> Portfolio </a></li>
-        <li ng-click="vm.gotoId('navbar-top')"> <a class="navlink" ui-sref="home.ala.blog.main" id="alaAnchor" ng-class="{'alaBack': $state.includes('home.ala')}" title="A Level Above"> A Level Above </a></li>
+        <li> <a class="navlink" ui-sref="home.about" id="aboutAnchor" ng-class="{'aboutBack': $state.includes('home.about')}" title="About"> About </a></li>
+        <li> <a class="navlink" ui-sref="home.professional" id="workAnchor" ng-class="{'workBack': $state.includes('home.professional')}" title="Professional"> Portfolio </a></li>
+        <li> <a class="navlink" ui-sref="home.ala.blog.main" id="alaAnchor" ng-class="{'alaBack': $state.includes('home.ala')}" title="A Level Above"> A Level Above </a></li>
         <li> <a class="navlink" title="Photography" href="http://photography.mikeduin.com/"> Photography </a></li>
-        <li ng-click="vm.gotoId('navbar-top')"> <a class="navlink" ui-sref="home.music" id="musicAnchor" ng-class="{'musicBack': $state.includes('home.music')}" title="Music"> Music </a></li>
-        <li ng-click="vm.gotoId('navbar-top')"> <a class="navlink" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
+        <li> <a class="navlink" ui-sref="home.music" id="musicAnchor" ng-class="{'musicBack': $state.includes('home.music')}" title="Music"> Music </a></li>
+        <li> <a class="navlink" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
       </ul>
     </div>
   </div>

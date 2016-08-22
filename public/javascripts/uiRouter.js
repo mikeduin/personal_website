@@ -5,8 +5,13 @@ angular
     'ui.bootstrap',
     'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
-  $anchorScroll.yOffset = 80;
+  $anchorScroll.yOffset = 200;
     }])
+  .run(['$rootScope', function($rootScope){
+    $rootScope.$on('$stateChangeSuccess', function(){
+      document.body.scrollTop = document.documentElement.scrollTop=0
+    })
+  }])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', siteConfig])
   .config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode(true);
