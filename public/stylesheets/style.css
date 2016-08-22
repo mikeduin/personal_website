@@ -55,7 +55,7 @@ img {
 
 .mob-hr {
   height: 2px;
-  background-color: black;
+  background-color: #337AB7;
   padding-left: 0;
   padding-right: 0;
 }
@@ -968,15 +968,12 @@ addPost lead div {
   font-weight: 600;
 }
 
-buyins {
-  margin-top: 1vw;
-}
-
 .buyinHeader {
+  margin-top: -1.57vw;
   margin-bottom: -1.57vw;
   font-size: 3.75vw;
   font-weight: 800;
-  color: #DC5623;
+  color: #337AB7;
 }
 
 buyins div explained p {
@@ -986,6 +983,16 @@ buyins div explained p {
 
 buyins prizeDiv {
   margin-top: 1vw;
+}
+
+.buyin-exp-header {
+  color: #DC5623;
+  font-weight: 700;
+  font-size: 2vw;
+}
+
+.how-to-pay {
+  margin-top: -3%;
 }
 
 .exptwo {
