@@ -46,10 +46,10 @@
 <div class="nav navbar navbar-fixed-top mobile-nav" role="navigation" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
   <div class="navContainer container-fixed">
     <div class="mobile-bars">
-      <button slide-toggle="#mobile-nav-slide" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+      <button ng-click="expand = !expand" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
-    <div class="navbar-mob-header">
-      <a class="navbar-mob-brand" href="/">
+    <div class="navbar-mob-header slideDown">
+      <a class="navbar-mob-brand" ng-click="expand = !expand">
         <span> mike<b>duin</b> :</span>
         <span ng-if="$state.includes('home.professional')" style="color: #2F5032; font-weight: 800"> portfolio </span>
         <span ng-if="$state.includes('home.about')" style="color: #24307A; font-weight: 800"> about </span>
@@ -57,33 +57,38 @@
         <span ng-if="$state.includes('home.fridge')" style="color: #7C0F09; font-weight: 800"> fridge </span>
         <span ng-if="$state.includes('home.music')" style="color: #452562; font-weight: 800"> music </span>
       </a>
-      <div id="mobile-nav-slide" class="slideable">
-        <a ui-sref="home.about" >
+      <div ng-class="{slideDown: expand}" class="nav-slide">
+        <a ui-sref="home" ng-click="expand = !expand">
+          <div class="mobile-nav-link nav-home">
+            home
+          </div>
+        </a>
+        <a ui-sref="home.about" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-about">
             about
           </div>
         </a>
-        <a ui-sref="home.professional">
+        <a ui-sref="home.professional" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-work">
             portfolio
           </div>
         </a>
-        <a href="http://photography.mikeduin.com/">
+        <a href="http://photography.mikeduin.com/" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-photo">
             photography
           </div>
         </a>
-        <a ui-sref="home.ala.blog.main">
+        <a ui-sref="home.ala.blog.main" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-ala">
             a level above
           </div>
         </a>
-        <a ui-sref="home.music">
+        <a ui-sref="home.music" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-music">
             music
           </div>
         </a>
-        <a ui-sref="home.fridge">
+        <a ui-sref="home.fridge" ng-click="expand = !expand">
           <div class="mobile-nav-link nav-fridge">
             mike's fridge
           </div>

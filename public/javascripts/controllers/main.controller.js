@@ -5,6 +5,7 @@ angular
 function MainController ($scope, $state, $sce, $anchorScroll, $location){
   $scope.$state = $state;
   $scope.vm = {};
+  $scope.expand = false;
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
     $location.hash(id);
