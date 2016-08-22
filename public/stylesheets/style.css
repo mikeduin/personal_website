@@ -1321,10 +1321,47 @@ playlist description {
   font-weight: 400;
 }
 
-spotify iframe {
-  box-shadow: 0 1px 0.625vw black;
-  height: 30vw;
+
+@media screen and (min-width: 300px) {
+  spotify iframe {
+    height: 350px;
+    box-shadow: 0 1px 0.625vw black;
+  }
 }
+
+@media screen and (min-width: 800px) {
+  spotify iframe {
+    height: 350px;
+    box-shadow: 0 1px 0.625vw black;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  spotify iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  spotify iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  spotify iframe {
+    height: 450px;
+    width: 340px;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  spotify iframe {
+    height: 500px;
+    width: 400px;
+  }
+}
+
 
 .fa-headphones {
   color: #C5C6C7;
