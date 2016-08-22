@@ -168,7 +168,7 @@ mobSquare {
 .navbar-mob-header {
   float: left;
   padding: 15px;
-  text-align: center;
+  text-align: right;
   width: 100%;
   margin-top: -6%;
 }
@@ -197,9 +197,9 @@ mobSquare {
   padding-left: 15px;
 }
 
-.mobile-nav {
+/*.mobile-nav {
   position: fixed;
-}
+}*/
 
 @media only screen and (max-width: 720px) {
   .mobile-nav { position: absolute}
