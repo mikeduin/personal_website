@@ -166,12 +166,14 @@ mobSquare {
 }
 
 .navbar-mob-header {
-  float: left;
-  padding: 15px;
-  padding-top: 1%;
+  /*float: left;*/
+  /*padding: 15px;*/
+  padding-top: 0.25%;
+  padding-bottom: 1%;
   text-align: center;
-  width: 100%;
-  margin-top: -6%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: -7%;
 }
 
 /*@media screen and (min-width: 10px) {
@@ -193,8 +195,9 @@ mobSquare {
 }
 
 .mobile-bars {
-  font-size: 3vw;
-  padding-top: 15px;
+  font-size: 36px;
+  padding-top: 0.25%;
+  padding-bottom: 1%;
   padding-left: 15px;
 }
 
