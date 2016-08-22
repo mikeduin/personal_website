@@ -1924,6 +1924,10 @@ hoopsPopover, italyPopover {
     margin-left: 1.7vw;
   }
 
+  .subleague {
+    margin-left: 0vw
+  }
+
 }
 
 @media screen and (min-width: 1485px) {
@@ -1946,7 +1950,7 @@ hoopsPopover, italyPopover {
   }
 
   .subleague {
-    margin-left: 1vw
+    margin-left: 0.5vw
   }
 
   .hoops-sub {
@@ -1973,17 +1977,21 @@ hoopsPopover, italyPopover {
   }
 
   .subleague {
-    margin-left: 1.4vw
+    margin-left: 0vw
   }
 
   .hoops-sub {
-    margin-left: 3vw;
+    margin-left: 2vw;
   }
 }
 
 @media screen and (min-width: 2500px) {
   alaSidebar ul {
     margin-left: -1.5vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1vw;
   }
 }
 
