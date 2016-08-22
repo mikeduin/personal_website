@@ -171,6 +171,14 @@ mobSquare {
   font-weight: 600;
 }
 
+.nav-slide {
+  display: none;
+}
+
+.nav-home {
+  color: black;
+}
+
 .nav-about {
   color: #24307A;
 }
