@@ -173,18 +173,18 @@ mobSquare {
   margin-top: -6%;
 }
 
-@media screen and (min-width: 10px) {
+/*@media screen and (min-width: 10px) {
   .navbar-mob-brand {
     margin-top: -10%;
     float: none;
   }
-}
+}*/
 
-@media screen and (min-width: 315px) {
+/*@media screen and (min-width: 315px) {
   .navbar-mob-brand {
     padding-top: 13%;
   }
-}
+}*/
 
 .navbar-mob-brand span {
   font-size: 3vw;
