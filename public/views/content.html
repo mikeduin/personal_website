@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" id="mob-splash">
   <div class="mob-splash mob-header">
     <div class="mob-splash-logo col-xs-12 text-center">
       <span> mike<b>duin</b></span>
@@ -42,31 +42,31 @@
 </div>
 
 <div class="squares mob-splash">
-  <a ui-sref="home.about">
+  <a ui-sref="home.about" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="about-mob">
       <p class="about-mob-content mob-p"> about </p>
     </mobSquare></a>
-  <a ui-sref="home.professional">
+  <a ui-sref="home.professional" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="work-mob">
       <p class="work-mob-content mob-p"> portfolio </p>
     </mobSquare>
   </a>
-  <a ui-sref="home.ala.blog.main">
+  <a ui-sref="home.ala.blog.main" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="ala-logo-mob">
       <p class="ala-mob-content mob-p"> a level above </p>
     </mobSquare>
   </a>
-  <a href="http://photography.mikeduin.com">
+  <a href="http://photography.mikeduin.com" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="kophiphi-mob">
       <p class="ko-mob-content mob-p">photography</p>
     </mobSquare>
   </a>
-  <a ui-sref="home.music">
+  <a ui-sref="home.music" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="music-logo-mob">
       <p class="music-mob-content mob-p">music</p>
     </mobSquare>
   </a>
-  <a ui-sref="home.fridge">
+  <a ui-sref="home.fridge" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="fridge-mob">
       <p class="fridge-mob-content mob-p">fridge</p>
     </mobSquare>

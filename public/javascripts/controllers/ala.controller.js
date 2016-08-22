@@ -15,7 +15,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
 
   $scope.vm.contactCommish = function(){
     alaService.contactCommish($scope.contactForm).then(function(result){
-      console.log("The Commish has been emailed!")
       $scope.contactForm = {};
       $scope.vm.contactSuccess = true;
     })
