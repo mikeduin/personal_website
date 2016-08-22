@@ -1275,6 +1275,7 @@ playlists type {
 
 playlist description {
   margin-top: 1vw;
+  font-size: 1.57vw;
   font-weight: 400;
 }
 
@@ -1708,7 +1709,12 @@ hoopsPopover, italyPopover {
   }
 
   blogText {
+    font-size: 1.5vw;
     margin-top: 1.85vw;
+  }
+
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 1.5vw;
   }
 
   introText p {
@@ -1716,11 +1722,8 @@ hoopsPopover, italyPopover {
   }
 
   projDesc {
+    font-size: 1.3vw;
     padding-top: 1%;
-  }
-
-  storyEntry, fantasyEntry, bandEntry, italyEntry, blogText, projDesc, .music-text {
-    font-size: 12px;
   }
 
   .about-intro {
@@ -1774,8 +1777,12 @@ hoopsPopover, italyPopover {
     margin-top: 7vw;
   }
 
-  storyEntry, fantasyEntry, bandEntry, italyEntry, blogText, projDesc, .music-text {
-    font-size: 14px;
+  blogText {
+    font-size: 1.3vw;
+  }
+
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 1.3vw;
   }
 
   .burn-photo {
