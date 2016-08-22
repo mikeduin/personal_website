@@ -21,13 +21,13 @@
 
 <div class="mob-spacer"></div>
 
-<div class="nav navbar-fixed-top mobile-nav" role="navigation" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
+<div class="nav navbar-fixed-top mobile-nav" ng-click="expand = !expand" role="navigation" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')" ng-class="{'navbar-border': $state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')}">
   <div class="navContainer container-fixed">
-    <div class="mobile-bars">
+    <!-- <div class="mobile-bars">
       <button ng-click="expand = !expand" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
-    </div>
+    </div> -->
     <div class="navbar-mob-header slideDown">
-      <a class="navbar-mob-brand" ng-click="expand = !expand">
+      <a class="navbar-mob-brand">
         <span> mike<b>duin</b> :</span>
         <span ng-if="$state.includes('home.professional')" style="color: #2F5032; font-weight: 800"> portfolio </span>
         <span ng-if="$state.includes('home.about')" style="color: #24307A; font-weight: 800"> about </span>
