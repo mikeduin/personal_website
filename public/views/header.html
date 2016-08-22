@@ -13,7 +13,7 @@
         <li> <a class="navlink" ui-sref="home.ala.blog.main" id="alaAnchor" ng-class="{'alaBack': $state.includes('home.ala')}" title="A Level Above"> A Level Above </a></li>
         <li> <a class="navlink" title="Photography" href="http://photography.mikeduin.com/"> Photography </a></li>
         <li> <a class="navlink" ui-sref="home.music" id="musicAnchor" ng-class="{'musicBack': $state.includes('home.music')}" title="Music"> Music </a></li>
-        <li> <a class="navlink" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
+        <li> <a class="navlink" ng-click="vm.gotoBeer()" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
       </ul>
     </div>
   </div>
