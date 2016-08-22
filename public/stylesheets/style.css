@@ -166,13 +166,17 @@ mobSquare {
 }
 
 .navbar-mob-header {
-  /*float: left;*/
-  /*padding: 15px;*/
-  padding-top: 0.25%;
-  padding-bottom: 1%;
+  float: left;
+  padding: 15px;
   text-align: center;
   width: 100%;
-  margin-top: -7%;
+  margin-top: -6%;
+}
+
+
+.navbar-mob-brand {
+  padding-top: 13%;
+  float: none;
 }
 
 .navbar-mob-brand span {
@@ -181,18 +185,9 @@ mobSquare {
 }
 
 .mobile-bars {
-  font-size: 36px;
-  padding-top: 0.25%;
-  padding-bottom: 1%;
+  font-size: 3vw;
+  padding-top: 15px;
   padding-left: 15px;
-}
-
-/*.mobile-nav {
-  position: fixed;
-}*/
-
-@media only screen and (max-width: 720px) {
-  .mobile-nav { position: absolute}
 }
 
 .mobile-nav-link {
@@ -888,7 +883,7 @@ blogFilter {
 }
 
 blog div p {
-  font-size: 6.5vw;
+  font-size: 8vw;
   font-weight: 800;
   color: #3984C5;
 }
