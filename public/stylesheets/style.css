@@ -89,27 +89,27 @@ mobSquare {
 }
 
 .about-mob {
-  background-image: url('../images/elephant.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/elephant.jpeg');
 }
 
 .kophiphi-mob {
-  background-image: url('../images/kophiphi.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/kophiphi.jpg');
 }
 
 .work-mob {
-  background-image: url('../images/work.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/work.jpg');
 }
 
 .fridge-mob {
-  background-image: url('../images/fridge.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/fridge.jpg');
 }
 
 .music-logo-mob {
-  background-image: url('../images/playlists.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/playlists.jpg');
 }
 
 .ala-logo-mob {
-  background-image: url('../images/ala0304.jpg');
+  background-image: url('https://s3-us-west-2.amazonaws.com/mikeduin.com/ala0304.jpg');
 }
 
 .about-mob-content {
