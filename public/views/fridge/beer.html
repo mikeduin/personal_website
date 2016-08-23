@@ -18,9 +18,9 @@
       <span ng-if="vm.beer.quantity === 0"> This bottle is currently <span class="cellared"> EMPTY.</span> It was delicious! </span>
   </div>
   <div class="row">
-    <button ng-if="vm.beer.cold !== true && vm.beer.quantity !== 0" type="button" name="button" class="btn fridgeme" ng-click="vm.fridgeRequest = !vm.fridgeRequest"> FRIDGE ME!</button>
+    <button ng-if="vm.beer.cold !== true && vm.beer.quantity !== 0" type="button" name="button" class="btn fridgeme slideDown" ng-click="vm.fridgeRequest = !vm.fridgeRequest"> FRIDGE ME!</button>
   </div>
-  <div class="row" ng-if="vm.fridgeRequest === true">
+  <div class="row nav-slide" ng-class="{slideDown: vm.fridgeRequest}">
     <form id="fridgeForm" class="form-inline">
       <div class="form-group col-xs-12 text-center">
         <label class="col-xs-4 text-right" for="req-name">Who are you?</label>
