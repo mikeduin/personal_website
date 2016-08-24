@@ -5,8 +5,16 @@ angular
     'ui.bootstrap',
     'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
-  $anchorScroll.yOffset = 100;
-    }])
+    $anchorScroll.yOffset = 100;
+  }])
+  .run(['$window', function($window){
+    $window.ga('create', 'UA-XXXXXXXX-X', 'auto');
+  }])
+  .run(['$rootScope', '$location', '$window', function($rootScope, $location, $window){
+    $rootScope.$on('$stateChangeSuccess', function (event) {
+      $window.ga('send', 'pageview', $location.path());
+    });
+  }])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', siteConfig])
   .config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode(true);
