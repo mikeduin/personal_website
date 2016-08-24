@@ -12,18 +12,20 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeou
     }
   })
 
+  var mobileWidth = 770;
+
   $scope.$on('$stateChangeSuccess', function(){
     if(document.body.clientWidth <= mobileWidth) {
       console.log('width is mobile');
-      $scope.vm.showMobile = true
+      $scope.vm.showMobile = true;
+      $scope.vm.showMain = false;
     } else {
       console.log('width is ', document.body.clientWidth)
       console.log('width is main');
-      $scope.vm.showMain = true
+      $scope.vm.showMain = true;
+      $scope.vm.showMobile = false;
     }
   })
-
-  var mobileWidth = 770;
 
   $scope.checkWidth = function() {
     if(document.body.clientWidth <= mobileWidth) {
