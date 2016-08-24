@@ -1,18 +1,20 @@
-<div class="col-xs-12 main-splash">
-  <div class="row" id="main-splash">
-    <div class="main-splash main-header">
-      <div class="main-splash-logo col-xs-12 text-center splash-title">
-        <span> mike<b>duin</b></span>
-      </div>
-        <hr class="col-xs-4 col-xs-offset-4 main-hr">
-      <div class="main-splash-logo col-xs-12 text-center splash-lead">
-        <span> web<b>developer</b></span>
+<div ng-init="checkWidth()">
+  <div class="col-xs-12 main-splash" ng-if="vm.showMain">
+    <div class="row" id="main-splash">
+      <div class="main-splash main-header">
+        <div class="main-splash-logo col-xs-12 text-center splash-title">
+          <span> mike<b>duin</b></span>
+        </div>
+          <hr class="col-xs-4 col-xs-offset-4 main-hr">
+        <div class="main-splash-logo col-xs-12 text-center splash-lead">
+          <span> web<b>developer</b></span>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="col-xs-12 main-splash">
+<div class="col-xs-12 main-splash" ng-if="vm.showMain">
   <div class="row">
     <a ui-sref="home.about"><leftSquare class="about">
       <p class="about-content slide" id="about-text"> about </p>
@@ -37,7 +39,7 @@
   </div>
 </div>
 
-<div class="row" id="mob-splash">
+<div class="row" id="mob-splash" ng-if="vm.showMobile">
   <div class="mob-splash mob-header">
     <div class="mob-splash-logo col-xs-12 text-center">
       <span> mike<b>duin</b></span>
@@ -49,7 +51,7 @@
   </div>
 </div>
 
-<div class="squares mob-splash">
+<div class="squares mob-splash" ng-if="vm.showMobile">
   <a ui-sref="home.about" ng-click="vm.gotoId('mob-splash')">
     <mobSquare class="about-mob">
       <p class="about-mob-content mob-p"> about </p>

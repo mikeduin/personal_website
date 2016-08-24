@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .controller('MainController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', MainController])
+  .controller('MainController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', '$window', MainController])
 
-function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeout){
+function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeout, $window){
   $scope.$state = $state;
   $scope.vm = {};
   $scope.expand = false;
@@ -11,6 +11,30 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeou
       document.body.scrollTop = document.documentElement.scrollTop=0
     }
   })
+
+  $scope.$on('$stateChangeSuccess', function(){
+    if(document.body.clientWidth <= mobileWidth) {
+      console.log('width is mobile');
+      $scope.vm.showMobile = true
+    } else {
+      console.log('width is ', document.body.clientWidth)
+      console.log('width is main');
+      $scope.vm.showMain = true
+    }
+  })
+
+  var mobileWidth = 770;
+
+  $scope.checkWidth = function() {
+    if(document.body.clientWidth <= mobileWidth) {
+      console.log('width is mobile');
+      $scope.vm.showMobile = true
+    } else {
+      console.log('width is ', document.body.clientWidth)
+      console.log('width is main');
+      $scope.vm.showMain = true
+    }
+  }
 
   $scope.vm.gotoBeer = function(){
     $timeout(function(){
