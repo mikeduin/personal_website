@@ -16,12 +16,9 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeou
 
   $scope.$on('$stateChangeSuccess', function(){
     if(screen.width <= mobileWidth) {
-      console.log('width is mobile');
       $scope.vm.showMobile = true;
       $scope.vm.showMain = false;
     } else {
-      console.log('width is ', screen.width)
-      console.log('width is main');
       $scope.vm.showMain = true;
       $scope.vm.showMobile = false;
     }
@@ -29,11 +26,9 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeou
 
   $scope.checkWidth = function() {
     if(document.body.clientWidth <= mobileWidth) {
-      console.log('width is mobile');
       $scope.vm.showMobile = true
     } else {
       console.log('width is ', document.body.clientWidth)
-      console.log('width is main');
       $scope.vm.showMain = true
     }
   }
