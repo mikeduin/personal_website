@@ -29,6 +29,7 @@
 
 <alaSidebar class="col-xs-3 col-md-2"/>
   <ul>
+    <li class="disclaimer"><i>ALA games are played for entertainment purposes only. Noted dollar amounts are theoretical and used only as a vehicle for scorekeeping.</i></li>
     <li ng-click="showFantasyNBA = !showFantasyNBA" style="border-top: none"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.hoops'), 'activeGame': $state.includes('home.ala.nbacdl')}" class="slideDown"> Fantasy NBA </a></li>
       <ul ng-class="{slideDown: showFantasyNBA}" class="nav-slide" class="multigame">
         <li class="col-xs-offset-2 submenu" ng-click="showAlaHoops = !showAlaHoops" style="margin-top: -1.3vw"> <a class="subleague slideDown"> ALA Fantasy Hoops </a> </li>
