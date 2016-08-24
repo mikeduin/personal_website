@@ -15,12 +15,12 @@ function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeou
   var mobileWidth = 770;
 
   $scope.$on('$stateChangeSuccess', function(){
-    if(document.body.clientWidth <= mobileWidth) {
+    if(window.innerWidth <= mobileWidth) {
       console.log('width is mobile');
       $scope.vm.showMobile = true;
       $scope.vm.showMain = false;
     } else {
-      console.log('width is ', document.body.clientWidth)
+      console.log('width is ', window.innerWidth)
       console.log('width is main');
       $scope.vm.showMain = true;
       $scope.vm.showMobile = false;
