@@ -49,7 +49,7 @@ router.get('/beers', function(req, res, next) {
 
     res.json(beers);
   })
-})
+});
 
 router.post('/beers', function(req, res, next) {
   var beer = Beer({
