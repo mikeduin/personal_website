@@ -2096,7 +2096,7 @@ workLinks a:focus, socLinks a:focus {
   text-decoration: none;
 }
 
-workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, workLinks a:hover > .fa-file-text, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook {
+workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, workLinks a:hover > .fa-file-text, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook, socLinks a:hover > .fa-envelope {
   font-size: 4.5vw;
 }
 
@@ -2104,14 +2104,14 @@ workLinks a:hover, socLinks a:hover {
   text-decoration: none;
 }
 
-resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook {
+resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook, email {
   height: 8vw;
   font-weight: 600;
   font-size: 1.3vw;
   font-style: italic;
 }
 
-.fa-github, .fa-linkedin, .fa-file-text, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook {
+.fa-github, .fa-linkedin, .fa-file-text, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook, .fa-envelope {
   font-size: 4vw;
 }
 
