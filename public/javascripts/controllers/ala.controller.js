@@ -37,17 +37,24 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
 
     for (var i=0; i<displays.length; i++) {
       if (click === displays[i]) {
-        console.log(displays[i] + 'was clicked');
-        console.log('click is ', click);
-        console.log('displays[i] is ',  displays[i]);
         $scope[displays[i]] = !$scope[displays[i]]
       } else {
-        console.log('displays[i] is ',  displays[i]);
-        console.log('something else was clicked');
-        console.log('click is ', click);
         $scope[displays[i]] = false
       }
     }
+  }
+
+  $scope.vm.hoopsDisplay = function(click){
+    var displays = ['showAlaHoops', 'showAlaCdl'];
+
+    for (var i=0; i<displays.length; i++) {
+      if (click === displays[i]) {
+        $scope[displays[i]] = !$scope[displays[i]]
+      } else {
+        $scope[displays[i]] = false
+      }
+    }
+
   }
 
   $scope.vm.contactCommish = function(){

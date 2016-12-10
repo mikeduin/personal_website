@@ -32,14 +32,14 @@
     <li class="disclaimer"><i>ALA games are played for entertainment purposes only. Noted dollar amounts are theoretical and used only as a vehicle for scorekeeping.</i></li>
     <li ng-click="vm.menuDisplay('showFantasyNBA')" style="border-top: none"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.hoops'), 'activeGame': $state.includes('home.ala.nbacdl')}" class="slideDown"> Fantasy NBA </a></li>
       <ul ng-class="{slideDown: showFantasyNBA}" class="nav-slide" class="multigame">
-        <li class="col-xs-offset-2 submenu" ng-click="showAlaHoops = !showAlaHoops" style="margin-top: -1.3vw"> <a class="subleague slideDown"> ALA Fantasy Hoops </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.hoopsDisplay('showAlaHoops')" style="margin-top: -1.3vw"> <a class="subleague slideDown"> ALA Fantasy Hoops </a> </li>
           <ul ng-class="{slideDown: showAlaHoops}" class="nav-slide">
             <li class="col-xs-offset-2 submenu" style="margin-top: -5px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.hoops.details"> Game Details </a> </li>
             <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.hoops.rankings"> All-Time Rankings </a> </li>
             <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.hoops.podium"> The Podium </a> </li>
             <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.hoops.records"> League Records </a> </li>
           </ul>
-        <li class="col-xs-offset-2 submenu" ng-click="showAlaCdl = !showAlaCdl"> <a class="subleague slideDown"> ALA NBA CDL </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.hoopsDisplay('showAlaCdl')"> <a class="subleague slideDown"> ALA NBA CDL </a> </li>
           <ul ng-class="{slideDown: showAlaCdl}" class="nav-slide">
             <li class="col-xs-offset-2 submenu" style="margin-top: -5px" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.nbacdl.details"> Game Details </a> </li>
             <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage hoops-sub" ui-sref="home.ala.nbacdl.rankings"> All-Time Rankings </a> </li>
