@@ -13,10 +13,11 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
-  // $scope.$on('$stateChangeSuccess', function(){
-  //   document.body.scrollTop = document.documentElement.scrollTop=0
-  // })
-  $scope.vm.showFantasyNBA = false;
+  $scope.$on('$stateChangeSuccess', function(){
+    document.body.scrollTop = document.documentElement.scrollTop=0;
+  })
+
+  $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;
   $scope.showAlaCdl = false;
   $scope.showMadness = false;
