@@ -13,9 +13,42 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
-  $scope.$on('$stateChangeSuccess', function(){
-    document.body.scrollTop = document.documentElement.scrollTop=0
-  })
+  // $scope.$on('$stateChangeSuccess', function(){
+  //   document.body.scrollTop = document.documentElement.scrollTop=0
+  // })
+  $scope.vm.showFantasyNBA = false;
+  $scope.showAlaHoops = false;
+  $scope.showAlaCdl = false;
+  $scope.showMadness = false;
+  $scope.showNcaaPickem = false;
+  $scope.showBowlPickem = false;
+  $scope.showBtb = false;
+  $scope.showBaseball = false;
+  $scope.showEffRoto = false;
+  $scope.showFootball = false;
+  $scope.showSurvivor = false;
+  $scope.showConfidence = false;
+  $scope.showPga = false;
+  $scope.showNbaPlayoffs = false;
+  $scope.showFifa = false;
+
+  $scope.vm.menuDisplay = function(click){
+    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa'];
+
+    for (var i=0; i<displays.length; i++) {
+      if (click === displays[i]) {
+        console.log(displays[i] + 'was clicked');
+        console.log('click is ', click);
+        console.log('displays[i] is ',  displays[i]);
+        $scope[displays[i]] = !$scope[displays[i]]
+      } else {
+        console.log('displays[i] is ',  displays[i]);
+        console.log('something else was clicked');
+        console.log('click is ', click);
+        $scope[displays[i]] = false
+      }
+    }
+  }
 
   $scope.vm.contactCommish = function(){
     alaService.contactCommish($scope.contactForm).then(function(result){
@@ -41,7 +74,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.getBlogtags = function() {
     alaService.getBlogtags().then(function(tags){
       $scope.vm.blogtags = tags;
-      console.log("blogtags are", tags);
     })
   }
   $scope.getBlogtags();
@@ -647,19 +679,4 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
     ]
   }
 
-  $scope.showFantasyNBA = false;
-  $scope.showAlaHoops = false;
-  $scope.showAlaCdl = false;
-  $scope.showMadness = false;
-  $scope.showNcaaPickem = false;
-  $scope.showBowlPickem = false;
-  $scope.showBtb = false;
-  $scope.showBaseball = false;
-  $scope.showEffRoto = false;
-  $scope.showFootball = false;
-  $scope.showSurvivor = false;
-  $scope.showConfidence = false;
-  $scope.showPga = false;
-  $scope.showNbaPlayoffs = false;
-  $scope.showFifa = false;
 }
