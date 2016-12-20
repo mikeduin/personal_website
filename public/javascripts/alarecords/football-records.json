@@ -102,6 +102,22 @@
     "season": "2011"
   },
   {
+    "type": "Season",
+    "record": "Luckiest H2H Team",
+    "score": "+7.5 Power Points",
+    "team": "Ballbusters / Lazar Beam (t)",
+    "owner": "Jason Steiberg / Mike Lazar",
+    "season": "2015 / 2014"
+  },
+  {
+    "type": "Season",
+    "record": "Unluckiest H2H Team",
+    "score": "-6.5 Power Points",
+    "team": "Ass Hats",
+    "owner": "Trevor Severeid",
+    "season": "2008"
+  },
+  {
     "type": "Game",
     "record": "Most Fantasy Points",
     "score": "194.6",
