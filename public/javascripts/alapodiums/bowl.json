@@ -1,5 +1,14 @@
 [
   {
+    "season": "2016-17",
+    "first_team": "Chris Bennett",
+    "first_owner": "$440",
+    "second_team": "Joe Buchholz",
+    "second_owner": "$220",
+    "third_team": "Gerard Griffa",
+    "third_owner": "$100"
+  },
+  {
     "season": "2015-16",
     "first_team": "Marc Courtmanch",
     "first_owner": "$500",
