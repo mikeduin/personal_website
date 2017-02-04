@@ -38,6 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/nba-all-star-api', function(req, res, next){
+  res.redirect('nba-all-star-api.html');
+})
 
 app.all('/*', function(req, res, next){
   res.sendFile('public/index.html', { root: __dirname });
