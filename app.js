@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/nba-all-star-api', function(req, res, next){
-  res.redirect('nba-all-star-api.html');
+  res.send('nba-all-star-api');
 })
 
 app.all('/*', function(req, res, next){
