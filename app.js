@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/nba-all-star-api', function(req, res, next){
-  res.send('nba-all-star-api');
+  res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })
 
 app.all('/*', function(req, res, next){
