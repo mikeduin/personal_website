@@ -8,25 +8,25 @@
           "id": 1,
           "type": "Point Spread",
           "side": "U.S. Team",
-          "odds": "xxx"
+          "odds": "-110"
         },
         {
           "id": 2,
           "type": "Point Spread",
           "side": "World Team",
-          "odds": "xxx"
+          "odds": "-110"
         },
         {
           "id": 3,
           "type": "Total Score",
           "side": "Over [xxx]",
-          "odds": "xxx"
+          "odds": "+100"
         },
         {
           "id": 4,
           "type": "Total Score",
           "side": "Under [xxx]",
-          "odds": "xxx"
+          "odds": "-120"
         }
       ]
     },
