@@ -75,6 +75,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.getBlogposts = function() {
     alaService.getBlogposts().then(function(blogposts){
       $scope.vm.blogposts = blogposts;
+      console.log('vm.blogposts are ', blogposts);
     })
   };
   $scope.getBlogposts();
