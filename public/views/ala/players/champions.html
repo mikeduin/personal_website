@@ -12,15 +12,18 @@
           Bragging rights are theirs.
         </p>
         <p class="career-subtext">
-          <i>(chronologically ordered, most recent champs on top)</i>
+          <i>(chronologically ordered by event start date)</i>
         </p>
       </div>
-      <hr class="col-xs-4 col-xs-offset-4" style="margin-top: 0%; margin-bottom: 4%">
+      <hr class="col-xs-4 col-xs-offset-4" style="margin-top: 0%">
     </div>
   </blog>
 </careerData>
 
 <podium class="col-xs-9 col-md-10">
+  <div class="title-year">
+    - 2016 -
+  </div>
   <table class="col-xs-12 hof-table">
     <thead>
       <tr>
@@ -31,7 +34,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="records in vm.champions" class="podium">
+      <tr ng-repeat="records in vm.champions16" class="podium">
+        <td class="text-center podium table-pad">
+          <team class="game-name"> {{records.game}} </team>
+        </td>
+        <td class="text-center table-pad">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.prize}}</team>
+        </td>
+        <td class="podium table-pad">
+          <team class="champ-summary" ng-bind-html="records.summary | rawHtml"> </team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="title-year">
+    - 2015 -
+  </div>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Game </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Prize </th>
+        <th class="text-center podium"> Summary </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.champions15" class="podium">
         <td class="text-center podium table-pad">
           <team class="game-name"> {{records.game}} </team>
         </td>

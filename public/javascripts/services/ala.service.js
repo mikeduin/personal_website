@@ -10,8 +10,14 @@ function alaService ($http) {
         return result.data
       })
     },
-    getChampions: function() {
-      return $http.get('javascripts/alapodiums/champions.json')
+    getChampions15: function() {
+      return $http.get('javascripts/alapodiums/champions15.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
+    getChampions16: function() {
+      return $http.get('javascripts/alapodiums/champions16.json')
       .then(function(results){
         return results.data;
       })
