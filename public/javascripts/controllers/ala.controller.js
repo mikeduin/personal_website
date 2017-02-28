@@ -109,13 +109,21 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getPodiums();
 
-  $scope.vm.champions = {};
-  $scope.getChampions = function() {
-    alaService.getChampions().then(function(results){
-      $scope.vm.champions = results;
+  $scope.vm.champions15 = {};
+  $scope.getChampions15 = function() {
+    alaService.getChampions15().then(function(results){
+      $scope.vm.champions15 = results;
     })
   };
-  $scope.getChampions();
+  $scope.getChampions15();
+
+  $scope.vm.champions16 = {};
+  $scope.getChampions16 = function() {
+    alaService.getChampions16().then(function(results){
+      $scope.vm.champions16 = results;
+    })
+  };
+  $scope.getChampions16();
 
   $scope.vm.titles = {};
   $scope.getTitles = function() {
