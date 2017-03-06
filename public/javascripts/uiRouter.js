@@ -117,56 +117,11 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.ala.contact', {
-      url: '/contact',
-      views: {
-        'contact@home.ala': {
-          templateUrl: 'views/ala/contact.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.photos', {
-      url: '/photos',
-      views: {
-        'photos@home.ala': {
-          templateUrl: 'views/ala/photos.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.careerdata', {
-      url: '/players/careerdata',
-      views: {
-        'careerdata@home.ala': {
-          templateUrl: 'views/ala/players/careerdata.html',
-          controller: 'AlaController'
-        }
-      }
-    })
     .state('home.ala.balances', {
       url: '/players/balances',
       views: {
         'balances@home.ala': {
           templateUrl: 'views/ala/players/balances.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.champions', {
-      url: '/players/champions',
-      views: {
-        'champions@home.ala': {
-          templateUrl: 'views/ala/players/champions.html',
-          controller: 'AlaController'
-        }
-      }
-    })
-    .state('home.ala.leaders', {
-      url: '/players/leaders',
-      views: {
-        'leaders@home.ala': {
-          templateUrl: 'views/ala/players/leaders.html',
           controller: 'AlaController'
         }
       }
@@ -180,20 +135,20 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.ala.blog.main', {
-      url: '/main',
-      views: {
-        'main@home.ala.blog': {
-          templateUrl: 'views/ala/blog/main.html',
-          controller: 'AlaController'
-        }
-      }
-    })
     .state('home.ala.blog.add', {
       url: '/add',
       views: {
         'add@home.ala.blog': {
           templateUrl: 'views/ala/blog/add.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.blog.main', {
+      url: '/main',
+      views: {
+        'main@home.ala.blog': {
+          templateUrl: 'views/ala/blog/main.html',
           controller: 'AlaController'
         }
       }
@@ -212,6 +167,61 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'buyins@home.ala': {
           templateUrl: 'views/ala/buyins.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.careerdata', {
+      url: '/players/careerdata',
+      views: {
+        'careerdata@home.ala': {
+          templateUrl: 'views/ala/players/careerdata.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.champions', {
+      url: '/players/champions',
+      views: {
+        'champions@home.ala': {
+          templateUrl: 'views/ala/players/champions.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.contact', {
+      url: '/contact',
+      views: {
+        'contact@home.ala': {
+          templateUrl: 'views/ala/contact.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.db', {
+      url: '/db',
+      views: {
+        'db@home.ala': {
+          templateUrL: 'views/ala/db/main.html',
+          controller: 'dbController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+    .state('home.ala.leaders', {
+      url: '/players/leaders',
+      views: {
+        'leaders@home.ala': {
+          templateUrl: 'views/ala/players/leaders.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.photos', {
+      url: '/photos',
+      views: {
+        'photos@home.ala': {
+          templateUrl: 'views/ala/photos.html',
           controller: 'AlaController'
         }
       }
