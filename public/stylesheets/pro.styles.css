@@ -1,0 +1,127 @@
+/*Professional Styles*/
+
+proHeader {
+  height: 9.5vw;
+  background-color: #2F5032;
+  border-radius: 0.3vw;
+  border-top: solid 0.35vw black;
+  border-bottom: solid 0.35vw black;
+}
+
+.work-intro {
+  color: #127C23;
+  margin-bottom: 2%;
+}
+
+.top-project {
+  margin-top: 2%;
+}
+
+workLinks a, socLinks a {
+  color: #DFDFDF;
+}
+
+workLinks a:hover, socLinks a:hover {
+  color: white;
+}
+
+socLinks a:hover {
+  color: white
+}
+
+socLinks {
+  height: 95%;
+}
+
+socLinks a i, workLinks a i {
+  margin-top: 15%
+}
+
+workLinks a:focus, socLinks a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+workLinks a:hover > .fa-github, workLinks a:hover > .fa-linkedin, workLinks a:hover > .fa-file-text, socLinks a:hover > .fa-twitter, socLinks a:hover > .fa-instagram, socLinks a:hover > .fa-spotify, socLinks a:hover > .fa-facebook, socLinks a:hover > .fa-envelope {
+  font-size: 4.5vw;
+}
+
+workLinks a:hover, socLinks a:hover {
+  text-decoration: none;
+}
+
+resume, linkedIn, gitHub, twitter, insta, spotifyLink, facebook, email {
+  height: 8vw;
+  font-weight: 600;
+  font-size: 1.3vw;
+  font-style: italic;
+}
+
+.fa-github, .fa-linkedin, .fa-file-text, .fa-twitter, .fa-instagram, .fa-spotify, .fa-facebook, .fa-envelope {
+  font-size: 4vw;
+}
+
+projTitle {
+  height: 5vw;
+  color: #2F5032;
+  font-size: 4vw;
+  font-weight: 800;
+  margin-top: -0.5vw;
+}
+
+projTitle {
+  color: #127C23;
+}
+
+projTitle a:hover, projTitle a:focus {
+  color: #2F5032;
+}
+
+projLead i, projLink i {
+  font-size: 2vw;
+  color: #D0D0D0;
+  font-weight: 600;
+}
+
+projLink span {
+  font-size: 1.5vw;
+  font-style: italic;
+  font-weight: 600;
+  color: #5E5E5E;
+  display: inline;
+}
+
+.fa-globe {
+  font-size: 2vw;
+  padding-right: 0.2vw;
+}
+
+projLead {
+  color: black;
+  font-size: 2vw;
+  font-weight: 600;
+}
+
+projLink a {
+  color: #2F5032;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+projLink a:hover {
+  color: #2F5032;
+}
+
+projMockup {
+  height: 20vw;
+  margin-top: 2%;
+}
+
+projMockup img {
+  max-height: 100%;
+  box-shadow: 0 1px 0.625vw black;
+}
+
+projMockup img:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,76 @@
+<addForm class="col-xs-8">
+  <form id="alaDbAdd" class="form-horizontal">
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Entrant </label>
+      <div class="col-xs-8">
+        <input type="text" ng-model="vm.dbForm.entrant" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Game </label>
+      <div class="col-xs-8">
+        <input type="text" ng-model="vm.dbForm.game" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Season </label>
+      <div class="col-xs-8">
+        <input type="number" ng-model="vm.dbForm.season" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Rank </label>
+      <div class="col-xs-8">
+        <input type="number" ng-model="vm.dbForm.rank" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Buy-in </label>
+      <div class="col-xs-8">
+        <input type="number" ng-model="vm.dbForm.buyin" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Prize </label>
+      <div class="col-xs-8">
+        <input type="number" ng-model="vm.dbForm.prize" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 text-right"> Opponents </label>
+      <div class="col-xs-8">
+        <input type="number" ng-model="vm.dbForm.opponents" class="form-control"/>
+      </div>
+    <div class="form-group text-center">
+      <button class="btn btn-large btn-danger add-btn" ng-click="vm.addDbEntry()"> Add db Entry!</button>
+    </div>
+  </form>
+</addForm>
+
+<addedEntries class="col-xs-8">
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Entrant</th>
+        <th>Game</th>
+        <th>Season</th>
+        <th>Rank</th>
+        <th>Buyin</th>
+        <th>Prize</th>
+        <th>Opponents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entry in vm.added">
+        <td>{{entry.entrant}}</td>
+        <td>{{entry.game}}</td>
+        <td>{{entry.season}}</td>
+        <td>{{entry.rank}}</td>
+        <td>{{entry.buyin}}</td>
+        <td>{{entry.prize}}</td>
+        <td>{{entry.opponents}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</addedEntries>

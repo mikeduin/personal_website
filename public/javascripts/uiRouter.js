@@ -202,8 +202,18 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/db',
       views: {
         'db@home.ala': {
-          templateUrL: 'views/ala/db/main.html',
-          controller: 'dbController',
+          templateUrl: 'views/ala/db/main.html',
+          controller: 'DbController',
+          controllerAs: 'vm'
+        }
+      }
+    })
+    .state('home.ala.db.add', {
+      url: '/add',
+      views: {
+        'add@home.ala.db': {
+          templateUrl: 'views/ala/db/add.html',
+          controller: 'DbController',
           controllerAs: 'vm'
         }
       }

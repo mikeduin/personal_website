@@ -1,0 +1,310 @@
+/*About Styles*/
+
+aboutHeader {
+  height: 9.5vw;
+  background-color: #24307A;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
+}
+
+leadBar div {
+  font-weight: 600;
+  font-size: 1.75vw;
+  color: #24307A;
+}
+
+leadBar {
+  margin-top: 2.5vw;
+}
+
+introText p {
+  font-size: 1.57vw;
+  color: black;
+  font-weight: 500;
+}
+
+.meet-me {
+  color: #384AB5;
+}
+
+storyPhotos img {
+  box-shadow: 0 1px 0.625vw black;
+}
+
+storyPhotos img:hover {
+  opacity: 0.8;
+}
+
+hoopsPopover, italyPopover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 300px) {
+/*BEGIN NAVBAR STYLES*/
+  /*.main-splash, .main-nav {
+    display: none;
+    visibility: hidden;
+  }*/
+
+  .mob-spacer {
+    margin-top: 9vw;
+  }
+
+  .hidden-xs {
+    visibility: hidden;
+  }
+
+  .nav {
+    background-color: white;
+    font-weight: 600;
+  }
+
+  .spacer {
+    margin-top: 7vw;
+  }
+
+  firstStory {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+  }
+
+  blogText {
+    font-size: 1.5vw;
+    margin-top: 1.85vw;
+  }
+
+  storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 1.5vw;
+  }
+
+  .music-text p {
+    font-size: 1.5vw;
+  }
+
+  introText p {
+    font-size: 2vw;
+  }
+
+  projDesc {
+    font-size: 1.3vw;
+    padding-top: 1%;
+  }
+
+  .about-intro {
+    margin-bottom: 10%;
+  }
+
+  .divider {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  trophyBox{
+    padding-top: 3%;
+  }
+
+  familyBox {
+    padding-top: 5%;
+  }
+
+  .burn-photo {
+    height: 50%;
+  }
+
+  .burn-photo:hover {
+    opacity: 1;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  /*.main-splash, .main-nav {
+    display: unset;
+    visibility: visible;
+  }
+
+  .mobile-nav {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mob-spacer {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mob-splash {
+    display: none;
+  }*/
+
+  .spacer {
+    margin-top: 7vw;
+  }
+
+  blogText {
+    font-size: 1.3vw;
+  }
+
+  .music-text, storyEntry, fantasyEntry, bandEntry, italyEntry, todayEntry p {
+    font-size: 1.3vw;
+  }
+
+  .burn-photo {
+    width: 80%;
+  }
+
+  alaSidebar ul {
+    margin-left: -4.4vw;
+  }
+
+  .subleague {
+    margin-left: 0vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1vw;
+  }
+
+}
+
+@media screen and (min-width: 1150px) {
+  alaSidebar ul {
+    margin-left: -4vw;
+  }
+
+  .subleague {
+    margin-left: 0.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 1.4vw;
+  }
+}
+
+@media screen and (min-width: 1380px) {
+  alaSidebar ul {
+    margin-left: -3vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1.7vw;
+  }
+
+  .subleague {
+    margin-left: 0vw
+  }
+
+}
+
+@media screen and (min-width: 1485px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.3vw
+  }
+
+  .hoops-sub {
+    margin-left: 2vw;
+  }
+
+  .about-intro {
+    margin-bottom: 8%;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  alaSidebar ul {
+    margin-left: -2.5vw;
+  }
+
+  .subleague {
+    margin-left: 0.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 2.2vw;
+  }
+
+}
+
+@media screen and (min-width: 2150px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.5vw
+  }
+
+  trophyBox{
+    padding-top: 4%;
+  }
+
+  familyBox {
+    padding-top: 7%;
+  }
+
+  alaSidebar ul {
+    margin-left: -2vw;
+  }
+
+  .subleague {
+    margin-left: 0vw
+  }
+
+  .hoops-sub {
+    margin-left: 2vw;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  alaSidebar ul {
+    margin-left: -1.5vw;
+  }
+
+  .hoops-sub {
+    margin-left: 1vw;
+  }
+}
+
+@media screen and (min-width: 2600px) {
+  #blogFilter, #blogSearch {
+    margin-top: 0.8vw
+  }
+}
+
+@media screen and (min-width: 2900px) {
+  alaSidebar ul {
+    margin-left: -1vw;
+  }
+
+  .subleague {
+    margin-left: 2vw
+  }
+
+  .hoops-sub {
+    margin-left: 3.2vw;
+  }
+}
+
+@media screen and (min-width: 3350) {
+  .subleague {
+    margin-left: 2.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 4.5vw;
+  }
+}
+
+@media screen and (min-width: 3600) {
+  .subleague {
+    margin-left: 3.5vw
+  }
+
+  .hoops-sub {
+    margin-left: 5.5vw;
+  }
+}

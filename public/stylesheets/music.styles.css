@@ -1,0 +1,189 @@
+/*Music Styles*/
+
+musicHeader {
+  height: 9.5vw;
+  background-color: #452562;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
+}
+
+musicLead {
+  font-weight: 800;
+  color: white;
+  font-size: 3.75vw;
+  margin-left: 2.5vw;
+}
+
+musicIntro {
+  margin-top: -1.5vw;
+  height: 9.5vw;
+  font-size: 3vw;
+  font-weight: 600;
+  color: #7745A6;
+  padding-top: 2vw;
+}
+
+@media screen and (min-width: 300px) {
+  explanation {
+    margin-top: 3.4vw;
+    margin-bottom: 1.57vw;
+    font-size: 1.4vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  explanation {
+    margin-top: 3.125vw;
+    margin-bottom: 1.57vw;
+    font-size: 1.4vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  explanation {
+    margin-top: 2.75vw;
+  }
+}
+
+@media screen and (min-width: 1850px) {
+  explanation {
+    margin-top: 2.25vw;
+  }
+}
+
+
+playlists {
+  margin-top: 4.7vw;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+playlist {
+  display: inline-block;
+  margin-top: 2.5vw;
+  margin-bottom: 2.5vw;
+}
+
+playlists name {
+  margin-top: -1.24vw;
+  font-size: 3.85vw;
+  font-weight: 800;
+}
+
+playlists name a {
+  color: #333333;
+  text-decoration: none;
+}
+
+playlists name a:hover {
+  color: #333333;
+  font-size: 3.85vw;
+  text-decoration: none;
+}
+
+playlists name a:focus {
+  color: #333333;
+  font-size: 3.85vw;
+  text-decoration: none;
+}
+
+playlists type {
+  font-size: 2vw;
+  font-weight: 600;
+  color: #1ED760;
+}
+
+playlist description {
+  margin-top: 1vw;
+  font-size: 1.57vw;
+  font-weight: 400;
+}
+
+
+@media screen and (min-width: 300px) {
+  spotify iframe {
+    height: 350px;
+    box-shadow: 0 1px 0.625vw black;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  spotify iframe {
+    height: 350px;
+    box-shadow: 0 1px 0.625vw black;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  spotify iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  spotify iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  spotify iframe {
+    height: 450px;
+    width: 340px;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  spotify iframe {
+    height: 500px;
+    width: 400px;
+  }
+}
+
+.fa-headphones {
+  color: #C5C6C7;
+}
+
+.soundscapes {
+  background: url('../images/purple-space-lite.jpg') no-repeat center center;
+  background-size: cover;
+  padding-top: 1.57vw;
+  padding-bottom: 1vw;
+  margin: 0px;
+  border-top: solid 2px #CBC1D4;
+  border-bottom: solid 2px #CBC1D4;
+  /*box-shadow: 0px 0.4vw 0px 0px #E4E4E4;*/
+}
+
+.fifty-three {
+  background: url('../images/club.jpg') no-repeat center center;
+  background-size: cover;
+  padding-top: 1.57vw;
+  padding-bottom: 1vw;
+  margin: 0px;
+  border-top: solid 2px #CBC1D4;
+  border-bottom: solid 2px #CBC1D4;
+}
+
+.rock-show {
+  background: url('../images/rock-show.jpg') no-repeat center center;
+  background-size: cover;
+  padding-top: 1.57vw;
+  padding-bottom: 1vw;
+  margin: 0px;
+  border-top: solid 2px #CBC1D4;
+  border-bottom: solid 2px #CBC1D4;
+}
+
+.foundation {
+  background: url('../images/foundation.jpg') no-repeat center center;
+  background-size: cover;
+  padding-top: 1.57vw;
+  padding-bottom: 1vw;
+  margin: 0px;
+  border-top: solid 2px #CBC1D4;
+  border-bottom: solid 2px #CBC1D4;
+}
