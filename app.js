@@ -25,6 +25,7 @@ db.once('open', function() {
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var db = require('./routes/db');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/db', db);
 app.use('/nba-all-star-api', function(req, res, next){
   res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })

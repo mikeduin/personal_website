@@ -1,0 +1,297 @@
+/*Fridge Styles*/
+
+fridgeHeader {
+  height: 9.5vw;
+  background-color: #7C0F09;
+  border-radius: 0.3vw;
+  border-top: solid 0.4vw black;
+  border-bottom: solid 0.4vw black;
+}
+
+fridgeSubheader {
+  font-size: 2vw;
+  font-weight: 600;
+  color: #E5E7E7;
+}
+
+.fridge-intro {
+  margin-bottom: 1.5vw;
+}
+
+fridgeLead {
+  margin-top: 1.57vw;
+  font-weight: 600;
+  font-size: 1.4vw;
+  display: inline-block;
+  background-color: #F5F8FF;
+  border-radius: 1vw;
+}
+
+fridgeNote {
+  font-size: 0.8vw;
+}
+
+fridgeIndex {
+  height: 800px;
+}
+
+.fridge-type {
+  color: #B61B10;
+}
+
+searchContainer {
+  display: inline-block;
+  border: 0.4vw solid #7C0F09;
+  border-radius: 1vw;
+  font-weight: 600;
+  font-size: 2vw;
+}
+
+searchContainer span {
+  color: #B61B10;
+}
+
+searchContainer search {
+  font-size: 1.25vw;
+  margin-bottom: 0.4vw;
+}
+
+searchOptions {
+  background-color: #DCDEDC;
+  border-radius: 1vw;
+  padding-bottom: 0.4vw;
+  margin-bottom: 1vw;
+}
+
+search div {
+  padding-top: 0.4vw;
+}
+
+searchContainer input {
+  width: 280px;
+  margin-left: 1.57vw;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+closeSearch {
+  margin-left: 3.8vw;
+  cursor: pointer;
+  color: #B61B10;
+  text-decoration: underline;
+}
+
+instructions {
+  margin-top: 3.125vw;
+  color: #7C0F09;
+  margin-bottom: 1vw;
+  font-size: 3.125vw;
+  height: 600px;
+}
+
+bottleList {
+  padding-top: 0.4vw;
+  height: 900px;
+  overflow: scroll;
+  border: solid 0.4vw #540705;
+  border-radius: 1.24vw;
+  background-color: #7C0F09;
+  box-shadow: 0 1px 0.625vw black;
+  font-size: 1vw;
+}
+
+beerContainer {
+  background-color: #E5E7E7;
+  display: inline-block;
+  border-radius: 1.57vw;
+  padding-bottom: 0.4vw;
+  margin-bottom: 1vw;
+  border: solid 1px black;
+}
+
+beerContainer:hover {
+  border: solid 3px #7C0F09;
+  cursor: pointer;
+}
+
+beerContainer name {
+  color: #7C0F09;
+  font-size: 1.4vw;
+  font-weight: 800;
+}
+
+beerContainer a {
+  color: black;
+}
+
+beerContainer a:hover {
+  color: black;
+}
+
+beerImage img {
+  margin-top: 0.4vw;
+  height: 6.25vw;
+}
+
+beerDetail {
+  background-color: #EBECED;
+  border-radius: 1.57vw;
+  display: inline-block;
+  border: solid 1px #7C0F09;
+}
+
+beerDetail name {
+  color: #7C0F09;
+  font-size: 2.5vw;
+  font-weight: 800;
+}
+
+beerDetail brewery {
+  font-size: 1.5vw;
+  font-weight: 800;
+}
+
+.cold {
+  color: #3984C5;
+  font-weight: 800;
+  font-size: 1.4vw;
+}
+
+.coldskinny {
+  color: #3984C5;
+  font-weight: 600;
+}
+
+.coldskinny:hover {
+  font-weight: 800;
+}
+
+.cellared {
+  color: #7C0F09;
+}
+
+.black {
+  color: black;
+  font-weight: 600;
+}
+
+.all-beers, .empty-b {
+  font-size: 1.4vw;
+}
+
+.show-all-beers:hover {
+  font-weight: 800;
+}
+
+.show-empty-b {
+  color: black;
+}
+
+.show-empty-b:hover {
+  font-weight: 800;
+}
+
+beerDetail beerImage {
+  margin-top: 2.5vw;
+}
+
+beerDetail img {
+  margin-top: 1vw;
+  height: 15vw;
+}
+
+.beer-info {
+  font-size: 1.35vw
+}
+
+beerDetail description {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-size: 1.1vw;
+}
+
+.fridgeme {
+  background-color: #7C0F09;
+  color: white;
+  font-weight: bold;
+  margin-top: 0.5vw;
+  width: 12vw;
+  font-size: 1.3vw;
+}
+
+.fridgeme:focus {
+  background-color: #7C0F09;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  box-shadow: none;
+}
+
+.fridgeme:hover {
+  background-color: white;
+  color: #7C0F09;
+  font-weight: bold;
+}
+
+#fridgeForm {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+}
+
+#fridgeForm div {
+  padding-top: 1%;
+}
+
+#fridgeForm input {
+  border: solid 1px black;
+  border-radius: 5%;
+}
+
+#fridgeForm button {
+  margin-top: 2%;
+  font-size: 1.3vw;
+}
+
+#fridgeForm button:hover {
+  color: #337AB7;
+  background-color: white;
+}
+
+.fridge-success {
+  color: #2F5032;
+  font-size: 1.25vw;
+}
+
+searchContainer sort {
+  text-decoration: underline;
+}
+
+#coldInput {
+  margin-right: -1.57vw;
+}
+
+addBeer {
+  margin-top: 1vw;
+}
+
+#addBeer label {
+  padding-top: 0.4vw;
+}
+
+#coldSelect {
+  margin-top: 0.4vw;
+}
+
+addBeer heading {
+  font-size: 2.3vw;
+  font-weight: 800;
+  color: #7C0F09;
+}
+
+.beer-back {
+  background: url('../images/beer-back.jpg') no-repeat center center;
+  background-size: cover;
+}
