@@ -6,8 +6,17 @@ function User_Results () {
   return knex('user_results')
 };
 
+router.get('/entrants', function(req, res, next){
+  User_Results().distinct('name').select().then(function(results){
+    res.json(results);
+  })
+})
+
+// three separate unique postgres calls
+// I do one call and then push to an array if value is unique
+
 router.post('/add', function(req, res, next){
-  var opp_def = req.body.opponents - req.body.rank;
+  var opp_def = (req.body.opponents+1) - req.body.rank;
   var profit = req.body.prize - req.body.buyin;
   User_Results().insert({
     name: req.body.entrant,
