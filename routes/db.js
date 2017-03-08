@@ -17,6 +17,60 @@ router.get('/entrants', function(req, res, next){
   })
 })
 
+// THIS FUNCTION BELOW ADMITTEDLY REALLY, TOTALLY SUCKS WITH SIX DIFFERENT POTENTIAL CALLS. BUT HOW DO I SET 'ALL' VALUES DYNAMICALLY IF A FILTER IS NOT SELECTED?
+
+router.get('/query/:entrant/:game/:year', function(req, res, next){
+  var entrant, game, year;
+  if (req.params.entrant === '*' && req.params.game === '*' && req.params.year !== '*') {
+    User_Results().where({
+      season: req.params.year
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant !== '*' && req.params.game === '*' && req.params.year === '*') {
+    User_Results().where({
+      name: req.params.entrant
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant === '*' && req.params.game !== '*' && req.params.year === '*') {
+    User_Results().where({
+      game: req.params.game
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant !== '*' && req.params.game !== '*' && req.params.year === '*') {
+    User_Results().where({
+      name: req.params.entrant,
+      game: req.params.game
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant !== '*' && req.params.game === '*' && req.params.year !== '*') {
+    User_Results().where({
+      name: req.params.entrant,
+      season: req.params.year
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant === '*' && req.params.game !== '*' && req.params.year !== '*') {
+    User_Results().where({
+      game: req.params.game,
+      season: req.params.year
+    }).then(function(results){
+      res.json(results);
+    })
+  } else if (req.params.entrant !== '*' && req.params.game !== '*' && req.params.year !== '*') {
+    User_Results().where({
+      name: req.params.entrant,
+      game: req.params.game,
+      season: req.params.year
+    }).then(function(results){
+      res.json(results);
+    })
+  }
+})
+
 // three separate unique postgres calls
 // I do one call and then push to an array if value is unique
 

@@ -611,7 +611,7 @@ search {
 }
 
 search > select {
-  color: black
+  color: black;
 }
 
 filter {

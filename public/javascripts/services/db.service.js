@@ -13,6 +13,11 @@ function dbService($http) {
       return $http.get('/db/entrants').then(function(res){
         return res.data;
       })
+    },
+    dbQuery: function(entrant, game, year) {
+      return $http.get('/db/query/' + entrant + '/' + game + '/' + year ).then(function(res){
+        return res.data;
+      })
     }
   }
 }
