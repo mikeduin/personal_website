@@ -1,0 +1,22 @@
+<div class="col-xs-9 col-md-10 text-center" ng-init="vm.getEntrants()">
+  <search class="col-xs-4">
+    Search by
+    <filter>
+      Entrant
+    </filter>
+    <select ng-model="sel_entrant" ng-options="entrant.name for entrant in vm.entrants" >
+    </select>
+  </search>
+  <search class="col-xs-4 grid-cen">
+    Search by
+    <filter>
+      Game
+    </filter>
+  </search>
+  <search class="col-xs-4">
+    Search by
+    <filter>
+      Year
+    </filter>
+  </search>
+</div>

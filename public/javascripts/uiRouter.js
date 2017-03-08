@@ -218,6 +218,16 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.db.search', {
+      url: '/search',
+      views: {
+        'search@home.ala.db': {
+          templateUrl: 'views/ala/db/search.html',
+          controller: 'DbController',
+          controllerAs: 'vm'
+        }
+      }
+    })
     .state('home.ala.leaders', {
       url: '/players/leaders',
       views: {

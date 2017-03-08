@@ -7,16 +7,23 @@ function DbController (dbService) {
   vm.dbForm = {};
   vm.added = [];
 
+  vm.getEntrants = function() {
+    dbService.getEntrants().then(function(res){
+      vm.entrants = res;
+      console.log(vm.entrants);
+    })
+  }
+
   vm.addDbEntry = function() {
-    dbService.addDbEntry(vm.dbForm).then(function(result){
+    dbService.addDbEntry(vm.dbForm).then(function(res){
       vm.added.push({
-        buyin: result.buyin,
-        entrant: result.entrant,
-        game: result.game,
-        opponents: result.opponents,
-        prize: result.prize,
-        rank: result.rank,
-        season: result.season
+        buyin: res.buyin,
+        entrant: res.entrant,
+        game: res.game,
+        opponents: res.opponents,
+        prize: res.prize,
+        rank: res.rank,
+        season: res.season
       })
       vm.dbForm = {};
     })

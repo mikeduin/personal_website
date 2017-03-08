@@ -604,3 +604,23 @@ disclaimer {
 .add-btn {
   margin-top: 10px
 }
+
+search {
+  color: #DC5623;
+  text-transform: uppercase;
+}
+
+search > select {
+  color: black
+}
+
+filter {
+  display: block;
+  font-weight: 800;
+  font-size: 3vw;
+}
+
+.grid-cen {
+  border-left: solid 1px #C2C2C2;
+  border-right: solid 1px #C2C2C2;
+}
