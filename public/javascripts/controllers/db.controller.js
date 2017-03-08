@@ -7,6 +7,28 @@ function DbController (dbService, $scope) {
   vm.dbForm = {};
   vm.added = [];
 
+  vm.dbQuery = function(){
+    var entrant, game, year;
+    if (vm.sel_entrant.name === '(all entrants)') {
+      entrant = '*';
+    } else {
+      entrant = vm.sel_entrant.name;
+    };
+    if (vm.sel_game === undefined) {
+      game = '*';
+    } else {
+      game = vm.sel_game;
+    };
+    if (vm.sel_year === undefined) {
+      year = '*';
+    } else {
+      year = vm.sel_year;
+    }
+    dbService.dbQuery(entrant, game, year).then(function(res){
+      console.log(res)
+    })
+  }
+
   vm.getEntrants = function() {
     dbService.getEntrants().then(function(res){
       vm.entrants = res;
@@ -14,11 +36,11 @@ function DbController (dbService, $scope) {
         name: "(all entrants)"
       });
     })
-  }
+  };
 
   $scope.$watch('vm.entrants', function(){
     vm.sel_entrant = vm.entrants[0];
-  })
+  });
 
   vm.addDbEntry = function() {
     dbService.addDbEntry(vm.dbForm).then(function(res){
@@ -51,7 +73,7 @@ function DbController (dbService, $scope) {
     'NFL Confidence',
     'NFL Survivor',
     'NCAA March Madness',
-    "NCAAF Pick'em'",
+    "NCAAF Pick'em",
     "NCAAF Bowl Pick'em",
     'PGA Majors'
   ];
