@@ -4,7 +4,7 @@
     <filter>
       Entrant
     </filter>
-    <select ng-model="sel_entrant" ng-options="entrant.name for entrant in vm.entrants" >
+    <select ng-model="vm.sel_entrant" ng-options="entrant.name for entrant in vm.entrants" ng-init="vm.sel_entrant = vm.entrants[0]">
     </select>
   </search>
   <search class="col-xs-4 grid-cen">
@@ -12,11 +12,19 @@
     <filter>
       Game
     </filter>
+    <select ng-model="vm.sel_game">
+      <option selected value="">(all games)</option>
+      <option ng-repeat="game in vm.games">{{game}}</option>
+    </select>
   </search>
   <search class="col-xs-4">
     Search by
     <filter>
       Year
     </filter>
+    <select ng-model="vm.sel_year">
+      <option selected value="">(all years)</option>
+      <option ng-repeat="year in vm.years">{{year}}</option>
+    </select>
   </search>
 </div>

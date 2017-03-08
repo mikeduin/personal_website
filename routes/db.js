@@ -8,7 +8,12 @@ function User_Results () {
 
 router.get('/entrants', function(req, res, next){
   User_Results().distinct('name').select().then(function(results){
-    res.json(results);
+    var sorted = results.sort(function(a, b){
+      var textA = a.name.toUpperCase();
+      var textB = b.name.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    })
+    res.json(sorted);
   })
 })
 
