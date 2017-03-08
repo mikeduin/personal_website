@@ -77,6 +77,10 @@ router.get('/query/:entrant/:game/:year', function(req, res, next){
 router.post('/add', function(req, res, next){
   var opp_def = (req.body.opponents+1) - req.body.rank;
   var profit = req.body.prize - req.body.buyin;
+  var opponents = req.body.opponents;
+  isNaN(profit) ? profit=0 : profit=profit;
+  isNaN(opp_def) ? opp_def=0 : opp_def=opp_def;
+  opponents === null? opponents=0 : opponents=opponents;
   User_Results().insert({
     name: req.body.entrant,
     game: req.body.game,
@@ -85,7 +89,7 @@ router.post('/add', function(req, res, next){
     buyin: req.body.buyin,
     prize: req.body.prize,
     profit: profit,
-    opponents: req.body.opponents,
+    opponents: opponents,
     opponents_def: opp_def
   }).then(function(){
       res.json(req.body);

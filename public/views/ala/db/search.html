@@ -28,3 +28,34 @@
     </select>
   </search>
 </div>
+
+<userDisplay class="col-xs-9 col-md-10" ng-show="vm.userChart">
+  <div class="text-center">
+    TOGGLE ENTRANT ANALYSIS DISPLAY
+  </div>
+</userDisplay>
+
+<table class="res-grid col-xs-9">
+  <thead>
+    <tr>
+      <th>Entrant</th>
+      <th>Game</th>
+      <th>Season</th>
+      <th>Rank</th>
+      <th>Buy-in</th>
+      <th>Prize</th>
+      <th>Profit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="result in vm.results">
+      <td>{{result.name}}</td>
+      <td>{{result.game}}</td>
+      <td>{{result.season}}</td>
+      <td>{{result.rank}}</td>
+      <td>{{result.buyin | currency : $ : 0}}</td>
+      <td>{{result.prize | currency : $ : 0}}</td>
+      <td>{{result.profit | currency : $ : 0}}</td>
+    </tr>
+  </tbody>
+</table>

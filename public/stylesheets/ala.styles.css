@@ -624,3 +624,8 @@ filter {
   border-left: solid 1px #C2C2C2;
   border-right: solid 1px #C2C2C2;
 }
+
+.res-grid {
+  margin-top: 10px;
+  margin-left: 1%;
+}

@@ -11,21 +11,27 @@ function DbController (dbService, $scope) {
     var entrant, game, year;
     if (vm.sel_entrant.name === '(all entrants)') {
       entrant = '*';
+      vm.userChart = false;
     } else {
       entrant = vm.sel_entrant.name;
+      vm.userChart = true;
     };
-    if (vm.sel_game === undefined) {
+    if (vm.sel_game === undefined || vm.sel_game === '') {
       game = '*';
     } else {
       game = vm.sel_game;
     };
-    if (vm.sel_year === undefined) {
+    if (vm.sel_year === undefined || vm.sel_year === '') {
       year = '*';
     } else {
       year = vm.sel_year;
+    };
+    if (entrant === '*' && game === '*' && year === '*') {
+      vm.results = [];
+      return;
     }
     dbService.dbQuery(entrant, game, year).then(function(res){
-      console.log(res)
+      vm.results = res;
     })
   }
 
@@ -63,7 +69,9 @@ function DbController (dbService, $scope) {
     'Fantasy MLB',
     'Fantasy NBA',
     'Fantasy NBA CDL',
-    'Fantasy NFL',
+    'Fantasy NFL [LO]',
+    'Fantasy NFL [USC]',
+    'Fantasy NFL [GU]',
     'FIFA World Cup Battle the Bookies',
     'FIFA World Cup Bracket Pool',
     'FIFA World Cup Survivor',
@@ -73,8 +81,8 @@ function DbController (dbService, $scope) {
     'NFL Confidence',
     'NFL Survivor',
     'NCAA March Madness',
-    "NCAAF Pick'em",
-    "NCAAF Bowl Pick'em",
+    "NCAA Football Pick'em",
+    "NCAA Football Bowl Pick'em",
     'PGA Majors'
   ];
 }
