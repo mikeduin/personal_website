@@ -31,7 +31,9 @@ function DbController (dbService, $scope) {
       return;
     }
     dbService.dbQuery(entrant, game, year).then(function(res){
-      vm.results = res;
+      console.log(res);
+      vm.results = res.results;
+      vm.userData = res.userData;
     })
   }
 
