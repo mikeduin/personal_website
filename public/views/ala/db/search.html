@@ -1,13 +1,13 @@
 <div class="col-xs-9 col-md-10 text-center" ng-init="vm.getEntrants()">
-  <search class="col-xs-4">
+  <dbsearch class="col-xs-4">
     Filter by
     <filter>
       Entrant
     </filter>
     <select ng-model="vm.sel_entrant" ng-options="entrant.name for entrant in vm.entrants" ng-init="vm.sel_entrant = vm.entrants[0]" ng-change="vm.dbQuery()">
     </select>
-  </search>
-  <search class="col-xs-4 grid-cen">
+  </dbsearch>
+  <dbsearch class="col-xs-4 grid-cen">
     Filter by
     <filter>
       Game
@@ -16,8 +16,8 @@
       <option selected value="">(all games)</option>
       <option ng-repeat="game in vm.games">{{game}}</option>
     </select>
-  </search>
-  <search class="col-xs-4">
+  </dbsearch>
+  <dbsearch class="col-xs-4">
     Filter by
     <filter>
       Year
@@ -26,7 +26,7 @@
       <option selected value="">(all years)</option>
       <option ng-repeat="year in vm.years">{{year}}</option>
     </select>
-  </search>
+  </dbsearch>
 </div>
 
 <userDisplay class="col-xs-9 col-md-10" ng-show="vm.userChart">
