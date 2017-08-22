@@ -8,65 +8,65 @@
   },
   {
     "rank": "2",
+    "entrant": "Kevin Young",
+    "game": "March Madness",
+    "year": "2017",
+    "prizes": "$3,778"
+  },
+  {
+    "rank": "3",
     "entrant": "Scott Hitchcock",
     "game": "March Madness",
     "year": "2016",
     "prizes": "$2,784"
   },
   {
-    "rank": "3",
+    "rank": "4",
     "entrant": "Tyson Obleada",
     "game": "March Madness",
     "year": "2015",
     "prizes": "$2,750"
   },
   {
-    "rank": "4",
+    "rank": "5",
     "entrant": "Matt Fisher",
     "game": "March Madness",
     "year": "2014",
     "prizes": "$2,332"
   },
   {
-    "rank": "5",
+    "rank": "6",
     "entrant": "Kyle Davis",
     "game": "NFL Survivor",
     "year": "2014",
     "prizes": "$1,980"
   },
   {
-    "rank": "6",
+    "rank": "7",
     "entrant": "Michael Liranzo",
     "game": "NFL Survivor",
     "year": "2011",
     "prizes": "$1,940"
   },
   {
-    "rank": "7",
+    "rank": "8",
+    "entrant": "Alfonso Carillo",
+    "game": "March Madness",
+    "year": "2017",
+    "prizes": "$1,889"
+  },
+  {
+    "rank": "9",
     "entrant": "Eric Bowman",
     "game": "NFL Battle the Bookies",
     "year": "2015",
     "prizes": "$1,786"
   },
   {
-    "rank": "8",
+    "rank": "10",
     "entrant": "Mike Marty",
     "game": "NFL Survivor",
     "year": "2014",
     "prizes": "$1,750"
-  },
-  {
-    "rank": "9",
-    "entrant": "Dan Goldman",
-    "game": "NBA CDL",
-    "year": "2015-16",
-    "prizes": "$1,720"
-  },
-  {
-    "rank": "10",
-    "entrant": "Kyle Luhr",
-    "game": "March Madness",
-    "year": "2013",
-    "prizes": "$1,593"
   }
 ]
