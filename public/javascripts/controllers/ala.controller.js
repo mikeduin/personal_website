@@ -125,6 +125,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   };
   $scope.getChampions16();
 
+  $scope.vm.champions17 = {};
+  $scope.getChampions17 = function() {
+    alaService.getChampions17().then(function(results){
+      $scope.vm.champions17 = results;
+    })
+  };
+  $scope.getChampions17();
+
   $scope.vm.titles = {};
   $scope.getTitles = function() {
     alaService.getTitles().then(function(results){
