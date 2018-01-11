@@ -202,29 +202,8 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/db',
       views: {
         'db@home.ala': {
-          templateUrl: 'views/ala/db/main.html',
-          controller: 'DbController',
-          controllerAs: 'vm'
-        }
-      }
-    })
-    .state('home.ala.db.add', {
-      url: '/add',
-      views: {
-        'add@home.ala.db': {
-          templateUrl: 'views/ala/db/add.html',
-          controller: 'DbController',
-          controllerAs: 'vm'
-        }
-      }
-    })
-    .state('home.ala.db.search', {
-      url: '/search',
-      views: {
-        'search@home.ala.db': {
-          templateUrl: 'views/ala/db/search.html',
-          controller: 'DbController',
-          controllerAs: 'vm'
+          templateUrL: 'views/ala/db.html'
+          controller: 'dbController'
         }
       }
     })
