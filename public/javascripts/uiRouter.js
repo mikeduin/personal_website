@@ -202,7 +202,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/db',
       views: {
         'db@home.ala': {
-          templateUrL: 'views/ala/db.html'
+          templateUrL: 'views/ala/db.html',
           controller: 'dbController'
         }
       }
