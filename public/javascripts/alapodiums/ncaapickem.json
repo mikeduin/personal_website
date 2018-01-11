@@ -1,5 +1,14 @@
 [
   {
+    "season": "2017",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$917.75",
+    "second_team": "Jason Gnich",
+    "second_owner": "$435",
+    "third_team": "Michael Israel",
+    "third_owner": "$156.67"
+  },
+  {
     "season": "2016",
     "first_team": "Dave Echenoz",
     "first_owner": "$560",
