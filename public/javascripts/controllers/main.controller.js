@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .controller('MainController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', '$window', MainController])
+  .controller('ArbController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', '$window', ArbController])
 
-function MainController ($scope, $state, $sce, $anchorScroll, $location, $timeout, $window){
+function ArbController ($scope, $state, $sce, $anchorScroll, $location, $timeout, $window){
   $scope.$state = $state;
   $scope.vm = {};
   $scope.expand = false;
