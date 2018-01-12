@@ -29,11 +29,11 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'header': {
           templateUrl: 'views/header.html',
-          controller: 'MainController'
+          controller: 'ArbController'
         },
         'content': {
           templateUrl: 'views/content.html',
-          controller: 'MainController'
+          controller: 'ArbController'
         }
       }
     })
@@ -59,7 +59,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'content@': {
           templateUrl: 'views/about.html',
-          controller: 'MainController'
+          controller: 'ArbController'
         }
       }
     })
