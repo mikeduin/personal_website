@@ -2,8 +2,8 @@
   {
     "type": "Career",
     "category": "Percentage of Pool Defeated",
-    "record": "77.63%",
-    "entrant": "Sean Shoemaker",
+    "record": "75.31%",
+    "entrant": "Marc Courtmanch",
     "season": "n/a"
   },
   {
@@ -19,5 +19,12 @@
     "record": "0.769",
     "entrant": "Joe Simich",
     "season": "2010-11"
+  },
+  {
+    "type": "Season",
+    "category": "Net Profit",
+    "record": "$500.00",
+    "entrant": "Marc Courtmanch",
+    "season": "2015-16"
   }
 ]
