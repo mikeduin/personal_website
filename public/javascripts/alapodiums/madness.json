@@ -1,5 +1,14 @@
 [
   {
+    "season": "2017",
+    "first_team": "Kevin Young",
+    "first_owner": "$3,778",
+    "second_team": "Alfonso Carillo",
+    "second_owner": "$1,889",
+    "third_team": "Scott Hitchcock",
+    "third_owner": "$1,054"
+  },
+  {
     "season": "2016",
     "first_team": "Scott Hitchcock",
     "first_owner": "$2,784",
