@@ -1,5 +1,6 @@
 angular
   .module('mySite', [
+    'dndLists',
     'ui.router',
     'zingchart-angularjs',
     'ui.bootstrap',
@@ -114,6 +115,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         'content@': {
           templateUrl: 'views/alapools.html',
           controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.alapools.worldcupbracket', {
+      url: '/worldcupbracket',
+      views: {
+        'worldcupbracket@home.alapools': {
+          templateUrl: 'views/ala/fifa/bracketpool/selections.html',
+          controller: 'WorldCupBracketController'
         }
       }
     })
