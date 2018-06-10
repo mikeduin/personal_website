@@ -9,20 +9,8 @@ function WorldCupBracketController ($scope, $state) {
   $scope.models = {
     selected: null,
     lists: {
-      "Group A": [
-        {
-          "label": "Russia"
-        },
-        {
-          "label": "Saudi Arabia"
-        },
-        {
-          "label": "Egypt"
-        },
-        {
-          "label": "Uruguay"
-        }
-      ]
+      "Group A": ["Russia", "Saudi Arabia", "Egypt", "Uruguay"],
+      "Group B": ["Portugal", "Morocco", "Spain", "Iran"]
     }
   };
 
