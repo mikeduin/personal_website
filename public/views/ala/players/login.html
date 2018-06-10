@@ -1,0 +1,46 @@
+<div class="row">
+  <regBack class="col-xs-9">
+    <loginBox class="col-xs-6 offset-xs-3 z-depth-2">
+      <div class="row">
+        <div class="col-xs-3">
+          <loginTitle> Login </loginTitle>
+        </div>
+        <regLink class="col m7 offset-m2">
+          First time here?
+          <a ui-sref="home.register">Click to create account.</a>
+        </regLink>
+      </div>
+      <div class="row">
+        <form class="col-xs-12" ng-submit="vm.logIn(user)">
+          <div class="row">
+            <div class="input-field col-xs-8 offset-xs-2">
+              <i class="fa fa-user prefix" aria-hidden="true"></i>
+              <input type="text" class="validate" ng-model="user.username">
+              <label for="username">Username</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col-xs-8 offset-xs-2">
+              <i class="fa fa-lock prefix" aria-hidden="true"></i>
+              <input type="password" class="validate" ng-model="user.password">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 center-align">
+              <error ng-show="vm.error"> {{vm.error}} </error>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 forgot">
+              <!-- <a ui-sref="home.forgotpw">Forgot password?</a> -->
+            </div>
+            <div class="col-xs-3 offset-xs-3">
+              <button type="submit" class=""> LOGIN </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </loginBox>
+  </regBack>
+</div>

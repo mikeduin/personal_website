@@ -235,6 +235,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.login', {
+      url: '/players/login',
+      views: {
+        'login@home.ala': {
+          templateUrl: 'views/ala/players/login.html',
+          controller: 'AuthController'
+        }
+      }
+    })
     .state('home.ala.photos', {
       url: '/photos',
       views: {

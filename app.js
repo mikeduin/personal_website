@@ -8,6 +8,7 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
+var passport = require('passport');
 require('dotenv').load();
 
 mongoose.connect(process.env.MONGOLAB_URI
@@ -36,6 +37,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+require('./config/passport.js');
 
 app.use('/', routes);
 app.use('/users', users);
