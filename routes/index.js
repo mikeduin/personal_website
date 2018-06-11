@@ -161,11 +161,16 @@ router.post('/poolRegister', function(req, res, next){
     knex.raw("UPDATE users SET " + alias + " = 1 WHERE username = '" + req.body.user + "'")
     .then(function(res){
       knex.raw("UPDATE pools SET entrants = entrants + 1 WHERE alias = '" + alias + "'")
-      // knex.raw("UPDATE " + alias + " SET " + alias + ".entrants = entrants + 1")
       .then(function(){
         console.log("entrants for ", alias, " have been incremented");
       })
     })
+  })
+})
+
+router.get('/checkPoolReg/:user/:alias', function(req, res, next){
+  knex.raw("SELECT " + req.params.alias + " from users WHERE username = '" + req.params.user + "'").then(function(result){
+    res.json(result);
   })
 })
 

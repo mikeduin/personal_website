@@ -16,6 +16,17 @@ function alaService ($http) {
         return result.data;
       })
     },
+    checkPoolReg: function(user, pool) {
+      return $http.get('/checkPoolReg/'+user+'/'+pool)
+      .then(function(result){
+        console.log('returned to service is ', result.data);
+        // if (result.data) {
+        //   return true
+        // } else {
+        //   return false
+        // };
+      })
+    },
     contactCommish: function(contactForm){
       return $http.post('/contactCommish', contactForm)
       .then(function(result){

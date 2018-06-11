@@ -123,8 +123,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'wc18bracket@home.ala': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18home.html',
-          controller: 'WCBracketController',
-          controllerAs: 'vm'
+          controller: 'WCBracketController'
         }
       }
     })
@@ -133,8 +132,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'groups@home.ala.wc18bracket': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18groups.html',
-          controller: 'WCBracketController',
-          controllerAs: 'vm'
+          controller: 'WCBracketController'
         }
       }
     })
@@ -143,8 +141,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'bracket@home.ala.wc18bracket': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18bracket.html',
-          controller: 'WCBracketController',
-          controllerAs: 'vm'
+          controller: 'WCBracketController'
         }
       }
     })
@@ -153,8 +150,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'standings@home.ala.wc18bracket': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18standings.html',
-          controller: 'WCBracketController',
-          controllerAs: 'vm'
+          controller: 'WCBracketController'
         }
       }
     })
@@ -163,8 +159,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'stats@home.ala.wc18bracket': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18stats.html',
-          controller: 'WCBracketController',
-          controllerAs: 'vm'
+          controller: 'WCBracketController'
         }
       }
     })
