@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', '$state', '$stateParams', AlaController])
+  .controller('AlaController', ['$scope', '$anchorScroll', '$location', 'alaService', 'authService', '$state', '$stateParams', AlaController])
 
-function AlaController ($scope, $anchorScroll, $location, alaService, $state, $stateParams) {
+function AlaController ($scope, $anchorScroll, $location, alaService, authService, $state, $stateParams) {
   $scope.$state = $state;
   $scope.vm = {};
   $scope.vm.sortOrder = '-date';
@@ -12,6 +12,36 @@ function AlaController ($scope, $anchorScroll, $location, alaService, $state, $s
   $scope.vm.blogtags = [];
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
+
+  $scope.vm.register = function(user) {
+    authService.register(user).error(function(error){
+      vm.error = error.message;
+    }).then(function(){
+      $state.go('home.ala.blog');
+    })
+  };
+
+  $scope.vm.logIn = function(user) {
+    console.log('gets to controller');
+    authService.logIn(user).error(function(error){
+      vm.error = error.message;
+      console.log(error)
+    }).then(function(){
+      $state.go('home.ala.blog');
+    })
+  };
+
+  $scope.vm.isLoggedIn = function(){
+    return authService.isLoggedIn();
+  }
+
+  $scope.vm.logOut = function(){
+    authService.logOut();
+  }
+
+  $scope.vm.currentUser = function(){
+    return authService.currentUser();
+  }
 
   $scope.$on('$stateChangeSuccess', function(){
     document.body.scrollTop = document.documentElement.scrollTop=0;

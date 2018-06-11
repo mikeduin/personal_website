@@ -16,6 +16,22 @@ alaHeader {
   border-bottom: solid 3px #3984C5;
 }
 
+alaLogin {
+  background-color: #CDCACA;
+  height: 30px;
+  border-bottom: solid 1px #A19E9E;
+}
+
+.full-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
 alaLead {
   font-weight: 800;
   color: white;
