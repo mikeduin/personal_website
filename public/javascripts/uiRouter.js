@@ -118,11 +118,47 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.ala.worldcupbracket', {
-      url: '/pools/worldcupbracket',
+    .state('home.ala.wc18bracket', {
+      url: '/pools/wc18bracket',
       views: {
         'wc18bracket@home.ala': {
-          templateUrl: 'views/ala/fifa/bracketpool/home.html',
+          templateUrl: 'views/ala/fifa/bracketpool/wc18home.html',
+          controller: 'WorldCupBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.groups', {
+      url: '/groups',
+      views: {
+        'groups@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18groups.html',
+          controller: 'WorldCupBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.bracket', {
+      url: '/bracket',
+      views: {
+        'bracket@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18bracket.html',
+          controller: 'WorldCupBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.standings', {
+      url: '/standings',
+      views: {
+        'standings@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18standings.html',
+          controller: 'WorldCupBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.stats', {
+      url: '/stats',
+      views: {
+        'stats@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18stats.html',
           controller: 'WorldCupBracketController'
         }
       }

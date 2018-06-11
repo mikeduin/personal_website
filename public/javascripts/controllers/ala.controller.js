@@ -55,7 +55,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.retrievePools = function() {
     alaService.retrievePools().then(function(res){
       $scope.vm.pools = res;
-      console.log($scope.vm.pools);
     })
   }
 
