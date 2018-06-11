@@ -28,8 +28,8 @@
     </alaLinks>
 </alaHeader>
 <alaLogin class="col-xs-12 full-center">
-  <span ng-show="vm.isLoggedIn() !== false">Welcome, <a class="pointer" ui-sref="home.ala.user({username: vm.currentUser()})">{{ vm.currentUser() }}</a> | <a class="pointer" ng-click="vm.logOut()">Logout</a></span>
-  <span ng-show="vm.isLoggedIn() == false"><a ui-sref="home.ala.login">Login</a> to your ALA account for access to pools, stats, and more</span>
+  <b><span ng-show="vm.isLoggedIn() !== false">Welcome, <a class="pointer" ui-sref="home.ala.user({username: vm.currentUser()})">{{ vm.currentUser() }}</a>  <span class="mid-bar">|</span>  <a class="logout" ng-click="vm.logOut()">logout</a></span>
+  <span ng-show="vm.isLoggedIn() == false"><a ui-sref="home.ala.login">Login</a> to your ALA account for access to pools, stats, and more</span></b>
 </alaLogin>
 
 <alaSidebar class="col-xs-3 col-md-2"/>
