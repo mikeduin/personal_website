@@ -377,7 +377,7 @@ buyins prizeDiv {
   margin-bottom: 3.125vw;
 }
 
-.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star, .fa-camera, .fa-envelope {
+.fa-microphone, .fa-database, .fa-credit-card, .fa-trophy, .fa-star, .fa-camera, .fa-envelope, .fas {
   color: #C5C6C7;
 }
 
@@ -644,6 +644,22 @@ filter {
 .res-grid {
   margin-top: 10px;
   margin-left: 1%;
+}
+
+/* Userpage Styles */
+user div p {
+    font-size: 4vw;
+    font-weight: 800;
+    color: #3984C5;
+}
+
+.user-header {
+  padding: 0 10px;
+}
+
+loginReq div {
+  font-size: 2vw;
+  margin-top: 50px;
 }
 
 /* FIFA World Cup Bracket Styles */

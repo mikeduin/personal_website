@@ -1,5 +1,21 @@
-<div class="row">
-  <div class="col-xs-9">
-    This is the user page
-  </div>
+<div ng-show="vm.isLoggedIn() !== false" class="col-xs-9 col-md-10">
+  <user class="col-xs-12">
+    <div class="text-center">
+      <hr style="margin-bottom: -5px;" class="col-xs-4 col-xs-offset-4">
+      <div class="col-xs-12">
+        <p style="margin-bottom: -20px">
+          <i class="fas fa-basketball-ball" aria-hidden="true"></i>
+          <span class="user-header">{{ vm.currentUser() }}'s Games</span>
+          <i class="fas fa-baseball-ball" aria-hidden="true"></i>
+        </p>
+      </div>
+      <hr class="col-xs-4 col-xs-offset-4">
+    </div>
+  </user>
 </div>
+
+<loginReq ng-show="vm.isLoggedIn() == false" class="text-center col-xs-9 col-md-10">
+  <div>
+    Please <a ui-sref="home.ala.login">Login</a> to view this page.
+  </div>
+</loginReq>

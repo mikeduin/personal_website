@@ -249,8 +249,7 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'user@home.ala': {
           templateUrl: 'views/ala/players/user.html',
-          controller: 'AlaController',
-          controllerAs: 'vm'
+          controller: 'AlaController'
         }
       }
     })
