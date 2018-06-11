@@ -6,6 +6,7 @@
     <thead>
       <tr>
         <th>Pool Name</th>
+        <th>Entry Deadline</th>
         <th>Buy-in</th>
         <th></th>
       </tr>
@@ -13,8 +14,10 @@
     <tbody>
       <tr ng-repeat="pool in vm.pools">
         <td>{{pool.name}}</td>
+        <td>{{pool.start_time | date:'EEEE, MMM d, h:mm a'}}</td>
         <td>${{pool.buyin}}</td>
-        <td class="btn btn-default">REGISTER</td>
+        <td ng-show="vm.isLoggedIn() !== false" class="btn btn-default" ng-click="vm.register(pool, vm.currentUser())">REGISTER</td>
+        <td ng-show="vm.isLoggedIn() == false"><a ui-sref="home.ala.login">Login</a> to register.</td>
       </tr>
     </tbody>
   </table>

@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-var knex = require('../db/knex')
+var knex = require('../db/knex');
+var getGroups = require('../modules/wc18groups.js');
 
 function Pools () {
   return knex('pools')
+};
+
+function WC18Bracket () {
+  return knex('wc18bracket')
 };
 
 /* GET home page. */
@@ -135,10 +140,25 @@ router.delete('/beers', function (req, res, next) {
 
 router.get('/retrievePools', function(req, res, next){
   Pools().then(function(results){
-    console.log('results in app are ', results);
     res.json(results);
   })
 });
+
+router.post('/poolRegister', function(req, res, next){
+  var alias = req.body.pool.alias;
+  var groups = getGroups.getGroups();
+
+  console.log(groups);
+
+  knex(alias).insert({
+    username: req.body.user,
+    groupSelections: groups,
+    modified: new Date()
+  }, '*').then(function(res){
+    console.log('we get here')
+    console.log(res);
+  })
+})
 
 router.post('/contactCommish', function(req, res, next){
   var transporter = nodemailer.createTransport({

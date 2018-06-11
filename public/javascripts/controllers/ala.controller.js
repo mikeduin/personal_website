@@ -12,7 +12,10 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.blogtags = [];
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
-  // $scope.vm.pools = [];
+
+  // $(document).ready(function(){
+  //   $('.modal').modal();
+  // });
 
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
@@ -47,11 +50,43 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     document.body.scrollTop = document.documentElement.scrollTop=0;
   })
 
+  // Pool Page Logic
+
   $scope.vm.retrievePools = function() {
     alaService.retrievePools().then(function(res){
       $scope.vm.pools = res;
     })
   }
+
+  // $scope.vm.openModal = function(pool){
+  //   $scope.vm.activePool = {
+  //     name: pool.name,
+  //     buyin: pool.buyin,
+  //     start_time: pool.start_time
+  //   };
+  //
+  //   $('#poolConfirm').modal('show');
+  // }
+  //
+  // $scope.vm.closeModal = function() {
+  //   $scope.vm.activePool = {};
+  //   $('#poolConfirm').modal('hide');
+  // }
+
+  $scope.vm.register = function (pool, user) {
+    var data = {
+      pool: pool,
+      user: user
+    };
+
+    alaService.poolRegister(data).then(function(res){
+      console.log(res);
+    })
+    // console.log(pool);
+    // console.log(user);
+  }
+
+  // Main Page Logic
 
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;

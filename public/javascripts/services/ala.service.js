@@ -7,14 +7,19 @@ function alaService ($http) {
     retrievePools: function(){
       return $http.get('/retrievePools')
       .then(function(results){
-        console.log('results in service are ', results);
-        return results.data
+        return results.data;
+      })
+    },
+    poolRegister: function(data) {
+      return $http.post('/poolRegister', data)
+      .then(function(result){
+        return result.data;
       })
     },
     contactCommish: function(contactForm){
       return $http.post('/contactCommish', contactForm)
       .then(function(result){
-        return result.data
+        return result.data;
       })
     },
     getChampions15: function() {
