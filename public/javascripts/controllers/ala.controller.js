@@ -58,20 +58,25 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     })
   }
 
-  // $scope.vm.openModal = function(pool){
-  //   $scope.vm.activePool = {
-  //     name: pool.name,
-  //     buyin: pool.buyin,
-  //     start_time: pool.start_time
-  //   };
+  // $scope.vm.checkUserStatus = function(pool) {
+  //   var user = $scope.vm.currentUser();
+  //   // 0 = Not logged in
+  //   // 1 = Logged in, not registered
+  //   // 2 = Logged in + registered
+  //   if (!$scope.vm.isLoggedIn()) {
+  //     return 0
+  //   } else {
+  //     if (isRegistered(user, pool)) {
+  //       return 2
+  //     } else {
+  //       return 1
+  //     }
+  //   }
+  // };
   //
-  //   $('#poolConfirm').modal('show');
-  // }
-  //
-  // $scope.vm.closeModal = function() {
-  //   $scope.vm.activePool = {};
-  //   $('#poolConfirm').modal('hide');
-  // }
+  // var isRegistered = function (user, pool) {
+  //   return alaService.checkPoolReg(user, pool);
+  // };
 
   $scope.vm.register = function (pool, user) {
     var data = {

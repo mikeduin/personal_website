@@ -1,34 +1,45 @@
 angular
   .module('mySite')
-  .controller('WCBracketController', ['$state', 'authService', 'WCBracketService', WCBracketController])
+  .controller('WCBracketController', ['$scope', '$state', 'authService', 'WCBracketService', WCBracketController])
 
-function WCBracketController ($state, authService, WCBracketService) {
-  var vm = this;
+function WCBracketController ($scope, $state, authService, WCBracketService) {
 
-  vm.isLoggedIn = function(){
+  $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
   };
 
-  vm.logOut = function(){
+  $scope.vm.logOut = function(){
     authService.logOut();
   };
 
-  vm.currentUser = function(){
+  $scope.vm.currentUser = function(){
     return authService.currentUser();
   };
 
-  // vm.isRegistered = function(){
+  // $scope.vm.isRegistered = function(){
   //
   // }
 
-  (vm.loadPicks = function(){
-    var user = vm.currentUser();
+  ($scope.vm.loadPicks = function(){
+    var user = $scope.vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
-      vm.models = userData[0].groupSelections[0];
-      // vm.models = res;
-      console.log(vm.models);
+      $scope.vm.models = userData[0].groupSelections[0];
+      // $scope.vm.models = res;
+      console.log($scope.vm.models);
     })
   })();
+
+  $scope.vm.moveUp = function(group, $index, team) {
+    $scope.vm.models.groups[group].splice($index, 1);
+    $scope.vm.models.groups[group].splice($index-1, 0, team);
+    // console.log($scope.vm.models);
+  }
+
+  $scope.vm.moveDown = function(group, $index, team) {
+    $scope.vm.models.groups[group].splice($index, 1);
+    $scope.vm.models.groups[group].splice($index+1, 0, team);
+  }
+
 
   // $scope.models = {
   //   selected: null,

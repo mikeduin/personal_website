@@ -672,6 +672,10 @@ loginReq div {
   margin: 20px 0px;
 }
 
+.group-grid {
+  margin-top: 30px;
+}
+
 /**
  * The dnd-list should always have a min-height,
  * otherwise you can't drop to it once it's empty
