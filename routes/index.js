@@ -12,6 +12,10 @@ function WC18Bracket () {
   return knex('wc18bracket')
 };
 
+function Users () {
+  return knex('users')
+};
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.redirect('index.html');
@@ -148,15 +152,20 @@ router.post('/poolRegister', function(req, res, next){
   var alias = req.body.pool.alias;
   var groups = getGroups.getGroups();
 
-  console.log(groups);
-
   knex(alias).insert({
     username: req.body.user,
     groupSelections: groups,
     modified: new Date()
   }, '*').then(function(res){
-    console.log('we get here')
-    console.log(res);
+    console.log(res[0].username, ' has been registered for ', alias);
+    knex.raw("UPDATE users SET " + alias + " = 1 WHERE username = '" + req.body.user + "'")
+    .then(function(res){
+      knex.raw("UPDATE pools SET entrants = entrants + 1 WHERE alias = '" + alias + "'")
+      // knex.raw("UPDATE " + alias + " SET " + alias + ".entrants = entrants + 1")
+      .then(function(){
+        console.log("entrants for ", alias, " have been incremented");
+      })
+    })
   })
 })
 
