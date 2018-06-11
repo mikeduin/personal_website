@@ -27,6 +27,7 @@ db.once('open', function() {
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var db = require('./routes/db');
+var wcbracket = require('./routes/wcbracket');
 
 var app = express();
 
@@ -43,6 +44,7 @@ require('./config/passport.js');
 app.use('/', routes);
 app.use('/users', users);
 app.use('/db', db);
+app.use('/wcbracket', wcbracket);
 app.use('/nba-all-star-api', function(req, res, next){
   res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })
