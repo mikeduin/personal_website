@@ -56,6 +56,14 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     })
   };
 
+  $scope.vm.clearBracketPicks = function(){
+    for (var i=0; i<$scope.vm.bracketPicks.length; i++){
+      $scope.vm.bracketPicks[i] = null;
+    };
+    $scope.vm.consOne = null;
+    $scope.vm.consTwo = null;
+  };
+
   $scope.vm.checkAdvance = function(round, team) {
     if (round == 1) {
       for (i=8; i<$scope.vm.bracketPicks.length; i++) {

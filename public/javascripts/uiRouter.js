@@ -127,6 +127,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.wc18bracket.howtoplay', {
+      url: '/howtoplay',
+      views: {
+        'howtoplay@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18howtoplay.html',
+          controller: 'WCBracketController'
+        }
+      }
+    })
     .state('home.ala.wc18bracket.groups', {
       url: '/groups',
       views: {
@@ -159,6 +168,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'stats@home.ala.wc18bracket': {
           templateUrl: 'views/ala/fifa/bracketpool/wc18stats.html',
+          controller: 'WCBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.results', {
+      url: '/results',
+      views: {
+        'results@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18results.html',
           controller: 'WCBracketController'
         }
       }
