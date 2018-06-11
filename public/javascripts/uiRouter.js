@@ -118,11 +118,11 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.alapools.worldcupbracket', {
-      url: '/worldcupbracket',
+    .state('home.ala.worldcupbracket', {
+      url: '/pools/worldcupbracket',
       views: {
-        'worldcupbracket@home.alapools': {
-          templateUrl: 'views/ala/fifa/bracketpool/selections.html',
+        'wc18bracket@home.ala': {
+          templateUrl: 'views/ala/fifa/bracketpool/home.html',
           controller: 'WorldCupBracketController'
         }
       }

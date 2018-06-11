@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="pool in vm.pools">
-        <td>{{pool.name}}</td>
+        <td><a ui-sref="{{pool.homepage}}">{{pool.name}}</a></td>
         <td>{{pool.start_time | date:'EEEE, MMM d, h:mm a'}}</td>
         <td>${{pool.buyin}}</td>
         <td ng-show="vm.isLoggedIn() !== false" class="btn btn-default" ng-click="vm.register(pool, vm.currentUser())">REGISTER</td>
