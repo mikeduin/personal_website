@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="row submit-buttons">
-    <button ng-class="{disabled: vm.models == vm.original}" class="btn btn-default">RESET PICKS</button>
-    <button ng-click="vm.saveGroupPicks()" ng-class="{disabled: vm.models == vm.original}" class="btn btn-default">SAVE PICKS</button>
+    <button ng-class="{'disabled': vm.models === vm.original}" class="btn btn-default">RESET PICKS</button>
+    <button ng-click="vm.saveGroupPicks()" ng-class="{'disabled': vm.models === vm.original}" class="btn btn-default">SAVE PICKS</button>
   </div>
   <div class="row">
     <div class="group-grid" ui-sortable ng-model="vm.models.groups">

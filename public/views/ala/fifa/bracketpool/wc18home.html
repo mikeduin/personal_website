@@ -9,8 +9,8 @@
   </div>
   <hr class="col-xs-4 col-xs-offset-4">
   <tabs class="col-xs-12">
-    <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket')}">
-      <a ui-sref="home.ala.wc18bracket" >
+    <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.howtoplay')}">
+      <a ui-sref="home.ala.wc18bracket.howtoplay" >
         How to Play
       </a>
     </div>
@@ -35,13 +35,14 @@
       </a>
     </div>
     <div class="col-xs-2">
-      <a ui-sref="">
+      <a ui-sref="home.ala.wc18bracket.results">
         Results
       </a>
     </div>
   </tabs>
 </pool>
 
+<div ui-view="howtoplay"></div>
 <div ui-view="groups"></div>
 <div ui-view="bracket"></div>
 <div ui-view="standings"></div>
