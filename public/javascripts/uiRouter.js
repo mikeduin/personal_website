@@ -240,7 +240,17 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       views: {
         'login@home.ala': {
           templateUrl: 'views/ala/players/login.html',
-          controller: 'AuthController'
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.user', {
+      url: '/players/:username',
+      views: {
+        'user@home.ala': {
+          templateUrl: 'views/ala/players/user.html',
+          controller: 'AlaController',
+          controllerAs: 'vm'
         }
       }
     })
