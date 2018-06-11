@@ -39,24 +39,48 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     })
   };
 
-  $scope.vm.bracketPicks = {
-    'r16g1': null,
-    'r16g2': null,
-    'r16g3': null,
-    'r16g4': null,
-    'r16g5': null,
-    'r16g6': null,
-    'r16g7': null,
-    'r16g8': null,
-    'r8g1': null,
-    'r8g2': null,
-    'r8g3': null,
-    'r8g4': null,
-    'r4g1': null,
-    'r4g2': null,
-    'final': null,
-    'consolation': null
-  }
+  // $scope.vm.bracketPicks = {
+  //   'r16g1': null,
+  //   'r16g2': null,
+  //   'r16g3': null,
+  //   'r16g4': null,
+  //   'r16g5': null,
+  //   'r16g6': null,
+  //   'r16g7': null,
+  //   'r16g8': null,
+  //   'r8g1': null,
+  //   'r8g2': null,
+  //   'r8g3': null,
+  //   'r8g4': null,
+  //   'r4g1': null,
+  //   'r4g2': null,
+  //   'final': null,
+  //   'consolation': null
+  // }
+
+  $scope.vm.bracketPicks = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+
+  $scope.vm.checkAdvance = function(round, team) {
+    if (round == 1) {
+      for (i=8; i<$scope.vm.bracketPicks.length; i++) {
+        if ($scope.vm.bracketPicks[i] == team) {
+          $scope.vm.bracketPicks[i] = null;
+        };
+      };
+    } else if (round == 2) {
+      for (i=12; i<$scope.vm.bracketPicks.length; i++) {
+        if ($scope.vm.bracketPicks[i] == team) {
+          $scope.vm.bracketPicks[i] = null;
+        };
+      };
+    } else if (round == 3) {
+        for (i=14; i<$scope.vm.bracketPicks.length; i++) {
+          if ($scope.vm.bracketPicks[i] == team) {
+            $scope.vm.bracketPicks[i] = null
+          }
+        }
+      }
+    };
 
   $scope.vm.moveUp = function(group, $index, team) {
     $scope.vm.models.groups[group].splice($index, 1);

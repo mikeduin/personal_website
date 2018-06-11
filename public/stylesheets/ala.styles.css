@@ -711,7 +711,7 @@ main {
 .round {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   width: 200px;
   list-style: none;
   padding: 0;
@@ -774,4 +774,31 @@ li.game-bottom-label {
 li.game-spacer {
   border-right: 1px solid #aaa;
   min-height: 40px;
+}
+
+consolation {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  position: absolute;
+  top: 875px;
+  right: 30%;
+  width: 30%;
+}
+
+conslation .round {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+}
+
+consolation li {
+  list-style: none;
+}
+
+consolation li.game-spacer {
+  min-height: 80px;
 }
