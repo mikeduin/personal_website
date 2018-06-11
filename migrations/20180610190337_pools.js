@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     t.string('name');
     t.string('alias');
     t.string('buyin');
-    t.integer('entrants');
+    t.integer('entrants').defaultTo(0);
     t.timestamp('start_time');
     t.timestamp('end_time');
     t.string('homepage');

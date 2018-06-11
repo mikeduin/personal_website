@@ -17,6 +17,10 @@ function WCBracketController ($state, authService, WCBracketService) {
     return authService.currentUser();
   };
 
+  // vm.isRegistered = function(){
+  //
+  // }
+
   (vm.loadPicks = function(){
     var user = vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
