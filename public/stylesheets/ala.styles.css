@@ -700,6 +700,35 @@ loginReq div {
   font-size: 8px;
 }
 
+/* .wc18-header {
+  margin: 25px;
+  font-size:
+} */
+
+pool div p {
+  font-size: 4vw;
+  font-weight: 800;
+  color: white;
+  background-color: #3984C5;
+  border-top: solid 5px black;
+  border-bottom: solid 5px black;
+}
+
+pool div a {
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+tabs {
+  margin-top: -22px;
+}
+
+tabs div {
+  border: solid 1px #CDCACA;
+  padding: 5px;
+  background-color: #E3DFDF;
+}
+
 /*
  *  Flex Layout Specifics
 */
