@@ -5,13 +5,15 @@
     <alaLinks class="row">
       <div class="col-xs-offset-3">
         <div uib-dropdown style="display: inline; margin-left: 5%;">
-          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.about') || $state.includes('home.ala.buyins')}">About + How to Play <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.about') || $state.includes('home.ala.buyins') || $state.includes('home.ala.photos')}">About + How to Play <i class="fa fa-caret-down" aria-hidden="true"></i></a>
             <ul uib-dropdown-menu class="dropdown-styles">
               <li><a ui-sref="home.ala.about" style="margin-left: 0px">What is A Level Above?</a></li>
               <li><a ui-sref="home.ala.buyins" style="margin-left: 0px">Buy-ins + Prizes Explained</a></li>
+              <li><a ui-sref="home.ala.photos" style="margin-left: 0px">Photos</a></li>
             </ul>
         </div>
         <a ui-sref="home.ala.blog.main" ng-class="{activeLink: $state.includes('home.ala.blog')}"> Blog</a>
+        <a ui-sref="home.ala.pools" ng-class="{activeLink: $state.includes('home.ala.pools')}">Pools</a>
         <div uib-dropdown style="display: inline">
           <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.careerdata') || $state.includes('home.ala.leaders') || $state.includes('home.ala.champions') || $state.includes('home.ala.balances')}">Players <i class="fa fa-caret-down" aria-hidden="true"></i></a>
             <ul uib-dropdown-menu class="dropdown-styles">
@@ -21,7 +23,6 @@
               <li><a ui-sref="home.ala.balances" style="margin-left: 0px">Current Balances</a></li>
             </ul>
         </div>
-        <a ui-sref="home.ala.photos" ng-class="{activeLink: $state.includes('home.ala.photos')}">Photos</a>
         <a ui-sref="home.ala.contact" ng-class="{activeLink: $state.includes('home.ala.contact')}">Contact</a>
       </div>
     </alaLinks>
@@ -162,5 +163,6 @@
 <divView ui-view="ncaapickem"> </divView>
 <divView ui-view="pga"> </divView>
 <divView ui-view="photos"> </divView>
+<divView ui-view="pools"> </divView>
 <divView ui-view="survivor"> </divView>
 <divView ui-view="user"> </divView>

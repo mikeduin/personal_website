@@ -12,6 +12,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.blogtags = [];
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
+  // $scope.vm.pools = [];
 
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
@@ -45,6 +46,12 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.$on('$stateChangeSuccess', function(){
     document.body.scrollTop = document.documentElement.scrollTop=0;
   })
+
+  $scope.vm.retrievePools = function() {
+    alaService.retrievePools().then(function(res){
+      $scope.vm.pools = res;
+    })
+  }
 
   $scope.showFantasyNBA = false;
   $scope.showAlaHoops = false;

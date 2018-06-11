@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var knex = require('../db/knex')
+
+function Pools () {
+  return knex('pools')
+};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -127,6 +132,13 @@ router.delete('/beers', function (req, res, next) {
 
 // END BEER ROUTES
 // BEGIN ALA ROUTES
+
+router.get('/retrievePools', function(req, res, next){
+  Pools().then(function(results){
+    console.log('results in app are ', results);
+    res.json(results);
+  })
+});
 
 router.post('/contactCommish', function(req, res, next){
   var transporter = nodemailer.createTransport({
