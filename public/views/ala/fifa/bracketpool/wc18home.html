@@ -1,0 +1,27 @@
+<div class="col-xs-9 col-md-10 text-center">
+  <div class="wc-banner">
+    World Cup 2018: Bracket Pool
+  </div>
+  <div class="col-xs-12">
+    <a class="col-xs-2 col-xs-offset-1" ui-sref="home.ala.wc18bracket">
+      How to Play
+    </a>
+    <a class="col-xs-2" ui-sref="home.ala.wc18bracket.groups">
+      Group Stage
+    </a>
+    <a class="col-xs-2" ui-sref="home.ala.wc18bracket.bracket">
+      Bracket Stage
+    </a>
+    <a class="col-xs-2" ui-sref="home.ala.wc18bracket.standings">
+      Standings
+    </a>
+    <a class="col-xs-2" ui-sref="home.ala.wc18bracket.stats">
+      Pool Stats
+    </a>
+  </div>
+</div>
+
+<div ui-view="groups"></div>
+<div ui-view="bracket"></div>
+<div ui-view="standings"></div>
+<div ui-view="stats"></div>
