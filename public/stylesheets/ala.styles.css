@@ -28,8 +28,13 @@ alaLogin {
   justify-content: center;
 }
 
-.cursor {
+.logout {
+  color: #DA562E;
   cursor: pointer;
+}
+
+.mid-bar {
+  margin: 5px;
 }
 
 alaLead {
@@ -669,8 +674,24 @@ loginReq div {
 }
 
 .page-intro {
-  margin: 25px;
+  margin: 15px 10px 15px 10px;
   padding: 0 5%;
+}
+
+.group-grid {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.group-grid table {
+  margin-left: 20%;
+}
+
+.group-grid table th {
+  background-color: #3D85C3;
+  color: white;
 }
 
 .group-table {
@@ -700,11 +721,6 @@ loginReq div {
   font-size: 8px;
 }
 
-/* .wc18-header {
-  margin: 25px;
-  font-size:
-} */
-
 pool div p {
   font-size: 4vw;
   font-weight: 800;
@@ -727,6 +743,32 @@ tabs div {
   border: solid 1px #CDCACA;
   padding: 5px;
   background-color: #E3DFDF;
+}
+
+.active-pool-tab {
+  background-color: #3D85C3;
+}
+
+.active-pool-tab a {
+  color: white;
+}
+
+.fa-arrow-up, .fa-arrow-down {
+  cursor: pointer;
+}
+
+.fa-arrow-up {
+  color: #368623;
+}
+
+.fa-arrow-down {
+  color: #E3302C;
+}
+
+.submit-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 /*
