@@ -1,106 +1,106 @@
-<div class="col-xs-9 col-md-10">
+<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks()">
   <div class="row">
     <div class="col-xs-12 page-intro">
       After making your Group Stage picks, fill out your bracket here.
     </div>
   </div>
   <bracket class="row">
-    <h1>2013 NCAA Tournament - Midwest Bracket</h1>
+    <!-- <h1>2013 NCAA Tournament - Midwest Bracket</h1> -->
     <main id="tournament">
     	<ul class="round round-1">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Lousville <span>79</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g1'] = vm.models.groups['A'][0]">{{vm.models.groups['A'][0]}}<span>79</span></li>
         <li class="game game-top-label">Group A Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">NC A&T <span>48</span></li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g1'] = vm.models.groups['B'][1]">{{vm.models.groups['B'][1]}} <span>48</span></li>
         <li class="game game-bottom-label">Group B Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Colo St <span>84</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g2'] = vm.models.groups['C'][0]">{{vm.models.groups['C'][0]}} <span>84</span></li>
         <li class="game game-top-label">Group C Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">Missouri <span>72</span></li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g2'] = vm.models.groups['D'][1]">{{vm.models.groups['D'][1]}} <span>72</span></li>
         <li class="game game-bottom-label">Group D Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top ">Oklahoma St <span>55</span></li>
+    		<li class="game game-top" ng-click="vm.bracketPicks['r16g3'] = vm.models.groups['E'][0]">{{vm.models.groups['E'][0]}}<span>55</span></li>
         <li class="game game-top-label">Group E Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">Oregon <span>68</span></li>
+    		<li class="game game-bottom winner" ng-click="vm.bracketPicks['r16g3'] = vm.models.groups['F'][1]">{{vm.models.groups['F'][1]}} <span>68</span></li>
         <li class="game game-bottom-label">Group F Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Saint Louis <span>64</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g4'] = vm.models.groups['G'][0]">{{vm.models.groups['G'][0]}} <span>64</span></li>
         <li class="game game-top-label">Group G Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">New Mexico St <span>44</span></li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g4'] = vm.models.groups['H'][1]">{{vm.models.groups['H'][1]}} <span>44</span></li>
         <li class="game game-bottom-label">Group H Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Memphis <span>54</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g5'] = vm.models.groups['B'][0]">{{vm.models.groups['B'][0]}} <span>54</span></li>
         <li class="game game-top-label">Group B Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">St Mary's <span>52</span></li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g5'] = vm.models.groups['A'][1]">{{vm.models.groups['A'][1]}} <span>52</span></li>
         <li class="game game-bottom-label">Group A Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Mich St <span>65</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g6'] = vm.models.groups['D'][0]">{{vm.models.groups['D'][0]}} <span>65</span></li>
         <li class="game game-top-label">Group D Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">Valparaiso <span>54</span></li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g6'] = vm.models.groups['C'][1]">{{vm.models.groups['C'][1]}} <span>54</span></li>
         <li class="game game-bottom-label">Group C Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Creighton <span>67</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g7'] = vm.models.groups['F'][0]">{{vm.models.groups['F'][0]}} <span>67</span></li>
         <li class="game game-top-label">Group F Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">Cincinnati <span>63</span></li>
+    		<li class="game game-spacer" ng-click="vm.bracketPicks['r16g7'] = vm.models.groups['E'][1]">&nbsp;</li>
+    		<li class="game game-bottom">{{vm.models.groups['E'][1]}} <span>63</span></li>
         <li class="game game-bottom-label">Group E Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Duke <span>73</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r16g8'] = vm.models.groups['H'][0]">{{vm.models.groups['H'][0]}} <span>73</span></li>
         <li class="game game-top-label">Group H Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">Albany <span>61</span></li>
-        <li class="game game-bottom-label">Group G Winner</li>
+    		<li class="game game-bottom" ng-click="vm.bracketPicks['r16g8'] = vm.models.groups['G'][1]">{{vm.models.groups['G'][1]}} <span>61</span></li>
+        <li class="game game-bottom-label">Group G Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
     	</ul>
     	<ul class="round round-2">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Lousville <span>82</span></li>
+    		<li class="game game-top winner" ng-click="vm.bracketPicks['r8g1'] = vm.bracketPicks['r16g1']"> {{vm.bracketPicks['r16g1']}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom">Colo St <span>56</span></li>
+    		<li class="game game-bottom"> {{vm.bracketPicks['r16g2']}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Oregon <span>74</span></li>
+    		<li class="game game-top winner"> {{vm.bracketPicks['r16g3']}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">Saint Louis <span>57</span></li>
+    		<li class="game game-bottom "> {{vm.bracketPicks['r16g4']}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top ">Memphis <span>48</span></li>
+    		<li class="game game-top"> {{vm.bracketPicks['r16g5']}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">Mich St <span>70</span></li>
+    		<li class="game game-bottom winner"> {{vm.bracketPicks['r16g6']}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top ">Creighton <span>50</span></li>
+    		<li class="game game-top"> {{vm.bracketPicks['r16g7']}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">Duke <span>66</span></li>
+    		<li class="game game-bottom winner"> {{vm.bracketPicks['r16g8']}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
@@ -108,16 +108,16 @@
     	<ul class="round round-3">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Lousville <span>77</span></li>
+    		<li class="game game-top winner"> {{vm.bracketPicks['r8g1']}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">Oregon <span>69</span></li>
+    		<li class="game game-bottom "> <span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top ">Mich St <span>61</span></li>
+    		<li class="game game-top"> <span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">Duke <span>71</span></li>
+    		<li class="game game-bottom winner"> <span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
@@ -125,9 +125,9 @@
     	<ul class="round round-4">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top winner">Lousville <span>85</span></li>
+    		<li class="game game-top winner"> <span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">Duke <span>63</span></li>
+    		<li class="game game-bottom "> <span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>

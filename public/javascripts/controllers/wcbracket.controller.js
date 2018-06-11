@@ -39,6 +39,25 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     })
   };
 
+  $scope.vm.bracketPicks = {
+    'r16g1': null,
+    'r16g2': null,
+    'r16g3': null,
+    'r16g4': null,
+    'r16g5': null,
+    'r16g6': null,
+    'r16g7': null,
+    'r16g8': null,
+    'r8g1': null,
+    'r8g2': null,
+    'r8g3': null,
+    'r8g4': null,
+    'r4g1': null,
+    'r4g2': null,
+    'final': null,
+    'consolation': null
+  }
+
   $scope.vm.moveUp = function(group, $index, team) {
     $scope.vm.models.groups[group].splice($index, 1);
     $scope.vm.models.groups[group].splice($index-1, 0, team);
