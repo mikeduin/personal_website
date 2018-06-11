@@ -668,7 +668,39 @@ loginReq div {
 }
 
 .fa-door-open {
+  font-size: 3vw;
   margin: 20px;
+}
+
+.modal-banner {
+  border-bottom: solid 3px black;
+  border-top: solid 3px black;
+  color: white;
+  font-weight: 800px;
+  background-color: #3D85C3;
+}
+
+.modal-center {
+  margin-top: 20px;
+}
+
+.reg-row {
+  margin: 20px 0 20px 0;
+}
+
+/* Pool page styles */
+
+upcoming blog p {
+  font-size: 5vw;
+}
+
+.fa-calendar-alt {
+  margin-right: 20px;
+}
+
+.pool-table tbody tr td:nth-child(1){
+  font-weight: 600;
+  font-size: 18px;
 }
 
 /* FIFA World Cup Bracket Styles */
