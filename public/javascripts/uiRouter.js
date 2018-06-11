@@ -109,11 +109,11 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.alapools', {
-      url: 'alevelabove/pools',
+    .state('home.ala.pools', {
+      url: '/pools',
       views: {
-        'content@': {
-          templateUrl: 'views/alapools.html',
+        'pools@home.ala': {
+          templateUrl: 'views/ala/pools.html',
           controller: 'AlaController'
         }
       }

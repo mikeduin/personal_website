@@ -4,6 +4,13 @@ angular
 
 function alaService ($http) {
   return {
+    retrievePools: function(){
+      return $http.get('/retrievePools')
+      .then(function(results){
+        console.log('results in service are ', results);
+        return results.data
+      })
+    },
     contactCommish: function(contactForm){
       return $http.post('/contactCommish', contactForm)
       .then(function(result){
