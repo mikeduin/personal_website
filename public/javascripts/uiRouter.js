@@ -1,9 +1,10 @@
 angular
   .module('mySite', [
     'dndLists',
+    'ui.bootstrap',
+    'ui.bootstrap.modal',
     'ui.router',
     'zingchart-angularjs',
-    'ui.bootstrap',
     'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
     $anchorScroll.yOffset = 100;
@@ -20,6 +21,25 @@ angular
   .config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode(true);
   }])
+  .config(function($stateProvider, modalStateProvider, $urlRouterProvider) {
+    $stateProvider.state('main', {
+        url: '',
+        templateUrl: 'main.html',
+        controller: function($scope, $state) {
+            $scope.$state = $state;
+        }
+    });
+    $urlRouterProvider.otherwise('');
+
+    modalStateProvider.state('home.ala.login', {
+        url: '/modal1',
+        templateUrl: 'views/modal1.html'
+    });
+    modalStateProvider.state('main.modal1.modal2', {
+        url: '/modal2',
+        templateUrl: 'modal2.html'
+    });
+  })
 
 function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
@@ -289,15 +309,39 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.ala.login', {
-      url: '/players/login',
-      views: {
-        'login@home.ala': {
-          templateUrl: 'views/ala/players/login.html',
-          controller: 'AlaController'
-        }
-      }
-    })
+    // .state('home.ala.login', {
+    //   url: '/players/login',
+    //   onEnter: ['$stateParams', '$state', '$uibModal', '$resource', function($stateParams, $state, $uibModal, $resource) {
+    //     $uibModal.open({
+    //         templateUrl: "views/players/loginModal.html",
+    //         resolve: {
+    //           item: function() { new Item(123).get(); }
+    //         },
+    //         controller: ['$scope', 'item', function($scope, item) {
+    //           $scope.dismiss = function() {
+    //             $scope.$dismiss();
+    //           };
+    //
+    //           $scope.save = function() {
+    //             item.update().then(function() {
+    //               $scope.$close(true);
+    //             });
+    //           };
+    //         }]
+    //     }).result.finally(function() {
+    //         $state.go('^');
+    //     });
+    //   }]
+    // })
+    // .state('home.ala.login', {
+    //   url: '/players/login',
+    //   views: {
+    //     'login@home.ala': {
+    //       templateUrl: 'views/ala/players/login.html',
+    //       controller: 'AlaController'
+    //     }
+    //   }
+    // })
     .state('home.ala.user', {
       url: '/players/:username',
       views: {
