@@ -17,8 +17,6 @@ router.get('/picks/:user', function(req, res, next){
 router.put('/saveGroupPicks', function(req, res, next){
   var user = req.body.user;
   var picks = [req.body.picks];
-  // var modified = [];
-  // modified[0] = picks;
   WC18Bracket().where({
     username: user
   }).update({
