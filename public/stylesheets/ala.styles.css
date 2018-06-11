@@ -668,13 +668,17 @@ loginReq div {
   border: solid 3px black;
 }
 
-.wc-banner {
-  margin: 20px 0px;
+.page-intro {
+  margin: 25px;
+  padding: 0 5%;
 }
 
-.group-grid {
-  margin-top: 30px;
+.group-table {
+  border: solid 3px black;
+  border-radius: 10%;
 }
+
+
 
 /**
  * The dnd-list should always have a min-height,

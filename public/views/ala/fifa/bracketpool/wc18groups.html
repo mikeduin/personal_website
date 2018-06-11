@@ -1,53 +1,36 @@
-<!-- <div class="simpleDemo col-xs-9 col-md-10">
-  <div ng-repeat="(groupName, group) in vm.models.groups" class="col-md-4">
-      <div class="panel panel-info">
-          <div class="panel-heading">
-              <h3 class="panel-title">Group {{groupName}}</h3>
-          </div>
-          <ol dnd-list="group">
-              <li ng-repeat="team in group"
-                  dnd-draggable="team"
-                  dnd-moved="group.splice($index, 1)"
-                  dnd-effect-allowed="move"
-                  dnd-selected="vm.models.selected = team"
-                  ng-class="{'selected': vm.models.selected === team}"
-                  >
-                  {{team}}
-              </li>
-          </ol>
-      </div>
+<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks()">
+  <div class="row">
+    <div class="col-xs-12 page-intro">
+      Reorder the teams below to make your Group Stage picks, then click SAVE PICKS. From there, move to the Bracket Stage page to complete your entry. <b>Note that if you move to the Bracket Stage page without saving your edits, your edited picks will not be saved.</b>
+    </div>
   </div>
-</div> -->
-
-<div class="col-xs-9 col-md-10 group-grid" ui-sortable ng-model="vm.models.groups">
-  <div class="col-xs-offset-1">
-    <div ng-repeat="(groupName, group) in vm.models.groups" class="col-xs-5">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="4" class="text-center">Group {{groupName}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="team in group">
-            <td><i class="fas fa-arrow-up" ng-if="$index !== 0" ng-click="vm.moveUp(groupName, $index, team)"></i></td>
-            <td><i class="fas fa-arrow-down" ng-if="$index !== 3" ng-click="vm.moveDown(groupName, $index, team)"></i></td>
-            <td>{{$index + 1}}</td>
-            <td>{{team}}</td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-      <!-- <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">Group {{groupName}}</h3>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <button ng-class="{disabled: vm.models == vm.original}" class="btn btn-default">RESET PICKS</button>
+      <button ng-click="vm.saveGroupPicks()" ng-class="{disabled: vm.models == vm.original}" class="btn btn-default">SAVE PICKS</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="group-grid" ui-sortable ng-model="vm.models.groups">
+      <div class="col-xs-offset-1">
+        <div ng-repeat="(groupName, group) in vm.models.groups" class="col-xs-5">
+          <table class="table group-table">
+            <thead>
+              <tr>
+                <th colspan="4" class="text-center">Group {{groupName}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="team in group">
+                <td width="10%"><i class="fas fa-arrow-up" ng-if="$index !== 0" ng-click="vm.moveUp(groupName, $index, team)"></i></td>
+                <td width="10%"><i class="fas fa-arrow-down" ng-if="$index !== 3" ng-click="vm.moveDown(groupName, $index, team)"></i></td>
+                <td width="10%"><b>{{$index + 1}}</b></td>
+                <td width="60%">{{team}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <ol>
-          <li ng-repeat="team in group">{{team}}</li>
-        </ol>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>

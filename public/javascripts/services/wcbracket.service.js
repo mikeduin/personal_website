@@ -8,6 +8,12 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/picks/'+ user).then(function(res){
         return res.data;
       })
+    },
+    saveGroupPicks: function(picks) {
+      return $http.put('wcbracket/saveGroupPicks', picks).then(function(res){
+        console.log('returned to service is ', res.data);
+        return res.data;
+      })
     }
   }
 }
