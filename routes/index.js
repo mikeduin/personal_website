@@ -151,10 +151,12 @@ router.get('/retrievePools', function(req, res, next){
 router.post('/poolRegister', function(req, res, next){
   var alias = req.body.pool.alias;
   var groups = getGroups.getGroups();
+  var brackets = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
 
   knex(alias).insert({
     username: req.body.user,
     groupSelections: groups,
+    bracketSelections: brackets,
     modified: new Date()
   }, '*').then(function(res){
     console.log(res[0].username, ' has been registered for ', alias);
