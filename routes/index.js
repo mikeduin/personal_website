@@ -151,7 +151,11 @@ router.get('/retrievePools', function(req, res, next){
 router.post('/poolRegister', function(req, res, next){
   var alias = req.body.pool.alias;
   var groups = getGroups.getGroups();
-  var brackets = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+  var brackets = [{
+    'picks': [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    'consOne': null,
+    'consTwo': null
+  }];
 
   knex(alias).insert({
     username: req.body.user,

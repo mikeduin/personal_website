@@ -23,7 +23,11 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
   $scope.vm.loadPicks = function(){
     var user = $scope.vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
+      console.log('userData is ', userData);
       $scope.vm.models = userData[0].groupSelections[0];
+      $scope.vm.bracketPicks = userData[0].bracketSelections[0].picks;
+      $scope.vm.consOne = userData[0].bracketSelections[0].consOne;
+      $scope.vm.consTwo = userData[0].bracketSelections[0].consTwo;
       $scope.vm.original = angular.copy($scope.vm.models);
     })
   };
@@ -39,26 +43,18 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     })
   };
 
-  // $scope.vm.bracketPicks = {
-  //   'r16g1': null,
-  //   'r16g2': null,
-  //   'r16g3': null,
-  //   'r16g4': null,
-  //   'r16g5': null,
-  //   'r16g6': null,
-  //   'r16g7': null,
-  //   'r16g8': null,
-  //   'r8g1': null,
-  //   'r8g2': null,
-  //   'r8g3': null,
-  //   'r8g4': null,
-  //   'r4g1': null,
-  //   'r4g2': null,
-  //   'final': null,
-  //   'consolation': null
-  // }
-
-  $scope.vm.bracketPicks = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+  $scope.vm.saveBracketPicks = function(){
+    var user = $scope.vm.currentUser();
+    var data = {
+      user: user,
+      picks: $scope.vm.bracketPicks,
+      consOne: $scope.vm.consOne,
+      consTwo: $scope.vm.consTwo
+    };
+    WCBracketService.saveBracketPicks(data).then(function(res){
+      console.log(res);
+    })
+  };
 
   $scope.vm.checkAdvance = function(round, team) {
     if (round == 1) {

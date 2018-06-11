@@ -26,4 +26,20 @@ router.put('/saveGroupPicks', function(req, res, next){
   })
 })
 
+router.put('/saveBracketPicks', function(req, res, next){
+  var user = req.body.user;
+  var picks = [{
+    'picks': req.body.picks,
+    'consOne': req.body.consOne,
+    'consTwo': req.body.consTwo
+  }];
+  WC18Bracket().where({
+    username: user
+  }).update({
+    bracketSelections: picks
+  }, '*').then(function(returned){
+    var picks = returned[0].bracketSelections;
+  })
+})
+
 module.exports = router;
