@@ -3,14 +3,6 @@ angular
   .controller('AuthController', ['$scope', '$state', 'authService', AuthController])
 
 function AuthController ($scope, $state, authService) {
-  var vm = this;
-
-  console.log('hello');
-
-  // $(document).ready(function () {
-  //   $('.modal').modal();
-  //   $('.tooltipped').tooltip({delay: 20});
-  // })
 
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
@@ -30,11 +22,4 @@ function AuthController ($scope, $state, authService) {
     })
   };
 
-  // vm.openModal = function(){
-  //   $('#modal1').modal('open');
-  // };
-  //
-  // vm.closeModal = function(){
-  //   $('#modal1').modal('close');
-  // };
 }
