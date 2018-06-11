@@ -20,25 +20,37 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
   //
   // }
 
-  ($scope.vm.loadPicks = function(){
+  $scope.vm.loadPicks = function(){
     var user = $scope.vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
       $scope.vm.models = userData[0].groupSelections[0];
-      // $scope.vm.models = res;
-      console.log($scope.vm.models);
+      $scope.vm.original = angular.copy($scope.vm.models);
     })
-  })();
+  };
+
+  $scope.vm.saveGroupPicks = function(){
+    var user = $scope.vm.currentUser();
+    var data = {
+      user: user,
+      picks: $scope.vm.models
+    };
+    WCBracketService.saveGroupPicks(data).then(function(res){
+      console.log(res);
+    })
+  };
 
   $scope.vm.moveUp = function(group, $index, team) {
     $scope.vm.models.groups[group].splice($index, 1);
     $scope.vm.models.groups[group].splice($index-1, 0, team);
-    // console.log($scope.vm.models);
-  }
+    console.log($scope.vm.models);
+    console.log($scope.vm.original);
+  };
 
   $scope.vm.moveDown = function(group, $index, team) {
     $scope.vm.models.groups[group].splice($index, 1);
     $scope.vm.models.groups[group].splice($index+1, 0, team);
-  }
+  };
+
 
 
   // $scope.models = {
