@@ -22,7 +22,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   };
 
   $scope.vm.logIn = function(user) {
-    console.log('gets to controller');
     authService.logIn(user).error(function(error){
       vm.error = error.message;
       console.log(error)
