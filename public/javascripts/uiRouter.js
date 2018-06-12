@@ -33,12 +33,16 @@ angular
     $urlRouterProvider.otherwise('');
 
     modalStateProvider.state('home.ala.loginpop', {
-        url: '/loginpop',
+        url: '/login',
         templateUrl: 'views/ala/players/loginModal.html'
     });
     modalStateProvider.state('home.ala.regpop', {
-        url: '/regpop',
+        url: '/reg',
         templateUrl: 'views/ala/players/regModal.html'
+    });
+    modalStateProvider.state('home.ala.pools.poolConfirm', {
+        url: '/poolConfirm',
+        templateUrl: 'poolConfirm.html'
     });
   })
 

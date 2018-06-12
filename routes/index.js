@@ -162,17 +162,26 @@ router.post('/poolRegister', function(req, res, next){
     groupSelections: groups,
     bracketSelections: brackets,
     modified: new Date()
-  }, '*').then(function(res){
-    console.log(res[0].username, ' has been registered for ', alias);
+  }, '*').then(function(ret){
+    console.log(ret[0].username, ' has been registered for ', alias);
     knex.raw("UPDATE users SET " + alias + " = 1 WHERE username = '" + req.body.user + "'")
-    .then(function(res){
+    .then(function(result){
       knex.raw("UPDATE pools SET entrants = entrants + 1 WHERE alias = '" + alias + "'")
       .then(function(){
         console.log("entrants for ", alias, " have been incremented");
+        return res.json({
+          user: req.body.user,
+          pool: req.body.pool.name,
+          alias: req.body.pool.alias
+        })
       })
     })
   })
 })
+
+// router.get('/userpools/:user', function(req, res, next){
+//   Pools().where()
+// })
 
 router.get('/checkPoolReg/:user/:alias', function(req, res, next){
   knex.raw("SELECT " + req.params.alias + " from users WHERE username = '" + req.params.user + "'").then(function(result){

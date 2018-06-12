@@ -4,7 +4,6 @@ angular
 
 function AuthController ($scope, $state, authService) {
   $scope.register = function(user) {
-    console.log(user);
     authService.register(user).error(function(error){
       $scope.error = error.message;
     }).then(function(){

@@ -43,6 +43,19 @@
   ga('send', 'pageview');
     </script>
 
+    <script type="text/ng-template" id="main.html">
+
+    </script>
+
+    <script type="text/ng-template" id="poolConfirm.html">
+      <div ng-controller="AlaController">
+        <div class="modal-center">
+          <p> You've successfully registered for {{$scope.activePool}}! </p>
+          <a> Go make some picks. </a>
+        </div>
+      </div>
+    </script>
+
     <div ui-view="header"> </div>
     <div ui-view="content"> </div>
 

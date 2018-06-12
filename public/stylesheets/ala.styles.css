@@ -715,6 +715,11 @@ loginReq div {
   margin-left: 20%;
 }
 
+.reg-error {
+  color: #B71C1C;
+  font-weight: 600;
+}
+
 /* Pool page styles */
 
 upcoming blog p {
