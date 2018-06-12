@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .controller('WCBracketController', ['$scope', '$state', 'authService', 'WCBracketService', WCBracketController])
+  .controller('WCBracketController', ['$scope', '$state', 'authService', 'alaService', 'WCBracketService', WCBracketController])
 
-function WCBracketController ($scope, $state, authService, WCBracketService) {
+function WCBracketController ($scope, $state, authService, alaService, WCBracketService) {
 
   $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
@@ -15,6 +15,16 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
   $scope.vm.currentUser = function(){
     return authService.currentUser();
   };
+
+  $scope.vm.getUser = function(){
+    user = $scope.vm.currentUser();
+    alaService.getUser(user).then(function(res){
+      $scope.vm.userData = res[0];
+      console.log($scope.vm.userData);
+    })
+  };
+
+  $scope.vm.getUser();
 
   $scope.vm.loadPicks = function(){
     var user = $scope.vm.currentUser();
@@ -38,8 +48,6 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
       $state.go('home.ala.wc18bracket.groups.picksSaved');
     })
   };
-
-
 
   $scope.vm.saveBracketPicks = function(){
     for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
