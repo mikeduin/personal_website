@@ -20,7 +20,6 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     user = $scope.vm.currentUser();
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
-      console.log($scope.vm.userData);
     })
   };
 
