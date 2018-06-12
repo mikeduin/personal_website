@@ -35,7 +35,7 @@ angular
         url: '/loginpop',
         templateUrl: 'views/ala/players/loginModal.html'
     });
-    modalStateProvider.state('main.ala.regpop', {
+    modalStateProvider.state('home.ala.regpop', {
         url: '/regpop',
         templateUrl: 'views/ala/players/regModal.html'
     });

@@ -688,6 +688,22 @@ loginReq div {
   margin: 20px 0 20px 0;
 }
 
+#regForm {
+  margin-left: 20%;
+}
+
+.modal-center button {
+  margin: 20px 0px 30px 0px;
+}
+
+.modal-center input {
+  margin: 5px;
+}
+
+.reg-btn {
+  margin-left: 50% !important;
+}
+
 /* Pool page styles */
 
 upcoming blog p {
@@ -702,6 +718,8 @@ upcoming blog p {
   font-weight: 600;
   font-size: 18px;
 }
+
+
 
 /* FIFA World Cup Bracket Styles */
 
