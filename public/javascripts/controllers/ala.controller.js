@@ -66,40 +66,32 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.retrievePools = function() {
     alaService.retrievePools().then(function(res){
       $scope.vm.pools = res;
+      console.log('pools are ', $scope.vm.pools);
     })
   }
 
-  // $scope.vm.checkUserStatus = function(pool) {
-  //   var user = $scope.vm.currentUser();
-  //   // 0 = Not logged in
-  //   // 1 = Logged in, not registered
-  //   // 2 = Logged in + registered
-  //   if (!$scope.vm.isLoggedIn()) {
-  //     return 0
-  //   } else {
-  //     if (isRegistered(user, pool)) {
-  //       return 2
-  //     } else {
-  //       return 1
-  //     }
-  //   }
-  // };
-  //
-  // var isRegistered = function (user, pool) {
-  //   return alaService.checkPoolReg(user, pool);
-  // };
+  $scope.vm.getUser = function(){
+    user = $scope.vm.currentUser();
+    alaService.getUser(user).then(function(res){
+      $scope.vm.userData = res[0];
+      console.log($scope.vm.userData);
+    })
+  };
 
-  $scope.vm.register = function (pool, user) {
+  $scope.vm.getUser();
+
+  $scope.register = function (pool, user) {
     var data = {
       pool: pool,
       user: user
     };
 
     $scope.activePool = pool;
-    console.log($scope.activePool);
+    // console.log($scope.activePool);
 
     alaService.poolRegister(data).then(function(res){
-      console.log('res to controller is ', res);
+      // console.log('active pool is ', $scope.activePool);
+      // console.log('res to controller is ', res);
       $state.go('home.ala.pools.poolConfirm');
     })
   };

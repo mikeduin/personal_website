@@ -735,6 +735,22 @@ upcoming blog p {
   font-size: 18px;
 }
 
+.confirm-modal-center {
+  margin-top: 60px;
+}
+
+.confirm-modal-bottom {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.confirm-modal {
+  /* margin-top: 25% */
+}
+
+/* .go-to-pool-btn {
+  margin-left: 25%;
+} */
 
 
 /* FIFA World Cup Bracket Styles */
@@ -746,7 +762,7 @@ upcoming blog p {
 .page-intro {
   margin: 15px 10px 15px 10px;
   padding: 0 5%;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .group-grid {
