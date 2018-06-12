@@ -44,6 +44,10 @@ angular
         url: '/poolConfirm',
         templateUrl: 'poolConfirm.html'
     });
+    modalStateProvider.state('home.ala.wc18bracket.picksSaved', {
+        url: '/picksSaved',
+        templateUrl: 'picksSaved.html'
+    });
   })
 
 function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {

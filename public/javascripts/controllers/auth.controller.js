@@ -4,10 +4,11 @@ angular
 
 function AuthController ($scope, $state, authService) {
   $scope.register = function(user) {
+    console.log('user in controller is ', user);
     authService.register(user).error(function(error){
       $scope.error = error.message;
     }).then(function(){
-      $state.go('home.ala.blog');
+      $state.go('home.ala.pools');
     })
   };
 
@@ -16,8 +17,7 @@ function AuthController ($scope, $state, authService) {
       $scope.error = error.message;
       console.log(error)
     }).then(function(){
-      $state.go('home.ala.blog');
+      $state.go('home.ala.pools');
     })
   };
-
 }

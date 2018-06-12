@@ -179,13 +179,11 @@ router.post('/poolRegister', function(req, res, next){
   })
 })
 
-// router.get('/userpools/:user', function(req, res, next){
-//   Pools().where()
-// })
 
-router.get('/checkPoolReg/:user/:alias', function(req, res, next){
-  knex.raw("SELECT " + req.params.alias + " from users WHERE username = '" + req.params.user + "'").then(function(result){
-    res.json(result);
+router.get('/user/:username', function (req, res, next){
+  var user = req.params.username;
+  Users().where({username: user}).select('*').then(function(data){
+    res.json(data);
   })
 })
 

@@ -51,12 +51,13 @@ router.post('/register', function(req, res, next){
 
   var increment = 0;
 
-  Users().max('id').then(function(max){
-    increment = max + 1;
+  Users().max('id').then(function(data){
+    value = data[0].max;
+    increment = value + 1;
   });
 
   Users().where({username: req.body.username}).orWhere({email: req.body.email}).then(function(result){
-    if (!result[0].username) {
+    if (!result[0]) {
       Users().insert({
         id: increment,
         username: req.body.username,
