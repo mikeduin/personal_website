@@ -56,7 +56,6 @@ router.post('/register', function(req, res, next){
   });
 
   Users().where({username: req.body.username}).orWhere({email: req.body.email}).then(function(result){
-    console.log('result is ', result);
     if (!result[0].username) {
       Users().insert({
         id: increment,
@@ -77,13 +76,11 @@ router.post('/register', function(req, res, next){
 });
 
 router.post('/login', function(req, res, next){
-  console.log(req.body);
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'You forgot to include either your username or your password!'});
   };
 
   passport.authenticate('local', function(err, user, info){
-    console.log('user is ', user);
     if(err){ return next(err); }
 
     if(user){

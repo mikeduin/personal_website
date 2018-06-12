@@ -46,6 +46,17 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     return authService.currentUser();
   }
 
+  // $scope.vm.loadUserPools = function($scope.vm.currentUser(){
+  //   var user = $scope.vm.currentUser();
+  //   if (!user){
+  //     return
+  //   } else {
+  //     alaService.loadUserPools(user).then(function(res){
+  //       console.log(res);
+  //     })
+  //   }
+  // })
+
   $scope.$on('$stateChangeSuccess', function(){
     document.body.scrollTop = document.documentElement.scrollTop=0;
   })
@@ -84,12 +95,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       user: user
     };
 
+    $scope.activePool = pool;
+    console.log($scope.activePool);
+
     alaService.poolRegister(data).then(function(res){
-      console.log(res);
+      console.log('res to controller is ', res);
+      $state.go('home.ala.pools.poolConfirm');
     })
-    // console.log(pool);
-    // console.log(user);
-  }
+  };
 
   // Main Page Logic
 

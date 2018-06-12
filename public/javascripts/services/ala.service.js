@@ -27,6 +27,12 @@ function alaService ($http) {
         // };
       })
     },
+    // loadUserPools: function(user) {
+    //   return $http.get('/userpools/'+ user)
+    //   .then(function(result){
+    //     return result.data;
+    //   })
+    // },
     contactCommish: function(contactForm){
       return $http.post('/contactCommish', contactForm)
       .then(function(result){
