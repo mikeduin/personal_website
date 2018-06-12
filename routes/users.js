@@ -41,7 +41,7 @@ router.get('/:username', function (req, res, next){
 })
 
 router.post('/register', function(req, res, next){
-  if(!req.body.username || !req.body.password || !req.body.nameFirst || !req.body.nameLast || !req.body.email || !req.body.buyin
+  if(!req.body.username || !req.body.password || !req.body.nameFirst || !req.body.nameLast || !req.body.email
   ){
     return res.status(400).json({message: 'You left something blank!'});
   };
@@ -49,17 +49,30 @@ router.post('/register', function(req, res, next){
   var salt = crypto.randomBytes(16).toString('hex');
   var hash = crypto.pbkdf2Sync(req.body.password, salt, 1000, 64, 'sha512').toString('hex');
 
-  Users().insert({
-    username: req.body.username,
-    nameFirst: req.body.nameFirst,
-    nameLast: req.body.nameLast,
-    email: req.body.email,
-    buyin: req.body.buyin,
-    plan: req.body.plan,
-    salt: salt,
-    hash: hash,
-  }, '*').then(function(user){
-    res.json({token: generateJWT(user)});
+  var increment = 0;
+
+  Users().max('id').then(function(max){
+    increment = max + 1;
+  });
+
+  Users().where({username: req.body.username}).orWhere({email: req.body.email}).then(function(result){
+    console.log('result is ', result);
+    if (!result[0].username) {
+      Users().insert({
+        id: increment,
+        username: req.body.username,
+        nameFirst: req.body.nameFirst,
+        nameLast: req.body.nameLast,
+        email: req.body.email,
+        salt: salt,
+        hash: hash,
+        registered: new Date()
+      }, '*').then(function(user){
+        res.json({token: generateJWT(user)});
+      })
+    } else {
+      return res.status(400).json({message: "You've already registered with this email or username."})
+    }
   });
 });
 

@@ -5,6 +5,7 @@ angular
     'ui.bootstrap.modal',
     'ui.router',
     'zingchart-angularjs',
+    'ui.validate',
     'ngAnimate'])
   .run(['$anchorScroll', function($anchorScroll) {
     $anchorScroll.yOffset = 100;

@@ -4,8 +4,9 @@ angular
 
 function AuthController ($scope, $state, authService) {
   $scope.register = function(user) {
+    console.log(user);
     authService.register(user).error(function(error){
-      vm.error = error.message;
+      $scope.error = error.message;
     }).then(function(){
       $state.go('home.ala.blog');
     })
@@ -13,7 +14,7 @@ function AuthController ($scope, $state, authService) {
 
   $scope.logIn = function(user) {
     authService.logIn(user).error(function(error){
-      vm.error = error.message;
+      $scope.error = error.message;
       console.log(error)
     }).then(function(){
       $state.go('home.ala.blog');
