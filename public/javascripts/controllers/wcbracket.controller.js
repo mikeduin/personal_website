@@ -35,8 +35,11 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     };
     WCBracketService.saveGroupPicks(data).then(function(res){
       console.log(res);
+      $state.go('home.ala.wc18bracket.groups.picksSaved');
     })
   };
+
+
 
   $scope.vm.saveBracketPicks = function(){
     for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {

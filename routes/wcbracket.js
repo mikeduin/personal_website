@@ -22,7 +22,7 @@ router.put('/saveGroupPicks', function(req, res, next){
   }).update({
     groupSelections: picks
   }, '*').then(function(returned){
-    var picks = returned[0].groupSelections[0].groups;
+    res.json(returned[0].groupSelections[0].groups);
   })
 })
 
