@@ -1,61 +1,62 @@
-<div class="text-center modal-banner">
-  <h3>
-    <i class="fas fa-door-open"></i>
-    <b>Register with ALA</b>
-  </h3>
-</div>
-
-<div class="modal-center">
-  <form class="form-inline" ng-submit="vm.register(user)" id="regForm">
-    <div class="row">
-      <div class="form-group">
-        <div class="col-xs-6 col-offset-xs-3 push-right">
-          <input name="username" class="form-control validate" type="text" ng-model="user.username" required placeholder="Username">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-6">
-          <input type="email" name="email" class="form-control validate" ng-model="user.email" required ng-focus placeholder="Email">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group">
-        <div class="col-sm-3">
-          <input type="password" class="form-control validate" name="password" ng-model="user.password" required placeholder="Password">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-3">
-         <input type="password" class="form-control validate" ng-class="{invalid: regForm.confirmPassword.$dirty && regForm.confirmPassword.$error.validator && !regForm.confirmPassword.$focused && !regForm.password.$error.required}" name="confirmPassword" ng-model="user.confirmPassword" ui-validate= " '$value==user.password' " ui-validate-watch=" 'user.password' " required ng-focus placeholder="Confirm Password">
-        </div>
-      </div>
-      <div class="offset-s2 col-s10 center-align form-error" ng-show="regForm.confirmPassword.$dirty && regForm.confirmPassword.$error.validator && !regForm.confirmPassword.$focused && !regForm.password.$error.required">
-      Passwords must match
-      </div>
-    </div>
-   <div class="row">
-     <div class="form-group">
-       <div class="col-sm-3">
-         <input type="text" name="nameFirst" class="form-control validate" ng-model="user.nameFirst" required placeholder="First Name">
-       </div>
-     </div>
-     <div class="form-group">
-       <div class="col-sm-3">
-         <input type="text" name="nameLast" class="form-control validate" ng-model="user.nameLast" required placeholder="Last Name">
-       </div>
-     </div>
-      <div class="col-xs-12 center-align">
-        <error ng-show="vm.error"> {{vm.error}} </error>
-      </div>
+<div ng-controller="AuthController">
+  <div class="text-center modal-banner">
+    <h3>
+      <i class="fab fa-fort-awesome"></i>
+      <b>Register with ALA</b>
+    </h3>
   </div>
-   <div>
+  <div class="modal-center">
+    <form class="form-inline" ng-submit="register(user)" name="regForm" id="regForm">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-xs-6 col-offset-xs-3 push-right">
+            <input name="username" class="form-control validate" type="text" ng-model="user.username" required placeholder="Username">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-6">
+            <input type="email" name="email" class="form-control validate" ng-model="user.email" required ng-focus placeholder="Email">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-3">
+            <input type="password" class="form-control validate" name="password" ng-model="user.password" required placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-3">
+           <input type="password" class="form-control validate" ng-class="{invalid: regForm.confirmPassword.$dirty && regForm.confirmPassword.$error.validator && !regForm.confirmPassword.$focused && !regForm.password.$error.required}" name="confirmPassword" ng-model="user.confirmPassword" ui-validate= " '$value==user.password' " ui-validate-watch=" 'user.password' " required ng-focus placeholder="Confirm Password">
+          </div>
+        </div>
+      </div>
+      <div class="row form-error" ng-show="regForm.confirmPassword.$dirty && regForm.confirmPassword.$error.validator && !regForm.confirmPassword.$focused && !regForm.password.$error.required">
+        Passwords must match
+      </div>
+      <div class="row">
+       <div class="form-group">
+         <div class="col-sm-3">
+           <input type="text" name="nameFirst" class="form-control validate" ng-model="user.nameFirst" required placeholder="First Name">
+         </div>
+       </div>
+       <div class="form-group">
+         <div class="col-sm-3">
+           <input type="text" name="nameLast" class="form-control validate" ng-model="user.nameLast" required placeholder="Last Name">
+         </div>
+       </div>
+        <div class="col-xs-12 center-align form-error">
+          <error ng-show="error"> {{error}} </error>
+        </div>
+    </div>
      <div>
        <div>
-         <button type="submit" class="btn btn-primary reg-btn">Game On</button>
-         <button ng-click="$dismiss()" class="btn btn-danger">Back</button>
+         <div class="reg-buttons">
+           <button type="submit" class="btn btn-primary reg-btn" ng-click="register(user)">Game On</button>
+           <button ng-click="$dismiss()" class="btn btn-danger">Back</button>
+         </div>
        </div>
-     </div>
-    </div>
-  </form>
+      </div>
+    </form>
+  </div>
 </div>
