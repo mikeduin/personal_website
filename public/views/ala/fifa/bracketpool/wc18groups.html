@@ -1,12 +1,11 @@
-<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks()" ng-show="vm.isLoggedIn()">
+<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks()" ng-show="vm.isLoggedIn() !== false">
   <div class="row">
     <div class="page-intro">
       Reorder the teams using the arrows next to each team to make your Group Stage picks, then click SAVE PICKS. From there, move to the Bracket Stage page to complete your entry. <b>Note that if you move to the Bracket Stage page without saving your edits, your edited picks will not be saved.</b>
     </div>
   </div>
   <div class="row submit-buttons">
-    <button ng-class="{'disabled': vm.models === vm.original}" class="btn btn-default">RESET PICKS</button>
-    <button ng-click="vm.saveGroupPicks()" ng-class="{'disabled': vm.models === vm.original}" class="btn btn-default">SAVE PICKS</button>
+    <button ng-click="vm.saveGroupPicks()" class="btn btn-lg btn-primary">SAVE PICKS</button>
   </div>
   <div class="row">
     <div class="group-grid" ui-sortable ng-model="vm.models.groups">

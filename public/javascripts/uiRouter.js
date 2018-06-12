@@ -48,6 +48,10 @@ angular
         url: '/picksSaved',
         templateUrl: 'picksSaved.html'
     });
+    modalStateProvider.state('home.ala.wc18bracket.groups.picksSaved', {
+        url: '/picksSaved',
+        templateUrl: 'picksSaved.html'
+    });
     modalStateProvider.state('home.ala.wc18bracket.bracket.picksIncomplete', {
         url: '/picksIncomplete',
         templateUrl: 'picksIncomplete.html'
