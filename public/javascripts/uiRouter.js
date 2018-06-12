@@ -35,10 +35,10 @@ angular
         url: '/loginpop',
         templateUrl: 'views/ala/players/loginModal.html'
     });
-    // modalStateProvider.state('main.modal1.modal2', {
-    //     url: '/modal2',
-    //     templateUrl: 'modal2.html'
-    // });
+    modalStateProvider.state('main.ala.regpop', {
+        url: '/regpop',
+        templateUrl: 'views/ala/players/regModal.html'
+    });
   })
 
 function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
