@@ -16,10 +16,6 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
     return authService.currentUser();
   };
 
-  // $scope.vm.isRegistered = function(){
-  //
-  // }
-
   $scope.vm.loadPicks = function(){
     var user = $scope.vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
@@ -43,6 +39,13 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
   };
 
   $scope.vm.saveBracketPicks = function(){
+    for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
+      if ($scope.vm.bracketPicks[i] == null) {
+        $state.go('home.ala.wc18bracket.bracket.picksIncomplete');
+        return
+      }
+    };
+
     var user = $scope.vm.currentUser();
     var data = {
       user: user,
@@ -51,7 +54,7 @@ function WCBracketController ($scope, $state, authService, WCBracketService) {
       consTwo: $scope.vm.consTwo
     };
     WCBracketService.saveBracketPicks(data).then(function(res){
-      console.log(res);
+      $state.go('home.ala.wc18bracket.bracket.picksSaved');
     })
   };
 

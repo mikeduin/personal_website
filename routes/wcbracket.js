@@ -38,7 +38,7 @@ router.put('/saveBracketPicks', function(req, res, next){
   }).update({
     bracketSelections: picks
   }, '*').then(function(returned){
-    var picks = returned[0].bracketSelections;
+    res.json(returned);
   })
 })
 

@@ -65,14 +65,16 @@
     <script type="text/ng-template" id="picksSaved.html">
       <div ng-controller="WCBracketController" class="text-center confirm-modal">
         <div class="confirm-modal-center">
-          <!-- <h3> You've successfully registered for {{$scope.activePool.name}}! </h3> -->
           <h3> Your picks have been saved!</h3>
         </div>
-        <!-- <div class="confirm-modal-bottom">
-          <a ui-sref="home.ala.wc18bracket.howtoplay">
-            <button class="btn btn-large btn-primary go-to-pool-btn">GO MAKE SOME PICKS</button>
-          </a> -->
-          <!-- <a ui-sref="$scope.activePool.homepage"> Go make some picks. </a> -->
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="picksIncomplete.html">
+      <div ng-controller="WCBracketController" class="text-center confirm-modal">
+        <div class="confirm-modal-center">
+          <h2> Your picks are incomplete! </h2>
+          <h3> Please complete your bracket before saving your picks. </h3>
         </div>
       </div>
     </script>
