@@ -905,6 +905,9 @@ bracket {
 @media screen and (min-width: 990px) {
   #tournament {
     margin-top: -110px;
+    -webkit-margin-top: -110px;
+    -moz-margin-top: -20px;
+    -ms-margin-top: -20px;
   }
 }
 
