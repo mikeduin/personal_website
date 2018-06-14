@@ -25,6 +25,15 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   $scope.vm.getUser();
 
+  $scope.vm.checkTime = function () {
+    if (moment().isBefore('2018-06-14T15:00:00+0000')) {
+      $scope.inTime = true;
+    } else {
+      $scope.inTime = false;
+    }
+  };
+  $scope.vm.checkTime();
+
   $scope.vm.loadPicks = function(){
     var user = $scope.vm.currentUser();
     WCBracketService.getPicks(user).then(function(userData){
