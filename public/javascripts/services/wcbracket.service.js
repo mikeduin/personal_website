@@ -28,6 +28,11 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/user/' + user).then(function(res){
         return res.data;
       })
+    },
+    getUsernames: function() {
+      return $http.get('wcbracket/usernames').then(function(res){
+        return res.data
+      })
     }
   }
 }

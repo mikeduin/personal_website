@@ -1035,3 +1035,7 @@ consolation li.game-spacer {
   font-size: 32px;
   margin: 10px 0 0 0;
 }
+
+selectDiv {
+  margin-top: 10px;
+}
