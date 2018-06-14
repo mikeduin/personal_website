@@ -16,7 +16,16 @@ function WCBracketService ($http) {
     },
     saveBracketPicks: function(picks) {
       return $http.put('wcbracket/saveBracketPicks', picks).then(function(res){
-        console.log('returned to service is ', res.data);
+        return res.data;
+      })
+    },
+    pullStandings: function() {
+      return $http.get('wcbracket/standings').then(function(res){
+        return res.data;
+      })
+    },
+    getUserPage: function (user) {
+      return $http.get('wcbracket/user/' + user).then(function(res){
         return res.data;
       })
     }

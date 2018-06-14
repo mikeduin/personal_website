@@ -42,4 +42,17 @@ router.put('/saveBracketPicks', function(req, res, next){
   })
 })
 
+router.get('/standings', function(req, res, next){
+  WC18Bracket().then(function(data){
+    res.json(data);
+  })
+})
+
+router.get('/user/:username', function(req, res, next){
+  var user = req.params.user;
+  WC18Bracket().where({username:user}).then(function(data){
+    res.json(data);
+  })
+})
+
 module.exports = router;

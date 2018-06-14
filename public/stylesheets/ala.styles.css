@@ -10,6 +10,7 @@
 
 alaHeader {
   display: inline-block;
+  -webkit-background-color: blue;
   background-color: black;
   border-radius: 0.3vw;
   border-top: solid 3px #3984C5;
@@ -737,7 +738,7 @@ upcoming blog p {
 
 .confirm-modal-center {
   margin-top: 50px;
-  margin-bottom: 20px;'
+  margin-bottom: 20px;
 }
 
 .confirm-modal-bottom {
@@ -994,3 +995,7 @@ consolation li {
 consolation li.game-spacer {
   min-height: 80px;
 }
+/* 
+#wc-standings th:first-child, #wc-standings th:last-child{
+  border: 0;
+} */

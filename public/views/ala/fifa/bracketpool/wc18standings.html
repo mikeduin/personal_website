@@ -1,3 +1,49 @@
 <div class="col-xs-9 col-md-10 text-center">
-  <h1>Coming soon!</h1>
+  <div class="row">
+    <div class="col-xs-12 page-intro">
+      Within this standings page, click the table headers to sort by each column, or click a user's name to see their group and bracket picks. Hover over the table headers for a detailed explanation of the scoring column.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-striped table-bordered" id="wc-standings">
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="4" class="text-center">GROUP STAGE</th>
+            <th colspan="5" class="text-center">BRACKET STAGE</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>Entrant</td>
+            <td>Exact Rank</td>
+            <td>Runner-Up</td>
+            <td>Winner</td>
+            <td>Exact Order</td>
+            <td>R16</td>
+            <td>R8</td>
+            <td>R4</td>
+            <td>Cons</td>
+            <td>Winner</td>
+            <td>TOTAL</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in vm.standings">
+            <td>{{user.username}}</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

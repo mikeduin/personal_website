@@ -43,7 +43,6 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       picks: $scope.vm.models
     };
     WCBracketService.saveGroupPicks(data).then(function(res){
-      console.log(res);
       $state.go('home.ala.wc18bracket.groups.picksSaved');
     })
   };
@@ -67,6 +66,20 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       $state.go('home.ala.wc18bracket.bracket.picksSaved');
     })
   };
+
+  $scope.vm.pullStandings = function() {
+    WCBracketService.pullStandings().then(function(res){
+      $scope.vm.standings = res;
+    })
+  }
+
+  $scope.vm.pullStandings();
+
+  $scope.vm.getUserPage = function(user) {
+    WCBracketService.getUserPage(user).then(function(res){
+      console.log('user data is ', res);
+    })
+  }
 
   $scope.vm.clearBracketPicks = function(){
     for (var i=0; i<$scope.vm.bracketPicks.length; i++){
