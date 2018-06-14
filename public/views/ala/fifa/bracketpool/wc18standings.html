@@ -30,7 +30,8 @@
         </thead>
         <tbody>
           <tr ng-repeat="user in vm.standings">
-            <td>{{user.username}}</td>
+            <td><a ng-click="vm.getUserPage(user.username)">{{user.username}}</a></td>
+            <!-- <td><a ui-sref="vm.user({username: user.username})">{{user.username}}</a></td> -->
             <td>0</td>
             <td>0</td>
             <td>0</td>
