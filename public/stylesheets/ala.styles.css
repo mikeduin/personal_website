@@ -995,15 +995,43 @@ consolation li {
 consolation li.game-spacer {
   min-height: 80px;
 }
+
+.user-cons {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  position: absolute;
+  top: 55%;
+  right: 30%;
+  width: 30%;
+}
+
 /*
 #wc-standings th:first-child, #wc-standings th:last-child{
   border: 0;
 } */
 
-#user-group thead tr th {
+/* #user-group thead tr th {
   text-align: center;
+} */
+
+#user-group {
+  margin-top: 15px;
+}
+
+#user-group thead tr:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #DA562E;
 }
 
 .user-link {
   cursor: pointer;
+}
+
+.user-nameplate {
+  font-weight: 800;
+  color: #3D85C3;
+  font-size: 32px;
+  margin: 10px 0 0 0;
 }
