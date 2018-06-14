@@ -1,3 +1,27 @@
-<div class="col-xs-9 col-md-10 text-center">
-  <h1>This is the userpage for </h1>
+<div class="col-xs-9 col-md-10 text-center" ng-init="vm.getUserData()">
+  <h1>{{vm.user.username}}</h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-bordered table-striped" id="user-group">
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>1st</th>
+            <th>2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="(name, pick) in vm.user.groupSelections[0].groups">
+            <td>{{name}}</td>
+            <td>{{pick[0]}}</td>
+            <td>{{pick[1]}}</td>
+            <td>{{pick[2]}}</td>
+            <td>{{pick[3]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

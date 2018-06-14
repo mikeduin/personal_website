@@ -24,7 +24,7 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    getUserPage: function (user) {
+    getUserData: function (user) {
       return $http.get('wcbracket/user/' + user).then(function(res){
         return res.data;
       })

@@ -30,8 +30,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="user in vm.standings">
-            <td><a ng-click="vm.getUserPage(user.username)">{{user.username}}</a></td>
-            <!-- <td><a ui-sref="vm.user({username: user.username})">{{user.username}}</a></td> -->
+            <td><a class="user-link" ui-sref="home.ala.wc18bracket.user({username: user.username})">{{user.username}}</a></td>
             <td>0</td>
             <td>0</td>
             <td>0</td>

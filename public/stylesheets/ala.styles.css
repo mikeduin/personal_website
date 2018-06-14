@@ -995,7 +995,15 @@ consolation li {
 consolation li.game-spacer {
   min-height: 80px;
 }
-/* 
+/*
 #wc-standings th:first-child, #wc-standings th:last-child{
   border: 0;
 } */
+
+#user-group thead tr th {
+  text-align: center;
+}
+
+.user-link {
+  cursor: pointer;
+}

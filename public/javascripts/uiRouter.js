@@ -222,8 +222,9 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/user/:username',
       views: {
         'user@home.ala.wc18bracket': {
-          templateUrl: 'views/ala/fifa/bracketpool/wc18results.html',
-          controller: 'WCBracketController'
+          templateUrl: 'views/ala/fifa/bracketpool/wc18user.html',
+          controller: 'WCUserController',
+          controllerAs: 'vm'
         }
       }
     })

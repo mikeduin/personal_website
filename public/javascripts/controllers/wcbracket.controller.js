@@ -47,12 +47,6 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     })
   };
 
-  $scope.vm.getUserPage = function(username){
-    WCBracketService.getUserPage(username).then(function(res){
-      
-    })
-  }
-
   $scope.vm.saveBracketPicks = function(){
     for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
       if ($scope.vm.bracketPicks[i] == null) {
