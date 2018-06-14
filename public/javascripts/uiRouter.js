@@ -218,6 +218,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.wc18bracket.user', {
+      url: '/user/:username',
+      views: {
+        'user@home.ala.wc18bracket': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18results.html',
+          controller: 'WCBracketController'
+        }
+      }
+    })
     .state('home.ala.about', {
       url: '/about',
       views: {

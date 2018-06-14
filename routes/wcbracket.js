@@ -6,6 +6,10 @@ function WC18Bracket () {
   return knex('wc18bracket')
 };
 
+function Users () {
+  return knex('users')
+};
+
 router.get('/picks/:user', function(req, res, next){
   WC18Bracket().where({
     username: req.params.user
@@ -49,9 +53,10 @@ router.get('/standings', function(req, res, next){
 })
 
 router.get('/user/:username', function(req, res, next){
-  var user = req.params.user;
-  WC18Bracket().where({username:user}).then(function(data){
-    res.json(data);
+  var user = req.params.username;
+  WC18Bracket().where('wc18bracket.username', user).innerJoin('users', 'users.username', 'wc18bracket.username')
+  .then(function(data){
+    res.json(data[0]);
   })
 })
 
