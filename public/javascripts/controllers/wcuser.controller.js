@@ -10,5 +10,11 @@ function WCUserController($scope, $state, alaService, WCBracketService) {
       vm.user = res;
       console.log(vm.user);
     })
+  };
+
+  vm.getUsers = function(){
+    WCBracketService.getUsernames().then(function(res){
+      console.log(res);
+    })
   }
 }

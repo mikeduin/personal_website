@@ -60,4 +60,11 @@ router.get('/user/:username', function(req, res, next){
   })
 })
 
+router.get('/usernames', function(req, res, next){
+  WC18Bracket().pluck('username').then(function(data){
+    res.json(data);
+  })
+})
+
+
 module.exports = router;
