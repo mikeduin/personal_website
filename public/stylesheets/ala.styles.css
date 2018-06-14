@@ -1007,13 +1007,44 @@ consolation li.game-spacer {
 }
 
 /*
-#wc-standings th:first-child, #wc-standings th:last-child{
+/* #wc-standings tr th:first-child, #wc-standings th:last-child{
   border: 0;
-} */
+/* }
 
 /* #user-group thead tr th {
   text-align: center;
 } */
+
+#wc-standings {
+  margin-top: 10px;
+}
+
+.max-pts th {
+  font-weight: 400;
+  text-align: center;
+}
+
+.stat-row th:nth-child(n+1):nth-child(-n+4) {
+  background-color: #ff8a65;
+  text-align: center;
+}
+
+.stat-row th:nth-child(n+5):nth-child(-n+9) {
+  background-color: #66bb6a;
+  text-align: center;
+}
+
+.max-pts th:nth-child(n+2):nth-child(-n+5) {
+  font-weight: 800;
+  color: #DA562E;
+  font-size: 18px;
+}
+
+.max-pts th:nth-child(n+6):nth-child(-n+10) {
+  font-weight: 800;
+  color: #368623;
+  font-size: 18px;
+}
 
 #user-group {
   margin-top: 15px;
@@ -1027,6 +1058,8 @@ consolation li.game-spacer {
 
 .user-link {
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .user-nameplate {
