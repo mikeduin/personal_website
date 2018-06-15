@@ -79,6 +79,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.pullStandings = function() {
     WCBracketService.pullStandings().then(function(res){
       $scope.vm.standings = res;
+      console.log($scope.vm.standings);
     })
   }
 
