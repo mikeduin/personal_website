@@ -31,7 +31,7 @@ function WCBracketService ($http) {
     },
     getUsernames: function() {
       return $http.get('wcbracket/usernames').then(function(res){
-        return res.data
+        return res.data;
       })
     }
   }

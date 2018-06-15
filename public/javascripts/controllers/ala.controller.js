@@ -13,10 +13,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
-  // $(document).ready(function(){
-  //   $('.modal').modal();
-  // });
-
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
       vm.error = error.message;
@@ -45,17 +41,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.currentUser = function(){
     return authService.currentUser();
   }
-
-  // $scope.vm.loadUserPools = function($scope.vm.currentUser(){
-  //   var user = $scope.vm.currentUser();
-  //   if (!user){
-  //     return
-  //   } else {
-  //     alaService.loadUserPools(user).then(function(res){
-  //       console.log(res);
-  //     })
-  //   }
-  // })
 
   $scope.$on('$stateChangeSuccess', function(){
     document.body.scrollTop = document.documentElement.scrollTop=0;
@@ -136,7 +121,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
         $scope[displays[i]] = false
       }
     }
-
   }
 
   $scope.vm.contactCommish = function(){
