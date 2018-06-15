@@ -79,12 +79,12 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.pullStandings = function() {
     WCBracketService.pullStandings().then(function(res){
       $scope.vm.standings = res;
-      console.log($scope.vm.standings);
     })
   }
 
   $scope.vm.pullStandings();
 
+  // AM I STILL USING THIS?
   $scope.vm.getUserPage = function(user) {
     WCBracketService.getUserPage(user).then(function(res){
       console.log('user data is ', res);

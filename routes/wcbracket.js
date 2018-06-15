@@ -70,29 +70,70 @@ router.get('/usernames', function(req, res, next){
   })
 })
 
-// // router.get('/compileStats', function(req, res, next){
-// var compileFunction = function() {
-//   TeamStats().then(function(teams){
-//     WC18Bracket().then(function(users){
-//       for (var i=0; i<teams.length; i++) {
-//         var group_first = 0;
-//         var group_second = 0;
-//         var group_third = 0;
-//         var group_fourth = 0;
-//         var round_eight = 0;
-//         var round_four = 0;
-//         var round_two = 0;
-//         var cons_winner = 0;
-//         var champ = 0;
-//         for (var j=0; j<users.length; j++) {
-//
-//         }
-//       }
-//     })
-//   })
-// }
-//
-// setTimeout(compileFunction, 3000)
+// router.get('/compileStats', function(req, res, next){
+var compileFunction = function() {
+  TeamStats().then(function(teams){
+    WC18Bracket().then(function(users){
+      for (var i=0; i<teams.length; i++) {
+        var group_1st = 0;
+        var group_2nd = 0;
+        var group_3rd = 0;
+        var group_4th = 0;
+        var round_8 = 0;
+        var round_4 = 0;
+        var round_2 = 0;
+        var cons_winner = 0;
+        var champion = 0;
+        var team = teams[i].team;
+        var group = teams[i].group;
+        for (var j=0; j<users.length; j++) {
+          if (users[j].groupSelections[0].groups[group][0] == team) {
+            group_1st++;
+          } else if (users[j].groupSelections[0].groups[group][1] == team) {
+            group_2nd++;
+          } else if (users[j].groupSelections[0].groups[group][2] == team) {
+            group_3rd++;
+          } else if (users[j].groupSelections[0].groups[group][3] == team) {
+            group_4th++;
+          };
+          var bracketPicks = users[j].bracketSelections[0].picks;
+          for (var k=0; k<bracketPicks.length; k++) {
+            if (k<8 && bracketPicks[k] == team) {
+              round_8++;
+            };
+            if (k > 7 && k < 12 && bracketPicks[k] == team) {
+              round_4++;
+            };
+            if (k > 11 && k < 14 && bracketPicks[k] == team) {
+              round_2++;
+            };
+            if (k == 14 && bracketPicks[k] == team) {
+              cons_winner++;
+            };
+            if (k == 15 && bracketPicks[k] == team) {
+              champion++;
+            };
+          }
+        }
+        TeamStats().where({team: team}).update({
+          group_1st: group_1st,
+          group_2nd: group_2nd,
+          group_3rd: group_3rd,
+          group_4th: group_4th,
+          round_8: round_8,
+          round_4: round_4,
+          round_2: round_2,
+          cons_winner: cons_winner,
+          champion: champion
+        }, '*').then(function(returned){
+          console.log('returned is ', returned);
+        })
+      }
+    })
+  })
+}
+
+setTimeout(compileFunction, 3000);
 
 // })
 
