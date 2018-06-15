@@ -10,6 +10,10 @@ function Users () {
   return knex('users')
 };
 
+function TeamStats() {
+  return knex('team_stats')
+};
+
 router.get('/picks/:user', function(req, res, next){
   WC18Bracket().where({
     username: req.params.user
@@ -65,6 +69,32 @@ router.get('/usernames', function(req, res, next){
     res.json(data);
   })
 })
+
+// // router.get('/compileStats', function(req, res, next){
+// var compileFunction = function() {
+//   TeamStats().then(function(teams){
+//     WC18Bracket().then(function(users){
+//       for (var i=0; i<teams.length; i++) {
+//         var group_first = 0;
+//         var group_second = 0;
+//         var group_third = 0;
+//         var group_fourth = 0;
+//         var round_eight = 0;
+//         var round_four = 0;
+//         var round_two = 0;
+//         var cons_winner = 0;
+//         var champ = 0;
+//         for (var j=0; j<users.length; j++) {
+//
+//         }
+//       }
+//     })
+//   })
+// }
+//
+// setTimeout(compileFunction, 3000)
+
+// })
 
 
 module.exports = router;

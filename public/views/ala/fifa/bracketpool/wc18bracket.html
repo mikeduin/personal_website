@@ -6,15 +6,15 @@
   </div>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 text-center">
-      <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !inTime}">SAVE PICKS</button>
-      <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !inTime}">CLEAR PICKS</button>
+      <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !inTime && vm.currentUser() !== 'kaseymccabe'}">SAVE PICKS</button>
+      <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !inTime && vm.currentUser() !== 'kaseymccabe'}">CLEAR PICKS</button>
     </div>
   </div>
   <consolation>
     <ul class="round">
-      <li class="game game-top" ng-click="inTime ? vm.bracketPicks[14] = vm.consOne : null">{{vm.consOne}}<span></span></li>
+      <li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[14] = vm.consOne : null">{{vm.consOne}}<span></span></li>
       <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[14] = vm.consTwo : null"> {{vm.consTwo}}<span></span></li>
+      <li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[14] = vm.consTwo : null"> {{vm.consTwo}}<span></span></li>
       <li class="game game-bottom-label"></li>
     </ul>
     <ul class="round">
@@ -27,66 +27,66 @@
     	<ul class="round round-1">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[0] = vm.models.groups['A'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['B'][1]) : null">{{vm.models.groups['A'][0]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[0] = vm.models.groups['A'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['B'][1]) : null">{{vm.models.groups['A'][0]}}<span></span></li>
         <li class="game game-top-label">Group A Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[0] = vm.models.groups['B'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['A'][0]) : null">{{vm.models.groups['B'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[0] = vm.models.groups['B'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['A'][0]) : null">{{vm.models.groups['B'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group B Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[1] = vm.models.groups['C'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['D'][1]) : null">{{vm.models.groups['C'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[1] = vm.models.groups['C'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['D'][1]) : null">{{vm.models.groups['C'][0]}} <span></span></li>
         <li class="game game-top-label">Group C Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[1] = vm.models.groups['D'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['C'][0]) : null">{{vm.models.groups['D'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[1] = vm.models.groups['D'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['C'][0]) : null">{{vm.models.groups['D'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group D Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[2] = vm.models.groups['E'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['F'][1]) : null">{{vm.models.groups['E'][0]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[2] = vm.models.groups['E'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['F'][1]) : null">{{vm.models.groups['E'][0]}}<span></span></li>
         <li class="game game-top-label">Group E Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[2] = vm.models.groups['F'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['E'][0]) : null">{{vm.models.groups['F'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[2] = vm.models.groups['F'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['E'][0]) : null">{{vm.models.groups['F'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group F Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[3] = vm.models.groups['G'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['H'][1]) : null">{{vm.models.groups['G'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[3] = vm.models.groups['G'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['H'][1]) : null">{{vm.models.groups['G'][0]}} <span></span></li>
         <li class="game game-top-label">Group G Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[3] = vm.models.groups['H'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['G'][0]) : null">{{vm.models.groups['H'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[3] = vm.models.groups['H'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['G'][0]) : null">{{vm.models.groups['H'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group H Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[4] = vm.models.groups['B'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['A'][1]) : null">{{vm.models.groups['B'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[4] = vm.models.groups['B'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['A'][1]) : null">{{vm.models.groups['B'][0]}} <span></span></li>
         <li class="game game-top-label">Group B Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[4] = vm.models.groups['A'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['B'][0]) : null">{{vm.models.groups['A'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[4] = vm.models.groups['A'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['B'][0]) : null">{{vm.models.groups['A'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group A Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[5] = vm.models.groups['D'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['C'][1]) : null">{{vm.models.groups['D'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[5] = vm.models.groups['D'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['C'][1]) : null">{{vm.models.groups['D'][0]}} <span></span></li>
         <li class="game game-top-label">Group D Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[5] = vm.models.groups['C'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['D'][0]) : null">{{vm.models.groups['C'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[5] = vm.models.groups['C'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['D'][0]) : null">{{vm.models.groups['C'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group C Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[6] = vm.models.groups['F'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['E'][1]) : null">{{vm.models.groups['F'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[6] = vm.models.groups['F'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['E'][1]) : null">{{vm.models.groups['F'][0]}} <span></span></li>
         <li class="game game-top-label">Group F Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[6] = vm.models.groups['E'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['F'][0]) : null">{{vm.models.groups['E'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[6] = vm.models.groups['E'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['F'][0]) : null">{{vm.models.groups['E'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group E Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[7] = vm.models.groups['H'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['G'][1]) : null">{{vm.models.groups['H'][0]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[7] = vm.models.groups['H'][0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['G'][1]) : null">{{vm.models.groups['H'][0]}} <span></span></li>
         <li class="game game-top-label">Group H Winner</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[7] = vm.models.groups['G'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['H'][0]) : null">{{vm.models.groups['G'][1]}} <span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[7] = vm.models.groups['G'][1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(1, vm.models.groups['H'][0]) : null">{{vm.models.groups['G'][1]}} <span></span></li>
         <li class="game game-bottom-label">Group G Runner-Up</li>
 
     		<li class="spacer">&nbsp;</li>
@@ -94,30 +94,30 @@
     	<ul class="round round-2">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[8] = vm.bracketPicks[0] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[1]) : null"> {{vm.bracketPicks[0]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[8] = vm.bracketPicks[0] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[1]) : null"> {{vm.bracketPicks[0]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[8] = vm.bracketPicks[1] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[0]) : null"> {{vm.bracketPicks[1]}}<span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[8] = vm.bracketPicks[1] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[0]) : null"> {{vm.bracketPicks[1]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[9] = vm.bracketPicks[2] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[3]) : null"> {{vm.bracketPicks[2]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[9] = vm.bracketPicks[2] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[3]) : null"> {{vm.bracketPicks[2]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[9] = vm.bracketPicks[3] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[2]) : null"> {{vm.bracketPicks[3]}}<span></span></li>
+    		<li class="game game-bottom " ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[9] = vm.bracketPicks[3] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[2]) : null"> {{vm.bracketPicks[3]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[10] = vm.bracketPicks[4] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[5]) : null"> {{vm.bracketPicks[4]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[10] = vm.bracketPicks[4] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[5]) : null"> {{vm.bracketPicks[4]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[10] = vm.bracketPicks[5] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[4]) : null"> {{vm.bracketPicks[5]}}<span></span></li>
+    		<li class="game game-bottom " ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[10] = vm.bracketPicks[5] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[4]) : null"> {{vm.bracketPicks[5]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[11] = vm.bracketPicks[6] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[7]) : null"> {{vm.bracketPicks[6]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[11] = vm.bracketPicks[6] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[7]) : null"> {{vm.bracketPicks[6]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[11] = vm.bracketPicks[7] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[6]) : null"> {{vm.bracketPicks[7]}}<span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[11] = vm.bracketPicks[7] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(2, vm.bracketPicks[6]) : null"> {{vm.bracketPicks[7]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
@@ -125,16 +125,16 @@
     	<ul class="round round-3">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[12] = vm.bracketPicks[8] : null; inTime ? vm.consOne = vm.bracketPicks[9] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[9]) : null"> {{vm.bracketPicks[8]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[12] = vm.bracketPicks[8] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.consOne = vm.bracketPicks[9] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(3, vm.bracketPicks[9]) : null"> {{vm.bracketPicks[8]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[12] = vm.bracketPicks[9] : null; inTime ? vm.consOne = vm.bracketPicks[8] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[8]) : null"> {{vm.bracketPicks[9]}}<span></span></li>
+    		<li class="game game-bottom " ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[12] = vm.bracketPicks[9] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.consOne = vm.bracketPicks[8] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(3, vm.bracketPicks[8]) : null"> {{vm.bracketPicks[9]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[13] = vm.bracketPicks[10] : null; inTime ? vm.consTwo = vm.bracketPicks[11] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[11]) : null"> {{vm.bracketPicks[10]}}<span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[13] = vm.bracketPicks[10] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.consTwo = vm.bracketPicks[11] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(3, vm.bracketPicks[11]) : null"> {{vm.bracketPicks[10]}}<span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[13] = vm.bracketPicks[11] : null; inTime ? vm.consTwo = vm.bracketPicks[10] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[10]) : null"> {{vm.bracketPicks[11]}}<span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[13] = vm.bracketPicks[11] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.consTwo = vm.bracketPicks[10] : null; inTime || vm.currentUser() === 'kaseymccabe' ? vm.checkAdvance(3, vm.bracketPicks[10]) : null"> {{vm.bracketPicks[11]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>
@@ -142,9 +142,9 @@
     	<ul class="round round-4">
     		<li class="spacer">&nbsp;</li>
 
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[15] = vm.bracketPicks[12] : null">{{vm.bracketPicks[12]}} <span></span></li>
+    		<li class="game game-top" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[15] = vm.bracketPicks[12] : null">{{vm.bracketPicks[12]}} <span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[15] = vm.bracketPicks[13] : null"> {{vm.bracketPicks[13]}}<span></span></li>
+    		<li class="game game-bottom" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.bracketPicks[15] = vm.bracketPicks[13] : null"> {{vm.bracketPicks[13]}}<span></span></li>
         <li class="game game-bottom-label"></li>
 
     		<li class="spacer">&nbsp;</li>

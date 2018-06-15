@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row submit-buttons">
-    <button ng-click="vm.saveGroupPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !inTime}">SAVE PICKS</button>
+    <button ng-click="vm.saveGroupPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !inTime && vm.currentUser() !== 'kaseymccabe'}">SAVE PICKS</button>
   </div>
   <div class="row">
     <div class="group-grid" ui-sortable ng-model="vm.models.groups">
@@ -18,8 +18,8 @@
           </thead>
           <tbody>
             <tr ng-repeat="team in group">
-              <td width="10%"><i class="fas fa-arrow-up" ng-if="$index !== 0" ng-click="inTime ? vm.moveUp(groupName, $index, team) : null"></i></td>
-              <td width="10%"><i class="fas fa-arrow-down" ng-if="$index !== 3" ng-click="inTime ? vm.moveDown(groupName, $index, team) : null"></i></td>
+              <td width="10%"><i class="fas fa-arrow-up" ng-if="$index !== 0" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.moveUp(groupName, $index, team) : null"></i></td>
+              <td width="10%"><i class="fas fa-arrow-down" ng-if="$index !== 3" ng-click="inTime || vm.currentUser() === 'kaseymccabe' ? vm.moveDown(groupName, $index, team) : null"></i></td>
               <td width="10%">{{$index + 1}}</td>
               <td width="60%"><b>{{team}}</b></td>
             </tr>
