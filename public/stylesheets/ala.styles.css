@@ -1072,3 +1072,32 @@ consolation li.game-spacer {
 selectDiv {
   margin-top: 10px;
 }
+
+#prog-table-head {
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#prog-table {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#prog-table thead tr th:nth-child(n+3):nth-child(-n+12) {
+  text-align: center;
+}
+
+#prog-table tbody tr td:nth-child(n+3):nth-child(-n+12) {
+  text-align: center;
+}
+
+.row-group {
+  width: 7%
+}
+
+.row-team {
+  width: 15%;
+}

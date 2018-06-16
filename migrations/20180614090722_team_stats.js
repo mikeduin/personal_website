@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     t.integer('group_2nd');
     t.integer('group_3rd');
     t.integer('group_4th');
+    t.integer('round_16');
     t.integer('round_8');
     t.integer('round_4');
     t.integer('round_2');

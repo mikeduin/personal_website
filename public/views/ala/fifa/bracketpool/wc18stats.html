@@ -1,3 +1,48 @@
-<div class="col-xs-9 col-md-10 text-center">
-  <h1>Coming soon!</h1>
+<div class="col-xs-9 col-md-10">
+  <div class="row">
+    <div class="col-xs-12 page-intro">
+      The table below shows how far the pool has each team progressing expressed as a percentage of the total pool picks.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-bordered" id="prog-table">
+        <thead>
+          <tr>
+            <th rowspan="2" class="row-group">GROUP</th>
+            <th rowspan="2" class="row-team">Team</th>
+            <th colspan="4" class="text-center" style="background-color: #DA562E; color: white">GROUP STAGE</th>
+            <th colspan="6" class="text-center" style="background-color: #368623; color: white">BRACKET STAGE</th>
+          </tr>
+          <tr>
+            <th class="text-center">1st</th>
+            <th class="text-center">2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+            <th>Advance</th>
+            <th>Quarters</th>
+            <th>Semis</th>
+            <th>Final</th>
+            <th>3rd Pl</th>
+            <th>Champion</th>
+          </tr>
+        <tbody>
+          <tr ng-repeat="team in vm.teamStats | orderBy: 'group'">
+            <td>{{team.group}}</td>
+            <td>{{team.team}}</td>
+            <td>{{((team.group_1st / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.group_2nd / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.group_3rd / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.group_4th / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.round_16 / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.round_8 / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.round_4 / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.round_2 / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.cons_winner / vm.standings.length)*100) | number:2}}%</td>
+            <td>{{((team.champion / vm.standings.length)*100) | number:2}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

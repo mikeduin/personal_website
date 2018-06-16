@@ -3,6 +3,7 @@ angular
   .controller('WCBracketController', ['$scope', '$state', 'authService', 'alaService', 'WCBracketService', WCBracketController])
 
 function WCBracketController ($scope, $state, authService, alaService, WCBracketService) {
+  $scope.vm.groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
   $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
@@ -83,6 +84,15 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   }
 
   $scope.vm.pullStandings();
+
+  $scope.vm.pullTeamStats = function () {
+    WCBracketService.pullTeamStats().then(function(res){
+      console.log('team stats are ', res);
+      $scope.vm.teamStats = res;
+    })
+  };
+
+  $scope.vm.pullTeamStats();
 
   // AM I STILL USING THIS?
   $scope.vm.getUserPage = function(user) {
