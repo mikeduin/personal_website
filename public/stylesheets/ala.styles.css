@@ -1092,6 +1092,11 @@ selectDiv {
   text-align: center;
 }
 
+#prog-table .stat-row th:nth-child(n+5):nth-child(-n+10) {
+  background-color: #66bb6a;
+  text-align: center;
+}
+
 .row-group {
   width: 7%
 }
@@ -1109,4 +1114,8 @@ selectDiv {
 .flag {
   max-height: 100%;
   max-width: 100%;
+}
+
+.team-name {
+  font-size: 16px;
 }
