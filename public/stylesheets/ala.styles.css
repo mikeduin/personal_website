@@ -1119,3 +1119,18 @@ selectDiv {
 .team-name {
   font-size: 16px;
 }
+
+.def-highlight {
+  background-color: #F1EDED;
+  font-weight: 600;
+}
+
+.group-highlight {
+  background-color: #FFBAA3;
+  font-weight: 600;
+}
+
+.bracket-highlight {
+  background-color: #8AED8F;
+  font-weight: 600;
+}
