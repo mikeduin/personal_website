@@ -33,6 +33,11 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/usernames').then(function(res){
         return res.data;
       })
+    },
+    pullTeamStats: function() {
+      return $http.get('wcbracket/teamstats').then(function(res){
+        return res.data;
+      })
     }
   }
 }
