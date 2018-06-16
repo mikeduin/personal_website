@@ -1073,17 +1073,15 @@ selectDiv {
   margin-top: 10px;
 }
 
-#prog-table-head {
-  table-layout: fixed;
-  width: 100%;
-  margin-bottom: 0;
-}
-
 #prog-table {
   table-layout: fixed;
   width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
+}
+
+
+#prog-table thead th span:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #prog-table thead tr th:nth-child(n+3):nth-child(-n+12) {
@@ -1100,4 +1098,15 @@ selectDiv {
 
 .row-team {
   width: 15%;
+}
+
+.flag-cont {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.flag {
+  max-height: 100%;
+  max-width: 100%;
 }

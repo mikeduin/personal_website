@@ -4,6 +4,7 @@ angular
 
 function WCBracketController ($scope, $state, authService, alaService, WCBracketService) {
   $scope.vm.groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+  $scope.vm.sortOrder = 'group';
 
   $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
