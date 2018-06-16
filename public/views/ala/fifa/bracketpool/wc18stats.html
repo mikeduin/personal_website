@@ -11,10 +11,10 @@
           <tr>
             <th rowspan="2" class="row-group" ng-click="vm.sortOrder == '-group' ? vm.sortOrder = 'group' : vm.sortOrder = '-group'"><span>GROUP</span></th>
             <th rowspan="2" class="row-team" ng-click="vm.sortOrder == '-team' ? vm.sortOrder = 'team' : vm.sortOrder = '-team'"><span>Team</span></th>
-            <th colspan="4" class="text-center" style="background-color: #DA562E; color: white">GROUP STAGE</th>
-            <th colspan="6" class="text-center" style="background-color: #368623; color: white">BRACKET STAGE</th>
+            <th colspan="4" class="text-center" style="background-color: #DA562E; color: white">GROUP STAGE FINISH</th>
+            <th colspan="6" class="text-center" style="background-color: #368623; color: white">BRACKET STAGE PROGRESSION</th>
           </tr>
-          <tr>
+          <tr class="stat-row">
             <th class="text-center" ng-click="vm.sortOrder == '-group_1st' ? vm.sortOrder = 'group_1st' : vm.sortOrder = '-group_1st'"><span>1st</span></th>
             <th class="text-center" ng-click="vm.sortOrder == '-group_2nd' ? vm.sortOrder = 'group_2nd' : vm.sortOrder = '-group_2nd'"><span>2nd</span></th>
             <th ng-click="vm.sortOrder == '-group_3rd' ? vm.sortOrder = 'group_3rd' : vm.sortOrder = '-group_3rd'"><span>3rd</span></th>
@@ -29,7 +29,7 @@
         <tbody>
           <tr ng-repeat="team in vm.teamStats | orderBy: vm.sortOrder">
             <td>{{team.group}}</td>
-            <td><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> {{team.team}}</td>
+            <td class="team-name"><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> {{team.team}}</td>
             <td>{{((team.group_1st / vm.standings.length)*100) | number:2}}%</td>
             <td>{{((team.group_2nd / vm.standings.length)*100) | number:2}}%</td>
             <td>{{((team.group_3rd / vm.standings.length)*100) | number:2}}%</td>
