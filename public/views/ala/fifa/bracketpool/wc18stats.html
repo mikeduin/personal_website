@@ -1,7 +1,7 @@
 <div class="col-xs-9 col-md-10">
   <div class="row">
     <div class="col-xs-12 page-intro">
-      The table below shows how far the pool has each team progressing expressed as a percentage of the total pool picks.
+      The table below displays a percentile breakdown of how far the pool collectively has each team progressing. Click each column header to sort by that column.
     </div>
   </div>
   <div class="row">
@@ -9,27 +9,27 @@
       <table class="table table-bordered" id="prog-table">
         <thead>
           <tr>
-            <th rowspan="2" class="row-group">GROUP</th>
-            <th rowspan="2" class="row-team">Team</th>
+            <th rowspan="2" class="row-group" ng-click="vm.sortOrder == '-group' ? vm.sortOrder = 'group' : vm.sortOrder = '-group'"><span>GROUP</span></th>
+            <th rowspan="2" class="row-team" ng-click="vm.sortOrder == '-team' ? vm.sortOrder = 'team' : vm.sortOrder = '-team'"><span>Team</span></th>
             <th colspan="4" class="text-center" style="background-color: #DA562E; color: white">GROUP STAGE</th>
             <th colspan="6" class="text-center" style="background-color: #368623; color: white">BRACKET STAGE</th>
           </tr>
           <tr>
-            <th class="text-center">1st</th>
-            <th class="text-center">2nd</th>
-            <th>3rd</th>
-            <th>4th</th>
-            <th>Advance</th>
-            <th>Quarters</th>
-            <th>Semis</th>
-            <th>Final</th>
-            <th>3rd Pl</th>
-            <th>Champion</th>
+            <th class="text-center" ng-click="vm.sortOrder == '-group_1st' ? vm.sortOrder = 'group_1st' : vm.sortOrder = '-group_1st'"><span>1st</span></th>
+            <th class="text-center" ng-click="vm.sortOrder == '-group_2nd' ? vm.sortOrder = 'group_2nd' : vm.sortOrder = '-group_2nd'"><span>2nd</span></th>
+            <th ng-click="vm.sortOrder == '-group_3rd' ? vm.sortOrder = 'group_3rd' : vm.sortOrder = '-group_3rd'"><span>3rd</span></th>
+            <th ng-click="vm.sortOrder == '-group_4th' ? vm.sortOrder = 'group_4th' : vm.sortOrder = '-group_4th'"><span>4th</span></th>
+            <th ng-click="vm.sortOrder == '-round_16' ? vm.sortOrder = 'round_16' : vm.sortOrder = '-round_16'"><span>Advance</span></th>
+            <th ng-click="vm.sortOrder == '-round_8' ? vm.sortOrder = 'round_8' : vm.sortOrder = '-round_8'"><span>Quarters</span></th>
+            <th ng-click="vm.sortOrder == '-round_4' ? vm.sortOrder = 'round_4' : vm.sortOrder = '-round_4'"><span>Semis</span></th>
+            <th ng-click="vm.sortOrder == '-round_2' ? vm.sortOrder = 'round_2' : vm.sortOrder = '-round_2'"><span>Final</span></th>
+            <th ng-click="vm.sortOrder == '-cons_winner' ? vm.sortOrder = 'cons_winner' : vm.sortOrder = '-cons_winner'"><span>3rd Pl</span></th>
+            <th ng-click="vm.sortOrder == '-champion' ? vm.sortOrder = 'champion' : vm.sortOrder = '-champion'"><span>Champion</span></th>
           </tr>
         <tbody>
-          <tr ng-repeat="team in vm.teamStats | orderBy: 'group'">
+          <tr ng-repeat="team in vm.teamStats | orderBy: vm.sortOrder">
             <td>{{team.group}}</td>
-            <td>{{team.team}}</td>
+            <td><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> {{team.team}}</td>
             <td>{{((team.group_1st / vm.standings.length)*100) | number:2}}%</td>
             <td>{{((team.group_2nd / vm.standings.length)*100) | number:2}}%</td>
             <td>{{((team.group_3rd / vm.standings.length)*100) | number:2}}%</td>
