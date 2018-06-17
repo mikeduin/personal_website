@@ -26,7 +26,7 @@
 </div>
 
 <div ng-if="vm.showMain">
-  <div class="main-spacer" "$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.alapools') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')"></div>
+  <div class="main-spacer" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.alapools') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')"></div>
 </div>
 
 <div ng-if="vm.showMobile">
