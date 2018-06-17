@@ -60,9 +60,9 @@ hoopsPopover, italyPopover {
     font-weight: 600;
   }
 
-  /* .main-spacer {
+  .main-spacer {
     margin-top: 7vw;
-  } */
+  }
 
   firstStory {
     display: -ms-flexbox;
