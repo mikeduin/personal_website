@@ -9,7 +9,7 @@
       <table class="table table-bordered" id="prog-table">
         <thead>
           <tr>
-            <th rowspan="2" class="row-group" ng-click="vm.sortOrder == '-group' ? vm.sortOrder = 'group' : vm.sortOrder = '-group'"><span>GROUP</span></th>
+            <th rowspan="2" class="row-group" ng-click="vm.sortOrder == '-group' ? vm.sortOrder = 'group' : vm.sortOrder = '-group'"><span>GRP</span></th>
             <th rowspan="2" class="row-team" ng-click="vm.sortOrder == '-team' ? vm.sortOrder = 'team' : vm.sortOrder = '-team'"><span>Team</span></th>
             <th colspan="4" class="text-center" style="background-color: #DA562E; color: white">GROUP STAGE FINISH</th>
             <th colspan="6" class="text-center" style="background-color: #368623; color: white">BRACKET STAGE PROGRESSION</th>
@@ -30,16 +30,16 @@
           <tr ng-repeat="team in vm.teamStats | orderBy: vm.sortOrder">
             <td ng-class="{'def-highlight': vm.sortOrder == 'group' || vm.sortOrder == '-group'}">{{team.group}}</td>
             <td class="team-name" ng-class="{'def-highlight': vm.sortOrder == 'team' || vm.sortOrder == '-team'}"><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> {{team.team}}</td>
-            <td ng-class="{'group-highlight': vm.sortOrder == 'group_1st' || vm.sortOrder == '-group_1st'}">{{((team.group_1st / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'group-highlight': vm.sortOrder == 'group_2nd' || vm.sortOrder == '-group_2nd'}">{{((team.group_2nd / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'group-highlight': vm.sortOrder == 'group_3rd' || vm.sortOrder == '-group_3rd'}">{{((team.group_3rd / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'group-highlight': vm.sortOrder == 'group_4th' || vm.sortOrder == '-group_4th'}">{{((team.group_4th / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_16' || vm.sortOrder == '-round_16'}">{{((team.round_16 / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_8' || vm.sortOrder == '-round_8'}">{{((team.round_8 / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_4' || vm.sortOrder == '-round_4'}">{{((team.round_4 / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_2' || vm.sortOrder == '-round_2'}">{{((team.round_2 / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'cons_winner' || vm.sortOrder == '-cons_winner'}">{{((team.cons_winner / vm.standings.length)*100) | number:2}}%</td>
-            <td ng-class="{'bracket-highlight': vm.sortOrder == 'champion' || vm.sortOrder == '-champion'}">{{((team.champion / vm.standings.length)*100) | number:2}}%</td>
+            <td ng-class="{'group-highlight': vm.sortOrder == 'group_1st' || vm.sortOrder == '-group_1st'}">{{((team.group_1st / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'group-highlight': vm.sortOrder == 'group_2nd' || vm.sortOrder == '-group_2nd'}">{{((team.group_2nd / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'group-highlight': vm.sortOrder == 'group_3rd' || vm.sortOrder == '-group_3rd'}">{{((team.group_3rd / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'group-highlight': vm.sortOrder == 'group_4th' || vm.sortOrder == '-group_4th'}">{{((team.group_4th / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_16' || vm.sortOrder == '-round_16'}">{{((team.round_16 / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_8' || vm.sortOrder == '-round_8'}">{{((team.round_8 / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_4' || vm.sortOrder == '-round_4'}">{{((team.round_4 / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'round_2' || vm.sortOrder == '-round_2'}">{{((team.round_2 / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'cons_winner' || vm.sortOrder == '-cons_winner'}">{{((team.cons_winner / vm.standings.length)*100) | number:1}}%</td>
+            <td ng-class="{'bracket-highlight': vm.sortOrder == 'champion' || vm.sortOrder == '-champion'}">{{((team.champion / vm.standings.length)*100) | number:1}}%</td>
           </tr>
         </tbody>
       </table>
