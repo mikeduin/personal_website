@@ -38,6 +38,11 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/teamstats').then(function(res){
         return res.data;
       })
+    },
+    calcGroups: function() {
+      return $http.get('wcbracket/calcGroups').then(function(res){
+        return res.data;
+      })
     }
   }
 }
