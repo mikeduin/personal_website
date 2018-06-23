@@ -834,12 +834,29 @@ tabs div {
   background-color: #E3DFDF;
 }
 
+results {
+  margin-top: -10px;
+}
+
+subtabs div {
+  border: solid 1px #CDCACA;
+  padding: 5px;
+  background-color: white;
+  color: #D85636;
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .active-pool-tab {
   background-color: #3D85C3;
 }
 
-.active-pool-tab a {
+.active-pool-tab a, .active-subtab a {
   color: white;
+}
+
+.active-subtab {
+  background-color: #D85636;
 }
 
 .fa-arrow-up, .fa-arrow-down {
