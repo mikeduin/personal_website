@@ -141,7 +141,18 @@ router.get('/calcGroups', function(req, res, next){
 
         })
       })).then(function(totalResults){
-        console.log(totalResults);
+        totalResults.forEach(function(groupObj){
+          TeamStats().where({team: groupObj.team}).update({
+            group_pts: groupObj.points,
+            group_gp: groupObj.gp,
+            group_w: groupObj.totalWins,
+            group_l: groupObj.totalLoss,
+            group_d: groupObj.totalDraw,
+            group_goals: groupObj.goals
+          }, '*').then(function(res){
+            console.log(res[0].team, ' has been updated');
+          })
+        })
       })
     })
   })
