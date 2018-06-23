@@ -82,6 +82,22 @@ router.get('/teamstats', function(req, res, next){
   })
 })
 
+router.get('/results', function(req, res, next){
+  Results().then(function(data){
+    res.json(data);
+  })
+})
+
+router.get('/flags', function(req, res, next){
+  TeamStats().select('team', 'flag').then(function(flags){
+    var lookup = {};
+    flags.forEach(function(obj){
+      lookup[obj.team] = obj.flag
+    });
+    res.json(lookup);
+  })
+})
+
 router.get('/calcGroups', function(req, res, next){
   TeamStats().pluck('team').then(function(teams){
     Promise.all(teams.map(function(team){

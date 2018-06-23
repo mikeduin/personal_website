@@ -43,6 +43,16 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/calcGroups').then(function(res){
         return res.data;
       })
+    },
+    pullResults: function() {
+      return $http.get('wcbracket/results').then(function(res){
+        return res.data;
+      })
+    },
+    getFlags: function() {
+      return $http.get('wcbracket/flags').then(function(res){
+        return res.data;
+      })
     }
   }
 }

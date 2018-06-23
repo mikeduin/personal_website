@@ -842,7 +842,7 @@ subtabs div {
   border: solid 1px #CDCACA;
   padding: 5px;
   background-color: white;
-  color: #D85636;
+  color: #368623;
   font-weight: 600;
   font-size: 18px;
 }
@@ -856,7 +856,7 @@ subtabs div {
 }
 
 .active-subtab {
-  background-color: #D85636;
+  background-color: #368623;
 }
 
 .fa-arrow-up, .fa-arrow-down {
