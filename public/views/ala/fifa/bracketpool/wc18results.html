@@ -9,5 +9,9 @@
   </subtabs>
 </results>
 
+<div class="row" ng-show="vm.currentUser() == 'mikeduin'">
+  <a class="col-xs-3 col-xs-offset-3 btn btn-primary" ng-click="vm.calcGroups()">Calculate Group Standings</a>
+</div>
+
 <div ui-view="games"></div>
 <div ui-view="groupstandings"></div>

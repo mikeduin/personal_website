@@ -14,6 +14,10 @@ function TeamStats() {
   return knex('team_stats')
 };
 
+function Results() {
+  return knex('results')
+};
+
 var statsCompiled = false;
 
 router.get('/picks/:user', function(req, res, next){
@@ -75,6 +79,71 @@ router.get('/usernames', function(req, res, next){
 router.get('/teamstats', function(req, res, next){
   TeamStats().then(function(data){
     res.json(data);
+  })
+})
+
+router.get('/calcGroups', function(req, res, next){
+  TeamStats().pluck('team').then(function(teams){
+    Promise.all(teams.map(function(team){
+      return Results().where({away_team: team}).then(function(results){
+        var points = 0;
+        var goals = 0;
+        var win = 0;
+        var loss = 0;
+        var draw = 0;
+
+        results.forEach(function(result){
+          if (result.final == true) {
+            points += result.away_points;
+            goals += result.away_goals;
+            if (result.away_points === 3) {
+              win++;
+            } else if (result.away_points === 1) {
+              draw++;
+            } else {
+              loss++
+            };
+          };
+        });
+
+        return {team: team, away_points: points, away_goals: goals, away_wins: win, away_loss: loss, away_draw: draw}
+
+      })
+    })).then(function(teamArray){
+      Promise.all(teamArray.map(function(team){
+        var totalGoals = team.away_goals;
+        var totalPoints = team.away_points;
+        var totalWins = team.away_wins;
+        var totalLoss = team.away_loss;
+        var totalDraw = team.away_draw;
+        var team = team.team
+        var gp = 0;
+
+        return Results().where({home_team: team}).then(function(homeResults){
+
+          homeResults.forEach(function(homeResult){
+            if (homeResult.final == true) {
+              totalPoints += homeResult.home_points;
+              totalGoals += homeResult.home_goals;
+              if (homeResult.home_points === 3) {
+                totalWins++;
+              } else if (homeResult.home_points === 1) {
+                totalDraw++;
+              } else {
+                totalLoss++
+              };
+            }
+          });
+
+          gp = totalWins + totalLoss + totalDraw;
+
+          return {team: team, points: totalPoints, goals: totalGoals, gp: gp, totalWins: totalWins, totalLoss: totalLoss, totalDraw: totalDraw}
+
+        })
+      })).then(function(totalResults){
+        console.log(totalResults);
+      })
+    })
   })
 })
 
@@ -145,7 +214,7 @@ var compileFunction = function() {
   }
 }
 
-setTimeout(compileFunction, 3000);
+// setTimeout(compileFunction, 3000);
 
 
 module.exports = router;
