@@ -218,6 +218,24 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.wc18bracket.results.games', {
+      url: '/games',
+      views: {
+        'games@home.ala.wc18bracket.results': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18games.html',
+          controller: 'WCBracketController'
+        }
+      }
+    })
+    .state('home.ala.wc18bracket.results.group-standings', {
+      url: '/group-standings',
+      views: {
+        'group-standings@home.ala.wc18bracket.results': {
+          templateUrl: 'views/ala/fifa/bracketpool/wc18groupstandings.html',
+          controller: 'WCBracketController'
+        }
+      }
+    })
     .state('home.ala.wc18bracket.user', {
       url: '/user/:username',
       views: {
