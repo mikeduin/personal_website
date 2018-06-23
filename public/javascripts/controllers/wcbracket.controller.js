@@ -27,6 +27,14 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   $scope.vm.getUser();
 
+  $scope.vm.getFlags = function(){
+    WCBracketService.getFlags().then(function(flags){
+      $scope.vm.flags = flags;
+    });
+  };
+
+  $scope.vm.getFlags();
+
   $scope.vm.checkTime = function () {
     if (moment().isBefore('2018-06-14T15:00:00+0000')) {
       $scope.inTime = true;
@@ -94,19 +102,26 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   $scope.vm.pullTeamStats = function () {
     WCBracketService.pullTeamStats().then(function(res){
-      console.log('team stats are ', res);
       $scope.vm.teamStats = res;
     })
   };
 
   $scope.vm.pullTeamStats();
 
-  // AM I STILL USING THIS?
-  $scope.vm.getUserPage = function(user) {
-    WCBracketService.getUserPage(user).then(function(res){
-      console.log('user data is ', res);
+  $scope.vm.pullResults = function () {
+    WCBracketService.pullResults().then(function(res){
+      console.log('res to controller is ', res);
     })
   }
+
+  $scope.vm.pullResults();
+
+  // AM I STILL USING THIS? -- don't think so, delete if nothing breaks promptly
+  // $scope.vm.getUserPage = function(user) {
+  //   WCBracketService.getUserPage(user).then(function(res){
+  //     console.log('user data is ', res);
+  //   })
+  // }
 
   $scope.vm.clearBracketPicks = function(){
     for (var i=0; i<$scope.vm.bracketPicks.length; i++){
