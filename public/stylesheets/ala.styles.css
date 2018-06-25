@@ -774,19 +774,6 @@ upcoming blog p {
   justify-content: flex-start;
 }
 
-/* @media screen and (min-width: 300px) {
-  .group-grid table {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-
-@media screen and (min-width: 989px) {
-  .group-grid table {
-    margin-left: 20%;
-  }
-} */
-
 .group-grid table th {
   background-color: #3D85C3;
   color: white;
