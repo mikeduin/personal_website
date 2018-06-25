@@ -52,6 +52,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       $scope.vm.consOne = userData[0].bracketSelections[0].consOne;
       $scope.vm.consTwo = userData[0].bracketSelections[0].consTwo;
       $scope.vm.original = angular.copy($scope.vm.models);
+      console.log('user picks are ', $scope.vm.models);
     })
   };
   $scope.vm.loadPicks();
@@ -110,7 +111,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.pullTeamStats = function () {
     WCBracketService.pullTeamStats().then(function(res){
       $scope.vm.teamStats = res;
-      console.log($scope.vm.teamStats);
+      // console.log($scope.vm.teamStats);
     })
   };
 
