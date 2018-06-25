@@ -15,15 +15,15 @@
             <th rowspan="2"></th>
           </tr>
           <tr class="stat-row">
-            <th><span uib-tooltip="1 point per team for predicting their group ranking"><b>Exact Rank</b></span></th>
-            <th><span uib-tooltip="3 points per group for predicting the Group Runner-Up">Runner-Up</span></th>
-            <th><span uib-tooltip="5 points per group for predicting the Group Winner">Winner</span></th>
-            <th><span uib-tooltip="3 points per group for predicting the exact order of finish, 1-4">Exact Order</span></th>
-            <th><span uib-tooltip="4 points per win in the Round of 16">R16</span></th>
-            <th><span uib-tooltip="8 points per win in the Quarterfinals">R8</span></th>
-            <th><span uib-tooltip="14 points per win in the Semifinals">R4</span></th>
-            <th><span uib-tooltip="14 points for picking Consolation Game winner">3rd Pl</span></th>
-            <th><span uib-tooltip="24 points for picking World Cup Champion">Champ</span></th>
+            <th><span uib-tooltip="1 point per team for predicting a Group ranking">Exact Rank <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="3 points per group for predicting a Group Runner-Up">Runner-Up <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="5 points per group for predicting a Group Winner">Winner <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="3 points per group for predicting an exact Group order of finish, 1-4">Exact Order <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="4 points per win in the Round of 16">R16 <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="8 points per win in the Quarterfinals">R8 <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="14 points per win in the Semifinals">R4 <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="14 points for picking Consolation Game winner">3rd Pl <i class="fas fa-question-circle"></i></span></th>
+            <th><span uib-tooltip="24 points for picking World Cup Champion">Champ <i class="fas fa-question-circle"></i></span></th>
           </tr>
           <tr class="max-pts">
             <th><i><b>Max Pts -></b></i></th>
@@ -40,18 +40,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="user in vm.standings | orderBy: 'username'">
+          <tr ng-repeat="user in vm.standings | orderBy: '-total_score'">
             <td><a class="user-link" ui-sref="home.ala.wc18bracket.user({username: user.username})">{{user.username}}</a></td>
+            <td>{{user.exact_rank}}</td>
+            <td>{{user.runner_up}}</td>
+            <td>{{user.winner}}</td>
+            <td>{{user.exact_order}}</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td><b>{{user.total_score}}</b></td>
           </tr>
         </tbody>
       </table>

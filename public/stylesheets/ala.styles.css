@@ -1040,6 +1040,10 @@ consolation li.game-spacer {
   margin-top: 10px;
 }
 
+.fa-question-circle {
+  color: black;
+}
+
 .max-pts th {
   font-weight: 400;
   text-align: center;
