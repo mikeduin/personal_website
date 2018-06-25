@@ -212,6 +212,26 @@ router.get('/calcGroups', function(req, res, next){
   })
 })
 
+router.get('/fetchStandings', function(req, res, next){
+  TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
+    var groupA = ordered.slice(0, 4);
+    var groupB = ordered.slice(4, 8);
+    var groupC = ordered.slice(8, 12);
+    var groupD = ordered.slice(12, 16);
+    var groupE = ordered.slice(16, 20);
+    var groupF = ordered.slice(20, 24);
+    var groupG = ordered.slice(24, 28);
+    var groupH = ordered.slice(28, 32);
+
+    var standingsObj = {
+      "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
+    };
+
+    res.json(standingsObj);
+  })
+})
+
+
 router.get('/calcStandings', function(req, res, next){
   TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
     var groupA = ordered.slice(0, 4);
@@ -227,8 +247,7 @@ router.get('/calcStandings', function(req, res, next){
       "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
     };
 
-    // Promise.all(
-      WC18Bracket().then(function(users){
+    WC18Bracket().then(function(users){
       users.forEach(function(user){
         var exact_rank = 0;
         var exact_order = 0;
@@ -271,14 +290,10 @@ router.get('/calcStandings', function(req, res, next){
           exact_order: exact_order,
           total_score: total
         }, '*').then(function(updated){
-          console.log(updated, ' has been updated!');
-          res.json(standingsObj);
+          console.log(updated, ' has been updated!')
         })
       })
     })
-  // ).then(function(){
-  //     console.log('everything is updated!');
-  //   })
   })
 })
 

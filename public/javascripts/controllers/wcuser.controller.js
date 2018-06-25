@@ -22,4 +22,17 @@ function WCUserController($scope, $state, alaService, WCBracketService) {
     $state.go('home.ala.wc18bracket.user', {username: vm.userFilter});
     vm.getUserData();
   };
+
+  vm.fetchStandings = function () {
+    WCBracketService.fetchStandings().then(function(res){
+      vm.actualStandings = res;
+      console.log(vm.actualStandings);
+    })
+  };
+
+  vm.fetchStandings();
+
+  vm.checkStuff = function(a, b) {
+    console.log('a is ', a, ' b is ', b);
+  }
 }

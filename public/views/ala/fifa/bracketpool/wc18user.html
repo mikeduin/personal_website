@@ -29,10 +29,10 @@
         <tbody>
           <tr ng-repeat="(name, pick) in vm.user.groupSelections[0].groups">
             <td>{{name}}</td>
-            <td>{{pick[0]}}</td>
-            <td>{{pick[1]}}</td>
-            <td>{{pick[2]}}</td>
-            <td>{{pick[3]}}</td>
+            <td ng-class="{correct: pick[0] === vm.actualStandings.groups[name][0]}">{{pick[0]}}</td>
+            <td ng-class="{correct: pick[1] === vm.actualStandings.groups[name][1]}">{{pick[1]}}</td>
+            <td ng-class="{correct: pick[2] === vm.actualStandings.groups[name][2]}">{{pick[2]}}</td>
+            <td ng-class="{correct: pick[3] === vm.actualStandings.groups[name][3]}">{{pick[3]}}</td>
           </tr>
         </tbody>
       </table>
