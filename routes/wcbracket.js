@@ -227,7 +227,8 @@ router.get('/calcStandings', function(req, res, next){
       "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
     };
 
-    WC18Bracket().then(function(users){
+    // Promise.all(
+      WC18Bracket().then(function(users){
       users.forEach(function(user){
         var exact_rank = 0;
         var exact_order = 0;
@@ -270,10 +271,14 @@ router.get('/calcStandings', function(req, res, next){
           exact_order: exact_order,
           total_score: total
         }, '*').then(function(updated){
-          console.log(updated, ' has been updated!')
+          console.log(updated, ' has been updated!');
+          res.json(standingsObj);
         })
       })
     })
+  // ).then(function(){
+  //     console.log('everything is updated!');
+  //   })
   })
 })
 
