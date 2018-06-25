@@ -103,6 +103,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.pullTeamStats = function () {
     WCBracketService.pullTeamStats().then(function(res){
       $scope.vm.teamStats = res;
+      console.log($scope.vm.teamStats);
     })
   };
 
@@ -110,7 +111,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   $scope.vm.pullResults = function () {
     WCBracketService.pullResults().then(function(res){
-      console.log('res to controller is ', res);
+      $scope.vm.results = res;
+      // console.log($scope.vm.results);
     })
   }
 

@@ -855,10 +855,6 @@ subtabs div {
   color: white;
 }
 
-.active-subtab {
-  background-color: #368623;
-}
-
 .fa-arrow-up, .fa-arrow-down {
   cursor: pointer;
 }
@@ -1128,6 +1124,12 @@ selectDiv {
   width: 20px;
 }
 
+.res-flag-cont {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
 .flag {
   max-height: 100%;
   max-width: 100%;
@@ -1150,4 +1152,32 @@ selectDiv {
 .bracket-highlight {
   background-color: #8AED8F;
   font-weight: 600;
+}
+
+/* Results Styles */
+
+scoreBox {
+  border: solid 3px #3D85C3;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  text-transform: uppercase;
+  background-color: #E3DFDF;
+}
+
+scoreBox div {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+scoreBox date {
+  font-size: 14px;
+}
+
+scorebox team {
+  padding-top: 5px;
+}
+
+scoreBox score {
+  font-size: 26px;
 }
