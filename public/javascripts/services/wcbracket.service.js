@@ -44,6 +44,11 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
+    calcStandings: function() {
+      return $http.get('wcbracket/calcStandings').then(function(res){
+        return res.data;
+      })
+    },
     pullResults: function() {
       return $http.get('wcbracket/results').then(function(res){
         return res.data;

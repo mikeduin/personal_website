@@ -212,7 +212,7 @@ router.get('/calcGroups', function(req, res, next){
   })
 })
 
-var compilePoolStandings = function () {
+router.get('/calcStandings', function(req, res, next){
   TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
     var groupA = ordered.slice(0, 4);
     var groupB = ordered.slice(4, 8);
@@ -275,10 +275,7 @@ var compilePoolStandings = function () {
       })
     })
   })
-};
-
-setTimeout(compilePoolStandings, 3000);
-
+})
 
 // This compilePoolStats fn compiles the stats for the pool picks -- it is only necessary to run once after picks have been submitted, or any time an entrant's picks have changed
 
