@@ -18,6 +18,37 @@ function Results() {
   return knex('results')
 };
 
+// Warn if overriding existing method
+if(Array.prototype.equals)
+    console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+
+// attach the .equals method to Array's prototype to call it on any array
+Array.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time
+    if (this.length != array.length)
+        return false;
+
+    for (var i = 0, l=this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;
+        }
+        else if (this[i] != array[i]) {
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;
+        }
+    }
+    return true;
+}
+// Hide method from for-in loops
+Object.defineProperty(Array.prototype, "equals", {enumerable: false});
+
 var statsCompiled = false;
 
 router.get('/picks/:user', function(req, res, next){
@@ -192,7 +223,28 @@ var compilePoolStandings = function () {
     var groupG = ordered.slice(24, 28);
     var groupH = ordered.slice(28, 32);
 
-    console.log(groupA, groupB, groupC, groupH);
+    var standingsObj = {
+      "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
+    };
+
+    WC18Bracket().then(function(users){
+      var exact_rank = 0;
+      var exact_order = 0;
+      var winners = 0;
+      var runners_up = 0;
+
+      users.forEach(function(user){
+        userGroupPicks = user.groupSelections[0].groups;
+
+        // CHECKS FOR EXACT ORDER
+        Object.values(standingsObj.groups).forEach(function(value, index){
+          if (value.equals(Object.values(userGroupPicks)[index])) {
+            exact_order+=3
+          };
+        });
+      })
+
+    })
   })
 };
 
