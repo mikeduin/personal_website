@@ -104,6 +104,7 @@ router.get('/calcGroups', function(req, res, next){
       return Results().where({away_team: team}).then(function(results){
         var points = 0;
         var goals = 0;
+        var goalsAg = 0;
         var win = 0;
         var loss = 0;
         var draw = 0;
@@ -112,6 +113,7 @@ router.get('/calcGroups', function(req, res, next){
           if (result.final == true) {
             points += result.away_points;
             goals += result.away_goals;
+            goalsAg += result.home_goals;
             if (result.away_points === 3) {
               win++;
             } else if (result.away_points === 1) {
@@ -122,7 +124,7 @@ router.get('/calcGroups', function(req, res, next){
           };
         });
 
-        return {team: team, away_points: points, away_goals: goals, away_wins: win, away_loss: loss, away_draw: draw}
+        return {team: team, away_points: points, away_goals: goals, away_wins: win, away_loss: loss, away_draw: draw, goals_ag: goalsAg}
 
       })
     })).then(function(teamArray){
@@ -132,6 +134,7 @@ router.get('/calcGroups', function(req, res, next){
         var totalWins = team.away_wins;
         var totalLoss = team.away_loss;
         var totalDraw = team.away_draw;
+        var totalGoalsAg = team.goals_ag;
         var team = team.team
         var gp = 0;
 
@@ -141,6 +144,7 @@ router.get('/calcGroups', function(req, res, next){
             if (homeResult.final == true) {
               totalPoints += homeResult.home_points;
               totalGoals += homeResult.home_goals;
+              totalGoalsAg += homeResult.away_goals;
               if (homeResult.home_points === 3) {
                 totalWins++;
               } else if (homeResult.home_points === 1) {
@@ -152,8 +156,9 @@ router.get('/calcGroups', function(req, res, next){
           });
 
           gp = totalWins + totalLoss + totalDraw;
+          goalDif = totalGoals - totalGoalsAg;
 
-          return {team: team, points: totalPoints, goals: totalGoals, gp: gp, totalWins: totalWins, totalLoss: totalLoss, totalDraw: totalDraw}
+          return {team: team, points: totalPoints, goals: totalGoals, gp: gp, totalWins: totalWins, totalLoss: totalLoss, totalDraw: totalDraw, goalsAg: totalGoalsAg, goalDif: goalDif}
 
         })
       })).then(function(totalResults){
@@ -164,7 +169,9 @@ router.get('/calcGroups', function(req, res, next){
             group_w: groupObj.totalWins,
             group_l: groupObj.totalLoss,
             group_d: groupObj.totalDraw,
-            group_goals: groupObj.goals
+            group_goals: groupObj.goals,
+            group_goals_ag: groupObj.goalsAg,
+            group_goal_dif: groupObj.goalDif
           }, '*').then(function(res){
             console.log(res[0].team, ' has been updated');
           })

@@ -1,25 +1,31 @@
 <div class="col-xs-9 col-md-10">
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <table ng-repeat="group in vm.groups">
+  <div class="row group-grid">
+    <div class="col-xs-5" ng-repeat="group in vm.groups">
+      <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Group {{group}}</th>
+            <th class="team-col">Group {{group}}</th>
+            <th>GP</th>
             <th>W</th>
             <th>L</th>
             <th>D</th>
             <th>Pts</th>
-            <th>Goals</th>
+            <th>G</th>
+            <th>GA</th>
+            <th>GD</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="team in vm.teamStats | filter: {group: group} | orderBy: '-group_pts'">
-            <td>{{team.team}}</td>
+          <tr ng-repeat="team in vm.teamStats | filter: {group: group} | orderBy: ['-group_pts', '-group_goal_dif', '-group_goals', '-group_tb']" ng-class="{'correct': ($index == vm.models.groups[group].indexOf(team.team)) }">
+            <td><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> <b>{{team.team}}</b></td>
+            <td>{{team.group_gp}}</td>
             <td>{{team.group_w}}</td>
             <td>{{team.group_l}}</td>
             <td>{{team.group_d}}</td>
-            <td>{{team.group_pts}}</td>
+            <td><b>{{team.group_pts}}</b></td>
             <td>{{team.group_goals}}</td>
+            <td>{{team.group_goals_ag}}</td>
+            <td>{{team.group_goal_dif}}</td>
           </tr>
         </tbody>
       </table>
