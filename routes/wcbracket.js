@@ -233,10 +233,10 @@ var compilePoolStandings = function () {
         var exact_order = 0;
         var winners = 0;
         var runners_up = 0;
+        var total = 0;
 
         userGroupPicks = user.groupSelections[0].groups;
 
-        // CHECKS FOR EXACT ORDER
         Object.values(standingsObj.groups).forEach(function(value, index){
           // CHECKS FOR EXACT ORDER
           if (value.equals(Object.values(userGroupPicks)[index])) {
@@ -253,7 +253,25 @@ var compilePoolStandings = function () {
             runners_up += 3;
           };
 
-        });
+          // CHECKS FOR EXACT RANK
+          for (var i = 0; i < value.length; i++) {
+            if (value[i] == Object.values(userGroupPicks)[index][i]) {
+              exact_rank++;
+            }
+          };
+
+          total = exact_order + winners + runners_up + exact_rank;
+        })
+
+        WC18Bracket().where({username: user.username}).update({
+          exact_rank: exact_rank,
+          winner: winners,
+          runner_up: runners_up,
+          exact_order: exact_order,
+          total_score: total
+        }, '*').then(function(updated){
+          console.log(updated, ' has been updated!')
+        })
       })
     })
   })
