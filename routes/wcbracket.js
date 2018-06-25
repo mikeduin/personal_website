@@ -228,22 +228,33 @@ var compilePoolStandings = function () {
     };
 
     WC18Bracket().then(function(users){
-      var exact_rank = 0;
-      var exact_order = 0;
-      var winners = 0;
-      var runners_up = 0;
-
       users.forEach(function(user){
+        var exact_rank = 0;
+        var exact_order = 0;
+        var winners = 0;
+        var runners_up = 0;
+
         userGroupPicks = user.groupSelections[0].groups;
 
         // CHECKS FOR EXACT ORDER
         Object.values(standingsObj.groups).forEach(function(value, index){
+          // CHECKS FOR EXACT ORDER
           if (value.equals(Object.values(userGroupPicks)[index])) {
-            exact_order+=3
+            exact_order += 3
           };
+
+          // CHECKS FOR GROUP WINNERS
+          if (value[0] == Object.values(userGroupPicks)[index][0]) {
+            winners += 5;
+          };
+
+          // CHECKS FOR GROUP RUNNERS-UP
+          if (value[1] == Object.values(userGroupPicks)[index][1]) {
+            runners_up += 3;
+          };
+
         });
       })
-
     })
   })
 };
