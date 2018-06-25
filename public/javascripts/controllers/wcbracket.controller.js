@@ -54,6 +54,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       $scope.vm.original = angular.copy($scope.vm.models);
     })
   };
+  $scope.vm.loadPicks();
 
   $scope.vm.saveGroupPicks = function(){
     var user = $scope.vm.currentUser();

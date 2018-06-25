@@ -842,9 +842,17 @@ subtabs div {
   border: solid 1px #CDCACA;
   padding: 5px;
   background-color: white;
-  color: #368623;
+  color: #D85636;
   font-weight: 600;
   font-size: 18px;
+}
+
+subtabs div a {
+  color: #D85636;
+}
+
+.active-subtab {
+  background-color: #D85636;
 }
 
 .active-pool-tab {
@@ -1180,4 +1188,13 @@ scorebox team {
 
 scoreBox score {
   font-size: 26px;
+}
+
+.correct {
+  background-color: #47A337;
+  color: white;
+}
+
+.team-col {
+  width: 40%;
 }
