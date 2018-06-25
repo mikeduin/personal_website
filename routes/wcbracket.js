@@ -181,8 +181,27 @@ router.get('/calcGroups', function(req, res, next){
   })
 })
 
-// router.get('/compileStats', function(req, res, next){
-var compileFunction = function() {
+var compilePoolStandings = function () {
+  TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
+    var groupA = ordered.slice(0, 4);
+    var groupB = ordered.slice(4, 8);
+    var groupC = ordered.slice(8, 12);
+    var groupD = ordered.slice(12, 16);
+    var groupE = ordered.slice(16, 20);
+    var groupF = ordered.slice(20, 24);
+    var groupG = ordered.slice(24, 28);
+    var groupH = ordered.slice(28, 32);
+
+    console.log(groupA, groupB, groupC, groupH);
+  })
+};
+
+setTimeout(compilePoolStandings, 3000);
+
+
+// This compilePoolStats fn compiles the stats for the pool picks -- it is only necessary to run once after picks have been submitted, or any time an entrant's picks have changed
+
+var compilePoolStats = function() {
   if (!statsCompiled) {
     TeamStats().then(function(teams){
       WC18Bracket().then(function(users){
@@ -248,7 +267,7 @@ var compileFunction = function() {
   }
 }
 
-// setTimeout(compileFunction, 3000);
+// setTimeout(compilePoolStats, 3000);
 
 
 module.exports = router;
