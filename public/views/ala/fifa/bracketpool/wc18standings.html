@@ -36,11 +36,12 @@
             <th>28</th>
             <th>14</th>
             <th>24</th>
+            <th>Champion</th>
             <th><b>TOTAL</b></th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="user in vm.standings | orderBy: '-total_score'">
+          <tr ng-repeat="user in vm.standings | orderBy: ['-total_score', 'username']">
             <td><a class="user-link" ui-sref="home.ala.wc18bracket.user({username: user.username})">{{user.username}}</a></td>
             <td>{{user.exact_rank}}</td>
             <td>{{user.runner_up}}</td>
@@ -51,6 +52,7 @@
             <td>0</td>
             <td>0</td>
             <td>0</td>
+            <td>{{user.bracketSelections[0].picks[15]}}</td>
             <td><b>{{user.total_score}}</b></td>
           </tr>
         </tbody>
