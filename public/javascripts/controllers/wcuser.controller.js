@@ -30,4 +30,12 @@ function WCUserController($scope, $state, alaService, WCBracketService) {
   };
 
   vm.fetchStandings();
+
+  $scope.vm.fetchBracketWs = function() {
+    WCBracketService.fetchBracketWs().then(function(res){
+      $scope.vm.bracketWinners = res;
+    })
+  }
+  $scope.vm.fetchBracketWs();
+
 }

@@ -119,6 +119,37 @@ router.get('/results', function(req, res, next){
   })
 })
 
+router.get('/bracketWinners', function(req, res, next){
+  Results().where({
+    stage: 'bracket',
+    final: true
+  }).orderBy('matchtime').pluck('winner').then(function(winners){
+    var obj = {
+      'r16': [],
+      'r8': [],
+      'r4': [],
+      'cons': [],
+      'champ': []
+    };
+
+    for (var i = 0; i < winners.length; i++) {
+      if (i<8) {
+        obj['r16'].push(winners[i]);
+      } else if (i<7 && i<12) {
+        obj['r8'].push(winners[i]);
+      } else if (i<11 && i<14) {
+        obj['r4'].push(winners[i]);
+      } else if (i == 14) {
+        obj['cons'].push(winners[i]);
+      } else if (i == 15) {
+        obj['champ'].push(winners[i]);
+      };
+    };
+
+    res.json(obj);
+  })
+})
+
 router.get('/flags', function(req, res, next){
   TeamStats().select('team', 'flag').then(function(flags){
     var lookup = {};
@@ -234,7 +265,6 @@ router.get('/fetchStandings', function(req, res, next){
 
 
 router.get('/calcBrackets', function(req, res, next){
-  // var calcBrackets = function(){
     Results().where({
       stage: 'bracket',
       final: true
