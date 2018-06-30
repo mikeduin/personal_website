@@ -248,7 +248,7 @@ router.get('/calcBrackets', function(req, res, next){
           var r4 = 0;
           var r2 = 0;
           var cons = 0;
-          var total = user.total_score;
+          var total = user.exact_rank + user.winner + user.runner_up + user.exact_order;
 
           for (var i=0; i<winners.length; i++) {
             if (i<8) {
