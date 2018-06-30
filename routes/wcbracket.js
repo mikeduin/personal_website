@@ -232,6 +232,137 @@ router.get('/fetchStandings', function(req, res, next){
 })
 
 
+
+router.get('/calcBrackets', function(req, res, next){
+  // var calcBrackets = function(){
+    Results().where({
+      stage: 'bracket',
+      final: true
+    }).orderBy('matchtime').pluck('winner').then(function(winners){
+      WC18Bracket().then(function(users){
+        users.forEach(function(user){
+          var userBracketPicks = user.bracketSelections[0].picks;
+          var username = user.username;
+          var r16 = 0;
+          var r8 = 0;
+          var r4 = 0;
+          var r2 = 0;
+          var cons = 0;
+          var total = user.total_score;
+
+          for (var i=0; i<winners.length; i++) {
+            if (i<8) {
+              for (var j=0; j<8; j++) {
+                if (winners[i] == userBracketPicks[j]) {
+                  r16 += 4;
+                  total += 4;
+                };
+              };
+            } else if (i>7 && i<12) {
+              for (var j=8; j<12; j++) {
+                if (winners[i] == userBracketPicks[j]) {
+                  r8 += 8;
+                  total += 8;
+                };
+              };
+            } else if (i>11 && i<14) {
+              for (var j=12; j<14; j++) {
+                if (winners[i] == userBracketPicks[j]) {
+                  r4 += 14;
+                  total += 14;
+                };
+              };
+            } else if (i == 14) {
+              if (winners[i] == userBracketPicks[i]) {
+                cons += 14;
+                total += 14;
+              }
+            } else if (i == 15) {
+              if (winners[i] == userBracketPicks[i]) {
+                r2 += 24;
+                total += 24;
+              }
+            }
+          };
+
+          WC18Bracket().where({username: username}).update({
+            r16: r16,
+            r8: r8,
+            r4: r4,
+            '3rd': cons,
+            champ: r2,
+            total_score: total
+          }, '*').then(function(returned){
+            console.log(returned, ' has been updated');
+          })
+        })
+      })
+    })
+  });
+
+
+// setTimeout(calcBrackets, 3000);
+
+
+  // WC18Bracket().then(function(users){
+  //   users.forEach(function(user){
+  //     userBracketPicks = user.bracketSelections[0].picks;
+  //       var r16 = 0;
+  //       var r8 = 0;
+  //       var r4 = 0;
+  //       var r2 = 0;
+  //       var cons = 0;
+  //
+  //       Results().where({
+  //         round: bracket,
+  //         final: true
+  //       }).then(function(games){
+  //         games.forEach(function(game){
+  //           var winner;
+  //           if (game[0].away_points > game[0].home_points) {
+  //             winner = game[0].away_team;
+  //           } else {
+  //             winner = game[0].home_team;
+  //           };
+  //
+  //           if (game[0].group == 'Round of 16') {
+  //             for (var i = 0; i < 8; i++) {
+  //               if (userBracketPicks[i] == winner) {
+  //                 r16 += 4;
+  //               }
+  //             }
+  //           } else if (game[0].group == 'Round of 8') {
+  //             for (var i = 8; i < 12; i++) {
+  //               if (userBracketPicks[i] == winner) {
+  //                 r8 += 8;
+  //               }
+  //             }
+  //           } else if (game[0].group == 'Round of 4') {
+  //             for (var i = 12; i < 14; i++) {
+  //               if (userBracketPicks[i] == winner) {
+  //                 r4 += 14;
+  //               }
+  //             }
+  //           } else if (game[0].group == 'Cons') {
+  //             if (userBracketPicks[14] == winner) {
+  //               cons += 14;
+  //             }
+  //           } else if (game[0].group == 'Round of 2') {
+  //             if (userBracketPicks[15] == winner) {
+  //               r2 += 24;
+  //             }
+  //           };
+  //
+  //         })
+  //       })
+  //
+  //   })
+  // })
+// })
+
+
+
+
 router.get('/calcStandings', function(req, res, next){
   TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
     var groupA = ordered.slice(0, 4);
