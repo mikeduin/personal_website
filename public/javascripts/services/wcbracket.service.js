@@ -59,6 +59,11 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
+    fetchBracketWs: function () {
+      return $http.get('wcbracket/bracketWinners').then(function(res){
+        return res.data;
+      })
+    },
     pullResults: function() {
       return $http.get('wcbracket/results').then(function(res){
         return res.data;
