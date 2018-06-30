@@ -119,6 +119,15 @@ router.get('/results', function(req, res, next){
   })
 })
 
+router.get('/advancing', function(req, res, next){
+  Results().where({group: 'Round of 16'}).pluck('away_team').then(function(away){
+    Results().where({group: 'Round of 16'}).pluck('home_team').then(function(home){
+      var advancing = home.concat(away);
+      res.json(advancing);
+    })
+  })
+})
+
 router.get('/bracketWinners', function(req, res, next){
   Results().where({
     stage: 'bracket',

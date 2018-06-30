@@ -73,6 +73,11 @@ function WCBracketService ($http) {
       return $http.get('wcbracket/flags').then(function(res){
         return res.data;
       })
+    },
+    getAdvancing: function() {
+      return $http.get('wcbracket/advancing').then(function(res){
+        return res.data;
+      })
     }
   }
 }
