@@ -38,4 +38,11 @@ function WCUserController($scope, $state, alaService, WCBracketService) {
   }
   $scope.vm.fetchBracketWs();
 
+  var getAdvancing = function() {
+    WCBracketService.getAdvancing().then(function(res){
+      $scope.vm.advancing = res;
+    })
+  };
+  getAdvancing();
+
 }
