@@ -339,69 +339,6 @@ router.get('/calcBrackets', function(req, res, next){
     })
   });
 
-
-// setTimeout(calcBrackets, 3000);
-
-
-  // WC18Bracket().then(function(users){
-  //   users.forEach(function(user){
-  //     userBracketPicks = user.bracketSelections[0].picks;
-  //       var r16 = 0;
-  //       var r8 = 0;
-  //       var r4 = 0;
-  //       var r2 = 0;
-  //       var cons = 0;
-  //
-  //       Results().where({
-  //         round: bracket,
-  //         final: true
-  //       }).then(function(games){
-  //         games.forEach(function(game){
-  //           var winner;
-  //           if (game[0].away_points > game[0].home_points) {
-  //             winner = game[0].away_team;
-  //           } else {
-  //             winner = game[0].home_team;
-  //           };
-  //
-  //           if (game[0].group == 'Round of 16') {
-  //             for (var i = 0; i < 8; i++) {
-  //               if (userBracketPicks[i] == winner) {
-  //                 r16 += 4;
-  //               }
-  //             }
-  //           } else if (game[0].group == 'Round of 8') {
-  //             for (var i = 8; i < 12; i++) {
-  //               if (userBracketPicks[i] == winner) {
-  //                 r8 += 8;
-  //               }
-  //             }
-  //           } else if (game[0].group == 'Round of 4') {
-  //             for (var i = 12; i < 14; i++) {
-  //               if (userBracketPicks[i] == winner) {
-  //                 r4 += 14;
-  //               }
-  //             }
-  //           } else if (game[0].group == 'Cons') {
-  //             if (userBracketPicks[14] == winner) {
-  //               cons += 14;
-  //             }
-  //           } else if (game[0].group == 'Round of 2') {
-  //             if (userBracketPicks[15] == winner) {
-  //               r2 += 24;
-  //             }
-  //           };
-  //
-  //         })
-  //       })
-  //
-  //   })
-  // })
-// })
-
-
-
-
 router.get('/calcStandings', function(req, res, next){
   TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
     var groupA = ordered.slice(0, 4);
