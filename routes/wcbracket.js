@@ -144,9 +144,9 @@ router.get('/bracketWinners', function(req, res, next){
     for (var i = 0; i < winners.length; i++) {
       if (i<8) {
         obj['r16'].push(winners[i]);
-      } else if (i<7 && i<12) {
+      } else if (i>7 && i<12) {
         obj['r8'].push(winners[i]);
-      } else if (i<11 && i<14) {
+      } else if (i>11 && i<14) {
         obj['r4'].push(winners[i]);
       } else if (i == 14) {
         obj['cons'].push(winners[i]);
