@@ -12,7 +12,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.blogtags = [];
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
-  $scope.vm.now = moment();
+
+  $scope.vm.checkStartTime(time) {
+    if (moment().isBefore(time)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
