@@ -13,7 +13,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
-  $scope.vm.checkStartTime(time) {
+  $scope.vm.checkStartTime = function(time) {
     if (moment().isBefore(time)) {
       return true;
     } else {
