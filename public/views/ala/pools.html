@@ -22,13 +22,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="pool in vm.pools">
+        <tr ng-repeat="pool in vm.pools | orderBy: -pool.start_time">
           <td><a ui-sref="{{pool.homepage}}">{{pool.name}}</a></td>
           <td>{{pool.start_time | date:'EEEE, MMM d, h:mm a'}}</td>
           <td>${{pool.buyin}}</td>
-          <td ng-show="vm.isLoggedIn() !== false && vm.userData.{{pool.alias}} !== 1" class="btn btn-default" ng-click="register(pool, vm.currentUser())">REGISTER</td>
-          <td ng-show="vm.isLoggedIn() == false"><a ui-sref="home.ala.loginpop">Login</a> to play.</td>
-          <td ng-show="vm.userData.{{pool.alias}} === 1 && vm.isLoggedIn() !== false">Registered!</td>
+          <!-- <td ng-show="vm.isLoggedIn() !== false && vm.userData.{{pool.alias}} !== 1" class="btn btn-default" ng-click="register(pool, vm.currentUser())">REGISTER</td> -->
+          <td ng-show="pool.start_time > vm.moment"> <a class="btn btn-default" href="pool.externalURL">CLICK TO JOIN</a> </td>
+          <td ng-show="pool.start_time < vm.moment">Entry Closed</td>
+          <!-- <td ng-show="vm.isLoggedIn() == false"><a ui-sref="home.ala.loginpop">Login</a> to play.</td> -->
+          <!-- <td ng-show="vm.userData.{{pool.alias}} === 1 && vm.isLoggedIn() !== false">Registered!</td> -->
         </tr>
       </tbody>
     </table>

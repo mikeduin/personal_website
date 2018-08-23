@@ -12,6 +12,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.vm.blogtags = [];
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
+  $scope.vm.now = moment();
 
   $scope.vm.register = function(user) {
     authService.register(user).error(function(error){
@@ -50,8 +51,10 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.vm.retrievePools = function() {
     alaService.retrievePools().then(function(res){
+      console.log(
+        'pools in controller are ', res
+      );
       $scope.vm.pools = res;
-      console.log('pools are ', $scope.vm.pools);
     })
   }
 
@@ -59,7 +62,6 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     user = $scope.vm.currentUser();
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
-      console.log($scope.vm.userData);
     })
   };
 
@@ -72,11 +74,8 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     };
 
     $scope.activePool = pool;
-    // console.log($scope.activePool);
 
     alaService.poolRegister(data).then(function(res){
-      // console.log('active pool is ', $scope.activePool);
-      // console.log('res to controller is ', res);
       $state.go('home.ala.pools.poolConfirm');
     })
   };
