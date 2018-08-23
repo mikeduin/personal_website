@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="pool in vm.pools | orderBy: -pool.start_time">
+        <tr ng-repeat="pool in vm.pools | orderBy: -'pool.start_time'">
           <td><a ui-sref="{{pool.homepage}}">{{pool.name}}</a></td>
           <td>{{pool.start_time | date:'EEEE, MMM d, h:mm a'}}</td>
           <td>${{pool.buyin}}</td>
