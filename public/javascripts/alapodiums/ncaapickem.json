@@ -1,12 +1,21 @@
 [
   {
+    "season": "2018",
+    "first_team": "Kyle Davis",
+    "first_owner": "$816",
+    "second_team": "Tyler Anthony",
+    "second_owner": "$415",
+    "third_team": "Mike Duin / Devon Santoro (tie)",
+    "third_owner": "$216 / $87"
+  },
+  {
     "season": "2017",
     "first_team": "Brewster Stanislaw",
-    "first_owner": "$917.75",
+    "first_owner": "$918",
     "second_team": "Jason Gnich",
     "second_owner": "$435",
     "third_team": "Michael Israel",
-    "third_owner": "$156.67"
+    "third_owner": "$157"
   },
   {
     "season": "2016",

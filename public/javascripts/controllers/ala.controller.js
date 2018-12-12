@@ -563,7 +563,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
       'offset-y': 4,
     },
     'scaleY':{
@@ -579,7 +579,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970],
+        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
