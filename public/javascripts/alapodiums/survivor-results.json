@@ -1,5 +1,12 @@
 [
   {
+    "season": "2018",
+    "first_team": "Matt Carpenter",
+    "first_owner": "$3,275",
+    "second_team": "Jon Levin",
+    "second_owner": "$1,000"
+  },
+  {
     "season": "2017",
     "first_team": "Cory Casini",
     "first_owner": "$3,800"
