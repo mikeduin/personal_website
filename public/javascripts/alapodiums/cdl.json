@@ -1,5 +1,23 @@
 [
   {
+    "season": "2017-18",
+    "first_team": "Hey Yoey",
+    "first_owner": "Joe Simich",
+    "second_team": "The Admiral",
+    "second_owner": "Kyle Davis",
+    "third_team": "ShrayDay",
+    "third_owner": "Billy Schreyer"
+  },
+  {
+    "season": "2016-17",
+    "first_team": "Seattle Supersonics",
+    "first_owner": "Dan Goldman",
+    "second_team": "Chalupa Knights",
+    "second_owner": "Andrew Gay",
+    "third_team": "Just the Tip-in",
+    "third_owner": "Joe Simich + Tim Folkman"
+  },
+  {
     "season": "2015-16",
     "first_team": "Seattle Supersonics",
     "first_owner": "Dan Goldman",
