@@ -1,7 +1,14 @@
 [
   {
     "type": "Career",
-    "category": "Percentage of Pool Defeated",
+    "category": "Titles Won",
+    "record": "3",
+    "entrant": "Kevin Simshauser",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "category": "Entrants Defeated",
     "record": "92%",
     "entrant": "Michael Grundmeyer",
     "season": "n/a"
@@ -16,14 +23,14 @@
   {
     "type": "Career",
     "category": "Profits per Season",
-    "record": "$332.75",
+    "record": "$224.56",
     "entrant": "Nicholas Gardner",
     "season": "n/a"
   },
   {
     "type": "Career",
     "category": "Net Profits",
-    "record": "$1,359.36",
+    "record": "$1,370.83",
     "entrant": "Kevin Simshauser",
     "season": "n/a"
   },
@@ -44,8 +51,8 @@
   {
     "type": "Season",
     "category": "Net Profits",
-    "record": "$760",
+    "record": "$779",
     "entrant": "Kevin Simshauser",
-    "season": "2016"
+    "season": "2018"
   }
 ]
