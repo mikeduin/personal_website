@@ -1,32 +1,32 @@
 [
   {
     "season": "2018",
-    "first_team": "Brendan Hopps",
-    "second_team": "Travis Ross",
-    "third_team": "Bryan Spangler"
+    "first_team": "Brendan Hopps ($2,705)",
+    "second_team": "Travis Ross ($882)",
+    "third_team": "Bryan Spangler ($1,045)"
   },
   {
     "season": "2017",
-    "first_team": "Zain Memon",
-    "second_team": "Michael Simeona",
-    "third_team": "Jason Gnich"
+    "first_team": "Zain Memon ($2,286)",
+    "second_team": "Michael Simeona ($370)",
+    "third_team": "Jason Gnich ($1,051)"
   },
   {
     "season": "2016",
-    "first_team": "Daniel Shuval",
-    "second_team": "Casey Merrild",
-    "third_team": "Todd Burgers"
+    "first_team": "Daniel Shuval ($2,415)",
+    "second_team": "Casey Merrild ($725)",
+    "third_team": "Todd Burgers ($963)"
   },
   {
     "season": "2015",
-    "first_team": "Eric Bowman",
-    "second_team": "Greg Caldwell",
-    "third_team": "Lisa Schnall"
+    "first_team": "Eric Bowman ($1,786)",
+    "second_team": "Greg Caldwell ($288)",
+    "third_team": "Lisa Schnall ($192)"
   },
   {
     "season": "2014",
-    "first_team": "Joe Nelson",
-    "second_team": "Mike Duin",
-    "third_team": "Geoffrey Yamasaki"
+    "first_team": "Joe Nelson ($900)",
+    "second_team": "Mike Duin ($400)",
+    "third_team": "Geoffrey Yamasaki ($110)"
   }
 ]
