@@ -1,5 +1,23 @@
 [
   {
+    "season": "2018",
+    "first_team": "Making it Rain",
+    "first_owner": "Joe Nelson",
+    "second_team": "It's On Like Ndamukong",
+    "second_owner": "BJ Ebert",
+    "third_team": "Mediocre Table",
+    "third_owner": "Zach Wolfel"
+  },
+  {
+    "season": "2017",
+    "first_team": "Beast Mode Skeetles",
+    "first_owner": "Jesse Stokke",
+    "second_team": "Mediocre Table",
+    "second_owner": "Zach Wolfel",
+    "third_team": "The X-Factor",
+    "third_owner": "Mike Duin"
+  },
+  {
     "season": "2016",
     "first_team": "Beast Mode Skeetles",
     "first_owner": "Jesse Stokke",
