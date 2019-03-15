@@ -1,14 +1,80 @@
 [
   {
-    "game": "March Madness",
-    "entrant": "Kevin Young",
-    "prize": "$3,778",
-    "summary": "Kevin Young entered the ALA record books in grand fashion, winning the second-largest single-event prize in ALA history by using his single entry to prevail over 608 other brackets in the 2017 March Madness Pool. It was the first cash of Kevin's ALA career. A more detailed account of his epic win can be found in the <a href='http://www.mikeduin.com/alevelabove/blog/marchmadness17'>2017 March Madness Recap</a>."
+    "game": "NCAA Bowl Pick'em",
+    "entrant": "Travis Ross",
+    "prize": "$485",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/bowlpickem18recap'>2018 NCAA Bowl Pick'em Recap</a>"
   },
   {
-    "game": "NBA All-Star Spectacular",
-    "entrant": "David Christeson",
-    "prize": "$160",
-    "summary": "In the debut running of the NBA All-Star Spectacular -- ALA's second custom-built game on the web -- David Christeson lapped the competition a few times over, finishing with an in-game total of +$1,305 in profits on $1,000 in fake NBA All-Star bets, a total nearly double that of the four other entrants who finished with positive balances. It was Dave's first ALA championship in 39 tries. A more detailed account of Dave's win can be found in the <a href='http://www.mikeduin.com/alevelabove/blog/allstarspectacular17'>2017 NBA All-Star Spectacular Recap</a>."
+    "game": "NCAA Pick'em",
+    "entrant": "Kyle Davis",
+    "prize": "$816",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/ncaapickem18recap'>2018 NCAA Pick'em Recap</a>"
+  },
+  {
+    "game": "NFL Survivor",
+    "entrant": "Matt Carpenter",
+    "prize": "$3,275",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/nflsurvivor18recap'>2018 NFL Survivor Recap</a>"
+  },
+  {
+    "game": "NFL Confidence",
+    "entrant": "Mike Duin",
+    "prize": "$879",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/nflconfidence18recap'>2018 NFL Confidence Recap</a>"
+  },
+  {
+    "game": "NFL Battle the Bookies",
+    "entrant": "Brendan Hopps",
+    "prize": "$2,705",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/nflbtb18recap'>2018 NFL Battle the Bookies Recap</a>"
+  },
+  {
+    "game": "Fantasy NFL: GU Division",
+    "entrant": "Joe Nelson",
+    "prize": "$600",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy NFL: LO Division",
+    "entrant": "Steve Duin",
+    "prize": "$385",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy NFL: USC Division",
+    "entrant": "Justin Zelik",
+    "prize": "$385",
+    "summary": ""
+  },
+  {
+    "game": "FIFA World Cup: Battle the Bookies",
+    "entrant": "Mike Duin",
+    "prize": "$694",
+    "summary": ""
+  },
+  {
+    "game": "FIFA World Cup: Bracket Pool",
+    "entrant": "Jeff Stewart",
+    "prize": "$600",
+    "summary": ""
+  },
+  {
+    "game": "FIFA World Cup: Survivor",
+    "entrant": "Austin Roberts",
+    "prize": "$1,176",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy MLB",
+    "entrant": "Trevor Severeid / Andrew Lasseter",
+    "prize": "$1,065",
+    "summary": " <a href='http://www.mikeduin.com/alevelabove/blog/alabaseball18recap'>2018 Fantasy MLB Recap</a>"
+  },
+  {
+    "game": "March Madness",
+    "entrant": "Mandy Rosenbloom",
+    "prize": "$3,778",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/marchmadness2018recap'>2018 March Madness Recap</a>"
   }
 ]
