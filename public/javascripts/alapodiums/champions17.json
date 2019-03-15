@@ -1,5 +1,71 @@
 [
   {
+    "game": "Fantasy NBA",
+    "entrant": "Brandon Seroyer",
+    "prize": "$807",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/fantasyhoops18recap'>2017-18 Fantasy NBA Recap</a>"
+  },
+  {
+    "game": "NBA CDL",
+    "entrant": "Joe Simich",
+    "prize": "$1,720",
+    "summary": ""
+  },
+  {
+    "game": "NCAA Bowl Pick'em",
+    "entrant": "Marc Courtmanch",
+    "prize": "$490",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/bowlpickem17recap'>2017 NCAA Bowl Pick'em Recap</a>"
+  },
+  {
+    "game": "NCAA Pick'em",
+    "entrant": "Brewster Stanislaw",
+    "prize": "$918",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/2017ncaapickemrecap'>2017 NCAA Pick'em Recap</a>"
+  },
+  {
+    "game": "NFL Survivor",
+    "entrant": "Cory Casini",
+    "prize": "$3,800",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/nflsurvivor17recap'>2017 NFL Survivor Recap</a>"
+  },
+  {
+    "game": "NFL Confidence",
+    "entrant": "Kevin Simshauser",
+    "prize": "$404",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/nflconfidence17recap'>2017 NFL Confidence Recap</a>"
+  },
+  {
+    "game": "NFL Battle the Bookies",
+    "entrant": "Zain Memon",
+    "prize": "$2,286",
+    "summary": "<a href='http://www.mikeduin.com/alevelabove/blog/battlethebookies17recap'>2017 NFL Battle the Bookies Recap</a>"
+  },
+  {
+    "game": "Fantasy NFL: GU Division",
+    "entrant": "Jesse Stokke",
+    "prize": "$921",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy NFL: LO Division",
+    "entrant": "Kyle Davis",
+    "prize": "$1,005",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy NFL: USC Division",
+    "entrant": "Daniel Sands",
+    "prize": "$400",
+    "summary": ""
+  },
+  {
+    "game": "Fantasy MLB",
+    "entrant": "Jason Steinberg",
+    "prize": "$1,065",
+    "summary": ""
+  },
+  {
     "game": "March Madness",
     "entrant": "Kevin Young",
     "prize": "$3,778",
