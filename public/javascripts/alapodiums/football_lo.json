@@ -1,5 +1,23 @@
 [
   {
+    "season": "2018",
+    "first_team": "Father Figures",
+    "first_owner": "Steve Duin",
+    "second_team": "Springfield Atoms",
+    "second_owner": "Kyle Davis",
+    "third_team": "Health is a Concern",
+    "third_owner": "Will Marshall"
+  },
+  {
+    "season": "2017",
+    "first_team": "Springfield Atoms",
+    "first_owner": "Kyle Davis",
+    "second_team": "Wilfork on the First Date",
+    "second_owner": "Billy Schreyer",
+    "third_team": "Father Figures",
+    "third_owner": "Steve Duin"
+  },
+  {
     "season": "2016",
     "first_team": "The X-Factor",
     "first_owner": "Mike Duin",
