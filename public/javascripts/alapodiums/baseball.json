@@ -1,5 +1,23 @@
 [
   {
+    "season": "2018",
+    "first_team": "Vandelay Industries",
+    "first_owner": "Trevor Severeid/Andrew Lasseter",
+    "second_team": "Sundays Are For Bowling",
+    "second_owner": "Fred Schreyer",
+    "third_team": "SimsSquad",
+    "third_owner": "Kevin Simshauser"
+  },
+  {
+    "season": "2017",
+    "first_team": "Ballbusters",
+    "first_owner": "Jason Steinberg",
+    "second_team": "ShrayDay",
+    "second_owner": "Billy Schreyer",
+    "third_team": "Vandelay Industries",
+    "third_owner": "Trevor Severeid/Andrew Lasseter"
+  },
+  {
     "season": "2016",
     "first_team": "The X-Factor",
     "first_owner": "Mike Duin",
