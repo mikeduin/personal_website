@@ -2,43 +2,64 @@
   {
     "type": "Career",
     "category": "Percentage of Pool Defeated",
-    "record": "88.72%",
+    "record": "90.83%",
     "entrant": "Eric Bowman",
     "season": "n/a"
   },
   {
     "type": "Career",
     "category": "Average Score per Entry",
-    "record": "105.25",
+    "record": "113.00",
     "entrant": "Eric Bowman",
     "season": "n/a"
   },
   {
     "type": "Career",
     "category": "Correct Pick Percentage",
-    "record": "66.96%",
-    "entrant": "Kyle Lewis",
+    "record": "67.88%",
+    "entrant": "Erin Kirkpatrick",
     "season": "n/a"
   },
   {
     "type": "Career",
     "category": "Prizes Won",
-    "record": "$4,252",
-    "entrant": "Mandy Rosenbloom",
+    "record": "$5,255",
+    "entrant": "Brad Holschen",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "category": "Net Profits",
+    "record": "$5,020",
+    "entrant": "Brad Holschen",
+    "season": "n/a"
+  },
+  {
+    "type": "Career",
+    "category": "Podium Finishes",
+    "record": "3",
+    "entrant": "Mike Boden",
     "season": "n/a"
   },
   {
     "type": "Entry",
     "category": "Prizes Won",
-    "record": "$4,211",
-    "entrant": "Mandy Rosenbloom",
-    "season": "2018"
+    "record": "$5,255",
+    "entrant": "Brad Holschen",
+    "season": "2019"
   },
   {
     "type": "Entry",
     "category": "Highest Score",
     "record": "163",
     "entrant": "Tyson Obleada",
+    "season": "2015"
+  },
+  {
+    "type": "Entry",
+    "category": "Most Correct Picks",
+    "record": "53",
+    "entrant": "Eric Sicher",
     "season": "2015"
   }
 ]
