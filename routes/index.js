@@ -144,6 +144,7 @@ router.delete('/beers', function (req, res, next) {
 
 router.get('/retrievePools', function(req, res, next){
   Pools().then(function(results){
+    console.log(results);
     res.json(results);
   })
 });
