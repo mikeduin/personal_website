@@ -143,7 +143,7 @@ router.delete('/beers', function (req, res, next) {
 // BEGIN ALA ROUTES
 
 router.get('/retrievePools', function(req, res, next){
-  Pools().then(function(results){
+  Pools().where({open: true}).then(function(results){
     console.log(results);
     res.json(results);
   })
