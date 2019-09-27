@@ -49,27 +49,26 @@ router.post('/register', function(req, res, next){
   var salt = crypto.randomBytes(16).toString('hex');
   var hash = crypto.pbkdf2Sync(req.body.password, salt, 1000, 64, 'sha512').toString('hex');
 
-  var increment = 0;
-
-  Users().max('id').then(function(data){
-    value = data[0].max;
-    increment = value + 1;
-  });
-
   Users().where({username: req.body.username}).orWhere({email: req.body.email}).then(function(result){
     if (!result[0]) {
-      Users().insert({
-        id: increment,
-        username: req.body.username,
-        nameFirst: req.body.nameFirst,
-        nameLast: req.body.nameLast,
-        email: req.body.email,
-        salt: salt,
-        hash: hash,
-        registered: new Date()
-      }, '*').then(function(user){
-        res.json({token: generateJWT(user)});
-      })
+      Users().max('id').then(function(data){
+        var increment = 0;
+        value = data[0].max;
+        increment = value + 1;
+
+        Users().insert({
+          id: increment,
+          username: req.body.username,
+          nameFirst: req.body.nameFirst,
+          nameLast: req.body.nameLast,
+          email: req.body.email,
+          salt: salt,
+          hash: hash,
+          registered: new Date()
+        }, '*').then(function(user){
+          res.json({token: generateJWT(user)});
+        })
+      });
     } else {
       return res.status(400).json({message: "You've already registered with this email or username."})
     }
