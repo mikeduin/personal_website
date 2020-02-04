@@ -1,5 +1,14 @@
 [
   {
+    "season": "2019-20",
+    "first_team": "Erik Bianchi",
+    "first_owner": "$850",
+    "second_team": "Greg Meier",
+    "second_owner": "$255",
+    "third_team": "Scott Morton",
+    "third_owner": "$275"
+  },
+  {
     "season": "2018-19",
     "first_team": "Travis Ross",
     "first_owner": "$485",
