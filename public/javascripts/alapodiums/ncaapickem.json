@@ -1,5 +1,14 @@
 [
   {
+    "season": "2019",
+    "first_team": "Joe Buchholz",
+    "first_owner": "$726",
+    "second_team": "Alex Church",
+    "second_owner": "$345",
+    "third_team": "Kyle Davis",
+    "third_owner": "$536"
+  },
+  {
     "season": "2018",
     "first_team": "Kyle Davis",
     "first_owner": "$816",
