@@ -209,6 +209,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   };
   $scope.getChampions18();
 
+  $scope.vm.champions19 = {};
+  $scope.getChampions19 = function() {
+    alaService.getChampions19().then(function(results){
+      $scope.vm.champions19 = results;
+    })
+  };
+  $scope.getChampions19();
+
   $scope.vm.titles = {};
   $scope.getTitles = function() {
     alaService.getTitles().then(function(results){
@@ -686,7 +694,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
       'offset-y': 4,
     },
     'scaleY':{
@@ -702,7 +710,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275],
+        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
