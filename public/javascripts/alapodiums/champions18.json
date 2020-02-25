@@ -1,5 +1,17 @@
 [
   {
+    "game": "Fantasy NBA",
+    "entrant": "Mike Duin",
+    "prize": "$1,224",
+    "summary": ""
+  },
+  {
+    "game": "NBA CDL",
+    "entrant": "Jason Steinberg",
+    "prize": "$1,720",
+    "summary": ""
+  },
+  {
     "game": "NCAA Bowl Pick'em",
     "entrant": "Travis Ross",
     "prize": "$485",
@@ -68,7 +80,7 @@
   {
     "game": "Fantasy MLB",
     "entrant": "Trevor Severeid / Andrew Lasseter",
-    "prize": "$1,065",
+    "prize": "$640",
     "summary": " <a href='http://www.mikeduin.com/alevelabove/blog/alabaseball18recap'>2018 Fantasy MLB Recap</a>"
   },
   {
