@@ -1,5 +1,14 @@
 [
   {
+    "season": "2019",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$780",
+    "second_team": "Zach Wolfel",
+    "second_owner": "$280",
+    "third_team": "Jeremy Bluto",
+    "third_owner": "$90"
+  },
+  {
     "season": "2018",
     "first_team": "Mike Duin",
     "first_owner": "$879",
