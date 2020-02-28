@@ -2,7 +2,7 @@
   {
     "type": "Career",
     "record": "Average Finish",
-    "score": "3.12",
+    "score": "3.34",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -11,14 +11,14 @@
     "type": "Career",
     "record": "League Championships",
     "score": "5",
-    "team": "Seattle Supersonics",
-    "owner": "Dan Goldman",
+    "team": "Seattle Supersonics / The X-Factor (tie)",
+    "owner": "Dan Goldman / Mike Duin",
     "season": "n/a"
   },
   {
     "type": "Career",
     "record": "Top-3 Finishes",
-    "score": "11",
+    "score": "13",
     "team": "The X-Factor",
     "owner": "Mike Duin",
     "season": "n/a"
@@ -26,7 +26,7 @@
   {
     "type": "Career",
     "record": "Earnings per Season",
-    "score": "$131.84",
+    "score": "$193.19",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -34,7 +34,7 @@
   {
     "type": "Career",
     "record": "Average Roto Score",
-    "score": "69",
+    "score": "70",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -42,7 +42,7 @@
   {
     "type": "Career",
     "record": "Head-to-Head Win Percentage",
-    "score": "61.57%",
+    "score": "60.97%",
     "team": "The X-Factor",
     "owner": "Mike Duin",
     "season": "n/a"
@@ -82,10 +82,10 @@
   {
     "type": "Season",
     "record": "Most 3-Pointers Made",
-    "score": "1,308",
-    "team": "Crowned Piglets",
-    "owner": "Andrew Gay",
-    "season": "2015-16"
+    "score": "1,618",
+    "team": "The X-Factor",
+    "owner": "Mike Duin",
+    "season": "2018-19"
   },
   {
     "type": "Season",
@@ -121,9 +121,9 @@
   {
     "type": "Season",
     "record": "Most Points",
-    "score": "16,554",
-    "team": "Nine Lives",
-    "owner": "Alex Tulipinspring*",
-    "season": "2009-10"
+    "score": "16,641",
+    "team": "Mike Rice's Liver",
+    "owner": "Brandon Seroyer",
+    "season": "2017-18"
   }
 ]
