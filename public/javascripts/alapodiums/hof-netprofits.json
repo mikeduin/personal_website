@@ -1,82 +1,82 @@
 [
   {
     "rank": "1",
-    "entrant": "Kyle Davis",
-    "entries": "82",
-    "buyins": "$7,715",
-    "prizes": "$14,904",
-    "profits": "$7,023"
+    "entrant": "Dan Goldman",
+    "entries": "102",
+    "buyins": "$7,345",
+    "prizes": "$15,502",
+    "profits": "$7,894"
   },
   {
     "rank": "2",
-    "entrant": "Dan Goldman",
-    "entries": "94",
-    "buyins": "$6,335",
-    "prizes": "$12,864",
-    "profits": "$6,266"
+    "entrant": "Kyle Davis",
+    "entries": "128",
+    "buyins": "$8,985",
+    "prizes": "$16,060",
+    "profits": "$6,774"
   },
   {
     "rank": "3",
-    "entrant": "Mike Duin",
-    "entries": "152",
-    "buyins": "$12,360",
-    "prizes": "$16,779",
-    "profits": "$5,184"
+    "entrant": "Brendan Hopps",
+    "entries": "9",
+    "buyins": "$755",
+    "prizes": "$6,907",
+    "profits": "$6,152"
   },
   {
     "rank": "4",
-    "entrant": "Jaime Trevino",
-    "entries": "13",
-    "buyins": "$495",
-    "prizes": "$4,800",
-    "profits": "$4,305"
+    "entrant": "Mike Duin",
+    "entries": "171",
+    "buyins": "$14,550",
+    "prizes": "$19,198",
+    "profits": "$4,741"
   },
   {
     "rank": "5",
-    "entrant": "Mandy Rosenbloom",
-    "entries": "11",
-    "buyins": "$160",
-    "prizes": "$4,252",
-    "profits": "$4,092"
+    "entrant": "Eric Bowman",
+    "entries": "18",
+    "buyins": "$1,355",
+    "prizes": "$4,638",
+    "profits": "$4,442"
   },
   {
     "rank": "6",
-    "entrant": "Kevin Young",
-    "entries": "8",
-    "buyins": "$105",
-    "prizes": "$3,778",
-    "profits": "$3,673"
+    "entrant": "Jaime Trevino",
+    "entries": "16",
+    "buyins": "$580",
+    "prizes": "$4,800",
+    "profits": "$4,220"
   },
   {
     "rank": "7",
-    "entrant": "Cory Casini",
+    "entrant": "Mandy Rosenbloom",
     "entries": "14",
-    "buyins": "$315",
-    "prizes": "$3,800",
-    "profits": "$3,673"
+    "buyins": "$205",
+    "prizes": "$4,252",
+    "profits": "$4,047"
   },
   {
     "rank": "8",
-    "entrant": "Scott Hitchcock",
-    "entries": "32",
-    "buyins": "$1,170",
-    "prizes": "$4,172",
-    "profits": "$3,002"
+    "entrant": "Brad Holschen",
+    "entries": "43",
+    "buyins": "$1,295",
+    "prizes": "$5,279",
+    "profits": "$3,984"
   },
   {
     "rank": "9",
-    "entrant": "Matt Carpenter",
-    "entries": "8",
-    "buyins": "$290",
-    "prizes": "$3,275",
-    "profits": "$2,985"
+    "entrant": "Kevin Young",
+    "entries": "10",
+    "buyins": "$135",
+    "prizes": "$3,778",
+    "profits": "$3,643"
   },
   {
     "rank": "10",
-    "entrant": "Brendan Hopps",
-    "entries": "3",
-    "buyins": "$355",
-    "prizes": "$3,095",
-    "profits": "$2,740"
+    "entrant": "Cory Casini",
+    "entries": "18",
+    "buyins": "$415",
+    "prizes": "$3,800",
+    "profits": "$3,385"
   }
 ]
