@@ -81,6 +81,12 @@ alaSidebar ul {
   margin-left: -3.75vw;
 }
 
+@media screen and (min-width: 1400px) and (max-width: 1800px) {
+  alaSidebar ul {
+    margin-left: -2vw;
+  }
+}
+
 alaSidebar ul li:hover {
   font-weight: bold;
   color: black;
