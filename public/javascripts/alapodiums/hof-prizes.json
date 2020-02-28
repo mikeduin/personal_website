@@ -1,72 +1,72 @@
 [
   {
     "rank": "1",
+    "entrant": "Brad Holschen",
+    "game": "March Madness",
+    "year": "2019",
+    "prizes": "$5,255"
+  },
+  {
+    "rank": "2",
     "entrant": "Jaime Trevino",
     "game": "NFL Survivor",
     "year": "2015",
     "prizes": "$4,800"
   },
   {
-    "rank": "2",
+    "rank": "3",
     "entrant": "Mandy Rosenbloom",
     "game": "March Madness",
     "year": "2018",
     "prizes": "$4,211"
   },
   {
-    "rank": "3",
+    "rank": "4",
+    "entrant": "Brendan Hopps",
+    "game": "NFL Survivor",
+    "year": "2019",
+    "prizes": "$3,812"
+  },
+  {
+    "rank": "5",
     "entrant": "Kevin Young",
     "game": "March Madness",
     "year": "2017",
     "prizes": "$3,778"
   },
   {
-    "rank": "4",
+    "rank": "6",
+    "entrant": "Matt Carpenter",
+    "game": "NFL Survivor",
+    "year": "2018",
+    "prizes": "$3,275"
+  },
+  {
+    "rank": "7",
+    "entrant": "Aaron Levinger",
+    "game": "NFL Battle the Bookies",
+    "year": "2019",
+    "prizes": "$3,241"
+  },
+  {
+    "rank": "8",
     "entrant": "Scott Hitchcock",
     "game": "March Madness",
     "year": "2016",
     "prizes": "$2,784"
   },
   {
-    "rank": "5",
+    "rank": "9",
     "entrant": "Tyson Obleada",
     "game": "March Madness",
     "year": "2015",
     "prizes": "$2,750"
   },
   {
-    "rank": "6",
+    "rank": "10",
     "entrant": "Brendan Hopps",
     "game": "NFL Battle the Bookies",
     "year": "2018",
     "prizes": "$2,705"
-  },
-  {
-    "rank": "7",
-    "entrant": "Daniel Shuval",
-    "game": "NFL Battle the Bookies",
-    "year": "2016",
-    "prizes": "$2,415"
-  },
-  {
-    "rank": "8",
-    "entrant": "Matt Fisher",
-    "game": "March Madness",
-    "year": "2014",
-    "prizes": "$2,332"
-  },
-  {
-    "rank": "9",
-    "entrant": "Zain Memon",
-    "game": "NFL Battle the Bookies",
-    "year": "2017",
-    "prizes": "$2,286"
-  },
-  {
-    "rank": "10",
-    "entrant": "Joe Simich",
-    "game": "March Madness (2nd pl)",
-    "year": "2018",
-    "prizes": "$2,105"
   }
 ]
