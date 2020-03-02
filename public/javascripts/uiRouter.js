@@ -822,6 +822,69 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.calcutta', {
+      url: '/calcutta',
+      views: {
+        'calcutta@home.ala': {
+          templateUrl: 'views/ala/calcutta/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.explainer', {
+      url: '/explainer',
+      views: {
+        'explainer@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/explainer.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.records', {
+      url: '/records',
+      views: {
+        'records@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/records.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.calcutta.podium', {
+      url: '/podium',
+      views: {
+        'podium@home.ala.calcutta': {
+          templateUrl: 'views/ala/calcutta/podium.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.confidence', {
       url: '/nflconfidence',
       views: {

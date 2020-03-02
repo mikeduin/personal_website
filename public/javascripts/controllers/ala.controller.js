@@ -102,9 +102,10 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.showPga = false;
   $scope.showNbaPlayoffs = false;
   $scope.showFifa = false;
+  $scope.showCalcutta = false;
 
   $scope.vm.menuDisplay = function(click){
-    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showNbaSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa'];
+    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showNbaSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa', 'showCalcutta'];
 
     for (var i=0; i<displays.length; i++) {
       if (click === displays[i]) {
@@ -313,6 +314,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     })
   };
   $scope.getBtBPodium();
+
+  $scope.vm.calcuttaPodium = {};
+  $scope.getCalcuttaPodium = function() {
+    alaService.getCalcuttaPodium().then(function(results){
+      $scope.vm.calcuttaPodium = results;
+    })
+  };
+  $scope.getCalcuttaPodium();
 
   $scope.vm.confidencePodium = {};
   $scope.getConfidencePodium = function() {
@@ -657,6 +666,69 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     'series':[
       {
         "values": [1620, 3600, 5100, 4890, 5580, 6634],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.calcuttaData = {
+    'type':'line',
+    'title': {
+      'text':'Calcutta Auction Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'labels': ["'18 March Madness", "'18 Masters", "'18 NBA Playoffs", "'18 World Cup", "'18 NCAA Football", "'18 NFL", "'19 March Madness [SEL]", "'19 March Madness [PUB]", "'19 Masters", "'19 US Open", "'19 NFL"],
+      'offset-y': 4,
+      'max-items': 75,
+      'item': {
+        angle: 20
+      },
+      'tick': {
+        size: '4px'
+      },
+      'min-value': 1000
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
+    },
+    'series':[
+      {
+        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',

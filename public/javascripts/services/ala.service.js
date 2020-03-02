@@ -165,6 +165,12 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getCalcuttaPodium: function() {
+      return $http.get('javascripts/alapodiums/calcutta.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getMadnessPodium: function() {
       return $http.get('javascripts/alapodiums/madness.json')
       .then(function(results){

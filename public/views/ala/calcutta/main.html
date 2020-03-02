@@ -1,0 +1,34 @@
+<gameTitle class="col-xs-9 col-md-10 text-center">
+  <hr class="col-xs-4 col-xs-offset-4">
+  <div class="col-xs-12 gameTitle">
+    <p> Calcutta Auctions </p>
+  </div>
+  <div>
+    <defending>
+      <div>
+        <span> <b> Latest Winner: </b> </span>
+        <lg>[NFL '19]</lg> <b> John Lemmer </b> (+$189.74)
+      </div>
+      <!-- <div class="join-pool">
+        !-- <b><a href="https://www.alasurvivorseries.com" target="_blank">Click here</a> to join the NBA Survivor Pool!</b> --!
+      </div> -->
+    </defending>
+  </div>
+  <hr class="col-xs-4 col-xs-offset-4">
+</gameTitle>
+
+<gameNav class="text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.calcutta.details" ng-class="{'activetab': $state.includes('home.ala.calcutta.details')}"> Details</a> </li>
+    <li> <a ui-sref="home.ala.calcutta.explainer" ng-class="{'activetab': $state.includes('home.ala.calcutta.explainer')}"> Explainer</a> </li>
+    <li> <a ui-sref="home.ala.calcutta.rankings" ng-class="{'activetab': $state.includes('home.ala.calcutta.rankings')}"> All-Time Rankings</a> </li>
+    <li> <a ui-sref="home.ala.calcutta.podium" ng-class="{'activetab': $state.includes('home.ala.calcutta.podium')}"> The Podium</a> </li>
+    <li> <a ui-sref="home.ala.calcutta.yoy" ng-class="{'activetab': $state.includes('home.ala.calcutta.yoy')}"> Game Progression</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<div ui-view="explainer"> </div>
+<div ui-view="podium"> </div>
+<div ui-view="rankings"> </div>
+<div ui-view="yoy"> </div>
