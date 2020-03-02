@@ -1,0 +1,101 @@
+[
+  {
+    "season": "'19 NFL",
+    "first_team": "John Lemmer",
+    "first_owner": "+$189.74",
+    "second_team": "Sean Stokke",
+    "second_owner": "+$126.29",
+    "third_team": "Kyle Davis",
+    "third_owner": "+$74.22"
+  },
+  {
+    "season": "'19 US Open",
+    "first_team": "Todd Burgers",
+    "first_owner": "+$136.46",
+    "second_team": "Brewster Stanislaw",
+    "second_owner": "+$136.38",
+    "third_team": "Michael Lazar",
+    "third_owner": "+$131.02"
+  },
+  {
+    "season": "'19 Masters",
+    "first_team": "Zain Memon",
+    "first_owner": "+$270.15",
+    "second_team": "Brad Nelson",
+    "second_owner": "+$217.15",
+    "third_team": "Josh Schroeder",
+    "third_owner": "+$209.33"
+  },
+  {
+    "season": "'19 March Madness [PUB]",
+    "first_team": "Eric Bowman",
+    "first_owner": "+$975.50",
+    "second_team": "Bryan Spangler",
+    "second_owner": "+$564.71",
+    "third_team": "Kevin Simshauser",
+    "third_owner": "-$12.65"
+  },
+  {
+    "season": "'19 March Madness [SEL]",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "+$445.20",
+    "second_team": "Joe Simich",
+    "second_owner": "+$382.80",
+    "third_team": "Kevin Simshauser",
+    "third_owner": "+$129.88"
+  },
+  {
+    "season": "'18 NFL",
+    "first_team": "Mike Duin",
+    "first_owner": "+$108.00",
+    "second_team": "Todd Burgers",
+    "second_owner": "+$90.00",
+    "third_team": "Kyle Davis",
+    "third_owner": "+$58.20"
+  },
+  {
+    "season": "'18 NCAA Football",
+    "first_team": "Mike Duin",
+    "first_owner": "+$280.76",
+    "second_team": "Zain Memon",
+    "second_owner": "+$196.74",
+    "third_team": "Michael Lazar",
+    "third_owner": "+$84.36"
+  },
+  {
+    "season": "'18 World Cup",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "+$897.19",
+    "second_team": "Bryan Spangler",
+    "second_owner": "+$3.27",
+    "third_team": "R.J. Tuchscherer",
+    "third_owner": "-$12.00"
+  },
+  {
+    "season": "'18 NBA Playoffs",
+    "first_team": "Sean Shoemaker",
+    "first_owner": "+$158.19",
+    "second_team": "Todd Burgers",
+    "second_owner": "+$134.71",
+    "third_team": "Ken Hogenauer",
+    "third_owner": "+$55.19"
+  },
+  {
+    "season": "'18 Masters",
+    "first_team": "Kevin Simshauser",
+    "first_owner": "+$555.53",
+    "second_team": "Sean Shoemaker",
+    "second_owner": "+$328.66",
+    "third_team": "Brewster Stanislaw",
+    "third_owner": "+$322.25"
+  },
+  {
+    "season": "'18 March Madness",
+    "first_team": "Mike Duin",
+    "first_owner": "+$612.37",
+    "second_team": "Joe Simich",
+    "second_owner": "+$321.91",
+    "third_team": "Sean Stokke",
+    "third_owner": "+$144.87"
+  }
+]
