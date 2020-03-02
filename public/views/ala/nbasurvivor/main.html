@@ -1,0 +1,31 @@
+<gameTitle class="col-xs-9 col-md-10 text-center">
+  <hr class="col-xs-4 col-xs-offset-4">
+  <div class="col-xs-12 gameTitle">
+    <p> NBA Survivor </p>
+  </div>
+  <div>
+    <defending>
+      <div>
+        <span> <b> Defending Champ: </b> </span> TBD
+      </div>
+      <div class="join-pool">
+        !-- <b><a href="https://www.alasurvivorseries.com" target="_blank">Click here</a> to join the NBA Survivor Pool!</b> --!
+      </div>
+    </defending>
+  </div>
+  <hr class="col-xs-4 col-xs-offset-4">
+</gameTitle>
+
+<gameNav class="text-center">
+  <ul>
+    <li> <a ui-sref="home.ala.nbasurvivor.details" ng-class="{'activetab': $state.includes('home.ala.nbasurvivor.details')}"> Details</a> </li>
+    <!-- <li> <a ui-sref="home.ala.nbasurvivor.rankings" ng-class="{'activetab': $state.includes('home.ala.nbasurvivor.rankings')}"> All-Time Rankings</a> </li> -->
+    <!-- <li> <a ui-sref="home.ala.nbasurvivor.winners" ng-class="{'activetab': $state.includes('home.ala.nbasurvivor.winners')}"> Prize Winners</a> </li> -->
+    <li> <a ui-sref="home.ala.nbasurvivor.yoy" ng-class="{'activetab': $state.includes('home.ala.nbasurvivor.yoy')}"> YoY Progression</a> </li>
+  </ul>
+</gameNav>
+
+<div ui-view="details"> </div>
+<!-- <div ui-view="winners"> </div>
+<div ui-view="rankings"> </div> -->
+<div ui-view="yoy"> </div>
