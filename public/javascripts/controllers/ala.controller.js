@@ -97,13 +97,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.showEffRoto = false;
   $scope.showFootball = false;
   $scope.showSurvivor = false;
+  $scope.showNbaSurvivor = false;
   $scope.showConfidence = false;
   $scope.showPga = false;
   $scope.showNbaPlayoffs = false;
   $scope.showFifa = false;
 
   $scope.vm.menuDisplay = function(click){
-    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa'];
+    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showNbaSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa'];
 
     for (var i=0; i<displays.length; i++) {
       if (click === displays[i]) {
@@ -656,6 +657,61 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     'series':[
       {
         "values": [1620, 3600, 5100, 4890, 5580, 6634],
+        "type": 'line',
+        "line-color": "#DC5623",
+        'legend-text': 'Prize $',
+        "animation": {
+          "delay":10,
+          "effect":5,
+          "speed":"2000"
+        },
+        "valueBox": {
+          "placement": 'top',
+          "text": '$%v',
+          "fontFamily": "Raleway",
+          "font-size": 18,
+          "color": '#3984C5',
+          "shadow": true,
+          "offset-y": -8
+        }
+      }
+    ]
+  }
+
+  $scope.vm.nbaSurvivorData = {
+    'type':'line',
+    'title': {
+      'text':'NBA Survivor Prize Pools',
+      "fontFamily": "Raleway"
+    },
+    'plot':{
+      'aspect': 'spline',
+      'line-width': 5,
+      'marker': {
+        'background-color': '#337AB7',
+        'size': 7,
+        'border-color': '#DC5623',
+        'border-width': 1
+      }
+    },
+    'scaleX':{
+      'values': [2019],
+      'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v'
+    },
+    'tooltip':{
+      'text': '%kl: $%v'
+    },
+    'legend':{
+      "layout":"1x1", //row x column
+      "x":"10%",
+      "y":"5%",
+    },
+    'series':[
+      {
+        "values": [3686],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',

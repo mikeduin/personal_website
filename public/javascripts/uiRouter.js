@@ -417,6 +417,60 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.nbasurvivor', {
+      url: '/nbasurvivor',
+      views: {
+        'nbasurvivor@home.ala': {
+          templateUrl: 'views/ala/nbasurvivor/main.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbasurvivor.details', {
+      url: '/home',
+      views: {
+        'details@home.ala.nbasurvivor': {
+          templateUrl: 'views/ala/nbasurvivor/details.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbasurvivor.rankings', {
+      url: '/rankings',
+      views: {
+        'rankings@home.ala.nbasurvivor': {
+          templateUrl: 'views/ala/nbasurvivor/rankings.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    // .state('home.ala.nbasurvivor.records', {
+    //   url: '/records',
+    //   views: {
+    //     'records@home.ala.nbasurvivor': {
+    //       templateUrl: 'views/ala/nbasurvivor/records.html',
+    //       controller: 'AlaController'
+    //     }
+    //   }
+    // })
+    .state('home.ala.nbasurvivor.winners', {
+      url: '/winners',
+      views: {
+        'winners@home.ala.nbasurvivor': {
+          templateUrl: 'views/ala/nbasurvivor/winners.html',
+          controller: 'AlaController'
+        }
+      }
+    })
+    .state('home.ala.nbasurvivor.yoy', {
+      url: '/yoy',
+      views: {
+        'yoy@home.ala.nbasurvivor': {
+          templateUrl: 'views/ala/nbasurvivor/yoy.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.nbacdl', {
       url: '/nbacdl',
       views: {
