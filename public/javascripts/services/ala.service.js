@@ -7,7 +7,6 @@ function alaService ($http) {
     retrievePools: function(){
       return $http.get('/retrievePools')
       .then(function(results){
-        console.log('pools in service are ', results);
         return results.data;
       })
     },
