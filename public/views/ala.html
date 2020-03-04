@@ -40,15 +40,15 @@
         <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.details"> Game Details </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.podium"> The Podium </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.yoy"> Prize Progression </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.records"> Game Records </a> </li>
       </ul>
     <li ng-click="vm.menuDisplay('showCalcutta')"> <img src="images/auction.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.calcutta')}"> Calcutta Auctions </a> </li>
       <ul ng-class="{slideDown: showCalcutta}" class="nav-slide">
         <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.details"> Game Details </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.rankings"> All-Time Rankings </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.winners"> The Podium </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.podium"> The Podium </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.yoy"> Prize Progression </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.calcutta.records"> Game Records </a> </li>
       </ul>
     <li ng-click="vm.menuDisplay('showNbaSurvivor')"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.nbasurvivor')}"> NBA Survivor </a> </li>
@@ -56,7 +56,7 @@
         <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.details"> Game Details </a> </li>
         <!-- <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.podium"> The Podium </a> </li> -->
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.yoy"> Prize Progression </a> </li>
         <!-- <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.records"> Game Records </a> </li> -->
       </ul>
     <li ng-click="vm.menuDisplay('showBtb')"> <img src="images/football.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.btb')}"> NFL Battle the Bookies </a> </li>
@@ -64,7 +64,7 @@
         <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.details"> Game Details </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.podium"> The Podium </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.yoy"> Prize Progression </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.btb.records"> Game Records </a> </li>
       </ul>
     <li ng-click="vm.menuDisplay('showFantasyNBA')"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.hoops'), 'activeGame': $state.includes('home.ala.nbacdl')}" class="slideDown"> Fantasy NBA </a></li>
@@ -104,14 +104,14 @@
         <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.details"> Game Details </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.winners"> Prize Winners </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivor.yoy"> Prize Progression </a> </li>
       </ul>
     <li ng-click="vm.menuDisplay('showConfidence')"> <img src="images/football.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.confidence')}"> NFL Confidence </a> </li>
       <ul ng-class="{slideDown: showConfidence}" class="nav-slide">
         <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.details"> Game Details </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.podium"> The Podium </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.yoy"> YoY Progression </a> </li>
+        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.yoy"> Prize Progression </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.confidence.records"> Game Records </a> </li>
       </ul>
     <li ng-click="vm.menuDisplay('showNcaaPickem')"> <img src="images/football.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.ncaapickem')}"> NCAA Pick'em </a> </li>
@@ -119,7 +119,7 @@
       <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.details"> Game Details </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.rankings"> All-Time Rankings </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.podium"> The Podium </a> </li>
-      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.yoy"> YoY Progression </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.yoy"> Prize Progression </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.ncaapickem.records"> Game Records </a> </li>
     </ul>
     <li ng-click="vm.menuDisplay('showBowlPickem')"> <img src="images/football.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.bowlpickem')}"> Bowl Pick'em </a> </li>
@@ -127,7 +127,7 @@
       <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.details"> Game Details </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.rankings"> All-Time Rankings </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.podium"> The Podium </a> </li>
-      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.yoy"> YoY Progression </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.yoy"> Prize Progression </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.bowlpickem.records"> Game Records </a> </li>
     </ul>
     <li ng-click="vm.menuDisplay('showFifa')"> <img src="images/soccer.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.fifa')}"> FIFA World Cup </a> </li>
@@ -149,7 +149,7 @@
       <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.details"> Game Details </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.rankings"> All-Time Rankings </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.podium"> The Podium </a> </li>
-      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.yoy"> YoY Progression </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.yoy"> Prize Progression </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.pga.records"> Game Records </a> </li>
     </ul>
   </ul>
