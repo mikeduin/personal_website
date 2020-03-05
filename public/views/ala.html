@@ -5,9 +5,10 @@
     <alaLinks class="row">
       <div class="col-xs-offset-3">
         <div uib-dropdown style="display: inline; margin-left: 5%;">
-          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.about') || $state.includes('home.ala.buyins') || $state.includes('home.ala.photos')}">About + How to Play <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <a uib-dropdown-toggle ng-class="{activeLink: $state.includes('home.ala.about') || $state.includes('home.ala.buyins') || $state.includes('home.ala.photos') || $state.includes('home.ala.growth')}">About + How to Play <i class="fa fa-caret-down" aria-hidden="true"></i></a>
             <ul uib-dropdown-menu class="dropdown-styles">
               <li><a ui-sref="home.ala.about" style="margin-left: 0px">What is A Level Above?</a></li>
+              <li><a ui-sref="home.ala.growth" style="margin-left: 0px">Growth Graph</a></li>
               <li><a ui-sref="home.ala.buyins" style="margin-left: 0px">Buy-ins + Prizes Explained</a></li>
               <li><a ui-sref="home.ala.photos" style="margin-left: 0px">Photos</a></li>
             </ul>
@@ -56,7 +57,7 @@
         <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.details"> Game Details </a> </li>
         <!-- <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.rankings"> All-Time Rankings </a> </li>
         <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.podium"> The Podium </a> </li> -->
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.yoy"> Prize Progression </a> </li>
+        <!-- <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.yoy"> Prize Progression </a> </li> -->
         <!-- <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.nbasurvivor.records"> Game Records </a> </li> -->
       </ul>
     <li ng-click="vm.menuDisplay('showBtb')"> <img src="images/football.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.btb')}"> NFL Battle the Bookies </a> </li>
@@ -171,6 +172,7 @@
 <divView ui-view="db"> </divView>
 <divView ui-view="fifa"> </divView>
 <divView ui-view="football"> </divView>
+<divView ui-view="growth"> </divView>
 <divView ui-view="hoops"> </divView>
 <divView ui-view="leaders"> </divView>
 <divView ui-view="login"> </divView>
