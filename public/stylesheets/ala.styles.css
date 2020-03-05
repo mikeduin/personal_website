@@ -97,14 +97,14 @@ alaSidebar ul {
 }
 
 alaSidebar ul li:hover {
-  font-weight: 600;
-  color: black;
+  /* font-weight: 600; */
+  /* color: black; */
   cursor: pointer;
 }
 
 alaSidebar ul li a:hover {
   text-decoration: none;
-  color: black;
+  color: #D06C35;
 }
 
 a.gamepage:hover {
