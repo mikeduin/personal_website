@@ -1,5 +1,20 @@
 /*ALA Styles*/
 
+.game-header {
+  font-size: 2vw;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  border-bottom: solid #EEEEEE 1px;
+  background-color: #4E4E4E;
+}
+
+.game-header:hover {
+  font-weight: inherit;
+  text-decoration: inherit;
+  cursor: default;
+}
+
 .join-pool {
   color: #7C0F09;
 }
