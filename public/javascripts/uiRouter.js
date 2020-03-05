@@ -336,6 +336,15 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('home.ala.growth', {
+      url: '/growth',
+      views: {
+        'growth@home.ala': {
+          templateUrl: 'views/ala/growth.html',
+          controller: 'AlaController'
+        }
+      }
+    })
     .state('home.ala.db', {
       url: '/db',
       views: {

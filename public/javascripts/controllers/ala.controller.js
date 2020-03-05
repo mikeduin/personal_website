@@ -632,6 +632,233 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     ]
   }
 
+  $scope.vm.growthGraph = {
+    'type':'area',
+    'stacked': true,
+    'title': {
+      'text':'A Level Above Prize Pools, 2002 - 2019',
+      "fontFamily": "Raleway",
+      'offset-y': 20
+    },
+    'plot': {
+        'alphaArea': 1,
+        'aspect': 'spline',
+        'contourOnTop': false,
+        'lineWidth': '2px',
+        'marker': {
+          'visible': false
+        },
+        'tooltip':{
+          text: "%kv Total: $%stack-total",
+          backgroundColor: '#6A6A6A'
+        },
+        activeArea: true
+      },
+    'scaleX':{
+      'values': [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+      'guide': {
+        'visible': false
+      },
+      'item': {
+        'fontColor': '#5f5f5f'
+      },
+      'lineColor': '#5f5f5f',
+        'lineWidth': '1px',
+        'maxItems': 8,
+        'tick': {
+          'lineColor': '#5f5f5f',
+          'lineWidth': '1px'
+        },
+        'zooming': true
+
+      // 'offset-y': 4,
+    },
+    'scaleY':{
+      'format': '$%v',
+      'guide': {
+          'lineColor': '#626262',
+          'lineStyle': 'solid'
+        },
+        'item': {
+          'fontColor': '#5f5f5f'
+        },
+        'lineColor': '#5f5f5f',
+        'lineWidth': '1px',
+        'tick': {
+          'lineColor': '#5f5f5f',
+          'lineWidth': '1px'
+        }
+    },
+    'crosshairX': {
+        'plotLabel': {
+          'backgroundColor': '#434343',
+          'fontColor': '#FFF',
+          'paddingBottom': 10
+        },
+        'scaleLabel': {
+          'backgroundColor': '#fff',
+          'borderColor': '#333',
+          'borderRadius': '3px',
+          'borderWidth': '1px',
+          'fontColor': 'black'
+        }
+      },
+    'legend': {
+        'align': 'left',
+        // 'marginTop': '-60px',
+        'backgroundColor': 'none',
+        'borderWidth': '0px',
+        'item': {
+          'fontFamily': 'Raleway'
+        },
+        'layout': 'x4',
+        'marker': {
+          'type': 'circle',
+          'borderColor': 'transparent',
+          'size': '5px'
+        },
+        'shadow': false,
+        'toggleAction': 'remove',
+        'verticalAlign': 'top',
+        "offset-y": 50,
+        "offset-x": 50
+      },
+    'series':[
+        // {
+        //   text: "Calcutta Auctions",
+        //   values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16040, 13566],
+        //   backgroundColor1: '#3CBBB1',
+        //   backgroundColor2: '#3CBBB1',
+        //   lineColor: '#3CBBB1'
+        // },
+        {
+          text: 'March Madness',
+          values: [0, 0, 0, 0, 0, 0, 660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675, 8787, 9792, 12200],
+          backgroundColor1: '#BEE9E8',
+          backgroundColor2: '#BEE9E8',
+          lineColor: '#BEE9E8'
+        },
+        {
+          text: "NFL Battle the Bookies",
+          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1620, 3600, 5100, 4890, 5580, 6634],
+          backgroundColor1: '#E7EFC5',
+          backgroundColor2: '#E7EFC5',
+          lineColor: '#E7EFC5'
+        },
+        {
+          text: 'NFL Survivor',
+          values: [0, 0, 0, 0, 0, 0, 1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960],
+          backgroundColor1: '#5FA8D3',
+          backgroundColor2: '#5FA8D3',
+          lineColor: '#5FA8D3'
+        },
+        {
+          text: 'Fantasy NFL',
+          values: [0, 0, 0, 0, 0, 0, 1707, 1782, 1980, 1980, 1980, 1980, 2035, 4715, 5394, 4900, 5920, 6314],
+          backgroundColor1: '#CAE9FF',
+          backgroundColor2: '#CAE9FF',
+          lineColor: '#CAE9FF'
+        },
+        {
+          text: 'Fantasy MLB',
+          values: [200, 180, 240, 0, 0, 240, 693, 613, 645, 590, 590, 550, 1790, 1735, 1870, 1688, 1508, 1960],
+          backgroundColor1: '#62B6CB',
+          backgroundColor2: '#62B6CB',
+          lineColor: '#62B6CB'
+        },
+        {
+          text: 'Fantasy NBA',
+          values: [0, 420, 530, 530, 510, 560, 660, 627, 660, 660, 660, 660, 2048, 2091, 1967, 2024, 2068, 1980],
+          backgroundColor1: '#BFD7B5',
+          backgroundColor2: '#BFD7B5',
+          lineColor: '#BFD7B5'
+        },
+        {
+          text: 'NFL Confidence',
+          values: [0, 0, 0, 0, 0, 0, 0, 675, 810, 780, 930, 1120, 890, 1840, 2430, 1690, 1790, 1650],
+          backgroundColor1: '#EC91D8',
+          backgroundColor2: '#EC91D8',
+          lineColor: '#EC91D8'
+        },
+        {
+          text: "NCAA Pick'em",
+          values: [0, 0, 0, 0, 0, 0, 550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760, 2224],
+          backgroundColor1: '#FFAAEA',
+          backgroundColor2: '#FFAAEA',
+          lineColor: '#FFAAEA'
+        },
+        {
+          text: "NCAA Bowl Pick'em",
+          values: [0, 0, 0, 0, 0, 0, 0, 100, 110, 0, 165, 320, 600, 920, 800, 920, 1360, 1470],
+          backgroundColor1: '#FFBEEF',
+          backgroundColor2: '#FFBEEF',
+          lineColor: '#FFBEEF'
+        },
+        {
+          text: "NBA CDL",
+          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3470, 3470, 3470, 3470],
+          backgroundColor1: '#9CADCE',
+          backgroundColor2: '#9CADCE',
+          lineColor: '#9CADCE'
+        },
+        {
+          text: "NBA Survivor",
+          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3686],
+          backgroundColor1: '#CEBACF',
+          backgroundColor2: '#CEBACF',
+          lineColor: '#CEBACF'
+        },
+        {
+          text: "World Cup",
+          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3610, 0, 0, 0, 4960, 0],
+          backgroundColor1: '#FFBEEF',
+          backgroundColor2: '#FFBEEF',
+          lineColor: '#FFBEEF'
+        },
+        {
+          text: "NBA All-Star Spectacular",
+          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 280, 0, 0],
+          backgroundColor1: '#5DD39E',
+          backgroundColor2: '#5DD39E',
+          lineColor: '#5DD39E'
+        },
+        {
+          text: "NBA Playoffs",
+          values: [0, 0, 0, 0, 0, 0, 243, 217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          backgroundColor1: '#E9D3D0',
+          backgroundColor2: '#E9D3D0',
+          lineColor: '#E9D3D0'
+        },
+        {
+          text: "PGA Majors",
+          values: [0, 0, 0, 0, 0, 0, 189, 294, 240, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          backgroundColor1: '#BCE784',
+          backgroundColor2: '#BCE784',
+          lineColor: '#BCE784'
+        }
+      // {
+      //   "values": [1620, 3600, 5100, 4890, 5580, 6634],
+      //   "type": 'line',
+      //   "line-color": "#DC5623",
+      //   'legend-text': 'Prize $',
+      //   "animation": {
+      //     "delay":10,
+      //     "effect":5,
+      //     "speed":"2000"
+      //   },
+      //   "valueBox": {
+      //     "placement": 'top',
+      //     "text": '$%v',
+      //     "fontFamily": "Raleway",
+      //     "font-size": 18,
+      //     "color": '#3984C5',
+      //     "shadow": true,
+      //     "offset-y": -8
+      //   }
+      // }
+    ]
+  }
+
   $scope.vm.btbData = {
     'type':'line',
     'title': {
