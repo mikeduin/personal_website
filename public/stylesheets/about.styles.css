@@ -191,7 +191,7 @@ hoopsPopover, italyPopover {
 
 @media screen and (min-width: 1380px) {
   alaSidebar ul {
-    margin-left: -3vw;
+    margin-left: -3vw !important;
   }
 
   .hoops-sub {
