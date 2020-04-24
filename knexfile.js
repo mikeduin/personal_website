@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/aladb'
+    connection: process.env.DATABASE_URL
   },
 
   production: {
