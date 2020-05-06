@@ -31,6 +31,17 @@ var wcbracket = require('./routes/wcbracket');
 
 var app = express();
 
+var forceSsl = function (req, res, next) {
+   if (req.headers['x-forwarded-proto'] !== 'https') {
+       return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
+   }
+   return next();
+};
+
+if (app.get('env') === 'production') {
+  app.use(forceSsl);
+}
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -48,10 +59,6 @@ app.use('/wcbracket', wcbracket);
 app.use('/nba-all-star-api', function(req, res, next){
   res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })
-
-app.get('*', function(req, res, next){
-  res.redirect("https://" + request.headers.host + request.url);
-});
 
 app.all('/*', function(req, res, next){
   res.sendFile('public/index.html', { root: __dirname });
