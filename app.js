@@ -53,6 +53,13 @@ app.all('/*', function(req, res, next){
   res.sendFile('public/index.html', { root: __dirname });
 });
 
+app.use(function(req, res, next) {
+  if(!req.secure) {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  next();
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
