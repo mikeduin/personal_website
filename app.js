@@ -49,15 +49,12 @@ app.use('/nba-all-star-api', function(req, res, next){
   res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })
 
-app.all('/*', function(req, res, next){
-  res.sendFile('public/index.html', { root: __dirname });
+app.get('*', function(req, res, next){
+  res.redirect("https://" + request.headers.host + request.url);
 });
 
-app.use(function(req, res, next) {
-  if(!req.secure) {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
-  }
-  next();
+app.all('/*', function(req, res, next){
+  res.sendFile('public/index.html', { root: __dirname });
 });
 
 // catch 404 and forward to error handler
