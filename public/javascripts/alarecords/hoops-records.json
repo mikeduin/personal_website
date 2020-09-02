@@ -2,7 +2,7 @@
   {
     "type": "Career",
     "record": "Average Finish",
-    "score": "3.34",
+    "score": "3.38",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -25,8 +25,8 @@
   },
   {
     "type": "Career",
-    "record": "Earnings per Season",
-    "score": "$193.19",
+    "record": "Profits per Season",
+    "score": "$177.35",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -34,7 +34,7 @@
   {
     "type": "Career",
     "record": "Average Roto Score",
-    "score": "70",
+    "score": "69",
     "team": "Seattle Supersonics",
     "owner": "Dan Goldman",
     "season": "n/a"
@@ -42,7 +42,7 @@
   {
     "type": "Career",
     "record": "Head-to-Head Win Percentage",
-    "score": "60.97%",
+    "score": "60.69%",
     "team": "The X-Factor",
     "owner": "Mike Duin",
     "season": "n/a"
