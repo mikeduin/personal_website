@@ -1,19 +1,19 @@
 [
   {
     "rank": "1",
-    "entrant": "Dan Goldman",
-    "entries": "102",
-    "buyins": "$7,345",
-    "prizes": "$15,502",
-    "profits": "$7,894"
+    "entrant": "Kyle Davis",
+    "entries": "130",
+    "buyins": "$9,535",
+    "prizes": "$17,406",
+    "profits": "$7,570"
   },
   {
     "rank": "2",
-    "entrant": "Kyle Davis",
-    "entries": "128",
-    "buyins": "$8,985",
-    "prizes": "$16,060",
-    "profits": "$6,774"
+    "entrant": "Dan Goldman",
+    "entries": "104",
+    "buyins": "$7,895",
+    "prizes": "$15,676",
+    "profits": "$7,518"
   },
   {
     "rank": "3",
@@ -25,19 +25,19 @@
   },
   {
     "rank": "4",
-    "entrant": "Mike Duin",
-    "entries": "171",
-    "buyins": "$14,550",
-    "prizes": "$19,198",
-    "profits": "$4,741"
-  },
-  {
-    "rank": "5",
     "entrant": "Eric Bowman",
     "entries": "18",
     "buyins": "$1,355",
     "prizes": "$4,638",
     "profits": "$4,442"
+  },
+  {
+    "rank": "5",
+    "entrant": "Mike Duin",
+    "entries": "173",
+    "buyins": "$15,100",
+    "prizes": "$19,413",
+    "profits": "$4,406"
   },
   {
     "rank": "6",
