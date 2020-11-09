@@ -144,6 +144,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.getBlogposts = function() {
     alaService.getBlogposts().then(function(blogposts){
+      blogposts.forEach(blogpost => {
+        blogpost.tags = JSON.parse(blogpost.tags);
+      })
       $scope.vm.blogposts = blogposts;
     })
   };
@@ -158,7 +161,9 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.getPost = function(){
     alaService.getPost($stateParams.titlestring).then(function(post){
-      $scope.vm.post = post[0];
+      let p = post[0];
+      p.tags = JSON.parse(p.tags);
+      $scope.vm.post = p;
     })
   }
   $scope.getPost();
