@@ -4,17 +4,11 @@ var nodemailer = require('nodemailer');
 var knex = require('../db/knex');
 var getGroups = require('../modules/wc18groups.js');
 
-function Pools () {
-  return knex('pools')
-};
-
-function WC18Bracket () {
-  return knex('wc18bracket')
-};
-
-function Users () {
-  return knex('users')
-};
+function Pools () {return knex('pools')}
+function WC18Bracket () {return knex('wc18bracket')}
+function Users () {return knex('users')}
+function Beers () {return knex('beers')}
+function Blogposts () {return knex('blogposts')}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -216,51 +210,93 @@ router.post('/contactCommish', function(req, res, next){
   })
 })
 
-router.get('/blogposts', function(req, res, next) {
-  Blogpost.find(function(err, blogposts) {
-    if (err) { next(err); }
-
-    res.json(blogposts);
-  })
+router.get('/blogposts', async (req, res, next) => {
+  // Blogpost.find(function(err, blogposts) {
+  //   if (err) { next(err); }
+  //
+  //   res.json(blogposts);
+  // })
+  const posts = await Blogposts();
+  res.json(posts);
 })
 
-router.post('/blogposts', function(req, res, next) {
-  var tags = [];
-  tags.push(req.body.tagone);
-  tags.push(req.body.tagtwo);
-  tags.push(req.body.tagthree);
+// setTimeout(() => {
+//   Blogpost.find(function(err, blogposts) {
+//     if (err) { next(err); }
+//
+//     blogposts.forEach(async post => {
+//       const insert = await Blogposts().insert({
+//         title: post.title,
+//         titlestring: post.titlestring,
+//         author: post.author,
+//         tags: JSON.stringify(post.tags),
+//         date: post.date,
+//         image: post.image,
+//         imageCaption: post.imageCaption,
+//         post: post.post,
+//         created_at: new Date(),
+//         updated_at: new Date()
+//       }, '*');
+//       console.log(insert[0].title, ' has been added to DB');
+//     })
+//   })
+// }, 3000)
 
-  var blogpost = Blogpost({
+router.post('/blogposts', async (req, res, next) => {
+  var tags = [];
+  if (req.body.tagone) {tags.push(req.body.tagone)}
+  if (req.body.tagtwo) {tags.push(req.body.tagtwo)}
+  if (req.body.tagthree) {tags.push(req.body.tagthree)}
+
+  const blogpost = await Blogposts().insert({
     title: req.body.title,
     titlestring: req.body.titlestring,
     author: req.body.author,
-    tags: tags,
+    tags: JSON.stringify(tags),
     image: req.body.image,
     imageCaption: req.body.imageCaption,
-    post: req.body.post
-  });
+    post: req.body.post,
+    created_at: new Date(),
+    updated_at: new Date()
+  }, '*')
+  console.log(blogpost[0].title, ' has been added to DB');
+  res.json(blogpost);
 
-  blogpost.save(function(err, blogpost) {
-    if (err) { return next(err); }
+  // var blogpost = Blogpost({
+  //   title: req.body.title,
+  //   titlestring: req.body.titlestring,
+  //   author: req.body.author,
+  //   tags: tags,
+  //   image: req.body.image,
+  //   imageCaption: req.body.imageCaption,
+  //   post: req.body.post
+  // });
 
-    res.json(blogpost)
-  })
+  // blogpost.save(function(err, blogpost) {
+  //   if (err) { return next(err); }
+  //
+  //   res.json(blogpost)
+  // })
 })
 
-router.param('titlestring', function(req, res, next, titlestring) {
-  var query = Blogpost.find({ titlestring: titlestring });
+// router.param('titlestring', async (req, res, next, titlestring) => {
+//   // var query = Blogpost.find({ titlestring: titlestring });
+//   //
+//   // query.exec(function (err, post) {
+//   //   if (err) {return next(err); }
+//   //   if (!post) {return next(new Error("can't find post")); }
+//   //
+//   //   req.post = post;
+//   //   return next();
+//   // })
+//
+//   const post = await Blogposts().where({titlestring});
+// })
 
-  query.exec(function (err, post) {
-    if (err) {return next(err); }
-    if (!post) {return next(new Error("can't find post")); }
-
-    req.post = post;
-    return next();
-  })
-})
-
-router.get('/blogposts/:titlestring', function(req, res) {
-    res.json(req.post);
+router.get('/blogposts/:titlestring', async (req, res) => {
+  const post = await Blogposts().where({titlestring: req.params.titlestring});
+  res.json(post);
+    // res.json(req.post);
 })
 
 module.exports = router;
