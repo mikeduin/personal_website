@@ -50,16 +50,67 @@ router.post('/fridgeRequest', function(req, res, next){
   })
 })
 
-router.get('/beers', function(req, res, next) {
-  Beer.find(function(err, beers) {
-    if (err) { next(err); }
+// setTimeout(() => {
+//   Blogpost.find(function(err, blogposts) {
+//     if (err) { next(err); }
+//
+//     blogposts.forEach(async post => {
+//       const insert = await Blogposts().insert({
+//         title: post.title,
+//         titlestring: post.titlestring,
+//         author: post.author,
+//         tags: JSON.stringify(post.tags),
+//         date: post.date,
+//         image: post.image,
+//         imageCaption: post.imageCaption,
+//         post: post.post,
+//         created_at: new Date(),
+//         updated_at: new Date()
+//       }, '*');
+//       console.log(insert[0].title, ' has been added to DB');
+//     })
+//   })
+// }, 3000)
 
-    res.json(beers);
-  })
+// setTimeout(() => {
+//   Beer.find(function(err, beers) {
+//     if (err) { next(err); }
+//
+//     beers.forEach(async beer => {
+//       const insert = await Beers().insert({
+//         name: beer.name,
+//         beername: beer.beername,
+//         brewery: beer.brewery,
+//         style: beer.style,
+//         abv: beer.abv,
+//         quantity: beer.quantity,
+//         cold: beer.cold,
+//         image: beer.image,
+//         price: beer.price,
+//         size: beer.size,
+//         ordered: beer.ordered,
+//         description: beer.description,
+//         updated_at: new Date(),
+//         created_at: new Date()
+//       }, '*');
+//       console.log(insert[0].name, ' has been added to DB');
+//     })
+//   })
+// }, 3000)
+
+router.get('/beers', async (req, res, next) => {
+  const beers = await Beers();
+  res.json(beers);
+
+  // Beer.find(function(err, beers) {
+  //   if (err) { next(err); }
+  //
+  //   res.json(beers);
+  // })
 });
 
-router.post('/beers', function(req, res, next) {
-  var beer = Beer({
+router.post('/beers', async (req, res, next) => {
+  const beer = await Beers().insert({
     name: req.body.name,
     beername: req.body.beername,
     brewery: req.body.brewery,
@@ -71,66 +122,107 @@ router.post('/beers', function(req, res, next) {
     price: req.body.price,
     size: req.body.size,
     ordered: req.body.ordered,
-    description: req.body.description
-  });
+    description: req.body.description,
+    updated_at: new Date(),
+    created_at: new Date()
+  }, '*');
+  console.log(beer[0].name, ' has been added to the DB');
+  res.json(beer[0]);
 
-  beer.save(function(err, beer) {
-    if (err) { return next(err); }
+  // var beer = Beer({
+  //   name: req.body.name,
+  //   beername: req.body.beername,
+  //   brewery: req.body.brewery,
+  //   style: req.body.style,
+  //   abv: req.body.abv,
+  //   quantity: req.body.quantity,
+  //   cold: req.body.cold,
+  //   image: req.body.image,
+  //   price: req.body.price,
+  //   size: req.body.size,
+  //   ordered: req.body.ordered,
+  //   description: req.body.description
+  // });
 
-    res.json(beer);
-    console.log('new beer has been added!')
-  })
+  // beer.save(function(err, beer) {
+  //   if (err) { return next(err); }
+  //
+  //   res.json(beer);
+  //   console.log('new beer has been added!')
+  // })
 })
 
-router.param('beername', function(req, res, next, beername) {
-  var query = Beer.find({ beername: beername });
+// router.param('beername', function(req, res, next, beername) {
+//   var query = Beer.find({ beername: beername });
+//
+//   query.exec(function (err, beer) {
+//     if (err) {return next(err); }
+//     if (!beer) {return next(new Error("can't find beer")); }
+//
+//     req.beer = beer;
+//     return next();
+//   })
+// })
 
-  query.exec(function (err, beer) {
-    if (err) {return next(err); }
-    if (!beer) {return next(new Error("can't find beer")); }
-
-    req.beer = beer;
-    return next();
-  })
+router.get('/beers/:beername', async (req, res) => {
+  const beer = await Beers().where({beername: req.params.beername});
+  res.json(beer);
+    // res.json(req.beer);
 })
 
-router.get('/beers/:beername', function(req, res) {
-    res.json(req.beer);
+router.put('/beers/:beername', async (req, res, next) => {
+  const beer = await Beers().where({name: req.body.name}).update({
+    beername: req.body.beername,
+    brewery: req.body.brewery,
+    style: req.body.style,
+    abv: req.body.abv,
+    quantity: req.body.quantity,
+    cold: req.body.cold,
+    image: req.body.image,
+    price: req.body.price,
+    size: req.body.size,
+    ordered: req.body.ordered,
+    description: req.body.description,
+    updated_at: new Date()
+  }, '*');
+  console.log(beer[0].name, ' has been updated in DB');
+  res.json(beer[0]);
+
+  // Beer.findOneAndUpdate({ name: req.body.name},
+  //   {
+  //     beername: req.body.beername,
+  //     brewery: req.body.brewery,
+  //     style: req.body.style,
+  //     abv: req.body.abv,
+  //     quantity: req.body.quantity,
+  //     cold: req.body.cold,
+  //     image: req.body.image,
+  //     price: req.body.price,
+  //     size: req.body.size,
+  //     ordered: req.body.ordered,
+  //     description: req.body.description
+  //   },
+  //   function(err, beer) {
+  //     if (err) { next(err) };
+  //
+  //     res.json(beer);
+  //     console.log(beer.name + 'was updated in db')
+  //   }
+  // )
 })
 
-router.put('/beers/:beername', function(req, res, next){
-  Beer.findOneAndUpdate({ name: req.body.name},
-    {
-      beername: req.body.beername,
-      brewery: req.body.brewery,
-      style: req.body.style,
-      abv: req.body.abv,
-      quantity: req.body.quantity,
-      cold: req.body.cold,
-      image: req.body.image,
-      price: req.body.price,
-      size: req.body.size,
-      ordered: req.body.ordered,
-      description: req.body.description
-    },
-    function(err, beer) {
-      if (err) { next(err) };
-
-      res.json(beer);
-      console.log(beer.name + 'was updated in db')
-    }
-  )
-})
-
-router.delete('/beers', function (req, res, next) {
-  console.log(req.body);
-  Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
-    if (err) {next(err)}
-
-    res.json(beer);
-    console.log('The beer was deleted from db')
-
-  })
+router.delete('/beers', async (req, res, next) => {
+  const beer = await Beers().where({name: req.body.name}).del();
+  console.log(beer[0].name, ' has been deleted');
+  res.json(beer[0]);
+  // console.log(req.body);
+  // Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
+  //   if (err) {next(err)}
+  //
+  //   res.json(beer);
+  //   console.log('The beer was deleted from db')
+  //
+  // })
 })
 
 // END BEER ROUTES
@@ -211,36 +303,9 @@ router.post('/contactCommish', function(req, res, next){
 })
 
 router.get('/blogposts', async (req, res, next) => {
-  // Blogpost.find(function(err, blogposts) {
-  //   if (err) { next(err); }
-  //
-  //   res.json(blogposts);
-  // })
   const posts = await Blogposts();
   res.json(posts);
 })
-
-// setTimeout(() => {
-//   Blogpost.find(function(err, blogposts) {
-//     if (err) { next(err); }
-//
-//     blogposts.forEach(async post => {
-//       const insert = await Blogposts().insert({
-//         title: post.title,
-//         titlestring: post.titlestring,
-//         author: post.author,
-//         tags: JSON.stringify(post.tags),
-//         date: post.date,
-//         image: post.image,
-//         imageCaption: post.imageCaption,
-//         post: post.post,
-//         created_at: new Date(),
-//         updated_at: new Date()
-//       }, '*');
-//       console.log(insert[0].title, ' has been added to DB');
-//     })
-//   })
-// }, 3000)
 
 router.post('/blogposts', async (req, res, next) => {
   var tags = [];
@@ -261,42 +326,11 @@ router.post('/blogposts', async (req, res, next) => {
   }, '*')
   console.log(blogpost[0].title, ' has been added to DB');
   res.json(blogpost);
-
-  // var blogpost = Blogpost({
-  //   title: req.body.title,
-  //   titlestring: req.body.titlestring,
-  //   author: req.body.author,
-  //   tags: tags,
-  //   image: req.body.image,
-  //   imageCaption: req.body.imageCaption,
-  //   post: req.body.post
-  // });
-
-  // blogpost.save(function(err, blogpost) {
-  //   if (err) { return next(err); }
-  //
-  //   res.json(blogpost)
-  // })
 })
-
-// router.param('titlestring', async (req, res, next, titlestring) => {
-//   // var query = Blogpost.find({ titlestring: titlestring });
-//   //
-//   // query.exec(function (err, post) {
-//   //   if (err) {return next(err); }
-//   //   if (!post) {return next(new Error("can't find post")); }
-//   //
-//   //   req.post = post;
-//   //   return next();
-//   // })
-//
-//   const post = await Blogposts().where({titlestring});
-// })
 
 router.get('/blogposts/:titlestring', async (req, res) => {
   const post = await Blogposts().where({titlestring: req.params.titlestring});
   res.json(post);
-    // res.json(req.post);
 })
 
 module.exports = router;

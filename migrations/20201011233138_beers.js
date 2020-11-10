@@ -6,11 +6,11 @@ exports.up = function(knex) {
     t.string('beername');
     t.string('brewery');
     t.string('style');
-    t.integer('abv');
+    t.float('abv');
     t.integer('quantity');
     t.boolean('cold');
-    t.string('image');
-    t.integer('price');
+    t.text('image');
+    t.float('price');
     t.string('size');
     t.timestamp('ordered');
     t.text('description');
