@@ -101,12 +101,6 @@ router.post('/fridgeRequest', function(req, res, next){
 router.get('/beers', async (req, res, next) => {
   const beers = await Beers();
   res.json(beers);
-
-  // Beer.find(function(err, beers) {
-  //   if (err) { next(err); }
-  //
-  //   res.json(beers);
-  // })
 });
 
 router.post('/beers', async (req, res, next) => {
@@ -128,46 +122,11 @@ router.post('/beers', async (req, res, next) => {
   }, '*');
   console.log(beer[0].name, ' has been added to the DB');
   res.json(beer[0]);
-
-  // var beer = Beer({
-  //   name: req.body.name,
-  //   beername: req.body.beername,
-  //   brewery: req.body.brewery,
-  //   style: req.body.style,
-  //   abv: req.body.abv,
-  //   quantity: req.body.quantity,
-  //   cold: req.body.cold,
-  //   image: req.body.image,
-  //   price: req.body.price,
-  //   size: req.body.size,
-  //   ordered: req.body.ordered,
-  //   description: req.body.description
-  // });
-
-  // beer.save(function(err, beer) {
-  //   if (err) { return next(err); }
-  //
-  //   res.json(beer);
-  //   console.log('new beer has been added!')
-  // })
 })
-
-// router.param('beername', function(req, res, next, beername) {
-//   var query = Beer.find({ beername: beername });
-//
-//   query.exec(function (err, beer) {
-//     if (err) {return next(err); }
-//     if (!beer) {return next(new Error("can't find beer")); }
-//
-//     req.beer = beer;
-//     return next();
-//   })
-// })
 
 router.get('/beers/:beername', async (req, res) => {
   const beer = await Beers().where({beername: req.params.beername});
   res.json(beer);
-    // res.json(req.beer);
 })
 
 router.put('/beers/:beername', async (req, res, next) => {
@@ -187,42 +146,12 @@ router.put('/beers/:beername', async (req, res, next) => {
   }, '*');
   console.log(beer[0].name, ' has been updated in DB');
   res.json(beer[0]);
-
-  // Beer.findOneAndUpdate({ name: req.body.name},
-  //   {
-  //     beername: req.body.beername,
-  //     brewery: req.body.brewery,
-  //     style: req.body.style,
-  //     abv: req.body.abv,
-  //     quantity: req.body.quantity,
-  //     cold: req.body.cold,
-  //     image: req.body.image,
-  //     price: req.body.price,
-  //     size: req.body.size,
-  //     ordered: req.body.ordered,
-  //     description: req.body.description
-  //   },
-  //   function(err, beer) {
-  //     if (err) { next(err) };
-  //
-  //     res.json(beer);
-  //     console.log(beer.name + 'was updated in db')
-  //   }
-  // )
 })
 
 router.delete('/beers', async (req, res, next) => {
   const beer = await Beers().where({name: req.body.name}).del();
   console.log(beer[0].name, ' has been deleted');
   res.json(beer[0]);
-  // console.log(req.body);
-  // Beer.findOneAndRemove({ name: req.body.name }, function(err, beer){
-  //   if (err) {next(err)}
-  //
-  //   res.json(beer);
-  //   console.log('The beer was deleted from db')
-  //
-  // })
 })
 
 // END BEER ROUTES
