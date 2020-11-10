@@ -11,19 +11,6 @@ var nodemailer = require('nodemailer');
 var passport = require('passport');
 require('dotenv').load();
 
-// mongoose.connect(process.env.MONGOLAB_URI
-//   // || 'mongodb://localhost/mikesFridge'
-// );
-// require('./models/Beers');
-// require('./models/Blogposts');
-//
-// // var db = mongoose.connection;
-//
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log("we connected to Mike's Fridge!")
-// })
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var db = require('./routes/db');
