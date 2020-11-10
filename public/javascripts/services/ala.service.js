@@ -260,16 +260,12 @@ function alaService ($http) {
       .then(function(results) {
         var blogtags = [];
         var posts = results.data;
-        for (var i in posts) {
-          for (var j in posts[i].tags) {
-            for (var k in posts[i].tags[j]) {
-              var blogtag = posts[i].tags[j];
-              if (blogtags.indexOf(blogtag) === -1) {
-                blogtags.push(blogtag)
-              }
-            }
-          }
-        }
+        posts.forEach(post => {
+          let tags = JSON.parse(post.tags);
+          tags.forEach(tag => {
+            if (!blogtags.includes(tag)) {blogtags.push(tag)}
+          })
+        })
         blogtags.sort();
         return blogtags;
       })

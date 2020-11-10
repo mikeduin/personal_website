@@ -161,9 +161,10 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.getPost = function(){
     alaService.getPost($stateParams.titlestring).then(function(post){
-      console.log(post);
       let p = post[0];
-      p.tags = JSON.parse(p.tags);
+      if (p && p.tags) {
+        p.tags = JSON.parse(p.tags);
+      }
       $scope.vm.post = p;
     })
   }
