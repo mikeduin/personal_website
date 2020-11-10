@@ -5,14 +5,14 @@ module.exports = {
 
   development: {
     client: 'pg',
-    // connection: process.env.DATABASE_URL
-    connection: process.env.TEST_DB
+    connection: process.env.DATABASE_URL
+    // connection: process.env.TEST_DB
   },
 
   production: {
     client: 'pg',
-    // connection: process.env.DATABASE_URL
-    connection: process.env.TEST_DB
+    connection: process.env.DATABASE_URL
+    // connection: process.env.TEST_DB
   }
 
 };
