@@ -1,5 +1,14 @@
 [
   {
+    "season": "2020",
+    "first_team": "Matt Keating",
+    "first_owner": "$401",
+    "second_team": "Mike Duin",
+    "second_owner": "$394",
+    "third_team": "Matt Stringer",
+    "third_owner": "$86"
+  },
+  {
     "season": "2019",
     "first_team": "Joe Buchholz",
     "first_owner": "$726",
