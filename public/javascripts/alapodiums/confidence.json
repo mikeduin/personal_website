@@ -1,5 +1,14 @@
 [
   {
+    "season": "2020",
+    "first_team": "JP Morgan",
+    "first_owner": "$702",
+    "second_team": "Mike Duin",
+    "second_owner": "$341",
+    "third_team": "Lisa Schnall",
+    "third_owner": "$132"
+  },
+  {
     "season": "2019",
     "first_team": "Brewster Stanislaw",
     "first_owner": "$780",
