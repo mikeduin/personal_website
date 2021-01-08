@@ -50,54 +50,6 @@ router.post('/fridgeRequest', function(req, res, next){
   })
 })
 
-// setTimeout(() => {
-//   Blogpost.find(function(err, blogposts) {
-//     if (err) { next(err); }
-//
-//     blogposts.forEach(async post => {
-//       const insert = await Blogposts().insert({
-//         title: post.title,
-//         titlestring: post.titlestring,
-//         author: post.author,
-//         tags: JSON.stringify(post.tags),
-//         date: post.date,
-//         image: post.image,
-//         imageCaption: post.imageCaption,
-//         post: post.post,
-//         created_at: new Date(),
-//         updated_at: new Date()
-//       }, '*');
-//       console.log(insert[0].title, ' has been added to DB');
-//     })
-//   })
-// }, 3000)
-
-// setTimeout(() => {
-//   Beer.find(function(err, beers) {
-//     if (err) { next(err); }
-//
-//     beers.forEach(async beer => {
-//       const insert = await Beers().insert({
-//         name: beer.name,
-//         beername: beer.beername,
-//         brewery: beer.brewery,
-//         style: beer.style,
-//         abv: beer.abv,
-//         quantity: beer.quantity,
-//         cold: beer.cold,
-//         image: beer.image,
-//         price: beer.price,
-//         size: beer.size,
-//         ordered: beer.ordered,
-//         description: beer.description,
-//         updated_at: new Date(),
-//         created_at: new Date()
-//       }, '*');
-//       console.log(insert[0].name, ' has been added to DB');
-//     })
-//   })
-// }, 3000)
-
 router.get('/beers', async (req, res, next) => {
   const beers = await Beers();
   res.json(beers);
@@ -250,6 +202,7 @@ router.post('/blogposts', async (req, res, next) => {
     image: req.body.image,
     imageCaption: req.body.imageCaption,
     post: req.body.post,
+    date: new Date(),
     created_at: new Date(),
     updated_at: new Date()
   }, '*')
