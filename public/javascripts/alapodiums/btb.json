@@ -1,44 +1,65 @@
 [
   {
     "season": "2020",
-    "first_team": "Aaron Levinger ($4,080)",
-    "second_team": "Corey Uhalde ($2,104)",
-    "third_team": "Trevor Brady ($834)"
+    "first_team": "Aaron Levinger",
+    "first_owner": "$4,080",
+    "second_team": "Corey Uhalde",
+    "second_owner": "$2,104",
+    "third_team": "Trevor Brady",
+    "third_owner": "$834"
   },
   {
     "season": "2019",
-    "first_team": "Aaron Levinger ($3,241)",
-    "second_team": "Scott Venn ($539)",
-    "third_team": "Eric Bowman ($1,489)"
+    "first_team": "Aaron Levinger",
+    "first_owner": "$3,241",
+    "second_team": "Scott Venn",
+    "second_owner": "$539",
+    "third_team": "Eric Bowman",
+    "third_owner": "$1,489"
   },
   {
     "season": "2018",
-    "first_team": "Brendan Hopps ($2,705)",
-    "second_team": "Travis Ross ($882)",
-    "third_team": "Bryan Spangler ($1,045)"
+    "first_team": "Brendan Hopps",
+    "first_owner": "$2,705",
+    "second_team": "Travis Ross",
+    "second_owner": "$882",
+    "third_team": "Bryan Spangler",
+    "third_owner": "$1,045"
   },
   {
     "season": "2017",
-    "first_team": "Zain Memon ($2,286)",
-    "second_team": "Michael Simeona ($370)",
-    "third_team": "Jason Gnich ($1,051)"
+    "first_team": "Zain Memon",
+    "first_owner": "$2,286",
+    "second_team": "Michael Simeona",
+    "second_owner": "$370",
+    "third_team": "Jason Gnich",
+    "third_owner": "$1,051"
   },
   {
     "season": "2016",
-    "first_team": "Daniel Shuval ($2,415)",
-    "second_team": "Casey Merrild ($725)",
-    "third_team": "Todd Burgers ($963)"
+    "first_team": "Daniel Shuval",
+    "first_owner": "$2,415",
+    "second_team": "Casey Merrild",
+    "second_owner": "$725",
+    "third_team": "Todd Burgers",
+    "third_owner": "$963"
   },
   {
     "season": "2015",
-    "first_team": "Eric Bowman ($1,786)",
-    "second_team": "Greg Caldwell ($288)",
-    "third_team": "Lisa Schnall ($192)"
+    "first_team": "Eric Bowman",
+    "first_owner": "$1,786",
+    "second_team": "Greg Caldwell",
+    "second_owner": "$288",
+    "third_team": "Lisa Schnall",
+    "third_owner": "$192"
   },
   {
     "season": "2014",
-    "first_team": "Joe Nelson ($900)",
-    "second_team": "Mike Duin ($400)",
-    "third_team": "Geoffrey Yamasaki ($110)"
+    "first_team": "Joe Nelson",
+    "first_owner": "$900",
+    "second_team": "Mike Duin",
+    "second_owner": "$400",
+    "third_team": "Geoffrey Yamasaki",
+    "third_owner": "$110"
   }
 ]
