@@ -7,7 +7,7 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
   $scope.vm = {};
   $scope.vm.sortOrder = '-ordered';
   $scope.vm.coldFilter = false;
-  $scope.vm.emptyFilter = false;
+  $scope.vm.emptyFilter = true;
   $scope.vm.currentFilter = true;
   $scope.vm.beers = [];
   $scope.vm.breweries = [];
@@ -36,17 +36,6 @@ function BeerController ($scope, $anchorScroll, $location, $state, $stateParams,
       console.log('beer has been fridged!');
     })
   }
-
-  // $scope.checkParams = function(){
-  //   if ($stateParams.beername !== undefined) {
-  //     console.log($stateParams.beername);
-  //     console.log("there is a beer here");
-  //     $scope.vm.showInstructions = false;
-  //   } else {
-  //     console.log($stateParams.beername);
-  //     console.log("there is no beer")
-  //   }
-  // }
 
   $scope.vm.gotoId = function(id) {
     var old = $location.hash();
