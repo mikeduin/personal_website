@@ -85,11 +85,11 @@ mobSquare {
 }
 
 .about-mob {
-  background-image: url('../images/cuba.jpg');
+  background-image: url('../images/elephant.jpg');
 }
 
 .kophiphi-mob {
-  background-image: url('../images/jtree.jpg');
+  background-image: url('../images/kophiphi.jpg');
 }
 
 .work-mob {
@@ -423,7 +423,7 @@ leftSquare {
 }
 
 .kophiphi {
-  background-image: url('../images/jtree.jpg');
+  background-image: url('../images/kophiphi.jpg');
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%); /* For Webkit browsers */
   filter: gray; /* For IE 6 - 9 */
@@ -561,7 +561,7 @@ p.slide{
 }
 
 .about {
-  background-image: url('../images/cuba.jpg');
+  background-image: url('../images/elephant.jpg');
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%); /* For Webkit browsers */
   filter: gray; /* For IE 6 - 9 */
