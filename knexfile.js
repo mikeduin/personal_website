@@ -5,7 +5,10 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
     // connection: process.env.TEST_DB
   },
 
