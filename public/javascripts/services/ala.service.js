@@ -106,7 +106,13 @@ function alaService ($http) {
       })
     },
     getSurvivorResults: function(){
-      return $http.get('javascripts/alapodiums/survivor-results.json')
+      return $http.get('javascripts/alapodiums/survivor-nfl.json')
+      .then(function(results){
+        return results.data
+      })
+    },
+    getSurvivorSeriesResults: function(){
+      return $http.get('javascripts/alapodiums/survivor-series.json')
       .then(function(results){
         return results.data
       })
