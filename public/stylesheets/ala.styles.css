@@ -460,6 +460,9 @@ gameTitle {
 
 .gameTitle {
   margin-bottom: -1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 
 gameTitle hr {
@@ -1228,4 +1231,9 @@ scoreBox score {
 
 .team-col {
   width: 40%;
+}
+
+.game-logo {
+  max-width: 10vw;
+  max-height: 10vw;
 }

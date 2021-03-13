@@ -418,6 +418,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   };
   $scope.getSurvivorResults();
 
+  $scope.vm.survivorSeriesResults = {};
+  $scope.getSurvivorSeriesResults = function(){
+    alaService.getSurvivorSeriesResults().then(function(results){
+      $scope.vm.survivorSeriesResults = results;
+    })
+  };
+  $scope.getSurvivorSeriesResults();
+
   $scope.vm.confRecords = {};
   $scope.getConfRecords = function(){
     alaService.getConfRecords().then(function(results){
