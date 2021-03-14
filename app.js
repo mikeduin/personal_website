@@ -18,6 +18,8 @@ var wcbracket = require('./routes/wcbracket');
 
 var app = express();
 
+
+
 var forceSsl = function (req, res, next) {
    if (req.headers['x-forwarded-proto'] !== 'https') {
        return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
@@ -27,6 +29,10 @@ var forceSsl = function (req, res, next) {
 
 if (app.get('env') === 'production') {
   app.use(forceSsl);
+}
+
+if (app.get('env') === 'development') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
 }
 
 
