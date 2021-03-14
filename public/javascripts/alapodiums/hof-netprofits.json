@@ -1,43 +1,43 @@
 [
   {
     "rank": "1",
-    "entrant": "Kyle Davis",
-    "entries": "130",
-    "buyins": "$9,535",
-    "prizes": "$17,406",
-    "profits": "$7,570"
+    "entrant": "Dan Goldman",
+    "entries": "108",
+    "buyins": "$8,370",
+    "prizes": "$15,811",
+    "profits": "$7,178"
   },
   {
     "rank": "2",
-    "entrant": "Dan Goldman",
-    "entries": "104",
-    "buyins": "$7,895",
-    "prizes": "$15,676",
-    "profits": "$7,518"
+    "entrant": "Kyle Davis",
+    "entries": "135",
+    "buyins": "$10,290",
+    "prizes": "$17,406",
+    "profits": "$6,815"
   },
   {
     "rank": "3",
-    "entrant": "Brendan Hopps",
-    "entries": "9",
-    "buyins": "$755",
-    "prizes": "$6,907",
-    "profits": "$6,152"
+    "entrant": "Aaron Levinger",
+    "entries": "3",
+    "buyins": "$600",
+    "prizes": "$7,321",
+    "profits": "$6,721"
   },
   {
     "rank": "4",
-    "entrant": "Eric Bowman",
-    "entries": "18",
-    "buyins": "$1,355",
-    "prizes": "$4,638",
-    "profits": "$4,442"
+    "entrant": "Mike Duin",
+    "entries": "184",
+    "buyins": "$16,565",
+    "prizes": "$22,083",
+    "profits": "$5,952"
   },
   {
     "rank": "5",
-    "entrant": "Mike Duin",
-    "entries": "173",
-    "buyins": "$15,100",
-    "prizes": "$19,413",
-    "profits": "$4,406"
+    "entrant": "Brendan Hopps",
+    "entries": "11",
+    "buyins": "$1,035",
+    "prizes": "$6,907",
+    "profits": "$5,872"
   },
   {
     "rank": "6",
@@ -49,6 +49,14 @@
   },
   {
     "rank": "7",
+    "entrant": "Eric Bowman",
+    "entries": "21",
+    "buyins": "$1,685",
+    "prizes": "$4,658",
+    "profits": "$4,132"
+  },
+  {
+    "rank": "8",
     "entrant": "Mandy Rosenbloom",
     "entries": "14",
     "buyins": "$205",
@@ -56,7 +64,7 @@
     "profits": "$4,047"
   },
   {
-    "rank": "8",
+    "rank": "9",
     "entrant": "Brad Holschen",
     "entries": "43",
     "buyins": "$1,295",
@@ -64,19 +72,12 @@
     "profits": "$3,984"
   },
   {
-    "rank": "9",
+    "rank": "10",
     "entrant": "Kevin Young",
     "entries": "10",
     "buyins": "$135",
     "prizes": "$3,778",
     "profits": "$3,643"
-  },
-  {
-    "rank": "10",
-    "entrant": "Cory Casini",
-    "entries": "18",
-    "buyins": "$415",
-    "prizes": "$3,800",
-    "profits": "$3,385"
   }
+
 ]
