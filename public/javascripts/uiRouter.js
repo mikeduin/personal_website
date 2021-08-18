@@ -426,56 +426,56 @@ function siteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('home.ala.nbasurvivor', {
-      url: '/nbasurvivor',
+    .state('home.ala.survivorseries', {
+      url: '/survivorseries',
       views: {
-        'nbasurvivor@home.ala': {
-          templateUrl: 'views/ala/nbasurvivor/main.html',
+        'survivorseries@home.ala': {
+          templateUrl: 'views/ala/survivorseries/main.html',
           controller: 'AlaController'
         }
       }
     })
-    .state('home.ala.nbasurvivor.details', {
+    .state('home.ala.survivorseries.details', {
       url: '/home',
       views: {
-        'details@home.ala.nbasurvivor': {
-          templateUrl: 'views/ala/nbasurvivor/details.html',
+        'details@home.ala.survivorseries': {
+          templateUrl: 'views/ala/survivorseries/details.html',
           controller: 'AlaController'
         }
       }
     })
-    .state('home.ala.nbasurvivor.rankings', {
+    .state('home.ala.survivorseries.rankings', {
       url: '/rankings',
       views: {
-        'rankings@home.ala.nbasurvivor': {
-          templateUrl: 'views/ala/nbasurvivor/rankings.html',
+        'rankings@home.ala.survivorseries': {
+          templateUrl: 'views/ala/survivorseries/rankings.html',
           controller: 'AlaController'
         }
       }
     })
-    // .state('home.ala.nbasurvivor.records', {
+    // .state('home.ala.survivorseries.records', {
     //   url: '/records',
     //   views: {
-    //     'records@home.ala.nbasurvivor': {
-    //       templateUrl: 'views/ala/nbasurvivor/records.html',
+    //     'records@home.ala.survivorseries': {
+    //       templateUrl: 'views/ala/survivorseries/records.html',
     //       controller: 'AlaController'
     //     }
     //   }
     // })
-    .state('home.ala.nbasurvivor.winners', {
+    .state('home.ala.survivorseries.winners', {
       url: '/winners',
       views: {
-        'winners@home.ala.nbasurvivor': {
-          templateUrl: 'views/ala/nbasurvivor/winners.html',
+        'winners@home.ala.survivorseries': {
+          templateUrl: 'views/ala/survivorseries/winners.html',
           controller: 'AlaController'
         }
       }
     })
-    .state('home.ala.nbasurvivor.yoy', {
+    .state('home.ala.survivorseries.yoy', {
       url: '/yoy',
       views: {
-        'yoy@home.ala.nbasurvivor': {
-          templateUrl: 'views/ala/nbasurvivor/yoy.html',
+        'yoy@home.ala.survivorseries': {
+          templateUrl: 'views/ala/survivorseries/yoy.html',
           controller: 'AlaController'
         }
       }
