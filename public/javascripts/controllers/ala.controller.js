@@ -97,7 +97,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.showEffRoto = false;
   $scope.showFootball = false;
   $scope.showSurvivor = false;
-  $scope.showNbaSurvivor = false;
+  $scope.showsurvivorseries = false;
   $scope.showConfidence = false;
   $scope.showPga = false;
   $scope.showNbaPlayoffs = false;
@@ -105,7 +105,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.showCalcutta = false;
 
   $scope.vm.menuDisplay = function(click){
-    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showNbaSurvivor', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa', 'showCalcutta'];
+    var displays = ['showFantasyNBA', 'showMadness', 'showNcaaPickem', 'showBowlPickem', 'showBtb', 'showBaseball', 'showFootball', 'showSurvivor', 'showsurvivorseries', 'showConfidence', 'showPga', 'showNbaPlayoffs', 'showFifa', 'showCalcutta'];
 
     for (var i=0; i<displays.length; i++) {
       if (click === displays[i]) {
@@ -1008,7 +1008,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     ]
   }
 
-  $scope.vm.nbaSurvivorData = {
+  $scope.vm.survivorseriesData = {
     'type':'line',
     'title': {
       'text':'NBA Survivor Prize Pools',
