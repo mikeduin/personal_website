@@ -226,6 +226,22 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   };
   $scope.getChampions19();
 
+  $scope.vm.champions20 = {};
+  $scope.getChampions20 = function() {
+    alaService.getChampions20().then(function(results){
+      $scope.vm.champions20 = results;
+    })
+  };
+  $scope.getChampions20();
+
+  $scope.vm.champions21 = {};
+  $scope.getChampions21 = function() {
+    alaService.getChampions21().then(function(results){
+      $scope.vm.champions21 = results;
+    })
+  };
+  $scope.getChampions21();
+
   $scope.vm.titles = {};
   $scope.getTitles = function() {
     alaService.getTitles().then(function(results){

@@ -1,9 +1,39 @@
 [
   {
+    "game": "Fantasy Hoops",
+    "entrant": "Brandon Seroyer",
+    "prize": "$787",
+    "summary": ""
+  },
+  {
+    "game": "NBA CDL",
+    "entrant": "Brandon Seroyer",
+    "prize": "$1,570",
+    "summary": ""
+  },
+  {
     "game": "NCAA Pick'em",
     "entrant": "Matt Keating",
     "prize": "$401",
     "summary": ""
+  },
+  {
+    "game": "NFL Survivor",
+    "entrant": "Scott Venn, Connor Artigue, JP Morgan, William Cabral, Ken Hogenauer, Alex Tulipinspring*",
+    "prize": "$713/ea",
+    "summary": ""
+  },
+  {
+    "game": "NFL Confidence",
+    "entrant": "JP Morgan",
+    "prize": "$702",
+    "summary": ""
+  },
+  {
+    "game": "NFL Battle the Bookies",
+    "entrant": "Aaron Levinger",
+    "prize": "$4,080",
+    "summary": "<a href='https://www.mikeduin.com/alevelabove/blog/battlethebookies20recap'>2020 NFL Battle the Bookies Recap</a>"
   },
   {
     "game": "Fantasy NFL: GU Division",
@@ -19,8 +49,14 @@
   },
   {
     "game": "Fantasy NFL: USC Division",
-    "entrant": "Alex Tulipinspring",
+    "entrant": "Alex Tulipinspring*",
     "prize": "$1,334",
     "summary": "<a href='https://www.mikeduin.com/alevelabove/blog/2020fantasynflrecap'>2020 Fantasy NFL Recap</a>"
   },
+  {
+    "game": "Fantasy MLB",
+    "entrant": "Alex Tulipinspring*",
+    "prize": "$560",
+    "summary": ""
+  }
 ]
