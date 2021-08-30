@@ -1,5 +1,11 @@
 [
   {
+    "game": "NBA Survivor",
+    "entrant": "Scott Venn / Eric Cole",
+    "prize": "$981 ea",
+    "summary": ""
+  },
+  {
     "game": "Fantasy Hoops",
     "entrant": "Brandon Seroyer",
     "prize": "$787",
@@ -20,7 +26,7 @@
   {
     "game": "NFL Survivor",
     "entrant": "Scott Venn, Connor Artigue, JP Morgan, William Cabral, Ken Hogenauer, Alex Tulipinspring*",
-    "prize": "$713/ea",
+    "prize": "$713 ea",
     "summary": ""
   },
   {
@@ -52,6 +58,12 @@
     "entrant": "Alex Tulipinspring*",
     "prize": "$1,334",
     "summary": "<a href='https://www.mikeduin.com/alevelabove/blog/2020fantasynflrecap'>2020 Fantasy NFL Recap</a>"
+  },
+  {
+    "game": "MLB Survivor",
+    "entrant": "Brett Mullin / Brad Baker",
+    "prize": "$618 ea",
+    "summary": ""
   },
   {
     "game": "Fantasy MLB",
