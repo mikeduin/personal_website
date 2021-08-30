@@ -13,6 +13,13 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.contactForm = {};
   $scope.vm.contactSuccess = false;
 
+  $scope.vm.pullCareerData = () => {
+    return alaService.pullCareerData().then(res => {
+      console.log('career data returned to ALA controller is ', res);
+      $scope.vm.careerData = res;
+    })
+  }
+
   $scope.vm.checkStartTime = function(time) {
     if (moment().isBefore(time)) {
       return true;

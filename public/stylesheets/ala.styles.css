@@ -206,9 +206,22 @@ alaSidebar a {
   margin-bottom: 1vw;
 }
 
+.hof-table-wrapper {
+  max-height: 600px; 
+  height: 600px; 
+  overflow-y: scroll;
+  margin-bottom: 2.5vw;
+  margin-right: 25px !important;
+}
+
 .hof-table {
   margin-bottom: 2.5vw;
 }
+
+
+/* .hof-table th {
+  position: sticky;
+} */
 
 /*ALA About + Contact Styles*/
 
@@ -535,7 +548,7 @@ rankings iframe {
 }
 
 podium > table {
-  border: solid 0.4vw black;
+  /* border: solid 0.4vw black; */
   margin-top: -1vw;
 }
 

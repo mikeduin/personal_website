@@ -1,4 +1,4 @@
-<careerData class="col-xs-9 col-md-10">
+<careerData class="col-xs-9 col-md-10" ng-init="vm.pullCareerData()">
   <blog class="col-xs-12">
     <div class="text-center">
       <hr style="margin-bottom: -5px;" class="col-xs-4 col-xs-offset-4">
@@ -19,7 +19,7 @@
 
 <playersIntro class="col-xs-9 col-md-10">
   <p>
-    Below you will find the all-time leaders in five career-spanning categories. I'll attempt to update these records at the conclusion of each annual ALA season; player career data is currently accurate as of March 2021.
+    Below you will find ALA's all-time leaders in five career-spanning categories. This data is sourced from ALA's <b><a href="https://docs.google.com/spreadsheets/d/1Qz0f19dj9Jg_qY7fICYqDsD-vI3E6porLHZed-c8pW8/edit?usp=sharing" target="_blank">Universal Career Data</a></b> and is accurate through August 2021.
   </p>
 </playersIntro>
 
@@ -27,40 +27,45 @@
   <league class="col-xs-12 text-center" id="totalNetProfits">
     Total Net Profits
   </league>
-  <table class="col-xs-12 hof-table">
-    <thead>
-      <tr>
-        <th class="text-center podium"> Rank </th>
-        <th class="text-center podium"> Entrant </th>
-        <th class="text-center podium"> Entries </th>
-        <th class="text-center podium"> Buy-ins </th>
-        <th class="text-center podium"> Prizes </th>
-        <th class="text-center podium"> Net Profits </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="records in vm.netProfits" class="podium">
-        <td style="font-size: 1.25vw" class="text-center podium">
-          <i> {{records.rank}} </i>
-        </td>
-        <td style="font-size: 1.25vw" class="text-center">
-          <team class="entrant"> {{records.entrant}} </team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.entries}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.buyins}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.prizes}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="profits"> {{records.profits}}</team>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-xs-12 hof-table-wrapper">
+      <table class="hof-table col-xs-12">
+        <thead>
+          <tr>
+            <th class="text-center podium"> Rank </th>
+            <th class="text-center podium"> Entrant </th>
+            <th class="text-center podium"> Entries </th>
+            <th class="text-center podium"> Buy-ins </th>
+            <th class="text-center podium"> Prizes </th>
+            <th class="text-center podium"> Net Profits </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="entrant in vm.careerData | orderBy: '-net_profits' | limitTo: 100" class="podium">
+            <td style="font-size: 1.25vw" class="text-center podium">
+              <i> {{$index + 1}} </i>
+            </td>
+            <td style="font-size: 1.25vw" class="text-center"> 
+              <team class="entrant"> {{entrant.entrant}} </team> 
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.total_entries}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.buyins | currency:$:0}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.prizes | currency:$:0}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="profits"> {{entrant.net_profits | currency:$:0}}</team>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <league class="col-xs-12 text-center" id="singleEventPrizes">
     Single-Event Prizes
   </league>
@@ -76,7 +81,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="records in vm.prizes" class="podium">
-        <td style="font-size: 16px" class="text-center podium">
+        <td class="text-center podium">
           <i> {{records.rank}} </i>
         </td>
         <td style="font-size: 1.25vw" class="text-center">
@@ -97,112 +102,124 @@
   <league class="col-xs-12 text-center" id="totalEntries">
     Total Entries
   </league>
-  <table class="col-xs-12 hof-table">
-    <thead>
-      <tr>
-        <th class="text-center podium"> Rank </th>
-        <th class="text-center podium"> Entrant </th>
-        <th class="text-center podium"> Entries </th>
-        <th class="text-center podium"> Titles </th>
-        <th class="text-center podium"> Podiums </th>
-        <th class="text-center podium"> Prizes </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="records in vm.entries" class="podium">
-        <td style="font-size: 16px" class="text-center podium">
-          <i> {{records.rank}} </i>
-        </td>
-        <td style="font-size: 1.25vw" class="text-center">
-          <team class="entrant"> {{records.entrant}} </team>
-        </td>
-        <td class="podium text-center">
-          <team class="profits"> {{records.entries}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.titles}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.topthree}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="prizes"> {{records.prizes}}</team>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-xs-12 hof-table-wrapper">
+      <table class="hof-table col-xs-12">
+        <thead>
+          <tr>
+            <th class="text-center podium"> Rank </th>
+            <th class="text-center podium"> Entrant </th>
+            <th class="text-center podium"> Entries </th>
+            <th class="text-center podium"> Championships </th>
+            <th class="text-center podium"> Podiums </th>
+            <th class="text-center podium"> Prizes </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="entrant in vm.careerData | orderBy: '-total_entries' | limitTo: 100" class="podium">
+            <td style="font-size: 1.25vw" class="text-center podium">
+              <i> {{$index + 1}} </i>
+            </td>
+            <td style="font-size: 1.25vw" class="text-center"> 
+              <team class="entrant"> {{entrant.entrant}} </team> 
+            </td>
+            <td class="podium text-center">
+              <team class="profits"> {{entrant.total_entries}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.titles}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.podiums}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.prizes | currency:$:0}}</team>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <league class="col-xs-12 text-center" id="totalChampionships">
     Total Championships
   </league>
-  <table class="col-xs-12 hof-table">
-    <thead>
-      <tr>
-        <th class="text-center podium"> Rank </th>
-        <th class="text-center podium"> Entrant </th>
-        <th class="text-center podium"> Entries </th>
-        <th class="text-center podium"> Championships </th>
-        <th class="text-center podium"> Podiums </th>
-        <th class="text-center podium"> Prizes </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="records in vm.titles" class="podium">
-        <td style="font-size: 16px" class="text-center podium">
-          <i> {{records.rank}} </i>
-        </td>
-        <td style="font-size: 1.25vw" class="text-center">
-          <team class="entrant"> {{records.entrant}} </team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.entries}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="profits"> {{records.titles}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.topthree}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="prizes"> {{records.prizes}}</team>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-xs-12 hof-table-wrapper">
+      <table class="hof-table col-xs-12">
+        <thead>
+          <tr>
+            <th class="text-center podium"> Rank </th>
+            <th class="text-center podium"> Entrant </th>
+            <th class="text-center podium"> Entries </th>
+            <th class="text-center podium"> Championships </th>
+            <th class="text-center podium"> Podiums </th>
+            <th class="text-center podium"> Prizes </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="entrant in vm.careerData | orderBy: '-titles' | limitTo: 100" class="podium">
+            <td class="text-center podium">
+              <i> {{$index + 1}} </i>
+            </td>
+            <td style="font-size: 1.25vw" class="text-center"> 
+              <team class="entrant"> {{entrant.entrant}} </team> 
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.total_entries}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="profits"> {{entrant.titles}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.podiums}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.prizes | currency:$:0}}</team>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <league class="col-xs-12 text-center" id="totalPodiums">
     Total Podiums (Top-3 Finishes)
   </league>
-  <table class="col-xs-12 hof-table">
-    <thead>
-      <tr>
-        <th class="text-center podium"> Rank </th>
-        <th class="text-center podium"> Entrant </th>
-        <th class="text-center podium"> Entries </th>
-        <th class="text-center podium"> Championships </th>
-        <th class="text-center podium"> Podiums </th>
-        <th class="text-center podium"> Prizes </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="records in vm.podiums" class="podium">
-        <td style="font-size: 16px" class="text-center podium">
-          <i> {{records.rank}} </i>
-        </td>
-        <td style="font-size: 1.25vw" class="text-center">
-          <team class="entrant"> {{records.entrant}} </team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.entries}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.titles}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="profits"> {{records.topthree}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="prizes"> {{records.prizes}}</team>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-xs-12 hof-table-wrapper">
+      <table class="hof-table col-xs-12">
+        <thead>
+          <tr>
+            <th class="text-center podium"> Rank </th>
+            <th class="text-center podium"> Entrant </th>
+            <th class="text-center podium"> Entries </th>
+            <th class="text-center podium"> Championships </th>
+            <th class="text-center podium"> Podiums </th>
+            <th class="text-center podium"> Prizes </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="entrant in vm.careerData | orderBy: '-podiums' | limitTo: 100" class="podium">
+            <td class="text-center podium">
+              <i> {{$index + 1}} </i>
+            </td>
+            <td style="font-size: 1.25vw" class="text-center"> 
+              <team class="entrant"> {{entrant.entrant}} </team> 
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.total_entries}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.titles}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="profits"> {{entrant.podiums}}</team>
+            </td>
+            <td class="podium text-center">
+              <team class="black"> {{entrant.prizes | currency:$:0}}</team>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </podium>

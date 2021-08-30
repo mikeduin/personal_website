@@ -15,10 +15,6 @@ router.get('/', function(req, res, next) {
   res.redirect('index.html');
 });
 
-// var mongoose = require('mongoose');
-// var Beer = mongoose.model('Beer');
-// var Blogpost = mongoose.model('Blogpost');
-
 // BEGIN BEER ROUTES
 
 router.post('/fridgeRequest', function(req, res, next){
