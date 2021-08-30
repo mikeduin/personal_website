@@ -105,7 +105,7 @@ mobSquare {
 }
 
 .ala-logo-mob {
-  background-image: url('../images/ala0304.jpg');
+  background-image: url('https://s3.us-west-2.amazonaws.com/mikeduin.com/ALA_big_white.png');
 }
 
 .about-mob-content {
@@ -618,15 +618,15 @@ p.slide{
 
 .ala-content {
     position:absolute;
-    height:90%;
+    height:95%;
     width:90%;
-    padding: 5%;
-    margin-top: 20%;
+    padding: 2%;
+    margin-top: 0;
     margin-left: 10%;
 }
 
 .ala-logo {
-  background-image: url('../images/ala0304.jpg');
+  background-image: url('https://s3.us-west-2.amazonaws.com/mikeduin.com/ALA_big_white.png');
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%); /* For Webkit browsers */
   filter: gray; /* For IE 6 - 9 */
@@ -651,4 +651,5 @@ p.slide{
 
 .ala-logo:hover > #ala-text {
   display: block;
+  color: black;
 }
