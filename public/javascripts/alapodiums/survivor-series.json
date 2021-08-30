@@ -1,5 +1,12 @@
 [
   {
+    "season": "MLB 2021",
+    "first_team": "Scott Venn (t-1st)",
+    "first_owner": "$1285",
+    "second_team": "Brad Baker (t-1st)",
+    "second_owner": "$1285"
+  },
+  {
     "season": "NBA 2020",
     "first_team": "Eric Cole (t-1st)",
     "first_owner": "$981",
