@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" uib-collapse="isCollapsed" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-right" ng-show="$state.includes('home.professional') || $state.includes('home.ala') || $state.includes('home.alapools') || $state.includes('home.fridge') || $state.includes('home.music') || $state.includes('home.about')">
           <li> <a class="navlink" ui-sref="home.about" id="aboutAnchor" ng-class="{'aboutBack': $state.includes('home.about')}" title="About"> About </a></li>
-          <li> <a class="navlink" ui-sref="home.professional" id="workAnchor" ng-class="{'workBack': $state.includes('home.professional')}" title="Professional"> Portfolio </a></li>
+          <li> <a class="navlink" ui-sref="home.professional" id="workAnchor" ng-class="{'workBack': $state.includes('home.professional')}" title="Professional"> Work </a></li>
           <li> <a class="navlink" ui-sref="home.ala.blog.main" id="alaAnchor" ng-class="{'alaBack': $state.includes('home.ala') || $state.includes('home.alapools')}" title="A Level Above"> A Level Above </a></li>
           <li>
             <a href="https://photography.mikeduin.com" class="navlink" title="Photography">
@@ -38,7 +38,7 @@
       <div class="navbar-mob-header slideDown">
         <a class="navbar-mob-brand">
           <span> mike<b>duin</b> :</span>
-          <span ng-if="$state.includes('home.professional')" style="color: #2F5032; font-weight: 800"> portfolio </span>
+          <span ng-if="$state.includes('home.professional')" style="color: #2F5032; font-weight: 800"> work </span>
           <span ng-if="$state.includes('home.about')" style="color: #24307A; font-weight: 800"> about </span>
           <span ng-if="$state.includes('home.ala') || $state.includes('home.alapools')" style="color: #3984C5; font-weight: 800"> a level above </span>
           <span ng-if="$state.includes('home.fridge')" style="color: #7C0F09; font-weight: 800"> fridge </span>
@@ -57,7 +57,7 @@
           </a>
           <a ui-sref="home.professional">
             <div class="mobile-nav-link nav-work">
-              portfolio
+              work
             </div>
           </a>
           <a ui-sref="home.ala.blog.main">

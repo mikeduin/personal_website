@@ -4,6 +4,12 @@ angular
 
 function alaService ($http) {
   return {
+    pullCareerData: () => {
+      return $http.get(`/db/careerData`)
+      .then(results => {
+        return results.data;
+      })
+    },
     retrievePools: function(){
       return $http.get('/retrievePools')
       .then(function(results){

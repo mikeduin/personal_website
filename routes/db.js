@@ -6,6 +6,14 @@ function User_Results () {
   return knex('user_results')
 };
 
+function CareerData() {return knex('career_data')};
+
+router.get('/careerData', async (req, res) => {
+  const results = await CareerData();
+
+  res.json(results);
+})
+
 router.get('/entrants', function(req, res, next){
   User_Results().distinct('name').select().then(function(results){
     var sorted = results.sort(function(a, b){
