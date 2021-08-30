@@ -18,8 +18,6 @@ var wcbracket = require('./routes/wcbracket');
 
 var app = express();
 
-
-
 var forceSsl = function (req, res, next) {
    if (req.headers['x-forwarded-proto'] !== 'https') {
        return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
@@ -34,7 +32,6 @@ if (app.get('env') === 'production') {
 if (app.get('env') === 'development') {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
 }
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
