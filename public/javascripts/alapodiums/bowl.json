@@ -1,5 +1,14 @@
 [
   {
+    "season": "2021-22",
+    "first_team": "Greg Meier",
+    "first_owner": "$636",
+    "second_team": "Scott Morton",
+    "second_owner": "$318",
+    "third_team": "Austin Drew",
+    "third_owner": "$52"
+  },
+  {
     "season": "2019-20",
     "first_team": "Erik Bianchi",
     "first_owner": "$850",

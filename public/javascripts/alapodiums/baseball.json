@@ -1,9 +1,18 @@
 [
   {
+    "season": "2021",
+    "first_team": "ShrayDay",
+    "first_owner": "Billy Schreyer",
+    "second_team": "Ballbusters",
+    "second_owner": "Jason Steinberg",
+    "third_team": "Larry Bernandez",
+    "third_owner": "Scott Venn"
+  },
+  {
     "season": "2020",
     "first_team": "Strike City",
     "first_owner": "Alex Tulipinspring",
-    "second_team": "Shray Day",
+    "second_team": "ShrayDay",
     "second_owner": "Billy Schreyer",
     "third_team": "Ballbusters",
     "third_owner": "Jason Steinberg"
