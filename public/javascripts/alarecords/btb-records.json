@@ -1,50 +1,50 @@
 [
   {
     "type": "Career",
-    "category": "Highest Net Game Score",
-    "record": "$3,195.85",
+    "category": "Highest Cumulative Game Score",
+    "record": "$4,208",
     "entrant": "Aaron Levinger",
-    "season": "(three seasons)"
+    "season": "(four seasons)"
   },
   {
     "type": "Career",
     "category": "Highest Average Game Score",
-    "record": "$1,022.55",
-    "entrant": "Aaron Levinger",
+    "record": "$1,664",
+    "entrant": "Brendan Newland",
     "season": "(two seasons)"
   },
   {
     "type": "Career",
     "category": "Net Profits",
-    "record": "$6,721",
-    "entrant": "Eric Bowman",
-    "season": "(five seasons)"
+    "record": "$6,541",
+    "entrant": "Aaron Levinger",
+    "season": "(four seasons)"
   },
   {
     "type": "Career",
     "category": "Percentage of Pool Defeated",
-    "record": "94.83%",
-    "entrant": "Erik Eberts",
+    "record": "95.35%",
+    "entrant": "Brendan Newland",
     "season": "(two seasons)"
   },
   {
     "type": "Season",
     "category": "Prize Awarded",
-    "record": "$4,080",
-    "entrant": "Aaron Levinger",
-    "season": "2020"
+    "record": "$4,370",
+    "entrant": "Dylan Barrera",
+    "season": "2021"
   },
   {
     "type": "Season",
     "category": "Highest Game Score",
-    "record": "$3,195.85",
+    "record": "$3,195",
     "entrant": "Aaron Levinger",
     "season": "2019"
   },
   {
     "type": "Week",
     "category": "Highest Game Score",
-    "record": "$1,447.00",
+    "record": "$1,447",
     "entrant": "Marc Courtmanch",
     "season": "2019"
   }
