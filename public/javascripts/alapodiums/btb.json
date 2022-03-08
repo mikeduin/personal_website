@@ -1,5 +1,14 @@
 [
   {
+    "season": "2021",
+    "first_team": "Dylan Barrera",
+    "first_owner": "$4,370",
+    "second_team": "Brendan Newland",
+    "second_owner": "$2,269",
+    "third_team": "John Palazza",
+    "third_owner": "$848"
+  },
+  {
     "season": "2020",
     "first_team": "Aaron Levinger",
     "first_owner": "$4,080",
