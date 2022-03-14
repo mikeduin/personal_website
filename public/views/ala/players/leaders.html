@@ -24,6 +24,40 @@
 </playersIntro>
 
 <podium class="col-xs-9 col-md-10">
+  <league class="col-xs-12 text-center" id="singleEventPrizes">
+    Single-Event Prizes
+  </league>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Rank </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Game </th>
+        <th class="text-center podium"> Year </th>
+        <th class="text-center podium"> Prize </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.prizes" class="podium">
+        <td class="text-center podium">
+          <i> {{records.rank}} </i>
+        </td>
+        <td style="font-size: 1.25vw" class="text-center">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="prizes"> {{records.game}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.year}}</team>
+        </td>
+        <td class="podium text-center">
+          <team class="profits"> {{records.prizes}}</team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <league class="col-xs-12 text-center" id="totalNetProfits">
     Total Net Profits
   </league>
@@ -65,40 +99,6 @@
       </table>
     </div>
   </div>
-
-  <league class="col-xs-12 text-center" id="singleEventPrizes">
-    Single-Event Prizes
-  </league>
-  <table class="col-xs-12 hof-table">
-    <thead>
-      <tr>
-        <th class="text-center podium"> Rank </th>
-        <th class="text-center podium"> Entrant </th>
-        <th class="text-center podium"> Game </th>
-        <th class="text-center podium"> Year </th>
-        <th class="text-center podium"> Prize </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="records in vm.prizes" class="podium">
-        <td class="text-center podium">
-          <i> {{records.rank}} </i>
-        </td>
-        <td style="font-size: 1.25vw" class="text-center">
-          <team class="entrant"> {{records.entrant}} </team>
-        </td>
-        <td class="podium text-center">
-          <team class="prizes"> {{records.game}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="black"> {{records.year}}</team>
-        </td>
-        <td class="podium text-center">
-          <team class="profits"> {{records.prizes}}</team>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
   <league class="col-xs-12 text-center" id="totalEntries">
     Total Entries
