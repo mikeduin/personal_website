@@ -1,72 +1,72 @@
 [
   {
     "rank": "1",
+    "entrant": "Brewster Stanislaw",
+    "game": "NFL Survivor",
+    "year": "2021",
+    "prizes": "$5,550"
+  },
+  {
+    "rank": "2",
     "entrant": "Brad Holschen",
     "game": "March Madness",
     "year": "2019",
     "prizes": "$5,255"
   },
   {
-    "rank": "2",
+    "rank": "3",
     "entrant": "Jaime Trevino",
     "game": "NFL Survivor",
     "year": "2015",
     "prizes": "$4,800"
   },
   {
-    "rank": "3",
+    "rank": "4",
     "entrant": "Chris Donohue",
     "game": "March Madness",
     "year": "2021",
     "prizes": "$4,705"
   },
   {
-    "rank": "4",
+    "rank": "5",
+    "entrant": "Dylan Barrera",
+    "game": "NFL Battle the Bookies",
+    "year": "2021",
+    "prizes": "$4,370"
+  },
+  {
+    "rank": "6",
     "entrant": "Mandy Rosenbloom",
     "game": "March Madness",
     "year": "2018",
     "prizes": "$4,211"
   },
   {
-    "rank": "5",
+    "rank": "7",
     "entrant": "Aaron Levinger",
     "game": "NFL Battle the Bookies",
     "year": "2020",
     "prizes": "$4,080"
   },
   {
-    "rank": "6",
+    "rank": "8",
     "entrant": "Brendan Hopps",
     "game": "NFL Survivor",
     "year": "2019",
     "prizes": "$3,812"
   },
   {
-    "rank": "7",
+    "rank": "9",
     "entrant": "Kevin Young",
     "game": "March Madness",
     "year": "2017",
     "prizes": "$3,778"
   },
   {
-    "rank": "8",
+    "rank": "10",
     "entrant": "Matt Carpenter",
     "game": "NFL Survivor",
     "year": "2018",
     "prizes": "$3,275"
-  },
-  {
-    "rank": "9",
-    "entrant": "Aaron Levinger",
-    "game": "NFL Battle the Bookies",
-    "year": "2019",
-    "prizes": "$3,241"
-  },
-  {
-    "rank": "10",
-    "entrant": "Scott Hitchcock",
-    "game": "March Madness",
-    "year": "2016",
-    "prizes": "$2,784"
   }
 ]
