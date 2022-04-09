@@ -20,7 +20,7 @@
     "jsonwebtoken": "^8.2.2",
     "knex": "^0.21.1",
     "lightbox2": "^2.8.2",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.19",
     "morgan": "^1.9.1",
