@@ -1,5 +1,14 @@
 [
   {
+    "season": "2022",
+    "first_team": "Jack Powers",
+    "first_owner": "$5,025",
+    "second_team": "Clifton London",
+    "second_owner": "$2,512",
+    "third_team": "David Christeson",
+    "third_owner": "$1,402"
+  },
+  {
     "season": "2021",
     "first_team": "Chris Donohue",
     "first_owner": "$4,705",
