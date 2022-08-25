@@ -1,5 +1,14 @@
 [
   {
+    "season": "2021-22",
+    "first_team": "Seattle Supersonics",
+    "first_owner": "Dan Goldman",
+    "second_team": "21st Birthday Party",
+    "second_owner": "Alex Tulipinspring*",
+    "third_team": "The Jeffersons",
+    "third_owner": "Joe Simich/Billy Schreyer"
+  },
+  {
     "season": "2020-21",
     "first_team": "The Fat Chipmunks",
     "first_owner": "Brandon Seroyer",
@@ -22,7 +31,7 @@
     "first_team": "The X-Factor",
     "first_owner": "Mike Duin",
     "second_team": "L'Chaim (To Life) (18)",
-    "second_owner": "Alex Rosenbloom",
+    "second_owner": "Alex Tulipinspring*",
     "third_team": "Mike Ricer's Liver",
     "third_owner": "Brandon Seroyer"
   },
@@ -69,7 +78,7 @@
     "second_team": "Friday the 13th",
     "second_owner": "Alex Tulipinspring*",
     "third_team": "The Jeffersons",
-    "third_owner": "Joe Simich + Billy Schreyer"
+    "third_owner": "Joe Simich/Billy Schreyer"
   },
   {
     "season": "2012-13",
@@ -78,7 +87,7 @@
     "second_team": "Rectal Warriors",
     "second_owner": "Brandon Seroyer",
     "third_team": "The Jeffersons",
-    "third_owner": "Joe Simich + Billy Schreyer"
+    "third_owner": "Joe Simich/Billy Schreyer"
   },
   {
     "season": "2011-12",
