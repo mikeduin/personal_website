@@ -1,5 +1,23 @@
 [
   {
+    "season": "'22 Masters",
+    "first_team": "Eric Cole",
+    "first_owner": "+$1298",
+    "second_team": "Kevin Simshausers",
+    "second_owner": "+$376",
+    "third_team": "Brett Fitti-Hafer",
+    "third_owner": "+$367"
+  },
+  {
+    "season": "'22 March Madness",
+    "first_team": "Felipe Medina",
+    "first_owner": "+$1655",
+    "second_team": "Andrew Gay",
+    "second_owner": "+$773",
+    "third_team": "Scott Hitchcock",
+    "third_owner": "+$402"
+  },
+  {
     "season": "'21 NFL",
     "first_team": "Eric Cole",
     "first_owner": "+$801",
