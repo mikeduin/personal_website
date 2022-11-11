@@ -777,8 +777,8 @@ upcoming blog p {
   margin-bottom: 60px;
 }
 
-.confirm-modal {
-  /* margin-top: 25% */
+.modal-dialog {
+  margin-top: 25% !important;
 }
 
 /* .go-to-pool-btn {
@@ -787,6 +787,19 @@ upcoming blog p {
 
 
 /* FIFA World Cup Bracket Styles */
+
+.world-cup-season-box {
+  padding: 0;
+}
+
+a.wc-active-season:link, a.wc-active-season:visited, a.wc-active-season:hover, a.wc-active-season:active {
+  cursor: auto;
+  text-decoration: none;
+}
+
+.wc-season-link span:hover {
+  cursor: pointer;
+}
 
 .group-box {
   border: solid 3px black;

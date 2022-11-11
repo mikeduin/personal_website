@@ -5,7 +5,7 @@ var knex = require('../db/knex');
 var getGroups = require('../modules/wc18groups.js');
 
 function Pools () {return knex('pools')}
-function WC18Bracket () {return knex('wc18bracket')}
+function WorldCupEntries () {return knex('wc18bracket')}
 function Users () {return knex('users')}
 function Beers () {return knex('beers')}
 function Blogposts () {return knex('blogposts')}
@@ -111,35 +111,45 @@ router.get('/retrievePools', function(req, res, next){
   })
 });
 
-router.post('/poolRegister', function(req, res, next){
-  var alias = req.body.pool.alias;
-  var groups = getGroups.getGroups();
-  var brackets = [{
+router.post('/poolRegister', async (req, res, next) => {
+  console.log('req.body is ', req.body);
+  const { user } = req.body;
+  const { alias, name, season } = req.body.pool;
+  
+  const groups = getGroups.getGroups(season);
+  const brackets = [{
     'picks': [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     'consOne': null,
     'consTwo': null
   }];
 
-  knex(alias).insert({
-    username: req.body.user,
-    groupSelections: groups,
-    bracketSelections: brackets,
-    modified: new Date()
-  }, '*').then(function(ret){
-    console.log(ret[0].username, ' has been registered for ', alias);
-    knex.raw("UPDATE users SET " + alias + " = 1 WHERE username = '" + req.body.user + "'")
-    .then(function(result){
-      knex.raw("UPDATE pools SET entrants = entrants + 1 WHERE alias = '" + alias + "'")
-      .then(function(){
-        console.log("entrants for ", alias, " have been incremented");
-        return res.json({
-          user: req.body.user,
-          pool: req.body.pool.name,
-          alias: req.body.pool.alias
-        })
-      })
-    })
+  try {
+    const poolInsert = await WorldCupEntries().insert({
+      username: user,
+      groupSelections: groups,
+      bracketSelections: brackets,
+      season,
+      modified: new Date(),
+      created_at: new Date(),
+    }, '*')
+    console.log(poolInsert[0].username, ' has been registered for ', alias);
+  } catch (e) {
+    console.log(`error creating poolInsert for ${poolInsert[0].username} is ${e}`);
+  }
+
+  try {
+    await Pools().where({alias}).increment('entrants', 1);
+    console.log(`${alias} has been incremented by one user`);
+  } catch (e) {
+    console.log(`error incrementing ${alias} pool by one user is ${e}`);
+  }
+
+  res.json({
+    user,
+    pool: name,
+    alias
   })
+
 })
 
 

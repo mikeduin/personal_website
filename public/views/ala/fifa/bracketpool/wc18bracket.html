@@ -1,4 +1,4 @@
-<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks(); vm.getUser()" ng-show="vm.isLoggedIn() !== false && vm.userData.wc18bracket === 1">
+<div class="col-xs-9 col-md-10" ng-init="vm.loadPicks(); vm.getUser()" ng-show="vm.userLoggedInAndRegistered">
   <div class="row">
     <div class="col-xs-12 page-intro">
       After making your Group Stage picks, fill out your bracket here -- including the 3rd-place game. Don't forget to save your picks once you're finished! You can return to edit your Group and Bracket picks at any time before the tournament begins, at which point picks will lock.
@@ -10,153 +10,79 @@
       <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !inTime}">CLEAR PICKS</button>
     </div>
   </div>
-  <consolation>
-    <ul class="round">
-      <li class="game game-top" ng-click="inTime ? vm.bracketPicks[14] = vm.consOne : null">{{vm.consOne}}<span></span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[14] = vm.consTwo : null"> {{vm.consTwo}}<span></span></li>
-      <li class="game game-bottom-label"></li>
-    </ul>
-    <ul class="round">
-      <li class="game game-top"> {{vm.bracketPicks[14]}}<span></span></li>
-      <li class="game game-bottom-label text-center">3RD PLACE</li>
-    </ul>
-  </consolation>
-  <bracket class="row">
-    <main id="tournament">
-    	<ul class="round round-1">
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[0] = vm.models.groups['A'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['B'][1]) : null">{{vm.models.groups['A'][0]}}<span></span></li>
-        <li class="game game-top-label">Group A Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[0] = vm.models.groups['B'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['A'][0]) : null">{{vm.models.groups['B'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group B Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[1] = vm.models.groups['C'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['D'][1]) : null">{{vm.models.groups['C'][0]}} <span></span></li>
-        <li class="game game-top-label">Group C Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[1] = vm.models.groups['D'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['C'][0]) : null">{{vm.models.groups['D'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group D Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[2] = vm.models.groups['E'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['F'][1]) : null">{{vm.models.groups['E'][0]}}<span></span></li>
-        <li class="game game-top-label">Group E Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[2] = vm.models.groups['F'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['E'][0]) : null">{{vm.models.groups['F'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group F Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[3] = vm.models.groups['G'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['H'][1]) : null">{{vm.models.groups['G'][0]}} <span></span></li>
-        <li class="game game-top-label">Group G Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[3] = vm.models.groups['H'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['G'][0]) : null">{{vm.models.groups['H'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group H Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[4] = vm.models.groups['B'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['A'][1]) : null">{{vm.models.groups['B'][0]}} <span></span></li>
-        <li class="game game-top-label">Group B Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[4] = vm.models.groups['A'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['B'][0]) : null">{{vm.models.groups['A'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group A Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[5] = vm.models.groups['D'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['C'][1]) : null">{{vm.models.groups['D'][0]}} <span></span></li>
-        <li class="game game-top-label">Group D Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[5] = vm.models.groups['C'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['D'][0]) : null">{{vm.models.groups['C'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group C Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[6] = vm.models.groups['F'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['E'][1]) : null">{{vm.models.groups['F'][0]}} <span></span></li>
-        <li class="game game-top-label">Group F Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[6] = vm.models.groups['E'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['F'][0]) : null">{{vm.models.groups['E'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group E Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[7] = vm.models.groups['H'][0] : null; inTime ? vm.checkAdvance(1, vm.models.groups['G'][1]) : null">{{vm.models.groups['H'][0]}} <span></span></li>
-        <li class="game game-top-label">Group H Winner</li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[7] = vm.models.groups['G'][1] : null; inTime ? vm.checkAdvance(1, vm.models.groups['H'][0]) : null">{{vm.models.groups['G'][1]}} <span></span></li>
-        <li class="game game-bottom-label">Group G Runner-Up</li>
-
-    		<li class="spacer">&nbsp;</li>
-    	</ul>
-    	<ul class="round round-2">
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[8] = vm.bracketPicks[0] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[1]) : null"> {{vm.bracketPicks[0]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[8] = vm.bracketPicks[1] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[0]) : null"> {{vm.bracketPicks[1]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[9] = vm.bracketPicks[2] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[3]) : null"> {{vm.bracketPicks[2]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[9] = vm.bracketPicks[3] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[2]) : null"> {{vm.bracketPicks[3]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[10] = vm.bracketPicks[4] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[5]) : null"> {{vm.bracketPicks[4]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[10] = vm.bracketPicks[5] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[4]) : null"> {{vm.bracketPicks[5]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[11] = vm.bracketPicks[6] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[7]) : null"> {{vm.bracketPicks[6]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[11] = vm.bracketPicks[7] : null; inTime ? vm.checkAdvance(2, vm.bracketPicks[6]) : null"> {{vm.bracketPicks[7]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-    	</ul>
-    	<ul class="round round-3">
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[12] = vm.bracketPicks[8] : null; inTime ? vm.consOne = vm.bracketPicks[9] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[9]) : null"> {{vm.bracketPicks[8]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom " ng-click="inTime ? vm.bracketPicks[12] = vm.bracketPicks[9] : null; inTime ? vm.consOne = vm.bracketPicks[8] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[8]) : null"> {{vm.bracketPicks[9]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[13] = vm.bracketPicks[10] : null; inTime ? vm.consTwo = vm.bracketPicks[11] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[11]) : null"> {{vm.bracketPicks[10]}}<span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[13] = vm.bracketPicks[11] : null; inTime ? vm.consTwo = vm.bracketPicks[10] : null; inTime ? vm.checkAdvance(3, vm.bracketPicks[10]) : null"> {{vm.bracketPicks[11]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-    	</ul>
-    	<ul class="round round-4">
-    		<li class="spacer">&nbsp;</li>
-
-    		<li class="game game-top" ng-click="inTime ? vm.bracketPicks[15] = vm.bracketPicks[12] : null">{{vm.bracketPicks[12]}} <span></span></li>
-    		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom" ng-click="inTime ? vm.bracketPicks[15] = vm.bracketPicks[13] : null"> {{vm.bracketPicks[13]}}<span></span></li>
-        <li class="game game-bottom-label"></li>
-
-    		<li class="spacer">&nbsp;</li>
-    	</ul>
-      <ul class="round round-5">
-    		<li class="spacer">&nbsp;</li>
-        <li class="game game-top "> {{vm.bracketPicks[15]}}<span></span></li>
-        <li class="game game-bottom-label text-center">CHAMPION</li>
-        <li class="spacer">&nbsp;</li>
-      </ul>
-    </main>
-  </bracket>
+	<div class="row">
+		<section id="bracket">
+			<div class="container">
+			<div class="split split-one">
+				<div class="round round-one current">
+					<div class="round-details">Round of 16<br/><span class="date">December 3-6</span></div>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(0, vm.models.groups['A'][0]); vm.checkAdvance(1, vm.models.groups['B'][1])">{{vm.models.groups['A'][0]}}<span class="score">Group A Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(0, vm.models.groups['B'][1]); vm.checkAdvance(1, vm.models.groups['A'][0])">{{vm.models.groups['B'][1]}}<span class="score">Group B Runner-Up</span></li>
+					</ul>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(1, vm.models.groups['C'][0]); vm.checkAdvance(1, vm.models.groups['D'][1])">{{vm.models.groups['C'][0]}}<span class="score">Group C Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(1, vm.models.groups['D'][1]); vm.checkAdvance(1, vm.models.groups['C'][0])">{{vm.models.groups['D'][1]}}<span class="score">Group D Runner-Up</span></li>
+					</ul>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(2, vm.models.groups['E'][0]); vm.checkAdvance(1, vm.models.groups['F'][1])">{{vm.models.groups['E'][0]}}<span class="score">Group E Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(2, vm.models.groups['F'][1]); vm.checkAdvance(1, vm.models.groups['E'][0])">{{vm.models.groups['F'][1]}}<span class="score">Group F Runner-Up</span></li>
+					</ul>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(3, vm.models.groups['G'][0]); vm.checkAdvance(1, vm.models.groups['H'][1])">{{vm.models.groups['G'][0]}}<span class="score">Group G Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(3, vm.models.groups['H'][1]); vm.checkAdvance(1, vm.models.groups['G'][0])">{{vm.models.groups['H'][1]}}<span class="score">Group H Runner-Up</span></li>
+					</ul>			
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(4, vm.models.groups['B'][0]); vm.checkAdvance(1, vm.models.groups['A'][1])">{{vm.models.groups['B'][0]}}<span class="score">Group B Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(4, vm.models.groups['A'][1]); vm.checkAdvance(1, vm.models.groups['B'][0])">{{vm.models.groups['A'][1]}}<span class="score">Group A Runner-Up</span></li>
+					</ul>	
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(5, vm.models.groups['D'][0]); vm.checkAdvance(1, vm.models.groups['C'][1])">{{vm.models.groups['D'][0]}}<span class="score">Group D Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(5, vm.models.groups['C'][1]); vm.checkAdvance(1, vm.models.groups['D'][0])">{{vm.models.groups['C'][1]}}<span class="score">Group C Runner-Up</span></li>
+					</ul>	
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(6, vm.models.groups['F'][0]); vm.checkAdvance(1, vm.models.groups['E'][1])">{{vm.models.groups['F'][0]}}<span class="score">Group F Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(6, vm.models.groups['E'][1]); vm.checkAdvance(1, vm.models.groups['F'][0])">{{vm.models.groups['E'][1]}}<span class="score">Group E Runner-Up</span></li>
+					</ul>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(7, vm.models.groups['H'][0]); vm.checkAdvance(1, vm.models.groups['G'][1])">{{vm.models.groups['H'][0]}}<span class="score">Group H Winner</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(7, vm.models.groups['G'][1]); vm.checkAdvance(1, vm.models.groups['F'][0])">{{vm.models.groups['G'][1]}}<span class="score">Group G Runner-Up</span></li>
+					</ul>										
+				</div>	<!-- END ROUND ONE -->
+		
+				<div class="round round-two">
+					<div class="round-details">Quarterfinals<br/><span class="date">December 9-10</span></div>			
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(8, vm.bracketPicks[0]); vm.checkAdvance(2, vm.bracketPicks[1])">{{vm.bracketPicks[0]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(8, vm.bracketPicks[1]); vm.checkAdvance(2, vm.bracketPicks[0])">{{vm.bracketPicks[1]}}<span class="score">&nbsp;</span></li>
+					</ul>	
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(9, vm.bracketPicks[2]); vm.checkAdvance(2, vm.bracketPicks[3])">{{vm.bracketPicks[2]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(9, vm.bracketPicks[3]); vm.checkAdvance(2, vm.bracketPicks[2])">{{vm.bracketPicks[3]}}<span class="score">&nbsp;</span></li>
+					</ul>	
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(10, vm.bracketPicks[4]); vm.checkAdvance(2, vm.bracketPicks[5])">{{vm.bracketPicks[4]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(10, vm.bracketPicks[5]); vm.checkAdvance(2, vm.bracketPicks[4])">{{vm.bracketPicks[5]}}<span class="score">&nbsp;</span></li>
+					</ul>
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(11, vm.bracketPicks[6]); vm.checkAdvance(2, vm.bracketPicks[7])">{{vm.bracketPicks[6]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(11, vm.bracketPicks[7]); vm.checkAdvance(2, vm.bracketPicks[6])">{{vm.bracketPicks[7]}}<span class="score">&nbsp;</span></li>
+					</ul>										
+				</div>	<!-- END ROUND TWO -->
+				
+				<div class="round round-three">
+					<div class="round-details">Semifinals<br/><span class="date">December 13-14</span></div>			
+					<ul class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(12, vm.bracketPicks[8]); vm.checkAdvance(3, vm.bracketPicks[9])">{{vm.bracketPicks[8]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(12, vm.bracketPicks[9]); vm.checkAdvance(3, vm.bracketPicks[8])">{{vm.bracketPicks[9]}}<span class="score">&nbsp;</span></li>
+					</ul>	
+					<ul id="round-three-bottom-matchup" class="matchup">
+						<li class="team team-top" ng-click="vm.makeBracketPick(12, vm.bracketPicks[10]); vm.checkAdvance(3, vm.bracketPicks[11])">{{vm.bracketPicks[10]}}<span class="score">&nbsp;</span></li>
+						<li class="team team-bottom" ng-click="vm.makeBracketPick(12, vm.bracketPicks[11]); vm.checkAdvance(3, vm.bracketPicks[10])">{{vm.bracketPicks[11]}}<span class="score">&nbsp;</span></li>
+					</ul>										
+				</div>	<!-- END ROUND THREE -->		
+			</div> 
+	</div>
 </div>
 
 <loginReq ng-show="vm.isLoggedIn() == false" class="text-center col-xs-9 col-md-10">
@@ -165,7 +91,7 @@
   </div>
 </loginReq>
 
-<loginReq ng-show="vm.isLoggedIn() !== false && vm.userData.wc18bracket !== 1" class="text-center col-xs-9 col-md-10">
+<loginReq ng-show="vm.userLoggedInAndRegistered === false" class="text-center col-xs-9 col-md-10">
   <div>
     Please <a ui-sref="home.ala.pools">register for this pool</a> to make your picks.
   </div>

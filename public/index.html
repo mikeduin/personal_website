@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="stylesheets/fridge.styles.css" media="screen and (min-width: 300px)" charset="utf-8">
     <link rel="stylesheet" href="stylesheets/pro.styles.css" media="screen and (min-width: 300px)" charset="utf-8">
     <link rel="stylesheet" href="stylesheets/music.styles.css" media="screen and (min-width: 300px)" charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/wcbracket.styles.css" media="screen and (min-width: 300px)" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,600' rel='stylesheet' type='text/css'>
 
   </head>
@@ -48,29 +49,36 @@
     </script>
 
     <script type="text/ng-template" id="poolConfirm.html">
-      <div ng-controller="AlaController" class="text-center confirm-modal">
+      <div ng-controller="AlaController" class="text-center confirm-modal wc-modal">
         <div class="confirm-modal-center">
-          <h3> You've successfully registered for the <br> <b>2018 World Cup Bracket Pool!</b></h3>
+          <h3> You've successfully registered for the <br> <b>2022 World Cup Bracket Pool!</b></h3>
         </div>
         <div class="confirm-modal-bottom">
           <a ui-sref="home.ala.wc18bracket.howtoplay">
             <button class="btn btn-large btn-primary go-to-pool-btn">GO MAKE SOME PICKS</button>
           </a>
-
         </div>
       </div>
     </script>
 
     <script type="text/ng-template" id="picksSaved.html">
-      <div ng-controller="WCBracketController" class="text-center confirm-modal">
+      <div class="text-center confirm-modal" >
         <div class="confirm-modal-center">
           <h3> Your picks have been saved!</h3>
+        </div>
+        <div class="confirm-modal-bottom">
+          <a ui-sref="home.ala.wc18bracket.groups">
+            <button class="btn btn-large btn-primary go-to-pool-btn">TO GROUP PICKS</button>
+          </a>
+          <a ui-sref="home.ala.wc18bracket.bracket">
+            <button class="btn btn-large btn-primary go-to-pool-btn">TO BRACKET PICKS</button>
+          </a>
         </div>
       </div>
     </script>
 
     <script type="text/ng-template" id="picksIncomplete.html">
-      <div ng-controller="WCBracketController" class="text-center confirm-modal">
+      <div ng-controller="WCBracketController" class="text-center confirm-modal wc-modal">
         <div class="confirm-modal-center">
           <h2> Your picks are incomplete! </h2>
           <h3> Please complete your bracket before saving your picks. </h3>

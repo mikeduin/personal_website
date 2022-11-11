@@ -2,21 +2,18 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex')
 
-function WC18Bracket () {
-  return knex('wc18bracket')
-};
+function WCBracketEntries () {return knex('wc18bracket')};
+function Users () {return knex('users')};
+function TeamStats() {return knex('team_stats')};
+function Results() {return knex('results')};
 
-function Users () {
-  return knex('users')
-};
+// UPDATERS TO ADD SEASON TO OLD DATA
 
-function TeamStats() {
-  return knex('team_stats')
-};
-
-function Results() {
-  return knex('results')
-};
+// (async () => {
+//   await Results().update({season: 2018});
+//   await TeamStats().update({season: 2018});
+//   await WCBracketEntries().update({season: 2018});
+// })()
 
 // Warn if overriding existing method
 if(Array.prototype.equals)
@@ -52,23 +49,23 @@ Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 var statsCompiled = false;
 
 router.get('/picks/:user', function(req, res, next){
-  WC18Bracket().where({
+  WCBracketEntries().where({
     username: req.params.user
   }).then(function(picks){
     res.json(picks);
   })
 })
 
-router.put('/saveGroupPicks', function(req, res, next){
-  var user = req.body.user;
-  var picks = [req.body.picks];
-  WC18Bracket().where({
-    username: user
+router.put('/saveGroupPicks', async (req, res, next) => {
+  const { user, picks, season } = req.body;
+  const updatedUserEntry = await WCBracketEntries().where({
+    username: user,
+    season
   }).update({
-    groupSelections: picks
-  }, '*').then(function(returned){
-    res.json(returned[0].groupSelections[0].groups);
-  })
+    groupSelections: [picks],
+    modified: new Date()
+  }, '*')
+  res.json(updatedUserEntry[0].groupSelections[0].groups);
 })
 
 router.put('/saveBracketPicks', function(req, res, next){
@@ -78,7 +75,7 @@ router.put('/saveBracketPicks', function(req, res, next){
     'consOne': req.body.consOne,
     'consTwo': req.body.consTwo
   }];
-  WC18Bracket().where({
+  WCBracketEntries().where({
     username: user
   }).update({
     bracketSelections: picks
@@ -88,21 +85,21 @@ router.put('/saveBracketPicks', function(req, res, next){
 })
 
 router.get('/standings', function(req, res, next){
-  WC18Bracket().then(function(data){
+  WCBracketEntries().then(function(data){
     res.json(data);
   })
 })
 
 router.get('/user/:username', function(req, res, next){
   var user = req.params.username;
-  WC18Bracket().where('wc18bracket.username', user).innerJoin('users', 'users.username', 'wc18bracket.username')
+  WCBracketEntries().where('wc18bracket.username', user).innerJoin('users', 'users.username', 'wc18bracket.username')
   .then(function(data){
     res.json(data[0]);
   })
 })
 
 router.get('/usernames', function(req, res, next){
-  WC18Bracket().pluck('username').then(function(data){
+  WCBracketEntries().pluck('username').then(function(data){
     res.json(data);
   })
 })
@@ -278,7 +275,7 @@ router.get('/calcBrackets', function(req, res, next){
       stage: 'bracket',
       final: true
     }).orderBy('matchtime').pluck('winner').then(function(winners){
-      WC18Bracket().then(function(users){
+      WCBracketEntries().then(function(users){
         users.forEach(function(user){
           var userBracketPicks = user.bracketSelections[0].picks;
           var username = user.username;
@@ -324,7 +321,7 @@ router.get('/calcBrackets', function(req, res, next){
             }
           };
 
-          WC18Bracket().where({username: username}).update({
+          WCBracketEntries().where({username: username}).update({
             r16: r16,
             r8: r8,
             r4: r4,
@@ -354,7 +351,7 @@ router.get('/calcStandings', function(req, res, next){
       "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
     };
 
-    WC18Bracket().then(function(users){
+    WCBracketEntries().then(function(users){
       users.forEach(function(user){
         var exact_rank = 0;
         var exact_order = 0;
@@ -390,7 +387,7 @@ router.get('/calcStandings', function(req, res, next){
           total = exact_order + winners + runners_up + exact_rank;
         })
 
-        WC18Bracket().where({username: user.username}).update({
+        WCBracketEntries().where({username: user.username}).update({
           exact_rank: exact_rank,
           winner: winners,
           runner_up: runners_up,
@@ -409,7 +406,7 @@ router.get('/calcStandings', function(req, res, next){
 var compilePoolStats = function() {
   if (!statsCompiled) {
     TeamStats().then(function(teams){
-      WC18Bracket().then(function(users){
+      WCBracketEntries().then(function(users){
         for (var i=0; i<teams.length; i++) {
           var group_1st = 0;
           var group_2nd = 0;

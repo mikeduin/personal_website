@@ -1,14 +1,26 @@
-<pool class="col-xs-9 col-md-10 text-center">
+<pool class="col-xs-9 col-md-10 text-center" ng-init="vm.retrievePools()">
   <hr style="margin-bottom: -5px;" class="col-xs-4 col-xs-offset-4">
   <div class="row">
     <div class="col-xs-12">
       <p style="margin-bottom: -20px">
         <i class="fas fa-futbol"></i>
-        World Cup 2018: Bracket Pool
+        ALA's World Cup Bracket Pool
         <i class="fas fa-futbol"></i>
       </p>
     </div>
     <hr class="col-xs-4 col-xs-offset-4">
+    <tabs class="col-xs-12" style="height: 3.5vw">
+      <div class="col-xs-6 world-cup-season-box" ng-class="{'active-pool-tab': vm.activeSeason === 2022}">
+        <a ng-class="{'wc-season-link': vm.activeSeason != 2022, 'wc-active-season': vm.activeSeason === 2022}" ng-click="vm.seasonChange(2022)" >
+          <span>2022</span>
+        </a>
+      </div>
+      <div class="col-xs-6 world-cup-season-box" ng-class="{'active-pool-tab': vm.activeSeason === 2018}">
+        <a ng-class="{'wc-season-link': vm.activeSeason != 2018, 'wc-active-season': vm.activeSeason === 2018}" ng-click="vm.seasonChange(2018)">
+          <span>2018</span>
+        </a>
+      </div>
+    </tabs>
     <tabs class="col-xs-12">
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.howtoplay')}">
         <a ui-sref="home.ala.wc18bracket.howtoplay" >
@@ -41,6 +53,11 @@
         </a>
       </div>
     </tabs>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 align-center">
+
+    </div>
   </div>
 </pool>
 
