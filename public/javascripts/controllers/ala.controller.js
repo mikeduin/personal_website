@@ -78,12 +78,8 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.vm.getUser();
 
-  $scope.register = function (pool, user) {
-    var data = {
-      pool: pool,
-      user: user
-    };
-
+  $scope.vm.registerForPool = function (pool, user) {
+    const data = {pool, user};
     $scope.activePool = pool;
 
     alaService.poolRegister(data).then(function(res){

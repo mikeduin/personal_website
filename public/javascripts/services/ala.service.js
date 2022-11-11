@@ -23,7 +23,8 @@ function alaService ($http) {
       })
     },
     getUser: function (user) {
-      return $http.get('/user/' + user).then(function(res){
+      return $http.get('/users/userData/' + user).then(function(res){
+        console.log('res is ', res);
         return res.data;
       })
     },

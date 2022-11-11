@@ -6,9 +6,8 @@ var jwt = require('jsonwebtoken');
 var passport = require('passport');
 require('dotenv').load();
 
-function Users() {
-  return knex('users');
-}
+function Users() {return knex('users')}
+function WorldCupEntries () {return knex('wc18bracket')}
 
 function generateJWT (user) {
   // this function sets expiration of token to 1000 days
@@ -34,10 +33,12 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/:username', function (req, res, next){
-  Users().where({username: req.params.username}).then(function(user){
-    res.json(user);
-  })
+router.get('/userData/:username', async (req, res, next) => {
+  const { username } = req.params;
+  const user = await Users().where({username});
+  const wcEntries = await WorldCupEntries().where({username});
+  user[0].wcEntries = wcEntries;
+  res.json(user);
 })
 
 router.post('/register', function(req, res, next){

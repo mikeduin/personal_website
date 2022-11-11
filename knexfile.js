@@ -1,20 +1,21 @@
 require('dotenv').config();
 
 const parse = require("pg-connection-string").parse;
-const pgconfig = parse(process.env.DATABASE_URL);
-// const pgconfig = parse(process.env.TEST_DB);
+const pgconfigProd = parse(process.env.DATABASE_URL);
+const pgconfigDev = parse(process.env.TEST_DB_URL);
 
 // Add SSL setting to default environment variable
-pgconfig.ssl = { rejectUnauthorized: false };
+pgconfigProd.ssl = { rejectUnauthorized: false };
+pgconfigDev.ssl = { rejectUnauthorized: false };
 
 module.exports = {
   development: {
     client: 'pg',
-    connection: pgconfig
+    connection: pgconfigDev
   },
 
   production: {
     client: 'pg',
-    connection: pgconfig
+    connection: pgconfigProd
   }
 };
