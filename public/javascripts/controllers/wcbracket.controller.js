@@ -163,9 +163,12 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     $scope.vm.consTwo = null;
   };
 
-  $scope.vm.makeBracketPick = (position, team) => {
+  $scope.vm.makeBracketPick = (position, team, consPosition = null, consTeam = null) => {
     if ($scope.inTime) {
-      $scope.vm.bracketPicks[position] = team
+      $scope.vm.bracketPicks[position] = team;
+      if (consPosition && consTeam) {
+        $scope.vm[consPosition] = consTeam;
+      }
     }
   }
 
