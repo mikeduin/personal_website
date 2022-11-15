@@ -10,13 +10,14 @@
 .split-one .round {margin: 0 2.5% 0 0;}
 .split-two .round {margin: 0 0 0 2.5%;}
 .matchup {margin:0 0 5% 0;width: 100%;padding: 10px 0;height:60px;-webkit-transition: all 0.2s;transition: all 0.2s;}
+.champion .matchup, .consolation .matchup {margin-bottom: 50px}
 .score {font-size: 8px;text-transform: uppercase;float: right;color: #2C7399;font-weight: bold;font-family: 'Roboto Condensed', sans-serif;position: absolute;right: 5px;}
 .team {padding: 0 5px;margin: 3px 0;height: 25px; line-height: 25px;white-space: nowrap; overflow: hidden;position: relative;}
 /* .round-two {margin-top: -4% !important} */
 .round-two .matchup {margin:0 0 10% 0; height: 60px;padding: 60px 0;}
 .round-three .matchup {margin: 0 0 10% 0; height: 60px; padding: 130px 0;}
 .round-details {font-family: 'Roboto Condensed', sans-serif; font-size: 13px; color: #2C7399;text-transform: uppercase;text-align: center;height: 40px;}
-.consolation li, .champion li, .round li {background-color: #fff;box-shadow: none; opacity: 0.45;}
+.consolation li, .champion li, .round li {background-color: #fff;box-shadow: none;}
 .current li {opacity: 1;}
 .current li.team {background-color: #fff;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);opacity: 1;}
 .vote-options {display: block;height: 52px;}
@@ -24,6 +25,9 @@
 .share-icon {font-size: 24px; color: #fff;padding: 25px;}
 .share-wrap {max-width: 1100px; text-align: center; margin: 60px auto;}
 .final {margin: 4.5em 0;}
+.champion li.champ-label, .consolation li.cons-label {background-color: #e4e4e4 !important; opacity: 1; font-size: 14px; list-style-type: none;}
+.champ-label {color: #a38e44}
+.cons-label {color: #b36700}
 /* #round-three-bottom-matchup {margin-bottom: 25%} */
 
 @-webkit-keyframes pulse {

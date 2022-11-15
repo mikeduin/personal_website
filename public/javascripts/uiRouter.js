@@ -6,7 +6,9 @@ angular
     'ui.router',
     'zingchart-angularjs',
     'ui.validate',
-    'ngAnimate'])
+    'ngAnimate',
+    'ngCookies'
+  ])
   .run(['$anchorScroll', function($anchorScroll) {
     $anchorScroll.yOffset = 100;
   }])

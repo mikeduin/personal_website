@@ -7,6 +7,9 @@
   </div>
 
   <div class="modal-center">
+    <div class="row reg-row text-center">
+      First time here? <a ui-sref="home.ala.regpop"><b>Register</b></a> for an ALA account, or sign up through Google below.
+    </div>
     <form class="form-horizontal" ng-submit="vm.logIn(user)">
       <div class="row">
         <div class="form-group">
@@ -32,9 +35,11 @@
             <a ui-sref="home.ala.pools"><button class="btn btn-danger">Back</button></a>
          </div>
        </div>
-       <div class="row reg-row text-center">
-         First time here? <a ui-sref="home.ala.regpop"><b>Registering</b></a> is quick and easy.
-       </div>
+       <div class="row" style="margin-bottom: 20px">
+        <div class="col-xs-6 center-align form-error">
+          <img ng-click="googleSignIn()" class="g-signin-btn" style="margin-left: 15%" src="/images/sign-in-with-google.svg">
+        </div>
+      </div>
       </div>
     </form>
   </div>

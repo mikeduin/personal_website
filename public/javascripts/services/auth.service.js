@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .factory('authService', ['$http', '$window', authService])
+  .factory('authService', ['$http', '$window', '$cookies', authService])
 
-function authService ($http, $window) {
+function authService ($http, $window, $cookies) {
 
     var auth = {};
 
@@ -21,10 +21,14 @@ function authService ($http, $window) {
 
       if (token) {
         var payload = JSON.parse($window.atob(token.split('.')[1]));
-
         return payload.exp = Date.now() / 1000;
       } else {
-        return false;
+        if ($cookies.get('jwt')) {
+          auth.saveToken($cookies.get('jwt'));
+          auth.isLoggedIn();
+        } else {
+          return false;
+        }
       }
     }
 
@@ -46,7 +50,6 @@ function authService ($http, $window) {
     }
 
     auth.logIn = function(user) {
-      console.log('gets to service login');
       return $http.post('/users/login', user)
       .success(function(data){
         auth.saveToken(data.token);
@@ -55,7 +58,17 @@ function authService ($http, $window) {
       })
     }
 
+    auth.googleSignIn = function() {
+      return $http.get('/users/auth/google').success(function(data){
+        console.log('data in googleSignIn is ', data);
+        auth.saveToken(data.token);
+      }).error(function(response){
+        return(response)
+      })
+    }
+
     auth.logOut = function() {
+      $cookies.remove('jwt');
       $window.localStorage.removeItem('login-token');
     }
 

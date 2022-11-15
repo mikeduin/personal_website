@@ -38,6 +38,7 @@ router.get('/userData/:username', async (req, res, next) => {
   const user = await Users().where({username});
   const wcEntries = await WorldCupEntries().where({username});
   user[0].wcEntries = wcEntries;
+  user[0].wc22bracket = wcEntries.filter(e => e.season === 2022).length ? 1 : 0;
   res.json(user);
 })
 
@@ -64,7 +65,9 @@ router.post('/register', function(req, res, next){
           email: req.body.email,
           salt: salt,
           hash: hash,
-          registered: new Date()
+          registered: new Date(),
+          created_at: new Date(),
+          updated_at: new Date()
         }, '*').then(function(user){
           res.json({token: generateJWT(user)});
         })
@@ -73,6 +76,27 @@ router.post('/register', function(req, res, next){
       return res.status(400).json({message: "You've already registered with this email or username."})
     }
   });
+});
+
+router.get('/auth/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
+
+router.get('/auth/google/callback', function (req, res, next) {
+  passport.authenticate('google', function(err, user, info){
+    console.log('user is ', user);
+
+    if(err){ return next(err); }
+
+    user._id = user.id;
+
+    if(user){
+      res.cookie('jwt', generateJWT([user]));
+      res.redirect('/alevelabove/pools')
+    } else {
+      return res.status(401).json(info);
+    }
+  })(req, res, next);
 });
 
 router.post('/login', function(req, res, next){

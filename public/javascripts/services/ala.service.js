@@ -24,7 +24,6 @@ function alaService ($http) {
     },
     getUser: function (user) {
       return $http.get('/users/userData/' + user).then(function(res){
-        console.log('res is ', res);
         return res.data;
       })
     },

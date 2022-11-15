@@ -10,7 +10,7 @@ function WCBracketService ($http) {
       })
     },
     saveGroupPicks: function(picks) {
-      return $http.put('wcbracket/saveGroupPicks', picks).then(function(res){
+      return $http.put(`wcbracket/saveGroupPicks`, picks).then(function(res){
         return res.data;
       })
     },
@@ -19,8 +19,8 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    pullStandings: function() {
-      return $http.get('wcbracket/standings').then(function(res){
+    pullStandings: function(season) {
+      return $http.get(`wcbracket/standings/${season}`).then(function(res){
         return res.data;
       })
     },
@@ -34,8 +34,8 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    pullTeamStats: function() {
-      return $http.get('wcbracket/teamstats').then(function(res){
+    pullTeamStats: (season) => {
+      return $http.get(`wcbracket/teamstats/${season}`).then(function(res){
         return res.data;
       })
     },

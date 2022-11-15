@@ -3,28 +3,57 @@ angular
   .controller('WCBracketController', ['$scope', '$state', 'authService', 'alaService', 'WCBracketService', WCBracketController])
 
 function WCBracketController ($scope, $state, authService, alaService, WCBracketService) {
-  let activePool;
-  $scope.inTime = true;
+  $scope.vm.systemYear = 2022;
 
   $scope.vm.groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
   $scope.vm.sortOrder = 'group';
-  $scope.vm.activeSeason = 2022;
+  if (!$scope.vm.activeSeason) {
+    $scope.vm.activeSeason = 2022;
+  } else {
+    console.log('active season is ', $scope.vm.activeSeason);
+  }
+
+  const checkForSeasonStart = () => {
+    return moment().isBefore($scope.vm.activePool.start_time);
+  }
+
   $scope.vm.seasons = [
     {id: 1, name: '2022', value: 2022},
     {id: 2, name: '2018', value: 2018},
   ]
   $scope.vm.seasonChange = (season) => {
-    $scope.vm.activeSeason = season;
+    $scope.vm.activeSeason = parseInt(season);
+    $scope.vm.activePool = $scope.vm.pools.filter(p => p.season === $scope.vm.activeSeason)[0];
+    $scope.vm.inTime = checkForSeasonStart();
+    updateActiveSeasonData();
+    pullStandings();
+    pullTeamStats();
+  }
+
+  const updateActiveSeasonData = () => {
+    const { wcEntries } = $scope.vm.userData;
+    const userSeasonYears = wcEntries.map(e => e.season);
+    $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
+    $scope.vm.isCurrentSystemYear = $scope.vm.activeSeason === $scope.vm.systemYear;
+    const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
+    if (activeWcEntry) {
+      $scope.vm.models = activeWcEntry.groupSelections[0];
+      $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
+      $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
+      $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
+      $scope.vm.original = angular.copy($scope.vm.models);
+    } 
   }
 
   $scope.vm.retrievePools = function() {
     alaService.retrievePools().then(function(pools){
       $scope.vm.pools = pools.filter(p => p.sport === "worldcup");
-      activePool = pools.filter(p => p.season === $scope.vm.activeSeason)[0];
-      $scope.inTime = moment().isBefore(activePool.start_time);
-      // console.log('activePool ', $scope.vm.activePool);
+      $scope.vm.activePool = pools.filter(p => p.season === $scope.vm.activeSeason)[0];
+      $scope.vm.inTime = checkForSeasonStart($scope.vm.activeSeason);
     })
   }
+
+  $scope.vm.bracketMismatch = (winner, teamA, teamB) => (winner !== teamA && winner !== teamB);
 
   $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
@@ -42,21 +71,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     user = $scope.vm.currentUser();
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
-      const { wcEntries } = res[0];
-      const userSeasonYears = wcEntries.map(e => e.season);
-      $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
-      
-      const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
-      $scope.vm.models = activeWcEntry.groupSelections[0];
-      $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
-      $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
-      $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
-      $scope.vm.original = angular.copy($scope.vm.models);
-
-
-      console.log('vm.models ', $scope.vm.models);
-      
-      console.log('userData is ', $scope.vm.userData);
+      console.log('userData ', $scope.vm.userData);
+      updateActiveSeasonData()
     })
   };
 
@@ -70,56 +86,49 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   $scope.vm.getFlags();
 
-  $scope.vm.loadPicks = function(){ // this whole fn might be unnecessary now that I am attaching all picks in initial user pull
-    var user = $scope.vm.currentUser();
-    WCBracketService.getPicks(user).then(function(userData){
-      $scope.vm.models = userData[0].groupSelections[0];
-      $scope.vm.bracketPicks = userData[0].bracketSelections[0].picks;
-      $scope.vm.consOne = userData[0].bracketSelections[0].consOne;
-      $scope.vm.consTwo = userData[0].bracketSelections[0].consTwo;
-      $scope.vm.original = angular.copy($scope.vm.models);
-    })
-  };
-  $scope.vm.loadPicks();
-
   $scope.vm.saveGroupPicks = function(){
-    const data = {
-      user: $scope.vm.currentUser(),
-      picks: $scope.vm.models,
-      season: $scope.vm.activeSeason
-    };
-    WCBracketService.saveGroupPicks(data).then(function(res){
-      $state.go('home.ala.wc18bracket.groups.picksSaved');
-    })
+    if ($scope.vm.inTime) {
+      const picks = {
+        user: $scope.vm.currentUser(),
+        picks: $scope.vm.models,
+        season: $scope.vm.activeSeason
+      };
+      WCBracketService.saveGroupPicks(picks).then(function(res){
+        $state.go('home.ala.wc18bracket.groups.picksSaved');
+      })
+    }
   };
 
   $scope.vm.saveBracketPicks = function(){
-    for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
-      if ($scope.vm.bracketPicks[i] == null) {
-        $state.go('home.ala.wc18bracket.bracket.picksIncomplete');
-        return
-      }
-    };
-
-    var user = $scope.vm.currentUser();
-    var data = {
-      user: user,
-      picks: $scope.vm.bracketPicks,
-      consOne: $scope.vm.consOne,
-      consTwo: $scope.vm.consTwo
-    };
-    WCBracketService.saveBracketPicks(data).then(function(res){
-      $state.go('home.ala.wc18bracket.bracket.picksSaved');
-    })
+    if ($scope.vm.inTime) {
+      for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
+        if ($scope.vm.bracketPicks[i] == null) {
+          $state.go('home.ala.wc18bracket.bracket.picksIncomplete');
+          return
+        }
+      };
+  
+      var user = $scope.vm.currentUser();
+      var picks = {
+        user: user,
+        picks: $scope.vm.bracketPicks,
+        season: $scope.vm.activeSeason,
+        consOne: $scope.vm.consOne,
+        consTwo: $scope.vm.consTwo
+      };
+      WCBracketService.saveBracketPicks(picks).then(function(res){
+        $state.go('home.ala.wc18bracket.bracket.picksSaved');
+      })
+    }
   };
 
-  $scope.vm.pullStandings = function() {
-    WCBracketService.pullStandings().then(function(res){
+  const pullStandings = () => {
+    WCBracketService.pullStandings($scope.vm.activeSeason).then(function(res){
       $scope.vm.standings = res;
     })
   }
 
-  $scope.vm.pullStandings();
+  pullStandings();
 
   $scope.vm.calcGroups = function() {
     WCBracketService.calcGroups().then(function(res){
@@ -139,13 +148,13 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     })
   }
 
-  $scope.vm.pullTeamStats = function () {
-    WCBracketService.pullTeamStats().then(function(res){
+  const pullTeamStats =  () => {
+    WCBracketService.pullTeamStats($scope.vm.activeSeason).then(function(res){
       $scope.vm.teamStats = res;
     })
   };
 
-  $scope.vm.pullTeamStats();
+  pullTeamStats();
 
   $scope.vm.pullResults = function () {
     WCBracketService.pullResults().then(function(res){
@@ -156,15 +165,17 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.pullResults();
 
   $scope.vm.clearBracketPicks = function(){
-    for (var i=0; i<$scope.vm.bracketPicks.length; i++){
-      $scope.vm.bracketPicks[i] = null;
-    };
-    $scope.vm.consOne = null;
-    $scope.vm.consTwo = null;
+    if ($scope.vm.inTime) {
+      for (var i=0; i<$scope.vm.bracketPicks.length; i++){
+        $scope.vm.bracketPicks[i] = null;
+      };
+      $scope.vm.consOne = null;
+      $scope.vm.consTwo = null;
+    }
   };
 
   $scope.vm.makeBracketPick = (position, team, consPosition = null, consTeam = null) => {
-    if ($scope.inTime) {
+    if ($scope.vm.inTime) {
       $scope.vm.bracketPicks[position] = team;
       if (consPosition && consTeam) {
         $scope.vm[consPosition] = consTeam;
