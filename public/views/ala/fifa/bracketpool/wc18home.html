@@ -9,7 +9,19 @@
       </p>
     </div>
     <hr class="col-xs-4 col-xs-offset-4">
-    <tabs class="col-xs-12" style="height: 3.5vw">
+    <tabs class="col-xs-12 hidden-sm" style="height: 3.5vw">
+      <div class="col-xs-6 world-cup-season-box" ng-class="{'active-pool-tab': vm.activeSeason === 2022}">
+        <a ng-class="{'wc-season-link': vm.activeSeason != 2022, 'wc-active-season': vm.activeSeason === 2022}" ng-click="vm.seasonChange(2022)" >
+          <span>2022</span>
+        </a>
+      </div>
+      <div class="col-xs-6 world-cup-season-box" ng-class="{'active-pool-tab': vm.activeSeason === 2018}">
+        <a ng-class="{'wc-season-link': vm.activeSeason != 2018, 'wc-active-season': vm.activeSeason === 2018}" ng-click="vm.seasonChange(2018)">
+          <span>2018</span>
+        </a>
+      </div>
+    </tabs>
+    <tabs class="col-xs-12 hidden-lg" style="height: 4.5vw">
       <div class="col-xs-6 world-cup-season-box" ng-class="{'active-pool-tab': vm.activeSeason === 2022}">
         <a ng-class="{'wc-season-link': vm.activeSeason != 2022, 'wc-active-season': vm.activeSeason === 2022}" ng-click="vm.seasonChange(2022)" >
           <span>2022</span>
@@ -29,12 +41,12 @@
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.groups')}">
         <a ui-sref="home.ala.wc18bracket.groups">
-          Group Stage
+          Group <span class="hidden-sm">Stage</span>
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.bracket')}">
         <a ui-sref="home.ala.wc18bracket.bracket">
-          Bracket Stage
+          Bracket <span class="hidden-sm">Stage</span>
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.standings')}">
@@ -44,7 +56,7 @@
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.stats')}">
         <a ui-sref="home.ala.wc18bracket.stats">
-          Pool Reports
+          <span class="hidden-sm">Pool</span> Reports
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.includes('home.ala.wc18bracket.results')}">

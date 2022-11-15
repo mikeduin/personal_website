@@ -1071,15 +1071,6 @@ consolation li.game-spacer {
   width: 30%;
 }
 
-
-/* #user-group thead tr th {
-  text-align: center;
-} */
-
-/* #wc-standings th:nth-child(1) {
-  margin-top: 10px;
-} */
-
 #wc-standings th:nth-child(0) {
   width: 13%;
 }
