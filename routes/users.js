@@ -36,7 +36,8 @@ router.get('/', function(req, res, next) {
 router.get('/userData/:username', async (req, res, next) => {
   const { username } = req.params;
   const user = await Users().where({username});
-  if (user.lengthgit) {
+  console.log('user is ', user);
+  if (user.length) {
     const wcEntries = await WorldCupEntries().where({username});
     user[0].wcEntries = wcEntries;
     user[0].wc22bracket = wcEntries.filter(e => e.season === 2022).length ? 1 : 0;
