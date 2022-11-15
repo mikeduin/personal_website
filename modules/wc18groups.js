@@ -27,7 +27,7 @@ module.exports = {
           "E": ["Costa Rica", "Germany", "Japan", "Spain"],
           "F": ["Belgium", "Canada", "Croatia", "Morocco"],
           "G": ["Brazil", "Cameroon", "Serbia", "Switzerland"],
-          "H": ["Ghana", "South Korea", "Portugal", "Uruguay"]
+          "H": ["Ghana", "Korea Republic", "Portugal", "Uruguay"]
         }
       },
     ];

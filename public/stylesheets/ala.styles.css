@@ -1071,10 +1071,6 @@ consolation li.game-spacer {
   width: 30%;
 }
 
-/*
-/* #wc-standings tr th:first-child, #wc-standings th:last-child{
-  border: 0;
-/* }
 
 /* #user-group thead tr th {
   text-align: center;
@@ -1082,6 +1078,18 @@ consolation li.game-spacer {
 
 #wc-standings {
   margin-top: 10px;
+}
+
+/* #wc-standings th:nth-child(0) {
+  width: 15%;
+} */
+
+#wc-standings th:nth-child(11) {
+  width: 15%;
+}
+
+#wc-standings th {
+  width: 7%;
 }
 
 .fa-question-circle {
@@ -1251,7 +1259,7 @@ scoreBox score {
 }
 
 .correct {
-  background-color: #47A337;
+  background-color: #dbf1de;
   color: white;
 }
 

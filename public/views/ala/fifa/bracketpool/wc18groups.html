@@ -7,7 +7,7 @@
   <div class="row submit-buttons">
     <button ng-click="vm.saveGroupPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
   </div>
-  <div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked.</i></div>
+  <div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
   <div class="row">
     <div class="group-grid" ui-sortable ng-model="vm.models.groups">
       <div ng-repeat="(groupName, group) in vm.models.groups" class="col-xs-6">
@@ -22,7 +22,7 @@
               <td width="10%"><i ng-if="vm.inTime && $index !== 0" class="fas fa-arrow-up" ng-click="vm.moveUp(groupName, $index, team)"></i></td>
               <td width="10%"><i ng-if="vm.inTime && $index !== 3"" class="fas fa-arrow-down" ng-click="vm.moveDown(groupName, $index, team)"></i></td>
               <td width="10%">{{$index + 1}}</td>
-              <td width="60%"><b>{{team}}</b></td>
+              <td width="60%"><div class="flag-cont"><img class="flag" src="{{vm.flags[team]}}"></div> <b>{{team}}</b></td>
             </tr>
           </tbody>
         </table>

@@ -64,8 +64,8 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    pullResults: function() {
-      return $http.get('wcbracket/results').then(function(res){
+    pullResults: function(season) {
+      return $http.get(`wcbracket/results/${season}`).then(function(res){
         return res.data;
       })
     },
