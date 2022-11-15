@@ -69,13 +69,15 @@ router.put('/saveGroupPicks', async (req, res, next) => {
 })
 
 router.put('/saveBracketPicks', function(req, res, next){
-  const { user, picks, season, consOne, consTwo } = req.body;
+  console.log('req.body.picks', req.body.picks);
+  const update = {picks: [... req.body.picks], consOne: req.body.consOne, consTwo: req.body.consTwo};
 
   WCBracketEntries().where({
-    username: user,
-    season
+    username: req.body.user,
+    season: req.body.season
   }).update({
-    bracketSelections: picks
+    bracketSelections: [update],
+    modified: new Date()
   }, '*').then(function(returned){
     res.json(returned);
   })
@@ -107,8 +109,8 @@ router.get('/teamstats/:season', function(req, res, next){
   })
 })
 
-router.get('/results', function(req, res, next){
-  Results().then(function(data){
+router.get('/results/:season', function(req, res, next){
+  Results().where({season: req.params.season}).then(function(data){
     res.json(data);
   })
 })

@@ -28,6 +28,7 @@
 .champion li.champ-label, .consolation li.cons-label {background-color: #e4e4e4 !important; opacity: 1; font-size: 14px; list-style-type: none;}
 .champ-label {color: #a38e44}
 .cons-label {color: #b36700}
+.team:hover {cursor: pointer}
 /* #round-three-bottom-matchup {margin-bottom: 25%} */
 
 @-webkit-keyframes pulse {

@@ -6,7 +6,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.systemYear = 2022;
 
   $scope.vm.groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-  $scope.vm.sortOrder = 'group';
+  $scope.vm.sortOrder = '-champion';
   if (!$scope.vm.activeSeason) {
     $scope.vm.activeSeason = 2022;
   } else {
@@ -28,6 +28,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     updateActiveSeasonData();
     pullStandings();
     pullTeamStats();
+    pullResults();
   }
 
   const updateActiveSeasonData = () => {
@@ -53,7 +54,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     })
   }
 
-  $scope.vm.bracketMismatch = (winner, teamA, teamB) => (winner !== teamA && winner !== teamB);
+  $scope.vm.bracketMismatch = (winner, teamA, teamB) => (winner && winner.length && winner !== teamA && winner !== teamB);
 
   $scope.vm.isLoggedIn = function(){
     return authService.isLoggedIn();
@@ -81,6 +82,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.getFlags = function(){
     WCBracketService.getFlags().then(function(flags){
       $scope.vm.flags = flags;
+      console.log('flags are ', flags);
     });
   };
 
@@ -156,13 +158,13 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   pullTeamStats();
 
-  $scope.vm.pullResults = function () {
-    WCBracketService.pullResults().then(function(res){
+  const pullResults = function () {
+    WCBracketService.pullResults($scope.vm.activeSeason).then(function(res){
       $scope.vm.results = res;
     })
   }
 
-  $scope.vm.pullResults();
+  pullResults();
 
   $scope.vm.clearBracketPicks = function(){
     if ($scope.vm.inTime) {

@@ -16,7 +16,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="team in vm.teamStats | filter: {group: group} | orderBy: ['-group_pts', '-group_goal_dif', '-group_goals', '-group_tb']" ng-class="{'correct': ($index == vm.models.groups[group].indexOf(team.team)) }">
+          <!-- <tr ng-repeat="team in vm.teamStats | filter: {group: group} | orderBy: ['-group_pts', '-group_goal_dif', '-group_goals', '-group_tb']" ng-class="{'correct': ($index == vm.models.groups[group].indexOf(team.team)) }"> -->
+          <tr ng-repeat="team in vm.teamStats | filter: {group: group} | orderBy: ['-group_pts', '-group_goal_dif', '-group_goals', '-group_tb']">
             <td><div class="flag-cont"><img class="flag" src="{{team.flag}}"></div> <b>{{team.team}}</b></td>
             <!-- <td>{{team.group_gp}}</td> -->
             <td>{{team.group_w}}</td>
