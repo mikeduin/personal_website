@@ -134,7 +134,7 @@ router.post('/poolRegister', async (req, res, next) => {
     }, '*')
     console.log(poolInsert[0].username, ' has been registered for ', alias);
   } catch (e) {
-    console.log(`error creating poolInsert for ${poolInsert[0].username} is ${e}`);
+    console.log(`error creating poolInsert for ${user} is ${e}`);
   }
 
   try {

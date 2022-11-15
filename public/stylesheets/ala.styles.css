@@ -1,5 +1,9 @@
 /*ALA Styles*/
 
+.g-signin-btn:hover {
+  cursor: pointer;
+}
+
 .game-header {
   font-size: 2vw;
   font-weight: 600;
