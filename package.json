@@ -31,7 +31,7 @@
     "passport-local": "^1.0.0",
     "pg": "^8.5.1",
     "pg-connection-string": "^2.5.0",
-    "pg-native": "^3.0.0",
+    "pg-native": "^3.0.1",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
     "serve-favicon": "^2.5.0"
