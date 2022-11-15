@@ -58,11 +58,10 @@ router.post('/register', function(req, res, next){
   Users().where({username: req.body.username}).orWhere({email: req.body.email}).then(function(result){
     if (!result[0]) {
       Users().max('id').then(function(data){
-        let increment = 0;
-        increment = data[0].max + 1;
+        const newId = data[0].max + 1;
 
         Users().insert({
-          id: increment,
+          id: newId,
           username: req.body.username,
           nameFirst: req.body.nameFirst,
           nameLast: req.body.nameLast,
