@@ -255,7 +255,7 @@
   <div ng-if="vm.isCurrentSystemYear">
     Please <a ui-sref="home.ala.pools">register for this pool</a> to make your picks.
   </div>
-  <div ng-if="!vm.isCurrentSystemYear">
+  <div ng-if="vm.isCurrentSystemYear === false">
     You did not participate in this pool.
   </div>
 </loginReq>
