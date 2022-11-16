@@ -32,18 +32,21 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   }
 
   const updateActiveSeasonData = () => {
-    const { wcEntries } = $scope.vm.userData;
-    const userSeasonYears = wcEntries.map(e => e.season);
-    $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
-    $scope.vm.isCurrentSystemYear = $scope.vm.activeSeason === $scope.vm.systemYear;
-    const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
-    if (activeWcEntry) {
-      $scope.vm.models = activeWcEntry.groupSelections[0];
-      $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
-      $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
-      $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
-      $scope.vm.original = angular.copy($scope.vm.models);
-    } 
+    if ($scope.vm.userData) {
+      const { wcEntries } = $scope.vm.userData;
+      const userSeasonYears = wcEntries.map(e => e.season);
+      $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
+      $scope.vm.isCurrentSystemYear = $scope.vm.activeSeason === $scope.vm.systemYear;
+      const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
+      if (activeWcEntry) {
+        $scope.vm.models = activeWcEntry.groupSelections[0];
+        $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
+        $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
+        $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
+        $scope.vm.original = angular.copy($scope.vm.models);
+      } 
+    }
+
   }
 
   $scope.vm.retrievePools = function() {
@@ -125,6 +128,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   };
 
   const pullStandings = () => {
+    console.log('activeSeason in pullStandings is ', $scope.vm.activeSeason);
     WCBracketService.pullStandings($scope.vm.activeSeason).then(function(res){
       $scope.vm.standings = res;
     })
