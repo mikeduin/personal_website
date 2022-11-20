@@ -17,7 +17,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     return moment().isBefore($scope.vm.activePool.start_time);
   }
 
-  $scope.vm.lateUsers = ['alaguire', 'daveecfc', 'HalfManHalfAmazing', 'Iaio'];
+  $scope.vm.lateUsers = ['alaguire', 'daveecfc', 'HalfManHalfAmazing', 'Iaio', 'Tomer'];
+  $scope.vm.lateGroupUsers = ['Tomer'];
 
   $scope.vm.seasons = [
     {id: 1, name: '2022', value: 2022},
@@ -80,6 +81,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       console.log('userData ', $scope.vm.userData);
       updateActiveSeasonData();
       $scope.vm.isLateUser = $scope.vm.lateUsers.includes(user);
+      $scope.vm.isLateGroupUser = $scope.vm.lateGroupUsers.includes(user);
       console.log('isLateUser is ', $scope.vm.isLateUser);
     })
   };
@@ -96,7 +98,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   $scope.vm.getFlags();
 
   $scope.vm.saveGroupPicks = function(){
-    if ($scope.vm.inTime) {
+    if ($scope.vm.inTime || $scope.vm.isLateGroupUser) {
       const picks = {
         user: $scope.vm.currentUser(),
         picks: $scope.vm.models,
