@@ -15,6 +15,23 @@ function Results() {return knex('results')};
 //   await WCBracketEntries().update({season: 2018});
 // })()
 
+
+// Pluck user emails  
+
+// (async () => {
+//   const brackets = await WCBracketEntries().where({season: 2022});
+//   const userEmails = [];
+//   brackets.forEach(async (bracket, idx) => {
+//     const userEmail = await Users().where({username: bracket.username}).pluck('email');
+//     console.log('userEmail is ', userEmail);
+//     userEmails.push(userEmail[0]);
+//     if (idx === brackets.length - 1) {
+//       console.log(userEmails);
+//     }
+//   })
+  
+// })()
+
 // Warn if overriding existing method
 if(Array.prototype.equals)
     console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
