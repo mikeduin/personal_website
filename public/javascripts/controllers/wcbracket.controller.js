@@ -17,8 +17,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     return moment().isBefore($scope.vm.activePool.start_time);
   }
 
-  $scope.vm.lateUsers = ['alaguire', 'daveecfc', 'HalfManHalfAmazing', 'Iaio', 'Tomer'];
-  $scope.vm.lateGroupUsers = ['Tomer'];
+  $scope.vm.lateUsers = ['alaguire', 'daveecfc', 'HalfManHalfAmazing', 'Iaio', 'Tomer', 'livvcali'];
+  $scope.vm.lateGroupUsers = ['Tomer', 'livvcali'];
 
   $scope.vm.seasons = [
     {id: 1, name: '2022', value: 2022},
