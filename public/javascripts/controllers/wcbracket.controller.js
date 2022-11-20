@@ -17,6 +17,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     return moment().isBefore($scope.vm.activePool.start_time);
   }
 
+  $scope.vm.lateUsers = ['alaguire', 'mikeduin', 'daveecfc', 'HalfManHalfAmazing', 'Iaio'];
+
   $scope.vm.seasons = [
     {id: 1, name: '2022', value: 2022},
     {id: 2, name: '2018', value: 2018},
@@ -76,7 +78,9 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
       console.log('userData ', $scope.vm.userData);
-      updateActiveSeasonData()
+      updateActiveSeasonData();
+      $scope.vm.isLateUser = $scope.vm.lateUsers.includes(user);
+      console.log('isLateUser is ', $scope.vm.isLateUser);
     })
   };
 
@@ -105,7 +109,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   };
 
   $scope.vm.saveBracketPicks = function(){
-    if ($scope.vm.inTime) {
+    if ($scope.vm.inTime || $scope.vm.isLateUser) {
       for (var i = 0; i < $scope.vm.bracketPicks.length; i++) {
         if ($scope.vm.bracketPicks[i] == null) {
           $state.go('home.ala.wc18bracket.bracket.picksIncomplete');
@@ -171,7 +175,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   pullResults();
 
   $scope.vm.clearBracketPicks = function(){
-    if ($scope.vm.inTime) {
+    if ($scope.vm.inTime || $scope.vm.isLateUser) {
       for (var i=0; i<$scope.vm.bracketPicks.length; i++){
         $scope.vm.bracketPicks[i] = null;
       };
@@ -181,7 +185,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
   };
 
   $scope.vm.makeBracketPick = (position, team, consPosition = null, consTeam = null) => {
-    if ($scope.vm.inTime) {
+    if ($scope.vm.inTime || $scope.vm.isLateUser) {
       $scope.vm.bracketPicks[position] = team;
       if (consPosition && consTeam) {
         $scope.vm[consPosition] = consTeam;
