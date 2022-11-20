@@ -71,6 +71,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
   $scope.vm.getUser = function(){
     user = $scope.vm.currentUser();
+    $scope.vm.user = user;
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
       console.log('$scope.vm.userData', $scope.vm.userData);

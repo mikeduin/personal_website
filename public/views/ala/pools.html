@@ -26,8 +26,8 @@
           <td><a ui-sref="{{pool.homepage}}">{{pool.name}}</a></td>
           <td>{{pool.start_time | date:'EEEE, MMM d, h:mm a'}}</td>
           <td>${{pool.buyin}}</td>
-          <td ng-show="vm.isLoggedIn() && vm.userData.{{pool.alias}} !== 1 && pool.sport === 'worldcup'"><div class="btn btn-primary" ng-click="vm.registerForPool(pool, vm.currentUser())" >REGISTER</div></td>
-          <td ng-show="vm.checkStartTime(pool.start_time) == true && pool.sport !== 'worldcup'"> <a class="btn btn-primary" target='blank' href="{{pool.externalURL}}">CLICK TO JOIN</a> </td>
+          <td ng-show="(vm.isLoggedIn() && vm.userData.{{pool.alias}} !== 1 && pool.sport === 'worldcup') || (vm.user === 'Tomer' && pool.sport === 'worldcup')"><div class="btn btn-primary" ng-click="vm.registerForPool(pool, vm.currentUser())" >REGISTER</div></td>
+          <td ng-show="(vm.checkStartTime(pool.start_time) == true && pool.sport !== 'worldcup')"> <a class="btn btn-primary" target='blank' href="{{pool.externalURL}}">CLICK TO JOIN</a> </td>
           <td ng-show="vm.checkStartTime(pool.start_time) == false">Entry Closed</td>
           <td ng-show="vm.isLoggedIn() == false && pool.sport === 'worldcup'"><a ui-sref="home.ala.loginpop">Login</a> to play.</td>
           <td ng-show="vm.userData.{{pool.alias}} === 1 && vm.isLoggedIn() !== false && !vm.checkStartTime(pool.start_time) == false" style="color: green; font-weight: 800">Registered!</td>
