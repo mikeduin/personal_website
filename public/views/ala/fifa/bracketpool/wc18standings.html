@@ -58,10 +58,10 @@
             <td>{{user['3rd']}}</td>
             <td>{{user.champ}}</td>
             <td>
-              <span ng-show="!vm.inTime">
+              <span ng-show="!vm.inTime && !vm.isLateUser">
                 <div class="flag-cont" style="margin-right: 5px"><img class="flag" src="{{vm.flags[user.bracketSelections[0].picks[15]]}}"></div>{{user.bracketSelections[0].picks[15]}}
               </span>
-              <span ng-show="vm.inTime">
+              <span ng-show="vm.inTime || vm.isLateUser">
                 <i>hidden</i>
               </span>
             </td>
