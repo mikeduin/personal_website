@@ -6,11 +6,11 @@
   </div>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 text-center">
-      <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime && !vm.isLateUser}">SAVE PICKS</button>
-      <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime && !vm.isLateUser}">CLEAR PICKS</button>
+      <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
+      <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime}">CLEAR PICKS</button>
     </div>
   </div>
-	<div ng-if="!vm.inTime && !vm.isLateUser" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
+	<div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
 	<div class="row">
 		<section id="bracket">
 			<div class="container">
