@@ -4,13 +4,48 @@
       After making your Group Stage picks, fill out your bracket here -- including the 3rd-place game. Don't forget to save your picks once you're finished! You can return to edit your Group and Bracket picks at any time before the tournament begins, at which point picks will lock.
     </div>
   </div>
-  <div class="row">
+	<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <hr>
+    </div>
+  </div>
+	
+	<div class="row">
+    <div ng-if="vm.selectedUser" class="col-xs-9">
+      <div ng-if="vm.viewingOwnPicks" class="col-xs-6 center-align">
+				<button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
+      	<button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime}">CLEAR PICKS</button>
+        <!-- <button ng-click="vm.saveGroupPicks()" class="center-align btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button> -->
+        <div ng-if="!vm.inTime" style="color: #6a1c27;"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
+      </div>
+      <div ng-if="!vm.viewingOwnPicks" class="col-xs-6 center-align">
+        <span style="font-size: 18px; text-transform: uppercase">You're viewing <span style="color: #6599cc; font-weight: 800">{{vm.selectedUser}}'s</span> Knockout picks.</span>
+        <div>
+          <a ui-sref="home.ala.wc18bracket.groups({username: vm.selectedUser})">THEIR GROUP PICKS</a> <span ng-if="vm.activeUser">| <a ui-sref="home.ala.wc18bracket.bracket({username: vm.activeUser})">YOUR KNOCKOUT PICKS</a></span>
+        </div>
+      </div>    
+    </div>
+		<div ng-if="!vm.selectedUser" class="col-xs-9">
+      <span style="font-size: 18px; text-transform: uppercase">You are not logged in; use the dropdown to the right to view other users' picks.</span>
+    </div>
+    <div class="col-xs-3">
+      <select ng-if="!vm.inTime" class="form-control" name="userSelect" ng-change="vm.userChange(vm.selectedUser, 'bracket')" ng-model="vm.selectedUser">
+        <!-- <option value="">(select a user)</option> -->
+        <option ng-repeat="user in vm.users" value="{{user.username}}"> {{user.username}} </option>
+      </select>
+      <div ng-if="!vm.inTime" style="color: #6599cc; margin-left: 30%"><i>View Another Entry</i></div>
+    </div>
+  </div>
+	
+	<!-- <div class="row">
     <div class="col-xs-6 col-xs-offset-3 text-center">
       <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
       <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime}">CLEAR PICKS</button>
     </div>
-  </div>
-	<div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
+  </div> -->
+
+
+	<!-- <div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div> -->
 	<div class="row">
 		<section id="bracket">
 			<div class="container">
