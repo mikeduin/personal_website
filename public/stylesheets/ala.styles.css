@@ -1102,13 +1102,13 @@ consolation li.game-spacer {
   text-align: center;
 }
 
-.max-pts th:nth-child(n+2):nth-child(-n+5) {
+.max-pts th:nth-child(n+3):nth-child(-n+6) {
   font-weight: 800;
   color: #DA562E;
   font-size: 18px;
 }
 
-.max-pts th:nth-child(n+6):nth-child(-n+10) {
+.max-pts th:nth-child(n+7):nth-child(-n+11) {
   font-weight: 800;
   color: #368623;
   font-size: 18px;

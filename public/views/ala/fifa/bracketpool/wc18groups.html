@@ -1,13 +1,39 @@
 <div class="col-xs-9 col-md-10" ng-show="vm.userLoggedInAndRegistered">
   <div class="row">
     <div class="page-intro">
-      Reorder the teams using the arrows next to each team to make your Group Stage picks, then click SAVE PICKS. From there, move to the Bracket Stage page to complete your entry. <b>Note that if you move to the Bracket Stage page without saving your edits, your edited picks will not be saved.</b> Picks will lock when the tournament begins.
+      Reorder the teams using the arrows next to each team to make your Group Stage picks, then click SAVE PICKS. From there, move to the Knockout Stage page to complete your entry. <b>Note that if you move to the Knockout Stage page without saving your edits, your edited picks will not be saved.</b> Picks will lock when the tournament begins.
     </div>
   </div>
-  <div class="row submit-buttons">
-    <button ng-click="vm.saveGroupPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <hr>
+    </div>
   </div>
-  <div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
+  <div class="row">
+    <div ng-if="vm.selectedUser" class="col-xs-9">
+      <div ng-if="vm.viewingOwnPicks" class="col-xs-6 center-align">
+        <button ng-click="vm.saveGroupPicks()" class="center-align btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
+        <div ng-if="!vm.inTime" style="color: #6a1c27;"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
+      </div>
+      <div ng-if="!vm.viewingOwnPicks" class="col-xs-6 center-align">
+        <span style="font-size: 18px; text-transform: uppercase">You're viewing <span style="color: #6599cc; font-weight: 800">{{vm.selectedUser}}'s</span> Group picks.</span>
+        <div>
+          <a ui-sref="home.ala.wc18bracket.bracket({username: vm.selectedUser})">THEIR KNOCKOUT PICKS</a> <span ng-if="vm.activeUser">| <a ui-sref="home.ala.wc18bracket.groups({username: vm.activeUser})">YOUR GROUP PICKS</a></span>
+        </div>
+      </div>    
+    </div>
+    <div ng-if="!vm.selectedUser" class="col-xs-9">
+      <span style="font-size: 18px; text-transform: uppercase">You are not logged in; use the dropdown to the right to view other users' picks.</span>
+    </div>
+    <div class="col-xs-3">
+      <select ng-if="!vm.inTime" class="form-control" name="userSelect" ng-change="vm.userChange(vm.selectedUser, 'groups')" ng-model="vm.selectedUser">
+        <!-- <option value="">(select a user)</option> -->
+        <option ng-repeat="user in vm.users" value="{{user.username}}"> {{user.username}} </option>
+      </select>
+      <div ng-if="!vm.inTime" style="color: #6599cc; margin-left: 30%"><i>View Another Entry</i></div>
+    </div>
+  </div>
+  
   <div class="row">
     <div class="group-grid" ui-sortable ng-model="vm.models.groups">
       <div ng-repeat="(groupName, group) in vm.models.groups" class="col-xs-6">

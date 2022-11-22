@@ -63,8 +63,6 @@ Array.prototype.equals = function (array) {
 // Hide method from for-in loops
 Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 
-var statsCompiled = false;
-
 router.get('/picks/:user', function(req, res, next){
   WCBracketEntries().where({
     username: req.params.user
@@ -106,13 +104,13 @@ router.get('/standings/:season', function(req, res, next){
   })
 })
 
-router.get('/user/:username', function(req, res, next){
-  var user = req.params.username;
-  WCBracketEntries().where('wc18bracket.username', user).innerJoin('users', 'users.username', 'wc18bracket.username')
-  .then(function(data){
-    res.json(data[0]);
-  })
-})
+// router.get('/user/:username', function(req, res, next){
+//   var user = req.params.username;
+//   WCBracketEntries().where('wc18bracket.username', user).innerJoin('users', 'users.username', 'wc18bracket.username')
+//   .then(function(data){
+//     res.json(data[0]);
+//   })
+// })
 
 router.get('/usernames', function(req, res, next){
   WCBracketEntries().pluck('username').then(function(data){
@@ -182,10 +180,11 @@ router.get('/flags', function(req, res, next){
   })
 })
 
-router.get('/calcGroups', function(req, res, next){
-  TeamStats().pluck('team').then(function(teams){
+router.get('/calcGroups/:season', function(req, res, next){
+  const { season } = req.params;
+  TeamStats().where({season}).pluck('team').then(function(teams){
     Promise.all(teams.map(function(team){
-      return Results().where({away_team: team}).then(function(results){
+      return Results().where({season, away_team: team}).then(function(results){
         var points = 0;
         var goals = 0;
         var goalsAg = 0;
@@ -222,7 +221,7 @@ router.get('/calcGroups', function(req, res, next){
         var team = team.team
         var gp = 0;
 
-        return Results().where({home_team: team}).then(function(homeResults){
+        return Results().where({season, home_team: team}).then(function(homeResults){
 
           homeResults.forEach(function(homeResult){
             if (homeResult.final == true) {
@@ -247,7 +246,8 @@ router.get('/calcGroups', function(req, res, next){
         })
       })).then(function(totalResults){
         totalResults.forEach(function(groupObj){
-          TeamStats().where({team: groupObj.team}).update({
+          console.log('groupObj is ', groupObj);
+          TeamStats().where({season, team: groupObj.team}).update({
             group_pts: groupObj.points,
             group_gp: groupObj.gp,
             group_w: groupObj.totalWins,
@@ -265,23 +265,31 @@ router.get('/calcGroups', function(req, res, next){
   })
 })
 
-router.get('/fetchStandings', function(req, res, next){
-  TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
-    var groupA = ordered.slice(0, 4);
-    var groupB = ordered.slice(4, 8);
-    var groupC = ordered.slice(8, 12);
-    var groupD = ordered.slice(12, 16);
-    var groupE = ordered.slice(16, 20);
-    var groupF = ordered.slice(20, 24);
-    var groupG = ordered.slice(24, 28);
-    var groupH = ordered.slice(28, 32);
+router.get('/fetchStandings/:season', async (req, res, next) => {
+  const season = req.params.season;
+  const teamStats = await TeamStats()
+    .where({season})
+    .pluck('team')
+    .orderBy('group')
+    .orderBy('group_pts', 'desc')
+    .orderBy('group_goal_dif', 'desc')
+    .orderBy('group_goals', 'desc')
+    .orderBy('group_tb', 'desc');
 
-    var standingsObj = {
-      "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
-    };
+  const groupA = teamStats.slice(0, 4);
+  const groupB = teamStats.slice(4, 8);
+  const groupC = teamStats.slice(8, 12);
+  const groupD = teamStats.slice(12, 16);
+  const groupE = teamStats.slice(16, 20);
+  const groupF = teamStats.slice(20, 24);
+  const groupG = teamStats.slice(24, 28);
+  const groupH = teamStats.slice(28, 32);
 
-    res.json(standingsObj);
-  })
+  const standingsObj = {
+    "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
+  };
+
+  res.json(standingsObj);
 })
 
 
@@ -419,73 +427,66 @@ router.get('/calcStandings', function(req, res, next){
 
 // This compilePoolStats fn compiles the stats for the pool picks -- it is only necessary to run once after picks have been submitted, or any time an entrant's picks have changed
 
-var compilePoolStats = function() {
-  if (!statsCompiled) {
-    TeamStats().then(function(teams){
-      WCBracketEntries().then(function(users){
-        for (var i=0; i<teams.length; i++) {
-          var group_1st = 0;
-          var group_2nd = 0;
-          var group_3rd = 0;
-          var group_4th = 0;
-          var round_8 = 0;
-          var round_4 = 0;
-          var round_2 = 0;
-          var cons_winner = 0;
-          var champion = 0;
-          var team = teams[i].team;
-          var group = teams[i].group;
-          for (var j=0; j<users.length; j++) {
-            if (users[j].groupSelections[0].groups[group][0] == team) {
-              group_1st++;
-            } else if (users[j].groupSelections[0].groups[group][1] == team) {
-              group_2nd++;
-            } else if (users[j].groupSelections[0].groups[group][2] == team) {
-              group_3rd++;
-            } else if (users[j].groupSelections[0].groups[group][3] == team) {
-              group_4th++;
-            };
-            var bracketPicks = users[j].bracketSelections[0].picks;
-            for (var k=0; k<bracketPicks.length; k++) {
-              if (k<8 && bracketPicks[k] == team) {
-                round_8++;
-              };
-              if (k > 7 && k < 12 && bracketPicks[k] == team) {
-                round_4++;
-              };
-              if (k > 11 && k < 14 && bracketPicks[k] == team) {
-                round_2++;
-              };
-              if (k == 14 && bracketPicks[k] == team) {
-                cons_winner++;
-              };
-              if (k == 15 && bracketPicks[k] == team) {
-                champion++;
-              };
-            }
-          };
-          var round_16 = group_1st + group_2nd;
-          TeamStats().where({team: team}).update({
-            group_1st: group_1st,
-            group_2nd: group_2nd,
-            group_3rd: group_3rd,
-            group_4th: group_4th,
-            round_16: round_16,
-            round_8: round_8,
-            round_4: round_4,
-            round_2: round_2,
-            cons_winner: cons_winner,
-            champion: champion
-          }, '*').then(function(returned){
-            console.log('team stats updated for ', returned[0]);
-          })
-        }
-      })
+const compilePoolStats = async (season) => {
+  const teams = await TeamStats().where({season});
+  const users = await WCBracketEntries().where({season});
+  teams.forEach(async teamSeason => {
+    let group_1st, group_2nd, group_3rd, group_4th, round_8, round_4, round_2, cons_winner, champion;
+    group_1st = group_2nd = group_3rd = group_4th = round_8 = round_4 = round_2 = cons_winner = champion = 0;
+    const { team, group } = teamSeason;
+    users.forEach(user => {
+      if (user.groupSelections[0].groups[group][0] == team) {
+        group_1st++;
+      } else if (user.groupSelections[0].groups[group][1] == team) {
+        group_2nd++;
+      } else if (user.groupSelections[0].groups[group][2] == team) {
+        group_3rd++;
+      } else if (user.groupSelections[0].groups[group][3] == team) {
+        group_4th++;
+      };
+      const bracketPicks = user.bracketSelections[0].picks;
+      for (var k=0; k<bracketPicks.length; k++) {
+        if (k<8 && bracketPicks[k] == team) {
+          round_8++;
+        };
+        if (k > 7 && k < 12 && bracketPicks[k] == team) {
+          round_4++;
+        };
+        if (k > 11 && k < 14 && bracketPicks[k] == team) {
+          round_2++;
+        };
+        if (k == 14 && bracketPicks[k] == team) {
+          cons_winner++;
+        };
+        if (k == 15 && bracketPicks[k] == team) {
+          champion++;
+        };
+      }
     })
-  }
+    const round_16 = group_1st + group_2nd;
+    try {
+      const teamUpdated = await TeamStats().where({team, season}).update({
+        group_1st,
+        group_2nd,
+        group_3rd,
+        group_4th,
+        round_16,
+        round_8,
+        round_4,
+        round_2,
+        cons_winner,
+        champion
+      }, '*')
+      console.log('team stats updated for ', teamUpdated[0]);
+    } catch (e) {
+      console.log('error updating team stats is ', e);
+    }
+  })
 }
 
-// setTimeout(compilePoolStats, 3000);
+// (async => {
+//   compilePoolStats(2022)
+// });
 
 
 module.exports = router;

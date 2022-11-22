@@ -24,11 +24,12 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    getUserData: function (user) {
-      return $http.get('wcbracket/user/' + user).then(function(res){
-        return res.data;
-      })
-    },
+    // getUserData: function (user) {
+    //   return $http.get('wcbracket/user/' + user).then(function(res){
+    //     console.log('response from getUserData is ', getUserData);
+    //     return res.data;
+    //   })
+    // },
     getUsernames: function() {
       return $http.get('wcbracket/usernames').then(function(res){
         return res.data;
@@ -39,8 +40,8 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    calcGroups: function() {
-      return $http.get('wcbracket/calcGroups').then(function(res){
+    calcGroups: function(season) {
+      return $http.get(`wcbracket/calcGroups/${season}`).then(function(res){
         return res.data;
       })
     },
@@ -54,8 +55,9 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    fetchStandings: function() {
-      return $http.get('wcbracket/fetchStandings').then(function(res){
+    fetchStandings: season => {
+      return $http.get(`wcbracket/fetchStandings/${season}`).then(function(res){
+        console.log('res in fetch standings is ', res);
         return res.data;
       })
     },

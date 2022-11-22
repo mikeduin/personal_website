@@ -1,15 +1,18 @@
 angular
   .module('mySite')
-  .controller('WCUserController', ['$scope', '$state', 'alaService', 'WCBracketService', WCUserController])
+  .controller('WCUserController', ['$scope', '$state', '$stateParams', 'alaService', 'WCBracketService', WCUserController])
 
-function WCUserController($scope, $state, alaService, WCBracketService) {
+function WCUserController($scope, $state, $stateParams, alaService, WCBracketService) {
   var vm = this;
 
-  vm.getUserData = function(){
-    WCBracketService.getUserData($state.params.username).then(function(res){
-      vm.user = res;
-    })
-  };
+  vm.season = $stateParams.season;
+  vm.username = $stateParams.username;
+
+  // vm.getUserData = function(){
+  //   WCBracketService.getUserData($state.params.username).then(function(res){
+  //     vm.user = res;
+  //   })
+  // };
 
   vm.getUsers = function(){
     WCBracketService.getUsernames().then(function(res){
@@ -23,13 +26,15 @@ function WCUserController($scope, $state, alaService, WCBracketService) {
     vm.getUserData();
   };
 
-  vm.fetchStandings = function () {
-    WCBracketService.fetchStandings().then(function(res){
+  const fetchStandings = (season) => {
+    console.log('season in fetchStandings is ', season);
+    WCBracketService.fetchStandings(season).then(function(res){
       vm.actualStandings = res;
+      console.log('vm.actualStandings are ', vm.actualStandings);
     })
   };
 
-  vm.fetchStandings();
+  fetchStandings(vm.season);
 
   $scope.vm.fetchBracketWs = function() {
     WCBracketService.fetchBracketWs().then(function(res){

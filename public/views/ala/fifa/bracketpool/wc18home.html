@@ -40,13 +40,13 @@
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.groups')}">
-        <a ui-sref="home.ala.wc18bracket.groups">
+        <a ui-sref="home.ala.wc18bracket.groups({username: vm.activeUser})">
           Group <span class="hidden-sm">Stage</span>
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.bracket')}">
-        <a ui-sref="home.ala.wc18bracket.bracket">
-          Bracket <span class="hidden-sm">Stage</span>
+        <a ui-sref="home.ala.wc18bracket.bracket({username: vm.activeUser})">
+          Knockout <span class="hidden-sm">Stage</span>
         </a>
       </div>
       <div class="col-xs-2" ng-class="{'active-pool-tab': $state.is('home.ala.wc18bracket.standings')}">

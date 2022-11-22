@@ -1,12 +1,16 @@
 angular
   .module('mySite')
-  .controller('WCBracketController', ['$scope', '$state', 'authService', 'alaService', 'WCBracketService', WCBracketController])
+  .controller('WCBracketController', ['$scope', '$state', '$stateParams', 'authService', 'alaService', 'WCBracketService', WCBracketController])
 
-function WCBracketController ($scope, $state, authService, alaService, WCBracketService) {
+function WCBracketController ($scope, $state, $stateParams, authService, alaService, WCBracketService) {
   $scope.vm.systemYear = 2022;
 
   $scope.vm.groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
   $scope.vm.sortOrder = '-champion';
+  $scope.vm.activeUser = authService.currentUser();
+  $scope.vm.selectedUser = $stateParams.username;
+  $scope.vm.viewingOwnPicks = $scope.vm.activeUser === $scope.vm.selectedUser;
+
   if (!$scope.vm.activeSeason) {
     $scope.vm.activeSeason = 2022;
   } else {
@@ -24,6 +28,7 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     {id: 1, name: '2022', value: 2022},
     {id: 2, name: '2018', value: 2018},
   ]
+
   $scope.vm.seasonChange = (season) => {
     $scope.vm.activeSeason = parseInt(season);
     $scope.vm.activePool = $scope.vm.pools.filter(p => p.season === $scope.vm.activeSeason)[0];
@@ -34,21 +39,38 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
     pullResults();
   }
 
+  $scope.vm.userChange = (user, page) => {
+    $state.go(`home.ala.wc18bracket.${page}`, {username: user});
+  };
+
   const updateActiveSeasonData = () => {
-    if ($scope.vm.userData) {
-      const { wcEntries } = $scope.vm.userData;
-      const userSeasonYears = wcEntries.map(e => e.season);
-      $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
-      $scope.vm.isCurrentSystemYear = $scope.vm.activeSeason === $scope.vm.systemYear;
-      const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
-      if (activeWcEntry) {
-        $scope.vm.models = activeWcEntry.groupSelections[0];
-        $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
-        $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
-        $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
-        $scope.vm.original = angular.copy($scope.vm.models);
-      } 
-    }
+    pullStandings().then(() => {
+      if ($scope.vm.viewingOwnPicks && $scope.vm.userData) {
+        const { wcEntries } = $scope.vm.userData;
+        const userSeasonYears = wcEntries.map(e => e.season);
+        $scope.vm.userLoggedInAndRegistered = userSeasonYears.includes($scope.vm.activeSeason);
+        $scope.vm.isCurrentSystemYear = $scope.vm.activeSeason === $scope.vm.systemYear;
+        const activeWcEntry = wcEntries.filter(e => e.season === $scope.vm.activeSeason)[0];
+        if (activeWcEntry) {
+          $scope.vm.models = activeWcEntry.groupSelections[0];
+          $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
+          $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
+          $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
+          $scope.vm.original = angular.copy($scope.vm.models);
+        } 
+      } else {
+        $scope.vm.userLoggedInAndRegistered = true;
+        console.log('$scope.vm.standings', $scope.vm.standings);
+        const activeWcEntry = $scope.vm.standings.filter(user => user.username === $scope.vm.selectedUser)[0];
+        if (activeWcEntry) {
+          $scope.vm.models = activeWcEntry.groupSelections[0];
+          $scope.vm.bracketPicks = activeWcEntry.bracketSelections[0].picks;
+          $scope.vm.consOne = activeWcEntry.bracketSelections[0].consOne;
+          $scope.vm.consTwo = activeWcEntry.bracketSelections[0].consTwo;
+          $scope.vm.original = angular.copy($scope.vm.models);
+        } 
+      }
+    })
 
   }
 
@@ -80,9 +102,9 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
       $scope.vm.userData = res[0];
       console.log('userData ', $scope.vm.userData);
       updateActiveSeasonData();
-      $scope.vm.isLateUser = $scope.vm.lateUsers.includes(user);
-      $scope.vm.isLateGroupUser = $scope.vm.lateGroupUsers.includes(user);
-      console.log('isLateUser is ', $scope.vm.isLateUser);
+      // $scope.vm.isLateUser = $scope.vm.lateUsers.includes(user);
+      // $scope.vm.isLateGroupUser = $scope.vm.lateGroupUsers.includes(user);
+      // console.log('isLateUser is ', $scope.vm.isLateUser);
     })
   };
 
@@ -119,8 +141,8 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
         }
       };
   
-      var user = $scope.vm.currentUser();
-      var picks = {
+      const user = $scope.vm.currentUser();
+      const picks = {
         user: user,
         picks: $scope.vm.bracketPicks,
         season: $scope.vm.activeSeason,
@@ -135,15 +157,28 @@ function WCBracketController ($scope, $state, authService, alaService, WCBracket
 
   const pullStandings = () => {
     console.log('activeSeason in pullStandings is ', $scope.vm.activeSeason);
-    WCBracketService.pullStandings($scope.vm.activeSeason).then(function(res){
+    return WCBracketService.pullStandings($scope.vm.activeSeason).then(function(res){
       $scope.vm.standings = res;
+      console.log('standings are ', $scope.vm.standings);
+      const allUsers = res.map((user, idx) => {
+        return {
+          key: idx,
+          username: user.username,
+          value: user.uername,
+        }
+      });
+      console.log('allUsers are ', allUsers);
+      $scope.vm.users = allUsers.sort((a, b) => a.username.localeCompare(b.username));
+      return;
+      // console.log($scope.vm.usernames);
+      // console.log('$scope.vm.standings', $scope.vm.standings);
     })
   }
 
-  pullStandings();
+  // pullStandings();
 
-  $scope.vm.calcGroups = function() {
-    WCBracketService.calcGroups().then(function(res){
+  $scope.vm.calcGroups = function(season) {
+    WCBracketService.calcGroups(season).then(function(res){
       console.log('res to controller is ', res);
     })
   }
