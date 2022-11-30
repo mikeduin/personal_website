@@ -10,19 +10,15 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
   $scope.vm.activeUser = authService.currentUser();
   $scope.vm.selectedUser = $stateParams.username;
   $scope.vm.viewingOwnPicks = $scope.vm.activeUser === $scope.vm.selectedUser;
+  $scope.vm.groupA = [];
 
   if (!$scope.vm.activeSeason) {
     $scope.vm.activeSeason = 2022;
-  } else {
-    console.log('active season is ', $scope.vm.activeSeason);
   }
 
   const checkForSeasonStart = () => {
     return moment().isBefore($scope.vm.activePool.start_time);
   }
-
-  $scope.vm.lateUsers = ['alaguire', 'daveecfc', 'HalfManHalfAmazing', 'Iaio', 'Tomer', 'livvcali', 'willski21', 'Shrayday'];
-  $scope.vm.lateGroupUsers = ['Tomer', 'livvcali', 'willski21', 'Shrayday'];
 
   $scope.vm.seasons = [
     {id: 1, name: '2022', value: 2022},
@@ -43,6 +39,56 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
     $state.go(`home.ala.wc18bracket.${page}`, {username: user});
   };
 
+  $scope.vm.activeGroupFinished = (groupLetter) => {
+    const activeGroup = $scope.vm[`group${groupLetter}`];
+    return activeGroup.filter(t => t.group_gp === 3).length === 4;
+  }
+
+  $scope.vm.getGroupPickStyle = (team, groupLetter, idx) => {
+    const activeGroup = $scope.vm[`group${groupLetter}`];
+    const activeGroupFinished = $scope.vm.activeGroupFinished(groupLetter);
+    if (team == activeGroup[idx].team) {
+      if (activeGroupFinished) {
+        return {'background-color': '#c1e5b2'}
+      } else {
+        return {'background-color': '#dcecd6'}
+      }
+      
+    } else {
+      return {'background-color': null}
+    }
+  }
+
+  $scope.vm.groupScore = groupLetter => {
+    const activeGroup = $scope.vm[`group${groupLetter}`];
+    const userGroupPicks = $scope.vm.models.groups[groupLetter];
+    let total = 0;
+    userGroupPicks.forEach((pick, idx) => {
+      if (idx === 0 && pick === activeGroup[idx].team) {
+        total+=6;
+      } else if (idx === 1 && pick === activeGroup[idx].team) {
+        total+=4;
+      } if (idx > 1 && pick === activeGroup[idx].team) {
+        total++;
+      }
+    })
+    return total === 12 ? '15 PTS [100%]' : `${total} PTS`;
+  }
+
+  $scope.vm.checkRanking = (team, groupLetter, idx) => {
+    const activeGroup = $scope.vm[`group${groupLetter}`];
+    if (activeGroup[idx].team === team) {
+      return true;
+    } else {
+      return false;
+    }  
+  }
+
+  $scope.vm.getGroupStats = (team, filter) => {
+    const filteredTeam = $scope.vm.teamStats.filter(t => t.team === team);
+    return filteredTeam[0][filter];
+  }
+
   const updateActiveSeasonData = () => {
     pullStandings().then(() => {
       if ($scope.vm.viewingOwnPicks && $scope.vm.userData) {
@@ -60,7 +106,6 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
         } 
       } else {
         $scope.vm.userLoggedInAndRegistered = true;
-        console.log('$scope.vm.standings', $scope.vm.standings);
         const activeWcEntry = $scope.vm.standings.filter(user => user.username === $scope.vm.selectedUser)[0];
         if (activeWcEntry) {
           $scope.vm.models = activeWcEntry.groupSelections[0];
@@ -100,11 +145,7 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
     user = $scope.vm.currentUser();
     alaService.getUser(user).then(function(res){
       $scope.vm.userData = res[0];
-      console.log('userData ', $scope.vm.userData);
       updateActiveSeasonData();
-      // $scope.vm.isLateUser = $scope.vm.lateUsers.includes(user);
-      // $scope.vm.isLateGroupUser = $scope.vm.lateGroupUsers.includes(user);
-      // console.log('isLateUser is ', $scope.vm.isLateUser);
     })
   };
 
@@ -113,7 +154,6 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
   $scope.vm.getFlags = function(){
     WCBracketService.getFlags().then(function(flags){
       $scope.vm.flags = flags;
-      console.log('flags are ', flags);
     });
   };
 
@@ -156,10 +196,8 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
   };
 
   const pullStandings = () => {
-    console.log('activeSeason in pullStandings is ', $scope.vm.activeSeason);
     return WCBracketService.pullStandings($scope.vm.activeSeason).then(function(res){
       $scope.vm.standings = res;
-      console.log('standings are ', $scope.vm.standings);
       const allUsers = res.map((user, idx) => {
         return {
           key: idx,
@@ -167,11 +205,8 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
           value: user.uername,
         }
       });
-      console.log('allUsers are ', allUsers);
       $scope.vm.users = allUsers.sort((a, b) => a.username.localeCompare(b.username));
       return;
-      // console.log($scope.vm.usernames);
-      // console.log('$scope.vm.standings', $scope.vm.standings);
     })
   }
 
@@ -183,21 +218,33 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
     })
   }
 
-  $scope.vm.calcBrackets = function() {
-    WCBracketService.calcBrackets().then(function(res){
+  $scope.vm.calcBrackets = function(season) {
+    WCBracketService.calcBrackets(season).then(function(res){
       console.log('res to controller is ', res);
     })
   }
 
-  $scope.vm.calcStandings = function() {
-    WCBracketService.calcStandings().then(function(res){
+  $scope.vm.calcStandings = function(season) {
+    WCBracketService.calcStandings(season).then(function(res){
       console.log('res to controller is ', res);
     })
+  }
+
+  const sortGroup = (a, b) => {
+    return b.group_pts - a.group_pts || b.group_goal_dif - a.group_goal_dif || b.group_goals - a.group_goals || b.group_tb - a.group_tb;
   }
 
   const pullTeamStats =  () => {
     WCBracketService.pullTeamStats($scope.vm.activeSeason).then(function(res){
       $scope.vm.teamStats = res;
+      $scope.vm.groupA = $scope.vm.teamStats.filter(t => t.group === 'A').sort(sortGroup);
+      $scope.vm.groupB = $scope.vm.teamStats.filter(t => t.group === 'B').sort(sortGroup);
+      $scope.vm.groupC = $scope.vm.teamStats.filter(t => t.group === 'C').sort(sortGroup);
+      $scope.vm.groupD = $scope.vm.teamStats.filter(t => t.group === 'D').sort(sortGroup);
+      $scope.vm.groupE = $scope.vm.teamStats.filter(t => t.group === 'E').sort(sortGroup);
+      $scope.vm.groupF = $scope.vm.teamStats.filter(t => t.group === 'F').sort(sortGroup);
+      $scope.vm.groupG = $scope.vm.teamStats.filter(t => t.group === 'G').sort(sortGroup);
+      $scope.vm.groupH = $scope.vm.teamStats.filter(t => t.group === 'H').sort(sortGroup);
     })
   };
 
