@@ -45,13 +45,13 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    calcBrackets: function () {
-      return $http.get('wcbracket/calcBrackets').then(function(res){
+    calcBrackets: function (season) {
+      return $http.get(`wcbracket/calcBrackets/${season}`).then(function(res){
         return res.data;
       })
     },
-    calcStandings: function() {
-      return $http.get('wcbracket/calcStandings').then(function(res){
+    calcStandings: function(season) {
+      return $http.get(`wcbracket/calcStandings/${season}`).then(function(res){
         return res.data;
       })
     },

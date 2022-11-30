@@ -1,4 +1,5 @@
 var express = require('express');
+const { where } = require('../db/knex');
 var router = express.Router();
 var knex = require('../db/knex')
 
@@ -360,67 +361,86 @@ router.get('/calcBrackets', function(req, res, next){
     })
   });
 
-router.get('/calcStandings', function(req, res, next){
-  TeamStats().pluck('team').orderBy('group').orderBy('group_pts', 'desc').orderBy('group_goal_dif', 'desc').orderBy('group_goals', 'desc').orderBy('group_tb', 'desc').then(function(ordered){
-    var groupA = ordered.slice(0, 4);
-    var groupB = ordered.slice(4, 8);
-    var groupC = ordered.slice(8, 12);
-    var groupD = ordered.slice(12, 16);
-    var groupE = ordered.slice(16, 20);
-    var groupF = ordered.slice(20, 24);
-    var groupG = ordered.slice(24, 28);
-    var groupH = ordered.slice(28, 32);
+router.get('/calcStandings/:season', async (req, res, next) => {
+  const season = req.params.season;
+  const teams = await TeamStats()
+    .where({season})
+    .pluck('team')
+    .orderBy('group')
+    .orderBy('group_pts', 'desc')
+    .orderBy('group_goal_dif', 'desc')
+    .orderBy('group_goals', 'desc')
+    .orderBy('group_tb', 'desc')
 
-    var standingsObj = {
-      "groups": {"A": groupA, "B": groupB, "C": groupC, "D": groupD, "E": groupE, "F": groupF, "G": groupG, "H": groupH}
-    };
+  console.log('teams are ', teams);
 
-    WCBracketEntries().then(function(users){
-      users.forEach(function(user){
-        var exact_rank = 0;
-        var exact_order = 0;
-        var winners = 0;
-        var runners_up = 0;
-        var total = 0;
+  const groupA = teams.slice(0, 4);
+  const groupB = teams.slice(4, 8);
+  // const groupC = teams.slice(8, 12);
+  // const groupD = teams.slice(12, 16);
+  // const groupE = teams.slice(16, 20);
+  // const groupF = teams.slice(20, 24);
+  // const groupG = teams.slice(24, 28);
+  // const groupH = teams.slice(28, 32);
 
-        userGroupPicks = user.groupSelections[0].groups;
+  const standingsObj = {
+    "groups": {
+      "A": groupA, 
+      "B": groupB, 
+      // "C": groupC, 
+      // "D": groupD, 
+      // "E": groupE, 
+      // "F": groupF, 
+      // "G": groupG, 
+      // "H": groupH
+    }
+  };
 
-        Object.values(standingsObj.groups).forEach(function(value, index){
-          // CHECKS FOR EXACT ORDER
-          if (value.equals(Object.values(userGroupPicks)[index])) {
-            exact_order += 3
-          };
+  const entries = await WCBracketEntries().where({season});
+  entries.forEach(function(entry){
+    let exact_rank = 0;
+    let exact_order = 0;
+    let winners = 0;
+    let runners_up = 0;
+    let total = 0;
 
-          // CHECKS FOR GROUP WINNERS
-          if (value[0] == Object.values(userGroupPicks)[index][0]) {
-            winners += 5;
-          };
+    userGroupPicks = entry.groupSelections[0].groups;
 
-          // CHECKS FOR GROUP RUNNERS-UP
-          if (value[1] == Object.values(userGroupPicks)[index][1]) {
-            runners_up += 3;
-          };
+    Object.values(standingsObj.groups).forEach(function(value, index){
+      // CHECKS FOR EXACT ORDER
+      if (value.equals(Object.values(userGroupPicks)[index])) {
+        exact_order += 3
+      };
 
-          // CHECKS FOR EXACT RANK
-          for (var i = 0; i < value.length; i++) {
-            if (value[i] == Object.values(userGroupPicks)[index][i]) {
-              exact_rank++;
-            }
-          };
+      // CHECKS FOR GROUP WINNERS
+      if (value[0] == Object.values(userGroupPicks)[index][0]) {
+        winners += 5;
+      };
 
-          total = exact_order + winners + runners_up + exact_rank;
-        })
+      // CHECKS FOR GROUP RUNNERS-UP
+      if (value[1] == Object.values(userGroupPicks)[index][1]) {
+        runners_up += 3;
+      };
 
-        WCBracketEntries().where({username: user.username}).update({
-          exact_rank: exact_rank,
-          winner: winners,
-          runner_up: runners_up,
-          exact_order: exact_order,
-          total_score: total
-        }, '*').then(function(updated){
-          console.log(updated, ' has been updated!')
-        })
-      })
+      // CHECKS FOR EXACT RANK
+      for (var i = 0; i < value.length; i++) {
+        if (value[i] == Object.values(userGroupPicks)[index][i]) {
+          exact_rank++;
+        }
+      };
+
+      total = exact_order + winners + runners_up + exact_rank;
+    })
+
+    WCBracketEntries().where({id: entry.id}).update({
+      exact_rank: exact_rank,
+      winner: winners,
+      runner_up: runners_up,
+      exact_order: exact_order,
+      total_score: total,
+      modified: new Date()
+    }, '*').then(function(updated){
+      console.log(updated, ' has been updated!')
     })
   })
 })
