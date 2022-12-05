@@ -1210,15 +1210,11 @@ selectDiv {
 }
 
 .pick-right {
-  font-weight: 800;
-  color: #47A337;
-  font-size: 18px;
+  background-color: #d6e7cf !important;
 }
 
 .pick-wrong {
-  font-weight: 800;
-  color: #E3302C;
-  font-size: 18px;
+  background-color: #ddc3c3 !important;
 }
 
 /* Results Styles */
