@@ -10,7 +10,6 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
   $scope.vm.activeUser = authService.currentUser();
   $scope.vm.selectedUser = $stateParams.username;
   $scope.vm.viewingOwnPicks = $scope.vm.activeUser === $scope.vm.selectedUser;
-  $scope.vm.groupA = [];
 
   if (!$scope.vm.activeSeason) {
     $scope.vm.activeSeason = 2022;
@@ -158,6 +157,16 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
   };
 
   $scope.vm.getFlags();
+
+  const getAdvancing = function() {
+    WCBracketService.getAdvancing($scope.vm.activeSeason).then(function(res){
+      console.log('res is ', res);
+      $scope.vm.advancing = res.advancing;
+      $scope.vm.eliminated = res.eliminated;
+      $scope.vm.bracketWinners = res.bracketWinnersObj;
+    })
+  };
+  getAdvancing();
 
   $scope.vm.saveGroupPicks = function(){
     if ($scope.vm.inTime || $scope.vm.isLateGroupUser) {

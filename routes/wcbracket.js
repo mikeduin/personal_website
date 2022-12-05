@@ -17,21 +17,24 @@ function Results() {return knex('results')};
 // })()
 
 
-// Pluck user emails  
+// Pluck user names and emails  
 
 // (async () => {
 //   const brackets = await WCBracketEntries().where({season: 2022});
 //   const userEmails = [];
+//   const userNames = [];
 //   brackets.forEach(async (bracket, idx) => {
-//     const userEmail = await Users().where({username: bracket.username}).pluck('email');
-//     console.log('userEmail is ', userEmail);
-//     userEmails.push(userEmail[0]);
+//     const users= await Users().where({username: bracket.username}).select('email', 'nameFirst', 'nameLast');
+//     users.forEach(user => {
+//       userEmails.push(user.email);
+//       userNames.push(`${user.nameFirst} ${user.nameLast}`)
+//     })
 //     if (idx === brackets.length - 1) {
 //       console.log(userEmails);
+//       console.log(userNames);
 //     }
 //   })
-  
-// })()
+// })
 
 // Warn if overriding existing method
 if(Array.prototype.equals)
@@ -131,44 +134,49 @@ router.get('/results/:season', function(req, res, next){
   })
 })
 
-router.get('/advancing', function(req, res, next){
-  Results().where({group: 'Round of 16'}).pluck('away_team').then(function(away){
-    Results().where({group: 'Round of 16'}).pluck('home_team').then(function(home){
-      var advancing = home.concat(away);
-      res.json(advancing);
-    })
-  })
-})
+router.get('/advancing/:season', async (req, res, next) => {
+  const season = parseInt(req.params.season);
+  const away = await Results().where({season, group: 'Round of 16'}).pluck('away_team');
+  const home = await Results().where({season, group: 'Round of 16'}).pluck('home_team');
+  const advancing = home.concat(away);
+  const eliminatedGroup = await TeamStats()
+    .where({season})
+    .whereNotIn('team', advancing)
+    .pluck('team');
 
-router.get('/bracketWinners', function(req, res, next){
-  Results().where({
+  const bracketResults = await Results().where({
+    season,
     stage: 'bracket',
     final: true
-  }).orderBy('matchtime').pluck('winner').then(function(winners){
-    var obj = {
-      'r16': [],
-      'r8': [],
-      'r4': [],
-      'cons': [],
-      'champ': []
-    };
+  }).orderBy('matchtime');
 
-    for (var i = 0; i < winners.length; i++) {
-      if (i<8) {
-        obj['r16'].push(winners[i]);
-      } else if (i>7 && i<12) {
-        obj['r8'].push(winners[i]);
-      } else if (i>11 && i<14) {
-        obj['r4'].push(winners[i]);
-      } else if (i == 14) {
-        obj['cons'].push(winners[i]);
-      } else if (i == 15) {
-        obj['champ'].push(winners[i]);
-      };
-    };
+  const bracketLosers = [];
 
-    res.json(obj);
-  })
+  const bracketWinnersObj = {
+    'r16': [],
+    'r8': [],
+    'r4': [],
+    'cons': [],
+    'champ': []
+  };
+
+  for (var i = 0; i < bracketResults.length; i++) {
+    bracketLosers.push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team)
+    if (i<8) {
+      bracketWinnersObj['r16'].push(bracketResults[i].winner);
+    } else if (i>7 && i<12) {
+      bracketWinnersObj['r8'].push(bracketResults[i].winner);
+    } else if (i>11 && i<14) {
+      bracketWinnersObj['r4'].push(bracketResults[i].winner);
+    } else if (i == 14) {
+      bracketWinnersObj['cons'].push(bracketResults[i].winner);
+    } else if (i == 15) {
+      bracketWinnersObj['champ'].push(bracketResults[i].winner);
+    };
+  };
+
+  const eliminated = eliminatedGroup.concat(bracketLosers);
+  res.json({advancing, eliminated, bracketWinnersObj});
 })
 
 router.get('/flags', function(req, res, next){
@@ -294,22 +302,23 @@ router.get('/fetchStandings/:season', async (req, res, next) => {
 })
 
 
-
-router.get('/calcBrackets', function(req, res, next){
+router.get('/calcBrackets/:season', function(req, res, next){
+  const season = parseInt(req.params.season);
     Results().where({
       stage: 'bracket',
+      season,
       final: true
     }).orderBy('matchtime').pluck('winner').then(function(winners){
-      WCBracketEntries().then(function(users){
+      WCBracketEntries().where({season}).then(function(users){
         users.forEach(function(user){
-          var userBracketPicks = user.bracketSelections[0].picks;
-          var username = user.username;
-          var r16 = 0;
-          var r8 = 0;
-          var r4 = 0;
-          var r2 = 0;
-          var cons = 0;
-          var total = user.exact_rank + user.winner + user.runner_up + user.exact_order;
+          const userBracketPicks = user.bracketSelections[0].picks;
+          const username = user.username;
+          let r16 = 0;
+          let r8 = 0;
+          let r4 = 0;
+          let r2 = 0;
+          let cons = 0;
+          let total = user.exact_rank + user.winner + user.runner_up + user.exact_order;
 
           for (var i=0; i<winners.length; i++) {
             if (i<8) {
@@ -346,7 +355,7 @@ router.get('/calcBrackets', function(req, res, next){
             }
           };
 
-          WCBracketEntries().where({username: username}).update({
+          WCBracketEntries().where({username: username, season}).update({
             r16: r16,
             r8: r8,
             r4: r4,
@@ -372,31 +381,32 @@ router.get('/calcStandings/:season', async (req, res, next) => {
     .orderBy('group_goals', 'desc')
     .orderBy('group_tb', 'desc')
 
-  console.log('teams are ', teams);
-
   const groupA = teams.slice(0, 4);
   const groupB = teams.slice(4, 8);
-  // const groupC = teams.slice(8, 12);
-  // const groupD = teams.slice(12, 16);
-  // const groupE = teams.slice(16, 20);
-  // const groupF = teams.slice(20, 24);
-  // const groupG = teams.slice(24, 28);
-  // const groupH = teams.slice(28, 32);
+  const groupC = teams.slice(8, 12);
+  const groupD = teams.slice(12, 16);
+  const groupE = teams.slice(16, 20);
+  const groupF = teams.slice(20, 24);
+  const groupG = teams.slice(24, 28);
+  const groupH = teams.slice(28, 32);
 
   const standingsObj = {
     "groups": {
       "A": groupA, 
       "B": groupB, 
-      // "C": groupC, 
-      // "D": groupD, 
-      // "E": groupE, 
-      // "F": groupF, 
-      // "G": groupG, 
-      // "H": groupH
+      "C": groupC, 
+      "D": groupD, 
+      "E": groupE, 
+      "F": groupF, 
+      "G": groupG, 
+      "H": groupH
     }
   };
 
   const entries = await WCBracketEntries().where({season});
+  
+  const indexesFinished = [0, 1, 2, 3, 4, 5, 6, 7]; // Update this with concluded groups
+
   entries.forEach(function(entry){
     let exact_rank = 0;
     let exact_order = 0;
@@ -407,29 +417,32 @@ router.get('/calcStandings/:season', async (req, res, next) => {
     userGroupPicks = entry.groupSelections[0].groups;
 
     Object.values(standingsObj.groups).forEach(function(value, index){
-      // CHECKS FOR EXACT ORDER
-      if (value.equals(Object.values(userGroupPicks)[index])) {
-        exact_order += 3
-      };
+      if (indexesFinished.includes(index)) {
+        // CHECKS FOR EXACT ORDER
+        if (value.equals(Object.values(userGroupPicks)[index])) {
+          exact_order += 3
+        };
 
-      // CHECKS FOR GROUP WINNERS
-      if (value[0] == Object.values(userGroupPicks)[index][0]) {
-        winners += 5;
-      };
+        // CHECKS FOR GROUP WINNERS
+        if (value[0] == Object.values(userGroupPicks)[index][0]) {
+          winners += 5;
+        };
 
-      // CHECKS FOR GROUP RUNNERS-UP
-      if (value[1] == Object.values(userGroupPicks)[index][1]) {
-        runners_up += 3;
-      };
+        // CHECKS FOR GROUP RUNNERS-UP
+        if (value[1] == Object.values(userGroupPicks)[index][1]) {
+          runners_up += 3;
+        };
 
-      // CHECKS FOR EXACT RANK
-      for (var i = 0; i < value.length; i++) {
-        if (value[i] == Object.values(userGroupPicks)[index][i]) {
-          exact_rank++;
-        }
-      };
+        // CHECKS FOR EXACT RANK
+        for (var i = 0; i < value.length; i++) {
+          if (value[i] == Object.values(userGroupPicks)[index][i]) {
+            exact_rank++;
+          }
+        };
 
-      total = exact_order + winners + runners_up + exact_rank;
+        total = exact_order + winners + runners_up + exact_rank;
+      }
+
     })
 
     WCBracketEntries().where({id: entry.id}).update({

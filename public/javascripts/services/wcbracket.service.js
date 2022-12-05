@@ -61,11 +61,11 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    fetchBracketWs: function () {
-      return $http.get('wcbracket/bracketWinners').then(function(res){
-        return res.data;
-      })
-    },
+    // fetchBracketWs: function (season) {
+    //   return $http.get(`wcbracket/bracketWinners/${season}`).then(function(res){
+    //     return res.data;
+    //   })
+    // },
     pullResults: function(season) {
       return $http.get(`wcbracket/results/${season}`).then(function(res){
         return res.data;
@@ -76,8 +76,8 @@ function WCBracketService ($http) {
         return res.data;
       })
     },
-    getAdvancing: function() {
-      return $http.get('wcbracket/advancing').then(function(res){
+    getAdvancing: function(season) {
+      return $http.get(`wcbracket/advancing/${season}`).then(function(res){
         return res.data;
       })
     }
