@@ -227,25 +227,25 @@
 						<ul class="matchup">
 							<li class="team team-top"
 								ng-click="vm.makeBracketPick(12, vm.bracketPicks[8], 'consOne', vm.bracketPicks[9]); vm.checkAdvance(3, vm.bracketPicks[9])"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[8]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[8], vm.bracketPicks[0], vm.bracketPicks[1])}"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[8]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[8]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[8], vm.bracketPicks[0], vm.bracketPicks[1])}"
 							>
 							<div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[8]]}}"></div> {{vm.bracketPicks[8]}}<span class="score">&nbsp;</span>
 							</li>
 							<li class="team team-bottom"
 								ng-click="vm.makeBracketPick(12, vm.bracketPicks[9], 'consOne', vm.bracketPicks[8]); vm.checkAdvance(3, vm.bracketPicks[8])"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[9]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[9], vm.bracketPicks[2], vm.bracketPicks[3])}"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[9]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[9]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[9], vm.bracketPicks[2], vm.bracketPicks[3])}"
 							>
 							<div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[9]]}}"></div> {{vm.bracketPicks[9]}}<span class="score">&nbsp;</span></li>
 						</ul>
 						<ul id="round-three-bottom-matchup" class="matchup">
 							<li class="team team-top"
 								ng-click="vm.makeBracketPick(13, vm.bracketPicks[10], 'consTwo', vm.bracketPicks[11]); vm.checkAdvance(3, vm.bracketPicks[11])"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[10]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[10], vm.bracketPicks[4], vm.bracketPicks[5])}"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[10]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[10]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[10], vm.bracketPicks[4], vm.bracketPicks[5])}"
 							>
 							<div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[10]]}}"></div> {{vm.bracketPicks[10]}}<span class="score">&nbsp;</span></li>
 							<li class="team team-bottom"
 								ng-click="vm.makeBracketPick(13, vm.bracketPicks[11], 'consTwo', vm.bracketPicks[10]); vm.checkAdvance(3, vm.bracketPicks[10])"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[11]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[11], vm.bracketPicks[6], vm.bracketPicks[7])}"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[11]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[11]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.bracketPicks[11], vm.bracketPicks[6], vm.bracketPicks[7])}"
 							>
 							<div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[11]]}}"></div> {{vm.bracketPicks[11]}}<span class="score">&nbsp;</span></li>
 						</ul>
@@ -258,16 +258,20 @@
 							<li 
 								class="team team-top" 
 								ng-click="vm.makeBracketPick(14, vm.consOne)"
-								ng-style="{'pick-right': vm.bracketWinners.r8.indexOf(vm.bracketPicks[11]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.consOne) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.consOne) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
 							> <div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.consOne]}}"></div> {{vm.consOne}}<span class="score">&nbsp;</span></li>
-							<li class="team team-bottom" ng-click="vm.makeBracketPick(14, vm.consTwo)"><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.consTwo]}}"></div> {{vm.consTwo}}<span
+							<li 
+								class="team team-bottom" 
+								ng-click="vm.makeBracketPick(14, vm.consTwo)"
+								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.consTwo) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.consTwo) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
+							><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.consTwo]}}"></div> {{vm.consTwo}}<span
 									class="score">&nbsp;</span></li>
 						</ul>
 						<ul class="matchup">
 							<li 
 								class="team team-top"
 								style="color: #b36700"
-								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.bracketPicks[14]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.consTwo, vm.bracketPicks[10], vm.bracketPicks[11])}"
+								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.bracketPicks[14]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[14]) !== -1, 'bracket-mismatch': vm.bracketMismatch(vm.consTwo, vm.bracketPicks[10], vm.bracketPicks[11])}"
 							><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[14]]}}"></div>{{vm.bracketPicks[14]}}<span class="score">&nbsp;</span>
 							</li>
 							<li class="cons-label" >3RD PLACE<span class="score">&nbsp;</span></li>
@@ -281,13 +285,13 @@
 							<li 
 								class="team team-top" 
 								ng-click="vm.makeBracketPick(15, vm.bracketPicks[12])"
-								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.bracketPicks[12]) !== -1}"
+								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.bracketPicks[12]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[12]) !== -1}"
 								><b><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[12]]}}"></div>{{vm.bracketPicks[12]}}</b><span
 									class="score">&nbsp;</span></li>
 							<li 
 								class="team team-bottom" 
 								ng-click="vm.makeBracketPick(15, vm.bracketPicks[13])"
-								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.user.bracketSelections[0].picks[13]) !== -1}"
+								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.user.bracketSelections[0].picks[13]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[13]) !== -1}"
 								><b><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[13]]}}"></div>{{vm.bracketPicks[13]}}</b><span
 									class="score">&nbsp;</span></li>
 						</ul>
@@ -295,7 +299,7 @@
 							<li 
 								class="team team-top" 
 								style="color: #a38e44"
-								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.user.bracketSelections[0].picks[15]) !== -1}"
+								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.user.bracketSelections[0].picks[15]) !== -1, 'pick-wrong': vm.eliminated.indexOf(vm.bracketPicks[15]) !== -1}"
 							><b><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[15]]}}"></div>{{vm.bracketPicks[15]}}</b><span class="score">&nbsp;</span></li>
 							<li class="champ-label"><b>CHAMPION</b><span class="score">&nbsp;</span></li>
 						</ul>
