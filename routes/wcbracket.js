@@ -150,7 +150,10 @@ router.get('/advancing/:season', async (req, res, next) => {
     final: true
   }).orderBy('matchtime');
 
-  const bracketLosers = [];
+  // const bracketLosers = [];
+  // const eliminatedRound16 = [];
+  // const eliminatedRound8 = [];
+  // const eliminatedRound4 = [];
 
   const bracketWinnersObj = {
     'r16': [],
@@ -160,23 +163,36 @@ router.get('/advancing/:season', async (req, res, next) => {
     'champ': []
   };
 
+  const bracketLosersObj = {
+    'r16': [],
+    'r8': [],
+    'r4': [],
+    'cons': [],
+    'champ': []
+  };
+
   for (var i = 0; i < bracketResults.length; i++) {
-    bracketLosers.push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team)
+    // bracketLosers.push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team)
     if (i<8) {
       bracketWinnersObj['r16'].push(bracketResults[i].winner);
+      bracketLosersObj['r16'].push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team);
     } else if (i>7 && i<12) {
       bracketWinnersObj['r8'].push(bracketResults[i].winner);
+      bracketLosersObj['r8'].push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team);
     } else if (i>11 && i<14) {
       bracketWinnersObj['r4'].push(bracketResults[i].winner);
+      bracketLosersObj['r4'].push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team);
     } else if (i == 14) {
       bracketWinnersObj['cons'].push(bracketResults[i].winner);
+      bracketLosersObj['cons'].push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team);
     } else if (i == 15) {
       bracketWinnersObj['champ'].push(bracketResults[i].winner);
+      bracketLosersObj['champ'].push(bracketResults[i].winner === bracketResults[i].home_team ? bracketResults[i].away_team : bracketResults[i].home_team);
     };
   };
 
-  const eliminated = eliminatedGroup.concat(bracketLosers);
-  res.json({advancing, eliminated, bracketWinnersObj});
+  // const eliminated = eliminatedGroup.concat(bracketLosers);
+  res.json({advancing, eliminatedGroup, bracketLosersObj, bracketWinnersObj});
 })
 
 router.get('/flags', function(req, res, next){
