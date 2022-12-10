@@ -258,12 +258,12 @@
 							<li 
 								class="team team-top" 
 								ng-click="vm.makeBracketPick(14, vm.consOne)"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.consOne) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r16.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r8.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r4.indexOf(vm.consOne) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
+								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.consOne) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r16.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r8.indexOf(vm.consOne) !== -1 || vm.bracketLosers.r4.indexOf(vm.consOne) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
 							> <div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.consOne]}}"></div> {{vm.consOne}}<span class="score">&nbsp;</span></li>
 							<li 
 								class="team team-bottom" 
 								ng-click="vm.makeBracketPick(14, vm.consTwo)"
-								ng-class="{'pick-right': vm.bracketWinners.r8.indexOf(vm.consTwo) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r16.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r8.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r4.indexOf(vm.consTwo) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
+								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.consTwo) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r16.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r8.indexOf(vm.consTwo) !== -1 || vm.bracketLosers.r4.indexOf(vm.consTwo) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consOne, vm.bracketPicks[8], vm.bracketPicks[9])}"
 							><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.consTwo]}}"></div> {{vm.consTwo}}<span
 									class="score">&nbsp;</span></li>
 						</ul>
@@ -271,7 +271,7 @@
 							<li 
 								class="team team-top"
 								style="color: #b36700"
-								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.bracketPicks[14]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.cons.indexOf(vm.bracketPicks[14]) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consTwo, vm.bracketPicks[10], vm.bracketPicks[11])}"
+								ng-class="{'pick-right': vm.bracketWinners.cons.indexOf(vm.bracketPicks[14]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[14]) !== -1 || vm.bracketLosers.cons.indexOf(vm.bracketPicks[14]) !== -1), 'bracket-mismatch': vm.bracketMismatch(vm.consTwo, vm.bracketPicks[10], vm.bracketPicks[11])}"
 							><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[14]]}}"></div>{{vm.bracketPicks[14]}}<span class="score">&nbsp;</span>
 							</li>
 							<li class="cons-label" >3RD PLACE<span class="score">&nbsp;</span></li>
