@@ -162,7 +162,8 @@ function WCBracketController ($scope, $state, $stateParams, authService, alaServ
     WCBracketService.getAdvancing($scope.vm.activeSeason).then(function(res){
       console.log('res is ', res);
       $scope.vm.advancing = res.advancing;
-      $scope.vm.eliminated = res.eliminated;
+      $scope.vm.eliminatedGroup = res.eliminatedGroup;
+      $scope.vm.bracketLosers = res.bracketLosersObj;
       $scope.vm.bracketWinners = res.bracketWinnersObj;
     })
   };
