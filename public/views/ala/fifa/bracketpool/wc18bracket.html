@@ -15,7 +15,6 @@
       <div ng-if="vm.viewingOwnPicks" class="col-xs-6 center-align">
 				<button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
       	<button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime}">CLEAR PICKS</button>
-        <!-- <button ng-click="vm.saveGroupPicks()" class="center-align btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button> -->
         <div ng-if="!vm.inTime" style="color: #6a1c27;"><i>Selections are now locked for {{vm.activeSeason}}.</i></div>
       </div>
       <div ng-if="!vm.viewingOwnPicks" class="col-xs-6 center-align">
@@ -30,22 +29,12 @@
     </div>
     <div class="col-xs-3">
       <select ng-if="!vm.inTime" class="form-control" name="userSelect" ng-change="vm.userChange(vm.selectedUser, 'bracket')" ng-model="vm.selectedUser">
-        <!-- <option value="">(select a user)</option> -->
         <option ng-repeat="user in vm.users" value="{{user.username}}"> {{user.username}} </option>
       </select>
       <div ng-if="!vm.inTime" style="color: #6599cc; margin-left: 30%"><i>View Another Entry</i></div>
     </div>
   </div>
 	
-	<!-- <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 text-center">
-      <button ng-click="vm.saveBracketPicks()" class="btn btn-lg btn-primary" ng-class="{disabled: !vm.inTime}">SAVE PICKS</button>
-      <button ng-click="vm.clearBracketPicks()" class="btn btn-lg btn-danger" ng-class="{disabled: !vm.inTime}">CLEAR PICKS</button>
-    </div>
-  </div> -->
-
-
-	<!-- <div ng-if="!vm.inTime" class="row" style="display:flex; justify-content: center; color: #6a1c27"><i>Selections are now locked for {{vm.activeSeason}}.</i></div> -->
 	<div class="row">
 		<section id="bracket">
 			<div class="container">
@@ -291,7 +280,7 @@
 							<li 
 								class="team team-bottom" 
 								ng-click="vm.makeBracketPick(15, vm.bracketPicks[13])"
-								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.user.bracketSelections[0].picks[13]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[13]) !== -1)}"
+								ng-class="{'pick-right': vm.bracketWinners.r4.indexOf(vm.bracketPicks[13]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[13]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[13]) !== -1)}"
 								><b><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[13]]}}"></div>{{vm.bracketPicks[13]}}</b><span
 									class="score">&nbsp;</span></li>
 						</ul>
@@ -299,7 +288,7 @@
 							<li 
 								class="team team-top" 
 								style="color: #a38e44"
-								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.user.bracketSelections[0].picks[15]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.champ.indexOf(vm.bracketPicks[15]) !== -1)}"
+								ng-class="{'pick-right': vm.bracketWinners.champ.indexOf(vm.bracketPicks[15]) !== -1, 'pick-wrong': (vm.eliminatedGroup.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r16.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r8.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.r4.indexOf(vm.bracketPicks[15]) !== -1 || vm.bracketLosers.champ.indexOf(vm.bracketPicks[15]) !== -1)}"
 							><b><div class="flag-cont" style="margin-right: 3px"><img class="flag" src="{{vm.flags[vm.bracketPicks[15]]}}"></div>{{vm.bracketPicks[15]}}</b><span class="score">&nbsp;</span></li>
 							<li class="champ-label"><b>CHAMPION</b><span class="score">&nbsp;</span></li>
 						</ul>
