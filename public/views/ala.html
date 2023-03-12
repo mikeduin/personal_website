@@ -38,6 +38,14 @@
   <ul>
     <!-- <li class="game-header">- THE GAMES -</li> -->
     <li class="disclaimer"><i>ALA games are played for entertainment purposes only. Noted dollar amounts are theoretical and used only as a vehicle for scorekeeping.</i></li>
+    <li ng-click="vm.menuDisplay('showMadness')" style="border-top: none"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.madness')}"> NCAA March Madness </a> </li>
+    <ul ng-class="{slideDown: showMadness}" class="nav-slide">
+      <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.details"> Game Details </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.rankings"> All-Time Rankings </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.podium"> The Podium </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.yoy"> Prize Progression </a> </li>
+      <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.records"> Game Records </a> </li>
+    </ul>
     <li ng-click="vm.menuDisplay('showFifa')"> <img src="images/soccer.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.fifa')}"> FIFA World Cup </a> </li>
     <ul ng-class="{slideDown: showFifa}" class="nav-slide">
       <li class="col-xs-offset-2 submenu" style="margin-top: -1.3vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.details"> Game Details </a> </li>
@@ -46,14 +54,6 @@
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.btb"> Battle the Bookies </a> </li>
       <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.fifa.bracket"> Bracket Pool </a> </li>
     </ul>
-    <li ng-click="vm.menuDisplay('showMadness')" style="border-top: none"> <img src="images/basketball.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.madness')}"> NCAA March Madness </a> </li>
-      <ul ng-class="{slideDown: showMadness}" class="nav-slide">
-        <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.details"> Game Details </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.rankings"> All-Time Rankings </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.podium"> The Podium </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.yoy"> Prize Progression </a> </li>
-        <li class="col-xs-offset-2 submenu" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.madness.records"> Game Records </a> </li>
-      </ul>
     <li ng-click="vm.menuDisplay('showsurvivorseries')"> <img src="images/survivor_crosshair.jpg"/> <a ng-class="{'activeGame': $state.includes('home.ala.survivorseries')}"> Survivor Series </a> </li>
     <ul ng-class="{slideDown: showsurvivorseries}" class="nav-slide">
       <li class="col-xs-offset-2 submenu" style="margin-top: -0.8vw" ng-click="vm.gotoId('alaTop')"> <a class="gamepage" ui-sref="home.ala.survivorseries.details"> Game Details </a> </li>
