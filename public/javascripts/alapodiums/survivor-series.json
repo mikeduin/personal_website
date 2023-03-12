@@ -1,5 +1,19 @@
 [
   {
+    "season": "MLB 2022",
+    "first_team": "Dave Shore",
+    "first_owner": "$1343",
+    "second_team": "Scott Venn",
+    "second_owner": "$671"
+  },
+  {
+    "season": "NBA 2021",
+    "first_team": "Matt Ferris (t-1st)",
+    "first_owner": "$1540",
+    "second_team": "Scott Venn (t-1st)",
+    "second_owner": "$1540"
+  },
+  {
     "season": "MLB 2021",
     "first_team": "Scott Venn (t-1st)",
     "first_owner": "$1285",

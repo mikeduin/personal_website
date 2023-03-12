@@ -1,7 +1,7 @@
-var express = require('express');
+const express = require('express');
 const { where } = require('../db/knex');
-var router = express.Router();
-var knex = require('../db/knex')
+const router = express.Router();
+const knex = require('../db/knex')
 
 function WCBracketEntries () {return knex('wc18bracket')};
 function Users () {return knex('users')};
@@ -19,22 +19,22 @@ function Results() {return knex('results')};
 
 // Pluck user names and emails  
 
-// (async () => {
-//   const brackets = await WCBracketEntries().where({season: 2022});
-//   const userEmails = [];
-//   const userNames = [];
-//   brackets.forEach(async (bracket, idx) => {
-//     const users= await Users().where({username: bracket.username}).select('email', 'nameFirst', 'nameLast');
-//     users.forEach(user => {
-//       userEmails.push(user.email);
-//       userNames.push(`${user.nameFirst} ${user.nameLast}`)
-//     })
-//     if (idx === brackets.length - 1) {
-//       console.log(userEmails);
-//       console.log(userNames);
-//     }
-//   })
-// })
+(async () => {
+  const brackets = await WCBracketEntries().where({season: 2022});
+  const userEmails = [];
+  const userNames = [];
+  brackets.forEach(async (bracket, idx) => {
+    const users= await Users().where({username: bracket.username}).select('email', 'nameFirst', 'nameLast');
+    users.forEach(user => {
+      userEmails.push(user.email);
+      userNames.push(`${user.nameFirst} ${user.nameLast}`)
+    })
+    if (idx === brackets.length - 1) {
+      console.log(userEmails);
+      console.log(userNames);
+    }
+  })
+})()
 
 // Warn if overriding existing method
 if(Array.prototype.equals)

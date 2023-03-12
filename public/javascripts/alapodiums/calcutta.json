@@ -1,9 +1,27 @@
 [
   {
+    "season": "'22 NFL",
+    "first_team": "Eric Cole",
+    "first_owner": "+$279",
+    "second_team": "Bryan Spangler",
+    "second_owner": "+$272",
+    "third_team": "Marc Courtmanch",
+    "third_owner": "+$242"
+  },
+  {
+    "season": "'22 World Cup",
+    "first_team": "Mike Duin",
+    "first_owner": "+$434",
+    "second_team": "Brewster Stanislaw",
+    "second_owner": "+$249",
+    "third_team": "Austin Drew",
+    "third_owner": "+$114"
+  },
+  {
     "season": "'22 Masters",
     "first_team": "Eric Cole",
     "first_owner": "+$1298",
-    "second_team": "Kevin Simshausers",
+    "second_team": "Kevin Simshauser",
     "second_owner": "+$376",
     "third_team": "Brett Fitti-Hafer",
     "third_owner": "+$367"

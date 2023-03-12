@@ -1,5 +1,14 @@
 [
   {
+    "season": "2022",
+    "first_team": "Patrick Keating",
+    "first_owner": "$1247",
+    "second_team": "Matt Keating",
+    "second_owner": "$350",
+    "third_team": "Drew Juhnke",
+    "third_owner": "$122"
+  },
+  {
     "season": "2018",
     "first_team": "Mike Duin",
     "first_owner": "$694",

@@ -1,5 +1,14 @@
 [
   {
+    "season": "2022-23",
+    "first_team": "Corey Uhalde",
+    "first_owner": "$1,209",
+    "second_team": "Joe Buchholz",
+    "second_owner": "$259",
+    "third_team": "Dave Cardino",
+    "third_owner": "$119"
+  },
+  {
     "season": "2021-22",
     "first_team": "Greg Meier",
     "first_owner": "$636",
