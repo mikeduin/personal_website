@@ -253,7 +253,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       $scope.vm.champions22 = results;
     })
   };
-  $scope.getChampions21();
+  $scope.getChampions22();
 
   $scope.vm.titles = {};
   $scope.getTitles = function() {
@@ -583,7 +583,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+      'values': [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
       'offset-y': 4,
     },
     'scaleY':{
@@ -599,7 +599,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [675, 810, 780, 930, 1120, 890, 1840, 2430, 1690, 1790, 1650, 1460, 2130],
+        "values": [675, 810, 780, 930, 1120, 890, 1840, 2430, 1690, 1790, 1650, 1460, 2130, 3140],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -638,7 +638,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
       'offset-y': 4,
     },
     'scaleY':{
@@ -654,7 +654,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760, 2224, 1110, 1870],
+        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760, 2224, 1110, 1870, 2880],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -920,7 +920,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+      'values': [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
       'offset-y': 4,
     },
     'scaleY':{
@@ -936,7 +936,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [1620, 3600, 5100, 4890, 5580, 6634, 8330, 8921],
+        "values": [1620, 3600, 5100, 4890, 5580, 6634, 8330, 8921, 12682],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -975,7 +975,8 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'labels': ["'18 March Madness", "'18 Masters", "'18 NBA Playoffs", "'18 World Cup", "'18 NCAA Football", "'18 NFL", "'19 March Madness [SEL]", "'19 March Madness [PUB]", "'19 Masters", "'19 US Open", "'19 NFL", "'20 Masters", "'21 March Madness", "'21 Masters", "'21 PGA Champ", "'21 US Open", "'21 British Open", "'21 NFL", "'22 March Madness", "'22 Masters"],
+      'labels': ["'18 March Madness", "'18 Masters", "'18 NBA Playoffs", "'18 World Cup", "'18 NCAA Football", "'18 NFL", "'19 March Madness [SEL]", "'19 March Madness [PUB]", "'19 Masters", "'19 US Open", "'19 NFL", "'20 Masters", "'21 March Madness", "'21 Masters", 
+        "'21 PGA Champ", "'21 US Open", "'21 British Open", "'21 NFL", "'22 March Madness", "'22 Masters", "'22 World Cup", "'22 NFL"],
       'offset-y': 4,
       'max-items': 75,
       'item': {
@@ -999,7 +1000,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877, 2493, 6348, 3736, 3637, 3326, 3675, 4584, 11714, 7404],
+        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877, 2493, 6348, 3736, 3637, 3326, 3675, 4584, 11714, 7404, 3309, 3611],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1093,7 +1094,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
       'offset-y': 4,
     },
     'scaleY':{
@@ -1109,7 +1110,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960, 4275, 5550],
+        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960, 4275, 5550, 5910],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1148,7 +1149,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+      'values': [2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022],
       'offset-y': 4,
     },
     'scaleY':{
@@ -1164,7 +1165,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [100, 110, 165, 320, 600, 920, 800, 920, 1360, 1470],
+        "values": [100, 110, 165, 320, 600, 920, 800, 920, 1360, 1470, 1060, 2312],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',

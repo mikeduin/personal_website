@@ -1,5 +1,14 @@
 [
   {
+    "season": "2022",
+    "first_team": "Preston Vermeulen",
+    "first_owner": "$1617",
+    "second_team": "JP Morgan",
+    "second_owner": "$777",
+    "third_team": "Mike Duin",
+    "third_owner": "$351"
+  },
+  {
     "season": "2021",
     "first_team": "Mike Duin",
     "first_owner": "$1064",

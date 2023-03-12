@@ -1,5 +1,14 @@
 [
   {
+    "season": "2022",
+    "first_team": "Micah Gantman",
+    "first_owner": "$1218",
+    "second_team": "Mike Powers",
+    "second_owner": "$650",
+    "third_team": "Dave Bergmann",
+    "third_owner": "$379"
+  },
+  {
     "season": "2018",
     "first_team": "Jeff Stewart",
     "first_owner": "$600",

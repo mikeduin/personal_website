@@ -51,6 +51,35 @@
     </tbody>
   </table>
   <div class="title-year">
+    - 2022 -
+  </div>
+  <table class="col-xs-12 hof-table">
+    <thead>
+      <tr>
+        <th class="text-center podium"> Game </th>
+        <th class="text-center podium"> Entrant </th>
+        <th class="text-center podium"> Prize </th>
+        <th class="text-center podium"> Summary </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="records in vm.champions22" class="podium">
+        <td class="text-center podium table-pad">
+          <team class="game-name"> {{records.game}} </team>
+        </td>
+        <td class="text-center table-pad">
+          <team class="entrant"> {{records.entrant}} </team>
+        </td>
+        <td class="podium text-center">
+          <team class="black"> {{records.prize}}</team>
+        </td>
+        <td class="podium table-pad">
+          <team class="champ-summary" ng-bind-html="records.summary | rawHtml"> </team>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="title-year">
     - 2021 -
   </div>
   <table class="col-xs-12 hof-table">
