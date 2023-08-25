@@ -1,5 +1,23 @@
 [
   {
+    "season": "'23 Masters",
+    "first_team": "Eric Cole",
+    "first_owner": "+$1940",
+    "second_team": "Brad Nelson",
+    "second_owner": "+$998",
+    "third_team": "Felipe Medina",
+    "third_owner": "+$400"
+  },
+  {
+    "season": "'23 March Madness",
+    "first_team": "Austin Drew",
+    "first_owner": "+$4790",
+    "second_team": "Kevin Simshauser",
+    "second_owner": "+$2761",
+    "third_team": "Ezra Pemstein",
+    "third_owner": "+$2175"
+  },
+  {
     "season": "'22 NFL",
     "first_team": "Eric Cole",
     "first_owner": "+$279",
