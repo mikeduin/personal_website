@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023",
+    "first_team": "Billy Schreyer",
+    "first_owner": "$1368",
+    "second_team": "JP Morgan",
+    "second_owner": "$1345",
+    "third_team": "Bud Thomas",
+    "third_owner": "$673"
+  },
+  {
     "season": "2022",
     "first_team": "Preston Vermeulen",
     "first_owner": "$1617",

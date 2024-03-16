@@ -1,5 +1,17 @@
 [
   {
+    "season": "MLB 2023",
+    "first_team": "Warren Lueck",
+    "first_owner": "$1935",
+    "second_team": "Matt Ferris",
+    "second_owner": "$967"
+  },
+  {
+    "season": "NBA 2022",
+    "first_team": "Mike Duin",
+    "first_owner": "$2755"
+  },
+  {
     "season": "MLB 2022",
     "first_team": "Dave Shore",
     "first_owner": "$1343",

@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023",
+    "first_team": "ShrayDay",
+    "first_owner": "Billy Schreyer",
+    "second_team": "New Age",
+    "second_owner": "Joe Nelson",
+    "third_team": "Sundays Are For Bowling",
+    "third_owner": "Fred Schreyer"
+  },
+  {
     "season": "2022",
     "first_team": "SimsSquad",
     "first_owner": "Kevin Simshauser",
