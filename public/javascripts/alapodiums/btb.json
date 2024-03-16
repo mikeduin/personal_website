@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023",
+    "first_team": "Corey Uhalde",
+    "first_owner": "$5,550",
+    "second_team": "Joe Klapper",
+    "second_owner": "$2,834",
+    "third_team": "Larry Handler",
+    "third_owner": "$776"
+  },
+  {
     "season": "2022",
     "first_team": "Brendan Hopps",
     "first_owner": "$6,261",

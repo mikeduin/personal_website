@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023",
+    "first_team": "Jason Mueller",
+    "first_owner": "$5,490",
+    "second_team": "Ezra Pemstein",
+    "second_owner": "$2,745",
+    "third_team": "Warren Lueck",
+    "third_owner": "$1,532"
+  },
+  {
     "season": "2022",
     "first_team": "Jack Powers",
     "first_owner": "$5,025",

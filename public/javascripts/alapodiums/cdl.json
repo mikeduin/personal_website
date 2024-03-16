@@ -1,6 +1,15 @@
 [
   {
-    "season": "2020-21",
+    "season": "2022-23",
+    "first_team": "Glide",
+    "first_owner": "Kyle Davis",
+    "second_team": "2009",
+    "second_owner": "Bobby Weinberger",
+    "third_team": "Willbo's Warpiggies",
+    "third_owner": "Will Marshall"
+  },
+  {
+    "season": "2021-22",
     "first_team": "The X-Factor",
     "first_owner": "Mike Duin",
     "second_team": "ShrayDay",
@@ -9,13 +18,22 @@
     "third_owner": "Dan Goldman"
   },
   {
-    "season": "2019-20",
+    "season": "2020-21",
     "first_team": "Remember Sabonis",
     "first_owner": "Brandon Seroyer",
     "second_team": "The X-Factor",
     "second_owner": "Mike Duin",
     "third_team": "2009",
     "third_owner": "Bobby Weinberger"
+  },
+  {
+    "season": "2019-20",
+    "first_team": "Willbo's Warpiggies",
+    "first_owner": "Will Marshall",
+    "second_team": "Remember Sabonis",
+    "second_owner": "Brandon Seroyer",
+    "third_team": "Red Hot & Rollin'",
+    "third_owner": "Alex Rosenbloom"
   },
   {
     "season": "2018-19",

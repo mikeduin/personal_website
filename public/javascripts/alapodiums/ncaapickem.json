@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023",
+    "first_team": "Scott Morton",
+    "first_owner": "$662",
+    "second_team": "Billy Schreyer",
+    "second_owner": "$301",
+    "third_team": "Brewster Stanislaw",
+    "third_owner": "$1374"
+  },
+  {
     "season": "2022",
     "first_team": "Brewster Stanislaw",
     "first_owner": "$1,142",
