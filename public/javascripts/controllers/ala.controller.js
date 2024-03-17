@@ -688,7 +688,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     'type':'area',
     'stacked': true,
     'title': {
-      'text':'A Level Above Prize Pools, 2002 - 2019',
+      'text':'A Level Above Prize Pools, 2002 - 2023',
       "fontFamily": "Raleway",
       'offset-y': 20
     },
