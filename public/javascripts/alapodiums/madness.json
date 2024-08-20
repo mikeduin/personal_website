@@ -1,5 +1,14 @@
 [
   {
+    "season": "2024",
+    "first_team": "Joe Pleva",
+    "first_owner": "$5,500",
+    "second_team": "Willie Kelley",
+    "second_owner": "$2,750",
+    "third_team": "Conor McAvoy",
+    "third_owner": "$1,535"
+  },
+  {
     "season": "2023",
     "first_team": "Jason Mueller",
     "first_owner": "$5,490",

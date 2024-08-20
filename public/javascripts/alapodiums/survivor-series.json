@@ -1,5 +1,17 @@
 [
   {
+    "season": "MLB 2024",
+    "first_team": "Luke Tushar",
+    "first_owner": "$2693"
+  },
+  {
+    "season": "NBA 2023",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$1758",
+    "second_team": "Mike Duin",
+    "second_owner": "$879"
+  },
+  {
     "season": "MLB 2023",
     "first_team": "Warren Lueck",
     "first_owner": "$1935",

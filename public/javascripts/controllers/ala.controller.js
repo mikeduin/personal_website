@@ -536,7 +536,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024],
       'offset-y': 4,
     },
     'scaleY':{
@@ -552,7 +552,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675, 8787, 9792, 12200, 11280, 11685, 12768],
+        "values": [660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675, 8787, 9792, 12200, 11280, 11685, 12768, 12790],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -984,7 +984,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'scaleX':{
       'labels': ["'18 March Madness", "'18 Masters", "'18 NBA Playoffs", "'18 World Cup", "'18 NCAA Football", "'18 NFL", "'19 March Madness [SEL]", "'19 March Madness [PUB]", "'19 Masters", "'19 US Open", "'19 NFL", "'20 Masters", "'21 March Madness", "'21 Masters", 
-        "'21 PGA Champ", "'21 US Open", "'21 British Open", "'21 NFL", "'22 March Madness", "'22 Masters", "'22 World Cup", "'22 NFL", "'23 March Madness", "'23 Masters", "'23 NFL"],
+        "'21 PGA Champ", "'21 US Open", "'21 British Open", "'21 NFL", "'22 March Madness", "'22 Masters", "'22 World Cup", "'22 NFL", "'23 March Madness", "'23 Masters", "'23 NFL", "'24 March Madness", "'24 Masters"],
       'offset-y': 4,
       'max-items': 75,
       'item': {
@@ -1008,7 +1008,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877, 2493, 6348, 3736, 3637, 3326, 3675, 4584, 11714, 7404, 3309, 3611, 24884, 10387, 10269],
+        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877, 2493, 6348, 3736, 3637, 3326, 3675, 4584, 11714, 7404, 3309, 3611, 24884, 10387, 10269, 36137, 15278],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',

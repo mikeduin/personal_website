@@ -1,5 +1,23 @@
 [
   {
+    "season": "'24 Masters",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "+$3221",
+    "second_team": "John Lemmer",
+    "second_owner": "+$2012",
+    "third_team": "Jay Reeder",
+    "third_owner": "+$686"
+  },
+  {
+    "season": "'24 March Madness",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "+$6355",
+    "second_team": "Felipe Medina",
+    "second_owner": "+$2168",
+    "third_team": "Bryan Spangler",
+    "third_owner": "+$1698"
+  },
+  {
     "season": "'23 NFL",
     "first_team": "John Lemmer",
     "first_owner": "+$1877",

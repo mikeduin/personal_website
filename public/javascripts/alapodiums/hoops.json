@@ -1,5 +1,14 @@
 [
   {
+    "season": "2023-24",
+    "first_team": "Willbo's Chonketty Chubs",
+    "first_owner": "Will Marshall",
+    "second_team": "APRose23",
+    "second_owner": "Alex Tulipinspring*",
+    "third_team": "Dirty Stu Ballas",
+    "third_owner": "Adam Brady / Stu Schrager"
+  },
+  {
     "season": "2022-23",
     "first_team": "Clyde Drexler #22",
     "first_owner": "Alex Tulipinspring*",
@@ -31,7 +40,7 @@
     "first_team": "Health is a Concern",
     "first_owner": "Kyle Davis",
     "second_team": "Bearly Legal",
-    "second_owner": "Alex Rosenbloom",
+    "second_owner": "Alex Tulipinspring*",
     "third_team": "The Jeffersons",
     "third_owner": "Joe Simich/Billy Schreyer"
   },
