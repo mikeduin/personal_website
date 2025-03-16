@@ -87,6 +87,12 @@ function alaService ($http) {
         return results.data;
       })
     },
+    getChampions24: function() {
+      return $http.get('javascripts/alapodiums/champions24.json')
+      .then(function(results){
+        return results.data;
+      })
+    },
     getPodiums: function() {
       return $http.get('javascripts/alapodiums/hof-podiums.json')
       .then(function(results){
