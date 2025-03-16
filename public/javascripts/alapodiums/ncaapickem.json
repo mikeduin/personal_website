@@ -1,5 +1,14 @@
 [
   {
+    "season": "2024",
+    "first_team": "Matt Keating",
+    "first_owner": "$2,027",
+    "second_team": "Brewster Stanislaw",
+    "second_owner": "$971",
+    "third_team": "Miles Powell",
+    "third_owner": "$472"
+  },
+  {
     "season": "2023",
     "first_team": "Scott Morton",
     "first_owner": "$662",
