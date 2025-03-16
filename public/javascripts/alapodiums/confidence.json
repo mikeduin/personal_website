@@ -1,5 +1,14 @@
 [
   {
+    "season": "2024",
+    "first_team": "Jason Gnich",
+    "first_owner": "$1649",
+    "second_team": "Mike Duin",
+    "second_owner": "$784",
+    "third_team": "Bud Thomas",
+    "third_owner": "$442"
+  },
+  {
     "season": "2023",
     "first_team": "Billy Schreyer",
     "first_owner": "$1368",
