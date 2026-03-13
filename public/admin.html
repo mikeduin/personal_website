@@ -211,6 +211,7 @@
             <select id="datasetType">
               <option value="podiums">Podiums</option>
               <option value="records">Records</option>
+              <option value="seasonData">Season Data</option>
             </select>
           </div>
           <div>
@@ -328,7 +329,10 @@
       }
 
       function apiBase() {
-        return state.type === 'podiums' ? '/api/podiums' : '/api/records';
+        if (state.type === 'podiums') return '/api/podiums';
+        if (state.type === 'records') return '/api/records';
+        if (state.type === 'seasonData') return '/api/season-data';
+        return '/api/podiums';
       }
 
       function deepClone(value) {
@@ -367,6 +371,14 @@
             'fifth_owner'
           ];
 
+          const preferredSet = new Set(preferred);
+          const ordered = preferred.filter(col => columns.includes(col));
+          const remaining = columns.filter(col => !preferredSet.has(col));
+          return ordered.concat(remaining);
+        }
+
+        if (state.type === 'seasonData') {
+          const preferred = ['season', 'prize_pool'];
           const preferredSet = new Set(preferred);
           const ordered = preferred.filter(col => columns.includes(col));
           const remaining = columns.filter(col => !preferredSet.has(col));
@@ -562,12 +574,20 @@
           saveButton.textContent = 'Saving...';
 
           const keyValue = el('metaKey').value.trim();
-          const payload = {
-            key: keyValue,
-            filename: (state.entries[state.selectedEntryIndex] && state.entries[state.selectedEntryIndex].filename) || (keyValue + '.json'),
-            year: el('metaYear').value.trim() ? Number(el('metaYear').value.trim()) : null,
-            data: state.workingData
-          };
+          var payload;
+          if (state.type === 'seasonData') {
+            payload = {
+              key: keyValue,
+              data: state.workingData
+            };
+          } else {
+            payload = {
+              key: keyValue,
+              filename: (state.entries[state.selectedEntryIndex] && state.entries[state.selectedEntryIndex].filename) || (keyValue + '.json'),
+              year: el('metaYear').value.trim() ? Number(el('metaYear').value.trim()) : null,
+              data: state.workingData
+            };
+          }
 
           if (!payload.key) {
             throw new Error('Key is required before saving.');
@@ -591,15 +611,23 @@
         const key = prompt('Key (example: madness or football-records)');
         if (!key) return;
         const yearRaw = prompt('Year (optional)');
-        const rowTemplate = state.columns.length ? state.columns : ['season'];
+        const rowTemplate = state.columns.length ? state.columns : (state.type === 'seasonData' ? ['season', 'prize_pool'] : ['season']);
         const newRow = {};
         rowTemplate.forEach(c => { newRow[c] = ''; });
-        const payload = {
-          key: key.trim(),
-          filename: key.trim() + '.json',
-          year: yearRaw && yearRaw.trim() ? Number(yearRaw.trim()) : null,
-          data: [newRow]
-        };
+        var payload;
+        if (state.type === 'seasonData') {
+          payload = {
+            key: key.trim(),
+            data: [newRow]
+          };
+        } else {
+          payload = {
+            key: key.trim(),
+            filename: key.trim() + '.json',
+            year: yearRaw && yearRaw.trim() ? Number(yearRaw.trim()) : null,
+            data: [newRow]
+          };
+        }
 
         try {
           await api(apiBase(), {

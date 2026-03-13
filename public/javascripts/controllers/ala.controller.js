@@ -544,7 +544,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -560,7 +560,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675, 8787, 9792, 12200, 11280, 11685, 12768, 12790],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -599,7 +599,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -615,7 +615,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [675, 810, 780, 930, 1120, 890, 1840, 2430, 1690, 1790, 1650, 1460, 2130, 3140, 3915, 3205],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -654,7 +654,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -670,7 +670,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760, 2224, 1110, 1870, 2880, 3542, 3823],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -793,105 +793,120 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
         // },
         {
           text: 'March Madness',
-          values: [0, 0, 0, 0, 0, 0, 0, 660, 1134, 1510, 1680, 2110, 3540, 5423, 6511, 6675, 8787, 9792, 12200, 11280, 11685, 12768, 12790], // thru 24
+          seasonDataKey: 'madness-prize-pools',
+          values: [],
           backgroundColor1: '#BEE9E8',
           backgroundColor2: '#BEE9E8',
           lineColor: '#BEE9E8'
         },
         {
           text: "NFL Battle the Bookies",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1620, 3600, 5100, 4890, 5580, 6634, 8330, 8921, 12682, 11551, 10412], // thru 24
+          seasonDataKey: 'btb-prize-pools',
+          values: [],
           backgroundColor1: '#E7EFC5',
           backgroundColor2: '#E7EFC5',
           lineColor: '#E7EFC5'
         },
         {
           text: 'NFL Survivor',
-          values: [0, 0, 0, 0, 0, 0, 1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960, 4275, 5550, 5910, 6615, 8146], // thru 24
+          seasonDataKey: 'survivor-prize-pools',
+          values: [],
           backgroundColor1: '#5FA8D3',
           backgroundColor2: '#5FA8D3',
           lineColor: '#5FA8D3'
         },
         {
           text: 'Fantasy NFL',
-          values: [0, 0, 0, 0, 0, 0, 1707, 1782, 1980, 1980, 1980, 1980, 2035, 4715, 5394, 4900, 5920, 6314, 6640, 7210, 7180, 7245, 7835], // thru 24
+          seasonDataKey: 'growth-fantasy-nfl-prize-pools',
+          values: [],
           backgroundColor1: '#CAE9FF',
           backgroundColor2: '#CAE9FF',
           lineColor: '#CAE9FF'
         },
         {
           text: 'Fantasy MLB',
-          values: [200, 180, 240, 0, 0, 240, 693, 613, 645, 590, 590, 550, 1790, 1735, 1870, 1688, 1508, 1960, 1000, 2895, 2453, 2290, 2290], // thru 24
+          seasonDataKey: 'growth-fantasy-mlb-prize-pools',
+          values: [],
           backgroundColor1: '#62B6CB',
           backgroundColor2: '#62B6CB',
           lineColor: '#62B6CB'
         },
         {
           text: 'Fantasy NBA',
-          values: [0, 420, 530, 530, 510, 560, 660, 627, 660, 660, 660, 660, 2048, 2091, 1967, 2024, 2068, 1980, 2025, 2100, 2100, 2100, 2100], // thru 24
+          seasonDataKey: 'growth-fantasy-nba-prize-pools',
+          values: [],
           backgroundColor1: '#BFD7B5',
           backgroundColor2: '#BFD7B5',
           lineColor: '#BFD7B5'
         },
         {
           text: 'NFL Confidence',
-          values: [0, 0, 0, 0, 0, 0, 0, 675, 810, 780, 930, 1120, 890, 1840, 2430, 1690, 1790, 1650, 1460, 2130, 3140, 3915, 3205], // thru 24
+          seasonDataKey: 'confidence-prize-pools',
+          values: [],
           backgroundColor1: '#EC91D8',
           backgroundColor2: '#EC91D8',
           lineColor: '#EC91D8'
         },
         {
           text: "NCAA Pick'em",
-          values: [0, 0, 0, 0, 0, 0, 550, 1170, 1050, 1080, 1080, 1090, 1150, 1550, 1650, 1970, 1760, 2224, 1110, 1870, 2880, 3542, 3823], // thru 24
+          seasonDataKey: 'ncaa-pickem-prize-pools',
+          values: [],
           backgroundColor1: '#FFAAEA',
           backgroundColor2: '#FFAAEA',
           lineColor: '#FFAAEA'
         },
         {
           text: "NCAA Bowl Pick'em",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 100, 110, 0, 165, 320, 600, 920, 800, 920, 1360, 1470, 1060, 2312, 3050, 3163], // thru 24
+          seasonDataKey: 'bowl-pickem-prize-pools',
+          values: [],
           backgroundColor1: '#FFBEEF',
           backgroundColor2: '#FFBEEF',
           lineColor: '#FFBEEF'
         },
         {
           text: "NBA CDL",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3470, 3470, 3470, 3470, 3470, 3470, 3470, 3470, 3470], // thru 24
+          seasonDataKey: 'growth-nba-cdl-prize-pools',
+          values: [],
           backgroundColor1: '#9CADCE',
           backgroundColor2: '#9CADCE',
           lineColor: '#9CADCE'
         },
         {
           text: "NBA Survivor",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3686, 3924, 3083, 2755, 2636, 3510], // thru 24 -- 3510 estimated
+          seasonDataKey: 'growth-nba-survivor-prize-pools',
+          values: [],
           backgroundColor1: '#CEBACF',
           backgroundColor2: '#CEBACF',
           lineColor: '#CEBACF'
         },
         {
           text: "World Cup",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3610, 0, 0, 0, 4960, 0, 0, 0, 6359, 0, 0], // thru 24
+          seasonDataKey: 'growth-world-cup-prize-pools',
+          values: [],
           backgroundColor1: '#FFBEEF',
           backgroundColor2: '#FFBEEF',
           lineColor: '#FFBEEF'
         },
         {
           text: "NBA All-Star Spectacular",
-          values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 280, 0, 0, 0, 0, 0, 0, 0], // thru 24
+          seasonDataKey: 'growth-nba-allstar-prize-pools',
+          values: [],
           backgroundColor1: '#5DD39E',
           backgroundColor2: '#5DD39E',
           lineColor: '#5DD39E'
         },
         {
           text: "NBA Playoffs",
-          values: [0, 0, 0, 0, 0, 0, 243, 217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // thru 24
+          seasonDataKey: 'growth-nba-playoffs-prize-pools',
+          values: [],
           backgroundColor1: '#E9D3D0',
           backgroundColor2: '#E9D3D0',
           lineColor: '#E9D3D0'
         },
         {
           text: "PGA Majors",
-          values: [0, 0, 0, 0, 0, 0, 189, 294, 240, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // thru 24
+          seasonDataKey: 'growth-pga-majors-prize-pools',
+          values: [],
           backgroundColor1: '#BCE784',
           backgroundColor2: '#BCE784',
           lineColor: '#BCE784'
@@ -936,7 +951,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -952,7 +967,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [1620, 3600, 5100, 4890, 5580, 6634, 8330, 8921, 12682, 11551, 10412],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -991,8 +1006,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'labels': ["'18 March Madness", "'18 Masters", "'18 NBA Playoffs", "'18 World Cup", "'18 NCAA Football", "'18 NFL", "'19 March Madness [SEL]", "'19 March Madness [PUB]", "'19 Masters", "'19 US Open", "'19 NFL", "'20 Masters", "'21 March Madness", "'21 Masters", 
-        "'21 PGA Champ", "'21 US Open", "'21 British Open", "'21 NFL", "'22 March Madness", "'22 Masters", "'22 World Cup", "'22 NFL", "'23 March Madness", "'23 Masters", "'23 NFL", "'24 March Madness", "'24 Masters", "'24 NFL"],
+      'labels': [],
       'offset-y': 4,
       'max-items': 75,
       'item': {
@@ -1016,7 +1030,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [3243, 2735, 2228, 2958, 2867, 1930, 3840, 4323, 1753, 1557, 1877, 2493, 6348, 3736, 3637, 3326, 3675, 4584, 11714, 7404, 3309, 3611, 24884, 10387, 10269, 36137, 15278, 9111],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1055,7 +1069,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2019],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -1071,7 +1085,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [3686],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1110,7 +1124,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -1126,7 +1140,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [1155, 1870, 1870, 2750, 3905, 4180, 4620, 4950, 3880, 3800, 4275, 3960, 4275, 5550, 5910, 6615, 8146],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1165,7 +1179,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     },
     'scaleX':{
-      'values': [2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024],
+      'values': [], // pulled from DB
       'offset-y': 4,
     },
     'scaleY':{
@@ -1181,7 +1195,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     },
     'series':[
       {
-        "values": [100, 110, 165, 320, 600, 920, 800, 920, 1360, 1470, 1060, 2312, 3050, 3163],
+        "values": [],
         "type": 'line',
         "line-color": "#DC5623",
         'legend-text': 'Prize $',
@@ -1202,5 +1216,91 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }
     ]
   }
+
+  function hydrateSeasonData(vmKey, seasonDataKey) {
+    return alaService.getSeasonData(seasonDataKey).then(function(rows){
+      if (!Array.isArray(rows) || !rows.length) return;
+      var chart = $scope.vm[vmKey];
+      if (!chart || !chart.series || !chart.series.length) return;
+
+      var xValues = rows.map(function(row){ return row.season; });
+      var yValues = rows.map(function(row){ return row.prize_pool; });
+      var useLabels = xValues.some(function(v){ return isNaN(Number(v)); });
+
+      if (!chart.scaleX) chart.scaleX = {};
+      delete chart.scaleX.values;
+      delete chart.scaleX.labels;
+      chart.scaleX[useLabels ? 'labels' : 'values'] = xValues;
+      chart.series[0].values = yValues;
+    });
+  }
+
+  function hydrateGrowthGraph() {
+    var chart = $scope.vm.growthGraph;
+    if (!chart || !Array.isArray(chart.series) || !chart.series.length) return;
+
+    var sourceSeries = chart.series.filter(function(series) {
+      return !!series.seasonDataKey;
+    });
+    if (!sourceSeries.length) return;
+
+    Promise.all(sourceSeries.map(function(series) {
+      return alaService.getSeasonData(series.seasonDataKey)
+      .then(function(rows) {
+        return { series: series, rows: Array.isArray(rows) ? rows : [] };
+      })
+      .catch(function() {
+        return { series: series, rows: [] };
+      });
+    })).then(function(results) {
+      var years = [];
+
+      results.forEach(function(result) {
+        result.rows.forEach(function(row) {
+          var numericYear = Number(row.season);
+          if (!isNaN(numericYear)) years.push(numericYear);
+        });
+      });
+
+      if (!years.length) return;
+
+      years.sort(function(a, b) { return a - b; });
+      var xValues = years.filter(function(year, index) {
+        return index === 0 || year !== years[index - 1];
+      });
+
+      chart.scaleX.values = xValues;
+
+      chart.series = results.map(function(result) {
+        var pointsByYear = {};
+        result.rows.forEach(function(row) {
+          var y = Number(row.season);
+          var value = Number(row.prize_pool || 0);
+          if (!isNaN(y)) pointsByYear[y] = value;
+        });
+
+        var nextSeries = Object.assign({}, result.series);
+        delete nextSeries.seasonDataKey;
+        nextSeries.values = xValues.map(function(year) {
+          return pointsByYear[year] || 0;
+        });
+        return nextSeries;
+      });
+
+      if (chart.title && xValues.length) {
+        chart.title.text = 'A Level Above Prize Pools, ' + xValues[0] + ' - ' + xValues[xValues.length - 1];
+      }
+    });
+  }
+
+  hydrateSeasonData('madnessData', 'madness-prize-pools');
+  hydrateSeasonData('confidenceData', 'confidence-prize-pools');
+  hydrateSeasonData('ncaaPickEmData', 'ncaa-pickem-prize-pools');
+  hydrateSeasonData('btbData', 'btb-prize-pools');
+  hydrateSeasonData('calcuttaData', 'calcutta-prize-pools');
+  hydrateSeasonData('survivorseriesData', 'survivor-series-prize-pools');
+  hydrateSeasonData('survivorData', 'survivor-prize-pools');
+  hydrateSeasonData('bowlPickEmData', 'bowl-pickem-prize-pools');
+  hydrateGrowthGraph();
 
 }

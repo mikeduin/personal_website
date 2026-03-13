@@ -5,10 +5,15 @@ exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex('podiums').del();
 
-  const dir = path.join(process.cwd(), 'public', 'javascripts', 'alapodiums');
+  let dir = path.join(process.cwd(), 'public', 'javascripts', 'alapodiums');
   if (!fs.existsSync(dir)) {
-    console.warn('alapodiums folder not found at', dir);
-    return;
+    const archiveDir = path.join(process.cwd(), 'archive', 'alapodiums');
+    if (fs.existsSync(archiveDir)) {
+      dir = archiveDir;
+    } else {
+      console.warn('alapodiums folder not found at', dir, 'or', archiveDir);
+      return;
+    }
   }
 
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));

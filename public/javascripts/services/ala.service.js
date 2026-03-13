@@ -57,6 +57,17 @@ function alaService ($http) {
         return d;
       })
     },
+    getSeasonData: function(key) {
+      return $http.get('/api/season-data/' + key)
+      .then(function(results){
+        var d = results.data;
+        if (Array.isArray(d)) {
+          if (d.length === 1) return d[0].data;
+          return d.map(function(r){ return r.data; });
+        }
+        return d;
+      })
+    },
     getChampions15: function() { return this.getPodium('champions15'); },
     getChampions16: function() { return this.getPodium('champions16'); },
     getChampions17: function() { return this.getPodium('champions17'); },

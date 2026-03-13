@@ -3,6 +3,7 @@ var router = express.Router();
 var knex = require('../db/knex');
 var Podiums = require('../models/Podiums');
 var Records = require('../models/Records');
+var SeasonData = require('../models/SeasonData');
 
 // simple admin check: allow writes when NODE_ENV !== 'production' OR when
 // request includes matching x-admin-token header equal to process.env.ADMIN_TOKEN
@@ -119,6 +120,46 @@ router.delete('/records/:id', ensureAdmin, async function(req, res, next){
   try {
     const id = req.params.id;
     await Records.deleteById(id);
+    res.json({ success: true });
+  } catch (err) { next(err); }
+});
+
+// GET /api/season-data -> list
+router.get('/season-data', async function(req, res, next){
+  try {
+    const keys = await SeasonData.listKeys();
+    res.json(keys);
+  } catch (err) { next(err); }
+});
+
+// GET /api/season-data/:key -> rows
+router.get('/season-data/:key', async function(req, res, next){
+  try {
+    const rows = await SeasonData.findByKey(req.params.key);
+    res.json(rows.map(r => ({ id: r.id, key: r.key, data: r.data })));
+  } catch (err) { next(err); }
+});
+
+// write endpoints for season-data
+router.post('/season-data', ensureAdmin, async function(req, res, next){
+  try {
+    const payload = { key: req.body.key, data: req.body.data };
+    const row = await SeasonData.create(payload);
+    res.json(row);
+  } catch (err) { next(err); }
+});
+
+router.put('/season-data/:id', ensureAdmin, async function(req, res, next){
+  try {
+    const payload = { key: req.body.key, data: req.body.data };
+    const row = await SeasonData.updateById(req.params.id, payload);
+    res.json(row);
+  } catch (err) { next(err); }
+});
+
+router.delete('/season-data/:id', ensureAdmin, async function(req, res, next){
+  try {
+    await SeasonData.deleteById(req.params.id);
     res.json({ success: true });
   } catch (err) { next(err); }
 });
