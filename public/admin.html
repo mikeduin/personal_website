@@ -1,0 +1,711 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Super Admin Portal</title>
+    <style>
+      :root {
+        --bg: #f7f8fb;
+        --panel: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --accent: #2563eb;
+        --accent-dark: #1d4ed8;
+        --danger: #dc2626;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 42%);
+        color: var(--text);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      .wrap { max-width: 1300px; margin: 0 auto; padding: 22px; }
+      .portal-header {
+        background: var(--panel);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+      .portal-header-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 10px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .portal-brand {
+        font-weight: 800;
+        color: #111827;
+        text-decoration: none;
+      }
+      .portal-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .portal-link {
+        text-decoration: none;
+        color: #374151;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+      .portal-link.active {
+        border-color: #93c5fd;
+        background: #eff6ff;
+        color: #1d4ed8;
+      }
+      .topbar {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+        margin-bottom: 16px;
+      }
+      .title h1 { margin: 0; font-size: 20px; }
+      .title p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+      .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+      .tab-btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        cursor: pointer;
+        color: #374151;
+      }
+      .tab-btn.active {
+        background: #dbeafe;
+        border-color: #bfdbfe;
+        color: #1d4ed8;
+        font-weight: 600;
+      }
+      .tab-panel { display: none; }
+      .tab-panel.active { display: block; }
+      .layout { display: grid; grid-template-columns: 300px 1fr; gap: 16px; }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      }
+      .section-title { margin: 0 0 10px; font-size: 14px; color: #374151; text-transform: uppercase; letter-spacing: .04em; }
+      label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+      input, select, textarea, button {
+        font: inherit;
+      }
+      input, select, textarea {
+        width: 100%;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 8px 10px;
+        background: #fff;
+      }
+      textarea { min-height: 120px; }
+      .stack > * { margin-bottom: 10px; }
+      .stack > *:last-child { margin-bottom: 0; }
+      .btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .btn.primary:hover { background: var(--accent-dark); }
+      .btn.danger { color: var(--danger); border-color: #fecaca; background: #fff5f5; }
+      .btn.sm { padding: 5px 8px; font-size: 12px; }
+      .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .list {
+        margin-top: 10px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        max-height: 420px;
+        overflow: auto;
+      }
+      .list-item {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--line);
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .list-item:last-child { border-bottom: 0; }
+      .list-item.active { background: #eff6ff; color: #1e40af; font-weight: 600; }
+      .meta-grid { display: grid; grid-template-columns: repeat(3, minmax(130px, 1fr)); gap: 10px; margin-bottom: 10px; }
+      .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 8px; }
+      .toolbar .left, .toolbar .right { display: flex; gap: 8px; align-items: center; }
+      .status { font-size: 13px; color: var(--muted); }
+      .table-wrap {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: auto;
+        background: white;
+        max-height: 70vh;
+      }
+      table { width: 100%; border-collapse: collapse; min-width: 920px; }
+      th, td { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: 8px; vertical-align: top; }
+      th:last-child, td:last-child { border-right: 0; }
+      th { position: sticky; top: 0; background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #4b5563; z-index: 1; }
+      td input { min-width: 120px; }
+      .row-actions { white-space: nowrap; }
+      tr.new-row td { background: #eef6ff; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .small { font-size: 12px; color: var(--muted); }
+      @media (max-width: 1024px) {
+        .layout { grid-template-columns: 1fr; }
+        .meta-grid { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="portal-header">
+      <div class="portal-header-inner">
+        <a class="portal-brand" href="/">mike<b>duin</b></a>
+        <nav class="portal-nav">
+          <a class="portal-link" href="/about">About</a>
+          <a class="portal-link" href="/professional">Work</a>
+          <a class="portal-link" href="/alevelabove/blog/main">A Level Above</a>
+          <a class="portal-link" href="/music">Music</a>
+          <a class="portal-link" href="/mikesfridge">Mike's Fridge</a>
+          <a class="portal-link active" href="/admin" id="portalAdminLink" style="display:none">Super Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <div class="topbar">
+        <div class="title">
+          <h1>Super Admin Portal</h1>
+          <p>Structured editor for podiums and records datasets in Postgres</p>
+        </div>
+        <div class="btn-row">
+          <button class="btn" id="refreshAll">Refresh</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="alaDataTab" id="tabAlaData">ALA Podiums &amp; Records</button>
+        <button class="tab-btn" data-tab="futureTab" id="tabFuture">More Admin Features</button>
+      </div>
+
+      <section class="tab-panel active" id="alaDataTab">
+      <div class="layout">
+        <aside class="card stack">
+          <h2 class="section-title">Dataset</h2>
+          <div>
+            <label for="datasetType">Type</label>
+            <select id="datasetType">
+              <option value="podiums">Podiums</option>
+              <option value="records">Records</option>
+            </select>
+          </div>
+          <div>
+            <label for="datasetKey">Key</label>
+            <select id="datasetKey"></select>
+          </div>
+          <div class="btn-row">
+            <button class="btn" id="createDataset">New Dataset</button>
+            <button class="btn" id="reloadRows">Reload Key</button>
+          </div>
+
+          <div>
+            <div class="small">Entries for selected key</div>
+            <div id="entryList" class="list"></div>
+          </div>
+        </aside>
+
+        <main class="card">
+          <div class="meta-grid">
+            <div>
+              <label for="metaId">ID</label>
+              <input id="metaId" readonly>
+            </div>
+            <div>
+              <label for="metaKey">Key</label>
+              <input id="metaKey">
+            </div>
+            <div>
+              <label for="metaYear">Year</label>
+              <input id="metaYear" placeholder="optional">
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="left">
+              <button class="btn" id="addColumn">Add Column</button>
+              <button class="btn" id="addRow">Add Row</button>
+              <button class="btn danger" id="deleteSelected">Delete Dataset Entry</button>
+            </div>
+            <div class="right">
+              <span id="rowCount" class="status">0 rows</span>
+              <button class="btn primary" id="saveSelected">Save Changes</button>
+            </div>
+          </div>
+
+          <div id="editorContainer" class="table-wrap"></div>
+          <div id="statusMsg" class="small" style="margin-top:8px"></div>
+        </main>
+      </div>
+      </section>
+
+      <section class="tab-panel" id="futureTab">
+        <div class="card">
+          <h2 style="margin-top:0">More Admin Features</h2>
+          <p class="small" style="font-size:14px">This area is reserved for additional Super Admin tools.</p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const state = {
+        type: 'podiums',
+        keys: [],
+        entries: [],
+        selectedEntryIndex: -1,
+        workingData: [],
+        columns: [],
+        newlyAddedRowIndex: null
+      };
+
+      const el = id => document.getElementById(id);
+
+      function getCookie(name) {
+        const cookie = document.cookie || '';
+        const parts = cookie.split(';').map(c => c.trim());
+        const target = parts.find(p => p.startsWith(name + '='));
+        return target ? decodeURIComponent(target.split('=').slice(1).join('=')) : '';
+      }
+
+      function jwtPayload(token) {
+        if (!token || token.split('.').length < 2) return null;
+        try {
+          const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+          const padded = base64 + '='.repeat((4 - (base64.length % 4)) % 4);
+          return JSON.parse(atob(padded));
+        } catch (err) {
+          return null;
+        }
+      }
+
+      function showAdminNavIfAllowed() {
+        const token = window.localStorage.getItem('login-token') || getCookie('jwt');
+        const payload = jwtPayload(token);
+        const username = payload && payload.username;
+        if (username === 'mikeduin') {
+          el('portalAdminLink').style.display = 'inline-block';
+        }
+      }
+
+      function adminHeaders() {
+        const token = window.localStorage.getItem('admin_token') || '';
+        return token ? { 'x-admin-token': token } : {};
+      }
+
+      async function api(url, options) {
+        const baseHeaders = Object.assign({}, adminHeaders());
+        const opts = Object.assign({ headers: baseHeaders }, options || {});
+        if (opts.body && !opts.headers['content-type']) {
+          opts.headers['content-type'] = 'application/json';
+        }
+        const response = await fetch(url, opts);
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error || 'request failed');
+        return payload;
+      }
+
+      function apiBase() {
+        return state.type === 'podiums' ? '/api/podiums' : '/api/records';
+      }
+
+      function deepClone(value) {
+        return JSON.parse(JSON.stringify(value));
+      }
+
+      function setStatus(message, isError) {
+        const status = el('statusMsg');
+        status.textContent = message || '';
+        status.style.color = isError ? '#b91c1c' : '#6b7280';
+      }
+
+      function inferColumns(rows) {
+        const columns = [];
+        if (!Array.isArray(rows)) return columns;
+        rows.forEach(row => {
+          if (row && typeof row === 'object' && !Array.isArray(row)) {
+            Object.keys(row).forEach(key => {
+              if (!columns.includes(key)) columns.push(key);
+            });
+          }
+        });
+
+        if (state.type === 'podiums') {
+          const preferred = [
+            'season',
+            'first_team',
+            'first_owner',
+            'second_team',
+            'second_owner',
+            'third_team',
+            'third_owner',
+            'fourth_team',
+            'fourth_owner',
+            'fifth_team',
+            'fifth_owner'
+          ];
+
+          const preferredSet = new Set(preferred);
+          const ordered = preferred.filter(col => columns.includes(col));
+          const remaining = columns.filter(col => !preferredSet.has(col));
+          return ordered.concat(remaining);
+        }
+
+        return columns;
+      }
+
+      function getColumnLabel(column) {
+        if (state.type === 'podiums' && /_owner$/i.test(column)) {
+          return column.replace(/_owner$/i, '_prize');
+        }
+        return column;
+      }
+
+      function renderEntryList() {
+        const list = el('entryList');
+        list.innerHTML = '';
+        if (!state.entries.length) {
+          const empty = document.createElement('div');
+          empty.className = 'list-item';
+          empty.textContent = 'No entries found for this key.';
+          list.appendChild(empty);
+          return;
+        }
+
+        state.entries.forEach((entry, index) => {
+          const item = document.createElement('div');
+          item.className = 'list-item' + (index === state.selectedEntryIndex ? ' active' : '');
+          const label = (entry.key || 'entry') + ' · id ' + entry.id;
+          item.textContent = label;
+          item.onclick = () => selectEntry(index);
+          list.appendChild(item);
+        });
+      }
+
+      function normalizeDataForGrid(data) {
+        if (!Array.isArray(data)) {
+          if (data && typeof data === 'object') return [deepClone(data)];
+          return [];
+        }
+        return deepClone(data);
+      }
+
+      function selectEntry(index) {
+        state.selectedEntryIndex = index;
+        const entry = state.entries[index];
+        if (!entry) {
+          renderEntryList();
+          renderGrid();
+          return;
+        }
+
+        el('metaId').value = entry.id || '';
+        el('metaKey').value = entry.key || el('datasetKey').value || '';
+        el('metaYear').value = entry.year || '';
+
+        state.workingData = normalizeDataForGrid(entry.data);
+        state.columns = inferColumns(state.workingData);
+
+        renderEntryList();
+        renderGrid();
+      }
+
+      function ensureAtLeastOneColumn() {
+        if (!state.columns.length) state.columns = ['value'];
+      }
+
+      function ensureObjectRow(row) {
+        if (row && typeof row === 'object' && !Array.isArray(row)) return row;
+        return { value: row };
+      }
+
+      function renderGrid() {
+        const container = el('editorContainer');
+        container.innerHTML = '';
+        ensureAtLeastOneColumn();
+
+        const rows = state.workingData.map(ensureObjectRow);
+        state.workingData = rows;
+
+        el('rowCount').textContent = rows.length + ' rows';
+
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+
+        const headRow = document.createElement('tr');
+        state.columns.forEach((column) => {
+          const th = document.createElement('th');
+          th.innerHTML = '<span class="mono">' + getColumnLabel(column) + '</span>';
+          headRow.appendChild(th);
+        });
+        const actionsTh = document.createElement('th');
+        actionsTh.textContent = 'Actions';
+        headRow.appendChild(actionsTh);
+        thead.appendChild(headRow);
+
+        rows.forEach((row, rowIndex) => {
+          const tr = document.createElement('tr');
+          if (state.newlyAddedRowIndex === rowIndex) tr.classList.add('new-row');
+          state.columns.forEach((column) => {
+            if (typeof row[column] === 'undefined') row[column] = '';
+            const td = document.createElement('td');
+            const input = document.createElement('input');
+            input.value = row[column] === null ? '' : String(row[column]);
+            input.oninput = (event) => {
+              state.workingData[rowIndex][column] = event.target.value;
+            };
+            td.appendChild(input);
+            tr.appendChild(td);
+          });
+
+          const actionTd = document.createElement('td');
+          actionTd.className = 'row-actions';
+          const deleteBtn = document.createElement('button');
+          deleteBtn.className = 'btn sm danger';
+          deleteBtn.textContent = 'Delete Row';
+          deleteBtn.onclick = () => {
+            state.workingData.splice(rowIndex, 1);
+            renderGrid();
+          };
+          actionTd.appendChild(deleteBtn);
+          tr.appendChild(actionTd);
+          tbody.appendChild(tr);
+        });
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        container.appendChild(table);
+      }
+
+      async function loadKeys() {
+        try {
+          state.keys = await api(apiBase());
+          const keySelect = el('datasetKey');
+          const prev = keySelect.value;
+          keySelect.innerHTML = '';
+          state.keys.forEach((key) => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = key;
+            keySelect.appendChild(option);
+          });
+
+          if (state.keys.includes(prev)) keySelect.value = prev;
+          if (!keySelect.value && state.keys.length) keySelect.value = state.keys[0];
+
+          await loadEntriesForSelectedKey();
+        } catch (error) {
+          setStatus(error.message, true);
+        }
+      }
+
+      async function loadEntriesForSelectedKey() {
+        const key = el('datasetKey').value;
+        if (!key) {
+          state.entries = [];
+          state.selectedEntryIndex = -1;
+          state.workingData = [];
+          state.columns = [];
+          renderEntryList();
+          renderGrid();
+          return;
+        }
+
+        try {
+          const rows = await api(apiBase() + '/' + encodeURIComponent(key));
+          state.entries = rows.map(row => Object.assign({}, row, { key: key }));
+          state.selectedEntryIndex = state.entries.length ? 0 : -1;
+          renderEntryList();
+          if (state.selectedEntryIndex >= 0) selectEntry(state.selectedEntryIndex);
+          else renderGrid();
+          setStatus('Loaded ' + state.entries.length + ' dataset entr' + (state.entries.length === 1 ? 'y' : 'ies') + ' for key "' + key + '".');
+        } catch (error) {
+          setStatus(error.message, true);
+        }
+      }
+
+      async function saveSelected() {
+        const id = el('metaId').value;
+        if (!id) {
+          setStatus('Select a dataset entry first.', true);
+          return;
+        }
+
+        const saveButton = el('saveSelected');
+        const originalText = saveButton.textContent;
+
+        try {
+          saveButton.disabled = true;
+          saveButton.textContent = 'Saving...';
+
+          const keyValue = el('metaKey').value.trim();
+          const payload = {
+            key: keyValue,
+            filename: (state.entries[state.selectedEntryIndex] && state.entries[state.selectedEntryIndex].filename) || (keyValue + '.json'),
+            year: el('metaYear').value.trim() ? Number(el('metaYear').value.trim()) : null,
+            data: state.workingData
+          };
+
+          if (!payload.key) {
+            throw new Error('Key is required before saving.');
+          }
+
+          await api(apiBase() + '/' + id, {
+            method: 'PUT',
+            body: JSON.stringify(payload)
+          });
+          await loadKeys();
+          setStatus('✅ Saved changes to DB for id ' + id + '.');
+        } catch (error) {
+          setStatus('Save failed: ' + error.message, true);
+        } finally {
+          saveButton.disabled = false;
+          saveButton.textContent = originalText;
+        }
+      }
+
+      async function createDataset() {
+        const key = prompt('Key (example: madness or football-records)');
+        if (!key) return;
+        const yearRaw = prompt('Year (optional)');
+        const rowTemplate = state.columns.length ? state.columns : ['season'];
+        const newRow = {};
+        rowTemplate.forEach(c => { newRow[c] = ''; });
+        const payload = {
+          key: key.trim(),
+          filename: key.trim() + '.json',
+          year: yearRaw && yearRaw.trim() ? Number(yearRaw.trim()) : null,
+          data: [newRow]
+        };
+
+        try {
+          await api(apiBase(), {
+            method: 'POST',
+            body: JSON.stringify(payload)
+          });
+          setStatus('Created dataset entry for key "' + payload.key + '".');
+          await loadKeys();
+          el('datasetKey').value = payload.key;
+          await loadEntriesForSelectedKey();
+        } catch (error) {
+          setStatus(error.message, true);
+        }
+      }
+
+      async function deleteSelected() {
+        const id = el('metaId').value;
+        if (!id) return;
+        const ok = confirm('Delete this dataset entry permanently?');
+        if (!ok) return;
+
+        try {
+          await api(apiBase() + '/' + id, { method: 'DELETE' });
+          setStatus('Deleted entry id ' + id + '.');
+          await loadKeys();
+        } catch (error) {
+          setStatus(error.message, true);
+        }
+      }
+
+      function addColumn() {
+        const column = prompt('New column name (example: first_owner)');
+        if (!column) return;
+        const name = column.trim();
+        if (!name) return;
+        if (state.columns.includes(name)) {
+          setStatus('Column already exists.', true);
+          return;
+        }
+        state.columns.push(name);
+        state.workingData.forEach(row => { if (typeof row[name] === 'undefined') row[name] = ''; });
+        renderGrid();
+      }
+
+      function addRow() {
+        if (state.selectedEntryIndex < 0) {
+          setStatus('Select a dataset entry first, then add a row.', true);
+          return;
+        }
+        ensureAtLeastOneColumn();
+        const row = {};
+        state.columns.forEach(c => { row[c] = ''; });
+        state.workingData.unshift(row);
+        state.newlyAddedRowIndex = 0;
+        renderGrid();
+
+        const firstInput = el('editorContainer').querySelector('tbody tr:first-child td input');
+        if (firstInput) {
+          firstInput.focus();
+          firstInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        setStatus('New row added. Enter values and click Save Changes.');
+        setTimeout(() => {
+          state.newlyAddedRowIndex = null;
+          renderGrid();
+        }, 1200);
+      }
+
+      function wireEvents() {
+        document.querySelectorAll('.tab-btn').forEach((button) => {
+          button.addEventListener('click', () => {
+            const target = button.getAttribute('data-tab');
+            document.querySelectorAll('.tab-btn').forEach((btn) => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach((panel) => panel.classList.remove('active'));
+            button.classList.add('active');
+            document.getElementById(target).classList.add('active');
+          });
+        });
+
+        el('datasetType').addEventListener('change', async (event) => {
+          state.type = event.target.value;
+          state.entries = [];
+          state.selectedEntryIndex = -1;
+          state.workingData = [];
+          state.columns = [];
+          await loadKeys();
+        });
+        el('datasetKey').addEventListener('change', loadEntriesForSelectedKey);
+        el('refreshAll').addEventListener('click', loadKeys);
+        el('reloadRows').addEventListener('click', loadEntriesForSelectedKey);
+        el('createDataset').addEventListener('click', createDataset);
+        el('saveSelected').addEventListener('click', saveSelected);
+        el('deleteSelected').addEventListener('click', deleteSelected);
+        el('addColumn').addEventListener('click', addColumn);
+        el('addRow').addEventListener('click', addRow);
+      }
+
+      async function bootstrap() {
+        showAdminNavIfAllowed();
+        wireEvents();
+        state.type = el('datasetType').value;
+        await loadKeys();
+      }
+
+      bootstrap();
+    </script>
+  </body>
+</html>

@@ -1,8 +1,8 @@
 angular
   .module('mySite')
-  .controller('ArbController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', '$window', ArbController])
+  .controller('ArbController', ['$scope', '$state', '$sce', '$anchorScroll', '$location', '$timeout', '$window', 'authService', ArbController])
 
-function ArbController ($scope, $state, $sce, $anchorScroll, $location, $timeout, $window){
+function ArbController ($scope, $state, $sce, $anchorScroll, $location, $timeout, $window, authService){
   $scope.$state = $state;
   $scope.vm = {};
   $scope.expand = false;
@@ -38,6 +38,19 @@ function ArbController ($scope, $state, $sce, $anchorScroll, $location, $timeout
       $anchorScroll('fridge-header');
       console.log('hello');
     }, 500)
+  }
+
+  $scope.vm.currentUser = function() {
+    return authService.currentUser();
+  }
+
+  $scope.vm.showSuperAdminLink = function() {
+    return $scope.vm.currentUser() === 'mikeduin';
+  }
+
+  $scope.vm.gotoSuperAdmin = function($event) {
+    if ($event && $event.preventDefault) $event.preventDefault();
+    $window.location.href = '/admin';
   }
 
   $scope.vm.gotoId = function(id) {

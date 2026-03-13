@@ -4,6 +4,15 @@ var knex = require('../db/knex');
 var Podiums = require('../models/Podiums');
 var Records = require('../models/Records');
 
+// simple admin check: allow writes when NODE_ENV !== 'production' OR when
+// request includes matching x-admin-token header equal to process.env.ADMIN_TOKEN
+function ensureAdmin(req, res, next) {
+  if (process.env.NODE_ENV !== 'production') return next();
+  const token = req.headers['x-admin-token'];
+  if (process.env.ADMIN_TOKEN && token && token === process.env.ADMIN_TOKEN) return next();
+  return res.status(403).json({ error: 'admin access required' });
+}
+
 // GET /api/podiums  -> list available keys
 router.get('/podiums', async function(req, res, next){
   try {
@@ -64,5 +73,56 @@ router.get('/records/:key/:filename', async function(req, res, next){
   } catch (err) { next(err); }
 });
 
+// Write endpoints for podiums
+router.post('/podiums', ensureAdmin, async function(req, res, next){
+  try {
+    const payload = req.body; // expect { key, filename, year?, data }
+    const row = await Podiums.create(payload);
+    res.json(row);
+  } catch (err) { next(err); }
+});
+
+router.put('/podiums/:id', ensureAdmin, async function(req, res, next){
+  try {
+    const id = req.params.id;
+    const updated = await Podiums.updateById(id, req.body);
+    res.json(updated);
+  } catch (err) { next(err); }
+});
+
+router.delete('/podiums/:id', ensureAdmin, async function(req, res, next){
+  try {
+    const id = req.params.id;
+    await Podiums.deleteById(id);
+    res.json({ success: true });
+  } catch (err) { next(err); }
+});
+
+// Write endpoints for records
+router.post('/records', ensureAdmin, async function(req, res, next){
+  try {
+    const payload = req.body; // { key, filename, year?, data }
+    const row = await Records.create(payload);
+    res.json(row);
+  } catch (err) { next(err); }
+});
+
+router.put('/records/:id', ensureAdmin, async function(req, res, next){
+  try {
+    const id = req.params.id;
+    const updated = await Records.updateById(id, req.body);
+    res.json(updated);
+  } catch (err) { next(err); }
+});
+
+router.delete('/records/:id', ensureAdmin, async function(req, res, next){
+  try {
+    const id = req.params.id;
+    await Records.deleteById(id);
+    res.json({ success: true });
+  } catch (err) { next(err); }
+});
+
 module.exports = router;
+
 
