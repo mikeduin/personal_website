@@ -209,11 +209,54 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     return isNaN(numeric) ? -Infinity : numeric;
   }
 
-  $scope.vm.getDefendingChamp = function(podiumRows) {
+  function cleanValue(value) {
+    if (value === null || typeof value === 'undefined') return '';
+    return String(value).trim();
+  }
+
+  function isPrizeLike(value) {
+    var text = cleanValue(value).toLowerCase();
+    if (!text) return false;
+    return /\$|\/ea|each|usd/.test(text) || /^\+?\d[\d,]*(\.\d+)?$/.test(text);
+  }
+
+  function pickOwnerValue(row, mode) {
+    var preferredOwner = cleanValue(row && row.first_owner);
+    var legacyOwner = cleanValue(row && row.first_prize);
+
+    if (mode === 'fantasy') {
+      if (preferredOwner && !isPrizeLike(preferredOwner)) return preferredOwner;
+      if (legacyOwner && !isPrizeLike(legacyOwner)) return legacyOwner;
+      return '';
+    }
+
+    if (preferredOwner && !isPrizeLike(preferredOwner)) return preferredOwner;
+    if (!preferredOwner && legacyOwner && !isPrizeLike(legacyOwner)) return legacyOwner;
+    return '';
+  }
+
+  function pickPrizeValue(row, mode) {
+    var preferredFantasyPrize = cleanValue(row && row.first_prize);
+    var preferredOpenPrize = cleanValue(row && row.first_owner);
+
+    if (mode === 'fantasy') {
+      if (preferredFantasyPrize && isPrizeLike(preferredFantasyPrize)) return preferredFantasyPrize;
+      if (preferredOpenPrize && isPrizeLike(preferredOpenPrize)) return preferredOpenPrize;
+      return '';
+    }
+
+    if (preferredOpenPrize && isPrizeLike(preferredOpenPrize)) return preferredOpenPrize;
+    if (preferredFantasyPrize && isPrizeLike(preferredFantasyPrize)) return preferredFantasyPrize;
+    return '';
+  }
+
+  $scope.vm.getDefendingChamp = function(podiumRows, options) {
     var rows = Array.isArray(podiumRows) ? podiumRows : [];
     if (!rows.length) {
       return { champ: 'TBD', owner: '', season: '' };
     }
+
+    var mode = options && options.mode;
 
     var latest = rows.reduce(function(bestRow, row) {
       if (!bestRow) return row;
@@ -222,12 +265,12 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
         : bestRow;
     }, null) || {};
 
-    var owner = latest.first_owner ? String(latest.first_owner).trim() : '';
-    var hasOwner = owner && !/^\$/.test(owner);
+    var champ = cleanValue(latest.first_team);
+    var owner = pickOwnerValue(latest, mode);
 
     return {
-      champ: latest.first_team || owner || 'TBD',
-      owner: hasOwner ? owner : '',
+      champ: champ || owner || 'TBD',
+      owner: owner && owner !== champ ? owner : '',
       season: latest.season || ''
     };
   };
@@ -299,6 +342,98 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       };
     });
   };
+
+  function seasonMatchesYear(season, targetYear) {
+    if (!season) return false;
+    var text = String(season);
+    if (text.indexOf(String(targetYear)) !== -1) return true;
+    return new RegExp("'" + String(targetYear).slice(2) + "(\\D|$)").test(text);
+  }
+
+  function findLatestSeasonRow(rows, targetYear, extraMatcher) {
+    var sourceRows = Array.isArray(rows) ? rows : [];
+    var filtered = sourceRows.filter(function(row) {
+      var seasonText = String((row && row.season) || '');
+      if (!seasonMatchesYear(seasonText, targetYear)) return false;
+      if (!extraMatcher) return true;
+      return extraMatcher(seasonText.toLowerCase(), row || {});
+    });
+
+    return filtered.reduce(function(bestRow, row) {
+      if (!bestRow) return row;
+      return seasonSortValue(row && row.season) > seasonSortValue(bestRow && bestRow.season)
+        ? row
+        : bestRow;
+    }, null);
+  }
+
+  $scope.vm.champions25Auto = [];
+  $scope.vm.championsTemplate = [];
+
+  function buildChampionsFromPodiums(templateRows, targetYear) {
+    var templates = Array.isArray(templateRows) ? templateRows : [];
+
+    var gameSourceMap = {
+      'Fantasy NBA': { source: function() { return $scope.vm.hoopsPodium; }, mode: 'fantasy' },
+      'NBA CDL': { source: function() { return $scope.vm.cdlPodium; }, mode: 'fantasy' },
+      'NBA Survivor': {
+        source: function() { return $scope.vm.survivorSeriesResults; },
+        matcher: function(seasonText) { return seasonText.indexOf('nba') !== -1; }
+      },
+      'NCAA Bowls: Battle the Bookies': { source: function() { return $scope.vm.bowlPodium; } },
+      "NCAA Pick'em": { source: function() { return $scope.vm.pickemPodium; } },
+      'NFL Survivor': { source: function() { return $scope.vm.survivorResults; } },
+      'NFL Confidence': { source: function() { return $scope.vm.confidencePodium; } },
+      'NFL Battle the Bookies': { source: function() { return $scope.vm.btbPodium; } },
+      'Fantasy NFL: GU Division': { source: function() { return $scope.vm.GUFootballPodium; }, mode: 'fantasy' },
+      'Fantasy NFL: LO Division': { source: function() { return $scope.vm.LOFootballPodium; }, mode: 'fantasy' },
+      'Fantasy NFL: USC Division': { source: function() { return $scope.vm.SCFootballPodium; }, mode: 'fantasy' },
+      'FIFA World Cup: Battle the Bookies': { source: function() { return $scope.vm.fifaBtb; } },
+      'FIFA World Cup: Bracket Pool': { source: function() { return $scope.vm.fifaBracket; } },
+      'FIFA World Cup: Survivor': { source: function() { return $scope.vm.fifaSurvivor; } },
+      'MLB Survivor': {
+        source: function() { return $scope.vm.survivorSeriesResults; },
+        matcher: function(seasonText) { return seasonText.indexOf('mlb') !== -1; }
+      },
+      'Fantasy MLB': { source: function() { return $scope.vm.baseballPodium; }, mode: 'fantasy' },
+      'March Madness': { source: function() { return $scope.vm.madnessPodium; } },
+      'NBA All-Star Spectacular': { source: function() { return []; } }
+    };
+
+    return templates.reduce(function(acc, item) {
+      var template = item || {};
+      var mapping = gameSourceMap[template.game];
+      if (!mapping || typeof mapping.source !== 'function') {
+        return acc;
+      }
+
+      var latest = findLatestSeasonRow(mapping.source(), targetYear, mapping.matcher);
+      if (!latest) {
+        return acc;
+      }
+
+      var firstTeam = cleanValue(latest.first_team);
+      var owner = pickOwnerValue(latest, mapping.mode);
+      var prize = pickPrizeValue(latest, mapping.mode);
+      var entrant = mapping.mode === 'fantasy'
+        ? (owner || firstTeam)
+        : (firstTeam || owner);
+
+      if (!entrant) return acc;
+
+      acc.push({
+        game: template.game || '',
+        entrant: entrant,
+        prize: prize,
+        summary: template.summary || ''
+      });
+      return acc;
+    }, []);
+  }
+
+  function refreshAutoChampions() {
+    $scope.vm.champions25Auto = buildChampionsFromPodiums($scope.vm.championsTemplate, 2025);
+  }
 
   $scope.vm.podiums = {};
   $scope.getPodiums = function() {
@@ -387,6 +522,14 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     })
   };
   $scope.getChampions24();
+
+  $scope.getChampionsTemp = function() {
+    alaService.getChampionsTemp().then(function(results){
+      $scope.vm.championsTemplate = Array.isArray(results) ? results : [];
+      refreshAutoChampions();
+    })
+  };
+  $scope.getChampionsTemp();
 
   $scope.vm.titles = {};
   $scope.getTitles = function() {
@@ -645,6 +788,28 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     })
   };
   $scope.getBowlRecords();
+
+  $scope.$watchGroup([
+    'vm.hoopsPodium',
+    'vm.cdlPodium',
+    'vm.survivorSeriesResults',
+    'vm.bowlPodium',
+    'vm.pickemPodium',
+    'vm.survivorResults',
+    'vm.confidencePodium',
+    'vm.btbPodium',
+    'vm.GUFootballPodium',
+    'vm.LOFootballPodium',
+    'vm.SCFootballPodium',
+    'vm.fifaBtb',
+    'vm.fifaBracket',
+    'vm.fifaSurvivor',
+    'vm.baseballPodium',
+    'vm.madnessPodium',
+    'vm.championsTemplate'
+  ], function() {
+    refreshAutoChampions();
+  });
 
   $scope.vm.madnessData = {
     'type':'line',

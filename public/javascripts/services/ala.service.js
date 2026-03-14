@@ -78,6 +78,7 @@ function alaService ($http) {
     getChampions22: function() { return this.getPodium('champions22'); },
     getChampions23: function() { return this.getPodium('champions23'); },
     getChampions24: function() { return this.getPodium('champions24'); },
+    getChampionsTemp: function() { return this.getPodium('championsTemp'); },
     getPodiums: function() { return this.getPodium('hof-podiums'); },
     getTitles: function() { return this.getPodium('hof-titles'); },
     getPrizes: function() { return this.getPodium('hof-prizes'); },

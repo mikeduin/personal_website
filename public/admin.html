@@ -373,23 +373,31 @@
         });
 
         if (state.type === 'podiums') {
+          const hiddenPodiumColumns = new Set([
+            'fourth_team',
+            'fourth_owner',
+            'fourth_prize',
+            'fifth_team',
+            'fifth_owner',
+            'fifth_prize'
+          ]);
+
           const preferred = [
             'season',
             'first_team',
             'first_owner',
+            'first_prize',
             'second_team',
             'second_owner',
+            'second_prize',
             'third_team',
             'third_owner',
-            'fourth_team',
-            'fourth_owner',
-            'fifth_team',
-            'fifth_owner'
+            'third_prize'
           ];
 
           const preferredSet = new Set(preferred);
-          const ordered = preferred.filter(col => columns.includes(col));
-          const remaining = columns.filter(col => !preferredSet.has(col));
+          const ordered = preferred.slice();
+          const remaining = columns.filter(col => !preferredSet.has(col) && !hiddenPodiumColumns.has(col));
           return ordered.concat(remaining);
         }
 
@@ -405,9 +413,6 @@
       }
 
       function getColumnLabel(column) {
-        if (state.type === 'podiums' && /_owner$/i.test(column)) {
-          return column.replace(/_owner$/i, '_prize');
-        }
         return column;
       }
 
@@ -461,7 +466,30 @@
       }
 
       function ensureAtLeastOneColumn() {
-        if (!state.columns.length) state.columns = ['value'];
+        if (!state.columns.length) {
+          if (state.type === 'podiums') {
+            state.columns = [
+              'season',
+              'first_team',
+              'first_owner',
+              'first_prize',
+              'second_team',
+              'second_owner',
+              'second_prize',
+              'third_team',
+              'third_owner',
+              'third_prize'
+            ];
+            return;
+          }
+
+          if (state.type === 'seasonData') {
+            state.columns = ['season', 'prize_pool'];
+            return;
+          }
+
+          state.columns = ['value'];
+        }
       }
 
       function ensureObjectRow(row) {
@@ -629,7 +657,11 @@
         const key = prompt('Key (example: madness or football-records)');
         if (!key) return;
         const yearRaw = prompt('Year (optional)');
-        const rowTemplate = state.columns.length ? state.columns : (state.type === 'seasonData' ? ['season', 'prize_pool'] : ['season']);
+        const rowTemplate = state.columns.length ? state.columns : (state.type === 'seasonData'
+          ? ['season', 'prize_pool']
+          : state.type === 'podiums'
+            ? ['season', 'first_team', 'first_owner', 'first_prize', 'second_team', 'second_owner', 'third_team', 'third_owner']
+            : ['season']);
         const newRow = {};
         rowTemplate.forEach(c => { newRow[c] = ''; });
         var payload;
