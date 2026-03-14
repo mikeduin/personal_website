@@ -316,6 +316,10 @@
         return token ? { 'x-admin-token': token } : {};
       }
 
+      function hasAdminToken() {
+        return !!(window.localStorage.getItem('admin_token') || '').trim();
+      }
+
       async function api(url, options) {
         const baseHeaders = Object.assign({}, adminHeaders());
         const opts = Object.assign({ headers: baseHeaders }, options || {});
@@ -324,7 +328,12 @@
         }
         const response = await fetch(url, opts);
         const payload = await response.json();
-        if (!response.ok) throw new Error(payload.error || 'request failed');
+        if (!response.ok) {
+          if (response.status === 403) {
+            throw new Error('admin access required (set localStorage.admin_token to match server ADMIN_TOKEN)');
+          }
+          throw new Error(payload.error || 'request failed');
+        }
         return payload;
       }
 
@@ -732,6 +741,9 @@
         showAdminNavIfAllowed();
         wireEvents();
         state.type = el('datasetType').value;
+        if (!hasAdminToken()) {
+          setStatus('Read-only mode: set localStorage.admin_token, then refresh to enable saving/deleting in production.', true);
+        }
         await loadKeys();
       }
 
