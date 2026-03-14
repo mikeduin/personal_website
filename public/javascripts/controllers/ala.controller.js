@@ -183,6 +183,86 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     })
   };
 
+  function seasonSortValue(season) {
+    if (typeof season === 'number') return season;
+    if (!season) return -Infinity;
+
+    var text = String(season);
+    var yearMatches = text.match(/\d{4}/g);
+    if (yearMatches && yearMatches.length) {
+      return Math.max.apply(null, yearMatches.map(function(match) {
+        return Number(match);
+      }));
+    }
+
+    var numeric = Number(text);
+    return isNaN(numeric) ? -Infinity : numeric;
+  }
+
+  $scope.vm.getDefendingChamp = function(podiumRows) {
+    var rows = Array.isArray(podiumRows) ? podiumRows : [];
+    if (!rows.length) {
+      return { champ: 'TBD', owner: '', season: '' };
+    }
+
+    var latest = rows.reduce(function(bestRow, row) {
+      if (!bestRow) return row;
+      return seasonSortValue(row && row.season) > seasonSortValue(bestRow && bestRow.season)
+        ? row
+        : bestRow;
+    }, null) || {};
+
+    var owner = latest.first_owner ? String(latest.first_owner).trim() : '';
+    var hasOwner = owner && !/^\$/.test(owner);
+
+    return {
+      champ: latest.first_team || owner || 'TBD',
+      owner: hasOwner ? owner : '',
+      season: latest.season || ''
+    };
+  };
+
+  $scope.vm.getCalcuttaLatestWinners = function(podiumRows) {
+    var rows = Array.isArray(podiumRows) ? podiumRows : [];
+
+    var defaults = [
+      {
+        season: "'24 NFL",
+        label: "[NFL '24]",
+        url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=1369351875#gid=1369351875',
+        fallbackChamp: 'Alex Proano',
+        fallbackPrize: '+$1414'
+      },
+      {
+        season: "'24 Masters",
+        label: "[Masters '24']",
+        url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=319743726#gid=319743726',
+        fallbackChamp: 'Brewster Stanislaw',
+        fallbackPrize: '+$3221'
+      },
+      {
+        season: "'24 March Madness",
+        label: "[March Madness '24]",
+        url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=1227515929#gid=1227515929',
+        fallbackChamp: 'Brewster Stanislaw',
+        fallbackPrize: '+$6355'
+      }
+    ];
+
+    return defaults.map(function(item) {
+      var match = rows.find(function(row) {
+        return String((row && row.season) || '').trim() === item.season;
+      }) || {};
+
+      return {
+        label: item.label,
+        url: item.url,
+        champ: match.first_team || item.fallbackChamp,
+        prize: match.first_owner || item.fallbackPrize
+      };
+    });
+  };
+
   $scope.vm.podiums = {};
   $scope.getPodiums = function() {
     alaService.getPodiums().then(function(results){
@@ -368,9 +448,11 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   $scope.getBtBPodium();
 
   $scope.vm.calcuttaPodium = {};
+  $scope.vm.calcuttaLatestWinners = [];
   $scope.getCalcuttaPodium = function() {
     alaService.getCalcuttaPodium().then(function(results){
       $scope.vm.calcuttaPodium = results;
+      $scope.vm.calcuttaLatestWinners = $scope.vm.getCalcuttaLatestWinners(results);
     })
   };
   $scope.getCalcuttaPodium();
