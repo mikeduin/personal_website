@@ -195,6 +195,16 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       }));
     }
 
+    var shortYearRegex = /'(\d{2})/g;
+    var shortYearMatches = [];
+    var shortYearMatch;
+    while ((shortYearMatch = shortYearRegex.exec(text)) !== null) {
+      shortYearMatches.push(2000 + Number(shortYearMatch[1]));
+    }
+    if (shortYearMatches.length) {
+      return Math.max.apply(null, shortYearMatches);
+    }
+
     var numeric = Number(text);
     return isNaN(numeric) ? -Infinity : numeric;
   }
@@ -227,35 +237,62 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
 
     var defaults = [
       {
+        key: 'NFL',
+        matchers: ['nfl'],
         season: "'24 NFL",
-        label: "[NFL '24]",
         url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=1369351875#gid=1369351875',
         fallbackChamp: 'Alex Proano',
         fallbackPrize: '+$1414'
       },
       {
+        key: 'Masters',
+        matchers: ['masters'],
         season: "'24 Masters",
-        label: "[Masters '24']",
         url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=319743726#gid=319743726',
         fallbackChamp: 'Brewster Stanislaw',
         fallbackPrize: '+$3221'
       },
       {
+        key: 'March Madness',
+        matchers: ['march madness'],
         season: "'24 March Madness",
-        label: "[March Madness '24]",
         url: 'https://docs.google.com/spreadsheets/d/1heNUExdWQFWU0ruziIenXRM7U5qpV87Lf-r0DTJvCY4/edit?gid=1227515929#gid=1227515929',
         fallbackChamp: 'Brewster Stanislaw',
         fallbackPrize: '+$6355'
       }
     ];
 
+    function seasonTag(seasonText) {
+      var text = String(seasonText || '');
+      var shortYear = text.match(/'(\d{2})/);
+      if (shortYear) return "'" + shortYear[1];
+
+      var fullYear = text.match(/(\d{4})/);
+      if (fullYear) return "'" + String(fullYear[1]).slice(2);
+
+      return '';
+    }
+
     return defaults.map(function(item) {
-      var match = rows.find(function(row) {
-        return String((row && row.season) || '').trim() === item.season;
-      }) || {};
+      var matchingRows = rows.filter(function(row) {
+        var seasonText = String((row && row.season) || '').toLowerCase();
+        return item.matchers.some(function(matcher) {
+          return seasonText.indexOf(matcher) !== -1;
+        });
+      });
+
+      var match = matchingRows.reduce(function(bestRow, row) {
+        if (!bestRow) return row;
+        return seasonSortValue(row && row.season) > seasonSortValue(bestRow && bestRow.season)
+          ? row
+          : bestRow;
+      }, null) || {};
+
+      var effectiveSeason = match.season || item.season;
+      var tag = seasonTag(effectiveSeason);
 
       return {
-        label: item.label,
+        label: '[' + item.key + (tag ? ' ' + tag : '') + ']',
         url: item.url,
         champ: match.first_team || item.fallbackChamp,
         prize: match.first_owner || item.fallbackPrize
