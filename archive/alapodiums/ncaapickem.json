@@ -1,0 +1,155 @@
+[
+  {
+    "season": "2024",
+    "first_team": "Matt Keating",
+    "first_owner": "$2,027",
+    "second_team": "Brewster Stanislaw",
+    "second_owner": "$971",
+    "third_team": "Miles Powell",
+    "third_owner": "$472"
+  },
+  {
+    "season": "2023",
+    "first_team": "Scott Morton",
+    "first_owner": "$662",
+    "second_team": "Billy Schreyer",
+    "second_owner": "$301",
+    "third_team": "Brewster Stanislaw",
+    "third_owner": "$1374"
+  },
+  {
+    "season": "2022",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$1,142",
+    "second_team": "Matt Keating",
+    "second_owner": "$793",
+    "third_team": "Jason Gnich",
+    "third_owner": "$417"
+  },
+  {
+    "season": "2021",
+    "first_team": "Kevin Simshauser",
+    "first_owner": "$896",
+    "second_team": "Billy Schreyer",
+    "second_owner": "$425",
+    "third_team": "Kyle Davis",
+    "third_owner": "$251"
+  },
+  {
+    "season": "2020",
+    "first_team": "Matt Keating",
+    "first_owner": "$401",
+    "second_team": "Mike Duin",
+    "second_owner": "$394",
+    "third_team": "Matt Stringer",
+    "third_owner": "$86"
+  },
+  {
+    "season": "2019",
+    "first_team": "Joe Buchholz",
+    "first_owner": "$726",
+    "second_team": "Alex Church",
+    "second_owner": "$345",
+    "third_team": "Kyle Davis",
+    "third_owner": "$536"
+  },
+  {
+    "season": "2018",
+    "first_team": "Kyle Davis",
+    "first_owner": "$816",
+    "second_team": "Tyler Anthony",
+    "second_owner": "$415",
+    "third_team": "Mike Duin / Devon Santoro (tie)",
+    "third_owner": "$216 / $87"
+  },
+  {
+    "season": "2017",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$918",
+    "second_team": "Jason Gnich",
+    "second_owner": "$435",
+    "third_team": "Michael Israel",
+    "third_owner": "$157"
+  },
+  {
+    "season": "2016",
+    "first_team": "Dave Echenoz",
+    "first_owner": "$560",
+    "second_team": "Chris Platt",
+    "second_owner": "$182",
+    "third_team": "Kyle Davis / Ryan Stanbery (tie)",
+    "third_owner": "$317"
+  },
+  {
+    "season": "2015",
+    "first_team": "Alex Kurian",
+    "first_owner": "$523",
+    "second_team": "Dave Echenoz",
+    "second_owner": "$202",
+    "third_team": "Kyle Davis",
+    "third_owner": "$427"
+  },
+  {
+    "season": "2014",
+    "first_team": "Brad Baker",
+    "first_owner": "$560",
+    "second_team": "David Christeson",
+    "second_owner": "$195",
+    "third_team": "(five-way-tie)",
+    "third_owner": "$70"
+  },
+  {
+    "season": "2013",
+    "first_team": "Ryan Stanbery",
+    "first_owner": "$505",
+    "second_team": "Mike Duin",
+    "second_owner": "$278",
+    "third_team": "Dave Bergmann / Devon Santoro (tie)",
+    "third_owner": "$76"
+  },
+  {
+    "season": "2012",
+    "first_team": "Kyle Davis",
+    "first_owner": "$455",
+    "second_team": "Lester Harman",
+    "second_owner": "$229",
+    "third_team": "Corey Uhalde",
+    "third_owner": "$100"
+  },
+  {
+    "season": "2011",
+    "first_team": "Jeff Schneider",
+    "first_owner": "$471",
+    "second_team": "Mike Duin",
+    "second_owner": "$237",
+    "third_team": "Adam Atkins / Matt Stringer (tie)",
+    "third_owner": "$97"
+  },
+  {
+    "season": "2010",
+    "first_team": "Eric Grimit (t-1st)",
+    "first_owner": "$327",
+    "second_team": "Joe Simich (t-1st)",
+    "second_owner": "$327",
+    "third_team": "Matt Sullivan",
+    "third_owner": "$94"
+  },
+  {
+    "season": "2009",
+    "first_team": "Dan Goldman",
+    "first_owner": "$497",
+    "second_team": "Brendan Connell",
+    "second_owner": "$220",
+    "third_team": "Matt Crevier",
+    "third_owner": "$90"
+  },
+  {
+    "season": "2008",
+    "first_team": "Adam Brady",
+    "first_owner": "$287",
+    "second_team": "Mike Duin",
+    "second_owner": "$124",
+    "third_team": "Jeff Schneider",
+    "third_owner": "$59"
+  }
+]

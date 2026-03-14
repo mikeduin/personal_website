@@ -1,0 +1,128 @@
+[
+  {
+    "season": "2024-25",
+    "first_team": "Dani Shuval",
+    "first_owner": "$673",
+    "second_team": "Brad Baker",
+    "second_owner": "$718",
+    "third_team": "Dave Shore",
+    "third_owner": "$428"
+  },
+  {
+    "season": "2023-24",
+    "first_team": "Corey Uhalde",
+    "first_owner": "$1,595",
+    "second_team": "Kevin Simshauser",
+    "second_owner": "$764",
+    "third_team": "Marc Courtmanch",
+    "third_owner": "$192"
+  },
+  {
+    "season": "2022-23",
+    "first_team": "Corey Uhalde",
+    "first_owner": "$1,209",
+    "second_team": "Joe Buchholz",
+    "second_owner": "$259",
+    "third_team": "Dave Cardino",
+    "third_owner": "$119"
+  },
+  {
+    "season": "2021-22",
+    "first_team": "Greg Meier",
+    "first_owner": "$636",
+    "second_team": "Scott Morton",
+    "second_owner": "$318",
+    "third_team": "Austin Drew",
+    "third_owner": "$52"
+  },
+  {
+    "season": "2019-20",
+    "first_team": "Erik Bianchi",
+    "first_owner": "$850",
+    "second_team": "Greg Meier",
+    "second_owner": "$255",
+    "third_team": "Scott Morton",
+    "third_owner": "$275"
+  },
+  {
+    "season": "2018-19",
+    "first_team": "Travis Ross",
+    "first_owner": "$485",
+    "second_team": "Brendan Hopps (tie)",
+    "second_owner": "$390",
+    "third_team": "Brewster Stanislaw (tie)",
+    "third_owner": "$390"
+  },
+  {
+    "season": "2017-18",
+    "first_team": "Marc Courtmanch",
+    "first_owner": "$490",
+    "second_team": "Don Bennett (tie)",
+    "second_owner": "$179",
+    "third_team": "Kevin Simshauser (tie)",
+    "third_owner": "$179"
+  },
+  {
+    "season": "2016-17",
+    "first_team": "Chris Bennett",
+    "first_owner": "$440",
+    "second_team": "Joe Buchholz",
+    "second_owner": "$220",
+    "third_team": "Gerard Griffa",
+    "third_owner": "$100"
+  },
+  {
+    "season": "2015-16",
+    "first_team": "Marc Courtmanch",
+    "first_owner": "$500",
+    "second_team": "Don Bennett",
+    "second_owner": "$250",
+    "third_team": "Brad Baker",
+    "third_owner": "$120"
+  },
+  {
+    "season": "2014-15",
+    "first_team": "Sean Shoemaker (tie)",
+    "first_owner": "$250",
+    "second_team": "Hadyn Renford (tie)",
+    "second_owner": "$250",
+    "third_team": "Kyle Davis / Joe Buccholz (tie)",
+    "third_owner": "$45 each"
+  },
+  {
+    "season": "2013-14",
+    "first_team": "Mike Duin",
+    "first_owner": "$170",
+    "second_team": "Corey Uhalde",
+    "second_owner": "$85",
+    "third_team": "Travis Ross",
+    "third_owner": "$45"
+  },
+  {
+    "season": "2012-13",
+    "first_team": "Daniel Shuval",
+    "first_owner": "$110",
+    "second_team": "Mike Duin",
+    "second_owner": "$40",
+    "third_team": "Kevin Simshauser",
+    "third_owner": "$15"
+  },
+  {
+    "season": "2010-11",
+    "first_team": "Joe Simich",
+    "first_owner": "$75",
+    "second_team": "Matt Stringer",
+    "second_owner": "$25",
+    "third_team": "Hugh McGregor",
+    "third_owner": "$10"
+  },
+  {
+    "season": "2009-10",
+    "first_team": "Michael Grundmeyer (tie)",
+    "first_owner": "$45",
+    "second_team": "Rob Griesinger (tie)",
+    "second_owner": "$45",
+    "third_team": "Steve Duin",
+    "third_owner": "$10"
+  }
+]

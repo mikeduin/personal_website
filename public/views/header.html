@@ -19,6 +19,10 @@
           </li>
           <li> <a class="navlink" ui-sref="home.music" id="musicAnchor" ng-class="{'musicBack': $state.includes('home.music')}" title="Music"> Music </a></li>
           <li> <a class="navlink" ng-click="vm.gotoBeer()" ui-sref="home.fridge" id="fridgeAnchor" ng-class="{'fridgeBack': $state.includes('home.fridge')}" title="Mike's Fridge"> Mike's Fridge </a></li>
+<<<<<<< HEAD
+          <li ng-if="vm.showSuperAdminLink()"> <a class="navlink" href="/admin" ng-click="vm.gotoSuperAdmin($event)" title="Super Admin"> Super Admin </a></li>
+=======
+>>>>>>> 188a20e0f22d6d29e655c182732a9a18417e81ed
         </ul>
       </div>
     </div>
@@ -80,6 +84,14 @@
               mike's fridge
             </div>
           </a>
+<<<<<<< HEAD
+          <a ng-if="vm.showSuperAdminLink()" href="/admin" ng-click="vm.gotoSuperAdmin($event)">
+            <div class="mobile-nav-link nav-ala">
+              super admin
+            </div>
+          </a>
+=======
+>>>>>>> 188a20e0f22d6d29e655c182732a9a18417e81ed
         </div>
       </div>
     </div>

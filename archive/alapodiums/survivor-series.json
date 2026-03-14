@@ -1,0 +1,68 @@
+[
+  {
+    "season": "MLB 2024",
+    "first_team": "Luke Tushar",
+    "first_owner": "$2693"
+  },
+  {
+    "season": "NBA 2023",
+    "first_team": "Brewster Stanislaw",
+    "first_owner": "$1758",
+    "second_team": "Mike Duin",
+    "second_owner": "$879"
+  },
+  {
+    "season": "MLB 2023",
+    "first_team": "Warren Lueck",
+    "first_owner": "$1935",
+    "second_team": "Matt Ferris",
+    "second_owner": "$967"
+  },
+  {
+    "season": "NBA 2022",
+    "first_team": "Mike Duin",
+    "first_owner": "$2755"
+  },
+  {
+    "season": "MLB 2022",
+    "first_team": "Dave Shore",
+    "first_owner": "$1343",
+    "second_team": "Scott Venn",
+    "second_owner": "$671"
+  },
+  {
+    "season": "NBA 2021",
+    "first_team": "Matt Ferris (t-1st)",
+    "first_owner": "$1540",
+    "second_team": "Scott Venn (t-1st)",
+    "second_owner": "$1540"
+  },
+  {
+    "season": "MLB 2021",
+    "first_team": "Scott Venn (t-1st)",
+    "first_owner": "$1285",
+    "second_team": "Brad Baker (t-1st)",
+    "second_owner": "$1285"
+  },
+  {
+    "season": "NBA 2020",
+    "first_team": "Eric Cole (t-1st)",
+    "first_owner": "$981",
+    "second_team": "Scott Venn (t-1st)",
+    "second_owner": "$981",
+    "third_team": "Disa / Clarke / Simshauser / Medina (t-3rd)",
+    "third_owner": "$490 ea"
+  },
+  {
+    "season": "MLB 2020",
+    "first_team": "Brett Mullin (t-1st)",
+    "first_owner": "$618",
+    "second_team": "Brad Baker (t-1st)",
+    "second_owner": "$618"
+  },
+  {
+    "season": "NBA 2019",
+    "first_team": "Billy Schreyer",
+    "first_owner": "$2,337"
+  }
+]

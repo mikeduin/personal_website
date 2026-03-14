@@ -1,0 +1,101 @@
+[
+  {
+    "season": "2024",
+    "first_team": "Travis Ross",
+    "first_owner": "$3,215",
+    "second_team": "Jim Pitillo",
+    "second_owner": "$799",
+    "third_team": "Cory Casini",
+    "third_owner": "$533"
+  },
+  {
+    "season": "2023",
+    "first_team": "Corey Uhalde",
+    "first_owner": "$5,550",
+    "second_team": "Joe Klapper",
+    "second_owner": "$2,834",
+    "third_team": "Larry Handler",
+    "third_owner": "$776"
+  },
+  {
+    "season": "2022",
+    "first_team": "Brendan Hopps",
+    "first_owner": "$6,261",
+    "second_team": "Trevor Brady",
+    "second_owner": "$3,241",
+    "third_team": "Alex Church",
+    "third_owner": "$1,229"
+  },
+  {
+    "season": "2021",
+    "first_team": "Dylan Barrera",
+    "first_owner": "$4,370",
+    "second_team": "Brendan Newland",
+    "second_owner": "$2,269",
+    "third_team": "John Palazza",
+    "third_owner": "$848"
+  },
+  {
+    "season": "2020",
+    "first_team": "Aaron Levinger",
+    "first_owner": "$4,080",
+    "second_team": "Corey Uhalde",
+    "second_owner": "$2,104",
+    "third_team": "Trevor Brady",
+    "third_owner": "$834"
+  },
+  {
+    "season": "2019",
+    "first_team": "Aaron Levinger",
+    "first_owner": "$3,241",
+    "second_team": "Scott Venn",
+    "second_owner": "$539",
+    "third_team": "Eric Bowman",
+    "third_owner": "$1,489"
+  },
+  {
+    "season": "2018",
+    "first_team": "Brendan Hopps",
+    "first_owner": "$2,705",
+    "second_team": "Travis Ross",
+    "second_owner": "$882",
+    "third_team": "Bryan Spangler",
+    "third_owner": "$1,045"
+  },
+  {
+    "season": "2017",
+    "first_team": "Zain Memon",
+    "first_owner": "$2,286",
+    "second_team": "Michael Simeona",
+    "second_owner": "$370",
+    "third_team": "Jason Gnich",
+    "third_owner": "$1,051"
+  },
+  {
+    "season": "2016",
+    "first_team": "Daniel Shuval",
+    "first_owner": "$2,415",
+    "second_team": "Casey Merrild",
+    "second_owner": "$725",
+    "third_team": "Todd Burgers",
+    "third_owner": "$963"
+  },
+  {
+    "season": "2015",
+    "first_team": "Eric Bowman",
+    "first_owner": "$1,786",
+    "second_team": "Greg Caldwell",
+    "second_owner": "$288",
+    "third_team": "Lisa Schnall",
+    "third_owner": "$192"
+  },
+  {
+    "season": "2014",
+    "first_team": "Joe Nelson",
+    "first_owner": "$900",
+    "second_team": "Mike Duin",
+    "second_owner": "$400",
+    "third_team": "Geoffrey Yamasaki",
+    "third_owner": "$110"
+  }
+]

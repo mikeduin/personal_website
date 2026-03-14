@@ -11,6 +11,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var db = require('./routes/db');
 var wcbracket = require('./routes/wcbracket');
+var data = require('./routes/data');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -43,6 +45,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/db', db);
 app.use('/wcbracket', wcbracket);
+app.use('/api', data);
+app.use('/admin', admin);
 app.use('/nba-all-star-api', function(req, res, next){
   res.sendFile('public/nba-all-star-api.json', { root: __dirname });
 })
