@@ -1,0 +1,29 @@
+[
+  {
+    "season": "2022",
+    "first_team": "Patrick Keating",
+    "first_owner": "$1247",
+    "second_team": "Matt Keating",
+    "second_owner": "$350",
+    "third_team": "Drew Juhnke",
+    "third_owner": "$122"
+  },
+  {
+    "season": "2018",
+    "first_team": "Mike Duin",
+    "first_owner": "$694",
+    "second_team": "Brewster Stanislaw",
+    "second_owner": "$331",
+    "third_team": "Isabel Briones",
+    "third_owner": "$100"
+  },
+  {
+    "season": "2014",
+    "first_team": "Conor McAvoy",
+    "first_owner": "$300",
+    "second_team": "Sean Stokke",
+    "second_owner": "$165",
+    "third_team": "Erik Espling",
+    "third_owner": "$95"
+  }
+]
