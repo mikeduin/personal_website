@@ -1,16 +1,43 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+var jwt = require('jsonwebtoken');
 var Podiums = require('../models/Podiums');
 var Records = require('../models/Records');
 var SeasonData = require('../models/SeasonData');
 
 // simple admin check: allow writes when NODE_ENV !== 'production' OR when
 // request includes matching x-admin-token header equal to process.env.ADMIN_TOKEN
+function getJwtFromRequest(req) {
+  var authHeader = req.headers['authorization'] || '';
+  if (typeof authHeader === 'string' && authHeader.toLowerCase().startsWith('bearer ')) {
+    return authHeader.slice(7).trim();
+  }
+
+  var headerToken = req.headers['x-login-token'];
+  if (headerToken) return String(headerToken).trim();
+
+  if (req.cookies && req.cookies.jwt) return String(req.cookies.jwt).trim();
+  return '';
+}
+
+function isAuthorizedAdminUser(req) {
+  var token = getJwtFromRequest(req);
+  if (!token || !process.env.SESSION_SECRET) return false;
+
+  try {
+    var payload = jwt.verify(token, process.env.SESSION_SECRET);
+    return payload && payload.username === 'mikeduin';
+  } catch (err) {
+    return false;
+  }
+}
+
 function ensureAdmin(req, res, next) {
   if (process.env.NODE_ENV !== 'production') return next();
   const token = req.headers['x-admin-token'];
   if (process.env.ADMIN_TOKEN && token && token === process.env.ADMIN_TOKEN) return next();
+  if (isAuthorizedAdminUser(req)) return next();
   return res.status(403).json({ error: 'admin access required' });
 }
 

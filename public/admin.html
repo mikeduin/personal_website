@@ -312,8 +312,15 @@
       }
 
       function adminHeaders() {
-        const token = window.localStorage.getItem('admin_token') || '';
-        return token ? { 'x-admin-token': token } : {};
+        const headers = {};
+
+        const adminToken = (window.localStorage.getItem('admin_token') || '').trim();
+        if (adminToken) headers['x-admin-token'] = adminToken;
+
+        const loginToken = (window.localStorage.getItem('login-token') || getCookie('jwt') || '').trim();
+        if (loginToken) headers['authorization'] = 'Bearer ' + loginToken;
+
+        return headers;
       }
 
       function hasAdminToken() {
@@ -330,7 +337,7 @@
         const payload = await response.json();
         if (!response.ok) {
           if (response.status === 403) {
-            throw new Error('admin access required (set localStorage.admin_token to match server ADMIN_TOKEN)');
+            throw new Error('admin access required (log in as mikeduin, or set localStorage.admin_token to match server ADMIN_TOKEN)');
           }
           throw new Error(payload.error || 'request failed');
         }
@@ -742,7 +749,7 @@
         wireEvents();
         state.type = el('datasetType').value;
         if (!hasAdminToken()) {
-          setStatus('Read-only mode: set localStorage.admin_token, then refresh to enable saving/deleting in production.', true);
+          setStatus('Tip: log in as mikeduin for automatic admin access, or set localStorage.admin_token for token-based access.', false);
         }
         await loadKeys();
       }
