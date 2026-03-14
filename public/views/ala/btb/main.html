@@ -7,7 +7,10 @@
   <div>
     <defending>
       <div>
-        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i> <span style="color: #23512f"><b>Travis Ross</b></span> (2024)
+        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i>
+        <span style="color: #23512f"><b>{{ vm.getDefendingChamp(vm.btbPodium).champ }}</b></span>
+        <span ng-if="vm.getDefendingChamp(vm.btbPodium).owner">({{ vm.getDefendingChamp(vm.btbPodium).owner }})</span>
+        <span ng-if="vm.getDefendingChamp(vm.btbPodium).season">({{ vm.getDefendingChamp(vm.btbPodium).season }})</span>
       </div>
       <div class="join-pool">
         <b><a href="http://www.alabattlethebookies.com" target="_blank">www.alabattlethebookies.com</a></b>

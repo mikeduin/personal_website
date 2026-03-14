@@ -7,10 +7,20 @@
   <div>
     <defending>
       <div>
-        <span><b> Defending Champs (2024 season): <br></b> </span>
+        <span><b> Defending Champs ({{ vm.getDefendingChamp(vm.LOFootballPodium).season || 'Latest' }} season): <br></b> </span>
       </div>
       <div>
-        <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"> </i> [LO]</lg><b> Father Figures </b> (Steve Duin) &nbsp &nbsp <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"></i> [USC]</lg> <b> Sea Town Grippies </b> (Sean Stokke) &nbsp &nbsp <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"></i> [GU]</lg> <b> the x-factor </b> (Mike Duin)
+        <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"> </i> [LO]</lg>
+        <b>{{ vm.getDefendingChamp(vm.LOFootballPodium).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.LOFootballPodium).owner">({{ vm.getDefendingChamp(vm.LOFootballPodium).owner }})</span>
+        &nbsp; &nbsp;
+        <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"></i> [USC]</lg>
+        <b>{{ vm.getDefendingChamp(vm.SCFootballPodium).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.SCFootballPodium).owner">({{ vm.getDefendingChamp(vm.SCFootballPodium).owner }})</span>
+        &nbsp; &nbsp;
+        <lg style="color: #8b511c"><i class="fa fa-trophy" aria-hidden="true"></i> [GU]</lg>
+        <b>{{ vm.getDefendingChamp(vm.GUFootballPodium).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.GUFootballPodium).owner">({{ vm.getDefendingChamp(vm.GUFootballPodium).owner }})</span>
       </div>
     </defending>
   </div>

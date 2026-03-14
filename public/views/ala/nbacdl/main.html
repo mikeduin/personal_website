@@ -7,7 +7,10 @@
   <div>
     <defending>
       <div>
-        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i>  <span style="color: #d87518"><b> Red Hot & Rollin' </b></span> (Alex Tulipinspring*) [2023-24]
+        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i>
+        <span style="color: #d87518"><b>{{ vm.getDefendingChamp(vm.cdlPodium).champ }}</b></span>
+        <span ng-if="vm.getDefendingChamp(vm.cdlPodium).owner">({{ vm.getDefendingChamp(vm.cdlPodium).owner }})</span>
+        <span ng-if="vm.getDefendingChamp(vm.cdlPodium).season">[{{ vm.getDefendingChamp(vm.cdlPodium).season }}]</span>
       </div>
     </defending>
   </div>

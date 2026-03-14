@@ -7,7 +7,10 @@
   <div>
     <defending>
       <div>
-        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i> <span style="color: #38b6ff"><b > the x-factor </b></span> (Mike Duin) [2024] 
+        <span> <b> Defending Champ: </b> </span> <i class="fa fa-trophy" aria-hidden="true"></i>
+        <span style="color: #38b6ff"><b>{{ vm.getDefendingChamp(vm.baseballPodium).champ }}</b></span>
+        <span ng-if="vm.getDefendingChamp(vm.baseballPodium).owner">({{ vm.getDefendingChamp(vm.baseballPodium).owner }})</span>
+        <span ng-if="vm.getDefendingChamp(vm.baseballPodium).season">[{{ vm.getDefendingChamp(vm.baseballPodium).season }}]</span>
       </div>
     </defending>
   </div>

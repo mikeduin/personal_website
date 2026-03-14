@@ -8,9 +8,17 @@
     <defending>
       <div>
         <span> <b> Defending Champs: </b> </span> <br/>
-        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://www.mikeduin.com/alevelabove/pools/wc18bracket/standings" target="_blank">[Bracket Pool]</a></lg> <b> Micah Gantman </b> ('22) &nbsp &nbsp
-        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://docs.google.com/spreadsheets/d/1gtJ2dna2g_-YsSscN45i7LTZzbx4HmtLyjO2uGWTG3c/edit?usp=sharing" target="_blank">[Survivor]</a></lg> <b> Austin Drew</b> ('22) &nbsp &nbsp
-        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://www.alabattlethebookies.com/worldcup/standings/2022" target="_blank">[Battle the Bookies]</a></lg> <b> Eric Cole </b> ('22)<br/>
+        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://www.mikeduin.com/alevelabove/pools/wc18bracket/standings" target="_blank">[Bracket Pool]</a></lg>
+        <b>{{ vm.getDefendingChamp(vm.fifaBracket).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.fifaBracket).season">({{ vm.getDefendingChamp(vm.fifaBracket).season }})</span>
+        &nbsp; &nbsp;
+        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://docs.google.com/spreadsheets/d/1gtJ2dna2g_-YsSscN45i7LTZzbx4HmtLyjO2uGWTG3c/edit?usp=sharing" target="_blank">[Survivor]</a></lg>
+        <b>{{ vm.getDefendingChamp(vm.fifaSurvivor).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.fifaSurvivor).season">({{ vm.getDefendingChamp(vm.fifaSurvivor).season }})</span>
+        &nbsp; &nbsp;
+        <lg><i class="fa fa-trophy" aria-hidden="true"></i> <a style="color: #91c47d" href="https://www.alabattlethebookies.com/worldcup/standings/2022" target="_blank">[Battle the Bookies]</a></lg>
+        <b>{{ vm.getDefendingChamp(vm.fifaBtb).champ }}</b>
+        <span ng-if="vm.getDefendingChamp(vm.fifaBtb).season">({{ vm.getDefendingChamp(vm.fifaBtb).season }})</span><br/>
       </div>
     </defending>
   </div>
