@@ -514,7 +514,9 @@
 
       async function loadKeys() {
         try {
-          state.keys = await api(apiBase());
+          state.keys = (await api(apiBase())).slice().sort((a, b) =>
+            String(a).localeCompare(String(b), undefined, { sensitivity: 'base' })
+          );
           const keySelect = el('datasetKey');
           const prev = keySelect.value;
           keySelect.innerHTML = '';
