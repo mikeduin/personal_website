@@ -220,6 +220,23 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
     return /\$|\/ea|each|usd/.test(text) || /^\+?\d[\d,]*(\.\d+)?$/.test(text);
   }
 
+  function toNumericPrizePool(value) {
+    if (typeof value === 'number') {
+      return isNaN(value) ? 0 : value;
+    }
+
+    var text = cleanValue(value);
+    if (!text) return 0;
+
+    var normalized = text
+      .replace(/[$,\s]/g, '')
+      .replace(/^\+/, '')
+      .replace(/[^0-9.-]/g, '');
+
+    var parsed = Number(normalized);
+    return isNaN(parsed) ? 0 : parsed;
+  }
+
   function pickOwnerValue(row, mode) {
     var preferredOwner = cleanValue(row && row.first_owner);
     var legacyOwner = cleanValue(row && row.first_prize);
@@ -1507,8 +1524,12 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
       var chart = $scope.vm[vmKey];
       if (!chart || !chart.series || !chart.series.length) return;
 
-      var xValues = rows.map(function(row){ return row.season; });
-      var yValues = rows.map(function(row){ return row.prize_pool; });
+      var sortedRows = rows.slice().sort(function(a, b) {
+        return seasonSortValue(a && a.season) - seasonSortValue(b && b.season);
+      });
+
+      var xValues = sortedRows.map(function(row){ return row.season; });
+      var yValues = sortedRows.map(function(row){ return toNumericPrizePool(row && row.prize_pool); });
       var useLabels = xValues.some(function(v){ return isNaN(Number(v)); });
 
       if (!chart.scaleX) chart.scaleX = {};
@@ -1559,7 +1580,7 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
         var pointsByYear = {};
         result.rows.forEach(function(row) {
           var y = Number(row.season);
-          var value = Number(row.prize_pool || 0);
+          var value = toNumericPrizePool(row && row.prize_pool);
           if (!isNaN(y)) pointsByYear[y] = value;
         });
 
