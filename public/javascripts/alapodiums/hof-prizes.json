@@ -1,72 +1,72 @@
 [
-  {
+    {
     "rank": "1",
+    "entrant": "Ezra Pemstein",
+    "game": "March Madness Calcutta Auction",
+    "year": "2025",
+    "prizes": "$6,408"
+  },
+  {
+    "rank": "2",
     "entrant": "Brewster Stanislaw",
     "game": "March Madness Calcutta Auction",
     "year": "2024",
     "prizes": "$6,355"
   },
   {
-    "rank": "2",
+    "rank": "3",
     "entrant": "Brendan Hopps",
     "game": "NFL Battle the Bookies",
     "year": "2022",
     "prizes": "$6,261"
   },
+    {
+    "rank": "4",
+    "entrant": "Mike Duin/Billy Schreyer",
+    "game": "The Masters Calcutta Auction",
+    "year": "2025",
+    "prizes": "$6,116"
+  },
   {
-    "rank": "3",
+    "rank": "5",
+    "entrant": "Nick Caples",
+    "game": "March Madness",
+    "year": "2021",
+    "prizes": "$5,550"
+  },
+  {
+    "rank": "6",
     "entrant": "Brewster Stanislaw",
     "game": "NFL Survivor",
     "year": "2021",
     "prizes": "$5,550"
   },
   {
-    "rank": "4",
+    "rank": "7",
     "entrant": "Corey Uhalde",
     "game": "NFL Battle the Bookies",
     "year": "2023",
     "prizes": "$5,550"
   },
   {
-    "rank": "5",
+    "rank": "8",
     "entrant": "Joe Pleva",
     "game": "March Madness",
     "year": "2024",
     "prizes": "$5,500"
   },
   {
-    "rank": "6",
+    "rank": "9",
     "entrant": "Jason Mueller",
     "game": "March Madness",
     "year": "2023",
     "prizes": "$5,490"
   },
   {
-    "rank": "7",
+    "rank": "10",
     "entrant": "Brad Holschen",
     "game": "March Madness",
     "year": "2019",
     "prizes": "$5,255"
-  },
-  {
-    "rank": "8",
-    "entrant": "Jack Powers",
-    "game": "March Madness",
-    "year": "2022",
-    "prizes": "$5,025"
-  },
-  {
-    "rank": "9",
-    "entrant": "Jaime Trevino",
-    "game": "NFL Survivor",
-    "year": "2015",
-    "prizes": "$4,800"
-  },
-  {
-    "rank": "10",
-    "entrant": "Austin Drew",
-    "game": "March Madness Calcutta Auction",
-    "year": "2023",
-    "prizes": "$4,790"
   }
 ]
