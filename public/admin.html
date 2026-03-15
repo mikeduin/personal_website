@@ -355,6 +355,13 @@
         return JSON.parse(JSON.stringify(value));
       }
 
+      function currentDatasetKey() {
+        const metaKey = (el('metaKey') && el('metaKey').value || '').trim();
+        if (metaKey) return metaKey;
+        const selectedKey = (el('datasetKey') && el('datasetKey').value || '').trim();
+        return selectedKey;
+      }
+
       function setStatus(message, isError) {
         const status = el('statusMsg');
         status.textContent = message || '';
@@ -371,6 +378,16 @@
             });
           }
         });
+
+        const datasetKey = currentDatasetKey();
+
+        if (state.type === 'podiums' && datasetKey === 'hof-prizes') {
+          const preferred = ['game', 'rank', 'year', 'prizes', 'entrant'];
+          const preferredSet = new Set(preferred);
+          const ordered = preferred.slice();
+          const remaining = columns.filter(col => !preferredSet.has(col));
+          return ordered.concat(remaining);
+        }
 
         if (state.type === 'podiums') {
           const hiddenPodiumColumns = new Set([
@@ -467,6 +484,13 @@
 
       function ensureAtLeastOneColumn() {
         if (!state.columns.length) {
+          const datasetKey = currentDatasetKey();
+
+          if (state.type === 'podiums' && datasetKey === 'hof-prizes') {
+            state.columns = ['game', 'rank', 'year', 'prizes', 'entrant'];
+            return;
+          }
+
           if (state.type === 'podiums') {
             state.columns = [
               'season',
@@ -656,9 +680,12 @@
       async function createDataset() {
         const key = prompt('Key (example: madness or football-records)');
         if (!key) return;
+        const trimmedKey = key.trim();
         const yearRaw = prompt('Year (optional)');
         const rowTemplate = state.columns.length ? state.columns : (state.type === 'seasonData'
           ? ['season', 'prize_pool']
+          : state.type === 'podiums' && trimmedKey === 'hof-prizes'
+            ? ['game', 'rank', 'year', 'prizes', 'entrant']
           : state.type === 'podiums'
             ? ['season', 'first_team', 'first_owner', 'first_prize', 'second_team', 'second_owner', 'third_team', 'third_owner']
             : ['season']);
@@ -672,8 +699,8 @@
           };
         } else {
           payload = {
-            key: key.trim(),
-            filename: key.trim() + '.json',
+            key: trimmedKey,
+            filename: trimmedKey + '.json',
             year: yearRaw && yearRaw.trim() ? Number(yearRaw.trim()) : null,
             data: [newRow]
           };

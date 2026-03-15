@@ -556,10 +556,31 @@ function AlaController ($scope, $anchorScroll, $location, alaService, authServic
   };
   $scope.getTitles();
 
-  $scope.vm.prizes = {};
+  $scope.vm.prizes = [];
   $scope.getPrizes = function() {
     alaService.getPrizes().then(function(results){
-      $scope.vm.prizes = results;
+      var prizeRows = Array.isArray(results) ? results.slice() : [];
+
+      prizeRows.sort(function(a, b) {
+        var rankA = Number(a && a.rank);
+        var rankB = Number(b && b.rank);
+
+        var safeRankA = isNaN(rankA) ? Number.MAX_SAFE_INTEGER : rankA;
+        var safeRankB = isNaN(rankB) ? Number.MAX_SAFE_INTEGER : rankB;
+        if (safeRankA !== safeRankB) return safeRankA - safeRankB;
+
+        var yearA = Number(a && a.year);
+        var yearB = Number(b && b.year);
+        var safeYearA = isNaN(yearA) ? -Infinity : yearA;
+        var safeYearB = isNaN(yearB) ? -Infinity : yearB;
+        if (safeYearA !== safeYearB) return safeYearB - safeYearA;
+
+        var entrantA = cleanValue(a && a.entrant).toLowerCase();
+        var entrantB = cleanValue(b && b.entrant).toLowerCase();
+        return entrantA.localeCompare(entrantB);
+      });
+
+      $scope.vm.prizes = prizeRows;
     })
   };
   $scope.getPrizes();
