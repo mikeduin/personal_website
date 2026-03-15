@@ -4,13 +4,13 @@ const path = require('path');
 exports.seed = async function(knex) {
   await knex('records').del();
 
-  let dir = path.join(process.cwd(), 'public', 'javascripts', 'alarecords');
+  let dir = path.join(process.cwd(), 'archive', 'alarecords');
   if (!fs.existsSync(dir)) {
-    const archiveDir = path.join(process.cwd(), 'archive', 'alarecords');
-    if (fs.existsSync(archiveDir)) {
-      dir = archiveDir;
+    const legacyDir = path.join(process.cwd(), 'public', 'javascripts', 'alarecords');
+    if (fs.existsSync(legacyDir)) {
+      dir = legacyDir;
     } else {
-      console.warn('alarecords folder not found at', dir, 'or', archiveDir);
+      console.warn('alarecords folder not found at', dir, 'or', legacyDir);
       return;
     }
   }
