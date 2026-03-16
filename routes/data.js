@@ -6,6 +6,8 @@ var Podiums = require('../models/Podiums');
 var Records = require('../models/Records');
 var SeasonData = require('../models/SeasonData');
 
+function Pools() { return knex('pools'); }
+
 // simple admin check: allow writes when NODE_ENV !== 'production' OR when
 // request includes matching x-admin-token header equal to process.env.ADMIN_TOKEN
 function getJwtFromRequest(req) {
@@ -40,6 +42,117 @@ function ensureAdmin(req, res, next) {
   if (isAuthorizedAdminUser(req)) return next();
   return res.status(403).json({ error: 'admin access required' });
 }
+
+function nullableNumber(value) {
+  if (value === null || typeof value === 'undefined' || String(value).trim() === '') return null;
+  var parsed = Number(value);
+  return isNaN(parsed) ? null : parsed;
+}
+
+function nullableBoolean(value) {
+  if (value === null || typeof value === 'undefined' || value === '') return null;
+  if (typeof value === 'boolean') return value;
+  var text = String(value).trim().toLowerCase();
+  if (text === 'true' || text === '1' || text === 'yes') return true;
+  if (text === 'false' || text === '0' || text === 'no') return false;
+  return null;
+}
+
+function nullableTimestamp(value) {
+  if (!value && value !== 0) return null;
+  var date = new Date(value);
+  return isNaN(date.getTime()) ? null : date;
+}
+
+function sanitizePoolPayload(body, options) {
+  var partial = !!(options && options.partial);
+  var payload = {};
+
+  function assign(field, value) {
+    if (!partial || Object.prototype.hasOwnProperty.call(body, field)) {
+      payload[field] = value;
+    }
+  }
+
+  assign('name', body.name || null);
+  assign('alias', body.alias || null);
+  assign('buyin', body.buyin || null);
+  assign('entrants', nullableNumber(body.entrants));
+  assign('start_time', nullableTimestamp(body.start_time));
+  assign('end_time', nullableTimestamp(body.end_time));
+  assign('homepage', body.homepage || null);
+  assign('externalURL', body.externalURL || null);
+  assign('joinable', nullableBoolean(body.joinable));
+  assign('season', nullableNumber(body.season));
+  assign('db_ref', body.db_ref || null);
+  assign('bonus_active', nullableBoolean(body.bonus_active));
+  assign('buyin_min', nullableNumber(body.buyin_min));
+  assign('lives', nullableNumber(body.lives));
+  assign('rebuy_price', nullableNumber(body.rebuy_price));
+  assign('weeks', nullableNumber(body.weeks));
+  assign('deadlines', Array.isArray(body.deadlines) ? body.deadlines : null);
+  assign('type', body.type || null);
+  assign('sport', body.sport || null);
+  assign('open', nullableBoolean(body.open));
+
+  return payload;
+}
+
+// GET /api/pools -> all pools (admin use)
+router.get('/pools', async function(req, res, next){
+  try {
+    var rows = await Pools().select('*').orderBy('start_time', 'desc').orderBy('id', 'desc');
+    res.json(rows);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/pools -> create a pool (admin only)
+router.post('/pools', ensureAdmin, async function(req, res, next){
+  try {
+    var payload = sanitizePoolPayload(req.body || {});
+    if (!payload.name || !payload.alias) {
+      return res.status(400).json({ error: 'name and alias are required' });
+    }
+
+    var inserted = await Pools().insert(payload, '*');
+    res.json(inserted[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// PUT /api/pools/:id -> update a pool (admin only)
+router.put('/pools/:id', ensureAdmin, async function(req, res, next){
+  try {
+    var id = req.params.id;
+    var payload = sanitizePoolPayload(req.body || {}, { partial: true });
+    if (!payload.name || !payload.alias) {
+      return res.status(400).json({ error: 'name and alias are required' });
+    }
+
+    var updated = await Pools().where({ id: id }).update(payload, '*');
+    if (!updated || !updated.length) {
+      return res.status(404).json({ error: 'pool not found' });
+    }
+    res.json(updated[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /api/pools/:id -> delete a pool (admin only)
+router.delete('/pools/:id', ensureAdmin, async function(req, res, next){
+  try {
+    var id = req.params.id;
+    var deleted = await Pools().where({ id: id }).del();
+    if (!deleted) return res.status(404).json({ error: 'pool not found' });
+    res.json({ success: true });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // GET /api/podiums  -> list available keys
 router.get('/podiums', async function(req, res, next){

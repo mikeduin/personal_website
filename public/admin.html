@@ -199,6 +199,7 @@
 
       <div class="tabs">
         <button class="tab-btn active" data-tab="alaDataTab" id="tabAlaData">ALA Podiums &amp; Records</button>
+        <button class="tab-btn" data-tab="poolsTab" id="tabPools">ALA Pools</button>
         <button class="tab-btn" data-tab="futureTab" id="tabFuture">More Admin Features</button>
       </div>
 
@@ -263,6 +264,80 @@
       </div>
       </section>
 
+      <section class="tab-panel" id="poolsTab">
+        <div class="layout">
+          <aside class="card stack">
+            <h2 class="section-title">Existing Pools</h2>
+            <div class="btn-row">
+              <button class="btn" id="refreshPools">Refresh Pools</button>
+            </div>
+            <div class="small">Current records from pools table</div>
+            <div id="poolsList" class="list"></div>
+          </aside>
+
+          <main class="card stack">
+            <h2 class="section-title">Manage Pool</h2>
+            <div class="meta-grid">
+              <div>
+                <label for="poolName">Pool Name *</label>
+                <input id="poolName" placeholder="e.g. 2026 March Madness">
+              </div>
+              <div>
+                <label for="poolAlias">Alias *</label>
+                <input id="poolAlias" placeholder="e.g. madness26">
+              </div>
+              <div>
+                <label for="poolBuyin">Buy-in</label>
+                <input id="poolBuyin" placeholder="e.g. 100">
+              </div>
+              <div>
+                <label for="poolSeason">Season</label>
+                <input id="poolSeason" placeholder="e.g. 2026">
+              </div>
+              <div>
+                <label for="poolHomepage">Homepage (ui-sref)</label>
+                <input id="poolHomepage" placeholder="e.g. home.ala.fifa.bracketpool.main">
+              </div>
+              <div>
+                <label for="poolExternalURL">External URL</label>
+                <input id="poolExternalURL" placeholder="https://...">
+              </div>
+              <div>
+                <label for="poolStartTime">Start Time</label>
+                <input id="poolStartTime" type="datetime-local">
+              </div>
+              <div>
+                <label for="poolOpen">Open</label>
+                <select id="poolOpen">
+                  <option value="true" selected>true</option>
+                  <option value="false">false</option>
+                </select>
+              </div>
+              <div>
+                <label for="poolJoinable">Joinable</label>
+                <select id="poolJoinable">
+                  <option value="">(unset)</option>
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
+              </div>
+              <div>
+                <label for="poolEntrants">Entrants</label>
+                <input id="poolEntrants" type="number" min="0" placeholder="0">
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn primary" id="createPool">Add Pool</button>
+              <button class="btn" id="savePool">Save Pool</button>
+              <button class="btn danger" id="deletePool">Delete Pool</button>
+              <button class="btn" id="clearPoolForm">Clear Form</button>
+            </div>
+            <div id="poolsStatusMsg" class="small"></div>
+          </main>
+        </div>
+      </section>
+
       <section class="tab-panel" id="futureTab">
         <div class="card">
           <h2 style="margin-top:0">More Admin Features</h2>
@@ -280,6 +355,11 @@
         workingData: [],
         columns: [],
         newlyAddedRowIndex: null
+      };
+
+      const poolsState = {
+        rows: [],
+        selectedPoolId: null
       };
 
       const el = id => document.getElementById(id);
@@ -366,6 +446,227 @@
         const status = el('statusMsg');
         status.textContent = message || '';
         status.style.color = isError ? '#b91c1c' : '#6b7280';
+      }
+
+      function setPoolsStatus(message, isError) {
+        const status = el('poolsStatusMsg');
+        if (!status) return;
+        status.textContent = message || '';
+        status.style.color = isError ? '#b91c1c' : '#6b7280';
+      }
+
+      function toNullableBoolean(value) {
+        if (value === null || typeof value === 'undefined' || value === '') return null;
+        const text = String(value).trim().toLowerCase();
+        if (text === 'true' || text === '1' || text === 'yes') return true;
+        if (text === 'false' || text === '0' || text === 'no') return false;
+        return null;
+      }
+
+      function toNullableNumber(value) {
+        if (value === null || typeof value === 'undefined' || String(value).trim() === '') return null;
+        const parsed = Number(value);
+        return Number.isNaN(parsed) ? null : parsed;
+      }
+
+      function toNullableISOString(value) {
+        if (!value) return null;
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? null : date.toISOString();
+      }
+
+      function toDatetimeLocalValue(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return '';
+
+        const pad = (num) => String(num).padStart(2, '0');
+        const yyyy = date.getFullYear();
+        const mm = pad(date.getMonth() + 1);
+        const dd = pad(date.getDate());
+        const hh = pad(date.getHours());
+        const min = pad(date.getMinutes());
+        return yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + min;
+      }
+
+      function clearPoolsForm() {
+        poolsState.selectedPoolId = null;
+        ['poolName', 'poolAlias', 'poolBuyin', 'poolSeason', 'poolHomepage', 'poolExternalURL', 'poolStartTime', 'poolJoinable', 'poolEntrants']
+          .forEach((fieldId) => { el(fieldId).value = ''; });
+        el('poolOpen').value = 'true';
+        renderPoolsList();
+      }
+
+      function setPoolsForm(pool) {
+        if (!pool) {
+          clearPoolsForm();
+          return;
+        }
+
+        poolsState.selectedPoolId = pool.id;
+        el('poolName').value = pool.name || '';
+        el('poolAlias').value = pool.alias || '';
+        el('poolBuyin').value = pool.buyin || '';
+        el('poolSeason').value = pool.season === null || typeof pool.season === 'undefined' ? '' : String(pool.season);
+        el('poolHomepage').value = pool.homepage || '';
+        el('poolExternalURL').value = pool.externalURL || '';
+        el('poolStartTime').value = toDatetimeLocalValue(pool.start_time);
+        el('poolOpen').value = pool.open === false ? 'false' : 'true';
+        el('poolJoinable').value = pool.joinable === null || typeof pool.joinable === 'undefined' ? '' : (pool.joinable ? 'true' : 'false');
+        el('poolEntrants').value = pool.entrants === null || typeof pool.entrants === 'undefined' ? '' : String(pool.entrants);
+        renderPoolsList();
+      }
+
+      function poolsPayloadFromForm() {
+        return {
+          name: (el('poolName').value || '').trim(),
+          alias: (el('poolAlias').value || '').trim(),
+          buyin: (el('poolBuyin').value || '').trim() || null,
+          season: toNullableNumber(el('poolSeason').value),
+          homepage: (el('poolHomepage').value || '').trim() || null,
+          externalURL: (el('poolExternalURL').value || '').trim() || null,
+          start_time: toNullableISOString(el('poolStartTime').value),
+          open: toNullableBoolean(el('poolOpen').value),
+          joinable: toNullableBoolean(el('poolJoinable').value),
+          entrants: toNullableNumber(el('poolEntrants').value)
+        };
+      }
+
+      function renderPoolsList() {
+        const list = el('poolsList');
+        if (!list) return;
+        list.innerHTML = '';
+
+        if (!poolsState.rows.length) {
+          const empty = document.createElement('div');
+          empty.className = 'list-item';
+          empty.textContent = 'No pools found.';
+          list.appendChild(empty);
+          return;
+        }
+
+        poolsState.rows.forEach((pool) => {
+          const item = document.createElement('div');
+          item.className = 'list-item' + (pool.id === poolsState.selectedPoolId ? ' active' : '');
+          const start = pool.start_time ? new Date(pool.start_time).toLocaleString() : 'no start';
+          item.textContent = '#' + pool.id + ' · ' + (pool.name || 'Unnamed') + ' [' + (pool.alias || '-') + '] · open=' + pool.open + ' · ' + start;
+          item.onclick = () => setPoolsForm(pool);
+          list.appendChild(item);
+        });
+      }
+
+      async function loadPoolsAdmin() {
+        try {
+          const rows = await api('/api/pools');
+          poolsState.rows = Array.isArray(rows) ? rows : [];
+          if (poolsState.selectedPoolId !== null) {
+            const selected = poolsState.rows.find((pool) => pool.id === poolsState.selectedPoolId);
+            if (selected) setPoolsForm(selected);
+            else clearPoolsForm();
+          }
+          renderPoolsList();
+          setPoolsStatus('Loaded ' + poolsState.rows.length + ' pools.');
+        } catch (error) {
+          setPoolsStatus(error.message, true);
+        }
+      }
+
+      async function createPoolFromAdmin() {
+        const payload = poolsPayloadFromForm();
+
+        if (!payload.name || !payload.alias) {
+          setPoolsStatus('Pool Name and Alias are required.', true);
+          return;
+        }
+
+        const createButton = el('createPool');
+        const originalText = createButton.textContent;
+
+        try {
+          createButton.disabled = true;
+          createButton.textContent = 'Adding...';
+
+          await api('/api/pools', {
+            method: 'POST',
+            body: JSON.stringify(payload)
+          });
+
+          setPoolsStatus('✅ Pool added: ' + payload.name);
+          clearPoolsForm();
+          await loadPoolsAdmin();
+        } catch (error) {
+          setPoolsStatus('Add failed: ' + error.message, true);
+        } finally {
+          createButton.disabled = false;
+          createButton.textContent = originalText;
+        }
+      }
+
+      async function updatePoolFromAdmin() {
+        const poolId = poolsState.selectedPoolId;
+        if (!poolId) {
+          setPoolsStatus('Select a pool from the list first.', true);
+          return;
+        }
+
+        const payload = poolsPayloadFromForm();
+        if (!payload.name || !payload.alias) {
+          setPoolsStatus('Pool Name and Alias are required.', true);
+          return;
+        }
+
+        const saveButton = el('savePool');
+        const originalText = saveButton.textContent;
+
+        try {
+          saveButton.disabled = true;
+          saveButton.textContent = 'Saving...';
+
+          await api('/api/pools/' + encodeURIComponent(poolId), {
+            method: 'PUT',
+            body: JSON.stringify(payload)
+          });
+
+          setPoolsStatus('✅ Pool updated: ' + payload.name);
+          await loadPoolsAdmin();
+        } catch (error) {
+          setPoolsStatus('Save failed: ' + error.message, true);
+        } finally {
+          saveButton.disabled = false;
+          saveButton.textContent = originalText;
+        }
+      }
+
+      async function deletePoolFromAdmin() {
+        const poolId = poolsState.selectedPoolId;
+        if (!poolId) {
+          setPoolsStatus('Select a pool from the list first.', true);
+          return;
+        }
+
+        const ok = confirm('Delete selected pool #' + poolId + '? This cannot be undone.');
+        if (!ok) return;
+
+        const deleteButton = el('deletePool');
+        const originalText = deleteButton.textContent;
+
+        try {
+          deleteButton.disabled = true;
+          deleteButton.textContent = 'Deleting...';
+
+          await api('/api/pools/' + encodeURIComponent(poolId), {
+            method: 'DELETE'
+          });
+
+          setPoolsStatus('Deleted pool #' + poolId + '.');
+          clearPoolsForm();
+          await loadPoolsAdmin();
+        } catch (error) {
+          setPoolsStatus('Delete failed: ' + error.message, true);
+        } finally {
+          deleteButton.disabled = false;
+          deleteButton.textContent = originalText;
+        }
       }
 
       function inferColumns(rows) {
@@ -782,6 +1083,7 @@
             document.querySelectorAll('.tab-panel').forEach((panel) => panel.classList.remove('active'));
             button.classList.add('active');
             document.getElementById(target).classList.add('active');
+            if (target === 'poolsTab') loadPoolsAdmin();
           });
         });
 
@@ -801,6 +1103,11 @@
         el('deleteSelected').addEventListener('click', deleteSelected);
         el('addColumn').addEventListener('click', addColumn);
         el('addRow').addEventListener('click', addRow);
+        el('refreshPools').addEventListener('click', loadPoolsAdmin);
+        el('createPool').addEventListener('click', createPoolFromAdmin);
+        el('savePool').addEventListener('click', updatePoolFromAdmin);
+        el('deletePool').addEventListener('click', deletePoolFromAdmin);
+        el('clearPoolForm').addEventListener('click', clearPoolsForm);
       }
 
       async function bootstrap() {
